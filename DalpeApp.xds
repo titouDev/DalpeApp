@@ -423,14 +423,6 @@
             ],
             "className": "mailsGrid"
         },
-        "284b3add-9c9a-4e61-a78e-0dda73ffdccf": {
-            "paths": [
-                "metadata/store/camions",
-                "app/store/override/camions.js",
-                "app/store/camions.js"
-            ],
-            "className": "camions"
-        },
         "c4a306d4-c285-4307-ba62-ad76109582f7": {
             "paths": [
                 "metadata/store/colonnes",
@@ -462,14 +454,6 @@
                 "app/controller/editSousTraitantController.js"
             ],
             "className": "editSousTraitantController"
-        },
-        "5a7cb532-ee0b-4cc8-9f29-ce59363ba7bd": {
-            "paths": [
-                "metadata/model/camion",
-                "app/model/override/camion.js",
-                "app/model/camion.js"
-            ],
-            "className": "camion"
         },
         "7871350a-2c6b-44fc-999c-9467978f08c5": {
             "paths": [
@@ -532,7 +516,6 @@
             "0883665a-4d9e-453c-a13f-bab460f4c2d8"
         ],
         "store": [
-            "284b3add-9c9a-4e61-a78e-0dda73ffdccf",
             "c4a306d4-c285-4307-ba62-ad76109582f7",
             "b87c47e7-ac0e-4c00-928f-440a452d61a8",
             "e5a999f6-34ab-4a5b-9507-4f02d03426d2",
@@ -545,7 +528,6 @@
             "cd6fbed6-fd8f-4928-9289-c6a6d316cffb",
             "4bc615f2-00bd-457d-91f4-1c37c29ca69b",
             "990efb39-4987-4589-8cb2-7aab3f5dcb43",
-            "fa160326-b7fa-4747-896d-d70d65968f22",
             "fa160326-b7fa-4747-896d-d70d65968f22",
             "e0f02898-522d-4dc3-a2e1-2ad3f4b2dd2b",
             "a79bbea3-d4de-47b9-b24e-a9e513a27156",
@@ -567,13 +549,11 @@
             "5b99a48a-3f84-4fe8-a414-2e88c6d08eb2"
         ],
         "model": [
-            "5a7cb532-ee0b-4cc8-9f29-ce59363ba7bd",
             "7871350a-2c6b-44fc-999c-9467978f08c5",
             "2ac47141-f17c-48e0-883b-8f12db2f9e18",
             "b46812cd-c52b-4a66-9d86-1e213479b598",
             "30e085bb-8e66-4146-b012-634d977214ef",
             "e4d3bafa-15b2-4e10-a635-0f60eb93a846",
-            "ab15740c-e916-430c-b9f1-319b39e1db1b",
             "ab15740c-e916-430c-b9f1-319b39e1db1b",
             "237b6ba4-2399-4586-aab1-258e76cdedb7",
             "a0d5601b-11bf-4930-97a3-f49e2073affe",
