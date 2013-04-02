@@ -6,7 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
-        "basePath": "http://192.168.1.6/extjs-4.1.0/"
+        "basePath": "/extjs-4.1.0/"
     },
     "id": "ExtBox1-ext-gen1904",
     "designerId": "06ca827d-4e64-431a-bedd-3b4432a274f5"
