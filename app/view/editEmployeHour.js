@@ -25,7 +25,7 @@ Ext.define('dalpeApp.view.editEmployeHour', {
     layout: {
         type: 'fit'
     },
-    title: 'Entré d\'heures',
+    title: 'Entrée d\'heures',
     modal: true,
 
     initComponent: function() {
