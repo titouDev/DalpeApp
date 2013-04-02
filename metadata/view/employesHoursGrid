@@ -1,0 +1,87 @@
+{
+    "type": "gridpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "employesHoursGrid",
+        "height": 241,
+        "id": "employesHoursGrid",
+        "width": 664,
+        "title": "My Grid Panel"
+    },
+    "id": "ExtBox1-ext-gen24847",
+    "designerId": "54677ed2-cc35-4daa-9ef1-2454cdeb4f60",
+    "cn": [
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn4",
+                "dataIndex": "string",
+                "text": "String"
+            },
+            "designerId": "77d3bf4d-4129-4fec-92c1-c86a10e1943d"
+        },
+        {
+            "type": "numbercolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyNumberColumn3",
+                "dataIndex": "number",
+                "text": "Number"
+            },
+            "designerId": "a1dbd7ba-7d44-4479-a1e4-2e716697a655"
+        },
+        {
+            "type": "datecolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyDateColumn4",
+                "dataIndex": "date",
+                "text": "Date"
+            },
+            "designerId": "f926e8d6-e44f-4657-9964-c0cb20055369"
+        },
+        {
+            "type": "booleancolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyBooleanColumn3",
+                "dataIndex": "bool",
+                "text": "Boolean"
+            },
+            "designerId": "e4cfd349-13b9-4d55-b139-c0ce24a529d7"
+        },
+        {
+            "type": "gridview",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGridView7"
+            },
+            "designerId": "61f488e2-5a48-439f-b25e-51e878bda298"
+        }
+    ]
+}

@@ -1,0 +1,394 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "mailWindowController",
+        "models": [
+            "mail"
+        ],
+        "stores": [
+            "mailLinkSousTraitant"
+        ],
+        "views": [
+            "mailWindow"
+        ]
+    },
+    "id": "ExtBox1-ext-gen23963",
+    "designerId": "01997f0d-c80f-45ee-bd73-f292af411a55",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onSendClick",
+                "fn": "onSendClick",
+                "implHandler": [
+                    "if (Ext.getCmp('mailWindow').down('form').getForm().getValues().sentDate)",
+                    "{",
+                    "    Ext.Msg.alert('Attention','Ce mail a deja ete envoye, vous ne pouvez plus le modifier.');",
+                    "    return;",
+                    "}",
+                    "",
+                    "var myForm = this.getMailWindow().down('form').getForm();",
+                    "",
+                    "if (! myForm.isValid())",
+                    "{",
+                    "    Ext.Msg.alert('Attention','Certains champs sont requis');",
+                    "    return;",
+                    "}",
+                    "console.log(999999);",
+                    "//On save",
+                    "this.saveMail(true);",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#mailWindow #send"
+            },
+            "designerId": "c34218c9-2d52-421e-b5f4-a234d55dbe0f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onSaveClick",
+                "fn": "onSaveClick",
+                "implHandler": [
+                    "if (Ext.getCmp('mailWindow').down('form').getForm().getValues().sentDate)",
+                    "{",
+                    "    Ext.Msg.alert('Attention','Ce mail a deja ete envoye, vous ne pouvez plus le modifier.');",
+                    "    return;",
+                    "}",
+                    "",
+                    "",
+                    "this.saveMail();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#mailWindow #save"
+            },
+            "designerId": "a955c190-c17f-444b-b8aa-0979ea12eab4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onContactsClick",
+                "fn": "onContactsClick",
+                "implHandler": [
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#mailWindow  #contacts"
+            },
+            "designerId": "affd5d8e-96a0-4eba-9e64-b249bc128193"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAttachClick",
+                "fn": "onAttachClick",
+                "implHandler": [
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#mailWindow #attach"
+            },
+            "designerId": "8628374d-ed36-4324-98df-c0a107777ff8"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAddClick",
+                "fn": "onAddClick",
+                "implHandler": [
+                    "if (Ext.getCmp('mailWindow').down('form').getForm().getValues().sentDate)",
+                    "{",
+                    "    Ext.Msg.alert('Attention','Ce mail a deja ete envoye, vous ne pouvez plus le modifier.');",
+                    "    return;",
+                    "}",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#mailWindow #add"
+            },
+            "designerId": "dc8b9d97-f13f-4103-b325-f9f688d26073"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onRemoveClick",
+                "fn": "onRemoveClick",
+                "implHandler": [
+                    "if (Ext.getCmp('mailWindow').down('form').getForm().getValues().sentDate)",
+                    "{",
+                    "    Ext.Msg.alert('Attention','Ce mail a deja ete envoye, vous ne pouvez plus le modifier.');",
+                    "    return;",
+                    "}",
+                    "",
+                    "//On enleve le contact selectionne",
+                    "var selection = this.getSousTraitantsDestMailGrid().selModel.getSelection();",
+                    "var myMail = this.getMailWindow().down('form').getValues();",
+                    "if (selection)",
+                    "{",
+                    "    if (myMail.id)",
+                    "    {",
+                    "        //Le mail est deja cree dans la DB,les liens Mails/SousTraitants sont donc aussi dans la DB ",
+                    "        Mails.removeLinkSousTraitant(myMail,selection[0].data,function(){",
+                    "            var linkStore = this.getMailLinkSousTraitantStore();",
+                    "            linkStore.proxy.extraParams = {mailId:myMail.id};",
+                    "            linkStore.load();",
+                    "        },this);",
+                    "    }",
+                    "    else",
+                    "    {",
+                    "        //Le mail n'est pas encore cree, on a donc juste a enlever les soustraitants du store...",
+                    "        var linkStore = this.getMailLinkSousTraitantStore();",
+                    "        linkStore.remove(selection[0]);",
+                    "    }",
+                    "",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#mailWindow #remove"
+            },
+            "designerId": "c8b0c197-cb23-4cf4-aa3d-f8b64f0042a8"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "saveMail",
+                "fn": "saveMail",
+                "designer|params": [
+                    "sendMail"
+                ],
+                "implHandler": [
+                    "//Pour sauvegarder un mail, il faut au moins un sous traitant, un sujet, un message",
+                    "",
+                    "",
+                    "",
+                    "var myWindow =this.getMailWindow();",
+                    "var myForm = myWindow.down('form').getForm();",
+                    "",
+                    "if (! myForm.isValid())",
+                    "{",
+                    "    Ext.Msg.alert('Attention','Certains champs sont requis');",
+                    "    return;",
+                    "}",
+                    "var myMail = myForm.getValues();",
+                    "",
+                    "",
+                    "if (myMail.id)",
+                    "{",
+                    "    //On update les eventuells modifications du mail",
+                    "    Mails.update(myMail, function(){",
+                    "        if(sendMail)",
+                    "        {",
+                    "            sousTraitantsData = this.getSousTraitantsRecords();",
+                    "            this.sendMail(myMail, sousTraitantsData, myWindow);",
+                    "        }",
+                    "        else",
+                    "        {",
+                    "            myWindow.close();",
+                    "            Ext.Msg.alert('Message','Votre courriel a bien ete sauvegarde.');",
+                    "            Ext.getCmp('mailsGrid').down('#refresh').fireEvent('click');",
+                    "            return;",
+                    "",
+                    "        }",
+                    "",
+                    "    }, this);",
+                    "}",
+                    "else",
+                    "{",
+                    "    //C'est un nouveau mail.",
+                    "    Mails.create(myMail, afterMailCreated, this);",
+                    "}",
+                    "",
+                    "",
+                    "function afterMailCreated(myMailCreated)",
+                    "{",
+                    "    var myMail = myMailCreated[0];",
+                    "    //Maintenant qu'on a le ID, on peut creer les liens",
+                    "    console.log(1);",
+                    "    sousTraitantsData = this.getSousTraitantsRecords();",
+                    "    //On sauvegarde les liens",
+                    "    console.log(2);",
+                    "    Mails.saveLinkSoustraitant(myMail, sousTraitantsData, function(){",
+                    "        if (sendMail)",
+                    "        {",
+                    "            this.sendMail(myMail, sousTraitantsData, myWindow);",
+                    "        }",
+                    "        else",
+                    "        {",
+                    "            myWindow.close();",
+                    "            Ext.Msg.alert('Message','Votre courriel a bien ete sauvegarde.');",
+                    "            Ext.getCmp('mailsGrid').down('#refresh').fireEvent('click');",
+                    "        }",
+                    "    }, this);",
+                    "",
+                    "}",
+                    "",
+                    "",
+                    ""
+                ]
+            },
+            "designerId": "29d07e05-fb7f-4269-b6df-8d8ae5e7568b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "sendMail",
+                "fn": "sendMail",
+                "designer|params": [
+                    "myMail",
+                    "sousTraitants",
+                    "myWindow"
+                ],
+                "implHandler": [
+                    "if (sousTraitants.length > 1)",
+                    "{",
+                    "    Ext.Msg.confirm('Attention',",
+                    "    'Vous etes sur le point d\\'envoyer un courriel a PLUSIEURS Sous Traitants. Etes vous sur ?',",
+                    "    function(button) {",
+                    "        if (button === 'yes') {",
+                    "            Mails.send(myMail,sousTraitants, function(){",
+                    "            Ext.MessageBox.alert('Votre mail a ete envoye avec succes!');})",
+                    "            Ext.getCmp('mailsGrid').down('#refresh').fireEvent('click');",
+                    "            myWindow.close();",
+                    "",
+                    "        } else {",
+                    "            return;",
+                    "        }",
+                    "    }, this);",
+                    "}",
+                    "else if (sousTraitants.length === 1 )",
+                    "{",
+                    "    Ext.Msg.confirm('Attention',",
+                    "    'Etes vous sur de vouloir envoyer le Courriel ?',",
+                    "    function(button) {",
+                    "        if (button === 'yes') {",
+                    "            Mails.send(myMail,sousTraitants, function(){",
+                    "            Ext.MessageBox.alert('Votre mail a ete envoye avec succes!');})",
+                    "            Ext.getCmp('mailsGrid').down('#refresh').fireEvent('click');",
+                    "            myWindow.close();",
+                    "",
+                    "",
+                    "        } else {",
+                    "            return;",
+                    "        }",
+                    "    }, this);",
+                    "}",
+                    "",
+                    "",
+                    ""
+                ]
+            },
+            "designerId": "da451860-2272-4fc4-a25c-05d00ba61c94"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "getSousTraitantsRecords",
+                "fn": "getSousTraitantsRecords",
+                "implHandler": [
+                    "console.log(this);",
+                    "var selectedRecords = this.getSousTraitantsDestMailGrid().store.data.items;",
+                    "var sousTraitantsData = [];",
+                    "var count = 0;",
+                    "for (var i in selectedRecords)",
+                    "{",
+                    "    record = selectedRecords[i];",
+                    "    sousTraitantsData[count]=record.data;",
+                    "    count++;",
+                    "}",
+                    "return sousTraitantsData;"
+                ]
+            },
+            "designerId": "0b297649-3d0a-40e5-847d-93d3a725a8b4"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "mailWindow",
+                "ref": "mailWindow",
+                "selector": "#mailWindow"
+            },
+            "designerId": "4401287f-a6f8-4fbe-a494-c65e7ed725d8"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "sousTraitantsDestMailGrid",
+                "ref": "sousTraitantsDestMailGrid",
+                "selector": "#mailWindow #sousTraitantsDestMailGrid"
+            },
+            "designerId": "f131a135-3a92-4ac7-90e3-9cbd126e3424"
+        }
+    ]
+}

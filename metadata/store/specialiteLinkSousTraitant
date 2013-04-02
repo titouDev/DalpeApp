@@ -1,0 +1,46 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "specialiteLinkSousTraitant",
+        "autoLoad": false,
+        "storeId": "specialiteLinkSousTraitant",
+        "model": "specialite"
+    },
+    "id": "ExtBox1-ext-gen16535",
+    "designerId": "77cd874a-4055-4882-aa62-739da0217360",
+    "cn": [
+        {
+            "type": "directproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyDirectProxy2",
+                "directFn": "SousTraitants.getSpecialites"
+            },
+            "designerId": "2d32566e-fdf5-4cff-a956-204310aad0d6",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader4",
+                        "root": "result"
+                    },
+                    "designerId": "e8956e65-9a71-45c2-8704-f5dbc8242067"
+                }
+            ]
+        }
+    ]
+}

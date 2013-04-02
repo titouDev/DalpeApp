@@ -1,0 +1,176 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "loginWindow",
+        "designer|userAlias": "loginWindow",
+        "autoShow": true,
+        "draggable": false,
+        "height": 280,
+        "id": "loginWindow",
+        "width": 302,
+        "resizable": [
+            "false"
+        ],
+        "layout": "fit",
+        "bodyBorder": false,
+        "closable": false,
+        "modal": true
+    },
+    "id": "ExtBox1-ext-gen15965",
+    "designerId": "57339c22-18af-42b2-8491-66d707a83680",
+    "cn": [
+        {
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "designer|userClassName": "MyPanel28",
+                "maxHeight": null,
+                "maxWidth": null,
+                "minHeight": null,
+                "minWidth": null,
+                "width": null,
+                "layout": "vbox",
+                "title": "Construction Julien Dalpé"
+            },
+            "designerId": "592b830f-f1b8-4acc-b893-4d993ccf1dd9",
+            "cn": [
+                {
+                    "type": "form",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyForm6",
+                        "border": null,
+                        "height": null,
+                        "itemId": "loginForm",
+                        "margin": null,
+                        "maxHeight": null,
+                        "maxWidth": null,
+                        "minHeight": null,
+                        "minWidth": null,
+                        "padding": null,
+                        "width": null,
+                        "bodyPadding": 10,
+                        "title": "Identification"
+                    },
+                    "designerId": "eb3bc084-43ff-4b65-ab8e-403f68f63221",
+                    "cn": [
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyTextField41",
+                                "maxHeight": 25,
+                                "name": "userName",
+                                "fieldLabel": "Nom d'utilisateur",
+                                "allowBlank": false,
+                                "blankText": "Ce champ est requis"
+                            },
+                            "designerId": "ace889a3-4cac-4fed-b8f1-f0165f119eae"
+                        },
+                        {
+                            "type": "textfield",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyTextField42",
+                                "itemId": "password",
+                                "maxHeight": 25,
+                                "inputType": "password",
+                                "name": "passWord",
+                                "fieldLabel": "Mot de passe",
+                                "allowBlank": false,
+                                "blankText": "Ce champ est requis"
+                            },
+                            "designerId": "64f96346-a1e7-4a69-bd41-45759b14f909"
+                        },
+                        {
+                            "type": "toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "bottom",
+                                "designer|userClassName": "MyToolbar13",
+                                "maxWidth": null,
+                                "minWidth": null,
+                                "width": null
+                            },
+                            "designerId": "29d89bc4-f2d4-44b7-af67-0f49a045218d",
+                            "cn": [
+                                {
+                                    "type": "tbfill",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "designer|userClassName": "MyFill4"
+                                    },
+                                    "designerId": "84ddd4da-7940-4a9c-ac76-a250752a05e4"
+                                },
+                                {
+                                    "type": "button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "designer|userClassName": "MyButton25",
+                                        "itemId": "login",
+                                        "text": "Se connecter..."
+                                    },
+                                    "designerId": "4f6c24b7-5a67-4b35-97c6-4d607aac42fa"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyImg1",
+                        "height": null,
+                        "margin": null,
+                        "maxWidth": 280,
+                        "minWidth": 280,
+                        "width": 280,
+                        "src": "images/dalpe.jpg"
+                    },
+                    "designerId": "38349bbe-789a-45d8-b088-e1204eb9cc79"
+                }
+            ]
+        }
+    ]
+}

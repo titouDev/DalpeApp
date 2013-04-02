@@ -1,0 +1,195 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "windowAddSpecialite",
+        "designer|userAlias": "windowAddSpecialite",
+        "height": 145,
+        "id": "windowAddSpecialite",
+        "width": 247,
+        "layout": "fit",
+        "title": "Choisissez une specialite",
+        "constrain": true,
+        "modal": true
+    },
+    "id": "ExtBox1-ext-gen6323",
+    "designerId": "2d33d2c4-28b5-4543-abe5-e62e5c54d882",
+    "cn": [
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom",
+                "designer|userClassName": "MyToolbar7"
+            },
+            "designerId": "1f602a64-e840-4116-9ed5-6e8ffddfabf3",
+            "cn": [
+                {
+                    "type": "tbspacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MySpacer1",
+                        "height": 13,
+                        "width": 37
+                    },
+                    "designerId": "8686d71b-6c8b-4225-a478-8d2b20849986"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton13",
+                        "text": "Ajouter"
+                    },
+                    "designerId": "382f7264-207d-4e55-add6-aaab474a4ff1",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "handler",
+                                "fn": "handler",
+                                "designer|params": [
+                                    "button",
+                                    "event"
+                                ],
+                                "implHandler": [
+                                    "//On va chercher la specialite selectionnee dans le comboBox.",
+                                    "",
+                                    "var myCombo = button.up('window').down('#comboSpecialites');",
+                                    "",
+                                    "var mySpecialite = Ext.create(dalpeApp.model.specialite, {",
+                                    "    id  : myCombo.value,",
+                                    "    name:myCombo.getValue()",
+                                    "});",
+                                    "",
+                                    "var mySousTraitant = Ext.getCmp('editSousTraitantWindow').down('form').getValues();",
+                                    "",
+                                    "SousTraitants.setLinkWithSpecialite(mySpecialite.data, mySousTraitant);",
+                                    "",
+                                    "",
+                                    "Ext.getCmp('editSousTraitantWindow').down('#specialitesGrid').store.load();",
+                                    "",
+                                    "button.up('window').close();",
+                                    ""
+                                ]
+                            },
+                            "designerId": "e8ed5876-880e-4113-b05a-080fdd0d73b0"
+                        }
+                    ]
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton14",
+                        "text": "Annuler"
+                    },
+                    "designerId": "54722650-5f1f-4f9c-8863-eacad92ff20c",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "handler",
+                                "fn": "handler",
+                                "designer|params": [
+                                    "button",
+                                    "event"
+                                ],
+                                "implHandler": [
+                                    "button.up('window').close();"
+                                ]
+                            },
+                            "designerId": "1f6bcf99-8fb9-4cd8-9fe0-2b345ca0dac8"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "designer|userClassName": "MyPanel16",
+                "layout": "vbox",
+                "title": null
+            },
+            "designerId": "2af955fd-28d6-4224-bca2-c02075162b92",
+            "cn": [
+                {
+                    "type": "combobox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyComboBox1",
+                        "itemId": "comboSpecialites",
+                        "margin": 2,
+                        "fieldLabel": null,
+                        "autoSelect": false,
+                        "displayField": "name",
+                        "queryMode": "local",
+                        "store": "specialites",
+                        "valueField": "id"
+                    },
+                    "designerId": "44993502-397c-4f02-a0b0-5f73ddeb294b"
+                },
+                {
+                    "type": "label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "layout|margins": "10",
+                        "designer|userClassName": "MyLabel1",
+                        "disabled": true,
+                        "text": "(ecrire dans la boite pour creer une nouvelle specialite)"
+                    },
+                    "designerId": "ece905e2-3d6d-4b5e-ac1c-7178d0e59876"
+                }
+            ]
+        }
+    ]
+}

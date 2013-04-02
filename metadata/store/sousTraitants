@@ -1,0 +1,58 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "sousTraitants",
+        "autoLoad": true,
+        "autoSync": true,
+        "storeId": "sousTraitants",
+        "model": "sousTraitant",
+        "remoteSort": false
+    },
+    "id": "ExtBox1-ext-gen11739",
+    "designerId": "e0f02898-522d-4dc3-a2e1-2ad3f4b2dd2b",
+    "cn": [
+        {
+            "type": "directproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyDirectProxy",
+                "api": [
+                    "{",
+                    "create:SousTraitants.create,",
+                    "destroy:SousTraitants.delete,",
+                    "update:SousTraitants.update,",
+                    "read:SousTraitants.get",
+                    "}"
+                ],
+                "directFn": "SousTraitants.get",
+                "paramOrder": null
+            },
+            "designerId": "34a4e9cc-9e3b-4050-aca8-69bc4c7b4c40",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader6",
+                        "root": "result",
+                        "record": null
+                    },
+                    "designerId": "c40c4fae-fd47-4681-99c9-464e30e0981b"
+                }
+            ]
+        }
+    ]
+}

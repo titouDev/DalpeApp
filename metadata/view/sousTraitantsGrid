@@ -1,0 +1,261 @@
+{
+    "type": "gridpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "sousTraitantsGrid",
+        "designer|userAlias": "mygridpanel2",
+        "id": "sousTraitantsGrid",
+        "title": null,
+        "store": null
+    },
+    "id": "ExtBox1-ext-gen3838",
+    "designerId": "c7a01459-e495-414d-954c-22d6ec98ab69",
+    "cn": [
+        {
+            "type": "gridview",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGridView2"
+            },
+            "configAlternates": {
+                "loadMask": "boolean"
+            },
+            "designerId": "45131dde-5e89-4698-a2a6-9fdb02d9a505",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onGridviewBeforeRefresh",
+                        "fn": "onGridviewBeforeRefresh",
+                        "implHandler": [
+                            "abstractview.scrollTop = abstractview.container.dom.firstChild.scrollTop;"
+                        ],
+                        "name": "beforerefresh",
+                        "scope": "me"
+                    },
+                    "designerId": "8e5ccdd2-22da-409a-95a2-9cdf7e34f683"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "onGridviewRefresh",
+                        "fn": "onGridviewRefresh",
+                        "implHandler": [
+                            "abstractview.container.dom.firstChild.scrollTop = abstractview.scrollTop;"
+                        ],
+                        "name": "refresh",
+                        "scope": "me"
+                    },
+                    "designerId": "53455f40-9c8a-40c4-8a45-b1b9bb6820ea"
+                }
+            ]
+        },
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "designer|userClassName": "MyToolbar1"
+            },
+            "designerId": "59bbd4ef-7374-4dd8-8aa9-4cd03e950bc4",
+            "cn": [
+                {
+                    "type": "combobox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "listConfig": [
+                            "{    loadingText: 'Searching...',",
+                            "                emptyText: 'No matching posts found.',",
+                            "                getInnerTpl: function() {",
+                            "                    console.log('[values]');",
+                            "                    return '<h3>{name}</h3>';",
+                            "                }",
+                            "}"
+                        ],
+                        "layout|flex": null,
+                        "designer|userClassName": "MyComboBox2",
+                        "itemId": "comboSpecialites",
+                        "width": 251,
+                        "fieldLabel": "Specialite",
+                        "labelWidth": 70,
+                        "displayField": "name",
+                        "minChars": 0,
+                        "queryMode": "local",
+                        "store": "specialites",
+                        "typeAhead": true,
+                        "typeAheadDelay": 0,
+                        "valueField": "id"
+                    },
+                    "configAlternates": {
+                        "listConfig": "object"
+                    },
+                    "designerId": "b64f1550-a2f1-4c09-be21-db32651c9009",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "listConfig",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyTextField",
+                        "itemId": "searchText",
+                        "fieldLabel": "Recherche Rapide"
+                    },
+                    "designerId": "45d2adc7-93d0-4ca2-ab82-b148d5276688"
+                },
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton4",
+                        "itemId": "addSousTraitant",
+                        "text": "Ajouter un sous traitant"
+                    },
+                    "designerId": "50696ec3-f8ba-42bf-bbd1-54c898f93bc2"
+                }
+            ]
+        },
+        {
+            "type": "templatecolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyTemplateColumn",
+                "width": 200,
+                "dataIndex": "name",
+                "flex": 3,
+                "text": "Societé"
+            },
+            "designerId": "bd764a69-2923-44c1-b490-a9c2dd5584f7",
+            "cn": [
+                {
+                    "type": "template",
+                    "reference": {
+                        "name": "tpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "tpl",
+                        "implHandler": [
+                            "<font style=\"font-weight: bold; font-size: 13px;\">{name}</font><br>",
+                            "Contact:&nbsp;&nbsp;&nbsp;&nbsp;{contactName}<br>",
+                            "Note:&nbsp;&nbsp;&nbsp;&nbsp;{note}"
+                        ],
+                        "designer|displayName": "tpl"
+                    },
+                    "designerId": "d7e7041d-9e2a-40a4-9382-27a054b65fd3"
+                }
+            ]
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn22",
+                "width": 250,
+                "dataIndex": "mail",
+                "flex": 1,
+                "text": "Courriel"
+            },
+            "designerId": "581046af-330c-4c17-8527-63fc294eb489"
+        },
+        {
+            "type": "templatecolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyTemplateColumn1",
+                "width": 200,
+                "dataIndex": "phone",
+                "flex": 1,
+                "text": "Telephones"
+            },
+            "designerId": "e23401d3-409d-4c9f-90b0-37fefc758d91",
+            "cn": [
+                {
+                    "type": "template",
+                    "reference": {
+                        "name": "tpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "tpl",
+                        "implHandler": [
+                            "Telephone:&nbsp;&nbsp;{phone}<br>",
+                            "Cellulaire:&nbsp;&nbsp;{cell}<br>",
+                            "Fax:&nbsp;&nbsp;{fax}<br>"
+                        ],
+                        "designer|displayName": "tpl"
+                    },
+                    "designerId": "8e625fcc-41c1-42eb-ae58-376690c34c9c"
+                }
+            ]
+        },
+        {
+            "type": "rowselectionmodel",
+            "reference": {
+                "name": "selModel",
+                "type": "object"
+            },
+            "codeClass": "Ext.selection.RowModel",
+            "userConfig": {
+                "designer|userClassName": "MyRowSelectionModel1",
+                "mode": "MULTI"
+            },
+            "designerId": "340753d9-a66a-4386-80fb-40c293777d6a"
+        }
+    ]
+}

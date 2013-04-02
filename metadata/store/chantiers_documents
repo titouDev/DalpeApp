@@ -1,0 +1,46 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "chantiers_documents",
+        "autoLoad": true,
+        "storeId": "MyJsonStore11",
+        "model": "document"
+    },
+    "id": "ExtBox1-ext-gen21615",
+    "designerId": "990efb39-4987-4589-8cb2-7aab3f5dcb43",
+    "cn": [
+        {
+            "type": "directproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyDirectProxy4",
+                "directFn": "Chantiers.get_documents"
+            },
+            "designerId": "749b14fa-2dcf-4c90-8bce-721125d0f7e3",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader2",
+                        "root": "result"
+                    },
+                    "designerId": "160c423c-6f55-4c87-85dc-dd348d8ae61f"
+                }
+            ]
+        }
+    ]
+}

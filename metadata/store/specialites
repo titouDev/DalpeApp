@@ -1,0 +1,65 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "specialites",
+        "autoLoad": true,
+        "storeId": "MyDirectStore2",
+        "model": "specialite"
+    },
+    "id": "ExtBox1-ext-gen4529",
+    "designerId": "7c30472b-a80e-4251-8568-3f963945a7a4",
+    "cn": [
+        {
+            "type": "directproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyDirectProxy2",
+                "directFn": "SousTraitants.getSpecialites"
+            },
+            "designerId": "a1648727-d4e5-4f6e-8839-ad8ec488f881",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader4",
+                        "root": "result"
+                    },
+                    "designerId": "af50ecbc-3dd5-4309-b582-a83042d37bad"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onDirectstoreLoad",
+                "fn": "onDirectstoreLoad",
+                "implHandler": [
+                    "//On veut pouvoir filtrer par toutes les specialites.",
+                    "store.insert(0,{id:0,name:'...'});"
+                ],
+                "name": "load",
+                "scope": "me"
+            },
+            "designerId": "af14803e-7be6-4e62-8d2a-11d768ea3baa"
+        }
+    ]
+}

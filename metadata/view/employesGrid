@@ -1,0 +1,185 @@
+{
+    "type": "gridpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "employesGrid",
+        "designer|userAlias": "employesGrid",
+        "id": "employesGrid",
+        "title": null,
+        "store": "employes"
+    },
+    "id": "ExtBox1-ext-gen5760",
+    "designerId": "2c7176a8-b850-4b98-a7c6-4d5b56a5fe93",
+    "cn": [
+        {
+            "type": "gridview",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGridView3"
+            },
+            "configAlternates": {
+                "loadMask": "boolean"
+            },
+            "designerId": "5af97ed6-c246-448a-9ca5-a28bb963f033"
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn15",
+                "dataIndex": "photo",
+                "flex": 1,
+                "text": "Photo"
+            },
+            "designerId": "fe642c76-d051-4fe0-97b5-fd94669934dc",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "renderer",
+                        "fn": "renderer",
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "implHandler": [
+                            "if (value)",
+                            "{",
+                            "    return Ext.String.format('<img src=\"{0}\" width=\"100%>', value);",
+                            "}",
+                            "return '';"
+                        ]
+                    },
+                    "designerId": "bf6094d6-06bf-4c5c-a503-50c55d5b7b64"
+                }
+            ]
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn17",
+                "dataIndex": "prenom",
+                "flex": 1,
+                "text": "Prenom"
+            },
+            "designerId": "20f1a650-dfb4-4e5d-b79c-7e1770f5c4fd"
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn18",
+                "dataIndex": "nom",
+                "flex": 1,
+                "text": "Nom"
+            },
+            "designerId": "badbd3a0-926f-4ee9-b488-ca98aa1ab5ff"
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn19",
+                "dataIndex": "mail",
+                "flex": 1.5,
+                "text": "Mail"
+            },
+            "designerId": "0c0a0d01-a248-4988-82a2-2d477d289475"
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn21",
+                "dataIndex": "phone",
+                "flex": 1,
+                "text": "Phone"
+            },
+            "designerId": "f9c5c384-ec5a-4eb2-a9a2-cf092ed0c5c9"
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn22",
+                "dataIndex": "cell",
+                "flex": 1,
+                "text": "Cell"
+            },
+            "designerId": "023ea77f-4b60-4d00-8d91-4a0a9e929a27"
+        },
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "top",
+                "designer|userClassName": "MyToolbar3"
+            },
+            "designerId": "4963b133-d478-4103-8786-58d9ff944076",
+            "cn": [
+                {
+                    "type": "button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyButton5",
+                        "itemId": "addEmploye",
+                        "text": "Ajouter un employe"
+                    },
+                    "designerId": "7d8f3952-a14a-4611-a621-3b3599214036"
+                }
+            ]
+        }
+    ]
+}

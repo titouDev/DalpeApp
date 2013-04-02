@@ -1,0 +1,17 @@
+{
+    "type": "progressbar",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "pBar",
+        "designer|userAlias": "pBar",
+        "id": "pBar",
+        "width": 200,
+        "value": 0.4
+    },
+    "id": "ExtBox1-ext-gen78289",
+    "designerId": "a03cf25d-ff7f-4815-ae74-15ff51681d7c"
+}

@@ -1,0 +1,596 @@
+{
+    "name": "DalpeApp",
+    "settings": {
+        "urlPrefix": "http://192.168.1.6/senchaProjects/DalpeApp",
+        "spacesToIndent": 4,
+        "exportPath": "/Applications/MAMP/htdocs",
+        "sdkPath": "",
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "codeGenFormat": "Class",
+        "senchaIoKey": "",
+        "senchaIoPath": "http://extjs.cachefly.net/designer/IO/",
+        "instantiateStore": true,
+        "saveOnDeploy": false,
+        "appName": "MyApp",
+        "cssPath": ""
+    },
+    "xdsVersion": "2.1.0",
+    "xdsBuild": 678,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000498,
+    "framework": "ext40",
+    "topInstanceFileMap": {
+        "e4c96884-e2eb-49b7-a615-451f20b564e5": {
+            "paths": [
+                "metadata/view/appViewport",
+                "app/view/override/appViewport.js",
+                "app/view/appViewport.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "appViewport"
+        },
+        "8dc5ddeb-520a-4981-ae6b-0d6ad639afee": {
+            "paths": [
+                "metadata/store/employes",
+                "app/store/override/employes.js",
+                "app/store/employes.js"
+            ],
+            "className": "employes"
+        },
+        "b46812cd-c52b-4a66-9d86-1e213479b598": {
+            "paths": [
+                "metadata/model/employe",
+                "app/model/override/employe.js",
+                "app/model/employe.js"
+            ],
+            "className": "employe"
+        },
+        "e4d3bafa-15b2-4e10-a635-0f60eb93a846": {
+            "paths": [
+                "metadata/model/sousTraitant",
+                "app/model/override/sousTraitant.js",
+                "app/model/sousTraitant.js"
+            ],
+            "className": "sousTraitant"
+        },
+        "d61f7263-e573-4a70-9e2e-e9dc378117e0": {
+            "paths": [
+                "metadata/controller/sousTraitants",
+                "app/controller/override/sousTraitants.js",
+                "app/controller/sousTraitants.js"
+            ],
+            "className": "sousTraitants"
+        },
+        "c7a01459-e495-414d-954c-22d6ec98ab69": {
+            "paths": [
+                "metadata/view/sousTraitantsGrid",
+                "app/view/override/sousTraitantsGrid.js",
+                "app/view/sousTraitantsGrid.js"
+            ],
+            "className": "sousTraitantsGrid"
+        },
+        "fa160326-b7fa-4747-896d-d70d65968f22": {
+            "paths": [
+                "metadata/store/mails",
+                "app/store/override/mails.js",
+                "app/store/mails.js"
+            ],
+            "className": "mails"
+        },
+        "ab15740c-e916-430c-b9f1-319b39e1db1b": {
+            "paths": [
+                "metadata/model/mail",
+                "app/model/override/mail.js",
+                "app/model/mail.js"
+            ],
+            "className": "mail"
+        },
+        "8953454d-3ea4-4a30-ad4c-01f5587be068": {
+            "paths": [
+                "metadata/controller/employes",
+                "app/controller/override/employes.js",
+                "app/controller/employes.js"
+            ],
+            "className": "employes"
+        },
+        "2c7176a8-b850-4b98-a7c6-4d5b56a5fe93": {
+            "paths": [
+                "metadata/view/employesGrid",
+                "app/view/override/employesGrid.js",
+                "app/view/employesGrid.js"
+            ],
+            "className": "employesGrid"
+        },
+        "36e5f604-1eda-473d-8a66-cbfc9a38d0ba": {
+            "paths": [
+                "metadata/view/sousTraitantsContextMenu",
+                "app/view/override/sousTraitantsContextMenu.js",
+                "app/view/sousTraitantsContextMenu.js"
+            ],
+            "className": "sousTraitantsContextMenu"
+        },
+        "e0f02898-522d-4dc3-a2e1-2ad3f4b2dd2b": {
+            "paths": [
+                "metadata/store/sousTraitants",
+                "app/store/override/sousTraitants.js",
+                "app/store/sousTraitants.js"
+            ],
+            "className": "sousTraitants"
+        },
+        "fab2fb42-6655-4fb9-8006-128da143a679": {
+            "paths": [
+                "metadata/view/mailWindow",
+                "app/view/override/mailWindow.js",
+                "app/view/mailWindow.js"
+            ],
+            "className": "mailWindow"
+        },
+        "2e155090-8c35-4c70-ba95-ef0c1d98bde2": {
+            "paths": [
+                "metadata/resource/css"
+            ],
+            "className": "css"
+        },
+        "01997f0d-c80f-45ee-bd73-f292af411a55": {
+            "paths": [
+                "metadata/controller/mailWindowController",
+                "app/controller/override/mailWindowController.js",
+                "app/controller/mailWindowController.js"
+            ],
+            "className": "mailWindowController"
+        },
+        "a79bbea3-d4de-47b9-b24e-a9e513a27156": {
+            "paths": [
+                "metadata/store/mailLinkSousTraitant",
+                "app/store/override/mailLinkSousTraitant.js",
+                "app/store/mailLinkSousTraitant.js"
+            ],
+            "className": "mailLinkSousTraitant"
+        },
+        "a7b9c5bb-d13a-478d-94f3-c9bc7a5568bd": {
+            "paths": [
+                "metadata/resource/direct"
+            ],
+            "className": "direct"
+        },
+        "06ca827d-4e64-431a-bedd-3b4432a274f5": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "a06c8ee8-1e25-4228-8640-255e15a32384": {
+            "paths": [
+                "metadata/view/editSousTraitantWindow",
+                "app/view/override/editSousTraitantWindow.js",
+                "app/view/editSousTraitantWindow.js"
+            ],
+            "className": "editSousTraitantWindow"
+        },
+        "2d33d2c4-28b5-4543-abe5-e62e5c54d882": {
+            "paths": [
+                "metadata/view/windowAddSpecialite",
+                "app/view/override/windowAddSpecialite.js",
+                "app/view/windowAddSpecialite.js"
+            ],
+            "className": "windowAddSpecialite"
+        },
+        "7c30472b-a80e-4251-8568-3f963945a7a4": {
+            "paths": [
+                "metadata/store/specialites",
+                "app/store/override/specialites.js",
+                "app/store/specialites.js"
+            ],
+            "className": "specialites"
+        },
+        "237b6ba4-2399-4586-aab1-258e76cdedb7": {
+            "paths": [
+                "metadata/model/specialite",
+                "app/model/override/specialite.js",
+                "app/model/specialite.js"
+            ],
+            "className": "specialite"
+        },
+        "77cd874a-4055-4882-aa62-739da0217360": {
+            "paths": [
+                "metadata/store/specialiteLinkSousTraitant",
+                "app/store/override/specialiteLinkSousTraitant.js",
+                "app/store/specialiteLinkSousTraitant.js"
+            ],
+            "className": "specialiteLinkSousTraitant"
+        },
+        "2002c995-32ee-4cc1-948c-651888aaf1e0": {
+            "paths": [
+                "metadata/view/editEmployeWindow",
+                "app/view/override/editEmployeWindow.js",
+                "app/view/editEmployeWindow.js"
+            ],
+            "className": "editEmployeWindow"
+        },
+        "54677ed2-cc35-4daa-9ef1-2454cdeb4f60": {
+            "paths": [
+                "metadata/view/employesHoursGrid",
+                "app/view/override/employesHoursGrid.js",
+                "app/view/employesHoursGrid.js"
+            ],
+            "className": "employesHoursGrid"
+        },
+        "30e085bb-8e66-4146-b012-634d977214ef": {
+            "paths": [
+                "metadata/model/client",
+                "app/model/override/client.js",
+                "app/model/client.js"
+            ],
+            "className": "client"
+        },
+        "a0d5601b-11bf-4930-97a3-f49e2073affe": {
+            "paths": [
+                "metadata/model/chantier",
+                "app/model/override/chantier.js",
+                "app/model/chantier.js"
+            ],
+            "className": "chantier"
+        },
+        "62f30b2a-c8b5-4d9d-ac99-268643d73069": {
+            "paths": [
+                "metadata/model/employeHour",
+                "app/model/override/employeHour.js",
+                "app/model/employeHour.js"
+            ],
+            "className": "employeHour"
+        },
+        "9b41be7c-9f37-4d7b-a77d-f0f984650a46": {
+            "paths": [
+                "metadata/view/clientsGrid",
+                "app/view/override/clientsGrid.js",
+                "app/view/clientsGrid.js"
+            ],
+            "className": "clientsGrid"
+        },
+        "cd6fbed6-fd8f-4928-9289-c6a6d316cffb": {
+            "paths": [
+                "metadata/store/clients",
+                "app/store/override/clients.js",
+                "app/store/clients.js"
+            ],
+            "className": "clients"
+        },
+        "2265f12e-0040-4598-a37f-e276c46a78d5": {
+            "paths": [
+                "metadata/view/editClientWindow",
+                "app/view/override/editClientWindow.js",
+                "app/view/editClientWindow.js"
+            ],
+            "className": "editClientWindow"
+        },
+        "12caf886-dbf7-471f-b353-82f5b2c7f27f": {
+            "paths": [
+                "metadata/controller/clients",
+                "app/controller/override/clients.js",
+                "app/controller/clients.js"
+            ],
+            "className": "clients"
+        },
+        "77914f77-d260-4726-9454-e69b4095c093": {
+            "paths": [
+                "metadata/view/chantiersGrid",
+                "app/view/override/chantiersGrid.js",
+                "app/view/chantiersGrid.js"
+            ],
+            "className": "chantiersGrid"
+        },
+        "4bc615f2-00bd-457d-91f4-1c37c29ca69b": {
+            "paths": [
+                "metadata/store/chantiers",
+                "app/store/override/chantiers.js",
+                "app/store/chantiers.js"
+            ],
+            "className": "chantiers"
+        },
+        "5358e90e-5181-4e9f-bc2d-6b13a5016669": {
+            "paths": [
+                "metadata/controller/chantiers",
+                "app/controller/override/chantiers.js",
+                "app/controller/chantiers.js"
+            ],
+            "className": "chantiers"
+        },
+        "08df4031-2dee-45bd-b50d-13ea733e02e1": {
+            "paths": [
+                "metadata/view/editChantierWindow",
+                "app/view/override/editChantierWindow.js",
+                "app/view/editChantierWindow.js"
+            ],
+            "className": "editChantierWindow"
+        },
+        "8d94fc42-0d4c-4942-9e7b-10f6b970255e": {
+            "paths": [
+                "metadata/model/chantierStatus",
+                "app/model/override/chantierStatus.js",
+                "app/model/chantierStatus.js"
+            ],
+            "className": "chantierStatus"
+        },
+        "d5c3bead-69f4-48d0-a6bc-1fdf63876706": {
+            "paths": [
+                "metadata/resource/js"
+            ],
+            "className": "js"
+        },
+        "57339c22-18af-42b2-8491-66d707a83680": {
+            "paths": [
+                "metadata/view/loginWindow",
+                "app/view/override/loginWindow.js",
+                "app/view/loginWindow.js"
+            ],
+            "className": "loginWindow"
+        },
+        "c53357d6-6534-42c5-8bea-8fd0205ff613": {
+            "paths": [
+                "metadata/controller/loginWindow",
+                "app/controller/override/loginWindow.js",
+                "app/controller/loginWindow.js"
+            ],
+            "className": "loginWindow"
+        },
+        "7f2562eb-19a6-48f4-a495-abd4d8fc1bef": {
+            "paths": [
+                "metadata/controller/global",
+                "app/controller/override/global.js",
+                "app/controller/global.js"
+            ],
+            "className": "global"
+        },
+        "ddee1a8c-46be-4052-955e-2953d9a66b74": {
+            "paths": [
+                "metadata/store/employes_hours",
+                "app/store/override/employes_hours.js",
+                "app/store/employes_hours.js"
+            ],
+            "className": "employes_hours"
+        },
+        "05102a25-9d0c-4e0e-a982-7d3866884cb7": {
+            "paths": [
+                "metadata/store/chantiers_hours",
+                "app/store/override/chantiers_hours.js",
+                "app/store/chantiers_hours.js"
+            ],
+            "className": "chantiers_hours"
+        },
+        "8df80686-4286-4022-97f6-7256a0c036ad": {
+            "paths": [
+                "metadata/store/documents",
+                "app/store/override/documents.js",
+                "app/store/documents.js"
+            ],
+            "className": "documents"
+        },
+        "ba030224-662d-4780-9dd2-cad1396913e8": {
+            "paths": [
+                "metadata/store/document_type",
+                "app/store/override/document_type.js",
+                "app/store/document_type.js"
+            ],
+            "className": "document_type"
+        },
+        "8cec37a7-50df-4c9e-a730-be67b873404b": {
+            "paths": [
+                "metadata/model/document",
+                "app/model/override/document.js",
+                "app/model/document.js"
+            ],
+            "className": "document"
+        },
+        "bd610d90-785c-4610-83a6-1e377d54eff6": {
+            "paths": [
+                "metadata/model/document_type",
+                "app/model/override/document_type.js",
+                "app/model/document_type.js"
+            ],
+            "className": "document_type"
+        },
+        "0883665a-4d9e-453c-a13f-bab460f4c2d8": {
+            "paths": [
+                "metadata/view/editEmployeHour",
+                "app/view/override/editEmployeHour.js",
+                "app/view/editEmployeHour.js"
+            ],
+            "className": "editEmployeHour"
+        },
+        "5b99a48a-3f84-4fe8-a414-2e88c6d08eb2": {
+            "paths": [
+                "metadata/controller/logHours",
+                "app/controller/override/logHours.js",
+                "app/controller/logHours.js"
+            ],
+            "className": "logHours"
+        },
+        "01dacb25-49fe-4aad-95bf-fbc2b747c97f": {
+            "paths": [
+                "metadata/store/employes_logHours",
+                "app/store/override/employes_logHours.js",
+                "app/store/employes_logHours.js"
+            ],
+            "className": "employes_logHours"
+        },
+        "15cabc8d-f149-467a-b6e1-f265c5cd1bc8": {
+            "paths": [
+                "metadata/view/mailsGrid",
+                "app/view/override/mailsGrid.js",
+                "app/view/mailsGrid.js"
+            ],
+            "className": "mailsGrid"
+        },
+        "284b3add-9c9a-4e61-a78e-0dda73ffdccf": {
+            "paths": [
+                "metadata/store/camions",
+                "app/store/override/camions.js",
+                "app/store/camions.js"
+            ],
+            "className": "camions"
+        },
+        "c4a306d4-c285-4307-ba62-ad76109582f7": {
+            "paths": [
+                "metadata/store/colonnes",
+                "app/store/override/colonnes.js",
+                "app/store/colonnes.js"
+            ],
+            "className": "colonnes"
+        },
+        "b87c47e7-ac0e-4c00-928f-440a452d61a8": {
+            "paths": [
+                "metadata/store/databases",
+                "app/store/override/databases.js",
+                "app/store/databases.js"
+            ],
+            "className": "databases"
+        },
+        "e5a999f6-34ab-4a5b-9507-4f02d03426d2": {
+            "paths": [
+                "metadata/store/sousTraitantsDestMail",
+                "app/store/override/sousTraitantsDestMail.js",
+                "app/store/sousTraitantsDestMail.js"
+            ],
+            "className": "sousTraitantsDestMail"
+        },
+        "6e11ae97-e15a-45d4-9386-3d63092f49b8": {
+            "paths": [
+                "metadata/controller/editSousTraitantController",
+                "app/controller/override/editSousTraitantController.js",
+                "app/controller/editSousTraitantController.js"
+            ],
+            "className": "editSousTraitantController"
+        },
+        "5a7cb532-ee0b-4cc8-9f29-ce59363ba7bd": {
+            "paths": [
+                "metadata/model/camion",
+                "app/model/override/camion.js",
+                "app/model/camion.js"
+            ],
+            "className": "camion"
+        },
+        "7871350a-2c6b-44fc-999c-9467978f08c5": {
+            "paths": [
+                "metadata/model/colonne",
+                "app/model/override/colonne.js",
+                "app/model/colonne.js"
+            ],
+            "className": "colonne"
+        },
+        "2ac47141-f17c-48e0-883b-8f12db2f9e18": {
+            "paths": [
+                "metadata/model/dataBase",
+                "app/model/override/dataBase.js",
+                "app/model/dataBase.js"
+            ],
+            "className": "dataBase"
+        },
+        "c430ba9e-3bf1-4371-bc26-1825eb9e5251": {
+            "paths": [
+                "metadata/controller/editEmploye",
+                "app/controller/override/editEmploye.js",
+                "app/controller/editEmploye.js"
+            ],
+            "className": "editEmploye"
+        },
+        "990efb39-4987-4589-8cb2-7aab3f5dcb43": {
+            "paths": [
+                "metadata/store/chantiers_documents",
+                "app/store/override/chantiers_documents.js",
+                "app/store/chantiers_documents.js"
+            ],
+            "className": "chantiers_documents"
+        },
+        "9aff4ed1-3fba-4dd2-92e1-69d109f286bb": {
+            "paths": [
+                "metadata/model/chantier_link_documents",
+                "app/model/override/chantier_link_documents.js",
+                "app/model/chantier_link_documents.js"
+            ],
+            "className": "chantier_link_documents"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "15cabc8d-f149-467a-b6e1-f265c5cd1bc8",
+            "2c7176a8-b850-4b98-a7c6-4d5b56a5fe93",
+            "9b41be7c-9f37-4d7b-a77d-f0f984650a46",
+            "c7a01459-e495-414d-954c-22d6ec98ab69",
+            "e4c96884-e2eb-49b7-a615-451f20b564e5",
+            "fab2fb42-6655-4fb9-8006-128da143a679",
+            "36e5f604-1eda-473d-8a66-cbfc9a38d0ba",
+            "a06c8ee8-1e25-4228-8640-255e15a32384",
+            "2002c995-32ee-4cc1-948c-651888aaf1e0",
+            "2265f12e-0040-4598-a37f-e276c46a78d5",
+            "08df4031-2dee-45bd-b50d-13ea733e02e1",
+            "2d33d2c4-28b5-4543-abe5-e62e5c54d882",
+            "54677ed2-cc35-4daa-9ef1-2454cdeb4f60",
+            "77914f77-d260-4726-9454-e69b4095c093",
+            "57339c22-18af-42b2-8491-66d707a83680",
+            "0883665a-4d9e-453c-a13f-bab460f4c2d8"
+        ],
+        "store": [
+            "284b3add-9c9a-4e61-a78e-0dda73ffdccf",
+            "c4a306d4-c285-4307-ba62-ad76109582f7",
+            "b87c47e7-ac0e-4c00-928f-440a452d61a8",
+            "e5a999f6-34ab-4a5b-9507-4f02d03426d2",
+            "8dc5ddeb-520a-4981-ae6b-0d6ad639afee",
+            "8df80686-4286-4022-97f6-7256a0c036ad",
+            "ba030224-662d-4780-9dd2-cad1396913e8",
+            "ddee1a8c-46be-4052-955e-2953d9a66b74",
+            "01dacb25-49fe-4aad-95bf-fbc2b747c97f",
+            "05102a25-9d0c-4e0e-a982-7d3866884cb7",
+            "cd6fbed6-fd8f-4928-9289-c6a6d316cffb",
+            "4bc615f2-00bd-457d-91f4-1c37c29ca69b",
+            "990efb39-4987-4589-8cb2-7aab3f5dcb43",
+            "fa160326-b7fa-4747-896d-d70d65968f22",
+            "fa160326-b7fa-4747-896d-d70d65968f22",
+            "e0f02898-522d-4dc3-a2e1-2ad3f4b2dd2b",
+            "a79bbea3-d4de-47b9-b24e-a9e513a27156",
+            "7c30472b-a80e-4251-8568-3f963945a7a4",
+            "77cd874a-4055-4882-aa62-739da0217360"
+        ],
+        "controller": [
+            "6e11ae97-e15a-45d4-9386-3d63092f49b8",
+            "d61f7263-e573-4a70-9e2e-e9dc378117e0",
+            "c430ba9e-3bf1-4371-bc26-1825eb9e5251",
+            "8953454d-3ea4-4a30-ad4c-01f5587be068",
+            "01997f0d-c80f-45ee-bd73-f292af411a55",
+            "01997f0d-c80f-45ee-bd73-f292af411a55",
+            "12caf886-dbf7-471f-b353-82f5b2c7f27f",
+            "5358e90e-5181-4e9f-bc2d-6b13a5016669",
+            "c53357d6-6534-42c5-8bea-8fd0205ff613",
+            "c53357d6-6534-42c5-8bea-8fd0205ff613",
+            "7f2562eb-19a6-48f4-a495-abd4d8fc1bef",
+            "5b99a48a-3f84-4fe8-a414-2e88c6d08eb2"
+        ],
+        "model": [
+            "5a7cb532-ee0b-4cc8-9f29-ce59363ba7bd",
+            "7871350a-2c6b-44fc-999c-9467978f08c5",
+            "2ac47141-f17c-48e0-883b-8f12db2f9e18",
+            "b46812cd-c52b-4a66-9d86-1e213479b598",
+            "30e085bb-8e66-4146-b012-634d977214ef",
+            "e4d3bafa-15b2-4e10-a635-0f60eb93a846",
+            "ab15740c-e916-430c-b9f1-319b39e1db1b",
+            "ab15740c-e916-430c-b9f1-319b39e1db1b",
+            "237b6ba4-2399-4586-aab1-258e76cdedb7",
+            "a0d5601b-11bf-4930-97a3-f49e2073affe",
+            "9aff4ed1-3fba-4dd2-92e1-69d109f286bb",
+            "62f30b2a-c8b5-4d9d-ac99-268643d73069",
+            "8d94fc42-0d4c-4942-9e7b-10f6b970255e",
+            "8cec37a7-50df-4c9e-a730-be67b873404b",
+            "bd610d90-785c-4610-83a6-1e377d54eff6"
+        ],
+        "resource": [
+            "06ca827d-4e64-431a-bedd-3b4432a274f5",
+            "2e155090-8c35-4c70-ba95-ef0c1d98bde2",
+            "a7b9c5bb-d13a-478d-94f3-c9bc7a5568bd",
+            "d5c3bead-69f4-48d0-a6bc-1fdf63876706"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

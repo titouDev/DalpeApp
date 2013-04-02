@@ -1,0 +1,386 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "container|padding": null,
+        "designer|userClassName": "mailWindow",
+        "designer|userAlias": "mailWindow",
+        "autoShow": true,
+        "height": 706,
+        "id": "mailWindow",
+        "padding": null,
+        "width": 1035,
+        "layout": "hbox",
+        "title": "Courriel",
+        "constrain": true,
+        "modal": true
+    },
+    "id": "ExtBox1-ext-gen11095",
+    "designerId": "fab2fb42-6655-4fb9-8006-128da143a679",
+    "cn": [
+        {
+            "type": "panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "layout|margins": "10",
+                "container|align": "stretch",
+                "designer|userClassName": "MyPanel9",
+                "border": null,
+                "layout": "vbox",
+                "title": "Destinataire(s)"
+            },
+            "designerId": "23e4128d-9ebc-4bfc-9d15-23b5f9511135",
+            "cn": [
+                {
+                    "type": "panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "container|align": "stretch",
+                        "designer|userClassName": "MyPanel10",
+                        "border": null,
+                        "height": 20,
+                        "margin": 2,
+                        "maxHeight": 20,
+                        "layout": "hbox",
+                        "title": null
+                    },
+                    "designerId": "cd6fc05c-a94d-42ed-8da6-5a5190660f88",
+                    "cn": [
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "designer|userClassName": "MyButton8",
+                                "height": 20,
+                                "itemId": "add",
+                                "maxHeight": 20,
+                                "text": "Ajouter"
+                            },
+                            "designerId": "9a6e9bb4-1d49-40bc-9b24-b721bc07b418"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "designer|userClassName": "MyButton9",
+                                "height": 20,
+                                "itemId": "remove",
+                                "maxHeight": 20,
+                                "text": "Enlever"
+                            },
+                            "designerId": "0bb4601e-bebb-4716-aa6b-a410d6f17072"
+                        }
+                    ]
+                },
+                {
+                    "type": "gridpanel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "designer|userClassName": "MyGridPanel7",
+                        "border": 0,
+                        "itemId": "sousTraitantsDestMailGrid",
+                        "title": null,
+                        "hideHeaders": true,
+                        "store": "mailLinkSousTraitant",
+                        "columnLines": false
+                    },
+                    "designerId": "8b8f412a-262d-434f-8a6b-de445d2b0624",
+                    "cn": [
+                        {
+                            "type": "gridcolumn",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyColumn24",
+                                "dataIndex": "mail",
+                                "flex": 1,
+                                "text": "String"
+                            },
+                            "designerId": "c45716d4-fa09-4cf7-a066-2aac14e67104"
+                        },
+                        {
+                            "type": "gridview",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyGridView5",
+                                "hidden": false
+                            },
+                            "designerId": "7ecb31fc-796c-406a-b1c5-d08aea258682"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "form",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 5,
+                "layout|margins": "",
+                "designer|snapToGrid": 10,
+                "designer|userClassName": "MyForm1",
+                "height": 150,
+                "margin": 5,
+                "layout": "absolute",
+                "bodyPadding": 10,
+                "title": null
+            },
+            "designerId": "c13271e9-b767-46da-a527-77b1b88299ae",
+            "cn": [
+                {
+                    "type": "numberfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyNumberField1",
+                        "hidden": true,
+                        "name": "id",
+                        "fieldLabel": "Label"
+                    },
+                    "designerId": "208a030f-6bd6-4fad-9764-cf54dd837f86"
+                },
+                {
+                    "type": "numberfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyNumberField1",
+                        "hidden": true,
+                        "name": "sentDate",
+                        "fieldLabel": "Label"
+                    },
+                    "designerId": "99ca9910-1b92-47fb-9da3-8e495e9a77db"
+                },
+                {
+                    "type": "toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "top",
+                        "designer|userClassName": "MyToolbar4",
+                        "border": 1,
+                        "margin": null
+                    },
+                    "designerId": "a405460b-4141-46fd-a855-0d117225fb9a",
+                    "cn": [
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyButton5",
+                                "itemId": "send",
+                                "iconCls": "icon-send",
+                                "text": "Envoyer"
+                            },
+                            "designerId": "22954ffe-1816-47e8-84ab-0dbff530d0a0"
+                        },
+                        {
+                            "type": "tbseparator",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MySeparator"
+                            },
+                            "designerId": "e41a9aa0-706b-4ec4-a458-0310807d65d4"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyButton6",
+                                "itemId": "save",
+                                "iconCls": "icon-save",
+                                "text": "Sauvegarder"
+                            },
+                            "designerId": "794b3b06-5c34-44a4-83cd-97318c67b473"
+                        },
+                        {
+                            "type": "tbseparator",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MySeparator1"
+                            },
+                            "designerId": "79f7432f-03f3-466d-968b-1412b775c9bd"
+                        },
+                        {
+                            "type": "combobox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyComboBox",
+                                "itemId": "comboChantiers",
+                                "name": "chantierId",
+                                "fieldLabel": "Chantier",
+                                "displayField": "name",
+                                "store": "chantiers",
+                                "valueField": "id"
+                            },
+                            "designerId": "cd1132dc-7e6f-42d6-8624-99476414c2ed"
+                        },
+                        {
+                            "type": "tbfill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyFill"
+                            },
+                            "designerId": "3b357182-5eba-41ec-8019-c37169615f34"
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "designer|userClassName": "MyButton7",
+                                "hidden": true,
+                                "itemId": "attach",
+                                "iconCls": "icon-attach",
+                                "text": "Attacher un fichier"
+                            },
+                            "designerId": "cdb27b01-7349-4946-a97f-6989f9d5921f"
+                        }
+                    ]
+                },
+                {
+                    "type": "label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|x": 60,
+                        "layout|y": 10,
+                        "designer|userClassName": "MyLabel",
+                        "text": "Sujet:"
+                    },
+                    "designerId": "d9f6475d-859e-4b75-8d7a-3b453124d3c3"
+                },
+                {
+                    "type": "textfield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "layout|x": 120,
+                        "layout|y": 10,
+                        "designer|userClassName": "MyTextField8",
+                        "itemId": "subject",
+                        "name": "subject",
+                        "fieldLabel": null,
+                        "hideLabel": false,
+                        "allowBlank": false,
+                        "blankText": "Ce champ est requis"
+                    },
+                    "designerId": "d7971324-69df-4708-a74f-2953c50bc46d"
+                },
+                {
+                    "type": "textareafield",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100% 100%",
+                        "layout|y": 40,
+                        "designer|userClassName": "MyTextArea1",
+                        "height": 100,
+                        "itemId": "message",
+                        "name": "message",
+                        "readOnly": false,
+                        "fieldLabel": null,
+                        "hideLabel": false,
+                        "allowBlank": false,
+                        "blankText": "Ce champ est requis"
+                    },
+                    "designerId": "804a5c24-6326-4266-ac9a-a5afb1ee6167"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,144 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "clients",
+        "models": [
+            "client"
+        ],
+        "views": [
+            "editClientWindow",
+            "clientsGrid"
+        ]
+    },
+    "id": "ExtBox1-ext-gen42621",
+    "designerId": "12caf886-dbf7-471f-b353-82f5b2c7f27f",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "clientsGrid",
+                "ref": "clientsGrid",
+                "selector": "#clientsGrid"
+            },
+            "designerId": "2d5ca41d-4909-4638-9b1d-158bd876f52f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAddClick",
+                "fn": "onAddClick",
+                "implHandler": [
+                    "Ext.widget('editClientWindow').show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#clientsGrid #add"
+            },
+            "designerId": "b1e695ad-5d50-4bfd-9bc9-b34b5d0a3beb"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onEnregistrerClick",
+                "fn": "onEnregistrerClick",
+                "implHandler": [
+                    "//On va chercher les infos du form",
+                    "var myForm = Ext.getCmp('editClientWindow').down('form').getForm();",
+                    "if (! myForm.isValid())",
+                    "{",
+                    "    return",
+                    "}",
+                    "",
+                    "var clientData = myForm.getValues();",
+                    "if (clientData.id)",
+                    "{",
+                    "    //On update la DB et on ferme la window",
+                    "    Clients.update(clientData, function(){",
+                    "        //On peut maintenant fermer la window",
+                    "        button.up('window').close();",
+                    "        this.getClientsGrid().store.load();",
+                    "    },this);",
+                    "}",
+                    "else",
+                    "{",
+                    "    //On cree le nouvel employe",
+                    "    //On update la DB et on ferme la window",
+                    "    Clients.create(clientData, function(newRecord){",
+                    "        //On peut maintenant fermer la window",
+                    "        button.up('window').close();",
+                    "        //On rajoute le nouvel employe dans le store",
+                    "        this.getClientsGrid().store.load();",
+                    "    },this);",
+                    "",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#editClientWindow #enregistrer"
+            },
+            "designerId": "63276136-2eb3-4104-85ad-b7980b85500c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onClientsGridItemDblClick",
+                "fn": "onClientsGridItemDblClick",
+                "implHandler": [
+                    "",
+                    "//On affiche la fenetre d'edit",
+                    "var editClientWindow = Ext.widget('editClientWindow');",
+                    "",
+                    "//On load le soustraitant selecitonne dans le form",
+                    "var myForm = editClientWindow.down('form');",
+                    "",
+                    "//On prend le record selectionne",
+                    "var selectedRecord = this.getClientsGrid().selModel.getSelection()[0];",
+                    "//On retourne chercher le data dans la db, au cas ou un autre user ait modifie la fiche",
+                    "Clients.get(selectedRecord.data, function(recordFromDb){",
+                    "    var myData = recordFromDb[0];",
+                    "    var myClient = this.getClientModel().create(myData);",
+                    "    myForm.getForm().loadRecord(myClient);",
+                    "}, this)",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "editClientWindow.show();",
+                    ""
+                ],
+                "name": "itemdblclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#clientsGrid"
+            },
+            "designerId": "204b08eb-1c7f-4ecd-94e6-738e1c87dacc"
+        }
+    ]
+}

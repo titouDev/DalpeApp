@@ -1,0 +1,582 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "sousTraitants",
+        "models": [
+            "sousTraitant",
+            "mail"
+        ],
+        "stores": [
+            "mails",
+            "sousTraitants",
+            "mailLinkSousTraitant"
+        ],
+        "views": [
+            "sousTraitantsGrid"
+        ]
+    },
+    "id": "ExtBox1-ext-gen6344",
+    "designerId": "d61f7263-e573-4a70-9e2e-e9dc378117e0",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onTextfieldChange",
+                "fn": "onTextfieldChange",
+                "implHandler": [
+                    "//this.filterSousTraitantsStoreWithText();",
+                    "this.reloadSousTraitantsStore();",
+                    "this.resetMailsGrid();"
+                ],
+                "name": "change",
+                "scope": "me",
+                "designer|targetType": "Ext.form.field.Text",
+                "designer|controlQuery": "#sousTraitantsGrid #searchText"
+            },
+            "designerId": "fc4f5a1b-743f-40f3-afc7-70868fdb1952"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "prepareMail",
+                "fn": "prepareMail",
+                "implHandler": [
+                    "",
+                    "",
+                    "//On ajoute les  sous traitants selectionnes dans le store (mais pas encore dans la DB)",
+                    "//Le user va peut etre annuler son mail.",
+                    "var selectedRecords = this.getSousTraitantsGrid().selModel.getSelection();",
+                    "var count = 0;",
+                    "var linkStore = this.getMailLinkSousTraitantStore();",
+                    "linkStore.removeAll();",
+                    "for (var i in selectedRecords)",
+                    "{",
+                    "    record = selectedRecords[i];",
+                    "    if (record.data.mail)",
+                    "    {",
+                    "        //Le sous traitant a une adresse email, on peut l'ajouter au store",
+                    "        linkStore.add(record)",
+                    "        count++;",
+                    "    }",
+                    "}",
+                    "if (count > 0)",
+                    "{",
+                    "    //On affiche la fenetre",
+                    "    var mailWindow = Ext.widget('mailWindow');",
+                    "",
+                    "",
+                    "}",
+                    "else",
+                    "{",
+                    "    Ext.Msg.alert('Attention','Le sous traitant doit avoir une adresse courriel.')",
+                    "}",
+                    "",
+                    ""
+                ]
+            },
+            "designerId": "4f714dfd-071c-4e92-894b-d31d63f585f0"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "displayEditSousTraitantWindow",
+                "fn": "displayEditSousTraitantWindow",
+                "implHandler": [
+                    "//On affiche la fenetre",
+                    "var editSousTraitantWindow = Ext.widget('editSousTraitantWindow');",
+                    "",
+                    "//On load le soustraitant selecitonne dans le form",
+                    "var myForm = editSousTraitantWindow.down('form');",
+                    "",
+                    "//On prend le record selectionne",
+                    "var selectedRecord = this.getSousTraitantsGrid().selModel.getSelection()[0];",
+                    "//On retourne chercher le data dans la db, au cas ou un autre user ait modifie la fiche",
+                    "SousTraitants.get(selectedRecord.data, function(recordFromDb){",
+                    "    var myData = recordFromDb[0];",
+                    "    var mySousTraitant = this.getSousTraitantModel().create(myData);",
+                    "    myForm.getForm().loadRecord(mySousTraitant);",
+                    "}, this);",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "//On filtre le store des specialites",
+                    "var specialiteLinkStore = editSousTraitantWindow.down('#specialitesGrid').store;",
+                    "specialiteLinkStore.removeAll();",
+                    "specialiteLinkStore.proxy.extraParams = {sousTraitantId:selectedRecord.data.id};",
+                    "specialiteLinkStore.load();",
+                    "",
+                    "//On filtre le store des documents",
+                    "var documentsStore = Ext.getStore('documents');",
+                    "documentsStore.removeAll();",
+                    "documentsStore.proxy.extraParams = {sousTraitantId:selectedRecord.data.id};",
+                    "documentsStore.load();",
+                    "",
+                    "",
+                    "editSousTraitantWindow.show();",
+                    ""
+                ]
+            },
+            "designerId": "1734ae33-2334-400e-99fb-62f322a00b7d"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "reloadSousTraitantsStore",
+                "fn": "reloadSousTraitantsStore",
+                "implHandler": [
+                    "//On vide les stores qui ont besoin d'etre vides",
+                    "Ext.getStore('mails').removeAll();",
+                    "",
+                    "//On prend la valeur du comboSpecialite",
+                    "var specialiteId = this.getSousTraitantsGrid().down('#comboSpecialites').getValue();",
+                    "",
+                    "",
+                    "var myStore = this.getSousTraitantsStore();",
+                    "myStore.proxy.extraParams = {",
+                    "    searchText:this.getSearchField().value,",
+                    "    specialiteId:specialiteId",
+                    "};",
+                    "myStore.load();"
+                ]
+            },
+            "designerId": "f21b65be-3f0b-4381-a43a-a8e7d9d7cc9f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "filterSousTraitantsStoreWithText",
+                "fn": "filterSousTraitantsStoreWithText",
+                "implHandler": [
+                    "//On va chercher la valeur du text search",
+                    "var newValue = this.getSearchField().value;",
+                    "",
+                    "var sousTraitantsStore = this.getSousTraitantsGrid().store;",
+                    "sousTraitantsStore.clearFilter();",
+                    "sousTraitantsStore.filter([",
+                    "{filterFn: function(item) {",
+                    "    if (item.get(\"name\") )",
+                    "    {",
+                    "        return (item.get(\"name\").toLowerCase().indexOf(newValue.toLowerCase()) != -1);",
+                    "    }",
+                    "    return false;",
+                    "}}",
+                    "",
+                    "]);",
+                    "",
+                    "",
+                    ""
+                ]
+            },
+            "designerId": "c35991d6-6d30-4083-b208-e188492a3448"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "confirmAddSousTraitant",
+                "fn": "confirmAddSousTraitant",
+                "designer|params": [
+                    "btn",
+                    "text"
+                ],
+                "implHandler": [
+                    "if (btn == 'ok')",
+                    "{",
+                    "    var model = this.getSousTraitantModel();",
+                    "",
+                    "    // create a record",
+                    "    var newRecord = Ext.create(model);",
+                    "    newRecord.data.name = text;",
+                    "    SousTraitants.create(newRecord.data,function(){",
+                    "        this.getSearchField().setValue(text);",
+                    "    },this);",
+                    "",
+                    "",
+                    "}"
+                ]
+            },
+            "designerId": "eae68ef9-19f6-49dc-a1d2-c2eb7188b737"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "getSelectedSousTraitant",
+                "fn": "getSelectedSousTraitant",
+                "implHandler": [
+                    "var sousTraitantGrid = Ext.ComponentQuery.query('#sousTraitantsGrid');",
+                    "if (sousTraitantGrid[0].selModel.selected.items)",
+                    "{",
+                    "    return sousTraitantGrid[0].selModel.selected.items[0];",
+                    "",
+                    "}",
+                    "return false;",
+                    ""
+                ]
+            },
+            "designerId": "dc52b804-9e86-4a66-8bd7-8ae34522c9d5"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onRowselectionmodelSelect",
+                "fn": "onRowselectionmodelSelect",
+                "implHandler": [
+                    "",
+                    "var mailsStore = this.getMailsGrid().store;",
+                    "mailsStore.clearFilter(true);",
+                    "mailsStore.filter('sousTraitantId',record.data.id);",
+                    "",
+                    "/*",
+                    "if (selected.length != 1)",
+                    "{",
+                    "return;",
+                    "}",
+                    "",
+                    "",
+                    "Ext.getCmp('mailsGrid').down('#refresh').fireEvent('click');",
+                    "*/",
+                    "",
+                    "//On update egalement le tire du mail panel",
+                    "var newTitle = 'Courriels envoyés à ' + record.data.name;",
+                    "this.getMailsGrid().setTitle(newTitle);"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.selection.RowModel",
+                "designer|controlQuery": "#sousTraitantsGrid"
+            },
+            "designerId": "4b761dbc-42fa-4c5b-bbd2-b5a5695f16b7"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "updateMailsGrid",
+                "fn": "updateMailsGrid",
+                "designer|params": [
+                    "sousTraitantId"
+                ],
+                "implHandler": [
+                    "var mailsStore = this.getMailsGrid().store;",
+                    "mailsStore.clearFilter(true);",
+                    "mailsStore.filter('sousTraitantId',sousTraitantId);"
+                ]
+            },
+            "designerId": "a3350dbd-9079-459a-ab7b-cd0c08849d9f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "resetMailsGrid",
+                "fn": "resetMailsGrid",
+                "implHandler": [
+                    "var mailsGrid = this.getMailsGrid()",
+                    "mailsGrid.store.removeAll();",
+                    "mailsGrid.setTitle('Courriels');"
+                ]
+            },
+            "designerId": "2c00cb61-7694-4194-a826-7d679e61e9c8"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "searchField",
+                "ref": "searchField",
+                "selector": "#sousTraitantsGrid #searchText"
+            },
+            "designerId": "1c978560-cbc4-4472-bd8a-908a7f912411"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "mailsGrid",
+                "ref": "mailsGrid",
+                "selector": "#mailsGrid"
+            },
+            "designerId": "5fe9f523-c493-4486-96a2-b72da48de32f"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "sousTraitantsGrid",
+                "ref": "sousTraitantsGrid",
+                "selector": "#sousTraitantsGrid"
+            },
+            "designerId": "a9426fb5-af18-471d-8e9e-d59c79fe1788"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "init",
+                "fn": "init",
+                "implHandler": [
+                    ""
+                ]
+            },
+            "designerId": "e3d3d422-6268-4d14-bafa-3a998d4031ef"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAddSousTraitantClick",
+                "fn": "onAddSousTraitantClick",
+                "implHandler": [
+                    "//On s'assure que le store des links specialites/sous traitant est vide",
+                    "var myStore = Ext.getStore('specialiteLinkSousTraitant');",
+                    "myStore.proxy.extraParams = '';",
+                    "myStore.removeAll();",
+                    "",
+                    "Ext.widget('editSousTraitantWindow').show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#addSousTraitant"
+            },
+            "designerId": "a5f182ca-a227-4b6a-8089-70e529444525"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onRefreshClick",
+                "fn": "onRefreshClick",
+                "implHandler": [
+                    "this.reloadSousTraitantsStore();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Tool",
+                "designer|controlQuery": "#sousTraitantsGrid #refresh"
+            },
+            "designerId": "7c3ed28c-25ef-492c-bc37-fdc2a5c0b760"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onSousTraitantsGridItemContextMenu",
+                "fn": "onSousTraitantsGridItemContextMenu",
+                "implHandler": [
+                    "//On affiche le contextMenu",
+                    "e.stopEvent();",
+                    "Ext.widget('sousTraitantsContextMenu').showAt(e.xy);",
+                    ""
+                ],
+                "name": "itemcontextmenu",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#sousTraitantsGrid"
+            },
+            "designerId": "8a81045b-3585-470a-afd5-db76a1157aa2"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onContextMenuClick",
+                "fn": "onContextMenuClick",
+                "implHandler": [
+                    "switch(item.itemId)",
+                    "{",
+                    "    case 'delete':",
+                    "    console.log(123);",
+                    "    break;",
+                    "    case 'sendMail':",
+                    "    this.prepareMail();",
+                    "    break;",
+                    "    case 'edit':",
+                    "    //On ouvre la fenetre d'edit",
+                    "    this.displayEditSousTraitantWindow();",
+                    "    break;",
+                    "    default:",
+                    "    //rien",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.menu.Menu",
+                "designer|controlQuery": "sousTraitantsContextMenu"
+            },
+            "designerId": "bb3519b1-3cdd-489d-9542-5c2b2d800e18"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onSousTraitantsGridItemDblClick",
+                "fn": "onSousTraitantsGridItemDblClick",
+                "implHandler": [
+                    "//On ouvre la fenetre d'edition de soustraitant",
+                    "",
+                    "this.displayEditSousTraitantWindow();"
+                ],
+                "name": "itemdblclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#sousTraitantsGrid"
+            },
+            "designerId": "ada55c1d-b185-4403-9d22-f002623b5d1e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onRefreshClickMailsGrid",
+                "fn": "onRefreshClickMailsGrid",
+                "implHandler": [
+                    "var selectedSousTraitant = this.getSousTraitantsGrid().selModel.getSelection()[0];",
+                    "this.updateMailsGrid(selectedSousTraitant.internalId);",
+                    "",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Tool",
+                "designer|controlQuery": "#mailsGrid #refresh"
+            },
+            "designerId": "bd13bc89-fc9a-4378-9fe4-716c2731d228"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onComboSpecialitesSelect",
+                "fn": "onComboSpecialitesSelect",
+                "implHandler": [
+                    "this.reloadSousTraitantsStore();",
+                    "this.resetMailsGrid();"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.form.field.ComboBox",
+                "designer|controlQuery": "#sousTraitantsGrid #comboSpecialites"
+            },
+            "designerId": "319b3b43-e05a-44bf-809a-bc03d7dafa38"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onSousTraitantsPanelActivate",
+                "fn": "onSousTraitantsPanelActivate",
+                "implHandler": [
+                    "//this.getMailLinkSousTraitantStore().load();",
+                    "//this.getSousTraitantsStore().load();"
+                ],
+                "name": "activate",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Panel",
+                "designer|controlQuery": "#sousTraitantsPanel"
+            },
+            "designerId": "b6b68c57-f757-4f4a-a226-f8945e7d76d2"
+        }
+    ]
+}

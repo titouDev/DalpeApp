@@ -1,0 +1,46 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "fax",
+        "autoLoad": false,
+        "storeId": "fax",
+        "model": "mail"
+    },
+    "id": "ExtBox1-ext-gen18041",
+    "designerId": "fa160326-b7fa-4747-896d-d70d65968f22",
+    "cn": [
+        {
+            "type": "ajaxproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyAjaxProxy4",
+                "url": "data/get_fax.php"
+            },
+            "designerId": "ea43dad0-1634-4af9-8151-5702c32a7cad",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader4",
+                        "root": "results"
+                    },
+                    "designerId": "68de595b-3ab3-4a07-aeec-6569fb09e72f"
+                }
+            ]
+        }
+    ]
+}

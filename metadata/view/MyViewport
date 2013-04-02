@@ -1,0 +1,551 @@
+{
+    "type": "viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyViewport",
+        "designer|initialView": true,
+        "id": "mainView",
+        "layout": "fit"
+    },
+    "id": "ExtBox1-ext-gen4245",
+    "designerId": "e4c96884-e2eb-49b7-a615-451f20b564e5",
+    "cn": [
+        {
+            "type": "tabpanel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyTabPanel",
+                "title": "Construction Julien Dalpe Inc.",
+                "activeTab": 1
+            },
+            "designerId": "c3ff5c17-4483-4df7-b62f-2d16ee517f70",
+            "cn": [
+                {
+                    "type": "panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyPanel21",
+                        "title": "Employe"
+                    },
+                    "designerId": "3f49b7e3-ea88-416b-b3c2-035b88550df8",
+                    "cn": [
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "designerId": "6a9b2e77-d123-4299-b29a-ea3d395fd3d0",
+                            "masterInstanceId": "ExtBox1-ext-gen5760"
+                        },
+                        {
+                            "type": "tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "TabConfig2"
+                            },
+                            "designerId": "afb230e3-61ac-44ad-9d98-575a25e119c3"
+                        }
+                    ]
+                },
+                {
+                    "type": "panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyPanel7",
+                        "layout": "border",
+                        "title": "Sous Traitants"
+                    },
+                    "designerId": "ea9a9e23-29ad-4664-a6bf-fe8610847215",
+                    "cn": [
+                        {
+                            "type": "tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "TabConfig"
+                            },
+                            "designerId": "3df5e9d3-1837-413d-acfb-26bedb30ea1a"
+                        },
+                        {
+                            "type": "linkedinstance",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 561,
+                                "store": "sousTraitants",
+                                "layout|flex": 2,
+                                "layout|region": "center",
+                                "layout|split": true
+                            },
+                            "designerId": "09272658-7c2c-4ac8-a32c-b36561b3fdcb",
+                            "masterInstanceId": "ExtBox1-ext-gen3838"
+                        },
+                        {
+                            "type": "panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 2,
+                                "layout|region": "east",
+                                "layout|split": true,
+                                "designer|userClassName": "MyPanel10",
+                                "width": 150,
+                                "layout": "accordion",
+                                "title": null
+                            },
+                            "designerId": "b30b1340-dd3a-4094-bc2c-fd474df4c04d",
+                            "cn": [
+                                {
+                                    "type": "gridpanel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyGridPanel5",
+                                        "id": "mailsGrid",
+                                        "width": 150,
+                                        "collapsed": false,
+                                        "collapsible": true,
+                                        "title": "Courriels",
+                                        "store": "mails"
+                                    },
+                                    "designerId": "15cabc8d-f149-467a-b6e1-f265c5cd1bc8",
+                                    "cn": [
+                                        {
+                                            "type": "gridview",
+                                            "reference": {
+                                                "name": "viewConfig",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyGridView4"
+                                            },
+                                            "designerId": "625a7773-0eb5-460d-9405-862d8bca84f9"
+                                        },
+                                        {
+                                            "type": "rowselectionmodel",
+                                            "reference": {
+                                                "name": "selModel",
+                                                "type": "object"
+                                            },
+                                            "codeClass": "Ext.selection.RowModel",
+                                            "userConfig": {
+                                                "designer|userClassName": "MyRowSelectionModel1"
+                                            },
+                                            "designerId": "2b0cb587-5384-45bb-9307-cd2d17edea17"
+                                        },
+                                        {
+                                            "type": "gridcolumn",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyColumn29",
+                                                "dataIndex": "subject",
+                                                "text": "Sujet"
+                                            },
+                                            "designerId": "5f767b2f-5eb7-42c8-8208-aff4b1dc059e"
+                                        },
+                                        {
+                                            "type": "gridcolumn",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyColumn30",
+                                                "dataIndex": "chantierId",
+                                                "text": "Chantier"
+                                            },
+                                            "designerId": "4a9854bc-c95c-48c6-b715-30fbfe4335cc",
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "renderer",
+                                                        "fn": "renderer",
+                                                        "designer|params": [
+                                                            "value",
+                                                            "metaData",
+                                                            "record",
+                                                            "rowIndex",
+                                                            "colIndex",
+                                                            "store",
+                                                            "view"
+                                                        ],
+                                                        "implHandler": [
+                                                            "var chantiersStore = Ext.getStore('chantiers');",
+                                                            "var chantierId = record.data.chantierId;",
+                                                            "if (chantierId)",
+                                                            "{",
+                                                            "",
+                                                            "return chantiersStore.getById(chantierId).data.name;",
+                                                            "}",
+                                                            "else",
+                                                            "{",
+                                                            "    return '';",
+                                                            "}"
+                                                        ]
+                                                    },
+                                                    "designerId": "ee0fd628-de17-4af1-9bd4-bf2746e52110"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "datecolumn",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyDateColumn5",
+                                                "dataIndex": "creationDate",
+                                                "text": "Cree le"
+                                            },
+                                            "designerId": "4369f757-dd46-4d7d-899d-53b5251458c2"
+                                        },
+                                        {
+                                            "type": "gridcolumn",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyColumn31",
+                                                "dataIndex": "userCreateId",
+                                                "text": "Cree par"
+                                            },
+                                            "designerId": "4aeef04c-59da-4562-8302-4c2d95d1dbdb",
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "renderer",
+                                                        "fn": "renderer",
+                                                        "designer|params": [
+                                                            "value",
+                                                            "metaData",
+                                                            "record",
+                                                            "rowIndex",
+                                                            "colIndex",
+                                                            "store",
+                                                            "view"
+                                                        ],
+                                                        "implHandler": [
+                                                            "var employesStore = Ext.getStore('employes');",
+                                                            "var userId = record.data.userCreateId;",
+                                                            "if (userId)",
+                                                            "{",
+                                                            "",
+                                                            "return employesStore.getById(userId).data.prenom + \" \" + employesStore.getById(userId).data.nom;",
+                                                            "}",
+                                                            "else",
+                                                            "{",
+                                                            "    return '';",
+                                                            "}"
+                                                        ]
+                                                    },
+                                                    "designerId": "112b4a85-b64d-4608-bc19-a547c82f2d3f"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "onMailsGridItemDblClick",
+                                                "fn": "onMailsGridItemDblClick",
+                                                "implHandler": [
+                                                    "",
+                                                    "",
+                                                    "var myMail = record.data;",
+                                                    "",
+                                                    "",
+                                                    "",
+                                                    "//On reload le store de liens",
+                                                    "var linkStore = Ext.getStore('mailLinkSousTraitant');",
+                                                    "linkStore.proxy.extraParams = {mailId:myMail.id};",
+                                                    "linkStore.load();",
+                                                    "",
+                                                    "//On affiche la fenetre",
+                                                    "var mailWindow = Ext.widget('mailWindow');",
+                                                    "//On update le form",
+                                                    "var myForm = mailWindow.down('form');",
+                                                    "myForm.getForm().setValues(myMail);",
+                                                    "",
+                                                    "",
+                                                    "if (myMail.sentDate)",
+                                                    "{",
+                                                    "    //Le form va etre read Only",
+                                                    "    //Ext.Msg.alert('Attention', 'Ce mail a deja ete envoye, vous ne pourrez donc pas le modifier.');",
+                                                    "    mailWindow.down('#comboChantiers').readOnly = true;",
+                                                    "    mailWindow.down('#subject').setReadOnly(true);",
+                                                    "    mailWindow.down('#message').setReadOnly(true);",
+                                                    "",
+                                                    "    ",
+                                                    "}",
+                                                    ""
+                                                ],
+                                                "name": "itemdblclick",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "4d1c6da2-6aaf-4f78-8970-23fe4a093889"
+                                        },
+                                        {
+                                            "type": "datecolumn",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyDateColumn5",
+                                                "dataIndex": "sentDate",
+                                                "text": "Envoye le"
+                                            },
+                                            "designerId": "5b39b42d-1c6e-4ee9-af88-49d8c74d33e5"
+                                        },
+                                        {
+                                            "type": "tool",
+                                            "reference": {
+                                                "name": "tools",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyTool",
+                                                "itemId": "refresh",
+                                                "type": "refresh"
+                                            },
+                                            "designerId": "2e197c9e-a575-4dec-9135-9f9a91d83961"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "gridpanel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyGridPanel7",
+                                        "id": "documentsGrid",
+                                        "width": 150,
+                                        "collapsed": true,
+                                        "title": "Documents"
+                                    },
+                                    "designerId": "91bc5bfc-4891-4c43-b73d-5c7dc4c7a003",
+                                    "cn": [
+                                        {
+                                            "type": "gridcolumn",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyColumn33",
+                                                "dataIndex": "string",
+                                                "text": "String"
+                                            },
+                                            "designerId": "6c708d47-c3c7-4c75-919e-71bab98a9ee5"
+                                        },
+                                        {
+                                            "type": "numbercolumn",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyNumberColumn",
+                                                "dataIndex": "number",
+                                                "text": "Number"
+                                            },
+                                            "designerId": "94b14cb0-d702-4688-a522-7615d7b263e8"
+                                        },
+                                        {
+                                            "type": "datecolumn",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyDateColumn1",
+                                                "dataIndex": "date",
+                                                "text": "Date"
+                                            },
+                                            "designerId": "4c50cfe3-0865-40b9-90db-ed0aa7cdca57"
+                                        },
+                                        {
+                                            "type": "booleancolumn",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyBooleanColumn",
+                                                "dataIndex": "bool",
+                                                "text": "Boolean"
+                                            },
+                                            "designerId": "642899b8-5e57-47ce-bfd8-a4f587a5edab"
+                                        },
+                                        {
+                                            "type": "gridview",
+                                            "reference": {
+                                                "name": "viewConfig",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyGridView5"
+                                            },
+                                            "designerId": "0843ed94-92e4-4af4-a969-2a732b902ff9"
+                                        },
+                                        {
+                                            "type": "toolbar",
+                                            "reference": {
+                                                "name": "dockedItems",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "dock": "top",
+                                                "designer|userClassName": "MyToolbar4"
+                                            },
+                                            "designerId": "d85d1a0c-b486-453a-a7fc-dba9dfa97d45",
+                                            "cn": [
+                                                {
+                                                    "type": "filefield",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "layout|flex": null,
+                                                        "designer|userClassName": "MyFileUpload",
+                                                        "id": "documentUpload",
+                                                        "fieldLabel": "Label"
+                                                    },
+                                                    "designerId": "4538195d-5cb9-4f8c-b6c3-2cf63a176bc9"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Clients"
+                    },
+                    "designerId": "be986ae8-6cdb-43de-bb8c-887038d4ac62",
+                    "masterInstanceId": "ExtBox1-ext-gen36171",
+                    "cn": [
+                        {
+                            "type": "tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "TabConfig"
+                            },
+                            "designerId": "9dc77a0e-80df-4e07-9b7a-8e3d7be5d25a"
+                        }
+                    ]
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "271810b4-e5dc-4057-814a-652582a47de9",
+                    "masterInstanceId": "ExtBox1-ext-gen47847",
+                    "cn": [
+                        {
+                            "type": "tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "TabConfig3"
+                            },
+                            "designerId": "6e185707-16a8-4646-8d26-2c2561adb143"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

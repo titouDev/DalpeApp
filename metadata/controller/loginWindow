@@ -1,0 +1,119 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "loginWindow"
+    },
+    "id": "ExtBox1-ext-gen37732",
+    "designerId": "c53357d6-6534-42c5-8bea-8fd0205ff613",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onLoginClick",
+                "fn": "onLoginClick",
+                "implHandler": [
+                    "var myForm = button.up('window').down('form').getForm();",
+                    "this.sendLoginForm(myForm);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#loginWindow #login"
+            },
+            "designerId": "e30a04bc-5d65-4e69-8680-6f1ac0a8d81b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "verifyInfos",
+                "fn": "verifyInfos",
+                "designer|params": [
+                    "response"
+                ],
+                "implHandler": [
+                    "",
+                    "if (response.length)",
+                    "{",
+                    "    user_logged = response[0].id;",
+                    "    //L'authentification a fonctionne, on peut rentrer dans l'application",
+                    "    Ext.getCmp('loginWindow').close();",
+                    "    var myAppToolbar = Ext.getCmp('appToolbar');",
+                    "    myAppToolbar.down('#userLogged').setText('Utilisateur connecté: ' + response[0].prenom + \" \" + response[0].nom);",
+                    "}",
+                    "else",
+                    "{",
+                    "    Ext.Msg.alert('Attention', 'Nom d\\'utilisateur ou mot de passe incorrects.');",
+                    "}"
+                ]
+            },
+            "designerId": "f13991b0-3a89-4e76-ba49-45bb4e34d198"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onPasswordSpecialkey",
+                "fn": "onPasswordSpecialkey",
+                "implHandler": [
+                    "if (e.button === 12)",
+                    "{",
+                    "    //ENTER KEY",
+                    "    var myForm = Ext.ComponentQuery.query('#loginWindow  form')[0].getForm();",
+                    "    this.sendLoginForm(myForm);",
+                    "",
+                    "}"
+                ],
+                "name": "specialkey",
+                "scope": "me",
+                "designer|targetType": "Ext.form.field.Text",
+                "designer|controlQuery": "#loginWindow #password"
+            },
+            "designerId": "144e3f9e-2a0c-4eb9-ba85-a0f0c1ec3b71"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "sendLoginForm",
+                "fn": "sendLoginForm",
+                "designer|params": [
+                    "myForm"
+                ],
+                "implHandler": [
+                    "if (!myForm.isValid())",
+                    "{return;}",
+                    "",
+                    "//On verifie l'identification dans la base de donnees...",
+                    "",
+                    "var formValues = myForm.getValues();",
+                    "myForm.reset();",
+                    "Employes.login(formValues, this.verifyInfos);"
+                ]
+            },
+            "designerId": "c7e15f9c-b4e2-42ad-9a76-f670f34deabf"
+        }
+    ]
+}

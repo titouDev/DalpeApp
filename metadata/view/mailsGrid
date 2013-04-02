@@ -1,0 +1,236 @@
+{
+    "type": "gridpanel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "mailsGrid",
+        "designer|userAlias": "mailsgrid",
+        "id": "mailsGrid",
+        "width": 150,
+        "collapsed": false,
+        "collapsible": false,
+        "title": "Courriels",
+        "store": "mails"
+    },
+    "id": "ExtBox1-ext-gen2013",
+    "designerId": "15cabc8d-f149-467a-b6e1-f265c5cd1bc8",
+    "cn": [
+        {
+            "type": "gridview",
+            "reference": {
+                "name": "viewConfig",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyGridView4"
+            },
+            "designerId": "625a7773-0eb5-460d-9405-862d8bca84f9"
+        },
+        {
+            "type": "rowselectionmodel",
+            "reference": {
+                "name": "selModel",
+                "type": "object"
+            },
+            "codeClass": "Ext.selection.RowModel",
+            "userConfig": {
+                "designer|userClassName": "MyRowSelectionModel1"
+            },
+            "designerId": "2b0cb587-5384-45bb-9307-cd2d17edea17"
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn29",
+                "dataIndex": "subject",
+                "text": "Sujet"
+            },
+            "designerId": "5f767b2f-5eb7-42c8-8208-aff4b1dc059e"
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn30",
+                "dataIndex": "chantierId",
+                "text": "Chantier"
+            },
+            "designerId": "4a9854bc-c95c-48c6-b715-30fbfe4335cc",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "renderer",
+                        "fn": "renderer",
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "implHandler": [
+                            "var chantiersStore = Ext.getStore('chantiers');",
+                            "var chantierId = record.data.chantierId;",
+                            "if (chantierId)",
+                            "{",
+                            "",
+                            "    return chantiersStore.getById(chantierId).data.name;",
+                            "}",
+                            "else",
+                            "{",
+                            "    return '';",
+                            "}"
+                        ]
+                    },
+                    "designerId": "ee0fd628-de17-4af1-9bd4-bf2746e52110"
+                }
+            ]
+        },
+        {
+            "type": "datecolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyDateColumn5",
+                "dataIndex": "creationDate",
+                "text": "Cree le"
+            },
+            "designerId": "4369f757-dd46-4d7d-899d-53b5251458c2"
+        },
+        {
+            "type": "gridcolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyColumn31",
+                "dataIndex": "userCreateId",
+                "text": "Cree par"
+            },
+            "designerId": "4aeef04c-59da-4562-8302-4c2d95d1dbdb",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "renderer",
+                        "fn": "renderer",
+                        "designer|params": [
+                            "value",
+                            "metaData",
+                            "record",
+                            "rowIndex",
+                            "colIndex",
+                            "store",
+                            "view"
+                        ],
+                        "implHandler": [
+                            "var employesStore = Ext.getStore('employes');",
+                            "var userId = record.data.userCreateId;",
+                            "if (userId)",
+                            "{",
+                            "",
+                            "return employesStore.getById(userId).data.prenom + \" \" + employesStore.getById(userId).data.nom;",
+                            "}",
+                            "else",
+                            "{",
+                            "    return '';",
+                            "}"
+                        ]
+                    },
+                    "designerId": "112b4a85-b64d-4608-bc19-a547c82f2d3f"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMailsGridItemDblClick",
+                "fn": "onMailsGridItemDblClick",
+                "implHandler": [
+                    "",
+                    "",
+                    "var myMail = record.data;",
+                    "",
+                    "",
+                    "",
+                    "//On reload le store de liens",
+                    "var linkStore = Ext.getStore('mailLinkSousTraitant');",
+                    "linkStore.proxy.extraParams = {mailId:myMail.id};",
+                    "linkStore.load();",
+                    "",
+                    "//On affiche la fenetre",
+                    "var mailWindow = Ext.widget('mailWindow');",
+                    "//On update le form",
+                    "var myForm = mailWindow.down('form');",
+                    "myForm.getForm().setValues(myMail);",
+                    "",
+                    "",
+                    "if (myMail.sentDate)",
+                    "{",
+                    "    //Le form va etre read Only",
+                    "    //Ext.Msg.alert('Attention', 'Ce mail a deja ete envoye, vous ne pourrez donc pas le modifier.');",
+                    "    mailWindow.down('#comboChantiers').readOnly = true;",
+                    "    mailWindow.down('#subject').setReadOnly(true);",
+                    "    mailWindow.down('#message').setReadOnly(true);",
+                    "",
+                    "    ",
+                    "}",
+                    ""
+                ],
+                "name": "itemdblclick",
+                "scope": "me"
+            },
+            "designerId": "4d1c6da2-6aaf-4f78-8970-23fe4a093889"
+        },
+        {
+            "type": "datecolumn",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyDateColumn5",
+                "dataIndex": "sentDate",
+                "text": "Envoye le"
+            },
+            "designerId": "5b39b42d-1c6e-4ee9-af88-49d8c74d33e5"
+        }
+    ]
+}

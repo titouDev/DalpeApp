@@ -1,0 +1,59 @@
+{
+    "type": "datamodel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "fax",
+        "idProperty": "id"
+    },
+    "id": "ExtBox1-ext-gen16661",
+    "designerId": "ab15740c-e916-430c-b9f1-319b39e1db1b",
+    "cn": [
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyField45",
+                "name": "id",
+                "type": "int"
+            },
+            "designerId": "606f2e96-0a5b-4957-8916-964fea2aeec5"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyField43",
+                "name": "message",
+                "type": "string"
+            },
+            "designerId": "71422a0f-a7ed-495c-8c7d-2f378267e8eb"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyField44",
+                "name": "creationDate",
+                "dateFormat": null,
+                "type": "date"
+            },
+            "designerId": "b10f57fd-ea05-4cbd-aa0f-406d4e8a7954"
+        }
+    ]
+}

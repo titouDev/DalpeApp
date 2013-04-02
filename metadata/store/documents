@@ -1,0 +1,46 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "documents",
+        "autoLoad": false,
+        "storeId": "documents",
+        "model": "document"
+    },
+    "id": "ExtBox1-ext-gen4735",
+    "designerId": "8df80686-4286-4022-97f6-7256a0c036ad",
+    "cn": [
+        {
+            "type": "directproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyDirectProxy4",
+                "directFn": "Documents.get"
+            },
+            "designerId": "1cdbd641-8a18-4128-aee8-a1533d72b578",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader2",
+                        "root": "result"
+                    },
+                    "designerId": "94b65ec0-59f6-41cd-82fc-27ac6654cc9d"
+                }
+            ]
+        }
+    ]
+}

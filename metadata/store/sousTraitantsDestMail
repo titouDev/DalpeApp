@@ -1,0 +1,15 @@
+{
+    "type": "store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "sousTraitantsDestMail",
+        "storeId": "sousTraitantsDestMail",
+        "model": "sousTraitant"
+    },
+    "id": "ExtBox1-ext-gen31651",
+    "designerId": "e5a999f6-34ab-4a5b-9507-4f02d03426d2"
+}

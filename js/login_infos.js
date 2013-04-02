@@ -1,0 +1,2 @@
+user_logged = false;
+

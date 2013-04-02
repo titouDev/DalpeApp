@@ -1,0 +1,142 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "employes",
+        "models": [
+            "employe"
+        ],
+        "stores": [
+            "employes"
+        ],
+        "views": [
+            "employesGrid",
+            "editEmployeWindow"
+        ]
+    },
+    "id": "ExtBox1-ext-gen17243",
+    "designerId": "8953454d-3ea4-4a30-ad4c-01f5587be068",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAddEmployeClick",
+                "fn": "onAddEmployeClick",
+                "implHandler": [
+                    "Ext.widget('editEmployeWindow').show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#employesGrid #addEmploye"
+            },
+            "designerId": "bc194fc4-24d8-43e9-b54c-75bb5208f964"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onEmployesGridItemDblClick",
+                "fn": "onEmployesGridItemDblClick",
+                "implHandler": [
+                    "",
+                    "//On affiche la fenetre d'edit",
+                    "var editEmployeWindow = Ext.widget('editEmployeWindow');",
+                    "",
+                    "//On load le soustraitant selecitonne dans le form",
+                    "var myForm = editEmployeWindow.down('form');",
+                    "",
+                    "//On prend le record selectionne",
+                    "var selectedRecord = this.getEmployesGrid().selModel.getSelection()[0];",
+                    "//On retourne chercher le data dans la db, au cas ou un autre user ait modifie la fiche",
+                    "Employes.get(selectedRecord.data, function(recordFromDb){",
+                    "    var myData = recordFromDb[0];",
+                    "    var myEmploye = this.getEmployeModel().create(myData);",
+                    "    myForm.getForm().loadRecord(myEmploye);",
+                    "    myForm.down('#photo').setSrc(myEmploye.data.photo);",
+                    "}, this)",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "editEmployeWindow.show();",
+                    ""
+                ],
+                "name": "itemdblclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#employesGrid"
+            },
+            "designerId": "ef94555e-30ee-4360-8509-b5442999a474"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "employesGrid",
+                "ref": "employesGrid",
+                "selector": "#employesGrid"
+            },
+            "designerId": "09832666-8827-4a98-bea8-c0804df0a59e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onEmployesGridSelect",
+                "fn": "onEmployesGridSelect",
+                "implHandler": [
+                    "var hours_store = Ext.getStore('employes_hours');",
+                    "hours_store.proxy.extraParams ={employeId:record.data.id};",
+                    "hours_store.load();"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#employesGrid"
+            },
+            "designerId": "12f27b2a-1e5e-4e39-b817-a700b1341f58"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onEmployesPanelActivate",
+                "fn": "onEmployesPanelActivate",
+                "implHandler": [
+                    "this.getEmployesStore().load();"
+                ],
+                "name": "activate",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Panel",
+                "designer|controlQuery": "#employesPanel"
+            },
+            "designerId": "7b0c2fd1-d713-48d4-b012-19efe85fd3a4"
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "type": "datamodel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "dataBase"
+    },
+    "id": "ExtBox1-ext-gen5749",
+    "designerId": "2ac47141-f17c-48e0-883b-8f12db2f9e18",
+    "cn": [
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyField",
+                "name": "name",
+                "mapping": "Tables_in_dalpe_construction",
+                "persist": false,
+                "type": "string"
+            },
+            "designerId": "2753c62f-85e6-4f3e-ba95-f40b2add88ea"
+        }
+    ]
+}

@@ -1,0 +1,70 @@
+{
+    "type": "application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "specialite",
+            "employeHour",
+            "chantierStatus",
+            "document",
+            "document_type",
+            "chantier_link_documents"
+        ],
+        "stores": [
+            "specialites",
+            "specialiteLinkSousTraitant",
+            "employes_hours",
+            "chantiers_hours",
+            "documents",
+            "document_type",
+            "employes_logHours",
+            "chantiers_documents"
+        ],
+        "views": [
+            "appViewport",
+            "sousTraitantsContextMenu",
+            "employesHoursGrid",
+            "editChantierWindow",
+            "loginViewPort",
+            "editEmployeDate"
+        ],
+        "autoCreateViewport": true,
+        "name": "dalpeApp",
+        "controllers": [
+            "sousTraitants",
+            "employes",
+            "clients",
+            "chantiers",
+            "mailWindowController",
+            "loginWindow",
+            "global",
+            "logHours",
+            "editSousTraitantController",
+            "editEmploye"
+        ]
+    },
+    "id": "ExtBox1-ext-gen4115",
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "launch",
+                "fn": "launch",
+                "implHandler": [
+                    "setInterval('if(!Ext.getCmp(\"loginWindow\")){Employes.checkLoginSession(function(response){    if (!response)    {    Ext.widget(\"loginWindow\");            }})}', 3700000);"
+                ]
+            },
+            "designerId": "5cbb8634-3149-4cdf-b1d1-05fc951f7373"
+        }
+    ]
+}

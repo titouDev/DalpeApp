@@ -1,0 +1,160 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "editEmploye"
+    },
+    "id": "ExtBox1-ext-gen7858",
+    "designerId": "c430ba9e-3bf1-4371-bc26-1825eb9e5251",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onSavePhotoClick",
+                "fn": "onSavePhotoClick",
+                "implHandler": [
+                    "var myEditForm = button.up('window').down('#editForm').getForm();",
+                    "var employeId = myEditForm.getValues().id;",
+                    "",
+                    "if (! employeId)",
+                    "{",
+                    "    Ext.Msg.alert('Attention','Vous devez d\\'abord créer l\\'employer avant de rajouter une photo');",
+                    "}",
+                    "else",
+                    "{",
+                    "",
+                    "    var form = button.up('#fileForm').getForm();",
+                    "    if(form.isValid()){",
+                    "        form.submit({",
+                    "            url: 'employe_photo_upload.php',",
+                    "            scope:this,",
+                    "            params: {",
+                    "                employeId: employeId",
+                    "            },",
+                    "            waitMsg: 'Sauvegarde de la photo...',",
+                    "            success: function(fp, o) {",
+                    "                //On reload le sotre de documents",
+                    "                //var documentsStore = Ext.getStore('documents');",
+                    "                //documentsStore.load();",
+                    "                //Ext.Msg.alert('Succès', 'Le document \"' + o.result.file + '\" est enregistré.');",
+                    "            }",
+                    "        });",
+                    "    }",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "editEmployeWindow #savePhoto"
+            },
+            "designerId": "6d83edcf-b27c-4150-b2bf-4e9f7ec5c678"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAnnulerClick",
+                "fn": "onAnnulerClick",
+                "implHandler": [
+                    "button.up('window').close();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "editEmployeWindow #annuler"
+            },
+            "designerId": "47e25a20-aeb1-415a-aeb8-bb81f237ddf0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onEnregistrerClick",
+                "fn": "onEnregistrerClick",
+                "implHandler": [
+                    "//On va chercher les infos du form",
+                    "var myForm = Ext.getCmp('editEmployeWindow').down('form').getForm();",
+                    "if (! myForm.isValid())",
+                    "{",
+                    "    return",
+                    "}",
+                    "",
+                    "var employeData = myForm.getValues();",
+                    "if (employeData.id)",
+                    "{",
+                    "    //On update la DB et on ferme la window",
+                    "    Employes.update(employeData, function(){",
+                    "        //On peut maintenant fermer la window",
+                    "        button.up('window').close();",
+                    "        this.getEmployesGrid().store.load();",
+                    "    },this);",
+                    "}",
+                    "else",
+                    "{",
+                    "    //On cree le nouvel employe",
+                    "    //On update la DB et on ferme la window",
+                    "    Employes.create(employeData, function(newRecord){",
+                    "        //On peut maintenant fermer la window",
+                    "        button.up('window').close();",
+                    "        //On rajoute le nouvel employe dans le store",
+                    "        this.getEmployesGrid().store.load();",
+                    "    },this);",
+                    "",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "editEmployeWindow #enregistrer"
+            },
+            "designerId": "d3642321-9edb-4fe4-99af-afb9d3d9410c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "savePhoto",
+                "fn": "savePhoto",
+                "implHandler": [
+                    ""
+                ]
+            },
+            "designerId": "add62751-9f3c-4428-9a2b-d85e44cb4890"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "employesGrid",
+                "ref": "employesGrid",
+                "selector": "#employesGrid"
+            },
+            "designerId": "d9414c59-06ed-4ea1-9905-8924f4df92c5"
+        }
+    ]
+}

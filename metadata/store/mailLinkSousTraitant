@@ -1,0 +1,51 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "mailLinkSousTraitant",
+        "autoLoad": false,
+        "autoSync": false,
+        "storeId": "mailLinkSousTraitant",
+        "model": "sousTraitant",
+        "remoteSort": true
+    },
+    "id": "ExtBox1-ext-gen51216",
+    "designerId": "a79bbea3-d4de-47b9-b24e-a9e513a27156",
+    "cn": [
+        {
+            "type": "directproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyDirectProxy",
+                "api": null,
+                "directFn": "Mails.getLinkSoustraitant",
+                "paramOrder": null
+            },
+            "designerId": "176c065e-e680-49a2-94a9-70368794e461",
+            "cn": [
+                {
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyJsonReader6",
+                        "root": "result",
+                        "record": null
+                    },
+                    "designerId": "98a08554-0f72-449e-9bbe-4ab29335e520"
+                }
+            ]
+        }
+    ]
+}

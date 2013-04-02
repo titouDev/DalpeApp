@@ -1,0 +1,257 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "chantiers",
+        "models": [
+            "chantier"
+        ],
+        "stores": [
+            "chantiers",
+            "clients"
+        ],
+        "views": [
+            "chantiersGrid"
+        ]
+    },
+    "id": "ExtBox1-ext-gen53300",
+    "designerId": "5358e90e-5181-4e9f-bc2d-6b13a5016669",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "chantiersGrid",
+                "ref": "chantiersGrid",
+                "selector": "#chantiersGrid"
+            },
+            "designerId": "83598cc4-c7b0-40f6-80cf-247af2dbed33"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onChantiersGridItemDblClick",
+                "fn": "onChantiersGridItemDblClick",
+                "implHandler": [
+                    "",
+                    "//On affiche la fenetre d'edit",
+                    "var editChantierWindow = Ext.widget('editChantierWindow');",
+                    "",
+                    "//On load le soustraitant selecitonne dans le form",
+                    "var myForm = editChantierWindow.down('form');",
+                    "",
+                    "//On prend le record selectionne",
+                    "var selectedRecord = this.getChantiersGrid().selModel.getSelection()[0];",
+                    "//On retourne chercher le data dans la db, au cas ou un autre user ait modifie la fiche",
+                    "Chantiers.get(selectedRecord.data, function(recordFromDb){",
+                    "    var myData = recordFromDb[0];",
+                    "    var myChantier = this.getChantierModel().create(myData);",
+                    "    myForm.getForm().loadRecord(myChantier);",
+                    "}, this)",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "editChantierWindow.show();",
+                    ""
+                ],
+                "name": "itemdblclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#chantiersGrid"
+            },
+            "designerId": "245dc473-b944-4c21-bf94-0f04185e9674"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAddClick",
+                "fn": "onAddClick",
+                "implHandler": [
+                    "Ext.widget('editChantierWindow').show();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#chantiersGrid #add"
+            },
+            "designerId": "6658bd78-b47e-4897-9312-f544968c7ccb"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAnnulerClick",
+                "fn": "onAnnulerClick",
+                "implHandler": [
+                    "button.up('window').close();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#editChantierWindow #annuler"
+            },
+            "designerId": "3383f85d-7079-473b-9446-f506eb491924"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onChantiersGridSelect",
+                "fn": "onChantiersGridSelect",
+                "implHandler": [
+                    "var hours_store = Ext.getStore('chantiers_hours');",
+                    "hours_store.proxy.extraParams ={chantierId:record.data.id};",
+                    "hours_store.load();"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#chantiersGrid"
+            },
+            "designerId": "69ac67de-821c-41f0-85ef-25f51d37aad8"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onEnregistrerClick",
+                "fn": "onEnregistrerClick",
+                "implHandler": [
+                    "//On va chercher les infos du form",
+                    "var myForm = Ext.getCmp('editChantierWindow').down('form').getForm();",
+                    "if (! myForm.isValid())",
+                    "{",
+                    "    return",
+                    "}",
+                    "",
+                    "var chantierData = myForm.getValues();",
+                    "if (chantierData.id)",
+                    "{",
+                    "    //On update la DB et on ferme la window",
+                    "    Chantiers.update(chantierData, function(){",
+                    "        //On peut maintenant fermer la window",
+                    "        button.up('window').close();",
+                    "        this.getChantiersGrid().store.load();",
+                    "    },this);",
+                    "}",
+                    "else",
+                    "{",
+                    "    //On cree le nouvel employe",
+                    "    //On update la DB et on ferme la window",
+                    "    Chantiers.create(chantierData, function(newRecord){",
+                    "        //On peut maintenant fermer la window",
+                    "        button.up('window').close();",
+                    "        //On rajoute le nouvel employe dans le store",
+                    "        this.getChantiersGrid().store.load();",
+                    "    },this);",
+                    "",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#editChantierWindow #enregistrer"
+            },
+            "designerId": "cb8bca32-8a03-40f6-b9cb-3e4a349ba73f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onFileUpdalodChange",
+                "fn": "onFileUpdalodChange",
+                "implHandler": [
+                    "var selectedRecord = this.getChantiersGrid().selModel.getSelection();",
+                    "if (selectedRecord.length != 1)",
+                    "{",
+                    "    Ext.Msg.alert('Attention','Vous devez d\\'abord choisir un chantier');",
+                    "}",
+                    "var chantierId = selectedRecord[0].data.id;",
+                    "",
+                    "var form = button.up('#fileForm').getForm();",
+                    "if(form.isValid()){",
+                    "    form.submit({",
+                    "        url: 'document-upload.php',",
+                    "        scope:this,",
+                    "        params: {",
+                    "            sousTraitantId: sousTraitantId,",
+                    "            documentTypeId:form.getValues().documentTypeId,",
+                    "            documentNote:form.getValues().documentNote",
+                    "        },",
+                    "        waitMsg: 'Sauvegarde du document...',",
+                    "        success: function(fp, o) {",
+                    "            //On reload le sotre de documents",
+                    "            var documentsStore = Ext.getStore('documents');",
+                    "            documentsStore.load();",
+                    "            //Ext.Msg.alert('Succès', 'Le document \"' + o.result.file + '\" est enregistré.');",
+                    "        }",
+                    "    });",
+                    "}",
+                    ""
+                ],
+                "name": "change",
+                "scope": "me",
+                "designer|targetType": "Ext.form.field.File",
+                "designer|controlQuery": "#chantiersPanel #documentsGrid #fileUpdalod"
+            },
+            "designerId": "ad5e5df8-db28-4e73-9952-ca380c184430"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onChantiersPanelActivate",
+                "fn": "onChantiersPanelActivate",
+                "implHandler": [
+                    "this.getChantiersStore().load();",
+                    "this.getClientsStore().load();",
+                    "    "
+                ],
+                "name": "activate",
+                "scope": "me",
+                "designer|targetType": "Ext.panel.Panel",
+                "designer|controlQuery": "#chantiersPanel"
+            },
+            "designerId": "bda2d797-fba0-4b5a-ab6d-f500595d7582"
+        }
+    ]
+}

@@ -1,0 +1,314 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "logHours"
+    },
+    "id": "ExtBox1-ext-gen39498",
+    "designerId": "5b99a48a-3f84-4fe8-a414-2e88c6d08eb2",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAddHourClick",
+                "fn": "onAddHourClick",
+                "implHandler": [
+                    "Ext.widget('editEmployeHour');"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#logHours #addHour"
+            },
+            "designerId": "6c6d08eb-0a26-4c17-822a-54eb1beeb12d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onSaveClick",
+                "fn": "onSaveClick",
+                "implHandler": [
+                    "var myForm = button.up('window').down('form').getForm();",
+                    "",
+                    "if (!myForm.isValid())",
+                    "{",
+                    "    return",
+                    "}",
+                    "",
+                    "",
+                    "",
+                    "var record = myForm.getValues();",
+                    "this.saveRecord(record);",
+                    "",
+                    "//On peut maintenant fermer la window",
+                    "button.up('window').close();",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "editEmployeHour #save"
+            },
+            "designerId": "a12aa548-1839-4aed-9cd2-62e740519749"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onCancelClick",
+                "fn": "onCancelClick",
+                "implHandler": [
+                    "button.up('window').close();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "editEmployeHour #cancel"
+            },
+            "designerId": "55ad21dd-95a6-48ec-9d20-c939234d4277"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onTabActivate",
+                "fn": "onTabActivate",
+                "implHandler": [
+                    "//On reload le store pour afficher les heures loggues...",
+                    "",
+                    "this.loadHoursStore();"
+                ],
+                "name": "activate",
+                "scope": "me",
+                "designer|targetType": "Ext.tab.Tab",
+                "designer|controlQuery": "#logHours_tabConfig"
+            },
+            "designerId": "b1f39e34-5cb3-48d2-afff-16656217a2e1"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "logHoursGrid",
+                "ref": "logHoursGrid",
+                "selector": "#logHoursGrid"
+            },
+            "designerId": "7ea39387-4e70-44f5-b1ec-2675358fb48b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "deleteRecord",
+                "fn": "deleteRecord",
+                "designer|params": [
+                    "record"
+                ],
+                "implHandler": [
+                    "if (!this.isLogChecked(record))",
+                    "{",
+                    "    Employes.delete_hour(record, this.loadHoursStore,this);",
+                    "}"
+                ]
+            },
+            "designerId": "3b0e530d-240d-4de6-bc51-24c2d7d75a92"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "loadHoursStore",
+                "fn": "loadHoursStore",
+                "implHandler": [
+                    "var employes_logHours_store = Ext.getStore('employes_logHours');",
+                    "",
+                    "",
+                    "",
+                    "employes_logHours_store.proxy.extraParams ={employeId:user_logged};",
+                    "employes_logHours_store.load();"
+                ]
+            },
+            "designerId": "3219f160-d534-4955-bb2e-240f474e2ea6"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onDeleteHourClick",
+                "fn": "onDeleteHourClick",
+                "implHandler": [
+                    "//On va chercher le record selectionne",
+                    "var myGrid = this.getLogHoursGrid();",
+                    "",
+                    "var selectedRecords = myGrid.selModel.getSelection();",
+                    "if (selectedRecords.length === 0)",
+                    "{",
+                    "    Ext.Msg.alert('Attention','Aucune entrée n\\'est selectionnée');",
+                    "    return;",
+                    "}",
+                    "",
+                    "",
+                    "",
+                    "Ext.Msg.confirm('Attention','Voulez vous vraiment effacer l\\'entré selectionné ? ', function(button)",
+                    "{",
+                    "    if (button === 'yes')",
+                    "    {",
+                    "        var record = selectedRecords[0].data;",
+                    "        this.deleteRecord(record);",
+                    "",
+                    "    }",
+                    "},this);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#deleteHour"
+            },
+            "designerId": "a2f211a4-1791-4bda-bc94-65231b413a0c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onLogHoursGridItemDblClick",
+                "fn": "onLogHoursGridItemDblClick",
+                "implHandler": [
+                    "if (this.isLogChecked(record.data))",
+                    "{",
+                    "    return",
+                    "}",
+                    "this.editRecord(record);"
+                ],
+                "name": "itemdblclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#logHoursGrid"
+            },
+            "designerId": "24884ddd-7652-4580-9996-9bea0f8ca035"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "saveRecord",
+                "fn": "saveRecord",
+                "designer|params": [
+                    "record"
+                ],
+                "implHandler": [
+                    "",
+                    "if (record.id)",
+                    "{",
+                    "    //On update la DB et on ferme la window",
+                    "    Employes.update_hour(record, function(){",
+                    "        this.loadHoursStore();",
+                    "    },this);",
+                    "}",
+                    "else",
+                    "{",
+                    "    //On cree le nouveau log hour ",
+                    "    Employes.log_hour(record, function(newRecord){",
+                    "        //On rajoute le nouvel employe dans le store",
+                    "        this.loadHoursStore();",
+                    "    },this);",
+                    "",
+                    "}"
+                ]
+            },
+            "designerId": "db56f8fc-047c-42b2-86d5-113ad359949c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "editRecord",
+                "fn": "editRecord",
+                "designer|params": [
+                    "record"
+                ],
+                "implHandler": [
+                    "var myWindow = Ext.widget('editEmployeHour');",
+                    "var myForm = myWindow.down('form').getForm();",
+                    "",
+                    "myForm.loadRecord(record);",
+                    ""
+                ]
+            },
+            "designerId": "6e022edb-83c1-41c3-aac6-92d11afa7c4a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "isLogChecked",
+                "fn": "isLogChecked",
+                "designer|params": [
+                    "record"
+                ],
+                "implHandler": [
+                    "if (record.checked === 1)",
+                    "{",
+                    "    Ext.Msg.alert('Attention','Impossible d\\'effacer cette entrée. Merci de contacter la comptabilité.');",
+                    "    return true;",
+                    "}",
+                    "return false;"
+                ]
+            },
+            "designerId": "b15a1a63-7e5d-4fba-b7a7-220d1ebc2d02"
+        }
+    ]
+}
