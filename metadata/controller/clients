@@ -10,6 +10,9 @@
         "models": [
             "client"
         ],
+        "stores": [
+            "clients"
+        ],
         "views": [
             "editClientWindow",
             "clientsGrid"
@@ -139,6 +142,26 @@
                 "designer|controlQuery": "#clientsGrid"
             },
             "designerId": "204b08eb-1c7f-4ecd-94e6-738e1c87dacc"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onClientsGridActivate",
+                "fn": "onClientsGridActivate",
+                "implHandler": [
+                    "this.getClientsStore().load();"
+                ],
+                "name": "activate",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#clientsGrid"
+            },
+            "designerId": "76677f0b-2963-4be7-9dd9-1b43c9d30471"
         }
     ]
 }

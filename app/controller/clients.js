@@ -19,6 +19,9 @@ Ext.define('dalpeApp.controller.clients', {
     models: [
         'client'
     ],
+    stores: [
+        'clients'
+    ],
     views: [
         'editClientWindow',
         'clientsGrid'
@@ -91,6 +94,10 @@ Ext.define('dalpeApp.controller.clients', {
 
     },
 
+    onClientsGridActivate: function(abstractcomponent, options) {
+        this.getClientsStore().load();
+    },
+
     init: function(application) {
         this.control({
             "#clientsGrid #add": {
@@ -100,7 +107,8 @@ Ext.define('dalpeApp.controller.clients', {
                 click: this.onEnregistrerClick
             },
             "#clientsGrid": {
-                itemdblclick: this.onClientsGridItemDblClick
+                itemdblclick: this.onClientsGridItemDblClick,
+                activate: this.onClientsGridActivate
             }
         });
     }
