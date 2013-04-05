@@ -33,7 +33,7 @@ Ext.define('dalpeApp.view.employesGrid', {
                     renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                         if (value)
                         {
-                            return Ext.String.format('<img src="{0}" width="100%>', value);
+                            return Ext.String.format('<img src="{0}" width="100">', value);
                         }
                         return '';
                     },

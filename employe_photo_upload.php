@@ -15,7 +15,7 @@ if(isset($_FILES)){
     	if (isset($_POST['employeId']))
     	{
 	    	fb(2);
-	    	$destPath = "documents_importes/employes/$file_name";
+	    	$destPath = "/documents_importes/employes/$file_name";
 	    	
 	    	if(move_uploaded_file($file_tmp, $destPath)){
 	            fb(3);
