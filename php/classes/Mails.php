@@ -38,7 +38,19 @@ class Mails {
 	{
 		$sousTraitantId = $params->filter[0]->value;
 			
-		$query = "SELECT mails.id, mails.message,mails.creationDate,mails.subject,mails.userCreateId,mails.chantierId,mails.sentDate  FROM mails INNER JOIN soustraitants_link_mails ON soustraitants_link_mails.mailId = mails.id WHERE soustraitants_link_mails.sousTraitantId = ".$sousTraitantId;
+		$query = "SELECT mails.id, 
+					mails.message, 
+					mails.creationDate, 
+					mails.`subject`, 
+					mails.sentDate, 
+					chantiers.`name` AS chantier, 
+					employes.prenom AS userCreate, 
+					employes.nom AS userCreateLastName
+				FROM mails INNER JOIN soustraitants_link_mails ON soustraitants_link_mails.mailId = mails.id
+					 LEFT JOIN chantiers ON mails.chantierId = chantiers.id
+					 LEFT JOIN employes ON mails.userCreateId = employes.id
+					 WHERE soustraitants_link_mails.sousTraitantId = ".$sousTraitantId;
+		fb($query);
 		$_db = connectToDbMySql();
 
 		$_result = $_db->query($query) or die('Connect Error (' . $_db->connect_errno . ') ' . $_db->connect_error);

@@ -36,13 +36,17 @@ Ext.define('dalpeApp.model.mail', {
             name: 'subject'
         },
         {
-            name: 'chantierId',
-            type: 'int',
+            name: 'chantier',
+            type: 'string',
             useNull: true
         },
         {
-            name: 'userCreateId',
-            type: 'int'
+            name: 'userCreate',
+            type: 'string'
+        },
+        {
+            name: 'userCreateLastName',
+            type: 'string'
         },
         {
             name: 'sentDate',

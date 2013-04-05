@@ -77,8 +77,8 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyField29",
-                "name": "chantierId",
-                "type": "int",
+                "name": "chantier",
+                "type": "string",
                 "useNull": true
             },
             "designerId": "254f960b-97ae-45cf-82f1-c1a1f3af5909"
@@ -92,10 +92,24 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyField30",
-                "name": "userCreateId",
-                "type": "int"
+                "name": "userCreate",
+                "type": "string"
             },
             "designerId": "663943f6-8364-41e4-9909-7a101a6a2642"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyField30",
+                "name": "userCreateLastName",
+                "type": "string"
+            },
+            "designerId": "f48a710a-d6cd-41e4-8ada-e7b4f1aa8e52"
         },
         {
             "type": "datafield",

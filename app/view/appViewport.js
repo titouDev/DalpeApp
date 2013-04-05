@@ -170,20 +170,7 @@ Ext.define('dalpeApp.view.appViewport', {
                                                         },
                                                         {
                                                             xtype: 'gridcolumn',
-                                                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                                                var chantiersStore = Ext.getStore('chantiers');
-                                                                var chantierId = record.data.chantierId;
-                                                                if (chantierId)
-                                                                {
-
-                                                                    return chantiersStore.getById(chantierId).data.name;
-                                                                }
-                                                                else
-                                                                {
-                                                                    return '';
-                                                                }
-                                                            },
-                                                            dataIndex: 'chantierId',
+                                                            dataIndex: 'chantier',
                                                             flex: 1,
                                                             text: 'Chantier'
                                                         },
@@ -194,20 +181,7 @@ Ext.define('dalpeApp.view.appViewport', {
                                                         },
                                                         {
                                                             xtype: 'gridcolumn',
-                                                            renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                                                var employesStore = Ext.getStore('employes');
-                                                                var userId = record.data.userCreateId;
-                                                                if (userId)
-                                                                {
-
-                                                                    return employesStore.getById(userId).data.prenom + " " + employesStore.getById(userId).data.nom;
-                                                                }
-                                                                else
-                                                                {
-                                                                    return '';
-                                                                }
-                                                            },
-                                                            dataIndex: 'userCreateId',
+                                                            dataIndex: 'userCreate',
                                                             text: 'Cree par'
                                                         },
                                                         {
