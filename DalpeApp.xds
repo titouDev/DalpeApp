@@ -1,7 +1,7 @@
 {
     "name": "DalpeApp",
     "settings": {
-        "urlPrefix": "http://192.168.1.6/senchaProjects/DalpeApp",
+        "urlPrefix": "http://localhost:8888/DalpeApp",
         "spacesToIndent": 4,
         "exportPath": "/Applications/MAMP/htdocs",
         "sdkPath": "",
