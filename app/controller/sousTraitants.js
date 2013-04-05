@@ -129,7 +129,7 @@ Ext.define('dalpeApp.controller.sousTraitants', {
 
     onSousTraitantsPanelActivate: function(abstractcomponent, options) {
         //this.getMailLinkSousTraitantStore().load();
-        //this.getSousTraitantsStore().load();
+        this.getSousTraitantsStore().load();
     },
 
     prepareMail: function() {

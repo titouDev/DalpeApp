@@ -7,7 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "designer|userClassName": "clients",
-        "autoLoad": true,
+        "autoLoad": false,
         "storeId": "clients",
         "model": "client"
     },

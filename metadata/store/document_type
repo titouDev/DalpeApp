@@ -7,7 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "designer|userClassName": "document_type",
-        "autoLoad": true,
+        "autoLoad": false,
         "storeId": "document_type",
         "model": "document_type"
     },

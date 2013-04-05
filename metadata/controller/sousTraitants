@@ -569,7 +569,7 @@
                 "fn": "onSousTraitantsPanelActivate",
                 "implHandler": [
                     "//this.getMailLinkSousTraitantStore().load();",
-                    "//this.getSousTraitantsStore().load();"
+                    "this.getSousTraitantsStore().load();"
                 ],
                 "name": "activate",
                 "scope": "me",

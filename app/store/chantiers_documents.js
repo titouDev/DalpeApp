@@ -24,7 +24,7 @@ Ext.define('dalpeApp.store.chantiers_documents', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
-            autoLoad: true,
+            autoLoad: false,
             storeId: 'MyJsonStore11',
             model: 'dalpeApp.model.document',
             proxy: {
