@@ -41,6 +41,11 @@ Ext.define('dalpeApp.model.mail', {
             useNull: true
         },
         {
+            name: 'chantierId',
+            type: 'int',
+            useNull: true
+        },
+        {
             name: 'userCreate',
             type: 'string'
         },

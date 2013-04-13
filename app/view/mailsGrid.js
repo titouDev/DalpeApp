@@ -42,20 +42,7 @@ Ext.define('dalpeApp.view.mailsGrid', {
                 },
                 {
                     xtype: 'gridcolumn',
-                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                        var chantiersStore = Ext.getStore('chantiers');
-                        var chantierId = record.data.chantierId;
-                        if (chantierId)
-                        {
-
-                            return chantiersStore.getById(chantierId).data.name;
-                        }
-                        else
-                        {
-                            return '';
-                        }
-                    },
-                    dataIndex: 'chantierId',
+                    dataIndex: 'chantier',
                     text: 'Chantier'
                 },
                 {
@@ -65,20 +52,7 @@ Ext.define('dalpeApp.view.mailsGrid', {
                 },
                 {
                     xtype: 'gridcolumn',
-                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                        var employesStore = Ext.getStore('employes');
-                        var userId = record.data.userCreateId;
-                        if (userId)
-                        {
-
-                            return employesStore.getById(userId).data.prenom + " " + employesStore.getById(userId).data.nom;
-                        }
-                        else
-                        {
-                            return '';
-                        }
-                    },
-                    dataIndex: 'userCreateId',
+                    dataIndex: 'userCreate',
                     text: 'Cree par'
                 },
                 {
@@ -86,48 +60,10 @@ Ext.define('dalpeApp.view.mailsGrid', {
                     dataIndex: 'sentDate',
                     text: 'Envoye le'
                 }
-            ],
-            listeners: {
-                itemdblclick: {
-                    fn: me.onMailsGridItemDblClick,
-                    scope: me
-                }
-            }
+            ]
         });
 
         me.callParent(arguments);
-    },
-
-    onMailsGridItemDblClick: function(tablepanel, record, item, index, e, options) {
-
-
-        var myMail = record.data;
-
-
-
-        //On reload le store de liens
-        var linkStore = Ext.getStore('mailLinkSousTraitant');
-        linkStore.proxy.extraParams = {mailId:myMail.id};
-        linkStore.load();
-
-        //On affiche la fenetre
-        var mailWindow = Ext.widget('mailWindow');
-        //On update le form
-        var myForm = mailWindow.down('form');
-        myForm.getForm().setValues(myMail);
-
-
-        if (myMail.sentDate)
-        {
-            //Le form va etre read Only
-            //Ext.Msg.alert('Attention', 'Ce mail a deja ete envoye, vous ne pourrez donc pas le modifier.');
-            mailWindow.down('#comboChantiers').readOnly = true;
-            mailWindow.down('#subject').setReadOnly(true);
-            mailWindow.down('#message').setReadOnly(true);
-
-
-        }
-
     }
 
 });

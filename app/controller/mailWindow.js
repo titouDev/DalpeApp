@@ -20,7 +20,8 @@ Ext.define('dalpeApp.controller.mailWindow', {
         'mail'
     ],
     stores: [
-        'mailLinkSousTraitant'
+        'mailLinkSousTraitant',
+        'chantiers'
     ],
     views: [
         'mailWindow'
@@ -97,6 +98,11 @@ Ext.define('dalpeApp.controller.mailWindow', {
 
     },
 
+    onComboChantiersRender: function(abstractcomponent, options) {
+        console.log(456465);
+        this.getChantiersStore().load();
+    },
+
     init: function(application) {
         this.control({
             "#mailWindow #send": {
@@ -122,6 +128,9 @@ Ext.define('dalpeApp.controller.mailWindow', {
             },
             "#mailWindow #close": {
                 click: this.onCloseClick
+            },
+            "#mailWindow #comboChantiers": {
+                render: this.onComboChantiersRender
             }
         });
     }

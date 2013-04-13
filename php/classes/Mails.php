@@ -44,13 +44,13 @@ class Mails {
 					mails.`subject`, 
 					mails.sentDate, 
 					chantiers.`name` AS chantier, 
+					chantiers.id AS chantierId, 
 					employes.prenom AS userCreate, 
 					employes.nom AS userCreateLastName
 				FROM mails INNER JOIN soustraitants_link_mails ON soustraitants_link_mails.mailId = mails.id
 					 LEFT JOIN chantiers ON mails.chantierId = chantiers.id
 					 LEFT JOIN employes ON mails.userCreateId = employes.id
-					 WHERE soustraitants_link_mails.sousTraitantId = ".$sousTraitantId;
-		fb($query);
+					 WHERE mails.sent = 1 AND soustraitants_link_mails.sousTraitantId = ".$sousTraitantId;
 		$_db = connectToDbMySql();
 
 		$_result = $_db->query($query) or die('Connect Error (' . $_db->connect_errno . ') ' . $_db->connect_error);
@@ -163,7 +163,7 @@ class Mails {
 		for ($i=0;$i< sizeof($sousTraitants);$i++)
 		{
 			$sousTraitantId = $sousTraitants[$i]->id;
-			$query = "UPDATE mails SET sentDate = CURRENT_TIMESTAMP() WHERE id = " . $params->id;
+			$query = "UPDATE mails SET sentDate = CURRENT_TIMESTAMP(), sent=1 WHERE id = " . $params->id;
 			if ($stmt = $_db->prepare($query))
 			{
 				$stmt->execute();

@@ -42,6 +42,34 @@
                     "designerId": "68de595b-3ab3-4a07-aeec-6569fb09e72f"
                 }
             ]
+        },
+        {
+            "type": "sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MySorter",
+                "direction": "DESC",
+                "property": "creationDate"
+            },
+            "designerId": "27d1f8de-03c6-4dca-ad45-b3447ecdb939"
+        },
+        {
+            "type": "sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MySorter1",
+                "direction": "DESC",
+                "property": "sentDate"
+            },
+            "designerId": "6c4e8a7d-18ad-44ec-83c4-a998bb41e74f"
         }
     ]
 }

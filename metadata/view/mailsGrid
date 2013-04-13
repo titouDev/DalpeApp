@@ -65,47 +65,10 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyColumn30",
-                "dataIndex": "chantierId",
+                "dataIndex": "chantier",
                 "text": "Chantier"
             },
-            "designerId": "4a9854bc-c95c-48c6-b715-30fbfe4335cc",
-            "cn": [
-                {
-                    "type": "fixedfunction",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "renderer",
-                        "fn": "renderer",
-                        "designer|params": [
-                            "value",
-                            "metaData",
-                            "record",
-                            "rowIndex",
-                            "colIndex",
-                            "store",
-                            "view"
-                        ],
-                        "implHandler": [
-                            "var chantiersStore = Ext.getStore('chantiers');",
-                            "var chantierId = record.data.chantierId;",
-                            "if (chantierId)",
-                            "{",
-                            "",
-                            "    return chantiersStore.getById(chantierId).data.name;",
-                            "}",
-                            "else",
-                            "{",
-                            "    return '';",
-                            "}"
-                        ]
-                    },
-                    "designerId": "ee0fd628-de17-4af1-9bd4-bf2746e52110"
-                }
-            ]
+            "designerId": "4a9854bc-c95c-48c6-b715-30fbfe4335cc"
         },
         {
             "type": "datecolumn",
@@ -130,93 +93,10 @@
             "codeClass": null,
             "userConfig": {
                 "designer|userClassName": "MyColumn31",
-                "dataIndex": "userCreateId",
+                "dataIndex": "userCreate",
                 "text": "Cree par"
             },
-            "designerId": "4aeef04c-59da-4562-8302-4c2d95d1dbdb",
-            "cn": [
-                {
-                    "type": "fixedfunction",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|userClassName": "renderer",
-                        "fn": "renderer",
-                        "designer|params": [
-                            "value",
-                            "metaData",
-                            "record",
-                            "rowIndex",
-                            "colIndex",
-                            "store",
-                            "view"
-                        ],
-                        "implHandler": [
-                            "var employesStore = Ext.getStore('employes');",
-                            "var userId = record.data.userCreateId;",
-                            "if (userId)",
-                            "{",
-                            "",
-                            "return employesStore.getById(userId).data.prenom + \" \" + employesStore.getById(userId).data.nom;",
-                            "}",
-                            "else",
-                            "{",
-                            "    return '';",
-                            "}"
-                        ]
-                    },
-                    "designerId": "112b4a85-b64d-4608-bc19-a547c82f2d3f"
-                }
-            ]
-        },
-        {
-            "type": "basiceventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "onMailsGridItemDblClick",
-                "fn": "onMailsGridItemDblClick",
-                "implHandler": [
-                    "",
-                    "",
-                    "var myMail = record.data;",
-                    "",
-                    "",
-                    "",
-                    "//On reload le store de liens",
-                    "var linkStore = Ext.getStore('mailLinkSousTraitant');",
-                    "linkStore.proxy.extraParams = {mailId:myMail.id};",
-                    "linkStore.load();",
-                    "",
-                    "//On affiche la fenetre",
-                    "var mailWindow = Ext.widget('mailWindow');",
-                    "//On update le form",
-                    "var myForm = mailWindow.down('form');",
-                    "myForm.getForm().setValues(myMail);",
-                    "",
-                    "",
-                    "if (myMail.sentDate)",
-                    "{",
-                    "    //Le form va etre read Only",
-                    "    //Ext.Msg.alert('Attention', 'Ce mail a deja ete envoye, vous ne pourrez donc pas le modifier.');",
-                    "    mailWindow.down('#comboChantiers').readOnly = true;",
-                    "    mailWindow.down('#subject').setReadOnly(true);",
-                    "    mailWindow.down('#message').setReadOnly(true);",
-                    "",
-                    "    ",
-                    "}",
-                    ""
-                ],
-                "name": "itemdblclick",
-                "scope": "me"
-            },
-            "designerId": "4d1c6da2-6aaf-4f78-8970-23fe4a093889"
+            "designerId": "4aeef04c-59da-4562-8302-4c2d95d1dbdb"
         },
         {
             "type": "datecolumn",

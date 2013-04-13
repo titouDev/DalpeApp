@@ -44,7 +44,8 @@
             "global",
             "logHours",
             "editSousTraitantController",
-            "editEmploye"
+            "editEmploye",
+            "mails_grid"
         ]
     },
     "id": "ExtBox1-ext-gen4115",

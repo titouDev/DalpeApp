@@ -56,7 +56,8 @@ Ext.application({
         'global',
         'logHours',
         'editSousTraitantController',
-        'editEmploye'
+        'editEmploye',
+        'mails_grid'
     ],
 
     launch: function() {

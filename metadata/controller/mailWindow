@@ -11,7 +11,8 @@
             "mail"
         ],
         "stores": [
-            "mailLinkSousTraitant"
+            "mailLinkSousTraitant",
+            "chantiers"
         ],
         "views": [
             "mailWindow"
@@ -30,6 +31,9 @@
             "userConfig": {
                 "designer|userClassName": "onSendClick",
                 "fn": "onSendClick",
+                "implHandler": [
+                    ""
+                ],
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
@@ -78,6 +82,9 @@
             "userConfig": {
                 "designer|userClassName": "onContactsClick",
                 "fn": "onContactsClick",
+                "implHandler": [
+                    ""
+                ],
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
@@ -95,6 +102,9 @@
             "userConfig": {
                 "designer|userClassName": "onAttachClick",
                 "fn": "onAttachClick",
+                "implHandler": [
+                    ""
+                ],
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
@@ -212,12 +222,12 @@
                 "fn": "onCloseClick",
                 "implHandler": [
                     "Ext.MessageBox.confirm('Question','Voulez vous sauvegarder le message avant de fermer la fenetre ?',",
-                    "                       function(btn){",
-                    "                           if (btn == 'no')",
-                    "                           {",
-                    "                           this.getMailWindow().close();",
-                    "                           }",
-                    "                               },this);",
+                    "function(btn){",
+                    "    if (btn == 'no')",
+                    "    {",
+                    "        this.getMailWindow().close();",
+                    "    }",
+                    "},this);",
                     ""
                 ],
                 "name": "click",
@@ -226,6 +236,27 @@
                 "designer|controlQuery": "#mailWindow #close"
             },
             "designerId": "301e6d76-d174-45d2-b08d-6e59e1f530b8"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onComboChantiersRender",
+                "fn": "onComboChantiersRender",
+                "implHandler": [
+                    "console.log(456465);",
+                    "this.getChantiersStore().load();"
+                ],
+                "name": "render",
+                "scope": "me",
+                "designer|targetType": "Ext.form.field.ComboBox",
+                "designer|controlQuery": "#mailWindow #comboChantiers"
+            },
+            "designerId": "272cbb55-c2da-4a0c-9a03-e811ffedde6e"
         }
     ]
 }

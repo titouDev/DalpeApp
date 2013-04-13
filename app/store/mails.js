@@ -35,7 +35,17 @@ Ext.define('dalpeApp.store.mails', {
                     type: 'json',
                     root: 'result'
                 }
-            }
+            },
+            sorters: [
+                {
+                    direction: 'DESC',
+                    property: 'creationDate'
+                },
+                {
+                    direction: 'DESC',
+                    property: 'sentDate'
+                }
+            ]
         }, cfg)]);
     }
 });

@@ -190,12 +190,6 @@ Ext.define('dalpeApp.view.appViewport', {
                                                             text: 'Envoye le'
                                                         }
                                                     ],
-                                                    listeners: {
-                                                        itemdblclick: {
-                                                            fn: me.onMailsGridItemDblClick,
-                                                            scope: me
-                                                        }
-                                                    },
                                                     tools: [
                                                         {
                                                             xtype: 'tool',
@@ -385,38 +379,6 @@ Ext.define('dalpeApp.view.appViewport', {
         });
 
         me.callParent(arguments);
-    },
-
-    onMailsGridItemDblClick: function(tablepanel, record, item, index, e, options) {
-
-
-        var myMail = record.data;
-
-
-
-        //On reload le store de liens
-        var linkStore = Ext.getStore('mailLinkSousTraitant');
-        linkStore.proxy.extraParams = {mailId:myMail.id};
-        linkStore.load();
-
-        //On affiche la fenetre
-        var mailWindow = Ext.widget('mailWindow');
-        //On update le form
-        var myForm = mailWindow.down('form');
-        myForm.getForm().setValues(myMail);
-
-
-        if (myMail.sentDate)
-        {
-            //Le form va etre read Only
-            //Ext.Msg.alert('Attention', 'Ce mail a deja ete envoye, vous ne pourrez donc pas le modifier.');
-            mailWindow.down('#comboChantiers').readOnly = true;
-            mailWindow.down('#subject').setReadOnly(true);
-            mailWindow.down('#message').setReadOnly(true);
-
-
-        }
-
     }
 
 });

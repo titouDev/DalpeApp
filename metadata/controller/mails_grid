@@ -1,0 +1,65 @@
+{
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "mails_grid"
+    },
+    "id": "ExtBox1-ext-gen3699",
+    "designerId": "4ca12e97-593b-46b7-b61a-1781fe349fc4",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMailsGridItemDblClick",
+                "fn": "onMailsGridItemDblClick",
+                "implHandler": [
+                    "",
+                    "var myMail = record.data;",
+                    "",
+                    "",
+                    "",
+                    "//On reload le store de liens",
+                    "var linkStore = Ext.getStore('mailLinkSousTraitant');",
+                    "linkStore.proxy.extraParams = {mailId:myMail.id};",
+                    "linkStore.load();",
+                    "",
+                    "//On affiche la fenetre",
+                    "var mailWindow = Ext.widget('mailWindow');",
+                    "//On update le form",
+                    "var myForm = mailWindow.down('form');",
+                    "myForm.getForm().setValues(myMail);",
+                    "",
+                    "",
+                    "if (myMail.sentDate)",
+                    "{",
+                    "    //Le form va etre read Only",
+                    "    //Ext.Msg.alert('Attention', 'Ce mail a deja ete envoye, vous ne pourrez donc pas le modifier.');",
+                    "    mailWindow.down('#comboChantiers').readOnly = true;",
+                    "    mailWindow.down('#subject').setReadOnly(true);",
+                    "    mailWindow.down('#message').setReadOnly(true);",
+                    "",
+                    "    //On disable les boutons send et save",
+                    "    mailWindow.down('#save').hide();",
+                    "    mailWindow.down('#send').hide();",
+                    "",
+                    "}",
+                    ""
+                ],
+                "name": "itemdblclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#mailsGrid"
+            },
+            "designerId": "b0ad1774-d1c6-403d-a84e-caaf60bd947a"
+        }
+    ]
+}

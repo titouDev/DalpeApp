@@ -91,6 +91,21 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|userClassName": "MyField29",
+                "name": "chantierId",
+                "type": "int",
+                "useNull": true
+            },
+            "designerId": "7f687801-982f-4f32-964c-64aaa87ad0be"
+        },
+        {
+            "type": "datafield",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "designer|userClassName": "MyField30",
                 "name": "userCreate",
                 "type": "string"

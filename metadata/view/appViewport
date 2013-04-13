@@ -418,52 +418,6 @@
                                                     "designerId": "4aeef04c-59da-4562-8302-4c2d95d1dbdb"
                                                 },
                                                 {
-                                                    "type": "basiceventbinding",
-                                                    "reference": {
-                                                        "name": "listeners",
-                                                        "type": "array"
-                                                    },
-                                                    "codeClass": null,
-                                                    "userConfig": {
-                                                        "designer|userClassName": "onMailsGridItemDblClick",
-                                                        "fn": "onMailsGridItemDblClick",
-                                                        "implHandler": [
-                                                            "",
-                                                            "",
-                                                            "var myMail = record.data;",
-                                                            "",
-                                                            "",
-                                                            "",
-                                                            "//On reload le store de liens",
-                                                            "var linkStore = Ext.getStore('mailLinkSousTraitant');",
-                                                            "linkStore.proxy.extraParams = {mailId:myMail.id};",
-                                                            "linkStore.load();",
-                                                            "",
-                                                            "//On affiche la fenetre",
-                                                            "var mailWindow = Ext.widget('mailWindow');",
-                                                            "//On update le form",
-                                                            "var myForm = mailWindow.down('form');",
-                                                            "myForm.getForm().setValues(myMail);",
-                                                            "",
-                                                            "",
-                                                            "if (myMail.sentDate)",
-                                                            "{",
-                                                            "    //Le form va etre read Only",
-                                                            "    //Ext.Msg.alert('Attention', 'Ce mail a deja ete envoye, vous ne pourrez donc pas le modifier.');",
-                                                            "    mailWindow.down('#comboChantiers').readOnly = true;",
-                                                            "    mailWindow.down('#subject').setReadOnly(true);",
-                                                            "    mailWindow.down('#message').setReadOnly(true);",
-                                                            "",
-                                                            "    ",
-                                                            "}",
-                                                            ""
-                                                        ],
-                                                        "name": "itemdblclick",
-                                                        "scope": "me"
-                                                    },
-                                                    "designerId": "4d1c6da2-6aaf-4f78-8970-23fe4a093889"
-                                                },
-                                                {
                                                     "type": "datecolumn",
                                                     "reference": {
                                                         "name": "columns",

@@ -494,6 +494,14 @@
                 "app/model/chantier_link_documents.js"
             ],
             "className": "chantier_link_documents"
+        },
+        "4ca12e97-593b-46b7-b61a-1781fe349fc4": {
+            "paths": [
+                "metadata/controller/mails_grid",
+                "app/controller/override/mails_grid.js",
+                "app/controller/mails_grid.js"
+            ],
+            "className": "mails_grid"
         }
     },
     "viewOrderMap": {
@@ -547,7 +555,8 @@
             "c53357d6-6534-42c5-8bea-8fd0205ff613",
             "c53357d6-6534-42c5-8bea-8fd0205ff613",
             "7f2562eb-19a6-48f4-a495-abd4d8fc1bef",
-            "5b99a48a-3f84-4fe8-a414-2e88c6d08eb2"
+            "5b99a48a-3f84-4fe8-a414-2e88c6d08eb2",
+            "4ca12e97-593b-46b7-b61a-1781fe349fc4"
         ],
         "model": [
             "7871350a-2c6b-44fc-999c-9467978f08c5",
