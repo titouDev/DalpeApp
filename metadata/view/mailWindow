@@ -282,6 +282,7 @@
                                 "layout|flex": null,
                                 "designer|userClassName": "MyComboBox",
                                 "itemId": "comboChantiers",
+                                "width": 363,
                                 "name": "chantierId",
                                 "fieldLabel": "Chantier",
                                 "displayField": "name",

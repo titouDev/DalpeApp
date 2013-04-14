@@ -16,14 +16,31 @@
 Ext.define('dalpeApp.controller.mails_grid', {
     extend: 'Ext.app.Controller',
 
-    onMailsGridItemDblClick: function(tablepanel, record, item, index, e, options) {
+    stores: [
+        'chantiers',
+        'mailLinkSousTraitant'
+    ],
 
+    onMailsGridItemDblClick: function(tablepanel, record, item, index, e, options) {
+        //On reload le store des chantiers, puis on show la window
+
+        this.getChantiersStore().load({
+            scope:this,
+            callback:function(){
+                this.showMailWindow(record);
+            }
+        })
+
+
+    },
+
+    showMailWindow: function(record) {
         var myMail = record.data;
 
 
 
         //On reload le store de liens
-        var linkStore = Ext.getStore('mailLinkSousTraitant');
+        var linkStore = this.getMailLinkSousTraitantStore();
         linkStore.proxy.extraParams = {mailId:myMail.id};
         linkStore.load();
 
@@ -42,9 +59,12 @@ Ext.define('dalpeApp.controller.mails_grid', {
             mailWindow.down('#subject').setReadOnly(true);
             mailWindow.down('#message').setReadOnly(true);
 
-            //On disable les boutons send et save
+            //On hide les boutons send et save
             mailWindow.down('#save').hide();
             mailWindow.down('#send').hide();
+            //On hide  les boutons add et remove destinataire
+            mailWindow.down('#add').hide();
+            mailWindow.down('#remove').hide();
 
         }
 

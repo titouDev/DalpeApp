@@ -175,6 +175,7 @@ Ext.define('dalpeApp.view.mailWindow', {
                                 {
                                     xtype: 'combobox',
                                     itemId: 'comboChantiers',
+                                    width: 363,
                                     name: 'chantierId',
                                     fieldLabel: 'Chantier',
                                     displayField: 'name',

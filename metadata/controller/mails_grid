@@ -6,7 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "mails_grid"
+        "designer|userClassName": "mails_grid",
+        "stores": [
+            "chantiers",
+            "mailLinkSousTraitant"
+        ]
     },
     "id": "ExtBox1-ext-gen3699",
     "designerId": "4ca12e97-593b-46b7-b61a-1781fe349fc4",
@@ -22,13 +26,44 @@
                 "designer|userClassName": "onMailsGridItemDblClick",
                 "fn": "onMailsGridItemDblClick",
                 "implHandler": [
+                    "//On reload le store des chantiers, puis on show la window",
                     "",
+                    "this.getChantiersStore().load({",
+                    "    scope:this,",
+                    "    callback:function(){",
+                    "        this.showMailWindow(record);",
+                    "    }",
+                    "})",
+                    "",
+                    ""
+                ],
+                "name": "itemdblclick",
+                "scope": "me",
+                "designer|targetType": "Ext.grid.Panel",
+                "designer|controlQuery": "#mailsGrid"
+            },
+            "designerId": "b0ad1774-d1c6-403d-a84e-caaf60bd947a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "showMailWindow",
+                "fn": "showMailWindow",
+                "designer|params": [
+                    "record"
+                ],
+                "implHandler": [
                     "var myMail = record.data;",
                     "",
                     "",
                     "",
                     "//On reload le store de liens",
-                    "var linkStore = Ext.getStore('mailLinkSousTraitant');",
+                    "var linkStore = this.getMailLinkSousTraitantStore();",
                     "linkStore.proxy.extraParams = {mailId:myMail.id};",
                     "linkStore.load();",
                     "",
@@ -47,19 +82,18 @@
                     "    mailWindow.down('#subject').setReadOnly(true);",
                     "    mailWindow.down('#message').setReadOnly(true);",
                     "",
-                    "    //On disable les boutons send et save",
+                    "    //On hide les boutons send et save",
                     "    mailWindow.down('#save').hide();",
                     "    mailWindow.down('#send').hide();",
+                    "    //On hide  les boutons add et remove destinataire",
+                    "    mailWindow.down('#add').hide();",
+                    "    mailWindow.down('#remove').hide();",
                     "",
                     "}",
                     ""
-                ],
-                "name": "itemdblclick",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#mailsGrid"
+                ]
             },
-            "designerId": "b0ad1774-d1c6-403d-a84e-caaf60bd947a"
+            "designerId": "c84b9575-c9d4-46a7-9fee-78a1bec34e13"
         }
     ]
 }
