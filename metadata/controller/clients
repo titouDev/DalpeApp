@@ -1,12 +1,11 @@
 {
-    "type": "controller",
+    "type": "Ext.app.Controller",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "clients",
         "models": [
             "client"
         ],
@@ -16,9 +15,9 @@
         "views": [
             "editClientWindow",
             "clientsGrid"
-        ]
+        ],
+        "designer|userClassName": "clients"
     },
-    "id": "ExtBox1-ext-gen42621",
     "designerId": "12caf886-dbf7-471f-b353-82f5b2c7f27f",
     "cn": [
         {

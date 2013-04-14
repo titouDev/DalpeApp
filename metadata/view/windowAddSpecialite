@@ -1,26 +1,25 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "windowAddSpecialite",
-        "designer|userAlias": "windowAddSpecialite",
         "height": 145,
         "id": "windowAddSpecialite",
         "width": 247,
+        "designer|userClassName": "windowAddSpecialite",
+        "designer|userAlias": "windowAddSpecialite",
         "layout": "fit",
         "title": "Choisissez une specialite",
         "constrain": true,
         "modal": true
     },
-    "id": "ExtBox1-ext-gen6323",
     "designerId": "2d33d2c4-28b5-4543-abe5-e62e5c54d882",
     "cn": [
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -33,7 +32,7 @@
             "designerId": "1f602a64-e840-4116-9ed5-6e8ffddfabf3",
             "cn": [
                 {
-                    "type": "tbspacer",
+                    "type": "Ext.toolbar.Spacer",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -41,14 +40,14 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MySpacer1",
                         "height": 13,
-                        "width": 37
+                        "width": 37,
+                        "designer|userClassName": "MySpacer1"
                     },
                     "designerId": "8686d71b-6c8b-4225-a478-8d2b20849986"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -101,7 +100,7 @@
                     ]
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -139,7 +138,7 @@
             ]
         },
         {
-            "type": "panel",
+            "type": "Ext.panel.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -154,16 +153,16 @@
             "designerId": "2af955fd-28d6-4224-bca2-c02075162b92",
             "cn": [
                 {
-                    "type": "combobox",
+                    "type": "Ext.form.field.ComboBox",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyComboBox1",
                         "itemId": "comboSpecialites",
                         "margin": 2,
+                        "designer|userClassName": "MyComboBox1",
                         "fieldLabel": null,
                         "autoSelect": false,
                         "displayField": "name",
@@ -174,7 +173,7 @@
                     "designerId": "44993502-397c-4f02-a0b0-5f73ddeb294b"
                 },
                 {
-                    "type": "label",
+                    "type": "Ext.form.Label",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -183,8 +182,8 @@
                     "userConfig": {
                         "layout|flex": 1,
                         "layout|margins": "10",
-                        "designer|userClassName": "MyLabel1",
                         "disabled": true,
+                        "designer|userClassName": "MyLabel1",
                         "text": "(ecrire dans la boite pour creer une nouvelle specialite)"
                     },
                     "designerId": "ece905e2-3d6d-4b5e-ac1c-7178d0e59876"

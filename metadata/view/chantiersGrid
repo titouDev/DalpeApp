@@ -1,24 +1,23 @@
 {
-    "type": "gridpanel",
+    "type": "Ext.grid.Panel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "chantiersGrid",
-        "designer|userAlias": "chantiersGrid",
         "height": 250,
         "id": "chantiersGrid",
         "width": null,
+        "designer|userClassName": "chantiersGrid",
+        "designer|userAlias": "chantiersGrid",
         "title": "Chantiers",
         "store": "chantiers"
     },
-    "id": "ExtBox1-ext-gen47847",
     "designerId": "77914f77-d260-4726-9454-e69b4095c093",
     "cn": [
         {
-            "type": "gridview",
+            "type": "Ext.grid.View",
             "reference": {
                 "name": "viewConfig",
                 "type": "object"
@@ -30,7 +29,7 @@
             "designerId": "d34f8e58-cbe8-49c1-94a0-14437de7e318"
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -39,13 +38,13 @@
             "userConfig": {
                 "designer|userClassName": "MyColumn26",
                 "dataIndex": "name",
-                "flex": 1,
-                "text": "Name"
+                "text": "Name",
+                "flex": 1
             },
             "designerId": "74c8ace6-112b-4370-8459-d384e1858083"
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -54,13 +53,13 @@
             "userConfig": {
                 "designer|userClassName": "MyColumn27",
                 "dataIndex": "note",
-                "flex": 1,
-                "text": "Note"
+                "text": "Note",
+                "flex": 1
             },
             "designerId": "b3ec960b-7050-4ab1-a955-2ad5bc35c86c"
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -69,13 +68,13 @@
             "userConfig": {
                 "designer|userClassName": "MyColumn28",
                 "dataIndex": "status",
-                "flex": 1,
-                "text": "Status"
+                "text": "Status",
+                "flex": 1
             },
             "designerId": "9d7b8c9b-1bb5-4b3b-ad94-d3698d038180"
         },
         {
-            "type": "datecolumn",
+            "type": "Ext.grid.column.Date",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -90,7 +89,7 @@
             "designerId": "90f6543c-1dea-43ea-a046-f2285be6ccde"
         },
         {
-            "type": "datecolumn",
+            "type": "Ext.grid.column.Date",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -105,7 +104,7 @@
             "designerId": "162a7e2b-e2b2-42d4-8ca6-b398b5be8591"
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -114,13 +113,13 @@
             "userConfig": {
                 "designer|userClassName": "MyColumn29",
                 "dataIndex": "clientName",
-                "flex": 1,
-                "text": "Client"
+                "text": "Client",
+                "flex": 1
             },
             "designerId": "d41e88da-801d-4868-84d1-ebd7d1a26f05"
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -133,7 +132,7 @@
             "designerId": "9e633482-80bb-44a1-9cf7-f424175174ff",
             "cn": [
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -141,8 +140,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton20",
                         "itemId": "add",
+                        "designer|userClassName": "MyButton20",
                         "text": "Creer un nouveau chantier"
                     },
                     "designerId": "6a6c0b9f-b51d-40b3-96f9-8ae20a285578"

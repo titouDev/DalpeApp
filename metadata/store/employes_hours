@@ -6,16 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "employes_hours",
-        "autoLoad": false,
+        "model": "employeHour",
         "storeId": "employes_hours",
-        "model": "employeHour"
+        "designer|userClassName": "employes_hours"
     },
-    "id": "ExtBox1-ext-gen9012",
     "designerId": "ddee1a8c-46be-4052-955e-2953d9a66b74",
     "cn": [
         {
-            "type": "directproxy",
+            "type": "Ext.data.proxy.Direct",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -28,15 +26,15 @@
             "designerId": "95834ad0-9304-42ea-a0c0-883405ececa4",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader2",
-                        "root": "result"
+                        "root": "result",
+                        "designer|userClassName": "MyJsonReader2"
                     },
                     "designerId": "9da55cf2-c5a4-4558-bd9f-26a0a787fceb"
                 }

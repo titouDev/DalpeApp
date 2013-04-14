@@ -1,5 +1,5 @@
 {
-    "type": "datamodel",
+    "type": "Ext.data.Model",
     "reference": {
         "name": "items",
         "type": "array"
@@ -8,32 +8,31 @@
     "userConfig": {
         "designer|userClassName": "chantierStatus"
     },
-    "id": "ExtBox1-ext-gen29293",
     "designerId": "8d94fc42-0d4c-4942-9e7b-10f6b970255e",
     "cn": [
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field59",
-                "name": "id"
+                "name": "id",
+                "designer|userClassName": "field59"
             },
             "designerId": "343c2f0b-12d6-4f16-8840-3a23799dd6d6"
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "field60",
-                "name": "name"
+                "name": "name",
+                "designer|userClassName": "field60"
             },
             "designerId": "9468d3b3-0448-4b01-af5e-1c86b5e72e1c"
         }

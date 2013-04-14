@@ -6,16 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "chantiers_hours",
-        "autoLoad": false,
+        "model": "employeHour",
         "storeId": "chantiers_hours",
-        "model": "employeHour"
+        "designer|userClassName": "chantiers_hours"
     },
-    "id": "ExtBox1-ext-gen28265",
     "designerId": "05102a25-9d0c-4e0e-a982-7d3866884cb7",
     "cn": [
         {
-            "type": "directproxy",
+            "type": "Ext.data.proxy.Direct",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -28,15 +26,15 @@
             "designerId": "82a9c2a4-81d6-481c-b005-683d08ac17ab",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader2",
-                        "root": "result"
+                        "root": "result",
+                        "designer|userClassName": "MyJsonReader2"
                     },
                     "designerId": "f063a3ed-c0f0-4fc3-8ab9-af86cc791698"
                 }

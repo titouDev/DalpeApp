@@ -1,17 +1,16 @@
 {
-    "type": "controller",
+    "type": "Ext.app.Controller",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "editSousTraitantController",
         "models": [
             "sousTraitant"
-        ]
+        ],
+        "designer|userClassName": "editSousTraitantController"
     },
-    "id": "ExtBox1-ext-gen19519",
     "designerId": "6e11ae97-e15a-45d4-9386-3d63092f49b8",
     "cn": [
         {
@@ -40,6 +39,7 @@
                     "        form.submit({",
                     "            url: 'document-upload.php',",
                     "            scope:this,",
+                    "            timeout:100,",
                     "            params: {",
                     "                sousTraitantId: sousTraitantId,",
                     "                documentTypeId:form.getValues().documentTypeId,",

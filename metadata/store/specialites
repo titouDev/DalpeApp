@@ -6,16 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "specialites",
         "autoLoad": true,
+        "model": "specialite",
         "storeId": "MyDirectStore2",
-        "model": "specialite"
+        "designer|userClassName": "specialites"
     },
-    "id": "ExtBox1-ext-gen4529",
     "designerId": "7c30472b-a80e-4251-8568-3f963945a7a4",
     "cn": [
         {
-            "type": "directproxy",
+            "type": "Ext.data.proxy.Direct",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -28,15 +27,15 @@
             "designerId": "a1648727-d4e5-4f6e-8839-ad8ec488f881",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader4",
-                        "root": "result"
+                        "root": "result",
+                        "designer|userClassName": "MyJsonReader4"
                     },
                     "designerId": "af50ecbc-3dd5-4309-b582-a83042d37bad"
                 }

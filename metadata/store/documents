@@ -6,16 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "documents",
-        "autoLoad": false,
+        "model": "document",
         "storeId": "documents",
-        "model": "document"
+        "designer|userClassName": "documents"
     },
-    "id": "ExtBox1-ext-gen4735",
     "designerId": "8df80686-4286-4022-97f6-7256a0c036ad",
     "cn": [
         {
-            "type": "directproxy",
+            "type": "Ext.data.proxy.Direct",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -28,15 +26,15 @@
             "designerId": "1cdbd641-8a18-4128-aee8-a1533d72b578",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader2",
-                        "root": "result"
+                        "root": "result",
+                        "designer|userClassName": "MyJsonReader2"
                     },
                     "designerId": "94b65ec0-59f6-41cd-82fc-27ac6654cc9d"
                 }

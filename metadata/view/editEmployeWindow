@@ -1,5 +1,5 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
@@ -7,23 +7,22 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
-        "designer|userClassName": "editEmployeWindow",
-        "designer|userAlias": "editEmployeWindow",
         "height": 515,
         "id": "editEmployeWindow",
         "minHeight": 515,
         "minWidth": 650,
         "width": 757,
+        "designer|userClassName": "editEmployeWindow",
+        "designer|userAlias": "editEmployeWindow",
         "layout": "vbox",
         "title": "Edit Employe",
         "constrain": true,
         "modal": true
     },
-    "id": "ExtBox1-ext-gen7880",
     "designerId": "2002c995-32ee-4cc1-948c-651888aaf1e0",
     "cn": [
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -32,9 +31,8 @@
             "userConfig": {
                 "layout|flex": 1,
                 "container|align": "stretch",
-                "designer|userClassName": "MyForm2",
-                "frame": false,
                 "itemId": "editForm",
+                "designer|userClassName": "MyForm2",
                 "layout": "vbox",
                 "bodyPadding": 10,
                 "title": null
@@ -42,7 +40,7 @@
             "designerId": "cf1f8207-3750-44dd-8460-b2ede63b64c3",
             "cn": [
                 {
-                    "type": "panel",
+                    "type": "Ext.panel.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -50,33 +48,33 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": 1,
-                        "designer|userClassName": "MyPanel20",
                         "maxWidth": 200,
                         "width": 75,
+                        "designer|userClassName": "MyPanel20",
                         "layout": "fit",
                         "title": "Photos"
                     },
                     "designerId": "1dbdaa78-16b2-4c80-9e10-4b205d538af0",
                     "cn": [
                         {
-                            "type": "image",
+                            "type": "Ext.Img",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyImg",
                                 "height": 201,
                                 "itemId": "photo",
-                                "width": 201
+                                "width": 201,
+                                "designer|userClassName": "MyImg"
                             },
                             "designerId": "3a9967f4-a737-4f5d-a3f1-1497b89d4fdd"
                         }
                     ]
                 },
                 {
-                    "type": "panel",
+                    "type": "Ext.panel.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -85,16 +83,16 @@
                     "userConfig": {
                         "layout|flex": 1,
                         "container|align": "stretch",
-                        "designer|userClassName": "MyPanel11",
                         "border": 0,
                         "margin": 5,
+                        "designer|userClassName": "MyPanel11",
                         "layout": "hbox",
                         "title": null
                     },
                     "designerId": "27f61baa-5d74-471e-b6a4-edbe903802c2",
                     "cn": [
                         {
-                            "type": "panel",
+                            "type": "Ext.panel.Panel",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -104,15 +102,15 @@
                                 "layout|flex": 1,
                                 "layout|margins": "10",
                                 "container|align": "stretch",
-                                "designer|userClassName": "MyPanel12",
                                 "border": 0,
+                                "designer|userClassName": "MyPanel12",
                                 "layout": "vbox",
                                 "title": null
                             },
                             "designerId": "682128bf-c618-4ce4-a98d-025d11ca1ecd",
                             "cn": [
                                 {
-                                    "type": "textfield",
+                                    "type": "Ext.form.field.Text",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -120,18 +118,18 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|flex": 1,
-                                        "designer|userClassName": "MyTextField9",
                                         "height": null,
                                         "maxHeight": 25,
-                                        "name": "nom",
+                                        "designer|userClassName": "MyTextField9",
                                         "fieldLabel": "Nom",
+                                        "name": "nom",
                                         "allowBlank": false,
                                         "blankText": "Ce champ est requis"
                                     },
                                     "designerId": "83ce67a2-3a37-4292-90da-0609afc9b876"
                                 },
                                 {
-                                    "type": "textfield",
+                                    "type": "Ext.form.field.Text",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -139,16 +137,16 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|flex": 1,
-                                        "designer|userClassName": "MyTextField9",
                                         "maxHeight": 25,
-                                        "name": "prenom",
+                                        "designer|userClassName": "MyTextField9",
                                         "fieldLabel": "Prenom",
+                                        "name": "prenom",
                                         "allowBlank": false
                                     },
                                     "designerId": "f3802a8e-d2d3-4cfe-96d6-9ee3cacbea53"
                                 },
                                 {
-                                    "type": "textfield",
+                                    "type": "Ext.form.field.Text",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -156,15 +154,15 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|flex": 1,
-                                        "designer|userClassName": "MyTextField9",
                                         "maxHeight": 25,
-                                        "name": "phone",
-                                        "fieldLabel": "Telephone"
+                                        "designer|userClassName": "MyTextField9",
+                                        "fieldLabel": "Telephone",
+                                        "name": "phone"
                                     },
                                     "designerId": "7238b127-f479-46f1-9a3b-ebe663ce42cd"
                                 },
                                 {
-                                    "type": "textfield",
+                                    "type": "Ext.form.field.Text",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -172,15 +170,15 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|flex": 1,
-                                        "designer|userClassName": "MyTextField9",
                                         "maxHeight": 25,
-                                        "name": "cell",
-                                        "fieldLabel": "Cellulaire"
+                                        "designer|userClassName": "MyTextField9",
+                                        "fieldLabel": "Cellulaire",
+                                        "name": "cell"
                                     },
                                     "designerId": "f178509f-688c-4c63-ad94-80852a023023"
                                 },
                                 {
-                                    "type": "textfield",
+                                    "type": "Ext.form.field.Text",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -188,17 +186,17 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|flex": 1,
-                                        "designer|userClassName": "MyTextField15",
                                         "maxHeight": 25,
-                                        "name": "mail",
-                                        "fieldLabel": "Couriel"
+                                        "designer|userClassName": "MyTextField15",
+                                        "fieldLabel": "Couriel",
+                                        "name": "mail"
                                     },
                                     "designerId": "3e90dd55-7dbc-4be9-b0f6-ce70bd832ce0"
                                 }
                             ]
                         },
                         {
-                            "type": "panel",
+                            "type": "Ext.panel.Panel",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -208,32 +206,31 @@
                                 "layout|flex": 1,
                                 "layout|margins": "10",
                                 "container|align": "stretch",
-                                "designer|userClassName": "MyPanel13",
                                 "border": 0,
                                 "height": 171,
-                                "autoScroll": false,
+                                "designer|userClassName": "MyPanel13",
                                 "layout": "vbox",
                                 "title": null
                             },
                             "designerId": "7b78edf1-caf7-4861-af27-20bd7d0a4d23",
                             "cn": [
                                 {
-                                    "type": "textfield",
+                                    "type": "Ext.form.field.Text",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "MyTextField13",
                                         "maxHeight": 25,
-                                        "name": "adresse",
-                                        "fieldLabel": "Adresse"
+                                        "designer|userClassName": "MyTextField13",
+                                        "fieldLabel": "Adresse",
+                                        "name": "adresse"
                                     },
                                     "designerId": "fd74eecc-d63e-416b-82f3-0c7c47e9e817"
                                 },
                                 {
-                                    "type": "textfield",
+                                    "type": "Ext.form.field.Text",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -241,17 +238,17 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|flex": 1,
-                                        "designer|userClassName": "MyTextField16",
                                         "maxHeight": 25,
                                         "maxWidth": null,
                                         "width": null,
-                                        "name": "codePostal",
-                                        "fieldLabel": "Code Postal"
+                                        "designer|userClassName": "MyTextField16",
+                                        "fieldLabel": "Code Postal",
+                                        "name": "codePostal"
                                     },
                                     "designerId": "82007cb8-d2c8-454d-88df-bd0ffb1300b1"
                                 },
                                 {
-                                    "type": "textfield",
+                                    "type": "Ext.form.field.Text",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -260,19 +257,19 @@
                                     "userConfig": {
                                         "layout|flex": 1,
                                         "layout|margins": null,
-                                        "designer|userClassName": "MyTextField17",
                                         "maxHeight": 25,
                                         "maxWidth": null,
                                         "padding": null,
                                         "width": null,
-                                        "name": "ville",
+                                        "designer|userClassName": "MyTextField17",
                                         "fieldLabel": "Ville",
-                                        "labelPad": null
+                                        "labelPad": null,
+                                        "name": "ville"
                                     },
                                     "designerId": "2c5c93c2-8277-4bd9-ae85-e69b40a9951a"
                                 },
                                 {
-                                    "type": "textfield",
+                                    "type": "Ext.form.field.Text",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -281,19 +278,19 @@
                                     "userConfig": {
                                         "layout|flex": 1,
                                         "layout|margins": null,
-                                        "designer|userClassName": "MyTextField17",
                                         "maxHeight": 25,
                                         "maxWidth": null,
                                         "padding": null,
                                         "width": null,
-                                        "name": "province",
+                                        "designer|userClassName": "MyTextField17",
                                         "fieldLabel": "Province",
-                                        "labelPad": null
+                                        "labelPad": null,
+                                        "name": "province"
                                     },
                                     "designerId": "4556106a-6d32-4982-9542-3f3dc31014fd"
                                 },
                                 {
-                                    "type": "textfield",
+                                    "type": "Ext.form.field.Text",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -301,15 +298,15 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|flex": 1,
-                                        "designer|userClassName": "MyTextField43",
                                         "maxHeight": 25,
-                                        "name": "login",
-                                        "fieldLabel": "nom d'utilisateur"
+                                        "designer|userClassName": "MyTextField43",
+                                        "fieldLabel": "nom d'utilisateur",
+                                        "name": "login"
                                     },
                                     "designerId": "a0e140f5-c014-4564-9fd2-7726a9b32247"
                                 },
                                 {
-                                    "type": "textfield",
+                                    "type": "Ext.form.field.Text",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -317,10 +314,10 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|flex": 1,
-                                        "designer|userClassName": "MyTextField44",
                                         "maxHeight": 25,
-                                        "name": "password",
-                                        "fieldLabel": "mot de passe"
+                                        "designer|userClassName": "MyTextField44",
+                                        "fieldLabel": "mot de passe",
+                                        "name": "password"
                                     },
                                     "designerId": "7fc5af17-2127-4224-aa87-dacc4e0a0e41"
                                 }
@@ -329,7 +326,7 @@
                     ]
                 },
                 {
-                    "type": "form",
+                    "type": "Ext.form.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -338,15 +335,15 @@
                     "userConfig": {
                         "layout|flex": 1,
                         "container|align": "stretch",
-                        "designer|userClassName": "MyForm6",
                         "itemId": "fileForm",
                         "maxHeight": 30,
+                        "designer|userClassName": "MyForm6",
                         "layout": "hbox"
                     },
                     "designerId": "ed00360a-d9ae-44bb-8dbe-d0845563515b",
                     "cn": [
                         {
-                            "type": "filefield",
+                            "type": "Ext.form.field.File",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -355,26 +352,26 @@
                             "userConfig": {
                                 "layout|flex": 1,
                                 "layout|margins": "5",
-                                "designer|userClassName": "MyFileUpload1",
                                 "itemId": "photoImport",
                                 "maxHeight": 30,
-                                "name": "photoImport",
+                                "designer|userClassName": "MyFileUpload1",
                                 "fieldLabel": "Photo",
+                                "name": "photoImport",
                                 "buttonText": "Rechercher..."
                             },
                             "designerId": "4752f42f-e77c-46e4-a7ea-9fb5e2d72767"
                         },
                         {
-                            "type": "button",
+                            "type": "Ext.button.Button",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyButton15",
                                 "itemId": "savePhoto",
                                 "maxHeight": 30,
+                                "designer|userClassName": "MyButton15",
                                 "text": "Enregistrer"
                             },
                             "designerId": "d6a406c2-47ad-4906-ac10-6267bb4f2fcc"
@@ -382,7 +379,7 @@
                     ]
                 },
                 {
-                    "type": "numberfield",
+                    "type": "Ext.form.field.Number",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -390,17 +387,17 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": 1,
-                        "designer|userClassName": "MyNumberField2",
                         "hidden": true,
-                        "name": "id",
-                        "fieldLabel": "Label"
+                        "designer|userClassName": "MyNumberField2",
+                        "fieldLabel": "Label",
+                        "name": "id"
                     },
                     "designerId": "58c934f4-dcf3-445e-a5d5-8d0a7a0c45ed"
                 }
             ]
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -409,13 +406,13 @@
             "userConfig": {
                 "layout|flex": 1,
                 "dock": "bottom",
-                "designer|userClassName": "MyToolbar5",
-                "itemId": "toolBar"
+                "itemId": "toolBar",
+                "designer|userClassName": "MyToolbar5"
             },
             "designerId": "1931ba8e-3bf6-4505-87ed-8384aeb0dd55",
             "cn": [
                 {
-                    "type": "tbfill",
+                    "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -428,7 +425,7 @@
                     "designerId": "fcaa339f-c5b4-413c-b2fc-a9cad7cca327"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -436,14 +433,14 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton10",
                         "itemId": "enregistrer",
+                        "designer|userClassName": "MyButton10",
                         "text": "Enregistrer"
                     },
                     "designerId": "9e287e40-f31d-49f9-8f9e-ffbfcb6b0fcc"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -451,8 +448,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton11",
                         "itemId": "annuler",
+                        "designer|userClassName": "MyButton11",
                         "text": "Annuler"
                     },
                     "designerId": "d79044dc-6fd6-485d-8818-53fd7a7d1871"

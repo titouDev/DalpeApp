@@ -1,5 +1,5 @@
 {
-    "type": "controller",
+    "type": "Ext.app.Controller",
     "reference": {
         "name": "items",
         "type": "array"
@@ -8,7 +8,6 @@
     "userConfig": {
         "designer|userClassName": "loginWindow"
     },
-    "id": "ExtBox1-ext-gen37732",
     "designerId": "c53357d6-6534-42c5-8bea-8fd0205ff613",
     "cn": [
         {

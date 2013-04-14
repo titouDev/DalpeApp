@@ -6,18 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "mailLinkSousTraitant",
-        "autoLoad": false,
-        "autoSync": false,
-        "storeId": "mailLinkSousTraitant",
         "model": "sousTraitant",
+        "storeId": "mailLinkSousTraitant",
+        "designer|userClassName": "mailLinkSousTraitant",
         "remoteSort": true
     },
-    "id": "ExtBox1-ext-gen51216",
     "designerId": "a79bbea3-d4de-47b9-b24e-a9e513a27156",
     "cn": [
         {
-            "type": "directproxy",
+            "type": "Ext.data.proxy.Direct",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -26,21 +23,20 @@
             "userConfig": {
                 "designer|userClassName": "MyDirectProxy",
                 "api": null,
-                "directFn": "Mails.getLinkSoustraitant",
-                "paramOrder": null
+                "directFn": "Mails.getLinkSoustraitant"
             },
             "designerId": "176c065e-e680-49a2-94a9-70368794e461",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader6",
                         "root": "result",
+                        "designer|userClassName": "MyJsonReader6",
                         "record": null
                     },
                     "designerId": "98a08554-0f72-449e-9bbe-4ab29335e520"

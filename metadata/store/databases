@@ -6,15 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "databases",
+        "model": "dataBase",
         "storeId": "databases",
-        "model": "dataBase"
+        "designer|userClassName": "databases"
     },
-    "id": "ExtBox1-ext-gen11303",
     "designerId": "b87c47e7-ac0e-4c00-928f-440a452d61a8",
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -27,16 +26,16 @@
             "designerId": "f8f426a5-be58-40db-9a48-b41ce78dce1e",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader2",
                         "implicitIncludes": false,
                         "root": "results",
+                        "designer|userClassName": "MyJsonReader2",
                         "record": null,
                         "useSimpleAccessors": true
                     },
@@ -45,15 +44,15 @@
             ]
         },
         {
-            "type": "datafield",
+            "type": "Ext.data.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyField7",
-                "name": "name"
+                "name": "name",
+                "designer|userClassName": "MyField7"
             },
             "designerId": "71923380-588d-4ffe-b263-cb77c736a602"
         }

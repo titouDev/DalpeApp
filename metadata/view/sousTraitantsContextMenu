@@ -1,42 +1,41 @@
 {
-    "type": "menu",
+    "type": "Ext.menu.Menu",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
+        "width": 175,
         "designer|userClassName": "sousTraitantsContextMenu",
-        "designer|userAlias": "sousTraitantsContextMenu",
-        "width": 175
+        "designer|userAlias": "sousTraitantsContextMenu"
     },
-    "id": "ExtBox1-ext-gen20796",
     "designerId": "36e5f604-1eda-473d-8a66-cbfc9a38d0ba",
     "cn": [
         {
-            "type": "menuitem",
+            "type": "Ext.menu.Item",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyMenuItem",
                 "itemId": "sendMail",
+                "designer|userClassName": "MyMenuItem",
                 "text": "Envoyer un courriel"
             },
             "designerId": "56a22428-5970-4e0b-a6ab-67dfce14bb51"
         },
         {
-            "type": "menuitem",
+            "type": "Ext.menu.Item",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyMenuItem3",
                 "itemId": "edit",
+                "designer|userClassName": "MyMenuItem3",
                 "text": "Editer le Sous Traitant"
             },
             "designerId": "a4feccfb-144c-4e01-a47d-7dc74eacb253"

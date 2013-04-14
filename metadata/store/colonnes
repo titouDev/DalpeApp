@@ -6,15 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "colonnes",
+        "model": "colonne",
         "storeId": "colonnes",
-        "model": "colonne"
+        "designer|userClassName": "colonnes"
     },
-    "id": "ExtBox1-ext-gen16662",
     "designerId": "c4a306d4-c285-4307-ba62-ad76109582f7",
     "cn": [
         {
-            "type": "ajaxproxy",
+            "type": "Ext.data.proxy.Ajax",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -27,15 +26,15 @@
             "designerId": "c3f2fdfa-fcf5-4bbf-8b0d-685db4618611",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader3",
                         "root": "results",
+                        "designer|userClassName": "MyJsonReader3",
                         "record": ""
                     },
                     "designerId": "d5ee250b-4390-416b-9828-61375abd25d0"

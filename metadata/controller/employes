@@ -1,12 +1,11 @@
 {
-    "type": "controller",
+    "type": "Ext.app.Controller",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "employes",
         "models": [
             "employe"
         ],
@@ -16,9 +15,9 @@
         "views": [
             "employesGrid",
             "editEmployeWindow"
-        ]
+        ],
+        "designer|userClassName": "employes"
     },
-    "id": "ExtBox1-ext-gen17243",
     "designerId": "8953454d-3ea4-4a30-ad4c-01f5587be068",
     "cn": [
         {

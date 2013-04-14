@@ -1,25 +1,23 @@
 {
-    "type": "gridpanel",
+    "type": "Ext.grid.Panel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "mailsGrid",
-        "designer|userAlias": "mailsgrid",
         "id": "mailsGrid",
         "width": 150,
+        "designer|userClassName": "mailsGrid",
+        "designer|userAlias": "mailsgrid",
         "collapsed": false,
-        "collapsible": false,
         "title": "Courriels",
         "store": "mails"
     },
-    "id": "ExtBox1-ext-gen2013",
     "designerId": "15cabc8d-f149-467a-b6e1-f265c5cd1bc8",
     "cn": [
         {
-            "type": "gridview",
+            "type": "Ext.grid.View",
             "reference": {
                 "name": "viewConfig",
                 "type": "object"
@@ -31,7 +29,7 @@
             "designerId": "625a7773-0eb5-460d-9405-862d8bca84f9"
         },
         {
-            "type": "rowselectionmodel",
+            "type": "Ext.selection.RowModel",
             "reference": {
                 "name": "selModel",
                 "type": "object"
@@ -43,7 +41,7 @@
             "designerId": "2b0cb587-5384-45bb-9307-cd2d17edea17"
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -57,7 +55,7 @@
             "designerId": "5f767b2f-5eb7-42c8-8208-aff4b1dc059e"
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -71,7 +69,7 @@
             "designerId": "4a9854bc-c95c-48c6-b715-30fbfe4335cc"
         },
         {
-            "type": "datecolumn",
+            "type": "Ext.grid.column.Date",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -85,7 +83,7 @@
             "designerId": "4369f757-dd46-4d7d-899d-53b5251458c2"
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -99,7 +97,7 @@
             "designerId": "4aeef04c-59da-4562-8302-4c2d95d1dbdb"
         },
         {
-            "type": "datecolumn",
+            "type": "Ext.grid.column.Date",
             "reference": {
                 "name": "columns",
                 "type": "array"

@@ -1,22 +1,21 @@
 {
-    "type": "gridpanel",
+    "type": "Ext.grid.Panel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
+        "id": "employesGrid",
         "designer|userClassName": "employesGrid",
         "designer|userAlias": "employesGrid",
-        "id": "employesGrid",
         "title": null,
         "store": "employes"
     },
-    "id": "ExtBox1-ext-gen5760",
     "designerId": "2c7176a8-b850-4b98-a7c6-4d5b56a5fe93",
     "cn": [
         {
-            "type": "gridview",
+            "type": "Ext.grid.View",
             "reference": {
                 "name": "viewConfig",
                 "type": "object"
@@ -31,7 +30,7 @@
             "designerId": "5af97ed6-c246-448a-9ca5-a28bb963f033"
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -40,8 +39,8 @@
             "userConfig": {
                 "designer|userClassName": "MyColumn15",
                 "dataIndex": "photo",
-                "flex": 1,
-                "text": "Photo"
+                "text": "Photo",
+                "flex": 1
             },
             "designerId": "fe642c76-d051-4fe0-97b5-fd94669934dc",
             "cn": [
@@ -77,7 +76,7 @@
             ]
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -86,13 +85,13 @@
             "userConfig": {
                 "designer|userClassName": "MyColumn17",
                 "dataIndex": "prenom",
-                "flex": 1,
-                "text": "Prenom"
+                "text": "Prenom",
+                "flex": 1
             },
             "designerId": "20f1a650-dfb4-4e5d-b79c-7e1770f5c4fd"
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -101,13 +100,13 @@
             "userConfig": {
                 "designer|userClassName": "MyColumn18",
                 "dataIndex": "nom",
-                "flex": 1,
-                "text": "Nom"
+                "text": "Nom",
+                "flex": 1
             },
             "designerId": "badbd3a0-926f-4ee9-b488-ca98aa1ab5ff"
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -116,13 +115,13 @@
             "userConfig": {
                 "designer|userClassName": "MyColumn19",
                 "dataIndex": "mail",
-                "flex": 1.5,
-                "text": "Mail"
+                "text": "Mail",
+                "flex": 1.5
             },
             "designerId": "0c0a0d01-a248-4988-82a2-2d477d289475"
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -131,13 +130,13 @@
             "userConfig": {
                 "designer|userClassName": "MyColumn21",
                 "dataIndex": "phone",
-                "flex": 1,
-                "text": "Phone"
+                "text": "Phone",
+                "flex": 1
             },
             "designerId": "f9c5c384-ec5a-4eb2-a9a2-cf092ed0c5c9"
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -146,13 +145,13 @@
             "userConfig": {
                 "designer|userClassName": "MyColumn22",
                 "dataIndex": "cell",
-                "flex": 1,
-                "text": "Cell"
+                "text": "Cell",
+                "flex": 1
             },
             "designerId": "023ea77f-4b60-4d00-8d91-4a0a9e929a27"
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -165,7 +164,7 @@
             "designerId": "4963b133-d478-4103-8786-58d9ff944076",
             "cn": [
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -173,8 +172,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton5",
                         "itemId": "addEmploye",
+                        "designer|userClassName": "MyButton5",
                         "text": "Ajouter un employe"
                     },
                     "designerId": "7d8f3952-a14a-4611-a621-3b3599214036"

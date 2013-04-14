@@ -1,12 +1,11 @@
 {
-    "type": "controller",
+    "type": "Ext.app.Controller",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "sousTraitants",
         "models": [
             "sousTraitant",
             "mail"
@@ -18,9 +17,9 @@
         ],
         "views": [
             "sousTraitantsGrid"
-        ]
+        ],
+        "designer|userClassName": "sousTraitants"
     },
-    "id": "ExtBox1-ext-gen6344",
     "designerId": "d61f7263-e573-4a70-9e2e-e9dc378117e0",
     "cn": [
         {

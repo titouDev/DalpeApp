@@ -1,18 +1,17 @@
 {
-    "type": "controller",
+    "type": "Ext.app.Controller",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "mails_grid",
         "stores": [
             "chantiers",
             "mailLinkSousTraitant"
-        ]
+        ],
+        "designer|userClassName": "mails_grid"
     },
-    "id": "ExtBox1-ext-gen3699",
     "designerId": "4ca12e97-593b-46b7-b61a-1781fe349fc4",
     "cn": [
         {

@@ -6,18 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "sousTraitants",
         "autoLoad": true,
         "autoSync": true,
-        "storeId": "sousTraitants",
         "model": "sousTraitant",
-        "remoteSort": false
+        "storeId": "sousTraitants",
+        "designer|userClassName": "sousTraitants"
     },
-    "id": "ExtBox1-ext-gen11739",
     "designerId": "e0f02898-522d-4dc3-a2e1-2ad3f4b2dd2b",
     "cn": [
         {
-            "type": "directproxy",
+            "type": "Ext.data.proxy.Direct",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -33,21 +31,20 @@
                     "read:SousTraitants.get",
                     "}"
                 ],
-                "directFn": "SousTraitants.get",
-                "paramOrder": null
+                "directFn": "SousTraitants.get"
             },
             "designerId": "34a4e9cc-9e3b-4050-aca8-69bc4c7b4c40",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader6",
                         "root": "result",
+                        "designer|userClassName": "MyJsonReader6",
                         "record": null
                     },
                     "designerId": "c40c4fae-fd47-4681-99c9-464e30e0981b"

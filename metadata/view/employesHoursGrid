@@ -1,22 +1,21 @@
 {
-    "type": "gridpanel",
+    "type": "Ext.grid.Panel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "employesHoursGrid",
         "height": 241,
         "id": "employesHoursGrid",
         "width": 664,
+        "designer|userClassName": "employesHoursGrid",
         "title": "My Grid Panel"
     },
-    "id": "ExtBox1-ext-gen24847",
     "designerId": "54677ed2-cc35-4daa-9ef1-2454cdeb4f60",
     "cn": [
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -30,7 +29,7 @@
             "designerId": "77d3bf4d-4129-4fec-92c1-c86a10e1943d"
         },
         {
-            "type": "numbercolumn",
+            "type": "Ext.grid.column.Number",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -44,7 +43,7 @@
             "designerId": "a1dbd7ba-7d44-4479-a1e4-2e716697a655"
         },
         {
-            "type": "datecolumn",
+            "type": "Ext.grid.column.Date",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -58,7 +57,7 @@
             "designerId": "f926e8d6-e44f-4657-9964-c0cb20055369"
         },
         {
-            "type": "booleancolumn",
+            "type": "Ext.grid.column.Boolean",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -72,7 +71,7 @@
             "designerId": "e4cfd349-13b9-4d55-b139-c0ce24a529d7"
         },
         {
-            "type": "gridview",
+            "type": "Ext.grid.View",
             "reference": {
                 "name": "viewConfig",
                 "type": "object"

@@ -1,12 +1,11 @@
 {
-    "type": "controller",
+    "type": "Ext.app.Controller",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "mailWindowController",
         "models": [
             "mail"
         ],
@@ -15,9 +14,9 @@
         ],
         "views": [
             "mailWindow"
-        ]
+        ],
+        "designer|userClassName": "mailWindowController"
     },
-    "id": "ExtBox1-ext-gen23963",
     "designerId": "01997f0d-c80f-45ee-bd73-f292af411a55",
     "cn": [
         {

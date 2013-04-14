@@ -1,5 +1,5 @@
 {
-    "type": "application",
+    "type": "Ext.app.Application",
     "reference": {
         "name": "items",
         "type": "array"
@@ -48,7 +48,6 @@
             "mails_grid"
         ]
     },
-    "id": "ExtBox1-ext-gen4115",
     "designerId": "application",
     "cn": [
         {

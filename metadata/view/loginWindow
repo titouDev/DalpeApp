@@ -1,18 +1,18 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "loginWindow",
-        "designer|userAlias": "loginWindow",
         "autoShow": true,
         "draggable": false,
         "height": 280,
         "id": "loginWindow",
         "width": 302,
+        "designer|userClassName": "loginWindow",
+        "designer|userAlias": "loginWindow",
         "resizable": [
             "false"
         ],
@@ -21,11 +21,10 @@
         "closable": false,
         "modal": true
     },
-    "id": "ExtBox1-ext-gen15965",
     "designerId": "57339c22-18af-42b2-8491-66d707a83680",
     "cn": [
         {
-            "type": "panel",
+            "type": "Ext.panel.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -33,26 +32,25 @@
             "codeClass": null,
             "userConfig": {
                 "container|align": "stretch",
-                "designer|userClassName": "MyPanel28",
                 "maxHeight": null,
                 "maxWidth": null,
                 "minHeight": null,
                 "minWidth": null,
                 "width": null,
+                "designer|userClassName": "MyPanel28",
                 "layout": "vbox",
                 "title": "Construction Julien Dalpé"
             },
             "designerId": "592b830f-f1b8-4acc-b893-4d993ccf1dd9",
             "cn": [
                 {
-                    "type": "form",
+                    "type": "Ext.form.Panel",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyForm6",
                         "border": null,
                         "height": null,
                         "itemId": "loginForm",
@@ -63,49 +61,50 @@
                         "minWidth": null,
                         "padding": null,
                         "width": null,
+                        "designer|userClassName": "MyForm6",
                         "bodyPadding": 10,
                         "title": "Identification"
                     },
                     "designerId": "eb3bc084-43ff-4b65-ab8e-403f68f63221",
                     "cn": [
                         {
-                            "type": "textfield",
+                            "type": "Ext.form.field.Text",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyTextField41",
                                 "maxHeight": 25,
-                                "name": "userName",
+                                "designer|userClassName": "MyTextField41",
                                 "fieldLabel": "Nom d'utilisateur",
+                                "name": "userName",
                                 "allowBlank": false,
                                 "blankText": "Ce champ est requis"
                             },
                             "designerId": "ace889a3-4cac-4fed-b8f1-f0165f119eae"
                         },
                         {
-                            "type": "textfield",
+                            "type": "Ext.form.field.Text",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyTextField42",
                                 "itemId": "password",
                                 "maxHeight": 25,
-                                "inputType": "password",
-                                "name": "passWord",
+                                "designer|userClassName": "MyTextField42",
                                 "fieldLabel": "Mot de passe",
+                                "name": "passWord",
+                                "inputType": "password",
                                 "allowBlank": false,
                                 "blankText": "Ce champ est requis"
                             },
                             "designerId": "64f96346-a1e7-4a69-bd41-45759b14f909"
                         },
                         {
-                            "type": "toolbar",
+                            "type": "Ext.toolbar.Toolbar",
                             "reference": {
                                 "name": "dockedItems",
                                 "type": "array"
@@ -113,15 +112,15 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dock": "bottom",
-                                "designer|userClassName": "MyToolbar13",
                                 "maxWidth": null,
                                 "minWidth": null,
-                                "width": null
+                                "width": null,
+                                "designer|userClassName": "MyToolbar13"
                             },
                             "designerId": "29d89bc4-f2d4-44b7-af67-0f49a045218d",
                             "cn": [
                                 {
-                                    "type": "tbfill",
+                                    "type": "Ext.toolbar.Fill",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -134,7 +133,7 @@
                                     "designerId": "84ddd4da-7940-4a9c-ac76-a250752a05e4"
                                 },
                                 {
-                                    "type": "button",
+                                    "type": "Ext.button.Button",
                                     "reference": {
                                         "name": "items",
                                         "type": "array"
@@ -142,8 +141,8 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|flex": null,
-                                        "designer|userClassName": "MyButton25",
                                         "itemId": "login",
+                                        "designer|userClassName": "MyButton25",
                                         "text": "Se connecter..."
                                     },
                                     "designerId": "4f6c24b7-5a67-4b35-97c6-4d607aac42fa"
@@ -153,19 +152,19 @@
                     ]
                 },
                 {
-                    "type": "image",
+                    "type": "Ext.Img",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyImg1",
                         "height": null,
                         "margin": null,
                         "maxWidth": 280,
                         "minWidth": 280,
                         "width": 280,
+                        "designer|userClassName": "MyImg1",
                         "src": "images/dalpe.jpg"
                     },
                     "designerId": "38349bbe-789a-45d8-b088-e1204eb9cc79"

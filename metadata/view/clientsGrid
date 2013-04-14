@@ -1,22 +1,21 @@
 {
-    "type": "gridpanel",
+    "type": "Ext.grid.Panel",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
+        "id": "clientsGrid",
         "designer|userClassName": "clientsGrid",
         "designer|userAlias": "clientsgrid",
-        "id": "clientsGrid",
         "title": null,
         "store": "clients"
     },
-    "id": "ExtBox1-ext-gen36171",
     "designerId": "9b41be7c-9f37-4d7b-a77d-f0f984650a46",
     "cn": [
         {
-            "type": "gridview",
+            "type": "Ext.grid.View",
             "reference": {
                 "name": "viewConfig",
                 "type": "object"
@@ -28,7 +27,7 @@
             "designerId": "798d15d1-1c9c-4042-be22-c2437b6a80a0"
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -37,13 +36,13 @@
             "userConfig": {
                 "designer|userClassName": "MyColumn17",
                 "dataIndex": "prenom",
-                "flex": 1,
-                "text": "Prenom"
+                "text": "Prenom",
+                "flex": 1
             },
             "designerId": "78ed1a8c-5971-41c2-8498-c85de14bf4d5"
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -52,13 +51,13 @@
             "userConfig": {
                 "designer|userClassName": "MyColumn18",
                 "dataIndex": "nom",
-                "flex": 1,
-                "text": "Nom"
+                "text": "Nom",
+                "flex": 1
             },
             "designerId": "74ce2773-8e20-489e-a3bf-d45dbf2204ed"
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -67,13 +66,13 @@
             "userConfig": {
                 "designer|userClassName": "MyColumn19",
                 "dataIndex": "mail",
-                "flex": 1,
-                "text": "Mail"
+                "text": "Mail",
+                "flex": 1
             },
             "designerId": "4f215ceb-0efe-4054-a2b5-5eaa1ff6cfbc"
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -82,13 +81,13 @@
             "userConfig": {
                 "designer|userClassName": "MyColumn21",
                 "dataIndex": "phone",
-                "flex": 1,
-                "text": "Phone"
+                "text": "Phone",
+                "flex": 1
             },
             "designerId": "d8a391b8-97a8-4b63-afd5-9aecde5ac514"
         },
         {
-            "type": "gridcolumn",
+            "type": "Ext.grid.column.Column",
             "reference": {
                 "name": "columns",
                 "type": "array"
@@ -97,13 +96,13 @@
             "userConfig": {
                 "designer|userClassName": "MyColumn22",
                 "dataIndex": "cell",
-                "flex": 1,
-                "text": "Cell"
+                "text": "Cell",
+                "flex": 1
             },
             "designerId": "08776c85-917c-415e-8cd4-5b07b3edfdb2"
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -116,7 +115,7 @@
             "designerId": "bd9b0bf5-0d91-4f35-b37c-3d94d2160b2d",
             "cn": [
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -124,8 +123,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton5",
                         "itemId": "add",
+                        "designer|userClassName": "MyButton5",
                         "text": "Ajouter un client"
                     },
                     "designerId": "7985e30e-096b-49f1-b542-1a7c9980cada"

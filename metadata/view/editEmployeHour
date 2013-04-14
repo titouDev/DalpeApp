@@ -1,17 +1,17 @@
 {
-    "type": "window",
+    "type": "Ext.window.Window",
     "reference": {
         "name": "items",
         "type": "array"
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "editEmployeHour",
-        "designer|userAlias": "editEmployeHour",
         "autoShow": true,
         "height": 149,
         "id": "editEmployeHour",
         "width": 303,
+        "designer|userClassName": "editEmployeHour",
+        "designer|userAlias": "editEmployeHour",
         "resizable": [
             "false"
         ],
@@ -19,11 +19,10 @@
         "title": "Entrée d'heures",
         "modal": true
     },
-    "id": "ExtBox1-ext-gen33633",
     "designerId": "0883665a-4d9e-453c-a13f-bab460f4c2d8",
     "cn": [
         {
-            "type": "form",
+            "type": "Ext.form.Panel",
             "reference": {
                 "name": "items",
                 "type": "array"
@@ -31,9 +30,9 @@
             "codeClass": null,
             "userConfig": {
                 "container|align": "stretch",
-                "designer|userClassName": "MyForm9",
                 "height": 208,
                 "width": 598,
+                "designer|userClassName": "MyForm9",
                 "layout": "vbox",
                 "bodyPadding": 10,
                 "title": null
@@ -41,7 +40,7 @@
             "designerId": "770201f9-480a-4dd7-900d-62ddfc391e79",
             "cn": [
                 {
-                    "type": "datefield",
+                    "type": "Ext.form.field.Date",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -49,8 +48,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyDateField2",
-                        "name": "workDate",
                         "fieldLabel": "Date de travail",
+                        "name": "workDate",
                         "allowBlank": false,
                         "altFormats": null,
                         "format": "d-M-Y",
@@ -59,7 +58,7 @@
                     "designerId": "5b43e2e8-f94e-4742-89fd-ff3cb0ab8dfe"
                 },
                 {
-                    "type": "numberfield",
+                    "type": "Ext.form.field.Number",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -67,8 +66,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|userClassName": "MyNumberField7",
-                        "name": "hours",
                         "fieldLabel": "Heures travaillées",
+                        "name": "hours",
                         "allowBlank": false,
                         "autoStripChars": true,
                         "maxValue": 24,
@@ -77,7 +76,7 @@
                     "designerId": "0160ae03-830a-483f-bf20-8b78da54aa7f"
                 },
                 {
-                    "type": "hiddenfield",
+                    "type": "Ext.form.field.Hidden",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -86,15 +85,15 @@
                     "userConfig": {
                         "layout|flex": 1,
                         "designer|userClassName": "MyHiddenField",
-                        "name": "id",
-                        "fieldLabel": "Label"
+                        "fieldLabel": "Label",
+                        "name": "id"
                     },
                     "designerId": "51e9ded6-3db3-4408-8caa-8bb2bbf735d4"
                 }
             ]
         },
         {
-            "type": "toolbar",
+            "type": "Ext.toolbar.Toolbar",
             "reference": {
                 "name": "dockedItems",
                 "type": "array"
@@ -107,7 +106,7 @@
             "designerId": "50e779d4-d7aa-4854-a91a-dc77a1d5597e",
             "cn": [
                 {
-                    "type": "tbfill",
+                    "type": "Ext.toolbar.Fill",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -120,7 +119,7 @@
                     "designerId": "5e32832d-2fcd-452a-82b0-5d01c8bf4448"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -128,14 +127,14 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton28",
                         "itemId": "save",
+                        "designer|userClassName": "MyButton28",
                         "text": "Sauvegarder"
                     },
                     "designerId": "4db34ee9-4405-4fe1-b831-bbc82448b18d"
                 },
                 {
-                    "type": "button",
+                    "type": "Ext.button.Button",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -143,8 +142,8 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton29",
                         "itemId": "cancel",
+                        "designer|userClassName": "MyButton29",
                         "text": "Annuler"
                     },
                     "designerId": "702e6aae-c9e4-4fc8-a73b-788795594041"

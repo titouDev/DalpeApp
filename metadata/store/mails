@@ -6,17 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "mails",
-        "autoLoad": false,
-        "storeId": "mailsStore",
         "model": "mail",
+        "storeId": "mailsStore",
+        "designer|userClassName": "mails",
         "remoteFilter": true
     },
-    "id": "ExtBox1-ext-gen18041",
     "designerId": "fa160326-b7fa-4747-896d-d70d65968f22",
     "cn": [
         {
-            "type": "directproxy",
+            "type": "Ext.data.proxy.Direct",
             "reference": {
                 "name": "proxy",
                 "type": "object"
@@ -29,45 +27,45 @@
             "designerId": "ea43dad0-1634-4af9-8151-5702c32a7cad",
             "cn": [
                 {
-                    "type": "jsonreader",
+                    "type": "Ext.data.reader.Json",
                     "reference": {
                         "name": "reader",
                         "type": "object"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyJsonReader4",
-                        "root": "result"
+                        "root": "result",
+                        "designer|userClassName": "MyJsonReader4"
                     },
                     "designerId": "68de595b-3ab3-4a07-aeec-6569fb09e72f"
                 }
             ]
         },
         {
-            "type": "sorter",
+            "type": "Ext.util.Sorter",
             "reference": {
                 "name": "sorters",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MySorter",
                 "direction": "DESC",
-                "property": "creationDate"
+                "property": "creationDate",
+                "designer|userClassName": "MySorter"
             },
             "designerId": "27d1f8de-03c6-4dca-ad45-b3447ecdb939"
         },
         {
-            "type": "sorter",
+            "type": "Ext.util.Sorter",
             "reference": {
                 "name": "sorters",
                 "type": "object"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MySorter1",
                 "direction": "DESC",
-                "property": "sentDate"
+                "property": "sentDate",
+                "designer|userClassName": "MySorter1"
             },
             "designerId": "6c4e8a7d-18ad-44ec-83c4-a998bb41e74f"
         }
