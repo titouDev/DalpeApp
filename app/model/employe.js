@@ -60,6 +60,10 @@ Ext.define('dalpeApp.model.employe', {
         {
             name: 'photo',
             type: 'string'
+        },
+        {
+            name: 'coutHoraire',
+            type: 'int'
         }
     ]
 });

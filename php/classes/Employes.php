@@ -246,11 +246,12 @@ class Employes {
 		province=?,
 		actif=?,
 		login=?,
-		password=?
+		password=?,
+		coutHoraire=?
 		WHERE id=?";
 		if ($stmt = $_db->prepare($query)) {
-	        $stmt->bind_param('ssssssssssssi', $nom, $prenom,$mail,$phone,
-	        $cell,$adresse,$codePostal,$ville,$province,$actif,$login,$password, $id);
+	        $stmt->bind_param('sssssssssssssi', $nom, $prenom,$mail,$phone,
+	        $cell,$adresse,$codePostal,$ville,$province,$actif,$login,$password,$coutHoraire, $id);
 	
 	        $nom = $params->nom;
 	        $prenom = $params->prenom;
@@ -264,6 +265,7 @@ class Employes {
 	        $actif = $params->actif;
 	        $login = $params->login;
 	        $password = $params->password;
+	        $coutHoraire = $params->coutHoraire;
 	        //cast id to int
 	        $id = (int) $params->id;
 			$stmt->execute();

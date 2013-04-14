@@ -120,6 +120,12 @@ Ext.define('dalpeApp.view.editEmployeWindow', {
                                             maxHeight: 25,
                                             fieldLabel: 'Couriel',
                                             name: 'mail'
+                                        },
+                                        {
+                                            xtype: 'numberfield',
+                                            flex: 1,
+                                            fieldLabel: 'Cout Horaire',
+                                            name: 'coutHoraire'
                                         }
                                     ]
                                 },

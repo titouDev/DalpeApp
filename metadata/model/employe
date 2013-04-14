@@ -194,6 +194,20 @@
                 "designer|userClassName": "field53"
             },
             "designerId": "33bb67f3-7c27-47e7-afc5-dc866352ac1c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "coutHoraire",
+                "type": "int",
+                "designer|userClassName": "MyField79"
+            },
+            "designerId": "7d63948e-dd84-4fac-a415-244b777c1fa4"
         }
     ]
 }

@@ -192,6 +192,21 @@
                                         "name": "mail"
                                     },
                                     "designerId": "3e90dd55-7dbc-4be9-b0f6-ce70bd832ce0"
+                                },
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 1,
+                                        "designer|userClassName": "MyNumberField5",
+                                        "fieldLabel": "Cout Horaire",
+                                        "name": "coutHoraire"
+                                    },
+                                    "designerId": "2d7f469c-cdaa-4bb6-b305-0596c8750b49"
                                 }
                             ]
                         },
