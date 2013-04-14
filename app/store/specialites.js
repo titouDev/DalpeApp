@@ -24,7 +24,7 @@ Ext.define('dalpeApp.store.specialites', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
-            autoLoad: false,
+            autoLoad: true,
             storeId: 'MyDirectStore2',
             model: 'dalpeApp.model.specialite',
             proxy: {

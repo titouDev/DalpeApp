@@ -7,7 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "designer|userClassName": "specialites",
-        "autoLoad": false,
+        "autoLoad": true,
         "storeId": "MyDirectStore2",
         "model": "specialite"
     },
