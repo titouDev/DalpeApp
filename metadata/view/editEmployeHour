@@ -7,7 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "autoShow": true,
-        "height": 206,
+        "height": 254,
         "id": "editEmployeHour",
         "width": 386,
         "designer|userClassName": "editEmployeHour",
@@ -96,6 +96,24 @@
                         "valueField": "id"
                     },
                     "designerId": "909c9884-53a6-45e2-a310-7c95e2d7f5ba"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "height": 30,
+                        "itemId": "coutHoraire",
+                        "maxHeight": 30,
+                        "designer|userClassName": "MyNumberField6",
+                        "fieldLabel": "Cout Horaire",
+                        "name": "coutHoraire"
+                    },
+                    "designerId": "5252b4b3-21f3-4f48-b8ee-6a2de767d45c"
                 },
                 {
                     "type": "Ext.form.field.ComboBox",

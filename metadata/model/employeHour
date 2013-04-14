@@ -133,6 +133,19 @@
                 "designer|userClassName": "MyField78"
             },
             "designerId": "d8e1d920-9e76-4842-b2a1-1ecc7caa670e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "coutHoraire",
+                "designer|userClassName": "MyField80"
+            },
+            "designerId": "c0505c0d-558b-4de8-bb63-005351391a5b"
         }
     ]
 }

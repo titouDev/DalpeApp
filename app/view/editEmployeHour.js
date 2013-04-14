@@ -18,7 +18,7 @@ Ext.define('dalpeApp.view.editEmployeHour', {
     alias: 'widget.editEmployeHour',
 
     autoShow: true,
-    height: 206,
+    height: 254,
     id: 'editEmployeHour',
     width: 386,
     resizable: false,
@@ -72,6 +72,15 @@ Ext.define('dalpeApp.view.editEmployeHour', {
                             displayField: 'nom',
                             store: 'employes',
                             valueField: 'id'
+                        },
+                        {
+                            xtype: 'numberfield',
+                            flex: 1,
+                            height: 30,
+                            itemId: 'coutHoraire',
+                            maxHeight: 30,
+                            fieldLabel: 'Cout Horaire',
+                            name: 'coutHoraire'
                         },
                         {
                             xtype: 'combobox',

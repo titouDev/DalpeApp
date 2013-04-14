@@ -28,7 +28,9 @@
                 "designer|userClassName": "onAddHourClick",
                 "fn": "onAddHourClick",
                 "implHandler": [
-                    "Ext.widget('editEmployeHour');"
+                    "Ext.widget('editEmployeHour');",
+                    "",
+                    ""
                 ],
                 "name": "click",
                 "scope": "me",
@@ -52,7 +54,7 @@
                     "",
                     "if (!myForm.isValid())",
                     "{",
-                    "    return",
+                    "    return;",
                     "}",
                     "",
                     "",
@@ -225,7 +227,7 @@
                 "implHandler": [
                     "if (this.isLogChecked(record.data))",
                     "{",
-                    "    return",
+                    "    return;",
                     "}",
                     "this.editRecord(record);"
                 ],
@@ -261,7 +263,6 @@
                     "else",
                     "{",
                     "    //On cree le nouveau log hour ",
-                    "    console.log(record);",
                     "    Employes.log_hour(record, function(newRecord){",
                     "        //On rajoute le nouvel employe dans le store",
                     "        this.loadHoursStore();",
@@ -321,6 +322,30 @@
                 ]
             },
             "designerId": "b15a1a63-7e5d-4fba-b7a7-220d1ebc2d02"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onEmployeSelect",
+                "fn": "onEmployeSelect",
+                "implHandler": [
+                    "//Lorsqu'on choisi un employe, le cout horaire est sette avec celui de l'employe",
+                    "var coutHoraire = records[0].data.coutHoraire;",
+                    "var myWindow = combo.up('window');",
+                    "coutHoraireField = myWindow.down('#coutHoraire');",
+                    "coutHoraireField.setValue(coutHoraire);"
+                ],
+                "name": "select",
+                "scope": "me",
+                "designer|targetType": "Ext.form.field.ComboBox",
+                "designer|controlQuery": "#employe"
+            },
+            "designerId": "0611a10f-a99f-4347-bf2f-99e928506aa0"
         }
     ]
 }

@@ -33,6 +33,8 @@ Ext.define('dalpeApp.controller.logHours', {
 
     onAddHourClick: function(button, e, eOpts) {
         Ext.widget('editEmployeHour');
+
+
     },
 
     onSaveClick: function(button, e, eOpts) {
@@ -40,7 +42,7 @@ Ext.define('dalpeApp.controller.logHours', {
 
         if (!myForm.isValid())
         {
-            return
+            return;
         }
 
 
@@ -92,9 +94,17 @@ Ext.define('dalpeApp.controller.logHours', {
     onLogHoursGridItemDblClick: function(dataview, record, item, index, e, eOpts) {
         if (this.isLogChecked(record.data))
         {
-            return
+            return;
         }
         this.editRecord(record);
+    },
+
+    onEmployeSelect: function(combo, records, eOpts) {
+        //Lorsqu'on choisi un employe, le cout horaire est sette avec celui de l'employe
+        var coutHoraire = records[0].data.coutHoraire;
+        var myWindow = combo.up('window');
+        coutHoraireField = myWindow.down('#coutHoraire');
+        coutHoraireField.setValue(coutHoraire);
     },
 
     deleteRecord: function(record) {
@@ -125,7 +135,6 @@ Ext.define('dalpeApp.controller.logHours', {
         else
         {
             //On cree le nouveau log hour 
-            console.log(record);
             Employes.log_hour(record, function(newRecord){
                 //On rajoute le nouvel employe dans le store
                 this.loadHoursStore();
@@ -173,6 +182,9 @@ Ext.define('dalpeApp.controller.logHours', {
             },
             "#logHoursGrid": {
                 itemdblclick: this.onLogHoursGridItemDblClick
+            },
+            "#employe": {
+                select: this.onEmployeSelect
             }
         });
     }

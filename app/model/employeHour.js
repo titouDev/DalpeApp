@@ -50,6 +50,9 @@ Ext.define('dalpeApp.model.employeHour', {
         },
         {
             name: 'lastName'
+        },
+        {
+            name: 'coutHoraire'
         }
     ]
 });

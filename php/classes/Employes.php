@@ -22,16 +22,18 @@ class Employes {
 		$query = 'INSERT INTO employes_hours (
 		employeId,
 		chantierId,
+		coutHoraire,
 		workDate,
 		hours
 		)
 		 VALUES
-		(?,?,?,?)';
+		(?,?,?,?,?)';
 		if ($stmt = $_db->prepare($query)) {
-	        $stmt->bind_param('ssss', $employeId,$chantierId, $workDate,$hours);
+	        $stmt->bind_param('sssss', $employeId,$chantierId, $coutHoraire, $workDate,$hours);
 			
 	        $employeId = $data->employeId;
 	        $chantierId = $data->chantierId;
+	        $coutHoraire = $data->coutHoraire;
 	        $workDate = $data->workDate;
 	        $hours = $data->hours;
 	        
@@ -48,13 +50,15 @@ class Employes {
 		$_db = connectToDbMySql();
 		$query = 'UPDATE employes_hours SET
 		chantierId = ?,
+		coutHoraire = ?,
 		workDate = ?,
 		hours = ?
 		WHERE id = ?';
 		if ($stmt = $_db->prepare($query)) {
-	        $stmt->bind_param('sssi', $chantierId, $workDate,$hours,$id);
+	        $stmt->bind_param('ssssi', $chantierId, $coutHoraire, $workDate,$hours,$id);
 			
 	        $chantierId = $data->chantierId;
+	        $coutHoraire = $data->coutHoraire;
 	        $workDate = $data->workDate;
 	        $hours = $data->hours;
 	        $id = $data->id;
@@ -89,7 +93,8 @@ class Employes {
 				employes_hours.checked, 
 				chantiers.`name` as chantier, 
 				employes.nom as lastName, 
-				employes.prenom as name
+				employes.prenom as name,
+				employes_hours.coutHoraire
 			FROM employes_hours
 			LEFT JOIN chantiers ON employes_hours.chantierId = chantiers.id
 			INNER JOIN employes ON employes_hours.employeId = employes.id

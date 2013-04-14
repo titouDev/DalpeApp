@@ -893,6 +893,20 @@
                                                     "designerId": "b75272ed-07d7-439b-a5eb-ec1bca7ab107"
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "type": "Ext.grid.column.Number",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyNumberColumn2",
+                                                "dataIndex": "coutHoraire",
+                                                "text": "Cout Horaire"
+                                            },
+                                            "designerId": "3fe77f0e-290d-471a-bb4b-2ddf69bea180"
                                         }
                                     ]
                                 },

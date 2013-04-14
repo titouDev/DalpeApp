@@ -337,6 +337,11 @@ Ext.define('dalpeApp.view.appViewport', {
                                                     width: 200,
                                                     dataIndex: 'name',
                                                     text: 'Employe'
+                                                },
+                                                {
+                                                    xtype: 'numbercolumn',
+                                                    dataIndex: 'coutHoraire',
+                                                    text: 'Cout Horaire'
                                                 }
                                             ]
                                         }
