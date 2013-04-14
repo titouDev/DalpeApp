@@ -19,6 +19,9 @@ Ext.define('dalpeApp.controller.editSousTraitantController', {
     models: [
         'sousTraitant'
     ],
+    stores: [
+        'sousTraitants'
+    ],
 
     onSaveDocumentClick: function(button, e, eOpts) {
         var myEditForm = button.up('window').down('#editForm').getForm();
@@ -66,6 +69,8 @@ Ext.define('dalpeApp.controller.editSousTraitantController', {
         SousTraitants.update(myForm.getValues(), function(){
             //On peut maintenant fermer la window
             button.up('window').close();
+            //On pense a refresher le store des soustraitants
+            this.getSousTraitantsStore().load();
         },this);
 
 

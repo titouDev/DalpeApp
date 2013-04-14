@@ -26,7 +26,9 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         'mailLinkSousTraitant'
     ],
     views: [
-        'sousTraitantsGrid'
+        'sousTraitantsGrid',
+        'editSousTraitantWindow',
+        'windowAddSpecialite'
     ],
 
     refs: [

@@ -6,8 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
+        "height": 414,
         "id": "mailsGrid",
-        "width": 150,
+        "width": 683,
         "designer|userClassName": "mailsGrid",
         "designer|userAlias": "mailsgrid",
         "collapsed": false,

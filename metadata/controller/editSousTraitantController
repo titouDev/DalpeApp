@@ -9,6 +9,9 @@
         "models": [
             "sousTraitant"
         ],
+        "stores": [
+            "sousTraitants"
+        ],
         "designer|userClassName": "editSousTraitantController"
     },
     "designerId": "6e11ae97-e15a-45d4-9386-3d63092f49b8",
@@ -85,6 +88,8 @@
                     "SousTraitants.update(myForm.getValues(), function(){",
                     "    //On peut maintenant fermer la window",
                     "    button.up('window').close();",
+                    "    //On pense a refresher le store des soustraitants",
+                    "    this.getSousTraitantsStore().load();",
                     "},this);",
                     "",
                     ""

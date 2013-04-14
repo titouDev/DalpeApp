@@ -29,8 +29,10 @@
             "sousTraitantsContextMenu",
             "employesHoursGrid",
             "editChantierWindow",
-            "loginViewPort",
-            "editEmployeDate"
+            "mailWindow",
+            "chantiersGrid",
+            "employesGrid",
+            "loginWindow"
         ],
         "autoCreateViewport": true,
         "name": "dalpeApp",

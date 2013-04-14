@@ -16,7 +16,9 @@
             "mailLinkSousTraitant"
         ],
         "views": [
-            "sousTraitantsGrid"
+            "sousTraitantsGrid",
+            "editSousTraitantWindow",
+            "windowAddSpecialite"
         ],
         "designer|userClassName": "sousTraitants"
     },

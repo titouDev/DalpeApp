@@ -24,7 +24,11 @@ Ext.application({
         'dalpeApp.view.appViewport',
         'dalpeApp.view.sousTraitantsContextMenu',
         'dalpeApp.view.employesHoursGrid',
-        'dalpeApp.view.editChantierWindow'
+        'dalpeApp.view.editChantierWindow',
+        'dalpeApp.view.mailWindow',
+        'dalpeApp.view.chantiersGrid',
+        'dalpeApp.view.employesGrid',
+        'dalpeApp.view.loginWindow'
     ],
     models: [
         'specialite',
@@ -49,8 +53,10 @@ Ext.application({
         'sousTraitantsContextMenu',
         'employesHoursGrid',
         'editChantierWindow',
-        'loginViewPort',
-        'editEmployeDate'
+        'mailWindow',
+        'chantiersGrid',
+        'employesGrid',
+        'loginWindow'
     ],
     autoCreateViewport: true,
     name: 'dalpeApp',

@@ -91,6 +91,8 @@
                                     "",
                                     "Ext.getCmp('editSousTraitantWindow').down('#specialitesGrid').store.load();",
                                     "",
+                                    "//On reload le store des specialites",
+                                    "Ext.getStore('specialites').load();",
                                     "button.up('window').close();",
                                     ""
                                 ]
@@ -168,6 +170,8 @@
                         "displayField": "name",
                         "queryMode": "local",
                         "store": "specialites",
+                        "typeAhead": true,
+                        "typeAheadDelay": 0,
                         "valueField": "id"
                     },
                     "designerId": "44993502-397c-4f02-a0b0-5f73ddeb294b"

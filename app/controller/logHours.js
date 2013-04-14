@@ -16,6 +16,10 @@
 Ext.define('dalpeApp.controller.logHours', {
     extend: 'Ext.app.Controller',
 
+    views: [
+        'editEmployeHour'
+    ],
+
     refs: [
         {
             ref: 'logHoursGrid',

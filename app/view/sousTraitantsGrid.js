@@ -46,8 +46,7 @@ Ext.define('dalpeApp.view.sousTraitantsGrid', {
                                 loadingText: 'Searching...',
                                 emptyText: 'No matching posts found.',
                                 getInnerTpl: function() {
-                                                console.log('[values]');
-                                                return '<h3>{name}</h3>';
+                                                return '{name}';
                                             }
                             },
                             itemId: 'comboSpecialites',

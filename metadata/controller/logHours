@@ -6,6 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
+        "views": [
+            "editEmployeHour"
+        ],
         "designer|userClassName": "logHours"
     },
     "designerId": "5b99a48a-3f84-4fe8-a414-2e88c6d08eb2",

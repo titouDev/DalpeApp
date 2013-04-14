@@ -17,8 +17,9 @@ Ext.define('dalpeApp.view.mailsGrid', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.mailsgrid',
 
+    height: 414,
     id: 'mailsGrid',
-    width: 150,
+    width: 683,
     collapsed: false,
     title: 'Courriels',
     store: 'mails',

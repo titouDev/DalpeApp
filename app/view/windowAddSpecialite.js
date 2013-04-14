@@ -60,6 +60,8 @@ Ext.define('dalpeApp.view.windowAddSpecialite', {
 
                                 Ext.getCmp('editSousTraitantWindow').down('#specialitesGrid').store.load();
 
+                                //On reload le store des specialites
+                                Ext.getStore('specialites').load();
                                 button.up('window').close();
 
                             },
@@ -91,6 +93,8 @@ Ext.define('dalpeApp.view.windowAddSpecialite', {
                             displayField: 'name',
                             queryMode: 'local',
                             store: 'specialites',
+                            typeAhead: true,
+                            typeAheadDelay: 0,
                             valueField: 'id'
                         },
                         {
