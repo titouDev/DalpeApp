@@ -128,7 +128,8 @@
                 "designer|userClassName": "onEmployesPanelActivate",
                 "fn": "onEmployesPanelActivate",
                 "implHandler": [
-                    "this.getEmployesStore().load();"
+                    "this.getEmployesStore().load();",
+                    ""
                 ],
                 "name": "activate",
                 "scope": "me",

@@ -21,15 +21,17 @@ class Employes {
 		$_db = connectToDbMySql();
 		$query = 'INSERT INTO employes_hours (
 		employeId,
+		chantierId,
 		workDate,
 		hours
 		)
 		 VALUES
-		(?,?,?)';
+		(?,?,?,?)';
 		if ($stmt = $_db->prepare($query)) {
-	        $stmt->bind_param('sss', $employeId, $workDate,$hours);
+	        $stmt->bind_param('ssss', $employeId,$chantierId, $workDate,$hours);
 			
-	        $employeId = $_SESSION['userId'];
+	        $employeId = $data->employeId;
+	        $chantierId = $data->chantierId;
 	        $workDate = $data->workDate;
 	        $hours = $data->hours;
 	        
@@ -45,12 +47,14 @@ class Employes {
 	{
 		$_db = connectToDbMySql();
 		$query = 'UPDATE employes_hours SET
+		chantierId = ?,
 		workDate = ?,
 		hours = ?
 		WHERE id = ?';
 		if ($stmt = $_db->prepare($query)) {
-	        $stmt->bind_param('ssi', $workDate,$hours,$id);
+	        $stmt->bind_param('sssi', $chantierId, $workDate,$hours,$id);
 			
+	        $chantierId = $data->chantierId;
 	        $workDate = $data->workDate;
 	        $hours = $data->hours;
 	        $id = $data->id;

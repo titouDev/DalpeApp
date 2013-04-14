@@ -7,9 +7,9 @@
     "codeClass": null,
     "userConfig": {
         "autoShow": true,
-        "height": 149,
+        "height": 206,
         "id": "editEmployeHour",
-        "width": 303,
+        "width": 386,
         "designer|userClassName": "editEmployeHour",
         "designer|userAlias": "editEmployeHour",
         "resizable": [
@@ -76,7 +76,7 @@
                     "designerId": "0160ae03-830a-483f-bf20-8b78da54aa7f"
                 },
                 {
-                    "type": "Ext.form.field.Hidden",
+                    "type": "Ext.form.field.ComboBox",
                     "reference": {
                         "name": "items",
                         "type": "array"
@@ -84,11 +84,56 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": 1,
-                        "designer|userClassName": "MyHiddenField",
+                        "height": 30,
+                        "itemId": "employe",
+                        "maxHeight": 30,
+                        "designer|userClassName": "MyComboBox3",
+                        "fieldLabel": "Employe",
+                        "name": "employeId",
+                        "allowBlank": false,
+                        "displayField": "nom",
+                        "store": "employes",
+                        "valueField": "id"
+                    },
+                    "designerId": "909c9884-53a6-45e2-a310-7c95e2d7f5ba"
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "height": 30,
+                        "itemId": "chantier",
+                        "maxHeight": 30,
+                        "minHeight": null,
+                        "designer|userClassName": "MyComboBox4",
+                        "fieldLabel": "Chantier",
+                        "name": "chantierId",
+                        "displayField": "name",
+                        "store": "chantiers",
+                        "valueField": "id"
+                    },
+                    "designerId": "fe4f074d-11ba-4719-9780-d9e8a90ac243"
+                },
+                {
+                    "type": "Ext.form.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "hidden": true,
+                        "designer|userClassName": "MyNumberField4",
                         "fieldLabel": "Label",
                         "name": "id"
                     },
-                    "designerId": "51e9ded6-3db3-4408-8caa-8bb2bbf735d4"
+                    "designerId": "db75b840-1d2a-43af-8a5c-3ea6a91722bf"
                 }
             ]
         },

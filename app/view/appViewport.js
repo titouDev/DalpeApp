@@ -325,6 +325,7 @@ Ext.define('dalpeApp.view.appViewport', {
                                                 },
                                                 {
                                                     xtype: 'gridcolumn',
+                                                    width: 200,
                                                     dataIndex: 'chantier',
                                                     text: 'Chantier'
                                                 },
@@ -333,6 +334,7 @@ Ext.define('dalpeApp.view.appViewport', {
                                                     renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
                                                         return value + " " + record.data.lastName;
                                                     },
+                                                    width: 200,
                                                     dataIndex: 'name',
                                                     text: 'Employe'
                                                 }

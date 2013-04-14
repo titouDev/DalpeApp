@@ -6,6 +6,10 @@
     },
     "codeClass": null,
     "userConfig": {
+        "stores": [
+            "chantiers",
+            "employes"
+        ],
         "views": [
             "editEmployeHour"
         ],
@@ -100,7 +104,9 @@
                 "implHandler": [
                     "//On reload le store pour afficher les heures loggues...",
                     "",
-                    "this.loadHoursStore();"
+                    "this.loadHoursStore();",
+                    "this.getEmployesStore().load();",
+                    "this.getChantiersStore().load();"
                 ],
                 "name": "activate",
                 "scope": "me",
@@ -255,6 +261,7 @@
                     "else",
                     "{",
                     "    //On cree le nouveau log hour ",
+                    "    console.log(record);",
                     "    Employes.log_hour(record, function(newRecord){",
                     "        //On rajoute le nouvel employe dans le store",
                     "        this.loadHoursStore();",
@@ -280,6 +287,9 @@
                 ],
                 "implHandler": [
                     "var myWindow = Ext.widget('editEmployeHour');",
+                    "//On disable le combo employe",
+                    "myWindow.down('#employe').setDisabled(true);",
+                    "",
                     "var myForm = myWindow.down('form').getForm();",
                     "",
                     "myForm.loadRecord(record);",

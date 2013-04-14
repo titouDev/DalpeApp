@@ -845,6 +845,7 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "width": 200,
                                                 "designer|userClassName": "MyColumn25",
                                                 "dataIndex": "chantier",
                                                 "text": "Chantier"
@@ -859,6 +860,7 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "width": 200,
                                                 "designer|userClassName": "MyColumn26",
                                                 "dataIndex": "name",
                                                 "text": "Employe"

@@ -16,6 +16,10 @@
 Ext.define('dalpeApp.controller.logHours', {
     extend: 'Ext.app.Controller',
 
+    stores: [
+        'chantiers',
+        'employes'
+    ],
     views: [
         'editEmployeHour'
     ],
@@ -57,6 +61,8 @@ Ext.define('dalpeApp.controller.logHours', {
         //On reload le store pour afficher les heures loggues...
 
         this.loadHoursStore();
+        this.getEmployesStore().load();
+        this.getChantiersStore().load();
     },
 
     onDeleteHourClick: function(button, e, eOpts) {
@@ -119,6 +125,7 @@ Ext.define('dalpeApp.controller.logHours', {
         else
         {
             //On cree le nouveau log hour 
+            console.log(record);
             Employes.log_hour(record, function(newRecord){
                 //On rajoute le nouvel employe dans le store
                 this.loadHoursStore();
@@ -129,6 +136,9 @@ Ext.define('dalpeApp.controller.logHours', {
 
     editRecord: function(record) {
         var myWindow = Ext.widget('editEmployeHour');
+        //On disable le combo employe
+        myWindow.down('#employe').setDisabled(true);
+
         var myForm = myWindow.down('form').getForm();
 
         myForm.loadRecord(record);

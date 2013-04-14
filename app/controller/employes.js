@@ -71,6 +71,7 @@ Ext.define('dalpeApp.controller.employes', {
 
     onEmployesPanelActivate: function(component, eOpts) {
         this.getEmployesStore().load();
+
     },
 
     init: function(application) {
