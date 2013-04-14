@@ -322,6 +322,19 @@ Ext.define('dalpeApp.view.appViewport', {
                                                     xtype: 'numbercolumn',
                                                     dataIndex: 'hours',
                                                     text: 'Hours'
+                                                },
+                                                {
+                                                    xtype: 'gridcolumn',
+                                                    dataIndex: 'chantier',
+                                                    text: 'Chantier'
+                                                },
+                                                {
+                                                    xtype: 'gridcolumn',
+                                                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                                        return value + " " + record.data.lastName;
+                                                    },
+                                                    dataIndex: 'name',
+                                                    text: 'Employe'
                                                 }
                                             ]
                                         }

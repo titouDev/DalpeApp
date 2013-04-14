@@ -41,6 +41,15 @@ Ext.define('dalpeApp.model.employeHour', {
         {
             name: 'checked',
             type: 'int'
+        },
+        {
+            name: 'chantier'
+        },
+        {
+            name: 'name'
+        },
+        {
+            name: 'lastName'
         }
     ]
 });

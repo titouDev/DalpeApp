@@ -77,15 +77,19 @@ class Employes {
 	{
 		$_db = connectToDbMySql();
 		
-		$query = "SELECT\n".
-				"	employes_hours.id,\n".
-				"	employes_hours.employeId,\n".
-				"	employes_hours.workDate,\n".
-				"	employes_hours.hours,\n".
-				"	employes_hours.chantierId,\n".
-				"	employes_hours.checked\n".
-				"FROM\n".
-				"	employes_hours ";
+		$query = "SELECT employes_hours.id, 
+				employes_hours.employeId, 
+				employes_hours.workDate, 
+				employes_hours.hours, 
+				employes_hours.chantierId, 
+				employes_hours.checked, 
+				chantiers.`name` as chantier, 
+				employes.nom as lastName, 
+				employes.prenom as name
+			FROM employes_hours
+			LEFT JOIN chantiers ON employes_hours.chantierId = chantiers.id
+			INNER JOIN employes ON employes_hours.employeId = employes.id
+			";
 				
 		if ($data->employeId)	
 		{

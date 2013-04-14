@@ -94,6 +94,45 @@
                 "designer|userClassName": "field72"
             },
             "designerId": "926034ba-01b0-4f64-b052-bd1a64983518"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "chantier",
+                "designer|userClassName": "MyField76"
+            },
+            "designerId": "eaa6b298-e435-42fb-ab8b-05cea6045639"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name",
+                "designer|userClassName": "MyField77"
+            },
+            "designerId": "82e273ab-a150-485f-97f0-1942f5ce48bc"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "lastName",
+                "designer|userClassName": "MyField78"
+            },
+            "designerId": "d8e1d920-9e76-4842-b2a1-1ecc7caa670e"
         }
     ]
 }

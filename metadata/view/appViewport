@@ -836,6 +836,61 @@
                                                 "text": "Hours"
                                             },
                                             "designerId": "76dd8635-576b-40cd-a980-e10fc13fce8c"
+                                        },
+                                        {
+                                            "type": "Ext.grid.column.Column",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyColumn25",
+                                                "dataIndex": "chantier",
+                                                "text": "Chantier"
+                                            },
+                                            "designerId": "855f2b48-7a89-4fed-8ce9-74b03d90c714"
+                                        },
+                                        {
+                                            "type": "Ext.grid.column.Column",
+                                            "reference": {
+                                                "name": "columns",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyColumn26",
+                                                "dataIndex": "name",
+                                                "text": "Employe"
+                                            },
+                                            "designerId": "afbc8976-f0f1-453e-83d1-6bd09a30c4a5",
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "renderer",
+                                                        "fn": "renderer",
+                                                        "designer|params": [
+                                                            "value",
+                                                            "metaData",
+                                                            "record",
+                                                            "rowIndex",
+                                                            "colIndex",
+                                                            "store",
+                                                            "view"
+                                                        ],
+                                                        "implHandler": [
+                                                            "return value + \" \" + record.data.lastName;"
+                                                        ]
+                                                    },
+                                                    "designerId": "b75272ed-07d7-439b-a5eb-ec1bca7ab107"
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
