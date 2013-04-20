@@ -1,7 +1,7 @@
 {
     "name": "DalpeApp",
     "settings": {
-        "urlPrefix": "http://localhost:8888/DalpeApp",
+        "urlPrefix": "http://localhost/DalpeApp",
         "spacesToIndent": 4,
         "exportPath": "/Applications/MAMP/htdocs",
         "sdkPath": "",
@@ -14,7 +14,8 @@
         "instantiateStore": true,
         "saveOnDeploy": false,
         "appName": "MyApp",
-        "cssPath": ""
+        "cssPath": "",
+        "buildShouldOverwriteIndex": true
     },
     "xdsVersion": "2.2.0",
     "xdsBuild": 908,
