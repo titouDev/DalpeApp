@@ -569,6 +569,8 @@
                 "designer|userClassName": "onSousTraitantsPanelActivate",
                 "fn": "onSousTraitantsPanelActivate",
                 "implHandler": [
+                    "this.getSousTraitantsStore().proxy.sortParam = undefined; //empeche d'envoye le param sort dans le proxy",
+                    "",
                     "//this.getMailLinkSousTraitantStore().load();",
                     "this.getSousTraitantsStore().load();"
                 ],

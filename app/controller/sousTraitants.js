@@ -130,6 +130,8 @@ Ext.define('dalpeApp.controller.sousTraitants', {
     },
 
     onSousTraitantsPanelActivate: function(component, eOpts) {
+        this.getSousTraitantsStore().proxy.sortParam = undefined; //empeche d'envoye le param sort dans le proxy
+
         //this.getMailLinkSousTraitantStore().load();
         this.getSousTraitantsStore().load();
     },

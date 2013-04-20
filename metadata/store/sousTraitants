@@ -31,6 +31,7 @@
                     "read:SousTraitants.get",
                     "}"
                 ],
+                "sortParam": "undefined",
                 "directFn": "SousTraitants.get"
             },
             "designerId": "34a4e9cc-9e3b-4050-aca8-69bc4c7b4c40",
@@ -50,6 +51,19 @@
                     "designerId": "c40c4fae-fd47-4681-99c9-464e30e0981b"
                 }
             ]
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "name",
+                "designer|userClassName": "MySorter2"
+            },
+            "designerId": "d567af3f-8143-44df-91aa-d739c62bd2f6"
         }
     ]
 }

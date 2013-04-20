@@ -36,11 +36,15 @@ destroy:SousTraitants.delete,
 update:SousTraitants.update,
 read:SousTraitants.get
 },
+                sortParam: 'undefined',
                 directFn: SousTraitants.get,
                 reader: {
                     type: 'json',
                     root: 'result'
                 }
+            },
+            sorters: {
+                property: 'name'
             }
         }, cfg)]);
     }
