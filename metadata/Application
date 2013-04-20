@@ -63,7 +63,18 @@
                 "designer|userClassName": "launch",
                 "fn": "launch",
                 "implHandler": [
-                    "setInterval('if(!Ext.getCmp(\"loginWindow\")){Employes.checkLoginSession(function(response){    if (!response)    {    Ext.widget(\"loginWindow\");            }})}', 3700000);"
+                    "setInterval('if(!Ext.getCmp(\"loginWindow\")){Employes.checkLoginSession(function(response){    if (!response)    {    Ext.widget(\"loginWindow\");            }})}', 3700000);",
+                    "",
+                    "var allStores = Ext.StoreManager.items;",
+                    "",
+                    "for (var i in allStores)",
+                    "{",
+                    "\tvar currentStore = allStores[i];",
+                    "    if (currentStore.proxy && currentStore.proxy.sortParam)",
+                    "    {",
+                    "        currentStore.proxy.sortParam = undefined;",
+                    "    }",
+                    "}"
                 ]
             },
             "designerId": "5cbb8634-3149-4cdf-b1d1-05fc951f7373"

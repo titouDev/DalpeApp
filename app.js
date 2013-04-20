@@ -76,6 +76,17 @@ Ext.application({
 
     launch: function() {
         setInterval('if(!Ext.getCmp("loginWindow")){Employes.checkLoginSession(function(response){    if (!response)    {    Ext.widget("loginWindow");            }})}', 3700000);
+
+        var allStores = Ext.StoreManager.items;
+
+        for (var i in allStores)
+        {
+            var currentStore = allStores[i];
+            if (currentStore.proxy && currentStore.proxy.sortParam)
+            {
+                currentStore.proxy.sortParam = undefined;
+            }
+        }
     }
 
 });
