@@ -35,7 +35,6 @@
                 "designer|userClassName": "onTextfieldChange",
                 "fn": "onTextfieldChange",
                 "implHandler": [
-                    "//this.filterSousTraitantsStoreWithText();",
                     "this.reloadSousTraitantsStore();",
                     "this.resetMailsGrid();"
                 ],
@@ -152,12 +151,12 @@
                 "fn": "reloadSousTraitantsStore",
                 "implHandler": [
                     "//On vide les stores qui ont besoin d'etre vides",
-                    "Ext.getStore('mails').removeAll();",
+                    "this.getMailsStore().removeAll();",
                     "",
                     "//On prend la valeur du comboSpecialite",
                     "var specialiteId = this.getSousTraitantsGrid().down('#comboSpecialites').getValue();",
                     "",
-                    "",
+                    "this.getSousTraitantsGrid().selModel.deselectAll();",
                     "var myStore = this.getSousTraitantsStore();",
                     "myStore.proxy.extraParams = {",
                     "    searchText:this.getSearchField().value,",

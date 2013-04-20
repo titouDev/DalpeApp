@@ -47,7 +47,6 @@ Ext.define('dalpeApp.controller.sousTraitants', {
     ],
 
     onTextfieldChange: function(field, newValue, oldValue, eOpts) {
-        //this.filterSousTraitantsStoreWithText();
         this.reloadSousTraitantsStore();
         this.resetMailsGrid();
     },
@@ -208,11 +207,10 @@ Ext.define('dalpeApp.controller.sousTraitants', {
 
     reloadSousTraitantsStore: function() {
         //On vide les stores qui ont besoin d'etre vides
-        Ext.getStore('mails').removeAll();
+        this.getMailsStore().removeAll();
 
         //On prend la valeur du comboSpecialite
         var specialiteId = this.getSousTraitantsGrid().down('#comboSpecialites').getValue();
-
 
         var myStore = this.getSousTraitantsStore();
         myStore.proxy.extraParams = {

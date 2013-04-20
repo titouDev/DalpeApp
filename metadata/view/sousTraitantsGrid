@@ -9,6 +9,7 @@
         "id": "sousTraitantsGrid",
         "designer|userClassName": "sousTraitantsGrid",
         "designer|userAlias": "mygridpanel2",
+        "focusOnToFront": false,
         "title": null,
         "store": null
     },
@@ -133,7 +134,8 @@
                         "layout|flex": null,
                         "itemId": "searchText",
                         "designer|userClassName": "MyTextField",
-                        "fieldLabel": "Recherche Rapide"
+                        "fieldLabel": "Recherche Rapide",
+                        "checkChangeBuffer": 300
                     },
                     "designerId": "45d2adc7-93d0-4ca2-ab82-b148d5276688"
                 },

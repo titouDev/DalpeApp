@@ -18,6 +18,7 @@ Ext.define('dalpeApp.view.sousTraitantsGrid', {
     alias: 'widget.mygridpanel2',
 
     id: 'sousTraitantsGrid',
+    focusOnToFront: false,
 
     initComponent: function() {
         var me = this;
@@ -64,7 +65,8 @@ Ext.define('dalpeApp.view.sousTraitantsGrid', {
                         {
                             xtype: 'textfield',
                             itemId: 'searchText',
-                            fieldLabel: 'Recherche Rapide'
+                            fieldLabel: 'Recherche Rapide',
+                            checkChangeBuffer: 300
                         },
                         {
                             xtype: 'button',
