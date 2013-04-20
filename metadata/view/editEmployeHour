@@ -111,7 +111,8 @@
                         "maxHeight": 30,
                         "designer|userClassName": "MyNumberField6",
                         "fieldLabel": "Cout Horaire",
-                        "name": "coutHoraire"
+                        "name": "coutHoraire",
+                        "minValue": 0
                     },
                     "designerId": "5252b4b3-21f3-4f48-b8ee-6a2de767d45c"
                 },

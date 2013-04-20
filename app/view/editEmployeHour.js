@@ -80,7 +80,8 @@ Ext.define('dalpeApp.view.editEmployeHour', {
                             itemId: 'coutHoraire',
                             maxHeight: 30,
                             fieldLabel: 'Cout Horaire',
-                            name: 'coutHoraire'
+                            name: 'coutHoraire',
+                            minValue: 0
                         },
                         {
                             xtype: 'combobox',

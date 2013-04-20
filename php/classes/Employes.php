@@ -16,8 +16,6 @@ class Employes {
 		//Attention
 		//La fonction log hour est utilise uniquement pour l'employe qui est connecte.
 		//Le userid est pris dans la session
-		
-		
 		$_db = connectToDbMySql();
 		$query = 'INSERT INTO employes_hours (
 		employeId,
@@ -32,7 +30,14 @@ class Employes {
 	        $stmt->bind_param('sssss', $employeId,$chantierId, $coutHoraire, $workDate,$hours);
 			
 	        $employeId = $data->employeId;
-	        $chantierId = $data->chantierId;
+	        if($data->chantierId != '')
+			{
+				$chantierId = $data->chantierId;
+			}
+			else
+			{
+				$chantierId = NULL;
+			}
 	        $coutHoraire = $data->coutHoraire;
 	        $workDate = $data->workDate;
 	        $hours = $data->hours;
@@ -57,8 +62,14 @@ class Employes {
 		if ($stmt = $_db->prepare($query)) {
 	        $stmt->bind_param('ssssi', $chantierId, $coutHoraire, $workDate,$hours,$id);
 			
-	        $chantierId = $data->chantierId;
-	        $coutHoraire = $data->coutHoraire;
+	        if($data->chantierId != '')
+			{
+				$chantierId = $data->chantierId;
+			}
+			else
+			{
+				$chantierId = NULL;
+			}$coutHoraire = $data->coutHoraire;
 	        $workDate = $data->workDate;
 	        $hours = $data->hours;
 	        $id = $data->id;
