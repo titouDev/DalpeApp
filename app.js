@@ -87,6 +87,9 @@ Ext.application({
                 currentStore.proxy.sortParam = undefined;
             }
         }
+
+
+
     }
 
 });

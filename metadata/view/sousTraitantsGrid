@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "stateId": null,
         "id": "sousTraitantsGrid",
         "designer|userClassName": "sousTraitantsGrid",
         "designer|userAlias": "mygridpanel2",
@@ -105,7 +106,6 @@
                         "labelWidth": 70,
                         "displayField": "name",
                         "minChars": 0,
-                        "queryMode": "local",
                         "store": "specialites",
                         "typeAhead": true,
                         "typeAheadDelay": 0,
@@ -135,7 +135,7 @@
                         "itemId": "searchText",
                         "designer|userClassName": "MyTextField",
                         "fieldLabel": "Recherche Rapide",
-                        "checkChangeBuffer": 300
+                        "checkChangeBuffer": 5
                     },
                     "designerId": "45d2adc7-93d0-4ca2-ab82-b148d5276688"
                 },

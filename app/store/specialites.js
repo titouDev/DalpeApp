@@ -26,7 +26,7 @@ Ext.define('dalpeApp.store.specialites', {
         me.callParent([Ext.apply({
             autoLoad: true,
             model: 'dalpeApp.model.specialite',
-            storeId: 'MyDirectStore2',
+            storeId: 'specialiteStore',
             proxy: {
                 type: 'direct',
                 directFn: SousTraitants.getSpecialites,

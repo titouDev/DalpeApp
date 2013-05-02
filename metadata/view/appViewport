@@ -22,6 +22,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "stateId": null,
                 "designer|userClassName": "MyPanel29",
                 "layout": "fit",
                 "title": "Construction Julien Dalpé Inc."
@@ -37,6 +38,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "dock": "top",
+                        "stateId": null,
                         "id": "appToolbar",
                         "itemId": "",
                         "designer|userClassName": "MyToolbar14"
@@ -96,6 +98,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "stateId": null,
                         "designer|userClassName": "MyTabPanel",
                         "title": "",
                         "activeTab": 1
@@ -110,6 +113,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "stateId": null,
                                 "id": "employesPanel",
                                 "designer|userClassName": "MyPanel21",
                                 "layout": "border",
@@ -125,6 +129,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "stateId": null,
                                         "layout|flex": 1,
                                         "layout|region": "center",
                                         "layout|split": true
@@ -143,6 +148,7 @@
                                         "layout|flex": 1,
                                         "layout|region": "east",
                                         "layout|split": true,
+                                        "stateId": null,
                                         "width": null,
                                         "designer|userClassName": "MyGridPanel10",
                                         "title": "Heures",
@@ -260,6 +266,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "stateId": null,
                                 "id": "sousTraitantsPanel",
                                 "designer|userClassName": "MyPanel7",
                                 "layout": "border",
@@ -275,6 +282,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "stateId": null,
                                         "designer|userClassName": "TabConfig"
                                     },
                                     "designerId": "3df5e9d3-1837-413d-acfb-26bedb30ea1a"
@@ -307,6 +315,7 @@
                                         "layout|flex": 2,
                                         "layout|region": "east",
                                         "layout|split": true,
+                                        "stateId": null,
                                         "width": 150,
                                         "designer|userClassName": "MyPanel10",
                                         "layout": "fit",

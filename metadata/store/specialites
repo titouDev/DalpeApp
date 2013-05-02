@@ -8,7 +8,7 @@
     "userConfig": {
         "autoLoad": true,
         "model": "specialite",
-        "storeId": "MyDirectStore2",
+        "storeId": "specialiteStore",
         "designer|userClassName": "specialites"
     },
     "designerId": "7c30472b-a80e-4251-8568-3f963945a7a4",
@@ -55,6 +55,7 @@
                     "//On veut pouvoir filtrer par toutes les specialites.",
                     "store.insert(0,{id:0,name:'...'});"
                 ],
+                "delay": null,
                 "name": "load",
                 "scope": "me"
             },

@@ -56,7 +56,6 @@ Ext.define('dalpeApp.view.sousTraitantsGrid', {
                             labelWidth: 70,
                             displayField: 'name',
                             minChars: 0,
-                            queryMode: 'local',
                             store: 'specialites',
                             typeAhead: true,
                             typeAheadDelay: 0,
@@ -66,7 +65,7 @@ Ext.define('dalpeApp.view.sousTraitantsGrid', {
                             xtype: 'textfield',
                             itemId: 'searchText',
                             fieldLabel: 'Recherche Rapide',
-                            checkChangeBuffer: 300
+                            checkChangeBuffer: 5
                         },
                         {
                             xtype: 'button',

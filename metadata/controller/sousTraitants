@@ -13,7 +13,8 @@
         "stores": [
             "mails",
             "sousTraitants",
-            "mailLinkSousTraitant"
+            "mailLinkSousTraitant",
+            "specialites"
         ],
         "views": [
             "sousTraitantsGrid",
@@ -35,7 +36,15 @@
                 "designer|userClassName": "onTextfieldChange",
                 "fn": "onTextfieldChange",
                 "implHandler": [
-                    "this.reloadSousTraitantsStore();",
+                    "//On filtre le store en local",
+                    "var regFind = new RegExp(newValue,\"i\")",
+                    "this.getSousTraitantsStore().clearFilter(true);",
+                    "this.getSousTraitantsStore().filter([",
+                    "    \t\t\t{filterFn: function(item) {",
+                    "    \t\t\t\treturn (regFind.test(item.get(\"name\"))",
+                    "                            || regFind.test(item.get(\"contactName\"))  );",
+                    "\t\t\t\t}}",
+                    "                 ]);",
                     "this.resetMailsGrid();"
                 ],
                 "name": "change",
@@ -569,8 +578,6 @@
                 "fn": "onSousTraitantsPanelActivate",
                 "implHandler": [
                     "this.getSousTraitantsStore().proxy.sortParam = undefined; //empeche d'envoye le param sort dans le proxy",
-                    "",
-                    "//this.getMailLinkSousTraitantStore().load();",
                     "this.getSousTraitantsStore().load();"
                 ],
                 "name": "activate",

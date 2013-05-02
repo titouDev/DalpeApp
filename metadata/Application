@@ -69,12 +69,15 @@
                     "",
                     "for (var i in allStores)",
                     "{",
-                    "\tvar currentStore = allStores[i];",
+                    "    var currentStore = allStores[i];",
                     "    if (currentStore.proxy && currentStore.proxy.sortParam)",
                     "    {",
                     "        currentStore.proxy.sortParam = undefined;",
                     "    }",
-                    "}"
+                    "}",
+                    "",
+                    "",
+                    ""
                 ]
             },
             "designerId": "5cbb8634-3149-4cdf-b1d1-05fc951f7373"

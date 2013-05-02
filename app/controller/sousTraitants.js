@@ -23,7 +23,8 @@ Ext.define('dalpeApp.controller.sousTraitants', {
     stores: [
         'mails',
         'sousTraitants',
-        'mailLinkSousTraitant'
+        'mailLinkSousTraitant',
+        'specialites'
     ],
     views: [
         'sousTraitantsGrid',
@@ -47,7 +48,15 @@ Ext.define('dalpeApp.controller.sousTraitants', {
     ],
 
     onTextfieldChange: function(field, newValue, oldValue, eOpts) {
-        this.reloadSousTraitantsStore();
+        //On filtre le store en local
+        var regFind = new RegExp(newValue,"i")
+        this.getSousTraitantsStore().clearFilter(true);
+        this.getSousTraitantsStore().filter([
+        {filterFn: function(item) {
+            return (regFind.test(item.get("name"))
+            || regFind.test(item.get("contactName"))  );
+        }}
+        ]);
         this.resetMailsGrid();
     },
 
@@ -130,8 +139,6 @@ Ext.define('dalpeApp.controller.sousTraitants', {
 
     onSousTraitantsPanelActivate: function(component, eOpts) {
         this.getSousTraitantsStore().proxy.sortParam = undefined; //empeche d'envoye le param sort dans le proxy
-
-        //this.getMailLinkSousTraitantStore().load();
         this.getSousTraitantsStore().load();
     },
 
@@ -212,6 +219,7 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         //On prend la valeur du comboSpecialite
         var specialiteId = this.getSousTraitantsGrid().down('#comboSpecialites').getValue();
 
+        this.getSousTraitantsGrid().selModel.deselectAll();
         var myStore = this.getSousTraitantsStore();
         myStore.proxy.extraParams = {
             searchText:this.getSearchField().value,
