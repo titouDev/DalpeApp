@@ -66,16 +66,6 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         mailsStore.clearFilter(true);
         mailsStore.filter('sousTraitantId',record.data.id);
 
-        /*
-        if (selected.length != 1)
-        {
-        return;
-        }
-
-
-        Ext.getCmp('mailsGrid').down('#refresh').fireEvent('click');
-        */
-
         //On update egalement le tire du mail panel
         var newTitle = 'Courriels envoyés à ' + record.data.name;
         this.getMailsGrid().setTitle(newTitle);
@@ -105,7 +95,6 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         switch(item.itemId)
         {
             case 'delete':
-            console.log(123);
             break;
             case 'sendMail':
             this.prepareMail();
@@ -288,7 +277,7 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         mailsGrid.setTitle('Courriels');
     },
 
-    init: function() {
+    init: function(application) {
         this.control({
             "#sousTraitantsGrid #searchText": {
                 change: this.onTextfieldChange

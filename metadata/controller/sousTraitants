@@ -39,11 +39,11 @@
                     "var regFind = new RegExp(newValue,\"i\")",
                     "this.getSousTraitantsStore().clearFilter(true);",
                     "this.getSousTraitantsStore().filter([",
-                    "    \t\t\t{filterFn: function(item) {",
-                    "    \t\t\t\treturn (regFind.test(item.get(\"name\"))",
-                    "                            || regFind.test(item.get(\"contactName\"))  );",
-                    "\t\t\t\t}}",
-                    "                 ]);",
+                    "{filterFn: function(item) {",
+                    "    return (regFind.test(item.get(\"name\"))",
+                    "    || regFind.test(item.get(\"contactName\"))  );",
+                    "}}",
+                    "]);",
                     "this.resetMailsGrid();"
                 ],
                 "name": "change",
@@ -272,16 +272,6 @@
                     "mailsStore.clearFilter(true);",
                     "mailsStore.filter('sousTraitantId',record.data.id);",
                     "",
-                    "/*",
-                    "if (selected.length != 1)",
-                    "{",
-                    "return;",
-                    "}",
-                    "",
-                    "",
-                    "Ext.getCmp('mailsGrid').down('#refresh').fireEvent('click');",
-                    "*/",
-                    "",
                     "//On update egalement le tire du mail panel",
                     "var newTitle = 'Courriels envoyés à ' + record.data.name;",
                     "this.getMailsGrid().setTitle(newTitle);"
@@ -370,21 +360,6 @@
             "designerId": "a9426fb5-af18-471d-8e9e-d59c79fe1788"
         },
         {
-            "type": "fixedfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "init",
-                "implHandler": [
-                    ""
-                ]
-            },
-            "designerId": "e3d3d422-6268-4d14-bafa-3a998d4031ef"
-        },
-        {
             "type": "controlleraction",
             "reference": {
                 "name": "listeners",
@@ -462,7 +437,6 @@
                     "switch(item.itemId)",
                     "{",
                     "    case 'delete':",
-                    "    console.log(123);",
                     "    break;",
                     "    case 'sendMail':",
                     "    this.prepareMail();",

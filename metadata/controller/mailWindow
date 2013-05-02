@@ -201,7 +201,7 @@
                 "designer|userClassName": "onWindowBeforeDestroy",
                 "fn": "onWindowBeforeDestroy",
                 "implHandler": [
-                    "Ext.MessageBox.confirm('Question','Voulez vous sauvegarder le message avant de fermer la fenetre ?',function(btn){console.log(btn)});"
+                    "Ext.MessageBox.confirm('Question','Voulez vous sauvegarder le message avant de fermer la fenetre ?',function(btn){});"
                 ],
                 "name": "beforedestroy",
                 "scope": "me",
@@ -248,7 +248,6 @@
                 "designer|userClassName": "onComboChantiersRender",
                 "fn": "onComboChantiersRender",
                 "implHandler": [
-                    "console.log(456465);",
                     "this.getChantiersStore().load();"
                 ],
                 "name": "render",

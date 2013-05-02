@@ -51,7 +51,6 @@ Ext.define('dalpeApp.controller.mailWindowController', {
             Ext.Msg.alert('Attention','Certains champs sont requis');
             return;
         }
-        console.log(999999);
         //On save
         this.saveMail(true);
 
@@ -163,10 +162,8 @@ Ext.define('dalpeApp.controller.mailWindowController', {
         {
             var myMail = myMailCreated[0];
             //Maintenant qu'on a le ID, on peut creer les liens
-            console.log(1);
             sousTraitantsData = this.getSousTraitantsRecords();
             //On sauvegarde les liens
-            console.log(2);
             Mails.saveLinkSoustraitant(myMail, sousTraitantsData, function(){
                 if (sendMail)
                 {
@@ -226,7 +223,6 @@ Ext.define('dalpeApp.controller.mailWindowController', {
     },
 
     getSousTraitantsRecords: function() {
-        console.log(this);
         var selectedRecords = this.getSousTraitantsDestMailGrid().store.data.items;
         var sousTraitantsData = [];
         var count = 0;

@@ -44,10 +44,7 @@ Ext.define('dalpeApp.controller.editEmploye', {
                     },
                     waitMsg: 'Sauvegarde de la photo...',
                     success: function(fp, o) {
-                        //On reload le sotre de documents
-                        //var documentsStore = Ext.getStore('documents');
-                        //documentsStore.load();
-                        //Ext.Msg.alert('Succès', 'Le document "' + o.result.file + '" est enregistré.');
+
                     }
                 });
             }

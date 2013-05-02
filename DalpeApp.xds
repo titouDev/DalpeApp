@@ -3,7 +3,7 @@
     "settings": {
         "urlPrefix": "http://localhost/DalpeApp",
         "spacesToIndent": 4,
-        "exportPath": "/Applications/MAMP/htdocs",
+        "exportPath": "/Applications/MAMP/htdocs/DalpePublish",
         "sdkPath": "",
         "lineEnding": "LF",
         "genTimestamps": false,
@@ -416,14 +416,6 @@
             ],
             "className": "employes_logHours"
         },
-        "15cabc8d-f149-467a-b6e1-f265c5cd1bc8": {
-            "paths": [
-                "metadata/view/mailsGrid",
-                "app/view/override/mailsGrid.js",
-                "app/view/mailsGrid.js"
-            ],
-            "className": "mailsGrid"
-        },
         "c4a306d4-c285-4307-ba62-ad76109582f7": {
             "paths": [
                 "metadata/store/colonnes",
@@ -507,7 +499,6 @@
     },
     "viewOrderMap": {
         "view": [
-            "15cabc8d-f149-467a-b6e1-f265c5cd1bc8",
             "2c7176a8-b850-4b98-a7c6-4d5b56a5fe93",
             "9b41be7c-9f37-4d7b-a77d-f0f984650a46",
             "c7a01459-e495-414d-954c-22d6ec98ab69",

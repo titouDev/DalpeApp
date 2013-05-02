@@ -235,7 +235,7 @@
                 "implHandler": [
                     "this.getChantiersStore().load();",
                     "this.getClientsStore().load();",
-                    "    "
+                    ""
                 ],
                 "name": "activate",
                 "scope": "me",
