@@ -24,9 +24,6 @@
                 "type": "object"
             },
             "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyGridView4"
-            },
             "designerId": "625a7773-0eb5-460d-9405-862d8bca84f9"
         },
         {
@@ -36,9 +33,6 @@
                 "type": "object"
             },
             "codeClass": "Ext.selection.RowModel",
-            "userConfig": {
-                "designer|userClassName": "MyRowSelectionModel1"
-            },
             "designerId": "2b0cb587-5384-45bb-9307-cd2d17edea17"
         },
         {
@@ -49,7 +43,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyColumn29",
                 "dataIndex": "subject",
                 "text": "Sujet"
             },
@@ -63,7 +56,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyColumn30",
                 "dataIndex": "chantier",
                 "text": "Chantier"
             },
@@ -77,7 +69,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyDateColumn5",
                 "dataIndex": "creationDate",
                 "text": "Cree le"
             },
@@ -91,7 +82,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyColumn31",
                 "dataIndex": "userCreate",
                 "text": "Cree par"
             },
@@ -105,7 +95,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyDateColumn5",
                 "dataIndex": "sentDate",
                 "text": "Envoye le"
             },

@@ -28,7 +28,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "clientsGrid",
                 "ref": "clientsGrid",
                 "selector": "#clientsGrid"
             },
@@ -42,7 +41,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAddClick",
                 "fn": "onAddClick",
                 "implHandler": [
                     "Ext.widget('editClientWindow').show();"
@@ -62,7 +60,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onEnregistrerClick",
                 "fn": "onEnregistrerClick",
                 "implHandler": [
                     "//On va chercher les infos du form",
@@ -110,7 +107,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onClientsGridItemDblClick",
                 "fn": "onClientsGridItemDblClick",
                 "implHandler": [
                     "",
@@ -150,7 +146,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onClientsGridActivate",
                 "fn": "onClientsGridActivate",
                 "implHandler": [
                     "this.getClientsStore().load();"

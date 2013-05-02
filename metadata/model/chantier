@@ -19,8 +19,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "id",
-                "type": "int",
-                "designer|userClassName": "field37"
+                "type": "int"
             },
             "designerId": "fb0a1de7-b9f2-4328-b1f6-e9c07c9023d9"
         },
@@ -32,8 +31,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "name",
-                "designer|userClassName": "field38"
+                "name": "name"
             },
             "designerId": "83e0970b-3180-46b1-a5d8-552971ef9acf"
         },
@@ -45,8 +43,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "note",
-                "designer|userClassName": "field39"
+                "name": "note"
             },
             "designerId": "bbf9ab99-b9b5-4c0c-b4a7-6468cffd38a6"
         },
@@ -59,8 +56,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "status",
-                "type": "string",
-                "designer|userClassName": "field40"
+                "type": "string"
             },
             "designerId": "824d97b1-e66d-404c-95e2-577d6a2caa35"
         },
@@ -73,8 +69,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "clientId",
-                "type": "int",
-                "designer|userClassName": "field42"
+                "type": "int"
             },
             "designerId": "43a93fd9-1e1f-4f98-8548-1bac016f61ba"
         },
@@ -88,8 +83,7 @@
             "userConfig": {
                 "dateFormat": "Y-m-d",
                 "name": "startDate",
-                "type": "date",
-                "designer|userClassName": "field57"
+                "type": "date"
             },
             "designerId": "f62cceb7-be43-410a-8565-df0d46295c20"
         },
@@ -103,8 +97,7 @@
             "userConfig": {
                 "dateFormat": "Y-m-d",
                 "name": "endDate",
-                "type": "date",
-                "designer|userClassName": "field58"
+                "type": "date"
             },
             "designerId": "a015b997-c3f2-4247-bf56-44bf8d8b0c2e"
         },
@@ -116,8 +109,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "clientName",
-                "designer|userClassName": "field73"
+                "name": "clientName"
             },
             "designerId": "3eb60780-9bb8-40d1-abfa-539a99e26ef8"
         }

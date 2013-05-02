@@ -20,7 +20,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy2",
                 "url": "data/getColonnesInfos.php"
             },
             "designerId": "c3f2fdfa-fcf5-4bbf-8b0d-685db4618611",
@@ -34,7 +33,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "root": "results",
-                        "designer|userClassName": "MyJsonReader3",
                         "record": ""
                     },
                     "designerId": "d5ee250b-4390-416b-9828-61375abd25d0"

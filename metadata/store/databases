@@ -20,7 +20,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyAjaxProxy1",
                 "url": "data/databasesStore.php"
             },
             "designerId": "f8f426a5-be58-40db-9a48-b41ce78dce1e",
@@ -35,7 +34,6 @@
                     "userConfig": {
                         "implicitIncludes": false,
                         "root": "results",
-                        "designer|userClassName": "MyJsonReader2",
                         "record": null,
                         "useSimpleAccessors": true
                     },
@@ -51,8 +49,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "name",
-                "designer|userClassName": "MyField7"
+                "name": "name"
             },
             "designerId": "71923380-588d-4ffe-b263-cb77c736a602"
         }

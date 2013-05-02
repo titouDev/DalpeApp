@@ -21,7 +21,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyDirectProxy2",
                 "directFn": "SousTraitants.getSpecialites"
             },
             "designerId": "a1648727-d4e5-4f6e-8839-ad8ec488f881",
@@ -34,8 +33,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "root": "result",
-                        "designer|userClassName": "MyJsonReader4"
+                        "root": "result"
                     },
                     "designerId": "af50ecbc-3dd5-4309-b582-a83042d37bad"
                 }
@@ -49,7 +47,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onDirectstoreLoad",
                 "fn": "onDirectstoreLoad",
                 "implHandler": [
                     "//On veut pouvoir filtrer par toutes les specialites.",

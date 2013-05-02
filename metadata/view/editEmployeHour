@@ -32,7 +32,6 @@
                 "container|align": "stretch",
                 "height": 208,
                 "width": 598,
-                "designer|userClassName": "MyForm9",
                 "layout": "vbox",
                 "bodyPadding": 10,
                 "title": null
@@ -47,7 +46,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyDateField2",
                         "fieldLabel": "Date de travail",
                         "name": "workDate",
                         "allowBlank": false,
@@ -65,7 +63,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyNumberField7",
                         "fieldLabel": "Heures travaillées",
                         "name": "hours",
                         "allowBlank": false,
@@ -87,7 +84,6 @@
                         "height": 30,
                         "itemId": "employe",
                         "maxHeight": 30,
-                        "designer|userClassName": "MyComboBox3",
                         "fieldLabel": "Employe",
                         "name": "employeId",
                         "allowBlank": false,
@@ -109,7 +105,6 @@
                         "height": 30,
                         "itemId": "coutHoraire",
                         "maxHeight": 30,
-                        "designer|userClassName": "MyNumberField6",
                         "fieldLabel": "Cout Horaire",
                         "name": "coutHoraire",
                         "minValue": 0
@@ -129,7 +124,6 @@
                         "itemId": "chantier",
                         "maxHeight": 30,
                         "minHeight": null,
-                        "designer|userClassName": "MyComboBox4",
                         "fieldLabel": "Chantier",
                         "name": "chantierId",
                         "displayField": "name",
@@ -148,7 +142,6 @@
                     "userConfig": {
                         "layout|flex": 1,
                         "hidden": true,
-                        "designer|userClassName": "MyNumberField4",
                         "fieldLabel": "Label",
                         "name": "id"
                     },
@@ -164,8 +157,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "bottom",
-                "designer|userClassName": "MyToolbar17"
+                "dock": "bottom"
             },
             "designerId": "50e779d4-d7aa-4854-a91a-dc77a1d5597e",
             "cn": [
@@ -177,8 +169,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill8"
+                        "layout|flex": null
                     },
                     "designerId": "5e32832d-2fcd-452a-82b0-5d01c8bf4448"
                 },
@@ -192,7 +183,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "save",
-                        "designer|userClassName": "MyButton28",
                         "text": "Sauvegarder"
                     },
                     "designerId": "4db34ee9-4405-4fe1-b831-bbc82448b18d"
@@ -207,7 +197,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "cancel",
-                        "designer|userClassName": "MyButton29",
                         "text": "Annuler"
                     },
                     "designerId": "702e6aae-c9e4-4fc8-a73b-788795594041"

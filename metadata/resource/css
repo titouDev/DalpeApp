@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "css",
         "url": "css/mailWindow.css"
     },
     "designerId": "2e155090-8c35-4c70-ba95-ef0c1d98bde2"

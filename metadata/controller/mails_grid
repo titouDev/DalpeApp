@@ -22,7 +22,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onMailsGridItemDblClick",
                 "fn": "onMailsGridItemDblClick",
                 "implHandler": [
                     "//On reload le store des chantiers, puis on show la window",
@@ -51,7 +50,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "showMailWindow",
                 "fn": "showMailWindow",
                 "designer|params": [
                     "record"

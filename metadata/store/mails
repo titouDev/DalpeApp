@@ -21,7 +21,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyDirectProxy7",
                 "directFn": "Mails.getMailFromSousTraitant"
             },
             "designerId": "ea43dad0-1634-4af9-8151-5702c32a7cad",
@@ -34,8 +33,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "root": "result",
-                        "designer|userClassName": "MyJsonReader4"
+                        "root": "result"
                     },
                     "designerId": "68de595b-3ab3-4a07-aeec-6569fb09e72f"
                 }
@@ -50,8 +48,7 @@
             "codeClass": null,
             "userConfig": {
                 "direction": "DESC",
-                "property": "creationDate",
-                "designer|userClassName": "MySorter"
+                "property": "creationDate"
             },
             "designerId": "27d1f8de-03c6-4dca-ad45-b3447ecdb939"
         },
@@ -64,8 +61,7 @@
             "codeClass": null,
             "userConfig": {
                 "direction": "DESC",
-                "property": "sentDate",
-                "designer|userClassName": "MySorter1"
+                "property": "sentDate"
             },
             "designerId": "6c4e8a7d-18ad-44ec-83c4-a998bb41e74f"
         }

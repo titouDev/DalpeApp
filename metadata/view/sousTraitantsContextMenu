@@ -21,7 +21,6 @@
             "codeClass": null,
             "userConfig": {
                 "itemId": "sendMail",
-                "designer|userClassName": "MyMenuItem",
                 "text": "Envoyer un courriel"
             },
             "designerId": "56a22428-5970-4e0b-a6ab-67dfce14bb51"
@@ -35,7 +34,6 @@
             "codeClass": null,
             "userConfig": {
                 "itemId": "edit",
-                "designer|userClassName": "MyMenuItem3",
                 "text": "Editer le Sous Traitant"
             },
             "designerId": "a4feccfb-144c-4e01-a47d-7dc74eacb253"

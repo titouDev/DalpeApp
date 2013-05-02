@@ -34,7 +34,6 @@
                 "layout|margins": "10",
                 "container|align": "stretch",
                 "border": null,
-                "designer|userClassName": "MyPanel9",
                 "layout": "vbox",
                 "title": "Destinataire(s)"
             },
@@ -54,7 +53,6 @@
                         "height": 20,
                         "margin": 2,
                         "maxHeight": 20,
-                        "designer|userClassName": "MyPanel10",
                         "layout": "hbox",
                         "title": null
                     },
@@ -72,7 +70,6 @@
                                 "height": 20,
                                 "itemId": "add",
                                 "maxHeight": 20,
-                                "designer|userClassName": "MyButton8",
                                 "text": "Ajouter"
                             },
                             "designerId": "9a6e9bb4-1d49-40bc-9b24-b721bc07b418"
@@ -89,7 +86,6 @@
                                 "height": 20,
                                 "itemId": "remove",
                                 "maxHeight": 20,
-                                "designer|userClassName": "MyButton9",
                                 "text": "Enlever"
                             },
                             "designerId": "0bb4601e-bebb-4716-aa6b-a410d6f17072"
@@ -107,7 +103,6 @@
                         "layout|flex": 1,
                         "border": 0,
                         "itemId": "sousTraitantsDestMailGrid",
-                        "designer|userClassName": "MyGridPanel7",
                         "title": null,
                         "hideHeaders": true,
                         "store": "mailLinkSousTraitant"
@@ -122,7 +117,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyColumn24",
                                 "dataIndex": "mail",
                                 "text": "String",
                                 "flex": 1
@@ -136,9 +130,6 @@
                                 "type": "object"
                             },
                             "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyGridView5"
-                            },
                             "designerId": "7ecb31fc-796c-406a-b1c5-d08aea258682"
                         }
                     ]
@@ -158,7 +149,6 @@
                 "designer|snapToGrid": 10,
                 "height": 150,
                 "margin": 5,
-                "designer|userClassName": "MyForm1",
                 "layout": "absolute",
                 "bodyPadding": 10,
                 "title": null
@@ -174,7 +164,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "hidden": true,
-                        "designer|userClassName": "MyNumberField1",
                         "fieldLabel": "Label",
                         "name": "id"
                     },
@@ -189,7 +178,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "hidden": true,
-                        "designer|userClassName": "MyNumberField1",
                         "fieldLabel": "Label",
                         "name": "sentDate"
                     },
@@ -205,8 +193,7 @@
                     "userConfig": {
                         "dock": "top",
                         "border": 1,
-                        "margin": null,
-                        "designer|userClassName": "MyToolbar4"
+                        "margin": null
                     },
                     "designerId": "a405460b-4141-46fd-a855-0d117225fb9a",
                     "cn": [
@@ -220,7 +207,6 @@
                             "userConfig": {
                                 "layout|flex": null,
                                 "itemId": "send",
-                                "designer|userClassName": "MyButton5",
                                 "iconCls": "icon-send",
                                 "text": "Envoyer"
                             },
@@ -234,8 +220,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
-                                "designer|userClassName": "MySeparator"
+                                "layout|flex": null
                             },
                             "designerId": "e41a9aa0-706b-4ec4-a458-0310807d65d4"
                         },
@@ -249,7 +234,6 @@
                             "userConfig": {
                                 "layout|flex": null,
                                 "itemId": "save",
-                                "designer|userClassName": "MyButton6",
                                 "iconCls": "icon-save",
                                 "text": "Sauvegarder"
                             },
@@ -263,8 +247,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
-                                "designer|userClassName": "MySeparator1"
+                                "layout|flex": null
                             },
                             "designerId": "79f7432f-03f3-466d-968b-1412b775c9bd"
                         },
@@ -279,7 +262,6 @@
                                 "layout|flex": null,
                                 "itemId": "comboChantiers",
                                 "width": 363,
-                                "designer|userClassName": "MyComboBox",
                                 "fieldLabel": "Chantier",
                                 "name": "chantierId",
                                 "displayField": "name",
@@ -296,8 +278,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
-                                "designer|userClassName": "MyFill"
+                                "layout|flex": null
                             },
                             "designerId": "3b357182-5eba-41ec-8019-c37169615f34"
                         },
@@ -312,7 +293,6 @@
                                 "layout|flex": null,
                                 "hidden": true,
                                 "itemId": "attach",
-                                "designer|userClassName": "MyButton7",
                                 "iconCls": "icon-attach",
                                 "text": "Attacher un fichier"
                             },
@@ -330,7 +310,6 @@
                     "userConfig": {
                         "layout|x": 60,
                         "layout|y": 10,
-                        "designer|userClassName": "MyLabel",
                         "text": "Sujet:"
                     },
                     "designerId": "d9f6475d-859e-4b75-8d7a-3b453124d3c3"
@@ -347,7 +326,6 @@
                         "layout|x": 120,
                         "layout|y": 10,
                         "itemId": "subject",
-                        "designer|userClassName": "MyTextField8",
                         "fieldLabel": null,
                         "name": "subject",
                         "allowBlank": false,
@@ -367,7 +345,6 @@
                         "layout|y": 40,
                         "height": 100,
                         "itemId": "message",
-                        "designer|userClassName": "MyTextArea1",
                         "fieldLabel": null,
                         "name": "message",
                         "allowBlank": false,

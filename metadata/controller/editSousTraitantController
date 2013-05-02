@@ -24,7 +24,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onSaveDocumentClick",
                 "fn": "onSaveDocumentClick",
                 "implHandler": [
                     "var myEditForm = button.up('window').down('#editForm').getForm();",
@@ -74,7 +73,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onEnregistrerClick",
                 "fn": "onEnregistrerClick",
                 "implHandler": [
                     "//On va chercher les infos du form",
@@ -109,7 +107,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAnnulerClick",
                 "fn": "onAnnulerClick",
                 "implHandler": [
                     "button.up('window').close();"

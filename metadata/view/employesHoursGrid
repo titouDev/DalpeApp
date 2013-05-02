@@ -22,7 +22,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyColumn4",
                 "dataIndex": "string",
                 "text": "String"
             },
@@ -36,7 +35,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyNumberColumn3",
                 "dataIndex": "number",
                 "text": "Number"
             },
@@ -50,7 +48,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyDateColumn4",
                 "dataIndex": "date",
                 "text": "Date"
             },
@@ -64,7 +61,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyBooleanColumn3",
                 "dataIndex": "bool",
                 "text": "Boolean"
             },
@@ -77,9 +73,6 @@
                 "type": "object"
             },
             "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyGridView7"
-            },
             "designerId": "61f488e2-5a48-439f-b25e-51e878bda298"
         }
     ]

@@ -19,8 +19,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "id",
-                "type": "int",
-                "designer|userClassName": "MyField20"
+                "type": "int"
             },
             "designerId": "0f003746-f9d1-4cae-9f9c-ddcbbee3e256"
         },
@@ -32,8 +31,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "name",
-                "designer|userClassName": "MyField8"
+                "name": "name"
             },
             "designerId": "2eb3e8b8-ddae-4bb7-8137-58726cfe96e1"
         },
@@ -45,8 +43,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "contactName",
-                "designer|userClassName": "MyField9"
+                "name": "contactName"
             },
             "designerId": "8959d887-174e-4ed4-9a56-e770daa1b073"
         },
@@ -59,8 +56,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "mail",
-                "useNull": true,
-                "designer|userClassName": "MyField10"
+                "useNull": true
             },
             "designerId": "35ba0201-e861-41d2-95a7-4d1dbc83559f"
         },
@@ -73,8 +69,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "fax",
-                "useNull": true,
-                "designer|userClassName": "MyField11"
+                "useNull": true
             },
             "designerId": "9a9f50c5-5d6a-4290-ba24-e40ad987d82e"
         },
@@ -86,8 +81,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "phone",
-                "designer|userClassName": "MyField12"
+                "name": "phone"
             },
             "designerId": "072211f7-d357-42d6-b1ca-4ccf305eb62e"
         },
@@ -100,8 +94,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "cell",
-                "useNull": true,
-                "designer|userClassName": "MyField13"
+                "useNull": true
             },
             "designerId": "de860e25-34fe-49ee-ab2f-8df4d815b331"
         },
@@ -113,8 +106,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "adresse",
-                "designer|userClassName": "MyField14"
+                "name": "adresse"
             },
             "designerId": "f42014d6-9c7a-4556-884b-7db117f6f326"
         },
@@ -126,8 +118,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "codePostal",
-                "designer|userClassName": "MyField15"
+                "name": "codePostal"
             },
             "designerId": "8cfeb157-55cf-4273-8857-0b076d43cb37"
         },
@@ -139,8 +130,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "ville",
-                "designer|userClassName": "MyField16"
+                "name": "ville"
             },
             "designerId": "a6fd40ab-10e1-4aa4-896f-7b00e5aad91a"
         },
@@ -152,8 +142,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "province",
-                "designer|userClassName": "MyField17"
+                "name": "province"
             },
             "designerId": "065d8455-22f6-4a97-8260-da5b68c7ca41"
         },
@@ -165,8 +154,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "actif",
-                "designer|userClassName": "MyField18"
+                "name": "actif"
             },
             "designerId": "d4da8bc9-08ba-46fe-9442-d757dce2218b"
         },
@@ -178,8 +166,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "note",
-                "designer|userClassName": "MyField19"
+                "name": "note"
             },
             "designerId": "15362691-2916-4710-ad12-2afbdead6d1c"
         },
@@ -191,8 +178,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "licenseRbq",
-                "designer|userClassName": "MyField33"
+                "name": "licenseRbq"
             },
             "designerId": "9a5f4202-a236-45c6-b977-477575b36eb8"
         },
@@ -204,8 +190,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "tps",
-                "designer|userClassName": "MyField34"
+                "name": "tps"
             },
             "designerId": "7b21f168-a5c4-4eae-a9b8-0b5c92839eda"
         },
@@ -217,8 +202,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "siteWeb",
-                "designer|userClassName": "MyField35"
+                "name": "siteWeb"
             },
             "designerId": "05a4970f-6266-4717-9409-b654e8011903"
         }

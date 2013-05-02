@@ -23,9 +23,6 @@
                 "type": "object"
             },
             "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyGridView2"
-            },
             "configAlternates": {
                 "loadMask": "boolean"
             },
@@ -39,7 +36,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "onGridviewBeforeRefresh",
                         "fn": "onGridviewBeforeRefresh",
                         "implHandler": [
                             "dataview.scrollTop = dataview.container.dom.firstChild.scrollTop;"
@@ -57,7 +53,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "onGridviewRefresh",
                         "fn": "onGridviewRefresh",
                         "implHandler": [
                             "dataview.container.dom.firstChild.scrollTop = dataview.scrollTop;"
@@ -77,8 +72,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "top",
-                "designer|userClassName": "MyToolbar1"
+                "dock": "top"
             },
             "designerId": "59bbd4ef-7374-4dd8-8aa9-4cd03e950bc4",
             "cn": [
@@ -101,7 +95,6 @@
                         "layout|flex": null,
                         "itemId": "comboSpecialites",
                         "width": 251,
-                        "designer|userClassName": "MyComboBox2",
                         "fieldLabel": "Specialite",
                         "labelWidth": 70,
                         "displayField": "name",
@@ -133,7 +126,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "searchText",
-                        "designer|userClassName": "MyTextField",
                         "fieldLabel": "Recherche Rapide",
                         "checkChangeBuffer": 5
                     },
@@ -149,7 +141,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "addSousTraitant",
-                        "designer|userClassName": "MyButton4",
                         "text": "Ajouter un sous traitant"
                     },
                     "designerId": "50696ec3-f8ba-42bf-bbd1-54c898f93bc2"
@@ -165,7 +156,6 @@
             "codeClass": null,
             "userConfig": {
                 "width": 200,
-                "designer|userClassName": "MyTemplateColumn",
                 "dataIndex": "name",
                 "text": "Societé",
                 "flex": 3
@@ -180,7 +170,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "tpl",
                         "implHandler": [
                             "<font style=\"font-weight: bold; font-size: 13px;\">{name}</font><br>",
                             "Contact:&nbsp;&nbsp;&nbsp;&nbsp;{contactName}<br>",
@@ -201,7 +190,6 @@
             "codeClass": null,
             "userConfig": {
                 "width": 250,
-                "designer|userClassName": "MyColumn22",
                 "dataIndex": "mail",
                 "text": "Courriel",
                 "flex": 1
@@ -217,7 +205,6 @@
             "codeClass": null,
             "userConfig": {
                 "width": 200,
-                "designer|userClassName": "MyTemplateColumn1",
                 "dataIndex": "phone",
                 "text": "Telephones",
                 "flex": 1
@@ -232,7 +219,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "tpl",
                         "implHandler": [
                             "Telephone:&nbsp;&nbsp;{phone}<br>",
                             "Cellulaire:&nbsp;&nbsp;{cell}<br>",
@@ -252,8 +238,7 @@
             },
             "codeClass": "Ext.selection.RowModel",
             "userConfig": {
-                "mode": "MULTI",
-                "designer|userClassName": "MyRowSelectionModel1"
+                "mode": "MULTI"
             },
             "designerId": "340753d9-a66a-4386-80fb-40c293777d6a"
         }

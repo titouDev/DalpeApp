@@ -22,7 +22,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyDirectProxy",
                 "api": [
                     "{",
                     "create:SousTraitants.create,",
@@ -45,7 +44,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "root": "result",
-                        "designer|userClassName": "MyJsonReader6",
                         "record": null
                     },
                     "designerId": "c40c4fae-fd47-4681-99c9-464e30e0981b"
@@ -60,8 +58,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "property": "name",
-                "designer|userClassName": "MySorter2"
+                "property": "name"
             },
             "designerId": "d567af3f-8143-44df-91aa-d739c62bd2f6"
         }

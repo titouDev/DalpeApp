@@ -17,10 +17,10 @@
         "cssPath": "",
         "buildShouldOverwriteIndex": true
     },
-    "xdsVersion": "2.2.0",
-    "xdsBuild": 908,
+    "xdsVersion": "2.2.2",
+    "xdsBuild": 971,
     "schemaVersion": 1,
-    "upgradeVersion": 210000000499,
+    "upgradeVersion": 210000000501,
     "framework": "ext40",
     "topInstanceFileMap": {
         "e4c96884-e2eb-49b7-a615-451f20b564e5": {

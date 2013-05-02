@@ -25,7 +25,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAddHourClick",
                 "fn": "onAddHourClick",
                 "implHandler": [
                     "Ext.widget('editEmployeHour');",
@@ -47,7 +46,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onSaveClick",
                 "fn": "onSaveClick",
                 "implHandler": [
                     "var myForm = button.up('window').down('form').getForm();",
@@ -81,7 +79,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onCancelClick",
                 "fn": "onCancelClick",
                 "implHandler": [
                     "button.up('window').close();"
@@ -101,7 +98,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onTabActivate",
                 "fn": "onTabActivate",
                 "implHandler": [
                     "//On reload le store pour afficher les heures loggues...",
@@ -125,7 +121,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "logHoursGrid",
                 "ref": "logHoursGrid",
                 "selector": "#logHoursGrid"
             },
@@ -139,7 +134,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "deleteRecord",
                 "fn": "deleteRecord",
                 "designer|params": [
                     "record"
@@ -161,7 +155,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "loadHoursStore",
                 "fn": "loadHoursStore",
                 "implHandler": [
                     "var employes_logHours_store = Ext.getStore('employes_logHours');",
@@ -182,7 +175,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onDeleteHourClick",
                 "fn": "onDeleteHourClick",
                 "implHandler": [
                     "//On va chercher le record selectionne",
@@ -222,7 +214,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onLogHoursGridItemDblClick",
                 "fn": "onLogHoursGridItemDblClick",
                 "implHandler": [
                     "if (this.isLogChecked(record.data))",
@@ -246,7 +237,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "saveRecord",
                 "fn": "saveRecord",
                 "designer|params": [
                     "record"
@@ -281,7 +271,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "editRecord",
                 "fn": "editRecord",
                 "designer|params": [
                     "record"
@@ -307,7 +296,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "isLogChecked",
                 "fn": "isLogChecked",
                 "designer|params": [
                     "record"
@@ -331,7 +319,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onEmployeSelect",
                 "fn": "onEmployeSelect",
                 "implHandler": [
                     "//Lorsqu'on choisi un employe, le cout horaire est sette avec celui de l'employe",

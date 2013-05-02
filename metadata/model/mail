@@ -19,8 +19,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "id",
-                "type": "int",
-                "designer|userClassName": "MyField45"
+                "type": "int"
             },
             "designerId": "a6638085-163c-4b62-9b75-4e815f1e98aa"
         },
@@ -33,8 +32,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "message",
-                "type": "string",
-                "designer|userClassName": "MyField43"
+                "type": "string"
             },
             "designerId": "6bfacdb5-5c1a-45d1-9b2d-535c2c6a04e5"
         },
@@ -48,8 +46,7 @@
             "userConfig": {
                 "dateFormat": "c",
                 "name": "creationDate",
-                "type": "date",
-                "designer|userClassName": "MyField44"
+                "type": "date"
             },
             "designerId": "23ae46ac-8e52-4666-ae5c-e983fb3d409a"
         },
@@ -61,8 +58,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "subject",
-                "designer|userClassName": "MyField39"
+                "name": "subject"
             },
             "designerId": "0f114840-9581-4bb2-9317-38c919a16b05"
         },
@@ -76,8 +72,7 @@
             "userConfig": {
                 "name": "chantier",
                 "type": "string",
-                "useNull": true,
-                "designer|userClassName": "MyField29"
+                "useNull": true
             },
             "designerId": "254f960b-97ae-45cf-82f1-c1a1f3af5909"
         },
@@ -91,8 +86,7 @@
             "userConfig": {
                 "name": "chantierId",
                 "type": "int",
-                "useNull": true,
-                "designer|userClassName": "MyField29"
+                "useNull": true
             },
             "designerId": "7f687801-982f-4f32-964c-64aaa87ad0be"
         },
@@ -105,8 +99,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "userCreate",
-                "type": "string",
-                "designer|userClassName": "MyField30"
+                "type": "string"
             },
             "designerId": "663943f6-8364-41e4-9909-7a101a6a2642"
         },
@@ -119,8 +112,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "userCreateLastName",
-                "type": "string",
-                "designer|userClassName": "MyField30"
+                "type": "string"
             },
             "designerId": "f48a710a-d6cd-41e4-8ada-e7b4f1aa8e52"
         },
@@ -134,8 +126,7 @@
             "userConfig": {
                 "dateFormat": "c",
                 "name": "sentDate",
-                "type": "date",
-                "designer|userClassName": "field50"
+                "type": "date"
             },
             "designerId": "b578e625-ea76-4e27-8423-e13024cf39a7"
         }

@@ -20,8 +20,7 @@
             "userConfig": {
                 "mapping": "Field",
                 "name": "name",
-                "type": "auto",
-                "designer|userClassName": "MyField5"
+                "type": "auto"
             },
             "designerId": "9d1f7bb9-4a3f-434d-aaaa-213f4b5a6942"
         },
@@ -34,8 +33,7 @@
             "codeClass": null,
             "userConfig": {
                 "mapping": "Type",
-                "name": "type",
-                "designer|userClassName": "MyField3"
+                "name": "type"
             },
             "designerId": "25c58b6b-c097-4e11-a057-a9e0b913f937"
         },
@@ -47,8 +45,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "foreignTable",
-                "designer|userClassName": "MyField4"
+                "name": "foreignTable"
             },
             "designerId": "cd5c0e55-bf7e-4f23-aca7-c481129026a0"
         },
@@ -61,8 +58,7 @@
             "codeClass": null,
             "userConfig": {
                 "mapping": "Null",
-                "name": "allowNull",
-                "designer|userClassName": "MyField5"
+                "name": "allowNull"
             },
             "designerId": "d90e003a-f7da-4280-97bc-10df6fadd8b5"
         },
@@ -75,8 +71,7 @@
             "codeClass": null,
             "userConfig": {
                 "mapping": "Default",
-                "name": "DefaultValue",
-                "designer|userClassName": "MyField6"
+                "name": "DefaultValue"
             },
             "designerId": "7137727f-86a5-429d-b5f5-6dbb74c1f4f1"
         }

@@ -28,7 +28,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "chantiersGrid",
                 "ref": "chantiersGrid",
                 "selector": "#chantiersGrid"
             },
@@ -42,7 +41,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onChantiersGridItemDblClick",
                 "fn": "onChantiersGridItemDblClick",
                 "implHandler": [
                     "",
@@ -82,7 +80,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAddClick",
                 "fn": "onAddClick",
                 "implHandler": [
                     "Ext.widget('editChantierWindow').show();"
@@ -102,7 +99,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAnnulerClick",
                 "fn": "onAnnulerClick",
                 "implHandler": [
                     "button.up('window').close();"
@@ -122,7 +118,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onChantiersGridSelect",
                 "fn": "onChantiersGridSelect",
                 "implHandler": [
                     "var hours_store = Ext.getStore('chantiers_hours');",
@@ -144,7 +139,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onEnregistrerClick",
                 "fn": "onEnregistrerClick",
                 "implHandler": [
                     "//On va chercher les infos du form",
@@ -192,7 +186,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onFileUpdalodChange",
                 "fn": "onFileUpdalodChange",
                 "implHandler": [
                     "var selectedRecord = this.getChantiersGrid().selModel.getSelection();",
@@ -238,7 +231,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onChantiersPanelActivate",
                 "fn": "onChantiersPanelActivate",
                 "implHandler": [
                     "this.getChantiersStore().load();",

@@ -18,7 +18,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onLoginClick",
                 "fn": "onLoginClick",
                 "implHandler": [
                     "var myForm = button.up('window').down('form').getForm();",
@@ -39,7 +38,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "verifyInfos",
                 "fn": "verifyInfos",
                 "designer|params": [
                     "response"
@@ -70,7 +68,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onPasswordSpecialkey",
                 "fn": "onPasswordSpecialkey",
                 "implHandler": [
                     "if (e.button === 12)",
@@ -96,7 +93,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "sendLoginForm",
                 "fn": "sendLoginForm",
                 "designer|params": [
                     "myForm"

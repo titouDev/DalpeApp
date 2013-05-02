@@ -20,7 +20,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyDirectProxy4",
                 "directFn": "Clients.get"
             },
             "designerId": "c2b86dd7-fbc8-436d-80d9-0b61dcd8effc",
@@ -33,8 +32,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "root": "result",
-                        "designer|userClassName": "MyJsonReader2"
+                        "root": "result"
                     },
                     "designerId": "2409f438-f074-49d5-84d4-e5ef614e0e06"
                 }

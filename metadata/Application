@@ -60,7 +60,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "launch",
                 "fn": "launch",
                 "implHandler": [
                     "setInterval('if(!Ext.getCmp(\"loginWindow\")){Employes.checkLoginSession(function(response){    if (!response)    {    Ext.widget(\"loginWindow\");            }})}', 3700000);",

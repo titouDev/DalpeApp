@@ -20,7 +20,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyDirectProxy4",
                 "directFn": "Employes.get_hours"
             },
             "designerId": "e91a1f38-cc1e-4a60-b822-917960253929",
@@ -33,8 +32,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "root": "result",
-                        "designer|userClassName": "MyJsonReader2"
+                        "root": "result"
                     },
                     "designerId": "1f5ee102-1080-47bf-8111-ba62ef47ff37"
                 }

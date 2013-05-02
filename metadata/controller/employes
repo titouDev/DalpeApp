@@ -28,7 +28,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAddEmployeClick",
                 "fn": "onAddEmployeClick",
                 "implHandler": [
                     "Ext.widget('editEmployeWindow').show();"
@@ -48,7 +47,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onEmployesGridItemDblClick",
                 "fn": "onEmployesGridItemDblClick",
                 "implHandler": [
                     "",
@@ -89,7 +87,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "employesGrid",
                 "ref": "employesGrid",
                 "selector": "#employesGrid"
             },
@@ -103,7 +100,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onEmployesGridSelect",
                 "fn": "onEmployesGridSelect",
                 "implHandler": [
                     "var hours_store = Ext.getStore('employes_hours');",
@@ -125,7 +121,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onEmployesPanelActivate",
                 "fn": "onEmployesPanelActivate",
                 "implHandler": [
                     "this.getEmployesStore().load();",

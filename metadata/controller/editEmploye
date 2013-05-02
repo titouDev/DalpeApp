@@ -18,7 +18,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onSavePhotoClick",
                 "fn": "onSavePhotoClick",
                 "implHandler": [
                     "var myEditForm = button.up('window').down('#editForm').getForm();",
@@ -65,7 +64,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAnnulerClick",
                 "fn": "onAnnulerClick",
                 "implHandler": [
                     "button.up('window').close();"
@@ -85,7 +83,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onEnregistrerClick",
                 "fn": "onEnregistrerClick",
                 "implHandler": [
                     "//On va chercher les infos du form",
@@ -133,7 +130,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "savePhoto",
                 "fn": "savePhoto",
                 "implHandler": [
                     ""
@@ -149,7 +145,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "employesGrid",
                 "ref": "employesGrid",
                 "selector": "#employesGrid"
             },

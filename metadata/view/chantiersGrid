@@ -23,9 +23,6 @@
                 "type": "object"
             },
             "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyGridView9"
-            },
             "designerId": "d34f8e58-cbe8-49c1-94a0-14437de7e318"
         },
         {
@@ -36,7 +33,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyColumn26",
                 "dataIndex": "name",
                 "text": "Name",
                 "flex": 1
@@ -51,7 +47,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyColumn27",
                 "dataIndex": "note",
                 "text": "Note",
                 "flex": 1
@@ -66,7 +61,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyColumn28",
                 "dataIndex": "status",
                 "text": "Status",
                 "flex": 1
@@ -81,7 +75,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyDateColumn5",
                 "dataIndex": "startDate",
                 "text": "Debut",
                 "format": "d-M-Y"
@@ -96,7 +89,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyDateColumn6",
                 "dataIndex": "endDate",
                 "text": "Fin",
                 "format": "d-M-Y"
@@ -111,7 +103,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyColumn29",
                 "dataIndex": "clientName",
                 "text": "Client",
                 "flex": 1
@@ -126,8 +117,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "top",
-                "designer|userClassName": "MyToolbar11"
+                "dock": "top"
             },
             "designerId": "9e633482-80bb-44a1-9cf7-f424175174ff",
             "cn": [
@@ -141,7 +131,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "add",
-                        "designer|userClassName": "MyButton20",
                         "text": "Creer un nouveau chantier"
                     },
                     "designerId": "6a6c0b9f-b51d-40b3-96f9-8ae20a285578"

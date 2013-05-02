@@ -18,7 +18,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onViewportAfterRender",
                 "fn": "onViewportAfterRender",
                 "implHandler": [
                     "Employes.checkLoginSession(function(response){",
@@ -50,7 +49,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onLogoutButtonClick",
                 "fn": "onLogoutButtonClick",
                 "implHandler": [
                     "Employes.logout(function(){",

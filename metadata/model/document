@@ -18,8 +18,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "id",
-                "designer|userClassName": "field62"
+                "name": "id"
             },
             "designerId": "f96e1af9-1755-47c4-bf67-f8ce345f7833"
         },
@@ -31,8 +30,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "name",
-                "designer|userClassName": "field63"
+                "name": "name"
             },
             "designerId": "ead42d49-c934-4f15-908d-e19fd7e71923"
         },
@@ -44,8 +42,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "path",
-                "designer|userClassName": "field64"
+                "name": "path"
             },
             "designerId": "131347a0-68a3-45c6-8ca0-75967dc09a7a"
         },
@@ -57,8 +54,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "type",
-                "designer|userClassName": "field65"
+                "name": "type"
             },
             "designerId": "9a545b88-7ed4-41c2-861a-04d3bafc76a2"
         },
@@ -70,8 +66,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "size",
-                "designer|userClassName": "field68"
+                "name": "size"
             },
             "designerId": "c0066413-7323-4707-94e3-b7491935b18d"
         },
@@ -83,8 +78,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "extension",
-                "designer|userClassName": "field69"
+                "name": "extension"
             },
             "designerId": "0d6c5002-9eb1-4ee4-af55-1b412513cc6d"
         },
@@ -96,8 +90,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "creationDate",
-                "designer|userClassName": "field70"
+                "name": "creationDate"
             },
             "designerId": "0c72b3c1-71a7-432b-b8ac-6a6a7e40f348"
         },
@@ -109,8 +102,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "note",
-                "designer|userClassName": "field71"
+                "name": "note"
             },
             "designerId": "15d13428-460b-45a1-a462-141711579505"
         }

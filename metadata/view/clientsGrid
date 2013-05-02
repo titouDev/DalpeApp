@@ -21,9 +21,6 @@
                 "type": "object"
             },
             "codeClass": null,
-            "userConfig": {
-                "designer|userClassName": "MyGridView3"
-            },
             "designerId": "798d15d1-1c9c-4042-be22-c2437b6a80a0"
         },
         {
@@ -34,7 +31,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyColumn17",
                 "dataIndex": "prenom",
                 "text": "Prenom",
                 "flex": 1
@@ -49,7 +45,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyColumn18",
                 "dataIndex": "nom",
                 "text": "Nom",
                 "flex": 1
@@ -64,7 +59,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyColumn19",
                 "dataIndex": "mail",
                 "text": "Mail",
                 "flex": 1
@@ -79,7 +73,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyColumn21",
                 "dataIndex": "phone",
                 "text": "Phone",
                 "flex": 1
@@ -94,7 +87,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyColumn22",
                 "dataIndex": "cell",
                 "text": "Cell",
                 "flex": 1
@@ -109,8 +101,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "top",
-                "designer|userClassName": "MyToolbar3"
+                "dock": "top"
             },
             "designerId": "bd9b0bf5-0d91-4f35-b37c-3d94d2160b2d",
             "cn": [
@@ -124,7 +115,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "add",
-                        "designer|userClassName": "MyButton5",
                         "text": "Ajouter un client"
                     },
                     "designerId": "7985e30e-096b-49f1-b542-1a7c9980cada"

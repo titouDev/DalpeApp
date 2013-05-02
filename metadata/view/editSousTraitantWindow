@@ -33,7 +33,6 @@
                 "container|align": "stretch",
                 "border": 0,
                 "itemId": "editForm",
-                "designer|userClassName": "MyForm2",
                 "layout": "vbox",
                 "bodyPadding": 10,
                 "title": null
@@ -52,7 +51,6 @@
                         "container|align": "stretch",
                         "border": 0,
                         "margin": 5,
-                        "designer|userClassName": "MyPanel11",
                         "layout": "hbox",
                         "title": null
                     },
@@ -70,7 +68,6 @@
                                 "layout|margins": "10",
                                 "container|align": "stretch",
                                 "border": 0,
-                                "designer|userClassName": "MyPanel12",
                                 "layout": "vbox",
                                 "title": null
                             },
@@ -87,7 +84,6 @@
                                         "layout|flex": 1,
                                         "height": null,
                                         "maxHeight": 25,
-                                        "designer|userClassName": "MyTextField9",
                                         "fieldLabel": "Compagnie",
                                         "name": "name",
                                         "allowBlank": false,
@@ -105,7 +101,6 @@
                                     "userConfig": {
                                         "layout|flex": 1,
                                         "maxHeight": 25,
-                                        "designer|userClassName": "MyTextField9",
                                         "fieldLabel": "Contact",
                                         "name": "contactName"
                                     },
@@ -121,7 +116,6 @@
                                     "userConfig": {
                                         "layout|flex": 1,
                                         "maxHeight": 25,
-                                        "designer|userClassName": "MyTextField9",
                                         "fieldLabel": "Telephone",
                                         "name": "phone"
                                     },
@@ -137,7 +131,6 @@
                                     "userConfig": {
                                         "layout|flex": 1,
                                         "maxHeight": 25,
-                                        "designer|userClassName": "MyTextField9",
                                         "fieldLabel": "Cellulaire",
                                         "name": "cell"
                                     },
@@ -153,7 +146,6 @@
                                     "userConfig": {
                                         "layout|flex": 1,
                                         "maxHeight": 25,
-                                        "designer|userClassName": "MyTextField9",
                                         "fieldLabel": "Fax",
                                         "name": "fax",
                                         "inputType": null
@@ -170,7 +162,6 @@
                                     "userConfig": {
                                         "layout|flex": 1,
                                         "maxHeight": 25,
-                                        "designer|userClassName": "MyTextField15",
                                         "fieldLabel": "Couriel",
                                         "name": "mail",
                                         "inputType": "email",
@@ -193,7 +184,6 @@
                                 "layout|margins": "10",
                                 "container|align": "stretch",
                                 "border": 0,
-                                "designer|userClassName": "MyPanel13",
                                 "layout": "vbox",
                                 "title": null
                             },
@@ -208,7 +198,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "maxHeight": 25,
-                                        "designer|userClassName": "MyTextField13",
                                         "fieldLabel": "Adresse",
                                         "name": "adresse"
                                     },
@@ -226,7 +215,6 @@
                                         "maxHeight": 25,
                                         "maxWidth": null,
                                         "width": null,
-                                        "designer|userClassName": "MyTextField16",
                                         "fieldLabel": "Code Postal",
                                         "name": "codePostal"
                                     },
@@ -246,7 +234,6 @@
                                         "maxWidth": null,
                                         "padding": null,
                                         "width": null,
-                                        "designer|userClassName": "MyTextField17",
                                         "fieldLabel": "Ville",
                                         "labelPad": null,
                                         "name": "ville"
@@ -267,7 +254,6 @@
                                         "maxWidth": null,
                                         "padding": null,
                                         "width": null,
-                                        "designer|userClassName": "MyTextField17",
                                         "fieldLabel": "Province",
                                         "labelPad": null,
                                         "name": "province"
@@ -285,7 +271,6 @@
                                         "layout|flex": 1,
                                         "maxHeight": 25,
                                         "padding": null,
-                                        "designer|userClassName": "MyTextField15",
                                         "fieldLabel": "Site Internet",
                                         "name": "siteWeb",
                                         "vtype": null
@@ -302,7 +287,6 @@
                                     "userConfig": {
                                         "layout|flex": 1,
                                         "maxHeight": 25,
-                                        "designer|userClassName": "MyTextField15",
                                         "fieldLabel": "License RBQ",
                                         "name": "licenseRbq"
                                     },
@@ -318,7 +302,6 @@
                                     "userConfig": {
                                         "layout|flex": 1,
                                         "maxHeight": 25,
-                                        "designer|userClassName": "MyTextField15",
                                         "fieldLabel": "Tps",
                                         "name": "tps"
                                     },
@@ -343,7 +326,6 @@
                         "height": 150,
                         "margin": 5,
                         "maxHeight": 150,
-                        "designer|userClassName": "MyPanel15",
                         "layout": "hbox",
                         "title": null
                     },
@@ -360,7 +342,6 @@
                                 "layout|flex": 1.5,
                                 "itemId": "specialitesGrid",
                                 "width": 149,
-                                "designer|userClassName": "MyGridPanel9",
                                 "title": null,
                                 "hideHeaders": true,
                                 "store": "specialiteLinkSousTraitant"
@@ -375,7 +356,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "MyColumn26",
                                         "dataIndex": "name",
                                         "text": "String",
                                         "flex": 7
@@ -390,7 +370,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "MyActionColumn",
                                         "flex": 1
                                     },
                                     "designerId": "52c90dd9-1b6a-4152-bc5d-0a12160c6afc",
@@ -403,7 +382,6 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|userClassName": "MyActionColumnItem",
                                                 "altText": null,
                                                 "icon": "images/delete.png",
                                                 "tooltip": "Enlever la specialite"
@@ -418,7 +396,6 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "designer|userClassName": "handler",
                                                         "fn": "handler",
                                                         "designer|params": [
                                                             "view",
@@ -452,8 +429,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "dock": "top",
-                                        "designer|userClassName": "MyToolbar6"
+                                        "dock": "top"
                                     },
                                     "designerId": "4b36e672-56b0-4940-a65e-00806862b539",
                                     "cn": [
@@ -466,7 +442,6 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|flex": null,
-                                                "designer|userClassName": "MyButton12",
                                                 "text": "Ajouter une specialite"
                                             },
                                             "designerId": "111ca38c-aa9b-4888-91e4-5ee8f562c37f",
@@ -479,7 +454,6 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "designer|userClassName": "handler",
                                                         "fn": "handler",
                                                         "designer|params": [
                                                             "button",
@@ -526,7 +500,6 @@
                                 "maxHeight": null,
                                 "padding": "0 0 0 30",
                                 "width": 100,
-                                "designer|userClassName": "MyPanel15",
                                 "layout": "fit",
                                 "title": null
                             },
@@ -545,7 +518,6 @@
                                         "margin": null,
                                         "maxHeight": null,
                                         "width": 341,
-                                        "designer|userClassName": "MyTextArea2",
                                         "fieldLabel": "Note",
                                         "labelWidth": 40,
                                         "name": "note"
@@ -566,7 +538,6 @@
                     "userConfig": {
                         "layout|flex": 1,
                         "hidden": true,
-                        "designer|userClassName": "MyNumberField2",
                         "fieldLabel": "Label",
                         "name": "id"
                     },
@@ -585,7 +556,6 @@
                 "layout|flex": 1,
                 "container|align": "stretch",
                 "border": 0,
-                "designer|userClassName": "MyPanel34",
                 "layout": "vbox",
                 "title": null
             },
@@ -612,7 +582,6 @@
                         "maxHeight": 230,
                         "minHeight": 230,
                         "width": 618,
-                        "designer|userClassName": "MyForm8",
                         "layout": "vbox"
                     },
                     "designerId": "98771ad8-8715-4b3f-9ebb-095539721809",
@@ -628,7 +597,6 @@
                                 "layout|flex": 1,
                                 "layout|margins": null,
                                 "maxHeight": 30,
-                                "designer|userClassName": "MyFileUpload1",
                                 "fieldLabel": "Document",
                                 "name": "documentImport",
                                 "allowBlank": false,
@@ -648,7 +616,6 @@
                                 "layout|flex": 1,
                                 "maxHeight": 30,
                                 "maxWidth": 250,
-                                "designer|userClassName": "MyComboBox5",
                                 "fieldLabel": "Type",
                                 "name": "documentTypeId",
                                 "allowBlank": false,
@@ -671,7 +638,6 @@
                                 "height": 60,
                                 "maxHeight": 60,
                                 "minHeight": 60,
-                                "designer|userClassName": "MyTextArea3",
                                 "fieldLabel": "Note",
                                 "name": "documentNote"
                             },
@@ -687,7 +653,6 @@
                             "userConfig": {
                                 "layout|flex": 1,
                                 "container|align": "stretch",
-                                "designer|userClassName": "MyContainer",
                                 "layout": "hbox"
                             },
                             "designerId": "2ebd7cca-09a6-4821-964b-4013049cbbc4",
@@ -706,7 +671,6 @@
                                         "maxWidth": 150,
                                         "minWidth": 150,
                                         "width": 150,
-                                        "designer|userClassName": "MyButton15",
                                         "text": "Importer le document"
                                     },
                                     "designerId": "c27f1983-3cae-48c3-ac9e-e96f3cf137db"
@@ -727,7 +691,6 @@
                         "layout|margins": "5",
                         "height": 150,
                         "maxHeight": 150,
-                        "designer|userClassName": "MyGridPanel8",
                         "title": "Documents Importes",
                         "store": "documents"
                     },
@@ -740,9 +703,6 @@
                                 "type": "object"
                             },
                             "codeClass": null,
-                            "userConfig": {
-                                "designer|userClassName": "MyGridView6"
-                            },
                             "designerId": "493a2c84-fc3e-43a5-bd45-b31a994d0896"
                         },
                         {
@@ -753,7 +713,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyColumn28",
                                 "dataIndex": "name",
                                 "text": "Nom"
                             },
@@ -767,7 +726,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "renderer",
                                         "fn": "renderer",
                                         "designer|params": [
                                             "value",
@@ -794,7 +752,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyColumn25",
                                 "dataIndex": "note",
                                 "text": "Note"
                             },
@@ -808,7 +765,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyColumn32",
                                 "dataIndex": "type",
                                 "text": "Type"
                             },
@@ -822,7 +778,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "designer|userClassName": "renderer",
                                         "fn": "renderer",
                                         "designer|params": [
                                             "value",
@@ -851,7 +806,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "MyColumn35",
                                 "dataIndex": "creationDate",
                                 "text": "Date de création"
                             },
@@ -871,8 +825,7 @@
             "userConfig": {
                 "layout|flex": 1,
                 "dock": "bottom",
-                "itemId": "toolBar",
-                "designer|userClassName": "MyToolbar5"
+                "itemId": "toolBar"
             },
             "designerId": "9b5eb22a-8ee7-40bb-a0ee-0abdbbc41a85",
             "cn": [
@@ -884,8 +837,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill7"
+                        "layout|flex": null
                     },
                     "designerId": "fa6ca28f-acd8-4b64-84b5-80854ec2c034"
                 },
@@ -899,7 +851,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "enregistrer",
-                        "designer|userClassName": "MyButton10",
                         "text": "Enregistrer"
                     },
                     "designerId": "75348155-b4ad-4624-858f-6e0a148c262d"
@@ -914,7 +865,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "annuler",
-                        "designer|userClassName": "MyButton11",
                         "text": "Fermer"
                     },
                     "designerId": "1a6e2c43-cc71-44b4-95ac-2118d8c5ab0d"

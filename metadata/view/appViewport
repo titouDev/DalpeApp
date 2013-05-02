@@ -23,7 +23,6 @@
             "codeClass": null,
             "userConfig": {
                 "stateId": null,
-                "designer|userClassName": "MyPanel29",
                 "layout": "fit",
                 "title": "Construction Julien Dalpé Inc."
             },
@@ -40,8 +39,7 @@
                         "dock": "top",
                         "stateId": null,
                         "id": "appToolbar",
-                        "itemId": "",
-                        "designer|userClassName": "MyToolbar14"
+                        "itemId": ""
                     },
                     "designerId": "ae2efddd-0c2f-41fa-8314-d967368d1232",
                     "cn": [
@@ -55,7 +53,6 @@
                             "userConfig": {
                                 "layout|flex": null,
                                 "itemId": "userLogged",
-                                "designer|userClassName": "MyTextItem",
                                 "text": "Utilisateur connecté"
                             },
                             "designerId": "a3bc20d9-0dc0-42dd-a81d-697135f8bccd"
@@ -68,8 +65,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
-                                "designer|userClassName": "MyFill5"
+                                "layout|flex": null
                             },
                             "designerId": "2913914b-998e-4788-a857-49d66632c9e6"
                         },
@@ -83,7 +79,6 @@
                             "userConfig": {
                                 "layout|flex": null,
                                 "itemId": "logout",
-                                "designer|userClassName": "MyButton26",
                                 "text": "se déconnecter..."
                             },
                             "designerId": "e86cb4ca-521f-495c-b7c8-c5c248aada8f"
@@ -99,7 +94,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "stateId": null,
-                        "designer|userClassName": "MyTabPanel",
                         "title": "",
                         "activeTab": 1
                     },
@@ -115,7 +109,6 @@
                             "userConfig": {
                                 "stateId": null,
                                 "id": "employesPanel",
-                                "designer|userClassName": "MyPanel21",
                                 "layout": "border",
                                 "title": "Employés"
                             },
@@ -150,7 +143,6 @@
                                         "layout|split": true,
                                         "stateId": null,
                                         "width": null,
-                                        "designer|userClassName": "MyGridPanel10",
                                         "title": "Heures",
                                         "store": "employes_hours"
                                     },
@@ -163,9 +155,6 @@
                                                 "type": "object"
                                             },
                                             "codeClass": null,
-                                            "userConfig": {
-                                                "designer|userClassName": "MyGridView9"
-                                            },
                                             "designerId": "71b2aeff-d768-4c29-8f7d-e3e0eb048cfe"
                                         },
                                         {
@@ -176,7 +165,6 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|userClassName": "MyDateColumn7",
                                                 "dataIndex": "workDate",
                                                 "text": "Date",
                                                 "format": "d-M-Y"
@@ -191,7 +179,6 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|userClassName": "MyColumn27",
                                                 "dataIndex": "hours",
                                                 "text": "Heure"
                                             },
@@ -205,7 +192,6 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|userClassName": "MyColumn28",
                                                 "dataIndex": "chantierId",
                                                 "text": "Chantier"
                                             },
@@ -219,7 +205,6 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "designer|userClassName": "renderer",
                                                         "fn": "renderer",
                                                         "designer|params": [
                                                             "value",
@@ -251,9 +236,6 @@
                                         "type": "object"
                                     },
                                     "codeClass": null,
-                                    "userConfig": {
-                                        "designer|userClassName": "TabConfig2"
-                                    },
                                     "designerId": "afb230e3-61ac-44ad-9d98-575a25e119c3"
                                 }
                             ]
@@ -268,7 +250,6 @@
                             "userConfig": {
                                 "stateId": null,
                                 "id": "sousTraitantsPanel",
-                                "designer|userClassName": "MyPanel7",
                                 "layout": "border",
                                 "title": "Sous Traitants"
                             },
@@ -282,8 +263,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "stateId": null,
-                                        "designer|userClassName": "TabConfig"
+                                        "stateId": null
                                     },
                                     "designerId": "3df5e9d3-1837-413d-acfb-26bedb30ea1a"
                                 },
@@ -317,7 +297,6 @@
                                         "layout|split": true,
                                         "stateId": null,
                                         "width": 150,
-                                        "designer|userClassName": "MyPanel10",
                                         "layout": "fit",
                                         "title": null
                                     },
@@ -333,8 +312,6 @@
                                             "userConfig": {
                                                 "id": "mailsGrid",
                                                 "width": null,
-                                                "designer|userClassName": "mailsGrid",
-                                                "designer|userAlias": "mailsgrid",
                                                 "collapsed": false,
                                                 "title": "Courriels",
                                                 "store": "mails"
@@ -348,9 +325,6 @@
                                                         "type": "object"
                                                     },
                                                     "codeClass": null,
-                                                    "userConfig": {
-                                                        "designer|userClassName": "MyGridView4"
-                                                    },
                                                     "designerId": "625a7773-0eb5-460d-9405-862d8bca84f9"
                                                 },
                                                 {
@@ -360,9 +334,6 @@
                                                         "type": "object"
                                                     },
                                                     "codeClass": "Ext.selection.RowModel",
-                                                    "userConfig": {
-                                                        "designer|userClassName": "MyRowSelectionModel1"
-                                                    },
                                                     "designerId": "2b0cb587-5384-45bb-9307-cd2d17edea17"
                                                 },
                                                 {
@@ -373,7 +344,6 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "designer|userClassName": "MyColumn29",
                                                         "dataIndex": "subject",
                                                         "text": "Sujet",
                                                         "flex": 1
@@ -388,7 +358,6 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "designer|userClassName": "MyColumn30",
                                                         "dataIndex": "chantier",
                                                         "text": "Chantier",
                                                         "flex": 1
@@ -403,7 +372,6 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "designer|userClassName": "MyDateColumn5",
                                                         "dataIndex": "creationDate",
                                                         "text": "Cree le"
                                                     },
@@ -417,7 +385,6 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "designer|userClassName": "MyColumn31",
                                                         "dataIndex": "userCreate",
                                                         "text": "Cree par"
                                                     },
@@ -431,7 +398,6 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "designer|userClassName": "MyDateColumn5",
                                                         "dataIndex": "sentDate",
                                                         "text": "Envoye le"
                                                     },
@@ -446,7 +412,6 @@
                                                     "codeClass": null,
                                                     "userConfig": {
                                                         "itemId": "refresh",
-                                                        "designer|userClassName": "MyTool1",
                                                         "type": "refresh"
                                                     },
                                                     "designerId": "a269754a-a6ad-4222-b4d4-d0e2b9bdb687"
@@ -477,9 +442,6 @@
                                         "type": "object"
                                     },
                                     "codeClass": null,
-                                    "userConfig": {
-                                        "designer|userClassName": "TabConfig"
-                                    },
                                     "designerId": "9dc77a0e-80df-4e07-9b7a-8e3d7be5d25a"
                                 }
                             ]
@@ -493,7 +455,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "id": "chantiersPanel",
-                                "designer|userClassName": "MyPanel30",
                                 "layout": "border",
                                 "title": "Chantiers"
                             },
@@ -506,9 +467,6 @@
                                         "type": "object"
                                     },
                                     "codeClass": null,
-                                    "userConfig": {
-                                        "designer|userClassName": "TabConfig4"
-                                    },
                                     "designerId": "25c833ef-1e43-411f-ab09-940ab09a6709"
                                 },
                                 {
@@ -539,7 +497,6 @@
                                         "layout|split": true,
                                         "container|align": "stretch",
                                         "width": 150,
-                                        "designer|userClassName": "MyPanel31",
                                         "layout": "vbox",
                                         "title": null
                                     },
@@ -555,7 +512,6 @@
                                             "userConfig": {
                                                 "layout|flex": 1,
                                                 "width": null,
-                                                "designer|userClassName": "MyGridPanel11",
                                                 "title": "Hours",
                                                 "store": "chantiers_hours"
                                             },
@@ -568,9 +524,6 @@
                                                         "type": "object"
                                                     },
                                                     "codeClass": null,
-                                                    "userConfig": {
-                                                        "designer|userClassName": "MyGridView10"
-                                                    },
                                                     "designerId": "3d69af2c-6192-4071-82a1-5f33ce016363"
                                                 },
                                                 {
@@ -581,7 +534,6 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "designer|userClassName": "MyDateColumn6",
                                                         "dataIndex": "workDate",
                                                         "text": "Date"
                                                     },
@@ -595,7 +547,6 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "designer|userClassName": "MyNumberColumn4",
                                                         "dataIndex": "hours",
                                                         "text": "Heures"
                                                     },
@@ -609,7 +560,6 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "designer|userClassName": "MyColumn16",
                                                         "dataIndex": "employeId",
                                                         "text": "Employe"
                                                     },
@@ -623,7 +573,6 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
-                                                                "designer|userClassName": "renderer",
                                                                 "fn": "renderer",
                                                                 "designer|params": [
                                                                     "value",
@@ -655,7 +604,6 @@
                                             "userConfig": {
                                                 "layout|flex": 1,
                                                 "itemId": "documentsGrid",
-                                                "designer|userClassName": "MyGridPanel13",
                                                 "title": "Documents",
                                                 "store": "chantiers_documents"
                                             },
@@ -668,9 +616,6 @@
                                                         "type": "object"
                                                     },
                                                     "codeClass": null,
-                                                    "userConfig": {
-                                                        "designer|userClassName": "MyGridView12"
-                                                    },
                                                     "designerId": "c28d2203-ae33-40e5-a9e6-a431ddf99976"
                                                 },
                                                 {
@@ -681,8 +626,7 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "dock": "top",
-                                                        "designer|userClassName": "MyToolbar12"
+                                                        "dock": "top"
                                                     },
                                                     "designerId": "e8ace626-1445-4256-b32c-1dc4f6eb6f3b",
                                                     "cn": [
@@ -697,7 +641,6 @@
                                                                 "layout|flex": null,
                                                                 "itemId": "documentType",
                                                                 "padding": 0,
-                                                                "designer|userClassName": "MyComboBox6",
                                                                 "fieldLabel": null,
                                                                 "queryMode": "local",
                                                                 "store": "document_type"
@@ -716,7 +659,6 @@
                                                                 "itemId": "fileUpdalod",
                                                                 "padding": 0,
                                                                 "width": 60,
-                                                                "designer|userClassName": "MyFileUpload3",
                                                                 "fieldLabel": null,
                                                                 "name": "documentImport",
                                                                 "buttonOnly": true,
@@ -734,7 +676,6 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "designer|userClassName": "MyColumn33",
                                                         "dataIndex": "name",
                                                         "text": "Photo"
                                                     },
@@ -748,7 +689,6 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "designer|userClassName": "MyColumn34",
                                                         "dataIndex": "chantierId",
                                                         "text": "ChantierId"
                                                     },
@@ -769,7 +709,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "id": "logHours",
-                                "designer|userClassName": "MyPanel32",
                                 "title": "Entrée des Heures"
                             },
                             "designerId": "d6c50ff1-7b54-444e-bb47-28d0a650f5c4",
@@ -783,8 +722,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "id": "logHours_tabConfig",
-                                        "itemId": "",
-                                        "designer|userClassName": "TabConfig4"
+                                        "itemId": ""
                                     },
                                     "designerId": "e9e4020b-7ed4-4478-8e45-dbf4d3bed604"
                                 },
@@ -797,8 +735,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "id": "logHoursGrid",
-                                        "designer|userClassName": "MyGridPanel12",
-                                        "designer|userAlias": "mygridpanel12",
                                         "designer|displayName": "logHoursGrid",
                                         "title": null,
                                         "store": "employes_logHours"
@@ -812,9 +748,6 @@
                                                 "type": "object"
                                             },
                                             "codeClass": null,
-                                            "userConfig": {
-                                                "designer|userClassName": "MyGridView11"
-                                            },
                                             "designerId": "d872ee1e-55c3-41bf-b785-6242bea940bb"
                                         },
                                         {
@@ -825,7 +758,6 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|userClassName": "MyDateColumn6",
                                                 "dataIndex": "workDate",
                                                 "text": "WorkDate",
                                                 "format": "d-M-Y"
@@ -840,7 +772,6 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|userClassName": "MyNumberColumn4",
                                                 "dataIndex": "hours",
                                                 "text": "Hours"
                                             },
@@ -855,7 +786,6 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "width": 200,
-                                                "designer|userClassName": "MyColumn25",
                                                 "dataIndex": "chantier",
                                                 "text": "Chantier"
                                             },
@@ -870,7 +800,6 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "width": 200,
-                                                "designer|userClassName": "MyColumn26",
                                                 "dataIndex": "name",
                                                 "text": "Employe"
                                             },
@@ -884,7 +813,6 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "designer|userClassName": "renderer",
                                                         "fn": "renderer",
                                                         "designer|params": [
                                                             "value",
@@ -911,7 +839,6 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|userClassName": "MyNumberColumn2",
                                                 "dataIndex": "coutHoraire",
                                                 "text": "Cout Horaire"
                                             },
@@ -927,8 +854,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "dock": "top",
-                                        "designer|userClassName": "MyToolbar16"
+                                        "dock": "top"
                                     },
                                     "designerId": "f5a73693-a2c7-4eb1-b32a-7dc5b2af55db",
                                     "cn": [
@@ -942,7 +868,6 @@
                                             "userConfig": {
                                                 "layout|flex": null,
                                                 "itemId": "addHour",
-                                                "designer|userClassName": "MyButton27",
                                                 "text": "Ajouter une entrée"
                                             },
                                             "designerId": "8844b11d-adeb-40f4-9927-3b3fe0be402c"
@@ -957,7 +882,6 @@
                                             "userConfig": {
                                                 "layout|flex": null,
                                                 "itemId": "deleteHour",
-                                                "designer|userClassName": "MyButton27",
                                                 "text": "Effacer l'entreé selectionnée"
                                             },
                                             "designerId": "89ce8afb-0dc2-4a78-bed4-30d1048669f9"
@@ -977,7 +901,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "itemId": "preferences",
-                        "designer|userClassName": "MyTool1",
                         "designer|displayName": null,
                         "tooltip": "Preferences",
                         "tooltipType": "title",

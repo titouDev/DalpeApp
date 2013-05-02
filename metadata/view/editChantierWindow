@@ -32,7 +32,6 @@
                 "layout|flex": 1,
                 "container|align": "stretch",
                 "itemId": "editForm",
-                "designer|userClassName": "MyForm2",
                 "layout": "vbox",
                 "bodyPadding": 10,
                 "title": null
@@ -51,7 +50,6 @@
                         "container|align": "stretch",
                         "border": 0,
                         "margin": 5,
-                        "designer|userClassName": "MyPanel11",
                         "layout": "hbox",
                         "title": null
                     },
@@ -69,7 +67,6 @@
                                 "layout|margins": "10",
                                 "container|align": "stretch",
                                 "border": 0,
-                                "designer|userClassName": "MyPanel12",
                                 "layout": "vbox",
                                 "title": null
                             },
@@ -86,7 +83,6 @@
                                         "layout|flex": 1,
                                         "height": null,
                                         "maxHeight": 25,
-                                        "designer|userClassName": "MyTextField9",
                                         "fieldLabel": "Nom",
                                         "name": "name",
                                         "allowBlank": false,
@@ -103,7 +99,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|flex": 1,
-                                        "designer|userClassName": "MyTextArea4",
                                         "fieldLabel": "Notes",
                                         "name": "note"
                                     },
@@ -123,7 +118,6 @@
                                 "layout|margins": "10",
                                 "container|align": "stretch",
                                 "border": 0,
-                                "designer|userClassName": "MyPanel13",
                                 "layout": "vbox",
                                 "title": null
                             },
@@ -138,7 +132,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|flex": 1,
-                                        "designer|userClassName": "MyComboBox3",
                                         "fieldLabel": "Client",
                                         "labelWidth": 150,
                                         "name": "clientId",
@@ -160,7 +153,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|flex": 1,
-                                        "designer|userClassName": "MyComboBox4",
                                         "fieldLabel": "Status",
                                         "labelWidth": 150,
                                         "name": "status",
@@ -183,7 +175,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|flex": 1,
-                                        "designer|userClassName": "MyDateField",
                                         "fieldLabel": "Debut des Travaux",
                                         "labelWidth": 150,
                                         "name": "startDate",
@@ -200,7 +191,6 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "layout|flex": 1,
-                                        "designer|userClassName": "MyDateField1",
                                         "fieldLabel": "Fin des Travaux",
                                         "labelWidth": 150,
                                         "name": "endDate",
@@ -222,7 +212,6 @@
                     "userConfig": {
                         "layout|flex": 1,
                         "hidden": true,
-                        "designer|userClassName": "MyNumberField2",
                         "fieldLabel": "Label",
                         "name": "id"
                     },
@@ -240,8 +229,7 @@
             "userConfig": {
                 "layout|flex": 1,
                 "dock": "bottom",
-                "itemId": "toolBar",
-                "designer|userClassName": "MyToolbar5"
+                "itemId": "toolBar"
             },
             "designerId": "47102e29-79fb-4366-b32f-c019d7482f88",
             "cn": [
@@ -253,8 +241,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
-                        "designer|userClassName": "MyFill1"
+                        "layout|flex": null
                     },
                     "designerId": "b1d01ca2-02e5-46e9-ba98-7aba841fab1e"
                 },
@@ -268,7 +255,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "enregistrer",
-                        "designer|userClassName": "MyButton10",
                         "text": "Enregistrer"
                     },
                     "designerId": "8f7b3af5-38d9-42ac-9fff-6d36990b1c5b"
@@ -283,7 +269,6 @@
                     "userConfig": {
                         "layout|flex": null,
                         "itemId": "annuler",
-                        "designer|userClassName": "MyButton11",
                         "text": "Annuler"
                     },
                     "designerId": "41681ede-6250-4351-87bd-10b9270eb828"

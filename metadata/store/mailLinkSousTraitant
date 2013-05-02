@@ -21,7 +21,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyDirectProxy",
                 "api": null,
                 "directFn": "Mails.getLinkSoustraitant"
             },
@@ -36,7 +35,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "root": "result",
-                        "designer|userClassName": "MyJsonReader6",
                         "record": null
                     },
                     "designerId": "98a08554-0f72-449e-9bbe-4ab29335e520"

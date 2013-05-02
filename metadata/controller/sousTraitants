@@ -33,7 +33,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onTextfieldChange",
                 "fn": "onTextfieldChange",
                 "implHandler": [
                     "//On filtre le store en local",
@@ -62,7 +61,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "prepareMail",
                 "fn": "prepareMail",
                 "implHandler": [
                     "",
@@ -108,7 +106,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "displayEditSousTraitantWindow",
                 "fn": "displayEditSousTraitantWindow",
                 "implHandler": [
                     "//On affiche la fenetre",
@@ -156,7 +153,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "reloadSousTraitantsStore",
                 "fn": "reloadSousTraitantsStore",
                 "implHandler": [
                     "//On vide les stores qui ont besoin d'etre vides",
@@ -184,7 +180,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "filterSousTraitantsStoreWithText",
                 "fn": "filterSousTraitantsStoreWithText",
                 "implHandler": [
                     "//On va chercher la valeur du text search",
@@ -217,7 +212,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "confirmAddSousTraitant",
                 "fn": "confirmAddSousTraitant",
                 "designer|params": [
                     "btn",
@@ -249,7 +243,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "getSelectedSousTraitant",
                 "fn": "getSelectedSousTraitant",
                 "implHandler": [
                     "var sousTraitantGrid = Ext.ComponentQuery.query('#sousTraitantsGrid');",
@@ -272,7 +265,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onRowselectionmodelSelect",
                 "fn": "onRowselectionmodelSelect",
                 "implHandler": [
                     "",
@@ -309,7 +301,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "updateMailsGrid",
                 "fn": "updateMailsGrid",
                 "designer|params": [
                     "sousTraitantId"
@@ -330,7 +321,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "resetMailsGrid",
                 "fn": "resetMailsGrid",
                 "implHandler": [
                     "var mailsGrid = this.getMailsGrid()",
@@ -348,7 +338,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "searchField",
                 "ref": "searchField",
                 "selector": "#sousTraitantsGrid #searchText"
             },
@@ -362,7 +351,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "mailsGrid",
                 "ref": "mailsGrid",
                 "selector": "#mailsGrid"
             },
@@ -376,7 +364,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "sousTraitantsGrid",
                 "ref": "sousTraitantsGrid",
                 "selector": "#sousTraitantsGrid"
             },
@@ -390,7 +377,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "init",
                 "fn": "init",
                 "implHandler": [
                     ""
@@ -406,7 +392,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAddSousTraitantClick",
                 "fn": "onAddSousTraitantClick",
                 "implHandler": [
                     "//On s'assure que le store des links specialites/sous traitant est vide",
@@ -431,7 +416,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onRefreshClick",
                 "fn": "onRefreshClick",
                 "implHandler": [
                     "this.reloadSousTraitantsStore();"
@@ -451,7 +435,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onSousTraitantsGridItemContextMenu",
                 "fn": "onSousTraitantsGridItemContextMenu",
                 "implHandler": [
                     "//On affiche le contextMenu",
@@ -474,7 +457,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onContextMenuClick",
                 "fn": "onContextMenuClick",
                 "implHandler": [
                     "switch(item.itemId)",
@@ -508,7 +490,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onSousTraitantsGridItemDblClick",
                 "fn": "onSousTraitantsGridItemDblClick",
                 "implHandler": [
                     "//On ouvre la fenetre d'edition de soustraitant",
@@ -530,7 +511,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onRefreshClickMailsGrid",
                 "fn": "onRefreshClickMailsGrid",
                 "implHandler": [
                     "var selectedSousTraitant = this.getSousTraitantsGrid().selModel.getSelection()[0];",
@@ -553,7 +533,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onComboSpecialitesSelect",
                 "fn": "onComboSpecialitesSelect",
                 "implHandler": [
                     "this.reloadSousTraitantsStore();",
@@ -574,7 +553,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onSousTraitantsPanelActivate",
                 "fn": "onSousTraitantsPanelActivate",
                 "implHandler": [
                     "this.getSousTraitantsStore().proxy.sortParam = undefined; //empeche d'envoye le param sort dans le proxy",

@@ -27,7 +27,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onSendClick",
                 "fn": "onSendClick",
                 "implHandler": [
                     "if (Ext.getCmp('mailWindow').down('form').getForm().getValues().sentDate)",
@@ -63,7 +62,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onSaveClick",
                 "fn": "onSaveClick",
                 "implHandler": [
                     "if (Ext.getCmp('mailWindow').down('form').getForm().getValues().sentDate)",
@@ -90,7 +88,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onContactsClick",
                 "fn": "onContactsClick",
                 "implHandler": [
                     ""
@@ -110,7 +107,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAttachClick",
                 "fn": "onAttachClick",
                 "implHandler": [
                     ""
@@ -130,7 +126,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onAddClick",
                 "fn": "onAddClick",
                 "implHandler": [
                     "if (Ext.getCmp('mailWindow').down('form').getForm().getValues().sentDate)",
@@ -155,7 +150,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "onRemoveClick",
                 "fn": "onRemoveClick",
                 "implHandler": [
                     "if (Ext.getCmp('mailWindow').down('form').getForm().getValues().sentDate)",
@@ -202,7 +196,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "saveMail",
                 "fn": "saveMail",
                 "designer|params": [
                     "sendMail"
@@ -287,7 +280,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "sendMail",
                 "fn": "sendMail",
                 "designer|params": [
                     "myMail",
@@ -343,7 +335,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "getSousTraitantsRecords",
                 "fn": "getSousTraitantsRecords",
                 "implHandler": [
                     "console.log(this);",
@@ -369,7 +360,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "mailWindow",
                 "ref": "mailWindow",
                 "selector": "#mailWindow"
             },
@@ -383,7 +373,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "sousTraitantsDestMailGrid",
                 "ref": "sousTraitantsDestMailGrid",
                 "selector": "#mailWindow #sousTraitantsDestMailGrid"
             },

@@ -26,8 +26,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dock": "bottom",
-                "designer|userClassName": "MyToolbar7"
+                "dock": "bottom"
             },
             "designerId": "1f602a64-e840-4116-9ed5-6e8ffddfabf3",
             "cn": [
@@ -41,8 +40,7 @@
                     "userConfig": {
                         "layout|flex": null,
                         "height": 13,
-                        "width": 37,
-                        "designer|userClassName": "MySpacer1"
+                        "width": 37
                     },
                     "designerId": "8686d71b-6c8b-4225-a478-8d2b20849986"
                 },
@@ -55,7 +53,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton13",
                         "text": "Ajouter"
                     },
                     "designerId": "382f7264-207d-4e55-add6-aaab474a4ff1",
@@ -68,7 +65,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "handler",
                                 "fn": "handler",
                                 "designer|params": [
                                     "button",
@@ -110,7 +106,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "designer|userClassName": "MyButton14",
                         "text": "Annuler"
                     },
                     "designerId": "54722650-5f1f-4f9c-8863-eacad92ff20c",
@@ -123,7 +118,6 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|userClassName": "handler",
                                 "fn": "handler",
                                 "designer|params": [
                                     "button",
@@ -148,7 +142,6 @@
             "codeClass": null,
             "userConfig": {
                 "container|align": "stretch",
-                "designer|userClassName": "MyPanel16",
                 "layout": "vbox",
                 "title": null
             },
@@ -164,7 +157,6 @@
                     "userConfig": {
                         "itemId": "comboSpecialites",
                         "margin": 2,
-                        "designer|userClassName": "MyComboBox1",
                         "fieldLabel": null,
                         "autoSelect": false,
                         "displayField": "name",
@@ -187,7 +179,6 @@
                         "layout|flex": 1,
                         "layout|margins": "10",
                         "disabled": true,
-                        "designer|userClassName": "MyLabel1",
                         "text": "(ecrire dans la boite pour creer une nouvelle specialite)"
                     },
                     "designerId": "ece905e2-3d6d-4b5e-ac1c-7178d0e59876"

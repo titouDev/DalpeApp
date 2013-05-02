@@ -20,7 +20,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyDirectProxy4",
                 "directFn": "Documents.get"
             },
             "designerId": "1cdbd641-8a18-4128-aee8-a1533d72b578",
@@ -33,8 +32,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "root": "result",
-                        "designer|userClassName": "MyJsonReader2"
+                        "root": "result"
                     },
                     "designerId": "94b65ec0-59f6-41cd-82fc-27ac6654cc9d"
                 }

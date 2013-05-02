@@ -37,7 +37,6 @@
                 "minHeight": null,
                 "minWidth": null,
                 "width": null,
-                "designer|userClassName": "MyPanel28",
                 "layout": "vbox",
                 "title": "Construction Julien Dalpé"
             },
@@ -61,7 +60,6 @@
                         "minWidth": null,
                         "padding": null,
                         "width": null,
-                        "designer|userClassName": "MyForm6",
                         "bodyPadding": 10,
                         "title": "Identification"
                     },
@@ -76,7 +74,6 @@
                             "codeClass": null,
                             "userConfig": {
                                 "maxHeight": 25,
-                                "designer|userClassName": "MyTextField41",
                                 "fieldLabel": "Nom d'utilisateur",
                                 "name": "userName",
                                 "allowBlank": false,
@@ -94,7 +91,6 @@
                             "userConfig": {
                                 "itemId": "password",
                                 "maxHeight": 25,
-                                "designer|userClassName": "MyTextField42",
                                 "fieldLabel": "Mot de passe",
                                 "name": "passWord",
                                 "inputType": "password",
@@ -114,8 +110,7 @@
                                 "dock": "bottom",
                                 "maxWidth": null,
                                 "minWidth": null,
-                                "width": null,
-                                "designer|userClassName": "MyToolbar13"
+                                "width": null
                             },
                             "designerId": "29d89bc4-f2d4-44b7-af67-0f49a045218d",
                             "cn": [
@@ -127,8 +122,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": null,
-                                        "designer|userClassName": "MyFill4"
+                                        "layout|flex": null
                                     },
                                     "designerId": "84ddd4da-7940-4a9c-ac76-a250752a05e4"
                                 },
@@ -142,7 +136,6 @@
                                     "userConfig": {
                                         "layout|flex": null,
                                         "itemId": "login",
-                                        "designer|userClassName": "MyButton25",
                                         "text": "Se connecter..."
                                     },
                                     "designerId": "4f6c24b7-5a67-4b35-97c6-4d607aac42fa"
@@ -164,7 +157,6 @@
                         "maxWidth": 280,
                         "minWidth": 280,
                         "width": 280,
-                        "designer|userClassName": "MyImg1",
                         "src": "images/dalpe.jpg"
                     },
                     "designerId": "38349bbe-789a-45d8-b088-e1204eb9cc79"
