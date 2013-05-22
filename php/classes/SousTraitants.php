@@ -163,6 +163,7 @@ class SousTraitants {
 		siteWeb)
 		 VALUES
 		(?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
+		fb($query);
 		if ($stmt = $_db->prepare($query)) {
 	        $stmt->bind_param('ssssssssssssss', $name, $contactName,$mail,$fax,$phone,
 	        $cell,$adresse,$codePostal,$ville,$province,$note,

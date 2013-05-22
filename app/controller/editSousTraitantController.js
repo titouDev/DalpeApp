@@ -65,15 +65,26 @@ Ext.define('dalpeApp.controller.editSousTraitantController', {
             return;
         }
 
-        //On update la DB et on ferme la window
-        SousTraitants.update(myForm.getValues(), function(){
-            //On peut maintenant fermer la window
-            button.up('window').close();
-            //On pense a refresher le store des soustraitants
-            this.getSousTraitantsStore().load();
-        },this);
 
-
+        var mySousTraitant = myForm.getValues();
+        if (mySousTraitant.id) {
+            //On update la DB et on ferme la window
+            SousTraitants.update(mySousTraitant, function(){
+                //On peut maintenant fermer la window
+                button.up('window').close();
+                //On pense a refresher le store des soustraitants
+                this.getSousTraitantsStore().load();
+            },this);
+        }
+        else {
+            //Nouveau SousTraitant
+            SousTraitants.create(mySousTraitant, function(){
+                //On peut maintenant fermer la window
+                button.up('window').close();
+                //On pense a refresher le store des soustraitants
+                this.getSousTraitantsStore().load();
+            },this);
+        }
     },
 
     onAnnulerClick: function(button, e, eOpts) {
