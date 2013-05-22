@@ -5,3 +5,11 @@
 
 *.CR2
 
+
+ext-4.2.0.663/.sencha/workspace/codegen
+
+.gitignore
+
+.gitignore
+
+ext-4.2.0.663/bootstrap.js
