@@ -3,13 +3,8 @@
 
 .architect
 
-*.CR2
-
-
-ext-4.2.0.663/.sencha/workspace/codegen
+ext-4.2.0.663/
 
 .gitignore
 
-.gitignore
-
-ext-4.2.0.663/bootstrap.js
+documents_importes/
