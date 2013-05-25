@@ -27,7 +27,6 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         'specialites'
     ],
     views: [
-        'sousTraitantsGrid',
         'editSousTraitantWindow',
         'windowAddSpecialite'
     ],
@@ -69,6 +68,8 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         //On update egalement le tire du mail panel
         var newTitle = 'Courriels envoyés à ' + record.data.name;
         this.getMailsGrid().setTitle(newTitle);
+
+
     },
 
     onAddSousTraitantClick: function(button, e, eOpts) {
@@ -110,7 +111,7 @@ Ext.define('dalpeApp.controller.sousTraitants', {
 
     onSousTraitantsGridItemDblClick: function(dataview, record, item, index, e, eOpts) {
         //On ouvre la fenetre d'edition de soustraitant
-
+        console.log(3213);
         this.displayEditSousTraitantWindow();
     },
 
@@ -169,6 +170,8 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         //On affiche la fenetre
         var editSousTraitantWindow = Ext.widget('editSousTraitantWindow');
 
+        editSousTraitantWindow.show();
+
         //On load le soustraitant selecitonne dans le form
         var myForm = editSousTraitantWindow.down('form');
 
@@ -196,8 +199,6 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         documentsStore.proxy.extraParams = {sousTraitantId:selectedRecord.data.id};
         documentsStore.load();
 
-
-        editSousTraitantWindow.show();
 
     },
 

@@ -17,12 +17,6 @@ Ext.define('dalpeApp.view.appViewport', {
     extend: 'Ext.container.Viewport',
     alias: 'widget.appViewport',
 
-    requires: [
-        'dalpeApp.view.employesGrid',
-        'dalpeApp.view.sousTraitantsGrid',
-        'dalpeApp.view.chantiersGrid'
-    ],
-
     id: 'appViewport',
     layout: {
         type: 'fit'
@@ -77,12 +71,6 @@ Ext.define('dalpeApp.view.appViewport', {
                                     title: 'Employés',
                                     items: [
                                         {
-                                            xtype: 'employesGrid',
-                                            flex: 1,
-                                            region: 'center',
-                                            split: true
-                                        },
-                                        {
                                             xtype: 'gridpanel',
                                             flex: 1,
                                             region: 'east',
@@ -114,6 +102,73 @@ Ext.define('dalpeApp.view.appViewport', {
                                                     text: 'Chantier'
                                                 }
                                             ]
+                                        },
+                                        {
+                                            xtype: 'gridpanel',
+                                            flex: 1,
+                                            region: 'center',
+                                            split: true,
+                                            id: 'employesGrid',
+                                            store: 'employes',
+                                            columns: [
+                                                {
+                                                    xtype: 'gridcolumn',
+                                                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                                        if (value)
+                                                        {
+                                                            return Ext.String.format('<img src="{0}" width="100">', value);
+                                                        }
+                                                        return '';
+                                                    },
+                                                    dataIndex: 'photo',
+                                                    text: 'Photo',
+                                                    flex: 1
+                                                },
+                                                {
+                                                    xtype: 'gridcolumn',
+                                                    dataIndex: 'prenom',
+                                                    text: 'Prenom',
+                                                    flex: 1
+                                                },
+                                                {
+                                                    xtype: 'gridcolumn',
+                                                    dataIndex: 'nom',
+                                                    text: 'Nom',
+                                                    flex: 1
+                                                },
+                                                {
+                                                    xtype: 'gridcolumn',
+                                                    dataIndex: 'mail',
+                                                    text: 'Mail',
+                                                    flex: 1.5
+                                                },
+                                                {
+                                                    xtype: 'gridcolumn',
+                                                    dataIndex: 'phone',
+                                                    text: 'Phone',
+                                                    flex: 1
+                                                },
+                                                {
+                                                    xtype: 'gridcolumn',
+                                                    dataIndex: 'cell',
+                                                    text: 'Cell',
+                                                    flex: 1
+                                                }
+                                            ],
+                                            dockedItems: [
+                                                {
+                                                    xtype: 'toolbar',
+                                                    dock: 'top',
+                                                    items: [
+                                                        {
+                                                            xtype: 'button',
+                                                            itemId: 'addEmploye',
+                                                            iconCls: 'icon-user-add',
+                                                            text: 'Ajouter un employe'
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
@@ -126,12 +181,96 @@ Ext.define('dalpeApp.view.appViewport', {
                                     title: 'Sous Traitants',
                                     items: [
                                         {
-                                            xtype: 'mygridpanel2',
-                                            width: 561,
-                                            store: 'sousTraitants',
+                                            xtype: 'gridpanel',
                                             flex: 2,
                                             region: 'center',
-                                            split: true
+                                            split: true,
+                                            id: 'sousTraitantsGrid',
+                                            width: 561,
+                                            focusOnToFront: false,
+                                            store: 'sousTraitants',
+                                            dockedItems: [
+                                                {
+                                                    xtype: 'toolbar',
+                                                    dock: 'top',
+                                                    items: [
+                                                        {
+                                                            xtype: 'combobox',
+                                                            listConfig: {
+                                                                loadingText: 'Searching...',
+                                                                emptyText: 'No matching posts found.',
+                                                                getInnerTpl: function() {
+                                                                                return '{name}';
+                                                                            }
+                                                            },
+                                                            itemId: 'comboSpecialites',
+                                                            width: 251,
+                                                            fieldLabel: 'Specialite',
+                                                            labelWidth: 70,
+                                                            displayField: 'name',
+                                                            minChars: 0,
+                                                            store: 'specialites',
+                                                            typeAhead: true,
+                                                            typeAheadDelay: 0,
+                                                            valueField: 'id'
+                                                        },
+                                                        {
+                                                            xtype: 'textfield',
+                                                            itemId: 'searchText',
+                                                            fieldLabel: 'Recherche Rapide',
+                                                            checkChangeBuffer: 5
+                                                        },
+                                                        {
+                                                            xtype: 'button',
+                                                            itemId: 'addSousTraitant',
+                                                            iconCls: 'icon-user-add',
+                                                            text: 'Ajouter un sous traitant'
+                                                        },
+                                                        {
+                                                            xtype: 'button',
+                                                            cls: '',
+                                                            iconCls: 'icon-send-button',
+                                                            text: 'Envoyer un courriel'
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            columns: [
+                                                {
+                                                    xtype: 'templatecolumn',
+                                                    tpl: [
+                                                        '<font style="font-weight: bold; font-size: 13px;">{name}</font><br>',
+                                                        'Contact:&nbsp;&nbsp;&nbsp;&nbsp;{contactName}<br>',
+                                                        'Note:&nbsp;&nbsp;&nbsp;&nbsp;{note}'
+                                                    ],
+                                                    width: 200,
+                                                    dataIndex: 'name',
+                                                    text: 'Societé',
+                                                    flex: 3
+                                                },
+                                                {
+                                                    xtype: 'gridcolumn',
+                                                    width: 250,
+                                                    dataIndex: 'mail',
+                                                    text: 'Courriel',
+                                                    flex: 1
+                                                },
+                                                {
+                                                    xtype: 'templatecolumn',
+                                                    tpl: [
+                                                        'Telephone:&nbsp;&nbsp;{phone}<br>',
+                                                        'Cellulaire:&nbsp;&nbsp;{cell}<br>',
+                                                        'Fax:&nbsp;&nbsp;{fax}<br>'
+                                                    ],
+                                                    width: 200,
+                                                    dataIndex: 'phone',
+                                                    text: 'Telephones',
+                                                    flex: 1
+                                                }
+                                            ],
+                                            selModel: Ext.create('Ext.selection.RowModel', {
+                                                mode: 'MULTI'
+                                            })
                                         },
                                         {
                                             xtype: 'panel',
@@ -202,10 +341,66 @@ Ext.define('dalpeApp.view.appViewport', {
                                     title: 'Chantiers',
                                     items: [
                                         {
-                                            xtype: 'chantiersGrid',
+                                            xtype: 'gridpanel',
                                             flex: 1,
                                             region: 'center',
-                                            split: true
+                                            split: true,
+                                            height: 250,
+                                            id: 'chantiersGrid',
+                                            title: 'Chantiers',
+                                            store: 'chantiers',
+                                            columns: [
+                                                {
+                                                    xtype: 'gridcolumn',
+                                                    dataIndex: 'name',
+                                                    text: 'Name',
+                                                    flex: 1
+                                                },
+                                                {
+                                                    xtype: 'gridcolumn',
+                                                    dataIndex: 'note',
+                                                    text: 'Note',
+                                                    flex: 1
+                                                },
+                                                {
+                                                    xtype: 'gridcolumn',
+                                                    dataIndex: 'status',
+                                                    text: 'Status',
+                                                    flex: 1
+                                                },
+                                                {
+                                                    xtype: 'datecolumn',
+                                                    dataIndex: 'startDate',
+                                                    text: 'Debut',
+                                                    format: 'd-M-Y'
+                                                },
+                                                {
+                                                    xtype: 'datecolumn',
+                                                    dataIndex: 'endDate',
+                                                    text: 'Fin',
+                                                    format: 'd-M-Y'
+                                                },
+                                                {
+                                                    xtype: 'gridcolumn',
+                                                    dataIndex: 'clientName',
+                                                    text: 'Client',
+                                                    flex: 1
+                                                }
+                                            ],
+                                            dockedItems: [
+                                                {
+                                                    xtype: 'toolbar',
+                                                    dock: 'top',
+                                                    items: [
+                                                        {
+                                                            xtype: 'button',
+                                                            itemId: 'add',
+                                                            iconCls: 'icon-add',
+                                                            text: 'Creer un nouveau chantier'
+                                                        }
+                                                    ]
+                                                }
+                                            ]
                                         },
                                         {
                                             xtype: 'panel',
@@ -337,6 +532,7 @@ Ext.define('dalpeApp.view.appViewport', {
                                                 {
                                                     xtype: 'button',
                                                     itemId: 'add',
+                                                    iconCls: 'icon-user-add',
                                                     text: 'Ajouter un client'
                                                 }
                                             ]
@@ -400,11 +596,13 @@ Ext.define('dalpeApp.view.appViewport', {
                                                 {
                                                     xtype: 'button',
                                                     itemId: 'addHour',
+                                                    iconCls: 'icon-add',
                                                     text: 'Ajouter une entrée'
                                                 },
                                                 {
                                                     xtype: 'button',
                                                     itemId: 'deleteHour',
+                                                    iconCls: 'icon-delete',
                                                     text: 'Effacer l\'entreé selectionnée'
                                                 }
                                             ]

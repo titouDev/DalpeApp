@@ -23,7 +23,6 @@ Ext.define('dalpeApp.controller.employes', {
         'employes'
     ],
     views: [
-        'employesGrid',
         'editEmployeWindow'
     ],
 

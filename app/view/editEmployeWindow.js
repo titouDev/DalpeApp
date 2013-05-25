@@ -188,8 +188,11 @@ Ext.define('dalpeApp.view.editEmployeWindow', {
                         {
                             xtype: 'form',
                             flex: 1,
+                            margins: '0 0 0 0',
+                            border: '0 0 0 0',
                             itemId: 'fileForm',
                             maxHeight: 30,
+                            shadow: false,
                             layout: {
                                 align: 'stretch',
                                 type: 'hbox'

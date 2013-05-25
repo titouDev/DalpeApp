@@ -17,7 +17,6 @@
             "specialites"
         ],
         "views": [
-            "sousTraitantsGrid",
             "editSousTraitantWindow",
             "windowAddSpecialite"
         ],
@@ -111,6 +110,8 @@
                     "//On affiche la fenetre",
                     "var editSousTraitantWindow = Ext.widget('editSousTraitantWindow');",
                     "",
+                    "editSousTraitantWindow.show();",
+                    "",
                     "//On load le soustraitant selecitonne dans le form",
                     "var myForm = editSousTraitantWindow.down('form');",
                     "",
@@ -138,8 +139,6 @@
                     "documentsStore.proxy.extraParams = {sousTraitantId:selectedRecord.data.id};",
                     "documentsStore.load();",
                     "",
-                    "",
-                    "editSousTraitantWindow.show();",
                     ""
                 ]
             },
@@ -274,7 +273,9 @@
                     "",
                     "//On update egalement le tire du mail panel",
                     "var newTitle = 'Courriels envoyés à ' + record.data.name;",
-                    "this.getMailsGrid().setTitle(newTitle);"
+                    "this.getMailsGrid().setTitle(newTitle);",
+                    "",
+                    ""
                 ],
                 "name": "select",
                 "scope": "me",
@@ -467,7 +468,7 @@
                 "fn": "onSousTraitantsGridItemDblClick",
                 "implHandler": [
                     "//On ouvre la fenetre d'edition de soustraitant",
-                    "",
+                    "console.log(3213);",
                     "this.displayEditSousTraitantWindow();"
                 ],
                 "name": "itemdblclick",

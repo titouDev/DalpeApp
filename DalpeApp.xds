@@ -64,14 +64,6 @@
             ],
             "className": "sousTraitants"
         },
-        "c7a01459-e495-414d-954c-22d6ec98ab69": {
-            "paths": [
-                "metadata/view/sousTraitantsGrid",
-                "app/view/override/sousTraitantsGrid.js",
-                "app/view/sousTraitantsGrid.js"
-            ],
-            "className": "sousTraitantsGrid"
-        },
         "fa160326-b7fa-4747-896d-d70d65968f22": {
             "paths": [
                 "metadata/store/mails",
@@ -95,14 +87,6 @@
                 "app/controller/employes.js"
             ],
             "className": "employes"
-        },
-        "2c7176a8-b850-4b98-a7c6-4d5b56a5fe93": {
-            "paths": [
-                "metadata/view/employesGrid",
-                "app/view/override/employesGrid.js",
-                "app/view/employesGrid.js"
-            ],
-            "className": "employesGrid"
         },
         "36e5f604-1eda-473d-8a66-cbfc9a38d0ba": {
             "paths": [
@@ -491,8 +475,6 @@
     },
     "viewOrderMap": {
         "view": [
-            "2c7176a8-b850-4b98-a7c6-4d5b56a5fe93",
-            "c7a01459-e495-414d-954c-22d6ec98ab69",
             "e4c96884-e2eb-49b7-a615-451f20b564e5",
             "fab2fb42-6655-4fb9-8006-128da143a679",
             "36e5f604-1eda-473d-8a66-cbfc9a38d0ba",

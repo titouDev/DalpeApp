@@ -2,6 +2,10 @@
 .icon-send {
     background-image:url(images/email_go.png) !important;
 }
+.icon-send-button {
+    background-image:url(images/email_go.png) !important;
+}
+
 .icon-save {
     background-image:url(images/disk.png) !important;
 }
@@ -14,4 +18,16 @@
 }
 .icon-attach {
     background-image:url(images/page_attach.png) !important;
+}
+
+.icon-user-add {
+    background-image:url(images/user_add.gif) !important;
+}
+
+.icon-add {
+    background-image:url(images/add.png) !important;
+}
+
+.icon-delete {
+    background-image:url(images/delete.png) !important;
 }

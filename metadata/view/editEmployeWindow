@@ -331,9 +331,12 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": 1,
+                        "layout|margins": "0 0 0 0",
                         "container|align": "stretch",
+                        "border": "0 0 0 0",
                         "itemId": "fileForm",
                         "maxHeight": 30,
+                        "shadow": false,
                         "layout": "hbox"
                     },
                     "designerId": "ed00360a-d9ae-44bb-8dbe-d0845563515b",

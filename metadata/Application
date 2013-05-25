@@ -31,7 +31,6 @@
             "editChantierWindow",
             "mailWindow",
             "chantiersGrid",
-            "employesGrid",
             "loginWindow"
         ],
         "autoCreateViewport": true,

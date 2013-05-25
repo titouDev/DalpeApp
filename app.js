@@ -27,7 +27,6 @@ Ext.application({
         'dalpeApp.view.editChantierWindow',
         'dalpeApp.view.mailWindow',
         'dalpeApp.view.chantiersGrid',
-        'dalpeApp.view.employesGrid',
         'dalpeApp.view.loginWindow'
     ],
     models: [
@@ -55,7 +54,6 @@ Ext.application({
         'editChantierWindow',
         'mailWindow',
         'chantiersGrid',
-        'employesGrid',
         'loginWindow'
     ],
     autoCreateViewport: true,
