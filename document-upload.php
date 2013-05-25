@@ -13,7 +13,7 @@ if(isset($_FILES)){
     if(is_uploaded_file($file_tmp)) {
     	if (isset($_POST['sousTraitantId']) or isset($_POST['chantierId']) )
     	{
-	    	$destPath = "/documents_importes/sous_traitants/$file_name";
+	    	$destPath = "documents_importes/sous_traitants/$file_name";
 	    	$documentType = $_POST['documentTypeId'];
 			$note = $_POST['documentNote'];
 			
