@@ -11,7 +11,8 @@
         ],
         "stores": [
             "chantiers",
-            "clients"
+            "clients",
+            "chantiers_hours"
         ],
         "views": [
             "chantiersGrid"
@@ -20,6 +21,30 @@
     },
     "designerId": "5358e90e-5181-4e9f-bc2d-6b13a5016669",
     "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "refreshHoursGrid",
+                "implHandler": [
+                    "//On verifie qu'un record de chantier est selectionne",
+                    "var chantierGrid = this.getChantiersGrid();",
+                    "var selection = chantierGrid.getSelectionModel().getSelection();",
+                    "if (selection.length == 1) {",
+                    "    var hours_store = this.getChantiers_hoursStore();",
+                    "    hours_store.load({",
+                    "        params:{chantierId:selection[0].data.id}",
+                    "    });",
+                    "}",
+                    ""
+                ]
+            },
+            "designerId": "868c3018-dd2f-4118-a51a-32e34406a34e"
+        },
         {
             "type": "controllerref",
             "reference": {
@@ -120,9 +145,8 @@
             "userConfig": {
                 "fn": "onChantiersGridSelect",
                 "implHandler": [
-                    "var hours_store = Ext.getStore('chantiers_hours');",
-                    "hours_store.proxy.extraParams ={chantierId:record.data.id};",
-                    "hours_store.load();"
+                    "this.refreshHoursGrid();",
+                    ""
                 ],
                 "name": "select",
                 "scope": "me",
@@ -235,6 +259,7 @@
                 "implHandler": [
                     "this.getChantiersStore().load();",
                     "this.getClientsStore().load();",
+                    "this.refreshHoursGrid();",
                     ""
                 ],
                 "name": "activate",

@@ -21,7 +21,8 @@ Ext.define('dalpeApp.controller.chantiers', {
     ],
     stores: [
         'chantiers',
-        'clients'
+        'clients',
+        'chantiers_hours'
     ],
     views: [
         'chantiersGrid'
@@ -67,9 +68,8 @@ Ext.define('dalpeApp.controller.chantiers', {
     },
 
     onChantiersGridSelect: function(rowmodel, record, index, eOpts) {
-        var hours_store = Ext.getStore('chantiers_hours');
-        hours_store.proxy.extraParams ={chantierId:record.data.id};
-        hours_store.load();
+        this.refreshHoursGrid();
+
     },
 
     onEnregistrerClick: function(button, e, eOpts) {
@@ -137,6 +137,20 @@ Ext.define('dalpeApp.controller.chantiers', {
     onChantiersPanelActivate: function(component, eOpts) {
         this.getChantiersStore().load();
         this.getClientsStore().load();
+        this.refreshHoursGrid();
+
+    },
+
+    refreshHoursGrid: function() {
+        //On verifie qu'un record de chantier est selectionne
+        var chantierGrid = this.getChantiersGrid();
+        var selection = chantierGrid.getSelectionModel().getSelection();
+        if (selection.length == 1) {
+            var hours_store = this.getChantiers_hoursStore();
+            hours_store.load({
+                params:{chantierId:selection[0].data.id}
+            });
+        }
 
     },
 
