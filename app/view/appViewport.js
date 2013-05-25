@@ -20,7 +20,6 @@ Ext.define('dalpeApp.view.appViewport', {
     requires: [
         'dalpeApp.view.employesGrid',
         'dalpeApp.view.sousTraitantsGrid',
-        'dalpeApp.view.clientsGrid',
         'dalpeApp.view.chantiersGrid'
     ],
 
@@ -195,10 +194,6 @@ Ext.define('dalpeApp.view.appViewport', {
                                     ]
                                 },
                                 {
-                                    xtype: 'clientsgrid',
-                                    title: 'Clients'
-                                },
-                                {
                                     xtype: 'panel',
                                     id: 'chantiersPanel',
                                     layout: {
@@ -292,6 +287,57 @@ Ext.define('dalpeApp.view.appViewport', {
                                                             text: 'ChantierId'
                                                         }
                                                     ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    xtype: 'gridpanel',
+                                    id: 'clientsGrid',
+                                    title: 'Clients',
+                                    store: 'clients',
+                                    columns: [
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'prenom',
+                                            text: 'Prenom',
+                                            flex: 1
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'nom',
+                                            text: 'Nom',
+                                            flex: 1
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'mail',
+                                            text: 'Mail',
+                                            flex: 1
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'phone',
+                                            text: 'Phone',
+                                            flex: 1
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'cell',
+                                            text: 'Cell',
+                                            flex: 1
+                                        }
+                                    ],
+                                    dockedItems: [
+                                        {
+                                            xtype: 'toolbar',
+                                            dock: 'top',
+                                            items: [
+                                                {
+                                                    xtype: 'button',
+                                                    itemId: 'add',
+                                                    text: 'Ajouter un client'
                                                 }
                                             ]
                                         }

@@ -242,14 +242,6 @@
             ],
             "className": "employeHour"
         },
-        "9b41be7c-9f37-4d7b-a77d-f0f984650a46": {
-            "paths": [
-                "metadata/view/clientsGrid",
-                "app/view/override/clientsGrid.js",
-                "app/view/clientsGrid.js"
-            ],
-            "className": "clientsGrid"
-        },
         "cd6fbed6-fd8f-4928-9289-c6a6d316cffb": {
             "paths": [
                 "metadata/store/clients",
@@ -500,7 +492,6 @@
     "viewOrderMap": {
         "view": [
             "2c7176a8-b850-4b98-a7c6-4d5b56a5fe93",
-            "9b41be7c-9f37-4d7b-a77d-f0f984650a46",
             "c7a01459-e495-414d-954c-22d6ec98ab69",
             "e4c96884-e2eb-49b7-a615-451f20b564e5",
             "fab2fb42-6655-4fb9-8006-128da143a679",

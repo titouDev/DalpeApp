@@ -423,30 +423,6 @@
                             ]
                         },
                         {
-                            "type": "linkedinstance",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "title": "Clients"
-                            },
-                            "designerId": "be986ae8-6cdb-43de-bb8c-887038d4ac62",
-                            "masterInstanceId": "9b41be7c-9f37-4d7b-a77d-f0f984650a46",
-                            "cn": [
-                                {
-                                    "type": "Ext.tab.Tab",
-                                    "reference": {
-                                        "name": "tabConfig",
-                                        "type": "object"
-                                    },
-                                    "codeClass": null,
-                                    "designerId": "9dc77a0e-80df-4e07-9b7a-8e3d7be5d25a"
-                                }
-                            ]
-                        },
-                        {
                             "type": "Ext.panel.Panel",
                             "reference": {
                                 "name": "items",
@@ -697,6 +673,138 @@
                                             ]
                                         }
                                     ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "clientsGrid",
+                                "title": "Clients",
+                                "store": "clients"
+                            },
+                            "designerId": "a97ca9cb-27f5-4d5d-9539-df7b9c7104a5",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "designerId": "59617277-3821-46e8-8fdb-e56496b532ee"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "prenom",
+                                        "text": "Prenom",
+                                        "flex": 1
+                                    },
+                                    "designerId": "c7e0778a-69ea-4db9-8b34-2ba4f1cd0a9e"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "nom",
+                                        "text": "Nom",
+                                        "flex": 1
+                                    },
+                                    "designerId": "f07e586c-9a76-4b96-a395-ce20e0ef4ee9"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "mail",
+                                        "text": "Mail",
+                                        "flex": 1
+                                    },
+                                    "designerId": "e016850f-4b60-4461-8397-606e904d4401"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "phone",
+                                        "text": "Phone",
+                                        "flex": 1
+                                    },
+                                    "designerId": "da6162e5-0c5a-4a68-9fb0-766df5ebf777"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "cell",
+                                        "text": "Cell",
+                                        "flex": 1
+                                    },
+                                    "designerId": "e7b1924b-81b4-4471-9bf5-0fa1c0958963"
+                                },
+                                {
+                                    "type": "Ext.toolbar.Toolbar",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dock": "top"
+                                    },
+                                    "designerId": "ebfde909-55bc-465a-b934-2ef525e0998d",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": null,
+                                                "itemId": "add",
+                                                "text": "Ajouter un client"
+                                            },
+                                            "designerId": "5ea37bbd-cc20-4581-b76a-35d03fc7a25f"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.tab.Tab",
+                                    "reference": {
+                                        "name": "tabConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "designerId": "b614a47f-ce97-4b09-9495-68d0ee95b573"
                                 }
                             ]
                         },

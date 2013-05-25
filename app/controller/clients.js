@@ -23,8 +23,7 @@ Ext.define('dalpeApp.controller.clients', {
         'clients'
     ],
     views: [
-        'editClientWindow',
-        'clientsGrid'
+        'editClientWindow'
     ],
 
     refs: [
