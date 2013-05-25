@@ -24,9 +24,6 @@ Ext.define('dalpeApp.controller.chantiers', {
         'clients',
         'chantiers_hours'
     ],
-    views: [
-        'chantiersGrid'
-    ],
 
     refs: [
         {

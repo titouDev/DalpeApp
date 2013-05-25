@@ -23,10 +23,8 @@ Ext.application({
     requires: [
         'dalpeApp.view.appViewport',
         'dalpeApp.view.sousTraitantsContextMenu',
-        'dalpeApp.view.employesHoursGrid',
         'dalpeApp.view.editChantierWindow',
         'dalpeApp.view.mailWindow',
-        'dalpeApp.view.chantiersGrid',
         'dalpeApp.view.loginWindow'
     ],
     models: [
@@ -50,10 +48,8 @@ Ext.application({
     views: [
         'appViewport',
         'sousTraitantsContextMenu',
-        'employesHoursGrid',
         'editChantierWindow',
         'mailWindow',
-        'chantiersGrid',
         'loginWindow'
     ],
     autoCreateViewport: true,

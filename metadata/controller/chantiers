@@ -14,9 +14,6 @@
             "clients",
             "chantiers_hours"
         ],
-        "views": [
-            "chantiersGrid"
-        ],
         "designer|userClassName": "chantiers"
     },
     "designerId": "5358e90e-5181-4e9f-bc2d-6b13a5016669",

@@ -27,10 +27,8 @@
         "views": [
             "appViewport",
             "sousTraitantsContextMenu",
-            "employesHoursGrid",
             "editChantierWindow",
             "mailWindow",
-            "chantiersGrid",
             "loginWindow"
         ],
         "autoCreateViewport": true,

@@ -194,14 +194,6 @@
             ],
             "className": "editEmployeWindow"
         },
-        "54677ed2-cc35-4daa-9ef1-2454cdeb4f60": {
-            "paths": [
-                "metadata/view/employesHoursGrid",
-                "app/view/override/employesHoursGrid.js",
-                "app/view/employesHoursGrid.js"
-            ],
-            "className": "employesHoursGrid"
-        },
         "30e085bb-8e66-4146-b012-634d977214ef": {
             "paths": [
                 "metadata/model/client",
@@ -249,14 +241,6 @@
                 "app/controller/clients.js"
             ],
             "className": "clients"
-        },
-        "77914f77-d260-4726-9454-e69b4095c093": {
-            "paths": [
-                "metadata/view/chantiersGrid",
-                "app/view/override/chantiersGrid.js",
-                "app/view/chantiersGrid.js"
-            ],
-            "className": "chantiersGrid"
         },
         "4bc615f2-00bd-457d-91f4-1c37c29ca69b": {
             "paths": [
@@ -483,8 +467,6 @@
             "2265f12e-0040-4598-a37f-e276c46a78d5",
             "08df4031-2dee-45bd-b50d-13ea733e02e1",
             "2d33d2c4-28b5-4543-abe5-e62e5c54d882",
-            "54677ed2-cc35-4daa-9ef1-2454cdeb4f60",
-            "77914f77-d260-4726-9454-e69b4095c093",
             "57339c22-18af-42b2-8491-66d707a83680",
             "0883665a-4d9e-453c-a13f-bab460f4c2d8"
         ],
