@@ -15,9 +15,9 @@
         "width": 1035,
         "designer|userClassName": "mailWindow",
         "designer|userAlias": "mailWindow",
+        "constrain": true,
         "layout": "hbox",
         "title": "Courriel",
-        "constrain": true,
         "modal": true
     },
     "designerId": "fab2fb42-6655-4fb9-8006-128da143a679",

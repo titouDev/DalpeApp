@@ -14,9 +14,9 @@
         "width": 757,
         "designer|userClassName": "editClientWindow",
         "designer|userAlias": "editClientWindow",
+        "constrain": true,
         "layout": "vbox",
         "title": "Edit Client",
-        "constrain": true,
         "modal": true
     },
     "designerId": "2265f12e-0040-4598-a37f-e276c46a78d5",

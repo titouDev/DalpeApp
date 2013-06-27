@@ -7,9 +7,9 @@
     "codeClass": null,
     "userConfig": {
         "model": "sousTraitant",
+        "remoteSort": true,
         "storeId": "mailLinkSousTraitant",
-        "designer|userClassName": "mailLinkSousTraitant",
-        "remoteSort": true
+        "designer|userClassName": "mailLinkSousTraitant"
     },
     "designerId": "a79bbea3-d4de-47b9-b24e-a9e513a27156",
     "cn": [

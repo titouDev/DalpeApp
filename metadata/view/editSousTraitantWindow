@@ -15,9 +15,9 @@
         "width": 1300,
         "designer|userClassName": "editSousTraitantWindow",
         "designer|userAlias": "editSousTraitantWindow",
+        "constrain": true,
         "layout": "hbox",
         "title": "Edit Sous Traitant",
-        "constrain": true,
         "modal": true
     },
     "designerId": "a06c8ee8-1e25-4228-8640-255e15a32384",

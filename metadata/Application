@@ -32,7 +32,6 @@
             "loginWindow"
         ],
         "autoCreateViewport": true,
-        "name": "dalpeApp",
         "controllers": [
             "sousTraitants",
             "employes",
@@ -45,7 +44,8 @@
             "editSousTraitantController",
             "editEmploye",
             "mails_grid"
-        ]
+        ],
+        "name": "dalpeApp"
     },
     "designerId": "application",
     "cn": [

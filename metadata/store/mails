@@ -7,9 +7,9 @@
     "codeClass": null,
     "userConfig": {
         "model": "mail",
+        "remoteFilter": true,
         "storeId": "mailsStore",
-        "designer|userClassName": "mails",
-        "remoteFilter": true
+        "designer|userClassName": "mails"
     },
     "designerId": "fa160326-b7fa-4747-896d-d70d65968f22",
     "cn": [

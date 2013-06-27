@@ -14,9 +14,9 @@
         "width": 757,
         "designer|userClassName": "editEmployeWindow",
         "designer|userAlias": "editEmployeWindow",
+        "constrain": true,
         "layout": "vbox",
         "title": "Edit Employe",
-        "constrain": true,
         "modal": true
     },
     "designerId": "2002c995-32ee-4cc1-948c-651888aaf1e0",

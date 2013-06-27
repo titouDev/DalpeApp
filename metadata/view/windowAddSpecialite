@@ -11,9 +11,9 @@
         "width": 247,
         "designer|userClassName": "windowAddSpecialite",
         "designer|userAlias": "windowAddSpecialite",
+        "constrain": true,
         "layout": "fit",
         "title": "Choisissez une specialite",
-        "constrain": true,
         "modal": true
     },
     "designerId": "2d33d2c4-28b5-4543-abe5-e62e5c54d882",

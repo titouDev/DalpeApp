@@ -14,9 +14,9 @@
         "width": 839,
         "designer|userClassName": "editChantierWindow",
         "designer|userAlias": "editChantierWindow",
+        "constrain": true,
         "layout": "vbox",
         "title": "Edit Chantier",
-        "constrain": true,
         "modal": true
     },
     "designerId": "08df4031-2dee-45bd-b50d-13ea733e02e1",
