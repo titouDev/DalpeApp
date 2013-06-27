@@ -381,7 +381,8 @@ Ext.define('dalpeApp.view.editSousTraitantWindow', {
                                         return '<a href="'+record.data.path+'" target="_blank">'+value+'</a>';
                                     },
                                     dataIndex: 'name',
-                                    text: 'Nom'
+                                    text: 'Nom',
+                                    flex: 1
                                 },
                                 {
                                     xtype: 'gridcolumn',

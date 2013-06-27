@@ -715,7 +715,8 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dataIndex": "name",
-                                "text": "Nom"
+                                "text": "Nom",
+                                "flex": 1
                             },
                             "designerId": "0f78f342-47fe-43b3-847a-f190fa58c68d",
                             "cn": [
