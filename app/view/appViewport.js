@@ -225,12 +225,6 @@ Ext.define('dalpeApp.view.appViewport', {
                                                             itemId: 'addSousTraitant',
                                                             iconCls: 'icon-user-add',
                                                             text: 'Ajouter un sous traitant'
-                                                        },
-                                                        {
-                                                            xtype: 'button',
-                                                            cls: '',
-                                                            iconCls: 'icon-send-button',
-                                                            text: 'Envoyer un courriel'
                                                         }
                                                     ]
                                                 }
@@ -279,14 +273,16 @@ Ext.define('dalpeApp.view.appViewport', {
                                             split: true,
                                             width: 150,
                                             layout: {
-                                                type: 'fit'
+                                                align: 'stretch',
+                                                type: 'vbox'
                                             },
                                             items: [
                                                 {
                                                     xtype: 'gridpanel',
+                                                    flex: 1,
                                                     id: 'mailsGrid',
                                                     collapsed: false,
-                                                    title: 'Courriels',
+                                                    title: 'Courriels envoyes...',
                                                     store: 'mails',
                                                     selModel: Ext.create('Ext.selection.RowModel', {
 
@@ -324,6 +320,74 @@ Ext.define('dalpeApp.view.appViewport', {
                                                         {
                                                             xtype: 'tool',
                                                             itemId: 'refresh',
+                                                            type: 'refresh'
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: 'gridpanel',
+                                                    flex: 1,
+                                                    id: 'mails_notsent_grid',
+                                                    collapsed: false,
+                                                    title: 'Courriels en preparation',
+                                                    store: 'mails_notsent',
+                                                    dockedItems: [
+                                                        {
+                                                            xtype: 'toolbar',
+                                                            dock: 'top',
+                                                            items: [
+                                                                {
+                                                                    xtype: 'button',
+                                                                    cls: '',
+                                                                    itemId: 'createMailButton',
+                                                                    iconCls: 'icon-add',
+                                                                    text: 'Nouveau'
+                                                                },
+                                                                {
+                                                                    xtype: 'button',
+                                                                    itemId: 'deleteMailNotSentButton',
+                                                                    iconCls: 'icon-delete',
+                                                                    text: 'Effacer'
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    selModel: Ext.create('Ext.selection.RowModel', {
+
+                                                    }),
+                                                    columns: [
+                                                        {
+                                                            xtype: 'gridcolumn',
+                                                            dataIndex: 'subject',
+                                                            text: 'Sujet',
+                                                            flex: 1
+                                                        },
+                                                        {
+                                                            xtype: 'gridcolumn',
+                                                            dataIndex: 'chantier',
+                                                            text: 'Chantier',
+                                                            flex: 1
+                                                        },
+                                                        {
+                                                            xtype: 'datecolumn',
+                                                            dataIndex: 'creationDate',
+                                                            text: 'Cree le'
+                                                        },
+                                                        {
+                                                            xtype: 'gridcolumn',
+                                                            dataIndex: 'userCreate',
+                                                            text: 'Cree par'
+                                                        },
+                                                        {
+                                                            xtype: 'datecolumn',
+                                                            dataIndex: 'sentDate',
+                                                            text: 'Envoye le'
+                                                        }
+                                                    ],
+                                                    tools: [
+                                                        {
+                                                            xtype: 'tool',
+                                                            itemId: 'refreshMailsNotSentGrid',
                                                             type: 'refresh'
                                                         }
                                                     ]

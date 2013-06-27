@@ -448,13 +448,13 @@
             ],
             "className": "chantier_link_documents"
         },
-        "4ca12e97-593b-46b7-b61a-1781fe349fc4": {
+        "f288154c-32cc-4f80-a4c9-73ce845fe3f2": {
             "paths": [
-                "metadata/controller/mails_grid",
-                "app/controller/override/mails_grid.js",
-                "app/controller/mails_grid.js"
+                "metadata/store/mails_notsent",
+                "app/store/override/mails_notsent.js",
+                "app/store/mails_notsent.js"
             ],
-            "className": "mails_grid"
+            "className": "mails_notsent"
         }
     },
     "viewOrderMap": {
@@ -484,6 +484,7 @@
             "4bc615f2-00bd-457d-91f4-1c37c29ca69b",
             "990efb39-4987-4589-8cb2-7aab3f5dcb43",
             "fa160326-b7fa-4747-896d-d70d65968f22",
+            "f288154c-32cc-4f80-a4c9-73ce845fe3f2",
             "e0f02898-522d-4dc3-a2e1-2ad3f4b2dd2b",
             "a79bbea3-d4de-47b9-b24e-a9e513a27156",
             "7c30472b-a80e-4251-8568-3f963945a7a4",
@@ -499,8 +500,7 @@
             "5358e90e-5181-4e9f-bc2d-6b13a5016669",
             "c53357d6-6534-42c5-8bea-8fd0205ff613",
             "7f2562eb-19a6-48f4-a495-abd4d8fc1bef",
-            "5b99a48a-3f84-4fe8-a414-2e88c6d08eb2",
-            "4ca12e97-593b-46b7-b61a-1781fe349fc4"
+            "5b99a48a-3f84-4fe8-a414-2e88c6d08eb2"
         ],
         "model": [
             "7871350a-2c6b-44fc-999c-9467978f08c5",

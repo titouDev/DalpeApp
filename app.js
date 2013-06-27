@@ -35,7 +35,8 @@ Ext.application({
         'documents',
         'document_type',
         'employes_logHours',
-        'chantiers_documents'
+        'chantiers_documents',
+        'mails_notsent'
     ],
     views: [
         'appViewport',
@@ -55,8 +56,7 @@ Ext.application({
         'global',
         'logHours',
         'editSousTraitantController',
-        'editEmploye',
-        'mails_grid'
+        'editEmploye'
     ],
     name: 'dalpeApp',
 

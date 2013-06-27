@@ -24,7 +24,9 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         'mails',
         'sousTraitants',
         'mailLinkSousTraitant',
-        'specialites'
+        'specialites',
+        'mails_notsent',
+        'chantiers'
     ],
     views: [
         'editSousTraitantWindow',
@@ -32,6 +34,10 @@ Ext.define('dalpeApp.controller.sousTraitants', {
     ],
 
     refs: [
+        {
+            ref: 'mailsNotSentGrid',
+            selector: '#mails_notsent_grid'
+        },
         {
             ref: 'searchField',
             selector: '#sousTraitantsGrid #searchText'
@@ -57,6 +63,11 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         }}
         ]);
         this.resetMailsGrid();
+    },
+
+    onDeleteMailNotSentButtonClick: function(button, e, eOpts) {
+        var selectedMail = this.getMailsNotSentGrid().selModel.getSelection()[0];
+        Mails.delete(selectedMail.data);
     },
 
     onRowselectionmodelSelect: function(rowmodel, record, index, eOpts) {
@@ -111,13 +122,12 @@ Ext.define('dalpeApp.controller.sousTraitants', {
 
     onSousTraitantsGridItemDblClick: function(dataview, record, item, index, e, eOpts) {
         //On ouvre la fenetre d'edition de soustraitant
-        console.log(3213);
         this.displayEditSousTraitantWindow();
     },
 
     onRefreshClickMailsGrid: function(tool, e, eOpts) {
         var selectedSousTraitant = this.getSousTraitantsGrid().selModel.getSelection()[0];
-        this.updateMailsGrid(selectedSousTraitant.internalId);
+        if (selectedSousTraitant) this.updateMailsGrid(selectedSousTraitant.internalId);
 
 
     },
@@ -132,37 +142,60 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         this.getSousTraitantsStore().load();
     },
 
+    onCreateMailButtonClick: function(button, e, eOpts) {
+        this.prepareMail();
+    },
+
+    onRefreshMailsNotSentGridClick: function(tool, e, eOpts) {
+        this.getMails_notsentStore().load();
+    },
+
+    onMailsGridItemDblClick: function(dataview, record, item, index, e, eOpts) {
+        this.editMail(record);
+
+    },
+
+    onMails_notsent_gridItemDblClick: function(dataview, record, item, index, e, eOpts) {
+        this.editMail(record);
+
+    },
+
+    editMail: function(record) {
+        //On reload le store des chantiers, puis on show la window
+
+        this.getChantiersStore().load({
+            scope:this,
+            callback:function(){
+                this.showMailWindow(record);
+            }
+        })
+
+    },
+
     prepareMail: function() {
 
 
         //On ajoute les  sous traitants selectionnes dans le store (mais pas encore dans la DB)
         //Le user va peut etre annuler son mail.
         var selectedRecords = this.getSousTraitantsGrid().selModel.getSelection();
-        var count = 0;
-        var linkStore = this.getMailLinkSousTraitantStore();
-        linkStore.removeAll();
-        for (var i in selectedRecords)
-        {
-            record = selectedRecords[i];
-            if (record.data.mail)
+        if (selectedRecords.length >0) {
+            var count = 0;
+            var linkStore = this.getMailLinkSousTraitantStore();
+            linkStore.removeAll();
+            for (var i in selectedRecords)
             {
-                //Le sous traitant a une adresse email, on peut l'ajouter au store
-                linkStore.add(record)
-                count++;
+                record = selectedRecords[i];
+                if (record.data.mail)
+                {
+                    //Le sous traitant a une adresse email, on peut l'ajouter au store
+                    linkStore.add(record);
+                    count++;
+                }
             }
         }
-        if (count > 0)
-        {
-            //On affiche la fenetre
-            var mailWindow = Ext.widget('mailWindow');
 
-
-        }
-        else
-        {
-            Ext.Msg.alert('Attention','Le sous traitant doit avoir une adresse courriel.')
-        }
-
+        //On affiche la fenetre
+        var mailWindow = Ext.widget('mailWindow');
 
     },
 
@@ -278,10 +311,49 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         mailsGrid.setTitle('Courriels');
     },
 
+    showMailWindow: function(record) {
+        var myMail = record.data;
+
+
+
+        //On reload le store de liens
+        var linkStore = this.getMailLinkSousTraitantStore();
+        linkStore.proxy.extraParams = {mailId:myMail.id};
+        linkStore.load();
+
+        //On affiche la fenetre
+        var mailWindow = Ext.widget('mailWindow');
+        //On update le form
+        var myForm = mailWindow.down('form');
+        myForm.getForm().setValues(myMail);
+
+
+        if (myMail.sentDate)
+        {
+            //Le form va etre read Only
+            //Ext.Msg.alert('Attention', 'Ce mail a deja ete envoye, vous ne pourrez donc pas le modifier.');
+            mailWindow.down('#comboChantiers').readOnly = true;
+            mailWindow.down('#subject').setReadOnly(true);
+            mailWindow.down('#message').setReadOnly(true);
+
+            //On hide les boutons send et save
+            mailWindow.down('#save').hide();
+            mailWindow.down('#send').hide();
+            //On hide  les boutons add et remove destinataire
+            mailWindow.down('#add').hide();
+            mailWindow.down('#remove').hide();
+
+        }
+
+    },
+
     init: function(application) {
         this.control({
             "#sousTraitantsGrid #searchText": {
                 change: this.onTextfieldChange
+            },
+            "#deleteMailNotSentButton": {
+                click: this.onDeleteMailNotSentButtonClick
             },
             "#sousTraitantsGrid": {
                 select: this.onRowselectionmodelSelect,
@@ -305,6 +377,18 @@ Ext.define('dalpeApp.controller.sousTraitants', {
             },
             "#sousTraitantsPanel": {
                 activate: this.onSousTraitantsPanelActivate
+            },
+            "#createMailButton": {
+                click: this.onCreateMailButtonClick
+            },
+            "#refreshMailsNotSentGrid": {
+                click: this.onRefreshMailsNotSentGridClick
+            },
+            "#mailsGrid": {
+                itemdblclick: this.onMailsGridItemDblClick
+            },
+            "#mails_notsent_grid": {
+                itemdblclick: this.onMails_notsent_gridItemDblClick
             }
         });
     }

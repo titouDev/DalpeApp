@@ -1,0 +1,70 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "model": "mail",
+        "remoteFilter": true,
+        "storeId": "MyJsonStore",
+        "designer|userClassName": "mails_notsent"
+    },
+    "designerId": "f288154c-32cc-4f80-a4c9-73ce845fe3f2",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Direct",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "directFn": "Mails.getMails_notsent"
+            },
+            "designerId": "1506e9da-db67-406d-b69b-05f95b48c5e5",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "result"
+                    },
+                    "designerId": "bc34fb62-21f0-4439-b893-5e65f56a64a6"
+                }
+            ]
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "direction": "DESC",
+                "property": "creationDate"
+            },
+            "designerId": "e2c51836-e9a2-4746-a42e-37fa7da6da4b"
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "direction": "DESC",
+                "property": "sentDate"
+            },
+            "designerId": "e55af468-c0e3-42bb-9eb2-784663d5f3ac"
+        }
+    ]
+}

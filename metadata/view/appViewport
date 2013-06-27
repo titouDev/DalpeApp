@@ -530,21 +530,6 @@
                                                         "text": "Ajouter un sous traitant"
                                                     },
                                                     "designerId": "4df7da45-ae11-45cf-8f66-cee3377df62a"
-                                                },
-                                                {
-                                                    "type": "Ext.button.Button",
-                                                    "reference": {
-                                                        "name": "items",
-                                                        "type": "array"
-                                                    },
-                                                    "codeClass": null,
-                                                    "userConfig": {
-                                                        "layout|flex": null,
-                                                        "cls": "",
-                                                        "iconCls": "icon-send-button",
-                                                        "text": "Envoyer un courriel"
-                                                    },
-                                                    "designerId": "d96095c3-1a68-4fde-9574-71605a5393b6"
                                                 }
                                             ]
                                         },
@@ -656,9 +641,10 @@
                                         "layout|flex": 2,
                                         "layout|region": "east",
                                         "layout|split": true,
+                                        "container|align": "stretch",
                                         "stateId": null,
                                         "width": 150,
-                                        "layout": "fit",
+                                        "layout": "vbox",
                                         "title": null
                                     },
                                     "designerId": "b30b1340-dd3a-4094-bc2c-fd474df4c04d",
@@ -671,10 +657,11 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "layout|flex": 1,
                                                 "id": "mailsGrid",
                                                 "width": null,
                                                 "collapsed": false,
-                                                "title": "Courriels",
+                                                "title": "Courriels envoyes...",
                                                 "store": "mails"
                                             },
                                             "designerId": "15cabc8d-f149-467a-b6e1-f265c5cd1bc8",
@@ -776,6 +763,168 @@
                                                         "type": "refresh"
                                                     },
                                                     "designerId": "a269754a-a6ad-4222-b4d4-d0e2b9bdb687"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.grid.Panel",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": 1,
+                                                "id": "mails_notsent_grid",
+                                                "width": null,
+                                                "collapsed": false,
+                                                "title": "Courriels en preparation",
+                                                "store": "mails_notsent"
+                                            },
+                                            "designerId": "c2621b7a-b509-4e0d-834a-b440a0172963",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.toolbar.Toolbar",
+                                                    "reference": {
+                                                        "name": "dockedItems",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dock": "top"
+                                                    },
+                                                    "designerId": "1bc20ef3-4bba-4e51-a1c2-b7896b842b05",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.button.Button",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "layout|flex": null,
+                                                                "cls": "",
+                                                                "itemId": "createMailButton",
+                                                                "iconCls": "icon-add",
+                                                                "text": "Nouveau"
+                                                            },
+                                                            "designerId": "d96095c3-1a68-4fde-9574-71605a5393b6"
+                                                        },
+                                                        {
+                                                            "type": "Ext.button.Button",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "layout|flex": null,
+                                                                "itemId": "deleteMailNotSentButton",
+                                                                "iconCls": "icon-delete",
+                                                                "text": "Effacer"
+                                                            },
+                                                            "designerId": "768780c3-a84f-49da-8758-e40abb9c997a"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.grid.View",
+                                                    "reference": {
+                                                        "name": "viewConfig",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "designerId": "6f7d9c66-66c6-4954-8b57-218e40e71633"
+                                                },
+                                                {
+                                                    "type": "Ext.selection.RowModel",
+                                                    "reference": {
+                                                        "name": "selModel",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": "Ext.selection.RowModel",
+                                                    "designerId": "9281c06b-2bcb-45ca-8950-67c992280eaf"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "subject",
+                                                        "text": "Sujet",
+                                                        "flex": 1
+                                                    },
+                                                    "designerId": "889c2667-cad3-405d-bbc5-33a54d887283"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "chantier",
+                                                        "text": "Chantier",
+                                                        "flex": 1
+                                                    },
+                                                    "designerId": "dc060fe6-82b0-495c-8c9b-e0c408256027"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Date",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "creationDate",
+                                                        "text": "Cree le"
+                                                    },
+                                                    "designerId": "3fe7c4fa-b506-4a83-b8ea-d23d1dc063ff"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Column",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "userCreate",
+                                                        "text": "Cree par"
+                                                    },
+                                                    "designerId": "21143a16-fa7f-48cd-9510-4e08879205e3"
+                                                },
+                                                {
+                                                    "type": "Ext.grid.column.Date",
+                                                    "reference": {
+                                                        "name": "columns",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "dataIndex": "sentDate",
+                                                        "text": "Envoye le"
+                                                    },
+                                                    "designerId": "e8287092-37bd-4661-89f2-a919b76e4b15"
+                                                },
+                                                {
+                                                    "type": "Ext.panel.Tool",
+                                                    "reference": {
+                                                        "name": "tools",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "itemId": "refreshMailsNotSentGrid",
+                                                        "type": "refresh"
+                                                    },
+                                                    "designerId": "e52eb9e6-0008-44bb-bb93-9a724a5a81de"
                                                 }
                                             ]
                                         }

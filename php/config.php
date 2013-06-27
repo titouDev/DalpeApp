@@ -123,9 +123,15 @@ $API = array(
 				'len'=>1
 			),
 			'get'=>array(
-				'len'=>1
-			),
-			'getMailFromSousTraitant'=>array(
+                'len'=>1
+            ),
+            'delete'=>array(
+                'len'=>1
+            ),
+            'getMails_notsent'=>array(
+                'len'=>0
+            ),
+            'getMailFromSousTraitant'=>array(
 				'len'=>1
 			),
 			'send'=>array(

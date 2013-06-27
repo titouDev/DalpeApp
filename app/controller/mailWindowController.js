@@ -144,7 +144,7 @@ Ext.define('dalpeApp.controller.mailWindowController', {
                 {
                     myWindow.close();
                     Ext.Msg.alert('Message','Votre courriel a bien ete sauvegarde.');
-                    Ext.getCmp('mailsGrid').down('#refresh').fireEvent('click');
+                    Ext.getCmp('mails_notsent_grid').down('#refreshMailsNotSentGrid').fireEvent('click');
                     return;
 
                 }
@@ -173,7 +173,8 @@ Ext.define('dalpeApp.controller.mailWindowController', {
                 {
                     myWindow.close();
                     Ext.Msg.alert('Message','Votre courriel a bien ete sauvegarde.');
-                    Ext.getCmp('mailsGrid').down('#refresh').fireEvent('click');
+                    Ext.getCmp('mails_notsent_grid').down('#refreshMailsNotSentGrid').fireEvent('click');
+
                 }
             }, this);
 
@@ -193,6 +194,7 @@ Ext.define('dalpeApp.controller.mailWindowController', {
                     Mails.send(myMail,sousTraitants, function(){
                     Ext.MessageBox.alert('Votre mail a ete envoye avec succes!');})
                     Ext.getCmp('mailsGrid').down('#refresh').fireEvent('click');
+                    Ext.getCmp('mails_notsent_grid').down('#refreshMailsNotSentGrid').fireEvent('click');
                     myWindow.close();
 
                 } else {
@@ -209,6 +211,7 @@ Ext.define('dalpeApp.controller.mailWindowController', {
                     Mails.send(myMail,sousTraitants, function(){
                     Ext.MessageBox.alert('Votre mail a ete envoye avec succes!');})
                     Ext.getCmp('mailsGrid').down('#refresh').fireEvent('click');
+                    Ext.getCmp('mails_notsent_grid').down('#refreshMailsNotSentGrid').fireEvent('click');
                     myWindow.close();
 
 
