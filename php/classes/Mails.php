@@ -36,48 +36,39 @@ class Mails {
 	}
 	function delete(stdClass $params)
 	{
-		
-		fb($params);
 		//Conditions
 		if ($params->id)
 		{
 			$query = "DELETE FROM mails " ;
 			$query .= ' WHERE sent = 0 AND id = '.$params->id;
+			$_db = connectToDbMySql();
+			if ($stmt = $_db->prepare($query))
+				{
+					$stmt->execute();
+					$stmt->close();
+				}
+			$_db->close();
 		}
 		else
 		{
 			return;
 		}
 		
-		$_db = connectToDbMySql();
-
-		$_result = $_db->query($query) or die('Connect Error (' . $_db->connect_errno . ') ' . $_db->connect_error);
-	
-	    $results = array();
-	
-	    while ($row = $_result->fetch_assoc()) {
-	        array_push($results, $row);
-	    }
-	
-	    $_db->close();
-	
-	    return $results;
+		return TRUE;
 	}
 	function getMails_notsent()
 	{
-		$query = "SELECT mails.id, 
+		$query = "SELECT
+					mails.id, 
 					mails.message, 
 					mails.creationDate, 
 					mails.`subject`, 
 					mails.sentDate, 
-					chantiers.`name` AS chantier, 
-					chantiers.id AS chantierId, 
 					employes.prenom AS userCreate, 
 					employes.nom AS userCreateLastName
-				FROM mails INNER JOIN soustraitants_link_mails ON soustraitants_link_mails.mailId = mails.id
-					 LEFT JOIN chantiers ON mails.chantierId = chantiers.id
-					 LEFT JOIN employes ON mails.userCreateId = employes.id
-					 WHERE mails.sent = 0 " ;
+					FROM mails
+					LEFT JOIN employes ON mails.userCreateId = employes.id
+					WHERE mails.sent = 0 " ;
 		
 		$_db = connectToDbMySql();
 

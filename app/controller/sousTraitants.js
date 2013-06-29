@@ -67,7 +67,31 @@ Ext.define('dalpeApp.controller.sousTraitants', {
 
     onDeleteMailNotSentButtonClick: function(button, e, eOpts) {
         var selectedMail = this.getMailsNotSentGrid().selModel.getSelection()[0];
-        Mails.delete(selectedMail.data);
+
+        if (!selectedMail) {
+            Ext.Msg.alert('Attention','Vous devez selectionner un courriel...')
+            return;
+        }
+
+        Ext.Msg.confirm('Attention',
+        'Etes vous sur de vouloir effacer le courriel?',
+        function(button) {
+            if (button === 'yes') {
+                Mails.delete(
+                selectedMail.data,
+                function(){
+                    this.getMails_notsentStore().load();
+                },
+                this
+                );
+            }
+            else {
+                return;
+            }
+        },
+        this
+        );
+
     },
 
     onRowselectionmodelSelect: function(rowmodel, record, index, eOpts) {
