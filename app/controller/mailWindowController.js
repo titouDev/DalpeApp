@@ -93,6 +93,9 @@ Ext.define('dalpeApp.controller.mailWindowController', {
 
         //On enleve le contact selectionne
         var selection = this.getSousTraitantsDestMailGrid().selModel.getSelection();
+
+        if (selection.length === 0 ) return;
+
         var myMail = this.getMailWindow().down('form').getValues();
         if (selection)
         {

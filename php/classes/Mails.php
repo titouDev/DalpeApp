@@ -65,9 +65,13 @@ class Mails {
 					mails.`subject`, 
 					mails.sentDate, 
 					employes.prenom AS userCreate, 
+					chantiers.`name` AS chantier, 
+					chantiers.id AS chantierId, 
 					employes.nom AS userCreateLastName
 					FROM mails
 					LEFT JOIN employes ON mails.userCreateId = employes.id
+					LEFT JOIN chantiers ON mails.chantierId = chantiers.id
+					 
 					WHERE mails.sent = 0 " ;
 		
 		$_db = connectToDbMySql();
@@ -126,7 +130,12 @@ class Mails {
 	        $message = $params->message;
 	        $subject = $params->subject;
 	        $chantierId = $params->chantierId;
-	        $id = (int) $params->id;
+	        if ($chantierId == '') {
+				$chantierId = null;
+			}
+			$id = (int) $params->id;
+	        fb($query);
+	        fb($params);
 	        $stmt->execute();
 	
 	        $stmt->close();
