@@ -1217,6 +1217,7 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|flex": 1,
+                                                "hidden": true,
                                                 "itemId": "documentsGrid",
                                                 "title": "Documents",
                                                 "store": "chantiers_documents"

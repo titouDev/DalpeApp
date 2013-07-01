@@ -507,6 +507,7 @@ Ext.define('dalpeApp.view.appViewport', {
                                                 {
                                                     xtype: 'gridpanel',
                                                     flex: 1,
+                                                    hidden: true,
                                                     itemId: 'documentsGrid',
                                                     title: 'Documents',
                                                     store: 'chantiers_documents',
