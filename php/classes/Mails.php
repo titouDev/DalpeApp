@@ -158,7 +158,9 @@ class Mails {
 	        $message = $params->message;
 	        $subject = $params->subject;
 	        $chantierId = $params->chantierId;
-	        
+	        if ($chantierId == '') {
+				$chantierId = null;
+			}
 	        $stmt->execute();
 	
 	        $stmt->close();
