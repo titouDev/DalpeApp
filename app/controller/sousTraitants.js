@@ -198,7 +198,6 @@ Ext.define('dalpeApp.controller.sousTraitants', {
 
     prepareMail: function() {
 
-
         //On ajoute les  sous traitants selectionnes dans le store (mais pas encore dans la DB)
         //Le user va peut etre annuler son mail.
         var selectedRecords = this.getSousTraitantsGrid().selModel.getSelection();

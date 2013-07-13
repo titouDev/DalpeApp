@@ -37,7 +37,7 @@ Ext.define('dalpeApp.controller.editSousTraitantController', {
             var form = button.up('#fileForm').getForm();
             if(form.isValid()){
                 form.submit({
-                    url: './document-upload.php',
+                    url: 'document-upload.php',
                     scope:this,
                     timeout:100,
                     params: {
@@ -50,7 +50,6 @@ Ext.define('dalpeApp.controller.editSousTraitantController', {
                         //On reload le sotre de documents
                         var documentsStore = Ext.getStore('documents');
                         documentsStore.load();
-                        //Ext.Msg.alert('Succès', 'Le document "' + o.result.file + '" est enregistré.');
                     }
                 });
             }

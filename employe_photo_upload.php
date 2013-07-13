@@ -8,8 +8,7 @@ if(isset($_FILES)){
     $file_size = $_FILES['photoImport']['size'];
 	$file_type = $_FILES['photoImport']['type'];
 
-    //echo ($file_tmp.", ".$file_name.", ".$file_size);
-	if(is_uploaded_file($file_tmp)) {
+    if(is_uploaded_file($file_tmp)) {
     	if (isset($_POST['employeId']))
     	{
 	    	$destPath = "./documents_importes/employes/$file_name";

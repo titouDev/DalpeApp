@@ -38,6 +38,10 @@ Ext.define('dalpeApp.controller.mailWindowController', {
     ],
 
     onSendClick: function(button, e, eOpts) {
+        if (this.getSousTraitantsRecords().length === 0 ) {
+            Ext.Msg.alert('Attention','Aucun sous traitant n\'a ete ajoute.');
+            return;
+        }
         if (Ext.getCmp('mailWindow').down('form').getForm().getValues().sentDate)
         {
             Ext.Msg.alert('Attention','Ce mail a deja ete envoye, vous ne pouvez plus le modifier.');

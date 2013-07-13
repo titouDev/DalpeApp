@@ -134,8 +134,6 @@ class Mails {
 				$chantierId = null;
 			}
 			$id = (int) $params->id;
-	        fb($query);
-	        fb($params);
 	        $stmt->execute();
 	
 	        $stmt->close();
@@ -219,20 +217,12 @@ class Mails {
 
 	function send(stdClass $params, Array $sousTraitants)
 	{
-			fb($sousTraitants);
 		$_db = connectToDbMySql();
 		for ($i=0;$i< sizeof($sousTraitants);$i++)
 		{
-			$sousTraitantId = $sousTraitants[$i]->id;
-			$query = "UPDATE mails SET sentDate = CURRENT_TIMESTAMP(), sent=1 WHERE id = " . $params->id;
-			if ($stmt = $_db->prepare($query))
-			{
-				$stmt->execute();
-				$stmt->close();
-			}
 			
 			// To
-			$to = 'cbonnaffoux@me.com';
+			$to = 'cbonnaffoux@icloud.com';
 			
 			// Subject
 			$subject = $params->subject;
@@ -244,7 +234,20 @@ class Mails {
 			$headers = 'From: Julien Dalpe Construction <julien@dalpe.com>'."\r\n";
 			$headers .= 'Bcc: Moi <cbonnaffoux@me.com>;'."\r\n";
 			$headers .= "\r\n";
+			fb($to);
+			fb($subject);
+			fb($msg);
+			fb($headers);
 			mail($to, $subject, $msg, $headers);
+
+			$sousTraitantId = $sousTraitants[$i]->id;
+			$query = "UPDATE mails SET sentDate = CURRENT_TIMESTAMP(), sent=1 WHERE id = " . $params->id;
+			if ($stmt = $_db->prepare($query))
+			{
+				$stmt->execute();
+				$stmt->close();
+			}
+			
 		}
 		// Function mail()
 		return TRUE; 

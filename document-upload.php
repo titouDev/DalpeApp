@@ -8,17 +8,15 @@ if(isset($_FILES)){
     $file_size = $_FILES['documentImport']['size'];
 	$file_type = $_FILES['documentImport']['type'];
 
-    //echo ($file_tmp.", ".$file_name.", ".$file_size);
-
     if(is_uploaded_file($file_tmp)) {
     	if (isset($_POST['sousTraitantId']) or isset($_POST['chantierId']) )
     	{
-	    	$destPath = "documents_importes/sous_traitants/$file_name";
-	    	$documentType = $_POST['documentTypeId'];
-			$note = $_POST['documentNote'];
-			
+	    	$destPath = "./documents_importes/sous_traitants/$file_name";
 	    	if(move_uploaded_file($file_tmp, $destPath)){
+	            fb(45);
 	            //On sauve le document dans la DB
+				$documentType = $_POST['documentTypeId'];
+				$note = $_POST['documentNote'];
 				$_db = connectToDbMySql();
 				$query = 'INSERT INTO documents (
 							name,
@@ -37,8 +35,7 @@ if(isset($_FILES)){
 						        $stmt->close();
 								//On recupere le ID et on insert le lien avec le sousTraitant
 								$documentId = $_db->insert_id;
-								if (isset($_POST['sousTraitantId']))
-								{
+								if (isset($_POST['sousTraitantId'])) {
 									$query_link = 'INSERT INTO soustraitants_link_documents (sousTraitantId, documentId ) VALUES (?,?)';
 									if ($stmt = $_db->prepare($query_link)) {
 										$stmt->bind_param('ii', $_POST['sousTraitantId'], $documentId);
@@ -47,8 +44,7 @@ if(isset($_FILES)){
 										echo '{success: true}';
 									}
 								}
-								elseif (isset($_POST['chantierId']) {
-									# code...
+								else if (isset($_POST['chantierId'])) {
 									$query_link = 'INSERT INTO chantiers_link_documents (chantierId, documentId ) VALUES (?,?)';
 									if ($stmt = $_db->prepare($query_link)) {
 										$stmt->bind_param('ii', $_POST['chantierId'], $documentId);

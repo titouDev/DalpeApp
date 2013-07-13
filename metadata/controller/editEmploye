@@ -40,7 +40,7 @@
                     "            },",
                     "            waitMsg: 'Sauvegarde de la photo...',",
                     "            success: function(fp, o) {",
-                    "                ",
+                    "",
                     "            }",
                     "        });",
                     "    }",
