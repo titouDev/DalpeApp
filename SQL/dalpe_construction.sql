@@ -5,13 +5,13 @@
  Source Server Type    : MySQL
  Source Server Version : 50529
  Source Host           : localhost
- Source Database       : dalpe_construction
+ Source Database       : titoudev_dalpe
 
  Target Server Type    : MySQL
  Target Server Version : 50529
  File Encoding         : utf-8
 
- Date: 04/14/2013 17:39:53 PM
+ Date: 07/13/2013 10:27:47 AM
 */
 
 SET NAMES utf8;
@@ -25,7 +25,7 @@ CREATE TABLE `categorie_materiaux` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `chantiers`
@@ -36,7 +36,7 @@ CREATE TABLE `chantiers` (
   `name` varchar(255) NOT NULL,
   `clientId` int(11) NOT NULL,
   `note` longtext NOT NULL,
-  `status` enum('Devis','Encours','Termine','') NOT NULL,
+  `status` enum('Devis','Encours','Termine','') DEFAULT NULL,
   `creationDate` date NOT NULL,
   `startDate` date NOT NULL,
   `endDate` date NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE `chantiers` (
   PRIMARY KEY (`id`),
   KEY `clientId` (`clientId`),
   CONSTRAINT `chantierLinkClient` FOREIGN KEY (`clientId`) REFERENCES `clients` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `chantiers_link_documents`
@@ -57,7 +57,7 @@ CREATE TABLE `chantiers_link_documents` (
   KEY `documentId` (`documentId`),
   CONSTRAINT `chantiers_link_documents_chantier` FOREIGN KEY (`chantierId`) REFERENCES `chantiers` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `chantiers_link_documents_ibfk_2` FOREIGN KEY (`documentId`) REFERENCES `documents` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `clients`
@@ -65,22 +65,22 @@ CREATE TABLE `chantiers_link_documents` (
 DROP TABLE IF EXISTS `clients`;
 CREATE TABLE `clients` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `prenom` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `nom` varchar(255) COLLATE utf8_bin NOT NULL,
-  `phone` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
-  `cell` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
-  `fax` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
-  `adresse` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
-  `codePostal` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
-  `mail` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
-  `ville` varchar(255) COLLATE utf8_bin NOT NULL,
-  `province` varchar(255) COLLATE utf8_bin NOT NULL,
+  `prenom` varchar(255) NOT NULL DEFAULT '',
+  `nom` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL DEFAULT '',
+  `cell` varchar(255) NOT NULL DEFAULT '',
+  `fax` varchar(255) NOT NULL DEFAULT '',
+  `adresse` varchar(255) NOT NULL DEFAULT '',
+  `codePostal` varchar(255) NOT NULL DEFAULT '',
+  `mail` varchar(255) NOT NULL DEFAULT '',
+  `ville` varchar(255) NOT NULL,
+  `province` varchar(255) NOT NULL,
   `actif` tinyint(4) NOT NULL DEFAULT '1',
-  `note` longtext COLLATE utf8_bin NOT NULL,
+  `note` longtext NOT NULL,
   `lastUpdate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `clientUnique` (`prenom`,`nom`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `document_type`
@@ -90,7 +90,7 @@ CREATE TABLE `document_type` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `documents`
@@ -108,7 +108,7 @@ CREATE TABLE `documents` (
   PRIMARY KEY (`id`),
   KEY `type` (`type`),
   CONSTRAINT `fkDocumentType` FOREIGN KEY (`type`) REFERENCES `document_type` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `employes`
@@ -136,7 +136,7 @@ CREATE TABLE `employes` (
   `photoExtension` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `employeUnique` (`prenom`,`nom`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `employes_hours`
@@ -155,7 +155,7 @@ CREATE TABLE `employes_hours` (
   KEY `chantierId` (`chantierId`),
   CONSTRAINT `fk_empHours_chantier` FOREIGN KEY (`chantierId`) REFERENCES `chantiers` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_empHours_employes` FOREIGN KEY (`employeId`) REFERENCES `employes` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `mails`
@@ -163,9 +163,9 @@ CREATE TABLE `employes_hours` (
 DROP TABLE IF EXISTS `mails`;
 CREATE TABLE `mails` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `message` text CHARACTER SET latin1 NOT NULL,
+  `message` text NOT NULL,
   `creationDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `subject` text CHARACTER SET latin1 NOT NULL,
+  `subject` text NOT NULL,
   `userCreateId` int(11) DEFAULT NULL,
   `chantierId` int(11) DEFAULT NULL,
   `sentDate` timestamp NULL DEFAULT NULL,
@@ -175,7 +175,7 @@ CREATE TABLE `mails` (
   KEY `userCreateId` (`userCreateId`),
   CONSTRAINT `fkMailsChantier` FOREIGN KEY (`chantierId`) REFERENCES `chantiers` (`id`) ON UPDATE CASCADE,
   CONSTRAINT `fkMailsEmployes` FOREIGN KEY (`userCreateId`) REFERENCES `employes` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=214 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=224 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `mails_link_documents`
@@ -186,9 +186,9 @@ CREATE TABLE `mails_link_documents` (
   `documentId` int(11) NOT NULL,
   PRIMARY KEY (`mailId`,`documentId`),
   KEY `documentId` (`documentId`),
-  CONSTRAINT `mailDoculink_Docu` FOREIGN KEY (`documentId`) REFERENCES `documents` (`id`) ON UPDATE CASCADE,
-  CONSTRAINT `mailDoculink_Mail` FOREIGN KEY (`mailId`) REFERENCES `mails` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+  CONSTRAINT `mailDoculink_Docu` FOREIGN KEY (`documentId`) REFERENCES `documents` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `mailDoculink_Mail` FOREIGN KEY (`mailId`) REFERENCES `mails` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `materiaux`
@@ -199,7 +199,7 @@ CREATE TABLE `materiaux` (
   `name` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `materiaux_link_categorie_materiaux`
@@ -212,7 +212,7 @@ CREATE TABLE `materiaux_link_categorie_materiaux` (
   KEY `caegorieId` (`caegorieId`),
   CONSTRAINT `materiaux_link_categorie_materiaux_ibfk_1` FOREIGN KEY (`materiauxId`) REFERENCES `materiaux` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `materiaux_link_categorie_materiaux_ibfk_2` FOREIGN KEY (`caegorieId`) REFERENCES `categorie_materiaux` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `soustraitants`
@@ -220,25 +220,25 @@ CREATE TABLE `materiaux_link_categorie_materiaux` (
 DROP TABLE IF EXISTS `soustraitants`;
 CREATE TABLE `soustraitants` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `contactName` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
-  `phone` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
-  `cell` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
-  `fax` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
-  `adresse` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
-  `codePostal` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
-  `mail` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
-  `siteWeb` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
-  `licenseRbq` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
-  `tps` varchar(255) CHARACTER SET latin1 NOT NULL DEFAULT '',
-  `ville` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `province` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `contactName` varchar(255) NOT NULL DEFAULT '',
+  `phone` varchar(255) NOT NULL DEFAULT '',
+  `cell` varchar(255) NOT NULL DEFAULT '',
+  `fax` varchar(255) NOT NULL DEFAULT '',
+  `adresse` varchar(255) NOT NULL DEFAULT '',
+  `codePostal` varchar(255) NOT NULL DEFAULT '',
+  `mail` varchar(255) NOT NULL DEFAULT '',
+  `siteWeb` varchar(255) NOT NULL DEFAULT '',
+  `licenseRbq` varchar(255) NOT NULL DEFAULT '',
+  `tps` varchar(255) NOT NULL DEFAULT '',
+  `ville` varchar(255) NOT NULL,
+  `province` varchar(255) NOT NULL,
   `actif` tinyint(4) NOT NULL DEFAULT '1',
-  `note` longtext CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `note` longtext NOT NULL,
   `lastUpdate` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `sousTraitantNameUnique` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=4447 DEFAULT CHARSET=latin1 COLLATE=latin1_bin ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=4451 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `soustraitants_link_documents`
@@ -253,7 +253,7 @@ CREATE TABLE `soustraitants_link_documents` (
   KEY `sousTraitantId` (`sousTraitantId`),
   CONSTRAINT `fkDocument_sousTrait` FOREIGN KEY (`documentId`) REFERENCES `documents` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fkSousTriatntd_docu` FOREIGN KEY (`sousTraitantId`) REFERENCES `soustraitants` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `soustraitants_link_mails`
@@ -265,9 +265,9 @@ CREATE TABLE `soustraitants_link_mails` (
   `sentDate` datetime DEFAULT NULL,
   PRIMARY KEY (`sousTraitantId`,`mailId`),
   KEY `mailId` (`mailId`),
-  CONSTRAINT `fkMailIdSousTraitantMail` FOREIGN KEY (`mailId`) REFERENCES `mails` (`id`) ON UPDATE CASCADE,
+  CONSTRAINT `fkMailIdSousTraitantMail` FOREIGN KEY (`mailId`) REFERENCES `mails` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fkSousTraitantsIdMail` FOREIGN KEY (`sousTraitantId`) REFERENCES `soustraitants` (`id`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `soustraitants_link_specialites`
@@ -280,7 +280,7 @@ CREATE TABLE `soustraitants_link_specialites` (
   KEY `fk_ssTraitants` (`sousTraitantId`),
   CONSTRAINT `fk_linkSousTraitantSpec_spec` FOREIGN KEY (`specialiteId`) REFERENCES `specialites` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_linkSousTraitantSpec_ssTraitants` FOREIGN KEY (`sousTraitantId`) REFERENCES `soustraitants` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `soustraitants_notes`
@@ -297,7 +297,7 @@ CREATE TABLE `soustraitants_notes` (
   KEY `employeId_2` (`employeId`),
   CONSTRAINT `fk_notesSousTraitant` FOREIGN KEY (`sousTraitantId`) REFERENCES `soustraitants` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fk_notesSousTraitant_employe` FOREIGN KEY (`employeId`) REFERENCES `employes` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `specialites`
@@ -305,9 +305,9 @@ CREATE TABLE `soustraitants_notes` (
 DROP TABLE IF EXISTS `specialites`;
 CREATE TABLE `specialites` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8_bin NOT NULL,
+  `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=258 DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=259 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 SET FOREIGN_KEY_CHECKS = 1;
