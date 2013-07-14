@@ -26,7 +26,8 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         'mailLinkSousTraitant',
         'specialites',
         'mails_notsent',
-        'chantiers'
+        'chantiers',
+        'sousTraitants_full'
     ],
     views: [
         'editSousTraitantWindow',
@@ -217,6 +218,7 @@ Ext.define('dalpeApp.controller.sousTraitants', {
             }
         }
 
+        this.getSousTraitants_fullStore().load();
         //On affiche la fenetre
         var mailWindow = Ext.widget('mailWindow');
 
