@@ -23,8 +23,7 @@ Ext.define('dalpeApp.view.mailWindow', {
     width: 1035,
     constrain: true,
     layout: {
-        align: 'stretch',
-        type: 'hbox'
+        type: 'border'
     },
     title: 'Courriel',
     modal: true,
@@ -37,7 +36,9 @@ Ext.define('dalpeApp.view.mailWindow', {
                 {
                     xtype: 'panel',
                     flex: 1,
-                    margins: '10',
+                    region: 'west',
+                    split: true,
+                    width: 150,
                     layout: {
                         align: 'stretch',
                         type: 'vbox'
@@ -88,6 +89,34 @@ Ext.define('dalpeApp.view.mailWindow', {
                                     flex: 1
                                 }
                             ]
+                        },
+                        {
+                            xtype: 'gridpanel',
+                            flex: 2,
+                            itemId: 'sousTraitantsFullGrid',
+                            title: 'SousTraitants',
+                            store: 'sousTraitants_full',
+                            dockedItems: [
+                                {
+                                    xtype: 'toolbar',
+                                    dock: 'top',
+                                    items: [
+                                        {
+                                            xtype: 'textfield',
+                                            itemId: 'searchFieldWindowMail',
+                                            emptyText: 'filtrer...'
+                                        }
+                                    ]
+                                }
+                            ],
+                            columns: [
+                                {
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'name',
+                                    text: 'Name',
+                                    flex: 1
+                                }
+                            ]
                         }
                     ]
                 },
@@ -95,8 +124,8 @@ Ext.define('dalpeApp.view.mailWindow', {
                     xtype: 'form',
                     flex: 5,
                     margins: '',
-                    height: 150,
-                    margin: 5,
+                    region: 'center',
+                    split: true,
                     layout: {
                         type: 'absolute'
                     },
@@ -145,7 +174,6 @@ Ext.define('dalpeApp.view.mailWindow', {
                         {
                             xtype: 'toolbar',
                             dock: 'top',
-                            border: 1,
                             items: [
                                 {
                                     xtype: 'button',

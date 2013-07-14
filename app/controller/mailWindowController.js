@@ -20,7 +20,8 @@ Ext.define('dalpeApp.controller.mailWindowController', {
         'mail'
     ],
     stores: [
-        'mailLinkSousTraitant'
+        'mailLinkSousTraitant',
+        'sousTraitants_full'
     ],
     views: [
         'mailWindow'
@@ -86,6 +87,29 @@ Ext.define('dalpeApp.controller.mailWindowController', {
             return;
         }
 
+        //On ajoute le  sous traitants selectionne
+        //Le user va peut etre annuler son mail.
+        var grid = Ext.ComponentQuery.query('#sousTraitantsFullGrid')[0];
+        var selectedRecords = grid.selModel.getSelection();
+        if (selectedRecords.length != 1) {
+            Ext.Msg.alert('Attention','Il faut selectionner un Sous Traitant dans la grille.');
+            return;
+
+        }
+        else {
+            var linkStore = this.getMailLinkSousTraitantStore();
+            record = selectedRecords[0];
+            if (record.data.mail) {
+                //Le sous traitant a une adresse email, on peut l'ajouter au store
+                linkStore.add(record);
+            }
+            else {
+                Ext.Msg.alert('Attention','Ce sous traitant n\'a pas de courriel');
+                return;
+            }
+        }
+
+        grid.selModel.deselectAll();
     },
 
     onRemoveClick: function(button, e, eOpts) {
@@ -120,6 +144,19 @@ Ext.define('dalpeApp.controller.mailWindowController', {
             }
 
         }
+    },
+
+    onSearchFieldWindowMailKeypress: function(field, newValue, oldValue, eOpts) {
+        //On filtre le store en local
+        var regFind = new RegExp(newValue,"i")
+        this.getSousTraitants_fullStore().clearFilter(true);
+        this.getSousTraitants_fullStore().filter([
+        {filterFn: function(item) {
+            return (regFind.test(item.get("name"))
+            || regFind.test(item.get("contactName"))  );
+        }}
+        ]);
+        this.resetMailsGrid();
     },
 
     saveMail: function(sendMail) {
@@ -264,6 +301,9 @@ Ext.define('dalpeApp.controller.mailWindowController', {
             },
             "#mailWindow #remove": {
                 click: this.onRemoveClick
+            },
+            "#searchFieldWindowMail": {
+                change: this.onSearchFieldWindowMailKeypress
             }
         });
     }

@@ -36,7 +36,8 @@ Ext.application({
         'document_type',
         'employes_logHours',
         'chantiers_documents',
-        'mails_notsent'
+        'mails_notsent',
+        'sousTraitants_full'
     ],
     views: [
         'appViewport',

@@ -455,6 +455,14 @@
                 "app/store/mails_notsent.js"
             ],
             "className": "mails_notsent"
+        },
+        "82e4399f-b439-4306-b821-378e17afaa13": {
+            "paths": [
+                "metadata/store/sousTraitants_full",
+                "app/store/override/sousTraitants_full.js",
+                "app/store/sousTraitants_full.js"
+            ],
+            "className": "sousTraitants_full"
         }
     },
     "viewOrderMap": {
@@ -486,6 +494,7 @@
             "fa160326-b7fa-4747-896d-d70d65968f22",
             "f288154c-32cc-4f80-a4c9-73ce845fe3f2",
             "e0f02898-522d-4dc3-a2e1-2ad3f4b2dd2b",
+            "82e4399f-b439-4306-b821-378e17afaa13",
             "a79bbea3-d4de-47b9-b24e-a9e513a27156",
             "7c30472b-a80e-4251-8568-3f963945a7a4",
             "77cd874a-4055-4882-aa62-739da0217360"

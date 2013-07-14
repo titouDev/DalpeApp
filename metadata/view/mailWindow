@@ -6,7 +6,6 @@
     },
     "codeClass": null,
     "userConfig": {
-        "container|align": "stretch",
         "container|padding": null,
         "autoShow": true,
         "height": 706,
@@ -16,7 +15,7 @@
         "designer|userClassName": "mailWindow",
         "designer|userAlias": "mailWindow",
         "constrain": true,
-        "layout": "hbox",
+        "layout": "border",
         "title": "Courriel",
         "modal": true
     },
@@ -31,9 +30,12 @@
             "codeClass": null,
             "userConfig": {
                 "layout|flex": 1,
-                "layout|margins": "10",
+                "layout|margins": null,
                 "container|align": "stretch",
+                "layout|region": "west",
+                "layout|split": true,
                 "border": null,
+                "width": 150,
                 "layout": "vbox",
                 "title": "Destinataire(s)"
             },
@@ -133,6 +135,75 @@
                             "designerId": "7ecb31fc-796c-406a-b1c5-d08aea258682"
                         }
                     ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 2,
+                        "itemId": "sousTraitantsFullGrid",
+                        "title": "SousTraitants",
+                        "store": "sousTraitants_full"
+                    },
+                    "designerId": "4d3f380d-d677-4888-8284-2760abe9f0a8",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "top"
+                            },
+                            "designerId": "bdbe385f-014a-494b-8409-25f34f0a58c4",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "itemId": "searchFieldWindowMail",
+                                        "fieldLabel": null,
+                                        "emptyText": "filtrer..."
+                                    },
+                                    "designerId": "d42a4ef5-3712-4b4d-802b-eea1778864d9"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "b7355a3a-fba2-4df8-aab8-964ca9744792"
+                        },
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "name",
+                                "text": "Name",
+                                "flex": 1
+                            },
+                            "designerId": "43a796a0-289f-40ad-bfa9-5f130d4bc276"
+                        }
+                    ]
                 }
             ]
         },
@@ -147,8 +218,9 @@
                 "layout|flex": 5,
                 "layout|margins": "",
                 "designer|snapToGrid": 10,
-                "height": 150,
-                "margin": 5,
+                "layout|region": "center",
+                "layout|split": true,
+                "margin": null,
                 "layout": "absolute",
                 "bodyPadding": 10,
                 "title": null
@@ -192,7 +264,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "dock": "top",
-                        "border": 1,
+                        "border": null,
                         "margin": null
                     },
                     "designerId": "a405460b-4141-46fd-a855-0d117225fb9a",

@@ -10,7 +10,8 @@
             "mail"
         ],
         "stores": [
-            "mailLinkSousTraitant"
+            "mailLinkSousTraitant",
+            "sousTraitants_full"
         ],
         "views": [
             "mailWindow"
@@ -136,7 +137,30 @@
                     "    Ext.Msg.alert('Attention','Ce mail a deja ete envoye, vous ne pouvez plus le modifier.');",
                     "    return;",
                     "}",
-                    ""
+                    "",
+                    "//On ajoute le  sous traitants selectionne",
+                    "//Le user va peut etre annuler son mail.",
+                    "var grid = Ext.ComponentQuery.query('#sousTraitantsFullGrid')[0];",
+                    "var selectedRecords = grid.selModel.getSelection();",
+                    "if (selectedRecords.length != 1) {",
+                    "    Ext.Msg.alert('Attention','Il faut selectionner un Sous Traitant dans la grille.');",
+                    "    return;",
+                    "",
+                    "}",
+                    "else {",
+                    "    var linkStore = this.getMailLinkSousTraitantStore();",
+                    "    record = selectedRecords[0];",
+                    "    if (record.data.mail) {",
+                    "        //Le sous traitant a une adresse email, on peut l'ajouter au store",
+                    "        linkStore.add(record);",
+                    "    }",
+                    "    else {",
+                    "        Ext.Msg.alert('Attention','Ce sous traitant n\\'a pas de courriel');",
+                    "\t    return;",
+                    "    }",
+                    "}",
+                    "",
+                    "grid.selModel.deselectAll();"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -383,6 +407,34 @@
                 "selector": "#mailWindow #sousTraitantsDestMailGrid"
             },
             "designerId": "f131a135-3a92-4ac7-90e3-9cbd126e3424"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSearchFieldWindowMailKeypress",
+                "implHandler": [
+                    "//On filtre le store en local",
+                    "var regFind = new RegExp(newValue,\"i\")",
+                    "this.getSousTraitants_fullStore().clearFilter(true);",
+                    "this.getSousTraitants_fullStore().filter([",
+                    "{filterFn: function(item) {",
+                    "    return (regFind.test(item.get(\"name\"))",
+                    "    || regFind.test(item.get(\"contactName\"))  );",
+                    "}}",
+                    "]);",
+                    "this.resetMailsGrid();"
+                ],
+                "name": "change",
+                "scope": "me",
+                "designer|targetType": "Ext.form.field.Text",
+                "designer|controlQuery": "#searchFieldWindowMail"
+            },
+            "designerId": "eb245b27-b70c-44a4-8cbb-8f62a26ceb99"
         }
     ]
 }
