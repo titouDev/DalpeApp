@@ -969,7 +969,7 @@
                                         "height": 250,
                                         "id": "chantiersGrid",
                                         "width": null,
-                                        "title": "Chantiers",
+                                        "title": null,
                                         "store": "chantiers"
                                     },
                                     "designerId": "cbbed316-a11f-4489-9bed-80b8066c31ab",
@@ -1475,6 +1475,50 @@
                                     "designerId": "e9e4020b-7ed4-4478-8e45-dbf4d3bed604"
                                 },
                                 {
+                                    "type": "Ext.toolbar.Toolbar",
+                                    "reference": {
+                                        "name": "dockedItems",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dock": "top"
+                                    },
+                                    "designerId": "f5a73693-a2c7-4eb1-b32a-7dc5b2af55db",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": null,
+                                                "itemId": "addHour",
+                                                "iconCls": "icon-add",
+                                                "text": "Ajouter une entrée"
+                                            },
+                                            "designerId": "8844b11d-adeb-40f4-9927-3b3fe0be402c"
+                                        },
+                                        {
+                                            "type": "Ext.button.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": null,
+                                                "itemId": "deleteHour",
+                                                "iconCls": "icon-delete",
+                                                "text": "Effacer l'entreé selectionnée"
+                                            },
+                                            "designerId": "89ce8afb-0dc2-4a78-bed4-30d1048669f9"
+                                        }
+                                    ]
+                                },
+                                {
                                     "type": "Ext.grid.Panel",
                                     "reference": {
                                         "name": "items",
@@ -1591,50 +1635,6 @@
                                                 "text": "Cout Horaire"
                                             },
                                             "designerId": "3fe77f0e-290d-471a-bb4b-2ddf69bea180"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "type": "Ext.toolbar.Toolbar",
-                                    "reference": {
-                                        "name": "dockedItems",
-                                        "type": "array"
-                                    },
-                                    "codeClass": null,
-                                    "userConfig": {
-                                        "dock": "top"
-                                    },
-                                    "designerId": "f5a73693-a2c7-4eb1-b32a-7dc5b2af55db",
-                                    "cn": [
-                                        {
-                                            "type": "Ext.button.Button",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "layout|flex": null,
-                                                "itemId": "addHour",
-                                                "iconCls": "icon-add",
-                                                "text": "Ajouter une entrée"
-                                            },
-                                            "designerId": "8844b11d-adeb-40f4-9927-3b3fe0be402c"
-                                        },
-                                        {
-                                            "type": "Ext.button.Button",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "layout|flex": null,
-                                                "itemId": "deleteHour",
-                                                "iconCls": "icon-delete",
-                                                "text": "Effacer l'entreé selectionnée"
-                                            },
-                                            "designerId": "89ce8afb-0dc2-4a78-bed4-30d1048669f9"
                                         }
                                     ]
                                 }

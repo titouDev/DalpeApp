@@ -26,6 +26,10 @@ Ext.define('dalpeApp.store.employes_logHours', {
         me.callParent([Ext.apply({
             model: 'dalpeApp.model.employeHour',
             storeId: 'employes_logHours',
+            sorters: {
+                direction: 'DESC',
+                property: 'workDate'
+            },
             proxy: {
                 type: 'direct',
                 directFn: Employes.get_hours,

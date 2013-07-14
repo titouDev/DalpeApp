@@ -24,6 +24,7 @@ Ext.define('dalpeApp.store.chantiers', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
+            autoLoad: true,
             model: 'dalpeApp.model.chantier',
             storeId: 'chantiers',
             proxy: {

@@ -411,7 +411,6 @@ Ext.define('dalpeApp.view.appViewport', {
                                             split: true,
                                             height: 250,
                                             id: 'chantiersGrid',
-                                            title: 'Chantiers',
                                             store: 'chantiers',
                                             columns: [
                                                 {
@@ -613,6 +612,26 @@ Ext.define('dalpeApp.view.appViewport', {
                                         id: 'logHours_tabConfig',
                                         itemId: ''
                                     },
+                                    dockedItems: [
+                                        {
+                                            xtype: 'toolbar',
+                                            dock: 'top',
+                                            items: [
+                                                {
+                                                    xtype: 'button',
+                                                    itemId: 'addHour',
+                                                    iconCls: 'icon-add',
+                                                    text: 'Ajouter une entrée'
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    itemId: 'deleteHour',
+                                                    iconCls: 'icon-delete',
+                                                    text: 'Effacer l\'entreé selectionnée'
+                                                }
+                                            ]
+                                        }
+                                    ],
                                     items: [
                                         {
                                             xtype: 'gridpanel',
@@ -649,26 +668,6 @@ Ext.define('dalpeApp.view.appViewport', {
                                                     xtype: 'numbercolumn',
                                                     dataIndex: 'coutHoraire',
                                                     text: 'Cout Horaire'
-                                                }
-                                            ]
-                                        }
-                                    ],
-                                    dockedItems: [
-                                        {
-                                            xtype: 'toolbar',
-                                            dock: 'top',
-                                            items: [
-                                                {
-                                                    xtype: 'button',
-                                                    itemId: 'addHour',
-                                                    iconCls: 'icon-add',
-                                                    text: 'Ajouter une entrée'
-                                                },
-                                                {
-                                                    xtype: 'button',
-                                                    itemId: 'deleteHour',
-                                                    iconCls: 'icon-delete',
-                                                    text: 'Effacer l\'entreé selectionnée'
                                                 }
                                             ]
                                         }
