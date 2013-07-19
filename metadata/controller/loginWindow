@@ -48,6 +48,7 @@
                     "{",
                     "    user_logged = response[0].id;",
                     "    //L'authentification a fonctionne, on peut rentrer dans l'application",
+                    "    //dalpeApp.app.applyStateProviderInfos(user_logged);",
                     "    Ext.getCmp('loginWindow').close();",
                     "    var myAppToolbar = Ext.getCmp('appToolbar');",
                     "    myAppToolbar.down('#userLogged').setText('Utilisateur connecté: ' + response[0].prenom + \" \" + response[0].nom);",

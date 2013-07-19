@@ -21,6 +21,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "batchActions": false,
                 "directFn": "Chantiers.get"
             },
             "designerId": "d8dac07d-915b-4208-a0f7-4c649697d051",

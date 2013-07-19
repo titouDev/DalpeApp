@@ -23,6 +23,7 @@
             "codeClass": null,
             "userConfig": {
                 "stateId": null,
+                "stateful": null,
                 "layout": "fit",
                 "title": "Construction Julien Dalpé Inc."
             },
@@ -93,7 +94,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "stateId": null,
+                        "stateId": "stateTabPanel",
+                        "stateful": true,
                         "title": "",
                         "activeTab": 1
                     },
@@ -108,6 +110,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "stateId": null,
+                                "stateful": null,
                                 "id": "employesPanel",
                                 "layout": "border",
                                 "title": "Employés"
@@ -125,7 +128,8 @@
                                         "layout|flex": 1,
                                         "layout|region": "east",
                                         "layout|split": true,
-                                        "stateId": null,
+                                        "stateId": "stateEmployeHoursGrid",
+                                        "stateful": true,
                                         "width": null,
                                         "title": "Heures",
                                         "store": "employes_hours"
@@ -224,7 +228,8 @@
                                         "layout|flex": 1,
                                         "layout|region": "center",
                                         "layout|split": true,
-                                        "stateId": null,
+                                        "stateId": "stateEmployesGrid",
+                                        "stateful": true,
                                         "id": "employesGrid",
                                         "title": null,
                                         "store": "employes"
@@ -411,6 +416,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "stateId": null,
+                                "stateful": null,
                                 "id": "sousTraitantsPanel",
                                 "layout": "border",
                                 "title": "Sous Traitants"
@@ -440,7 +446,8 @@
                                         "layout|flex": 2,
                                         "layout|region": "center",
                                         "layout|split": true,
-                                        "stateId": null,
+                                        "stateId": "statesousTraitantsGrid",
+                                        "stateful": true,
                                         "id": "sousTraitantsGrid",
                                         "width": 561,
                                         "focusOnToFront": false,
@@ -658,6 +665,8 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|flex": 1,
+                                                "stateId": "stateMailsGrid",
+                                                "stateful": true,
                                                 "id": "mailsGrid",
                                                 "width": null,
                                                 "collapsed": false,
@@ -775,6 +784,8 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|flex": 1,
+                                                "stateId": "stateMailsNotSentGrid",
+                                                "stateful": true,
                                                 "id": "mails_notsent_grid",
                                                 "width": null,
                                                 "collapsed": false,
@@ -940,6 +951,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "stateId": null,
+                                "stateful": null,
                                 "id": "chantiersPanel",
                                 "layout": "border",
                                 "title": "Chantiers"
@@ -966,6 +979,8 @@
                                         "layout|flex": 1,
                                         "layout|region": "center",
                                         "layout|split": true,
+                                        "stateId": "stateChantiersGrid",
+                                        "stateful": true,
                                         "height": 250,
                                         "id": "chantiersGrid",
                                         "width": null,
@@ -1125,6 +1140,8 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|flex": 1,
+                                                "stateId": "stateChantiersHoursGrid",
+                                                "stateful": true,
                                                 "width": null,
                                                 "title": "Hours",
                                                 "store": "chantiers_hours"
@@ -1217,6 +1234,8 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "layout|flex": 1,
+                                                "stateId": "stateCHantiersDocumentsGrid",
+                                                "stateful": true,
                                                 "hidden": true,
                                                 "itemId": "documentsGrid",
                                                 "title": "Documents",
@@ -1323,6 +1342,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "stateId": "stateClientsGrid",
+                                "stateful": true,
                                 "id": "clientsGrid",
                                 "title": "Clients",
                                 "store": "clients"
@@ -1456,6 +1477,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "stateId": null,
+                                "stateful": null,
                                 "id": "logHours",
                                 "title": "Entrée des Heures"
                             },
@@ -1526,6 +1549,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "stateId": "stateLogHoursGrid",
+                                        "stateful": true,
                                         "id": "logHoursGrid",
                                         "designer|displayName": "logHoursGrid",
                                         "title": null,

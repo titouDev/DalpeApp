@@ -30,7 +30,7 @@ class Employes {
 	        $stmt->bind_param('sssss', $employeId,$chantierId, $coutHoraire, $workDate,$hours);
 			
 	        $employeId = $data->employeId;
-	        if($data->chantierId != '')
+	        if ( isset($data->chantierId) && $data->chantierId != '')
 			{
 				$chantierId = $data->chantierId;
 			}
@@ -111,11 +111,11 @@ class Employes {
 			INNER JOIN employes ON employes_hours.employeId = employes.id
 			";
 				
-		if ($data->employeId)	
+		if (isset($data->employeId) && $data->employeId)
 		{
 			$query .= " WHERE employeId = ".$data->employeId." ";
 		}
-		else if($data->chantierId)	
+		else if(isset($data->chantierId) && $data->chantierId)
 		{
 			$query .= " WHERE chantierId = ".$data->chantierId." ";
 		}
@@ -141,16 +141,16 @@ class Employes {
 		
 		$query = "SELECT * FROM employes " ;
 		//Conditions
-		if ($data->id)
+		if (isset($data->id) && $data->id)
 		{
 			$query .= ' WHERE id = '.$data->id;
 		}
-		else if($data->nom && $data->prenom) 
+		else if( isset($data->nom) && isset($data->prenom) )
 		{
 			$query .= ' WHERE nom = \''.$data->nom.'\' AND prenom = \''.$data->prenom.'\'';
 		}
 		//Sort
-		if ($data->sort)
+		if (isset($data->sort) && $data->sort)
 		{
 			$query .= ' ORDER BY ' . $data->sort[0]->property . ' ' . $data->sort[0]->direction;
 		}

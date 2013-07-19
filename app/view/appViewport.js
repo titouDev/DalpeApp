@@ -59,6 +59,8 @@ Ext.define('dalpeApp.view.appViewport', {
                     items: [
                         {
                             xtype: 'tabpanel',
+                            stateId: 'stateTabPanel',
+                            stateful: true,
                             title: '',
                             activeTab: 1,
                             items: [
@@ -75,6 +77,8 @@ Ext.define('dalpeApp.view.appViewport', {
                                             flex: 1,
                                             region: 'east',
                                             split: true,
+                                            stateId: 'stateEmployeHoursGrid',
+                                            stateful: true,
                                             title: 'Heures',
                                             store: 'employes_hours',
                                             columns: [
@@ -108,6 +112,8 @@ Ext.define('dalpeApp.view.appViewport', {
                                             flex: 1,
                                             region: 'center',
                                             split: true,
+                                            stateId: 'stateEmployesGrid',
+                                            stateful: true,
                                             id: 'employesGrid',
                                             store: 'employes',
                                             columns: [
@@ -185,6 +191,8 @@ Ext.define('dalpeApp.view.appViewport', {
                                             flex: 2,
                                             region: 'center',
                                             split: true,
+                                            stateId: 'statesousTraitantsGrid',
+                                            stateful: true,
                                             id: 'sousTraitantsGrid',
                                             width: 561,
                                             focusOnToFront: false,
@@ -280,6 +288,8 @@ Ext.define('dalpeApp.view.appViewport', {
                                                 {
                                                     xtype: 'gridpanel',
                                                     flex: 1,
+                                                    stateId: 'stateMailsGrid',
+                                                    stateful: true,
                                                     id: 'mailsGrid',
                                                     collapsed: false,
                                                     title: 'Courriels envoyes...',
@@ -327,6 +337,8 @@ Ext.define('dalpeApp.view.appViewport', {
                                                 {
                                                     xtype: 'gridpanel',
                                                     flex: 1,
+                                                    stateId: 'stateMailsNotSentGrid',
+                                                    stateful: true,
                                                     id: 'mails_notsent_grid',
                                                     collapsed: false,
                                                     title: 'Courriels en preparation',
@@ -409,6 +421,8 @@ Ext.define('dalpeApp.view.appViewport', {
                                             flex: 1,
                                             region: 'center',
                                             split: true,
+                                            stateId: 'stateChantiersGrid',
+                                            stateful: true,
                                             height: 250,
                                             id: 'chantiersGrid',
                                             store: 'chantiers',
@@ -479,6 +493,8 @@ Ext.define('dalpeApp.view.appViewport', {
                                                 {
                                                     xtype: 'gridpanel',
                                                     flex: 1,
+                                                    stateId: 'stateChantiersHoursGrid',
+                                                    stateful: true,
                                                     title: 'Hours',
                                                     store: 'chantiers_hours',
                                                     columns: [
@@ -506,6 +522,8 @@ Ext.define('dalpeApp.view.appViewport', {
                                                 {
                                                     xtype: 'gridpanel',
                                                     flex: 1,
+                                                    stateId: 'stateCHantiersDocumentsGrid',
+                                                    stateful: true,
                                                     hidden: true,
                                                     itemId: 'documentsGrid',
                                                     title: 'Documents',
@@ -553,6 +571,8 @@ Ext.define('dalpeApp.view.appViewport', {
                                 },
                                 {
                                     xtype: 'gridpanel',
+                                    stateId: 'stateClientsGrid',
+                                    stateful: true,
                                     id: 'clientsGrid',
                                     title: 'Clients',
                                     store: 'clients',
@@ -635,6 +655,8 @@ Ext.define('dalpeApp.view.appViewport', {
                                     items: [
                                         {
                                             xtype: 'gridpanel',
+                                            stateId: 'stateLogHoursGrid',
+                                            stateful: true,
                                             id: 'logHoursGrid',
                                             store: 'employes_logHours',
                                             columns: [

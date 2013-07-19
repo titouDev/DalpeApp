@@ -15,7 +15,7 @@ class Mails {
 		
 		$query = "SELECT * FROM mails " ;
 		//Conditions
-		if ($params->id)
+		if (isset($params->id) && $params->id)
 		{
 			$query .= ' WHERE id = '.$params->id;
 		}
@@ -37,7 +37,7 @@ class Mails {
 	function delete(stdClass $params)
 	{
 		//Conditions
-		if ($params->id)
+		if (isset($params->id) && $params->id)
 		{
 			$query = "DELETE FROM mails " ;
 			$query .= ' WHERE sent = 0 AND id = '.$params->id;
@@ -88,7 +88,7 @@ class Mails {
 	
 	    return $results;	
 	}
-	function getMailFromSousTraitant(stdClass $params)
+	function getMailFromSousTraitant($params)
 	{
 		$sousTraitantId = $params->filter[0]->value;
 			

@@ -29,6 +29,7 @@ Ext.define('dalpeApp.store.chantiers', {
             storeId: 'chantiers',
             proxy: {
                 type: 'direct',
+                batchActions: false,
                 directFn: Chantiers.get,
                 reader: {
                     type: 'json',

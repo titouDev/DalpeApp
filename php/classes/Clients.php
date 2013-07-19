@@ -11,7 +11,7 @@ class Clients {
 
 
    
-	    function get(stdClass $data)
+	function get(stdClass $data)
 	{
 		
 
@@ -33,14 +33,14 @@ class Clients {
 					"	clients.nom) as displayName\n".
 					"FROM clients" ;
 		//Conditions
-		if ($data->id)
+		if (isset($data->id) && $data->id)
 		{
 			$query .= ' WHERE id = '.$data->id;
 		}
 		$_db = connectToDbMySql();
 
 		//Sort
-		if ($data->sort)
+		if (isset($data->sort) && $data->sort)
 		{
 			$query .= 'ORDER BY ' . $data->sort[0]->property . ' ' . $data->sort[0]->direction;
 		}

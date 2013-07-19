@@ -26,8 +26,6 @@ Ext.define('dalpeApp.controller.global', {
             else
             {
                 Ext.widget('loginWindow');
-
-
             }
         }, this);
     },

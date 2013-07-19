@@ -27,17 +27,17 @@ class Documents {
 						documents.type
 					FROM documents " ;
 		//Conditions
-		if ($data->id)
+		if (isset($data->id) && $data->id)
 		{
 			$query .= ' WHERE id = '.$data->id;
 		}
-		else if ($data->sousTraitantId)
+		else if (isset($data->sousTraitantId) && $data->sousTraitantId)
 		{
 			$query .= ' INNER JOIN soustraitants_link_documents ON soustraitants_link_documents.documentId = documents.id ';
 			$query .= ' WHERE soustraitants_link_documents.sousTraitantId = ' . $data->sousTraitantId; 
 		}
 		//Sort
-		if ($data->sort)
+		if (isset($data->sort) && $data->sort)
 		{
 			$query .= ' ORDER BY ' . $data->sort[0]->property . ' ' . $data->sort[0]->direction;
 		}
@@ -68,12 +68,12 @@ class Documents {
 		
 		$query = "SELECT * FROM document_type " ;
 		//Conditions
-		if ($data->id)
+		if (isset($data->id) && $data->id)
 		{
 			$query .= ' WHERE id = '.$data->id;
 		}
 		//Sort
-		if ($data->sort)
+		if (isset($data->sort) && $data->sort)
 		{
 			$query .= ' ORDER BY ' . $data->sort[0]->property . ' ' . $data->sort[0]->direction;
 		}

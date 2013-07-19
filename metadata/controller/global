@@ -29,8 +29,6 @@
                     "    else",
                     "    {",
                     "        Ext.widget('loginWindow');",
-                    "",
-                    "",
                     "    }",
                     "}, this);"
                 ],

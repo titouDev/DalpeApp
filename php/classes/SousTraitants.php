@@ -15,7 +15,7 @@ class SousTraitants {
    
 	function getSpecialites(stdClass $params)
 	{
-		if ($params->sousTraitantId)
+		if (isset($params->sousTraitantId) && $params->sousTraitantId)
 		{
 			
 			$query = "SELECT id, name FROM specialites
@@ -58,7 +58,7 @@ class SousTraitants {
 	function setLinkWithSpecialite(stdClass $specialite, stdClass $sousTraitant)
 	{
 		$_db = connectToDbMySql();
-		if (! $specialite->id)
+		if (! isset($specialite->id))
 		{
 			//C'est une nouvelle specialite, on doit d'abord la creer
 			$queryInsert = "INSERT IGNORE INTO specialites SET name = '". $specialite->name . "'";
@@ -91,28 +91,28 @@ class SousTraitants {
 
 
 		$query = "SELECT * FROM soustraitants " ;
-		if ($data->specialiteId)
+		if (isset($data->specialiteId) && $data->specialiteId)
 		{
 			$query .= ' INNER JOIN soustraitants_link_specialites on soustraitants_link_specialites.sousTraitantId = soustraitants.id ';
 			
 		}
 		$query .= ' WHERE soustraitants.id > 0 '; 
 		//Conditions
-		if ($data->id)
+		if (isset($data->id) && $data->id)
 		{
 			$query .= ' AND id = '.$data->id;
 		}
-		else if ($data->name)
+		else if (isset($data->name))
 		{
 			$query .= ' AND name = \''.$data->name.'\'';
 		}
-		else if ($data->searchText)
+		else if (isset($data->searchText))
 		{
 			$query .= ' AND (name like "%'.$data->searchText.'%" OR contactName like "%'.$data->searchText.'%" OR note like "%'.$data->searchText.'%") ';
 			
 		
 		}
-		if ($data->specialiteId)
+		if (isset($data->specialiteId) && $data->specialiteId)
 			{
 				$query .= ' AND soustraitants_link_specialites.specialiteId = ' . $data->specialiteId; 
 				
@@ -120,7 +120,7 @@ class SousTraitants {
 		$_db = connectToDbMySql();
 
 		//Sort
-		if ($data->sort)
+		if (isset($data->sort) && $data->sort)
 		{
 			$query .= 'ORDER BY ' . $data->sort[0]->property . ' ' . $data->sort[0]->direction;
 		}

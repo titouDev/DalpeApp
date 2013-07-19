@@ -31,9 +31,9 @@
             "userConfig": {
                 "layout|flex": 1,
                 "layout|margins": null,
-                "container|align": "stretch",
                 "layout|region": "west",
                 "layout|split": true,
+                "container|align": "stretch",
                 "border": null,
                 "width": 150,
                 "layout": "vbox",
@@ -217,9 +217,9 @@
             "userConfig": {
                 "layout|flex": 5,
                 "layout|margins": "",
-                "designer|snapToGrid": 10,
                 "layout|region": "center",
                 "layout|split": true,
+                "designer|snapToGrid": 10,
                 "margin": null,
                 "layout": "absolute",
                 "bodyPadding": 10,

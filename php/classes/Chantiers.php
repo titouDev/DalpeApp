@@ -14,14 +14,14 @@ class Chantiers {
 
 		$query = "SELECT chantiers.id, chantiers.name, chantiers.note, chantiers.status, chantiers.startDate, chantiers.endDate, CONCAT(clients.prenom,' ', clients.nom) as clientName, clients.id as clientId FROM chantiers Inner Join clients ON clients.id = chantiers.clientId " ;
 		//Conditions
-		if ($data->id)
+		if (isset($data->id) && $data->id)
 		{
 			$query .= ' WHERE chantiers.id = '.$data->id;
 		}
 		$_db = connectToDbMySql();
 
 		//Sort
-		if ($data->sort)
+		if (isset($data->sort) && $data->sort)
 		{
 			$query .= 'ORDER BY ' . $data->sort[0]->property . ' ' . $data->sort[0]->direction;
 		}
