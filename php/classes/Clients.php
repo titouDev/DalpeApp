@@ -13,9 +13,6 @@ class Clients {
    
 	function get(stdClass $data)
 	{
-		
-
-
 		$query = "SELECT clients.id, \n".
 					"	clients.note, \n".
 					"	clients.actif, \n".
