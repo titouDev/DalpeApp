@@ -376,22 +376,6 @@
             ],
             "className": "employes_logHours"
         },
-        "c4a306d4-c285-4307-ba62-ad76109582f7": {
-            "paths": [
-                "metadata/store/colonnes",
-                "app/store/override/colonnes.js",
-                "app/store/colonnes.js"
-            ],
-            "className": "colonnes"
-        },
-        "b87c47e7-ac0e-4c00-928f-440a452d61a8": {
-            "paths": [
-                "metadata/store/databases",
-                "app/store/override/databases.js",
-                "app/store/databases.js"
-            ],
-            "className": "databases"
-        },
         "e5a999f6-34ab-4a5b-9507-4f02d03426d2": {
             "paths": [
                 "metadata/store/sousTraitantsDestMail",
@@ -463,6 +447,14 @@
                 "app/store/sousTraitants_full.js"
             ],
             "className": "sousTraitants_full"
+        },
+        "e3c360d2-ebd1-461b-aeee-b159d5f12ef8": {
+            "paths": [
+                "metadata/store/MyJsonStore",
+                "app/store/override/MyJsonStore.js",
+                "app/store/MyJsonStore.js"
+            ],
+            "className": "MyJsonStore"
         }
     },
     "viewOrderMap": {
@@ -479,8 +471,6 @@
             "0883665a-4d9e-453c-a13f-bab460f4c2d8"
         ],
         "store": [
-            "c4a306d4-c285-4307-ba62-ad76109582f7",
-            "b87c47e7-ac0e-4c00-928f-440a452d61a8",
             "e5a999f6-34ab-4a5b-9507-4f02d03426d2",
             "8dc5ddeb-520a-4981-ae6b-0d6ad639afee",
             "8df80686-4286-4022-97f6-7256a0c036ad",
@@ -497,7 +487,8 @@
             "82e4399f-b439-4306-b821-378e17afaa13",
             "a79bbea3-d4de-47b9-b24e-a9e513a27156",
             "7c30472b-a80e-4251-8568-3f963945a7a4",
-            "77cd874a-4055-4882-aa62-739da0217360"
+            "77cd874a-4055-4882-aa62-739da0217360",
+            "e3c360d2-ebd1-461b-aeee-b159d5f12ef8"
         ],
         "controller": [
             "6e11ae97-e15a-45d4-9386-3d63092f49b8",

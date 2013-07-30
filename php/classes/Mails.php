@@ -90,6 +90,10 @@ class Mails {
 	}
 	function getMailFromSousTraitant($params)
 	{
+		if (! isset($params->filter)) {
+			return;
+		}
+
 		$sousTraitantId = $params->filter[0]->value;
 			
 		$query = "SELECT mails.id, 

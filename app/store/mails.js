@@ -24,6 +24,7 @@ Ext.define('dalpeApp.store.mails', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
+            autoLoad: false,
             model: 'dalpeApp.model.mail',
             remoteFilter: true,
             storeId: 'mailsStore',

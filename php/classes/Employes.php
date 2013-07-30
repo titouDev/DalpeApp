@@ -200,7 +200,6 @@ class Employes {
 	    }
 	
 	    $_db->close();
-		session_start();
 		$_SESSION['userId'] = $results[0]['id'] ;
 	    $_SESSION['timeout'] = time();
 	    return $results;

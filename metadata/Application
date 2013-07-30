@@ -24,7 +24,8 @@
             "employes_logHours",
             "chantiers_documents",
             "mails_notsent",
-            "sousTraitants_full"
+            "sousTraitants_full",
+            "MyJsonStore"
         ],
         "views": [
             "appViewport",
@@ -73,7 +74,15 @@
                     "}",
                     "window.onbeforeunload=confirm_exit;",
                     "",
-                    "setInterval('if(!Ext.getCmp(\"loginWindow\")){Employes.checkLoginSession(function(response){    if (!response)    {    Ext.widget(\"loginWindow\");            }})}', 3700000);",
+                    "setInterval(function(){",
+                    "    if(!Ext.getCmp(\"loginWindow\")){",
+                    "        Employes.checkLoginSession(function(response){",
+                    "            if (!response) {",
+                    "                Ext.widget(\"loginWindow\");",
+                    "            }",
+                    "        })",
+                    "    }",
+                    "}, 3700000);",
                     "",
                     "var allStores = Ext.StoreManager.items;",
                     "",
@@ -85,6 +94,10 @@
                     "        currentStore.proxy.sortParam = undefined;",
                     "    }",
                     "}",
+                    "",
+                    "",
+                    "",
+                    "",
                     ""
                 ]
             },
@@ -98,20 +111,45 @@
             },
             "codeClass": null,
             "userConfig": {
+                "fn": "applyStateProviderInfos",
+                "designer|params": [
+                    "userId"
+                ],
+                "implHandler": [
+                    "Ext.state.Manager.setProvider(",
+                    "Ext.create('MyApp.util.JsonPStorageProvider', {",
+                    "    userId: userId,",
+                    "    url: 'php/classes/state_db_save.php'",
+                    "})",
+                    ");",
+                    ""
+                ]
+            },
+            "designerId": "40e10247-0beb-4ef4-beab-dc16a1bc7f69"
+        },
+        {
+            "type": "Ext.Loader",
+            "reference": {
+                "name": "loader",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "disableCaching": false,
+                "enabled": true
+            },
+            "designerId": "9bd6b055-cbad-41a5-b358-e609d7306b67"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "fn": "init",
                 "implHandler": [
-                    "/*",
-                    "if (Ext.supports.LocalStorage) {",
-                    "    Ext.state.Manager.setProvider(",
-                    "    Ext.create('Ext.state.LocalStorageProvider')",
-                    "    );",
-                    "} else {",
-                    "    Ext.state.Manager.setProvider(",
-                    "    Ext.create('Ext.state.CookieProvider')",
-                    "    );",
-                    "}",
-                    "",
-                    "",
                     "Ext.define('MyApp.util.JsonPStorageProvider', {",
                     "    /* Begin Definitions */",
                     "",
@@ -146,19 +184,21 @@
                     "        var me = this;",
                     "        Ext.data.JsonP.request({",
                     "            url : this.getUrl(),",
+                    "            method : \"GET\",",
                     "            params : {",
                     "                userId : this.getUserId(),",
                     "                method : 'get'",
                     "            },",
                     "            disableCaching : true,",
                     "            success : function(results) {",
-                    "                console.log(results);",
                     "                for(var i in results) {",
-                    "                    this.state[i] = this.decodeValue(results[i]);",
+                    "                    var currentComponent = Ext.ComponentQuery.query('[stateId=\"'+results[i].name+'\"]')[0];",
+                    "                    if (currentComponent === undefined) continue;",
+                    "\t\t\t\t\tcurrentComponent.applyState(this.decodeValue(results[i].value));",
                     "                }",
                     "            },",
                     "            failure : function() {",
-                    "                console.log('failed', arguments);",
+                    "                //console.log('failed', arguments);",
                     "            },",
                     "            scope : this",
                     "        });",
@@ -181,10 +221,10 @@
                     "            },",
                     "            disableCaching : true,",
                     "            success : function() {",
-                    "                // console.log('success');",
+                    "                //console.log('success');",
                     "            },",
                     "            failure : function() {",
-                    "                console.log('failed', arguments);",
+                    "                //console.log('failed', arguments);",
                     "            }",
                     "        });",
                     "    },",
@@ -199,42 +239,18 @@
                     "            },",
                     "            disableCaching : true,",
                     "            success : function() {",
-                    "                console.log('success');",
+                    "                //console.log('success');",
                     "            },",
                     "            failure : function() {",
-                    "                console.log('failed', arguments);",
+                    "                //console.log('failed', arguments);",
                     "            }",
                     "        });",
                     "    }",
                     "});",
-                    "*/"
-                ]
-            },
-            "designerId": "b29619e8-8850-446b-b1c6-127669497158"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "applyStateProviderInfos",
-                "designer|params": [
-                    "userId"
-                ],
-                "implHandler": [
-                    "Ext.state.Manager.setProvider(",
-                    "Ext.create('MyApp.util.JsonPStorageProvider', {",
-                    "    userId: userId,",
-                    "    url: 'php/classes/state_db_save.php'",
-                    "})",
-                    ");",
                     ""
                 ]
             },
-            "designerId": "40e10247-0beb-4ef4-beab-dc16a1bc7f69"
+            "designerId": "1699f1e3-4af5-4261-8e07-45396c6d032c"
         }
     ]
 }

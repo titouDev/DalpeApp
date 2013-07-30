@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "autoLoad": false,
         "model": "mail",
         "remoteFilter": true,
         "storeId": "mailsStore",

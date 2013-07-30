@@ -180,6 +180,8 @@ Ext.define('dalpeApp.view.appViewport', {
                                 },
                                 {
                                     xtype: 'panel',
+                                    stateId: 'stateSousTraitantsPanel',
+                                    stateful: true,
                                     id: 'sousTraitantsPanel',
                                     layout: {
                                         type: 'border'

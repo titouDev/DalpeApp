@@ -415,8 +415,8 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "stateId": null,
-                                "stateful": null,
+                                "stateId": "stateSousTraitantsPanel",
+                                "stateful": true,
                                 "id": "sousTraitantsPanel",
                                 "layout": "border",
                                 "title": "Sous Traitants"
@@ -431,7 +431,8 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "stateId": null
+                                        "stateId": null,
+                                        "stateful": null
                                     },
                                     "designerId": "3df5e9d3-1837-413d-acfb-26bedb30ea1a"
                                 },
@@ -650,6 +651,7 @@
                                         "layout|split": true,
                                         "container|align": "stretch",
                                         "stateId": null,
+                                        "stateful": null,
                                         "width": 150,
                                         "layout": "vbox",
                                         "title": null

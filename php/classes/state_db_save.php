@@ -2,6 +2,7 @@
 require_once('../mysql_connect.php');
 $userId = $_GET["userId"];
 $method = $_GET["method"];
+$callback = $_GET["callback"];
 
 if ($method == 'save') {
     $value = $_GET["value"];
@@ -12,13 +13,19 @@ if ($method == 'save') {
         $stmt->execute();
         $stmt->close();
     }
+    echo (sprintf("%s({})",$callback));
 }
 else if($method == 'get') {
     $query = sprintf("SELECT name, value FROM state_extjs WHERE userId = %s", $userId);
     $_db = connectToDbMySql();
     $_result = $_db->query($query) or die('Connect Error (' . $_db->connect_errno . ') ' . $_db->connect_error);
     $result = $_result->fetch_assoc();
-    //FIX ME  on doit retourner une paire....
-    echo ($result['value']);
+    $data = array();
+    $response->data = array();
+    $response->success=true;
+    while ($row = $_result->fetch_assoc()) {
+        $data[]=$row;
+    }
+    echo (sprintf("%s(%s)",$callback,json_encode($data)));
 }
 ?>

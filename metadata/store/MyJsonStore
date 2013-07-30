@@ -6,11 +6,10 @@
     },
     "codeClass": null,
     "userConfig": {
-        "model": "colonne",
-        "storeId": "colonnes",
-        "designer|userClassName": "colonnes"
+        "autoLoad": false,
+        "designer|userClassName": "MyJsonStore"
     },
-    "designerId": "c4a306d4-c285-4307-ba62-ad76109582f7",
+    "designerId": "e3c360d2-ebd1-461b-aeee-b159d5f12ef8",
     "cn": [
         {
             "type": "Ext.data.proxy.Ajax",
@@ -20,9 +19,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "url": "data/getColonnesInfos.php"
+                "url": "dfsdf/sdfsdf.php"
             },
-            "designerId": "c3f2fdfa-fcf5-4bbf-8b0d-685db4618611",
+            "designerId": "d5fe2506-8607-41a3-bbfd-6a07521df7b0",
             "cn": [
                 {
                     "type": "Ext.data.reader.Json",
@@ -31,11 +30,7 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "userConfig": {
-                        "root": "results",
-                        "record": ""
-                    },
-                    "designerId": "d5ee250b-4390-416b-9828-61375abd25d0"
+                    "designerId": "3c1eb5e4-1c47-4eff-8d50-aade14d00bfc"
                 }
             ]
         }
