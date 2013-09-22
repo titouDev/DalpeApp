@@ -53,10 +53,7 @@ Ext.define('dalpeApp.controller.employes', {
             var myEmploye = this.getEmployeModel().create(myData);
             myForm.getForm().loadRecord(myEmploye);
             myForm.down('#photo').setSrc(myEmploye.data.photo);
-        }, this)
-
-
-
+        }, this);
 
         editEmployeWindow.show();
 

@@ -40,14 +40,12 @@ Ext.define('dalpeApp.controller.clients', {
     onEnregistrerClick: function(button, e, eOpts) {
         //On va chercher les infos du form
         var myForm = Ext.getCmp('editClientWindow').down('form').getForm();
-        if (! myForm.isValid())
-        {
-            return
+        if (! myForm.isValid()) {
+            return;
         }
 
         var clientData = myForm.getValues();
-        if (clientData.id)
-        {
+        if (clientData.id) {
             //On update la DB et on ferme la window
             Clients.update(clientData, function(){
                 //On peut maintenant fermer la window
@@ -55,8 +53,7 @@ Ext.define('dalpeApp.controller.clients', {
                 this.getClientsGrid().store.load();
             },this);
         }
-        else
-        {
+        else {
             //On cree le nouvel employe
             //On update la DB et on ferme la window
             Clients.create(clientData, function(newRecord){
@@ -84,7 +81,7 @@ Ext.define('dalpeApp.controller.clients', {
             var myData = recordFromDb[0];
             var myClient = this.getClientModel().create(myData);
             myForm.getForm().loadRecord(myClient);
-        }, this)
+        }, this);
 
 
 

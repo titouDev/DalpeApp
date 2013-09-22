@@ -43,16 +43,14 @@ Ext.define('dalpeApp.controller.mailWindowController', {
             Ext.Msg.alert('Attention','Aucun sous traitant n\'a ete ajoute.');
             return;
         }
-        if (Ext.getCmp('mailWindow').down('form').getForm().getValues().sentDate)
-        {
+        if (Ext.getCmp('mailWindow').down('form').getForm().getValues().sentDate) {
             Ext.Msg.alert('Attention','Ce mail a deja ete envoye, vous ne pouvez plus le modifier.');
             return;
         }
 
         var myForm = this.getMailWindow().down('form').getForm();
 
-        if (! myForm.isValid())
-        {
+        if (! myForm.isValid()) {
             Ext.Msg.alert('Attention','Certains champs sont requis');
             return;
         }
@@ -62,27 +60,16 @@ Ext.define('dalpeApp.controller.mailWindowController', {
     },
 
     onSaveClick: function(button, e, eOpts) {
-        if (Ext.getCmp('mailWindow').down('form').getForm().getValues().sentDate)
-        {
+        if (Ext.getCmp('mailWindow').down('form').getForm().getValues().sentDate) {
             Ext.Msg.alert('Attention','Ce mail a deja ete envoye, vous ne pouvez plus le modifier.');
             return;
         }
 
-
         this.saveMail();
     },
 
-    onContactsClick: function(button, e, eOpts) {
-
-    },
-
-    onAttachClick: function(button, e, eOpts) {
-
-    },
-
     onAddClick: function(button, e, eOpts) {
-        if (Ext.getCmp('mailWindow').down('form').getForm().getValues().sentDate)
-        {
+        if (Ext.getCmp('mailWindow').down('form').getForm().getValues().sentDate) {
             Ext.Msg.alert('Attention','Ce mail a deja ete envoye, vous ne pouvez plus le modifier.');
             return;
         }
@@ -113,8 +100,7 @@ Ext.define('dalpeApp.controller.mailWindowController', {
     },
 
     onRemoveClick: function(button, e, eOpts) {
-        if (Ext.getCmp('mailWindow').down('form').getForm().getValues().sentDate)
-        {
+        if (Ext.getCmp('mailWindow').down('form').getForm().getValues().sentDate) {
             Ext.Msg.alert('Attention','Ce mail a deja ete envoye, vous ne pouvez plus le modifier.');
             return;
         }
@@ -125,10 +111,8 @@ Ext.define('dalpeApp.controller.mailWindowController', {
         if (selection.length === 0 ) return;
 
         var myMail = this.getMailWindow().down('form').getValues();
-        if (selection)
-        {
-            if (myMail.id)
-            {
+        if (selection) {
+            if (myMail.id) {
                 //Le mail est deja cree dans la DB,les liens Mails/SousTraitants sont donc aussi dans la DB 
                 Mails.removeLinkSousTraitant(myMail,selection[0].data,function(){
                     var linkStore = this.getMailLinkSousTraitantStore();
@@ -136,47 +120,39 @@ Ext.define('dalpeApp.controller.mailWindowController', {
                     linkStore.load();
                 },this);
             }
-            else
-            {
+            else {
                 //Le mail n'est pas encore cree, on a donc juste a enlever les soustraitants du store...
                 var linkStore = this.getMailLinkSousTraitantStore();
                 linkStore.remove(selection[0]);
             }
-
         }
     },
 
     onSearchFieldWindowMailKeypress: function(field, newValue, oldValue, eOpts) {
         //On filtre le store en local
-        var regFind = new RegExp(newValue,"i")
+        var regFind = new RegExp(newValue,"i");
         this.getSousTraitants_fullStore().clearFilter(true);
         this.getSousTraitants_fullStore().filter([
         {filterFn: function(item) {
-            return (regFind.test(item.get("name"))
-            || regFind.test(item.get("contactName"))  );
+            return (regFind.test(item.get("name")) || regFind.test(item.get("contactName"))  );
         }}
         ]);
-        this.resetMailsGrid();
+
     },
 
     saveMail: function(sendMail) {
         //Pour sauvegarder un mail, il faut au moins un sous traitant, un sujet, un message
-
-
-
         var myWindow =this.getMailWindow();
         var myForm = myWindow.down('form').getForm();
 
-        if (! myForm.isValid())
-        {
+        if (! myForm.isValid()) {
             Ext.Msg.alert('Attention','Certains champs sont requis');
             return;
         }
         var myMail = myForm.getValues();
 
 
-        if (myMail.id)
-        {
+        if (myMail.id) {
             //On update les eventuells modifications du mail
             Mails.update(myMail, function(){
                 if(sendMail)
@@ -195,33 +171,27 @@ Ext.define('dalpeApp.controller.mailWindowController', {
 
             }, this);
         }
-        else
-        {
+        else {
             //C'est un nouveau mail.
             Mails.create(myMail, afterMailCreated, this);
         }
 
-
-        function afterMailCreated(myMailCreated)
-        {
+        function afterMailCreated(myMailCreated) {
             var myMail = myMailCreated[0];
             //Maintenant qu'on a le ID, on peut creer les liens
             sousTraitantsData = this.getSousTraitantsRecords();
             //On sauvegarde les liens
             Mails.saveLinkSoustraitant(myMail, sousTraitantsData, function(){
-                if (sendMail)
-                {
+                if (sendMail) {
                     this.sendMail(myMail, sousTraitantsData, myWindow);
                 }
-                else
-                {
+                else {
                     myWindow.close();
                     Ext.Msg.alert('Message','Votre courriel a bien ete sauvegarde.');
                     Ext.getCmp('mails_notsent_grid').down('#refreshMailsNotSentGrid').fireEvent('click');
 
                 }
             }, this);
-
         }
 
 
@@ -236,7 +206,7 @@ Ext.define('dalpeApp.controller.mailWindowController', {
             function(button) {
                 if (button === 'yes') {
                     Mails.send(myMail,sousTraitants, function(){
-                    Ext.MessageBox.alert('Votre mail a ete envoye avec succes!');})
+                    Ext.MessageBox.alert('Message','Votre mail a ete envoye avec succes!');});
                     Ext.getCmp('mailsGrid').down('#refresh').fireEvent('click');
                     Ext.getCmp('mails_notsent_grid').down('#refreshMailsNotSentGrid').fireEvent('click');
                     myWindow.close();
@@ -253,7 +223,7 @@ Ext.define('dalpeApp.controller.mailWindowController', {
             function(button) {
                 if (button === 'yes') {
                     Mails.send(myMail,sousTraitants, function(){
-                    Ext.MessageBox.alert('Votre mail a ete envoye avec succes!');})
+                    Ext.MessageBox.alert('Message','Votre mail a ete envoye avec succes!');});
                     Ext.getCmp('mailsGrid').down('#refresh').fireEvent('click');
                     Ext.getCmp('mails_notsent_grid').down('#refreshMailsNotSentGrid').fireEvent('click');
                     myWindow.close();
@@ -273,12 +243,12 @@ Ext.define('dalpeApp.controller.mailWindowController', {
         var selectedRecords = this.getSousTraitantsDestMailGrid().store.data.items;
         var sousTraitantsData = [];
         var count = 0;
-        for (var i in selectedRecords)
-        {
+        for (var i in selectedRecords) {
             record = selectedRecords[i];
             sousTraitantsData[count]=record.data;
             count++;
         }
+
         return sousTraitantsData;
     },
 
@@ -289,12 +259,6 @@ Ext.define('dalpeApp.controller.mailWindowController', {
             },
             "#mailWindow #save": {
                 click: this.onSaveClick
-            },
-            "#mailWindow  #contacts": {
-                click: this.onContactsClick
-            },
-            "#mailWindow #attach": {
-                click: this.onAttachClick
             },
             "#mailWindow #add": {
                 click: this.onAddClick

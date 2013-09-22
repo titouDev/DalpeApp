@@ -40,12 +40,9 @@ Ext.define('dalpeApp.controller.logHours', {
     onSaveClick: function(button, e, eOpts) {
         var myForm = button.up('window').down('form').getForm();
 
-        if (!myForm.isValid())
-        {
+        if (!myForm.isValid()) {
             return;
         }
-
-
 
         var record = myForm.getValues();
         this.saveRecord(record);
@@ -72,30 +69,24 @@ Ext.define('dalpeApp.controller.logHours', {
         var myGrid = this.getLogHoursGrid();
 
         var selectedRecords = myGrid.selModel.getSelection();
-        if (selectedRecords.length === 0)
-        {
+        if (selectedRecords.length === 0) {
             Ext.Msg.alert('Attention','Aucune entrée n\'est selectionnée');
             return;
         }
 
-
-
-        Ext.Msg.confirm('Attention','Voulez vous vraiment effacer l\'entré selectionné ? ', function(button)
-        {
-            if (button === 'yes')
-            {
+        Ext.Msg.confirm('Attention','Voulez vous vraiment effacer l\'entré selectionné ? ', function(button) {
+            if (button === 'yes') {
                 var record = selectedRecords[0].data;
                 this.deleteRecord(record);
-
             }
         },this);
     },
 
     onLogHoursGridItemDblClick: function(dataview, record, item, index, e, eOpts) {
-        if (this.isLogChecked(record.data))
-        {
+        if (this.isLogChecked(record.data)) {
             return;
         }
+
         this.editRecord(record);
     },
 
@@ -108,32 +99,25 @@ Ext.define('dalpeApp.controller.logHours', {
     },
 
     deleteRecord: function(record) {
-        if (!this.isLogChecked(record))
-        {
+        if (!this.isLogChecked(record)) {
             Employes.delete_hour(record, this.loadHoursStore,this);
         }
     },
 
     loadHoursStore: function() {
         var employes_logHours_store = Ext.getStore('employes_logHours');
-
-
-
-        employes_logHours_store.proxy.extraParams ={employeId:user_logged};
+        employes_logHours_store.proxy.extraParams = {employeId:user_logged};
         employes_logHours_store.load();
     },
 
     saveRecord: function(record) {
-
-        if (record.id)
-        {
+        if (record.id) {
             //On update la DB et on ferme la window
             Employes.update_hour(record, function(){
                 this.loadHoursStore();
             },this);
         }
-        else
-        {
+        else {
             //On cree le nouveau log hour 
             Employes.log_hour(record, function(newRecord){
                 //On rajoute le nouvel employe dans le store
@@ -155,8 +139,7 @@ Ext.define('dalpeApp.controller.logHours', {
     },
 
     isLogChecked: function(record) {
-        if (record.checked === 1)
-        {
+        if (record.checked === 1) {
             Ext.Msg.alert('Attention','Impossible d\'effacer cette entrée. Merci de contacter la comptabilité.');
             return true;
         }

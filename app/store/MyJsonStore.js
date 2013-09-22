@@ -21,6 +21,7 @@ Ext.define('dalpeApp.store.MyJsonStore', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             autoLoad: false,
+            storeId: 'MyJsonStore',
             proxy: {
                 type: 'ajax',
                 url: 'dfsdf/sdfsdf.php',

@@ -50,12 +50,9 @@
                 "implHandler": [
                     "var myForm = button.up('window').down('form').getForm();",
                     "",
-                    "if (!myForm.isValid())",
-                    "{",
+                    "if (!myForm.isValid()) {",
                     "    return;",
                     "}",
-                    "",
-                    "",
                     "",
                     "var record = myForm.getValues();",
                     "this.saveRecord(record);",
@@ -139,8 +136,7 @@
                     "record"
                 ],
                 "implHandler": [
-                    "if (!this.isLogChecked(record))",
-                    "{",
+                    "if (!this.isLogChecked(record)) {",
                     "    Employes.delete_hour(record, this.loadHoursStore,this);",
                     "}"
                 ]
@@ -158,10 +154,7 @@
                 "fn": "loadHoursStore",
                 "implHandler": [
                     "var employes_logHours_store = Ext.getStore('employes_logHours');",
-                    "",
-                    "",
-                    "",
-                    "employes_logHours_store.proxy.extraParams ={employeId:user_logged};",
+                    "employes_logHours_store.proxy.extraParams = {employeId:user_logged};",
                     "employes_logHours_store.load();"
                 ]
             },
@@ -181,21 +174,15 @@
                     "var myGrid = this.getLogHoursGrid();",
                     "",
                     "var selectedRecords = myGrid.selModel.getSelection();",
-                    "if (selectedRecords.length === 0)",
-                    "{",
+                    "if (selectedRecords.length === 0) {",
                     "    Ext.Msg.alert('Attention','Aucune entrée n\\'est selectionnée');",
                     "    return;",
                     "}",
                     "",
-                    "",
-                    "",
-                    "Ext.Msg.confirm('Attention','Voulez vous vraiment effacer l\\'entré selectionné ? ', function(button)",
-                    "{",
-                    "    if (button === 'yes')",
-                    "    {",
+                    "Ext.Msg.confirm('Attention','Voulez vous vraiment effacer l\\'entré selectionné ? ', function(button) {",
+                    "    if (button === 'yes') {",
                     "        var record = selectedRecords[0].data;",
                     "        this.deleteRecord(record);",
-                    "",
                     "    }",
                     "},this);"
                 ],
@@ -216,10 +203,10 @@
             "userConfig": {
                 "fn": "onLogHoursGridItemDblClick",
                 "implHandler": [
-                    "if (this.isLogChecked(record.data))",
-                    "{",
+                    "if (this.isLogChecked(record.data)) {",
                     "    return;",
                     "}",
+                    "",
                     "this.editRecord(record);"
                 ],
                 "name": "itemdblclick",
@@ -242,16 +229,13 @@
                     "record"
                 ],
                 "implHandler": [
-                    "",
-                    "if (record.id)",
-                    "{",
+                    "if (record.id) {",
                     "    //On update la DB et on ferme la window",
                     "    Employes.update_hour(record, function(){",
                     "        this.loadHoursStore();",
                     "    },this);",
                     "}",
-                    "else",
-                    "{",
+                    "else {",
                     "    //On cree le nouveau log hour ",
                     "    Employes.log_hour(record, function(newRecord){",
                     "        //On rajoute le nouvel employe dans le store",
@@ -301,8 +285,7 @@
                     "record"
                 ],
                 "implHandler": [
-                    "if (record.checked === 1)",
-                    "{",
+                    "if (record.checked === 1) {",
                     "    Ext.Msg.alert('Attention','Impossible d\\'effacer cette entrée. Merci de contacter la comptabilité.');",
                     "    return true;",
                     "}",

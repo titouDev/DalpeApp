@@ -18,15 +18,12 @@ Ext.define('dalpeApp.controller.global', {
 
     onViewportAfterRender: function(component, eOpts) {
         Employes.checkLoginSession(function(response){
-            if (response)
-            {
+            if (response) {
                 user_logged = response[0].id;
                 var myAppToolbar = Ext.getCmp('appToolbar');
                 myAppToolbar.down('#userLogged').setText('Utilisateur connecté: ' + response[0].prenom + " " + response[0].nom);
-                dalpeApp.app.applyStateProviderInfos(user_logged);
             }
-            else
-            {
+            else {
                 Ext.widget('loginWindow');
             }
         }, this);

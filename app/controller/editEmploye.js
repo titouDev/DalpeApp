@@ -27,12 +27,10 @@ Ext.define('dalpeApp.controller.editEmploye', {
         var myEditForm = button.up('window').down('#editForm').getForm();
         var employeId = myEditForm.getValues().id;
 
-        if (! employeId)
-        {
+        if (! employeId) {
             Ext.Msg.alert('Attention','Vous devez d\'abord créer l\'employer avant de rajouter une photo');
         }
-        else
-        {
+        else {
 
             var form = button.up('#fileForm').getForm();
             if(form.isValid()){
@@ -58,14 +56,12 @@ Ext.define('dalpeApp.controller.editEmploye', {
     onEnregistrerClick: function(button, e, eOpts) {
         //On va chercher les infos du form
         var myForm = Ext.getCmp('editEmployeWindow').down('form').getForm();
-        if (! myForm.isValid())
-        {
-            return
+        if (! myForm.isValid()) {
+            return;
         }
 
         var employeData = myForm.getValues();
-        if (employeData.id)
-        {
+        if (employeData.id) {
             //On update la DB et on ferme la window
             Employes.update(employeData, function(){
                 //On peut maintenant fermer la window
@@ -73,8 +69,7 @@ Ext.define('dalpeApp.controller.editEmploye', {
                 this.getEmployesGrid().store.load();
             },this);
         }
-        else
-        {
+        else {
             //On cree le nouvel employe
             //On update la DB et on ferme la window
             Employes.create(employeData, function(newRecord){
@@ -85,10 +80,6 @@ Ext.define('dalpeApp.controller.editEmploye', {
             },this);
 
         }
-    },
-
-    savePhoto: function() {
-
     },
 
     init: function(application) {

@@ -55,12 +55,11 @@ Ext.define('dalpeApp.controller.sousTraitants', {
 
     onTextfieldChange: function(field, newValue, oldValue, eOpts) {
         //On filtre le store en local
-        var regFind = new RegExp(newValue,"i")
+        var regFind = new RegExp(newValue,"i");
         this.getSousTraitantsStore().clearFilter(true);
         this.getSousTraitantsStore().filter([
         {filterFn: function(item) {
-            return (regFind.test(item.get("name"))
-            || regFind.test(item.get("contactName"))  );
+            return (regFind.test(item.get("name")) || regFind.test(item.get("contactName"))  );
         }}
         ]);
         this.resetMailsGrid();
@@ -70,7 +69,7 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         var selectedMail = this.getMailsNotSentGrid().selModel.getSelection()[0];
 
         if (!selectedMail) {
-            Ext.Msg.alert('Attention','Vous devez selectionner un courriel...')
+            Ext.Msg.alert('Attention','Vous devez selectionner un courriel...');
             return;
         }
 
@@ -108,41 +107,8 @@ Ext.define('dalpeApp.controller.sousTraitants', {
 
     },
 
-    onAddSousTraitantClick: function(button, e, eOpts) {
-        //On s'assure que le store des links specialites/sous traitant est vide
-        var myStore = Ext.getStore('specialiteLinkSousTraitant');
-        myStore.proxy.extraParams = '';
-        myStore.removeAll();
-
-        Ext.widget('editSousTraitantWindow').show();
-    },
-
     onRefreshClick: function(tool, e, eOpts) {
         this.reloadSousTraitantsStore();
-    },
-
-    onSousTraitantsGridItemContextMenu: function(dataview, record, item, index, e, eOpts) {
-        //On affiche le contextMenu
-        e.stopEvent();
-        Ext.widget('sousTraitantsContextMenu').showAt(e.xy);
-
-    },
-
-    onContextMenuClick: function(menu, item, e, eOpts) {
-        switch(item.itemId)
-        {
-            case 'delete':
-            break;
-            case 'sendMail':
-            this.prepareMail();
-            break;
-            case 'edit':
-            //On ouvre la fenetre d'edit
-            this.displayEditSousTraitantWindow();
-            break;
-            default:
-            //rien
-        }
     },
 
     onSousTraitantsGridItemDblClick: function(dataview, record, item, index, e, eOpts) {
@@ -185,6 +151,23 @@ Ext.define('dalpeApp.controller.sousTraitants', {
 
     },
 
+    onAddSousTraitantClick: function(button, e, eOpts) {
+        //On s'assure que le store des links specialites/sous traitant est vide
+        var myStore = Ext.getStore('specialiteLinkSousTraitant');
+        myStore.proxy.extraParams = '';
+        myStore.removeAll();
+
+        Ext.widget('editSousTraitantWindow').show();
+    },
+
+    onEditSousTraitantClick: function(button, e, eOpts) {
+        this.displayEditSousTraitantWindow();
+    },
+
+    onSendMailClick: function(button, e, eOpts) {
+        this.prepareMail();
+    },
+
     editMail: function(record) {
         //On reload le store des chantiers, puis on show la window
 
@@ -193,7 +176,7 @@ Ext.define('dalpeApp.controller.sousTraitants', {
             callback:function(){
                 this.showMailWindow(record);
             }
-        })
+        });
 
     },
 
@@ -331,7 +314,7 @@ Ext.define('dalpeApp.controller.sousTraitants', {
     },
 
     resetMailsGrid: function() {
-        var mailsGrid = this.getMailsGrid()
+        var mailsGrid = this.getMailsGrid();
         mailsGrid.store.removeAll();
         mailsGrid.setTitle('Courriels');
     },
@@ -382,17 +365,10 @@ Ext.define('dalpeApp.controller.sousTraitants', {
             },
             "#sousTraitantsGrid": {
                 select: this.onRowselectionmodelSelect,
-                itemcontextmenu: this.onSousTraitantsGridItemContextMenu,
                 itemdblclick: this.onSousTraitantsGridItemDblClick
-            },
-            "#addSousTraitant": {
-                click: this.onAddSousTraitantClick
             },
             "#sousTraitantsGrid #refresh": {
                 click: this.onRefreshClick
-            },
-            "sousTraitantsContextMenu": {
-                click: this.onContextMenuClick
             },
             "#mailsGrid #refresh": {
                 click: this.onRefreshClickMailsGrid
@@ -414,6 +390,15 @@ Ext.define('dalpeApp.controller.sousTraitants', {
             },
             "#mails_notsent_grid": {
                 itemdblclick: this.onMails_notsent_gridItemDblClick
+            },
+            "#addSousTraitant": {
+                click: this.onAddSousTraitantClick
+            },
+            "#editSousTraitant": {
+                click: this.onEditSousTraitantClick
+            },
+            "#sendMail": {
+                click: this.onSendMailClick
             }
         });
     }

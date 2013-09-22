@@ -22,19 +22,15 @@ Ext.define('dalpeApp.controller.loginWindow', {
     },
 
     onPasswordSpecialkey: function(field, e, eOpts) {
-        if (e.button === 12)
-        {
+        if (e.button === 12) {
             //ENTER KEY
             var myForm = Ext.ComponentQuery.query('#loginWindow  form')[0].getForm();
             this.sendLoginForm(myForm);
-
         }
     },
 
     verifyInfos: function(response) {
-
-        if (response.length)
-        {
+        if (response.length) {
             user_logged = response[0].id;
             //L'authentification a fonctionne, on peut rentrer dans l'application
             dalpeApp.app.applyStateProviderInfos(user_logged);
@@ -42,15 +38,15 @@ Ext.define('dalpeApp.controller.loginWindow', {
             var myAppToolbar = Ext.getCmp('appToolbar');
             myAppToolbar.down('#userLogged').setText('Utilisateur connecté: ' + response[0].prenom + " " + response[0].nom);
         }
-        else
-        {
+        else {
             Ext.Msg.alert('Attention', 'Nom d\'utilisateur ou mot de passe incorrects.');
         }
     },
 
     sendLoginForm: function(myForm) {
-        if (!myForm.isValid())
-        {return;}
+        if (!myForm.isValid()) {
+            return;
+        }
 
         //On verifie l'identification dans la base de donnees...
 

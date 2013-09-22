@@ -77,6 +77,8 @@ Ext.application({
         }
         window.onbeforeunload=confirm_exit;
 
+
+
         setInterval(function(){
             if(!Ext.getCmp("loginWindow")){
                 Employes.checkLoginSession(function(response){
@@ -86,6 +88,8 @@ Ext.application({
                 })
             }
         }, 3700000);
+
+        document.oncontextmenu = function(){return false;}; //permet de ne pas ouvrir le context menu de windows
 
         var allStores = Ext.StoreManager.items;
 

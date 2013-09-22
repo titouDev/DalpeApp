@@ -27,12 +27,10 @@ Ext.define('dalpeApp.controller.editSousTraitantController', {
         var myEditForm = button.up('window').down('#editForm').getForm();
         var sousTraitantId = myEditForm.getValues().id;
 
-        if (! sousTraitantId)
-        {
+        if (! sousTraitantId) {
             Ext.Msg.alert('Attention','Vous devez d\'abord créer un Sous Traitant pour enregistrer un document');
         }
-        else
-        {
+        else {
 
             var form = button.up('#fileForm').getForm();
             if(form.isValid()){
@@ -59,8 +57,7 @@ Ext.define('dalpeApp.controller.editSousTraitantController', {
     onEnregistrerClick: function(button, e, eOpts) {
         //On va chercher les infos du form
         var myForm = Ext.getCmp('editSousTraitantWindow').down('form').getForm();
-        if (! myForm.isValid())
-        {
+        if (! myForm.isValid()) {
             return;
         }
 

@@ -234,7 +234,19 @@ Ext.define('dalpeApp.view.appViewport', {
                                                             xtype: 'button',
                                                             itemId: 'addSousTraitant',
                                                             iconCls: 'icon-user-add',
-                                                            text: 'Ajouter un sous traitant'
+                                                            text: 'Ajouter sous traitant'
+                                                        },
+                                                        {
+                                                            xtype: 'button',
+                                                            itemId: 'editSousTraitant',
+                                                            iconCls: 'icon-user-add',
+                                                            text: 'Editer sous traitant'
+                                                        },
+                                                        {
+                                                            xtype: 'button',
+                                                            itemId: 'sendMail',
+                                                            iconCls: 'icon-user-add',
+                                                            text: 'Envoyer un courriel'
                                                         }
                                                     ]
                                                 }

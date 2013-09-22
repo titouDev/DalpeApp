@@ -47,7 +47,7 @@ Ext.define('dalpeApp.controller.chantiers', {
             var myData = recordFromDb[0];
             var myChantier = this.getChantierModel().create(myData);
             myForm.getForm().loadRecord(myChantier);
-        }, this)
+        }, this);
 
 
 
@@ -72,14 +72,12 @@ Ext.define('dalpeApp.controller.chantiers', {
     onEnregistrerClick: function(button, e, eOpts) {
         //On va chercher les infos du form
         var myForm = Ext.getCmp('editChantierWindow').down('form').getForm();
-        if (! myForm.isValid())
-        {
-            return
+        if (! myForm.isValid()) {
+            return;
         }
 
         var chantierData = myForm.getValues();
-        if (chantierData.id)
-        {
+        if (chantierData.id) {
             //On update la DB et on ferme la window
             Chantiers.update(chantierData, function(){
                 //On peut maintenant fermer la window
@@ -87,8 +85,7 @@ Ext.define('dalpeApp.controller.chantiers', {
                 this.getChantiersGrid().store.load();
             },this);
         }
-        else
-        {
+        else {
             //On cree le nouvel employe
             //On update la DB et on ferme la window
             Chantiers.create(chantierData, function(newRecord){
@@ -97,14 +94,12 @@ Ext.define('dalpeApp.controller.chantiers', {
                 //On rajoute le nouvel employe dans le store
                 this.getChantiersGrid().store.load();
             },this);
-
         }
     },
 
     onFileUpdalodChange: function(filefield, value, eOpts) {
         var selectedRecord = this.getChantiersGrid().selModel.getSelection();
-        if (selectedRecord.length != 1)
-        {
+        if (selectedRecord.length != 1) {
             Ext.Msg.alert('Attention','Vous devez d\'abord choisir un chantier');
         }
         var chantierId = selectedRecord[0].data.id;

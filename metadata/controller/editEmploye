@@ -23,12 +23,10 @@
                     "var myEditForm = button.up('window').down('#editForm').getForm();",
                     "var employeId = myEditForm.getValues().id;",
                     "",
-                    "if (! employeId)",
-                    "{",
+                    "if (! employeId) {",
                     "    Ext.Msg.alert('Attention','Vous devez d\\'abord créer l\\'employer avant de rajouter une photo');",
                     "}",
-                    "else",
-                    "{",
+                    "else {",
                     "",
                     "    var form = button.up('#fileForm').getForm();",
                     "    if(form.isValid()){",
@@ -84,14 +82,12 @@
                 "implHandler": [
                     "//On va chercher les infos du form",
                     "var myForm = Ext.getCmp('editEmployeWindow').down('form').getForm();",
-                    "if (! myForm.isValid())",
-                    "{",
-                    "    return",
+                    "if (! myForm.isValid()) {",
+                    "    return;",
                     "}",
                     "",
                     "var employeData = myForm.getValues();",
-                    "if (employeData.id)",
-                    "{",
+                    "if (employeData.id) {",
                     "    //On update la DB et on ferme la window",
                     "    Employes.update(employeData, function(){",
                     "        //On peut maintenant fermer la window",
@@ -99,8 +95,7 @@
                     "        this.getEmployesGrid().store.load();",
                     "    },this);",
                     "}",
-                    "else",
-                    "{",
+                    "else {",
                     "    //On cree le nouvel employe",
                     "    //On update la DB et on ferme la window",
                     "    Employes.create(employeData, function(newRecord){",
@@ -118,21 +113,6 @@
                 "designer|controlQuery": "editEmployeWindow #enregistrer"
             },
             "designerId": "d3642321-9edb-4fe4-99af-afb9d3d9410c"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "savePhoto",
-                "implHandler": [
-                    ""
-                ]
-            },
-            "designerId": "add62751-9f3c-4428-9a2b-d85e44cb4890"
         },
         {
             "type": "controllerref",
