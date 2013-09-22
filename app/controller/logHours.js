@@ -79,7 +79,7 @@ Ext.define('dalpeApp.controller.logHours', {
                 var record = selectedRecords[0].data;
                 this.deleteRecord(record);
             }
-        },this);
+        },this).setWidth(320);
     },
 
     onEmployeSelect: function(combo, records, eOpts) {
@@ -112,7 +112,6 @@ Ext.define('dalpeApp.controller.logHours', {
 
     loadHoursStore: function() {
         var employes_logHours_store = Ext.getStore('employes_logHours');
-        employes_logHours_store.proxy.extraParams = {employeId:user_logged};
         employes_logHours_store.load();
     },
 

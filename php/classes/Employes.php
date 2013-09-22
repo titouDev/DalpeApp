@@ -13,9 +13,6 @@ class Employes {
    
 	function log_hour(stdClass $data)
 	{
-		//Attention
-		//La fonction log hour est utilise uniquement pour l'employe qui est connecte.
-		//Le userid est pris dans la session
 		$_db = connectToDbMySql();
 		$query = 'INSERT INTO employes_hours (
 		employeId,
@@ -41,7 +38,7 @@ class Employes {
 	        $coutHoraire = $data->coutHoraire;
 	        $workDate = $data->workDate;
 	        $hours = $data->hours;
-	        
+	        fb(123);
 	        $stmt->execute();
 	
 	        $stmt->close();

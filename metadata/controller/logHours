@@ -154,7 +154,6 @@
                 "fn": "loadHoursStore",
                 "implHandler": [
                     "var employes_logHours_store = Ext.getStore('employes_logHours');",
-                    "employes_logHours_store.proxy.extraParams = {employeId:user_logged};",
                     "employes_logHours_store.load();"
                 ]
             },
@@ -184,7 +183,7 @@
                     "        var record = selectedRecords[0].data;",
                     "        this.deleteRecord(record);",
                     "    }",
-                    "},this);"
+                    "},this).setWidth(320);"
                 ],
                 "name": "click",
                 "scope": "me",
