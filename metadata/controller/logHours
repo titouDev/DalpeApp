@@ -194,29 +194,6 @@
             "designerId": "a2f211a4-1791-4bda-bc94-65231b413a0c"
         },
         {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onLogHoursGridItemDblClick",
-                "implHandler": [
-                    "if (this.isLogChecked(record.data)) {",
-                    "    return;",
-                    "}",
-                    "",
-                    "this.editRecord(record);"
-                ],
-                "name": "itemdblclick",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#logHoursGrid"
-            },
-            "designerId": "24884ddd-7652-4580-9996-9bea0f8ca035"
-        },
-        {
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -316,6 +293,35 @@
                 "designer|controlQuery": "#employe"
             },
             "designerId": "0611a10f-a99f-4347-bf2f-99e928506aa0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEditHourClick",
+                "implHandler": [
+                    "//On va chercher le record selectionne",
+                    "var myGrid = this.getLogHoursGrid();",
+                    "",
+                    "var selectedRecords = myGrid.selModel.getSelection();",
+                    "if (selectedRecords.length !== 1) {",
+                    "    Ext.Msg.alert('Attention','Aucune entrée n\\'est selectionnée');",
+                    "    return;",
+                    "}",
+                    "",
+                    "var record = selectedRecords[0];",
+                    "this.editRecord(record);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#editHour"
+            },
+            "designerId": "f84655df-cf74-432d-97f1-d4a4c8e87a85"
         }
     ]
 }

@@ -41,9 +41,9 @@
                     "var regFind = new RegExp(newValue,\"i\");",
                     "this.getSousTraitantsStore().clearFilter(true);",
                     "this.getSousTraitantsStore().filter([",
-                    "    {filterFn: function(item) {",
-                    "        return (regFind.test(item.get(\"name\")) || regFind.test(item.get(\"contactName\"))  );",
-                    "    }}",
+                    "{filterFn: function(item) {",
+                    "    return (regFind.test(item.get(\"name\")) || regFind.test(item.get(\"contactName\"))  );",
+                    "}}",
                     "]);",
                     "this.resetMailsGrid();"
                 ],
@@ -183,18 +183,16 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "displayEditSousTraitantWindow",
+                "fn": "editSousTraitant",
                 "implHandler": [
-                    "//On affiche la fenetre",
-                    "var editSousTraitantWindow = Ext.widget('editSousTraitantWindow');",
-                    "",
-                    "editSousTraitantWindow.show();",
-                    "",
-                    "//On load le soustraitant selecitonne dans le form",
-                    "var myForm = editSousTraitantWindow.down('form');",
-                    "",
                     "//On prend le record selectionne",
                     "var selectedRecord = this.getSousTraitantsGrid().selModel.getSelection()[0];",
+                    "",
+                    "if (!selectedRecord) {",
+                    "    Ext.Msg.alert('Attention','Vous devez selectionner un sous traitant...').setWidth(200);",
+                    "    return;",
+                    "}",
+                    "",
                     "//On retourne chercher le data dans la db, au cas ou un autre user ait modifie la fiche",
                     "SousTraitants.get(selectedRecord.data, function(recordFromDb){",
                     "    var myData = recordFromDb[0];",
@@ -202,6 +200,14 @@
                     "    myForm.getForm().loadRecord(mySousTraitant);",
                     "}, this);",
                     "",
+                    "",
+                    "//On affiche la fenetre",
+                    "var editSousTraitantWindow = Ext.widget('editSousTraitantWindow');",
+                    "",
+                    "editSousTraitantWindow.show();",
+                    "",
+                    "//On load le soustraitant selecitonne dans le form",
+                    "var myForm = editSousTraitantWindow.down('form');",
                     "",
                     "",
                     "",
@@ -465,26 +471,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onSousTraitantsGridItemDblClick",
-                "implHandler": [
-                    "//On ouvre la fenetre d'edition de soustraitant",
-                    "this.displayEditSousTraitantWindow();"
-                ],
-                "name": "itemdblclick",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#sousTraitantsGrid"
-            },
-            "designerId": "ada55c1d-b185-4403-9d22-f002623b5d1e"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "fn": "onRefreshClickMailsGrid",
                 "implHandler": [
                     "var selectedSousTraitant = this.getSousTraitantsGrid().selModel.getSelection()[0];",
@@ -578,26 +564,6 @@
             "designerId": "3d544a8d-f7cb-4944-8ff2-b7909260af74"
         },
         {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onMailsGridItemDblClick",
-                "implHandler": [
-                    "this.editMail(record);",
-                    ""
-                ],
-                "name": "itemdblclick",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#mailsGrid"
-            },
-            "designerId": "95bf7e64-55d3-4e55-af8e-040e78d6473a"
-        },
-        {
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -655,26 +621,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onMails_notsent_gridItemDblClick",
-                "implHandler": [
-                    "this.editMail(record);",
-                    ""
-                ],
-                "name": "itemdblclick",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#mails_notsent_grid"
-            },
-            "designerId": "29982f63-17ab-4026-9d74-f679f554d1f0"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "fn": "onAddSousTraitantClick",
                 "implHandler": [
                     "//On s'assure que le store des links specialites/sous traitant est vide",
@@ -701,7 +647,7 @@
             "userConfig": {
                 "fn": "onEditSousTraitantClick",
                 "implHandler": [
-                    "this.displayEditSousTraitantWindow();"
+                    "this.editSousTraitant();"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -728,6 +674,142 @@
                 "designer|controlQuery": "#sendMail"
             },
             "designerId": "e29e4943-b7f9-4fe6-892b-64b1ba3f951c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEditMailButtonClick",
+                "implHandler": [
+                    "var selectedMail = this.getMailsNotSentGrid().selModel.getSelection()[0];",
+                    "",
+                    "if (!selectedMail) {",
+                    "    Ext.Msg.alert('Attention','Vous devez selectionner un courriel...');",
+                    "    return;",
+                    "}",
+                    "",
+                    "this.editMail(selectedMail);",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#editMailButton"
+            },
+            "designerId": "aa5ae8a7-9eca-4f5c-8c02-786f478c66a6"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAnnulerClick",
+                "implHandler": [
+                    "button.up('window').close();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "editSousTraitantWindow #annuler"
+            },
+            "designerId": "15d09e58-9a84-481a-9cff-dae54fe08350"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSaveDocumentClick",
+                "implHandler": [
+                    "var myEditForm = button.up('window').down('#editForm').getForm();",
+                    "var sousTraitantId = myEditForm.getValues().id;",
+                    "",
+                    "if (! sousTraitantId) {",
+                    "    Ext.Msg.alert('Attention','Vous devez d\\'abord créer un Sous Traitant pour enregistrer un document');",
+                    "}",
+                    "else {",
+                    "",
+                    "    var form = button.up('#fileForm').getForm();",
+                    "    if(form.isValid()){",
+                    "        form.submit({",
+                    "            url: 'document-upload.php',",
+                    "            scope:this,",
+                    "            timeout:100,",
+                    "            params: {",
+                    "                sousTraitantId: sousTraitantId,",
+                    "                documentTypeId:form.getValues().documentTypeId,",
+                    "                documentNote:form.getValues().documentNote",
+                    "            },",
+                    "            waitMsg: 'Sauvegarde du document...',",
+                    "            success: function(fp, o) {",
+                    "                //On reload le sotre de documents",
+                    "                var documentsStore = Ext.getStore('documents');",
+                    "                documentsStore.load();",
+                    "            }",
+                    "        });",
+                    "    }",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#editSousTraitantWindow #saveDocument"
+            },
+            "designerId": "24a80c13-beb4-4b86-a116-70e267a19974"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEnregistrerClick",
+                "implHandler": [
+                    "//On va chercher les infos du form",
+                    "var myForm = Ext.getCmp('editSousTraitantWindow').down('form').getForm();",
+                    "if (! myForm.isValid()) {",
+                    "    return;",
+                    "}",
+                    "",
+                    "",
+                    "var mySousTraitant = myForm.getValues();",
+                    "if (mySousTraitant.id) {",
+                    "    //On update la DB et on ferme la window",
+                    "    SousTraitants.update(mySousTraitant, function(){",
+                    "        //On peut maintenant fermer la window",
+                    "        button.up('window').close();",
+                    "        //On pense a refresher le store des soustraitants",
+                    "        this.getSousTraitantsStore().load();",
+                    "    },this);",
+                    "}",
+                    "else {",
+                    "    //Nouveau SousTraitant",
+                    "    SousTraitants.create(mySousTraitant, function(){",
+                    "        //On peut maintenant fermer la window",
+                    "        button.up('window').close();",
+                    "        //On pense a refresher le store des soustraitants",
+                    "        this.getSousTraitantsStore().load();",
+                    "    },this);",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "editSousTraitantWindow #enregistrer"
+            },
+            "designerId": "2750860c-74a8-403e-ac76-560c89e1e52e"
         }
     ]
 }

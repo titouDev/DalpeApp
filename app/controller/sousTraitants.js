@@ -111,11 +111,6 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         this.reloadSousTraitantsStore();
     },
 
-    onSousTraitantsGridItemDblClick: function(dataview, record, item, index, e, eOpts) {
-        //On ouvre la fenetre d'edition de soustraitant
-        this.displayEditSousTraitantWindow();
-    },
-
     onRefreshClickMailsGrid: function(tool, e, eOpts) {
         var selectedSousTraitant = this.getSousTraitantsGrid().selModel.getSelection()[0];
         if (selectedSousTraitant) this.updateMailsGrid(selectedSousTraitant.internalId);
@@ -141,16 +136,6 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         this.getMails_notsentStore().load();
     },
 
-    onMailsGridItemDblClick: function(dataview, record, item, index, e, eOpts) {
-        this.editMail(record);
-
-    },
-
-    onMails_notsent_gridItemDblClick: function(dataview, record, item, index, e, eOpts) {
-        this.editMail(record);
-
-    },
-
     onAddSousTraitantClick: function(button, e, eOpts) {
         //On s'assure que le store des links specialites/sous traitant est vide
         var myStore = Ext.getStore('specialiteLinkSousTraitant');
@@ -161,11 +146,87 @@ Ext.define('dalpeApp.controller.sousTraitants', {
     },
 
     onEditSousTraitantClick: function(button, e, eOpts) {
-        this.displayEditSousTraitantWindow();
+        this.editSousTraitant();
     },
 
     onSendMailClick: function(button, e, eOpts) {
         this.prepareMail();
+    },
+
+    onEditMailButtonClick: function(button, e, eOpts) {
+        var selectedMail = this.getMailsNotSentGrid().selModel.getSelection()[0];
+
+        if (!selectedMail) {
+            Ext.Msg.alert('Attention','Vous devez selectionner un courriel...');
+            return;
+        }
+
+        this.editMail(selectedMail);
+
+    },
+
+    onAnnulerClick: function(button, e, eOpts) {
+        button.up('window').close();
+    },
+
+    onSaveDocumentClick: function(button, e, eOpts) {
+        var myEditForm = button.up('window').down('#editForm').getForm();
+        var sousTraitantId = myEditForm.getValues().id;
+
+        if (! sousTraitantId) {
+            Ext.Msg.alert('Attention','Vous devez d\'abord créer un Sous Traitant pour enregistrer un document');
+        }
+        else {
+
+            var form = button.up('#fileForm').getForm();
+            if(form.isValid()){
+                form.submit({
+                    url: 'document-upload.php',
+                    scope:this,
+                    timeout:100,
+                    params: {
+                        sousTraitantId: sousTraitantId,
+                        documentTypeId:form.getValues().documentTypeId,
+                        documentNote:form.getValues().documentNote
+                    },
+                    waitMsg: 'Sauvegarde du document...',
+                    success: function(fp, o) {
+                        //On reload le sotre de documents
+                        var documentsStore = Ext.getStore('documents');
+                        documentsStore.load();
+                    }
+                });
+            }
+        }
+    },
+
+    onEnregistrerClick: function(button, e, eOpts) {
+        //On va chercher les infos du form
+        var myForm = Ext.getCmp('editSousTraitantWindow').down('form').getForm();
+        if (! myForm.isValid()) {
+            return;
+        }
+
+
+        var mySousTraitant = myForm.getValues();
+        if (mySousTraitant.id) {
+            //On update la DB et on ferme la window
+            SousTraitants.update(mySousTraitant, function(){
+                //On peut maintenant fermer la window
+                button.up('window').close();
+                //On pense a refresher le store des soustraitants
+                this.getSousTraitantsStore().load();
+            },this);
+        }
+        else {
+            //Nouveau SousTraitant
+            SousTraitants.create(mySousTraitant, function(){
+                //On peut maintenant fermer la window
+                button.up('window').close();
+                //On pense a refresher le store des soustraitants
+                this.getSousTraitantsStore().load();
+            },this);
+        }
     },
 
     editMail: function(record) {
@@ -207,17 +268,15 @@ Ext.define('dalpeApp.controller.sousTraitants', {
 
     },
 
-    displayEditSousTraitantWindow: function() {
-        //On affiche la fenetre
-        var editSousTraitantWindow = Ext.widget('editSousTraitantWindow');
-
-        editSousTraitantWindow.show();
-
-        //On load le soustraitant selecitonne dans le form
-        var myForm = editSousTraitantWindow.down('form');
-
+    editSousTraitant: function() {
         //On prend le record selectionne
         var selectedRecord = this.getSousTraitantsGrid().selModel.getSelection()[0];
+
+        if (!selectedRecord) {
+            Ext.Msg.alert('Attention','Vous devez selectionner un sous traitant...').setWidth(200);
+            return;
+        }
+
         //On retourne chercher le data dans la db, au cas ou un autre user ait modifie la fiche
         SousTraitants.get(selectedRecord.data, function(recordFromDb){
             var myData = recordFromDb[0];
@@ -225,6 +284,14 @@ Ext.define('dalpeApp.controller.sousTraitants', {
             myForm.getForm().loadRecord(mySousTraitant);
         }, this);
 
+
+        //On affiche la fenetre
+        var editSousTraitantWindow = Ext.widget('editSousTraitantWindow');
+
+        editSousTraitantWindow.show();
+
+        //On load le soustraitant selecitonne dans le form
+        var myForm = editSousTraitantWindow.down('form');
 
 
 
@@ -364,8 +431,7 @@ Ext.define('dalpeApp.controller.sousTraitants', {
                 click: this.onDeleteMailNotSentButtonClick
             },
             "#sousTraitantsGrid": {
-                select: this.onRowselectionmodelSelect,
-                itemdblclick: this.onSousTraitantsGridItemDblClick
+                select: this.onRowselectionmodelSelect
             },
             "#sousTraitantsGrid #refresh": {
                 click: this.onRefreshClick
@@ -385,12 +451,6 @@ Ext.define('dalpeApp.controller.sousTraitants', {
             "#refreshMailsNotSentGrid": {
                 click: this.onRefreshMailsNotSentGridClick
             },
-            "#mailsGrid": {
-                itemdblclick: this.onMailsGridItemDblClick
-            },
-            "#mails_notsent_grid": {
-                itemdblclick: this.onMails_notsent_gridItemDblClick
-            },
             "#addSousTraitant": {
                 click: this.onAddSousTraitantClick
             },
@@ -399,6 +459,18 @@ Ext.define('dalpeApp.controller.sousTraitants', {
             },
             "#sendMail": {
                 click: this.onSendMailClick
+            },
+            "#editMailButton": {
+                click: this.onEditMailButtonClick
+            },
+            "editSousTraitantWindow #annuler": {
+                click: this.onAnnulerClick
+            },
+            "#editSousTraitantWindow #saveDocument": {
+                click: this.onSaveDocumentClick
+            },
+            "editSousTraitantWindow #enregistrer": {
+                click: this.onEnregistrerClick
             }
         });
     }

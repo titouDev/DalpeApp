@@ -47,7 +47,7 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#clientsGrid #add"
+                "designer|controlQuery": "#clientsGrid #addClient"
             },
             "designerId": "b1e695ad-5d50-4bfd-9bc9-b34b5d0a3beb"
         },
@@ -103,45 +103,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onClientsGridItemDblClick",
-                "implHandler": [
-                    "",
-                    "//On affiche la fenetre d'edit",
-                    "var editClientWindow = Ext.widget('editClientWindow');",
-                    "",
-                    "//On load le soustraitant selecitonne dans le form",
-                    "var myForm = editClientWindow.down('form');",
-                    "",
-                    "//On prend le record selectionne",
-                    "var selectedRecord = this.getClientsGrid().selModel.getSelection()[0];",
-                    "//On retourne chercher le data dans la db, au cas ou un autre user ait modifie la fiche",
-                    "Clients.get(selectedRecord.data, function(recordFromDb){",
-                    "    var myData = recordFromDb[0];",
-                    "    var myClient = this.getClientModel().create(myData);",
-                    "    myForm.getForm().loadRecord(myClient);",
-                    "}, this)",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "editClientWindow.show();",
-                    ""
-                ],
-                "name": "itemdblclick",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#clientsGrid"
-            },
-            "designerId": "204b08eb-1c7f-4ecd-94e6-738e1c87dacc"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "fn": "onClientsGridActivate",
                 "implHandler": [
                     "this.getClientsStore().load();"
@@ -152,6 +113,46 @@
                 "designer|controlQuery": "#clientsGrid"
             },
             "designerId": "76677f0b-2963-4be7-9dd9-1b43c9d30471"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEditClientClick",
+                "implHandler": [
+                    "//On prend le record selectionne",
+                    "var selectedRecord = this.getClientsGrid().selModel.getSelection()[0];",
+                    "if (!selectedRecord) {",
+                    "    Ext.Msg.alert('Attention','Vous devez selectionner un client...').setWidth(200);",
+                    "    return;",
+                    "}",
+                    "",
+                    "//On affiche la fenetre d'edit",
+                    "var editClientWindow = Ext.widget('editClientWindow');",
+                    "",
+                    "//On load le soustraitant selecitonne dans le form",
+                    "var myForm = editClientWindow.down('form');",
+                    "",
+                    "//On retourne chercher le data dans la db, au cas ou un autre user ait modifie la fiche",
+                    "Clients.get(selectedRecord.data, function(recordFromDb){",
+                    "    var myData = recordFromDb[0];",
+                    "    var myClient = this.getClientModel().create(myData);",
+                    "    myForm.getForm().loadRecord(myClient);",
+                    "}, this);",
+                    "",
+                    "editClientWindow.show();",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#editClient"
+            },
+            "designerId": "b422fe3a-8903-461e-863d-b1a545730d12"
         }
     ]
 }

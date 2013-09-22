@@ -57,9 +57,7 @@ Ext.application({
         'mailWindowController',
         'loginWindow',
         'global',
-        'logHours',
-        'editSousTraitantController',
-        'editEmploye'
+        'logHours'
     ],
     name: 'dalpeApp',
 

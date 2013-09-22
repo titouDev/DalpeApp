@@ -170,7 +170,13 @@ Ext.define('dalpeApp.view.appViewport', {
                                                             xtype: 'button',
                                                             itemId: 'addEmploye',
                                                             iconCls: 'icon-user-add',
-                                                            text: 'Ajouter un employe'
+                                                            text: 'Ajouter'
+                                                        },
+                                                        {
+                                                            xtype: 'button',
+                                                            itemId: 'editEmploye',
+                                                            iconCls: 'icon-user-add',
+                                                            text: 'Editer'
                                                         }
                                                     ]
                                                 }
@@ -234,18 +240,18 @@ Ext.define('dalpeApp.view.appViewport', {
                                                             xtype: 'button',
                                                             itemId: 'addSousTraitant',
                                                             iconCls: 'icon-user-add',
-                                                            text: 'Ajouter sous traitant'
+                                                            text: 'Ajouter'
                                                         },
                                                         {
                                                             xtype: 'button',
                                                             itemId: 'editSousTraitant',
                                                             iconCls: 'icon-user-add',
-                                                            text: 'Editer sous traitant'
+                                                            text: 'Editer'
                                                         },
                                                         {
                                                             xtype: 'button',
                                                             itemId: 'sendMail',
-                                                            iconCls: 'icon-user-add',
+                                                            iconCls: 'icon-send',
                                                             text: 'Envoyer un courriel'
                                                         }
                                                     ]
@@ -371,6 +377,12 @@ Ext.define('dalpeApp.view.appViewport', {
                                                                 },
                                                                 {
                                                                     xtype: 'button',
+                                                                    cls: '',
+                                                                    itemId: 'editMailButton',
+                                                                    text: 'Editer'
+                                                                },
+                                                                {
+                                                                    xtype: 'button',
                                                                     itemId: 'deleteMailNotSentButton',
                                                                     iconCls: 'icon-delete',
                                                                     text: 'Effacer'
@@ -485,9 +497,15 @@ Ext.define('dalpeApp.view.appViewport', {
                                                     items: [
                                                         {
                                                             xtype: 'button',
-                                                            itemId: 'add',
+                                                            itemId: 'addChantier',
                                                             iconCls: 'icon-add',
-                                                            text: 'Creer un nouveau chantier'
+                                                            text: 'Nouveau Chantier'
+                                                        },
+                                                        {
+                                                            xtype: 'button',
+                                                            itemId: 'editChantier',
+                                                            iconCls: '',
+                                                            text: 'Editer'
                                                         }
                                                     ]
                                                 }
@@ -629,9 +647,15 @@ Ext.define('dalpeApp.view.appViewport', {
                                             items: [
                                                 {
                                                     xtype: 'button',
-                                                    itemId: 'add',
+                                                    itemId: 'addClient',
                                                     iconCls: 'icon-user-add',
-                                                    text: 'Ajouter un client'
+                                                    text: 'Ajouter'
+                                                },
+                                                {
+                                                    xtype: 'button',
+                                                    itemId: 'editClient',
+                                                    iconCls: 'icon-user-add',
+                                                    text: 'Editer'
                                                 }
                                             ]
                                         }
@@ -659,9 +683,15 @@ Ext.define('dalpeApp.view.appViewport', {
                                                 },
                                                 {
                                                     xtype: 'button',
+                                                    itemId: 'editHour',
+                                                    iconCls: '',
+                                                    text: 'Editer'
+                                                },
+                                                {
+                                                    xtype: 'button',
                                                     itemId: 'deleteHour',
                                                     iconCls: 'icon-delete',
-                                                    text: 'Effacer l\'entreé selectionnée'
+                                                    text: 'Effacer'
                                                 }
                                             ]
                                         }

@@ -37,7 +37,24 @@ Ext.define('dalpeApp.controller.employes', {
         Ext.widget('editEmployeWindow').show();
     },
 
-    onEmployesGridItemDblClick: function(dataview, record, item, index, e, eOpts) {
+    onEmployesGridSelect: function(rowmodel, record, index, eOpts) {
+        var hours_store = Ext.getStore('employes_hours');
+        hours_store.proxy.extraParams ={employeId:record.data.id};
+        hours_store.load();
+    },
+
+    onEmployesPanelActivate: function(component, eOpts) {
+        this.getEmployesStore().load();
+
+    },
+
+    onEditEmployeClick: function(button, e, eOpts) {
+        //On prend le record selectionne
+        var selectedRecord = this.getEmployesGrid().selModel.getSelection()[0];
+        if (!selectedRecord) {
+            Ext.Msg.alert('Attention','Vous devez selectionner un employe...').setWidth(200);
+            return;
+        }
 
         //On affiche la fenetre d'edit
         var editEmployeWindow = Ext.widget('editEmployeWindow');
@@ -45,8 +62,6 @@ Ext.define('dalpeApp.controller.employes', {
         //On load le soustraitant selecitonne dans le form
         var myForm = editEmployeWindow.down('form');
 
-        //On prend le record selectionne
-        var selectedRecord = this.getEmployesGrid().selModel.getSelection()[0];
         //On retourne chercher le data dans la db, au cas ou un autre user ait modifie la fiche
         Employes.get(selectedRecord.data, function(recordFromDb){
             var myData = recordFromDb[0];
@@ -59,15 +74,63 @@ Ext.define('dalpeApp.controller.employes', {
 
     },
 
-    onEmployesGridSelect: function(rowmodel, record, index, eOpts) {
-        var hours_store = Ext.getStore('employes_hours');
-        hours_store.proxy.extraParams ={employeId:record.data.id};
-        hours_store.load();
+    onSavePhotoClick: function(button, e, eOpts) {
+        var myEditForm = button.up('window').down('#editForm').getForm();
+        var employeId = myEditForm.getValues().id;
+
+        if (! employeId) {
+            Ext.Msg.alert('Attention','Vous devez d\'abord créer l\'employer avant de rajouter une photo');
+        }
+        else {
+
+            var form = button.up('#fileForm').getForm();
+            if(form.isValid()){
+                form.submit({
+                    url: 'employe_photo_upload.php',
+                    scope:this,
+                    params: {
+                        employeId: employeId
+                    },
+                    waitMsg: 'Sauvegarde de la photo...',
+                    success: function(fp, o) {
+
+                    }
+                });
+            }
+        }
     },
 
-    onEmployesPanelActivate: function(component, eOpts) {
-        this.getEmployesStore().load();
+    onAnnulerClick: function(button, e, eOpts) {
+        button.up('window').close();
+    },
 
+    onEnregistrerClick: function(button, e, eOpts) {
+        //On va chercher les infos du form
+        var myForm = Ext.getCmp('editEmployeWindow').down('form').getForm();
+        if (! myForm.isValid()) {
+            return;
+        }
+
+        var employeData = myForm.getValues();
+        if (employeData.id) {
+            //On update la DB et on ferme la window
+            Employes.update(employeData, function(){
+                //On peut maintenant fermer la window
+                button.up('window').close();
+                this.getEmployesGrid().store.load();
+            },this);
+        }
+        else {
+            //On cree le nouvel employe
+            //On update la DB et on ferme la window
+            Employes.create(employeData, function(newRecord){
+                //On peut maintenant fermer la window
+                button.up('window').close();
+                //On rajoute le nouvel employe dans le store
+                this.getEmployesGrid().store.load();
+            },this);
+
+        }
     },
 
     init: function(application) {
@@ -76,11 +139,22 @@ Ext.define('dalpeApp.controller.employes', {
                 click: this.onAddEmployeClick
             },
             "#employesGrid": {
-                itemdblclick: this.onEmployesGridItemDblClick,
                 select: this.onEmployesGridSelect
             },
             "#employesPanel": {
                 activate: this.onEmployesPanelActivate
+            },
+            "#editEmploye": {
+                click: this.onEditEmployeClick
+            },
+            "editEmployeWindow #savePhoto": {
+                click: this.onSavePhotoClick
+            },
+            "editEmployeWindow #annuler": {
+                click: this.onAnnulerClick
+            },
+            "editEmployeWindow #enregistrer": {
+                click: this.onEnregistrerClick
             }
         });
     }

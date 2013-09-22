@@ -32,30 +32,6 @@ Ext.define('dalpeApp.controller.chantiers', {
         }
     ],
 
-    onChantiersGridItemDblClick: function(dataview, record, item, index, e, eOpts) {
-
-        //On affiche la fenetre d'edit
-        var editChantierWindow = Ext.widget('editChantierWindow');
-
-        //On load le soustraitant selecitonne dans le form
-        var myForm = editChantierWindow.down('form');
-
-        //On prend le record selectionne
-        var selectedRecord = this.getChantiersGrid().selModel.getSelection()[0];
-        //On retourne chercher le data dans la db, au cas ou un autre user ait modifie la fiche
-        Chantiers.get(selectedRecord.data, function(recordFromDb){
-            var myData = recordFromDb[0];
-            var myChantier = this.getChantierModel().create(myData);
-            myForm.getForm().loadRecord(myChantier);
-        }, this);
-
-
-
-
-        editChantierWindow.show();
-
-    },
-
     onAddClick: function(button, e, eOpts) {
         Ext.widget('editChantierWindow').show();
     },
@@ -133,6 +109,31 @@ Ext.define('dalpeApp.controller.chantiers', {
 
     },
 
+    onEditChantierClick: function(button, e, eOpts) {
+        //On prend le record selectionne
+        var selectedRecord = this.getChantiersGrid().selModel.getSelection()[0];
+        if (!selectedRecord) {
+            Ext.Msg.alert('Attention','Vous devez selectionner un chantier...').setWidth(200);
+            return;
+        }
+
+        //On affiche la fenetre d'edit
+        var editChantierWindow = Ext.widget('editChantierWindow');
+
+        //On load le soustraitant selecitonne dans le form
+        var myForm = editChantierWindow.down('form');
+
+        //On retourne chercher le data dans la db, au cas ou un autre user ait modifie la fiche
+        Chantiers.get(selectedRecord.data, function(recordFromDb){
+            var myData = recordFromDb[0];
+            var myChantier = this.getChantierModel().create(myData);
+            myForm.getForm().loadRecord(myChantier);
+        }, this);
+
+        editChantierWindow.show();
+
+    },
+
     refreshHoursGrid: function() {
         //On verifie qu'un record de chantier est selectionne
         var chantierGrid = this.getChantiersGrid();
@@ -148,15 +149,14 @@ Ext.define('dalpeApp.controller.chantiers', {
 
     init: function(application) {
         this.control({
-            "#chantiersGrid": {
-                itemdblclick: this.onChantiersGridItemDblClick,
-                select: this.onChantiersGridSelect
-            },
-            "#chantiersGrid #add": {
+            "#chantiersGrid #addChantier": {
                 click: this.onAddClick
             },
             "#editChantierWindow #annuler": {
                 click: this.onAnnulerClick
+            },
+            "#chantiersGrid": {
+                select: this.onChantiersGridSelect
             },
             "#editChantierWindow #enregistrer": {
                 click: this.onEnregistrerClick
@@ -166,6 +166,9 @@ Ext.define('dalpeApp.controller.chantiers', {
             },
             "#chantiersPanel": {
                 activate: this.onChantiersPanelActivate
+            },
+            "#editChantier": {
+                click: this.onEditChantierClick
             }
         });
     }

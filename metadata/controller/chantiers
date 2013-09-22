@@ -63,45 +63,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onChantiersGridItemDblClick",
-                "implHandler": [
-                    "",
-                    "//On affiche la fenetre d'edit",
-                    "var editChantierWindow = Ext.widget('editChantierWindow');",
-                    "",
-                    "//On load le soustraitant selecitonne dans le form",
-                    "var myForm = editChantierWindow.down('form');",
-                    "",
-                    "//On prend le record selectionne",
-                    "var selectedRecord = this.getChantiersGrid().selModel.getSelection()[0];",
-                    "//On retourne chercher le data dans la db, au cas ou un autre user ait modifie la fiche",
-                    "Chantiers.get(selectedRecord.data, function(recordFromDb){",
-                    "    var myData = recordFromDb[0];",
-                    "    var myChantier = this.getChantierModel().create(myData);",
-                    "    myForm.getForm().loadRecord(myChantier);",
-                    "}, this);",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "editChantierWindow.show();",
-                    ""
-                ],
-                "name": "itemdblclick",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#chantiersGrid"
-            },
-            "designerId": "245dc473-b944-4c21-bf94-0f04185e9674"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "fn": "onAddClick",
                 "implHandler": [
                     "Ext.widget('editChantierWindow').show();"
@@ -109,7 +70,7 @@
                 "name": "click",
                 "scope": "me",
                 "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#chantiersGrid #add"
+                "designer|controlQuery": "#chantiersGrid #addChantier"
             },
             "designerId": "6658bd78-b47e-4897-9312-f544968c7ccb"
         },
@@ -260,6 +221,46 @@
                 "designer|controlQuery": "#chantiersPanel"
             },
             "designerId": "bda2d797-fba0-4b5a-ab6d-f500595d7582"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEditChantierClick",
+                "implHandler": [
+                    "//On prend le record selectionne",
+                    "var selectedRecord = this.getChantiersGrid().selModel.getSelection()[0];",
+                    "if (!selectedRecord) {",
+                    "    Ext.Msg.alert('Attention','Vous devez selectionner un chantier...').setWidth(200);",
+                    "    return;",
+                    "}",
+                    "",
+                    "//On affiche la fenetre d'edit",
+                    "var editChantierWindow = Ext.widget('editChantierWindow');",
+                    "",
+                    "//On load le soustraitant selecitonne dans le form",
+                    "var myForm = editChantierWindow.down('form');",
+                    "",
+                    "//On retourne chercher le data dans la db, au cas ou un autre user ait modifie la fiche",
+                    "Chantiers.get(selectedRecord.data, function(recordFromDb){",
+                    "    var myData = recordFromDb[0];",
+                    "    var myChantier = this.getChantierModel().create(myData);",
+                    "    myForm.getForm().loadRecord(myChantier);",
+                    "}, this);",
+                    "",
+                    "editChantierWindow.show();",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#editChantier"
+            },
+            "designerId": "280ed5d0-cfc7-4ac4-a42b-b5d85f6b85e4"
         }
     ]
 }

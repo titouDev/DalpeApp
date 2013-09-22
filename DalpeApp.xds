@@ -384,14 +384,6 @@
             ],
             "className": "sousTraitantsDestMail"
         },
-        "6e11ae97-e15a-45d4-9386-3d63092f49b8": {
-            "paths": [
-                "metadata/controller/editSousTraitantController",
-                "app/controller/override/editSousTraitantController.js",
-                "app/controller/editSousTraitantController.js"
-            ],
-            "className": "editSousTraitantController"
-        },
         "7871350a-2c6b-44fc-999c-9467978f08c5": {
             "paths": [
                 "metadata/model/colonne",
@@ -407,14 +399,6 @@
                 "app/model/dataBase.js"
             ],
             "className": "dataBase"
-        },
-        "c430ba9e-3bf1-4371-bc26-1825eb9e5251": {
-            "paths": [
-                "metadata/controller/editEmploye",
-                "app/controller/override/editEmploye.js",
-                "app/controller/editEmploye.js"
-            ],
-            "className": "editEmploye"
         },
         "990efb39-4987-4589-8cb2-7aab3f5dcb43": {
             "paths": [
@@ -491,12 +475,10 @@
             "e3c360d2-ebd1-461b-aeee-b159d5f12ef8"
         ],
         "controller": [
-            "6e11ae97-e15a-45d4-9386-3d63092f49b8",
             "d61f7263-e573-4a70-9e2e-e9dc378117e0",
-            "c430ba9e-3bf1-4371-bc26-1825eb9e5251",
-            "8953454d-3ea4-4a30-ad4c-01f5587be068",
             "01997f0d-c80f-45ee-bd73-f292af411a55",
             "12caf886-dbf7-471f-b353-82f5b2c7f27f",
+            "8953454d-3ea4-4a30-ad4c-01f5587be068",
             "5358e90e-5181-4e9f-bc2d-6b13a5016669",
             "c53357d6-6534-42c5-8bea-8fd0205ff613",
             "7f2562eb-19a6-48f4-a495-abd4d8fc1bef",

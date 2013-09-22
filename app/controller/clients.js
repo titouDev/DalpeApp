@@ -66,7 +66,17 @@ Ext.define('dalpeApp.controller.clients', {
         }
     },
 
-    onClientsGridItemDblClick: function(dataview, record, item, index, e, eOpts) {
+    onClientsGridActivate: function(component, eOpts) {
+        this.getClientsStore().load();
+    },
+
+    onEditClientClick: function(button, e, eOpts) {
+        //On prend le record selectionne
+        var selectedRecord = this.getClientsGrid().selModel.getSelection()[0];
+        if (!selectedRecord) {
+            Ext.Msg.alert('Attention','Vous devez selectionner un client...').setWidth(200);
+            return;
+        }
 
         //On affiche la fenetre d'edit
         var editClientWindow = Ext.widget('editClientWindow');
@@ -74,8 +84,6 @@ Ext.define('dalpeApp.controller.clients', {
         //On load le soustraitant selecitonne dans le form
         var myForm = editClientWindow.down('form');
 
-        //On prend le record selectionne
-        var selectedRecord = this.getClientsGrid().selModel.getSelection()[0];
         //On retourne chercher le data dans la db, au cas ou un autre user ait modifie la fiche
         Clients.get(selectedRecord.data, function(recordFromDb){
             var myData = recordFromDb[0];
@@ -83,28 +91,23 @@ Ext.define('dalpeApp.controller.clients', {
             myForm.getForm().loadRecord(myClient);
         }, this);
 
-
-
-
         editClientWindow.show();
 
     },
 
-    onClientsGridActivate: function(component, eOpts) {
-        this.getClientsStore().load();
-    },
-
     init: function(application) {
         this.control({
-            "#clientsGrid #add": {
+            "#clientsGrid #addClient": {
                 click: this.onAddClick
             },
             "#editClientWindow #enregistrer": {
                 click: this.onEnregistrerClick
             },
             "#clientsGrid": {
-                itemdblclick: this.onClientsGridItemDblClick,
                 activate: this.onClientsGridActivate
+            },
+            "#editClient": {
+                click: this.onEditClientClick
             }
         });
     }

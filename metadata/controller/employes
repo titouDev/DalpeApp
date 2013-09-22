@@ -39,43 +39,6 @@
             "designerId": "bc194fc4-24d8-43e9-b54c-75bb5208f964"
         },
         {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onEmployesGridItemDblClick",
-                "implHandler": [
-                    "",
-                    "//On affiche la fenetre d'edit",
-                    "var editEmployeWindow = Ext.widget('editEmployeWindow');",
-                    "",
-                    "//On load le soustraitant selecitonne dans le form",
-                    "var myForm = editEmployeWindow.down('form');",
-                    "",
-                    "//On prend le record selectionne",
-                    "var selectedRecord = this.getEmployesGrid().selModel.getSelection()[0];",
-                    "//On retourne chercher le data dans la db, au cas ou un autre user ait modifie la fiche",
-                    "Employes.get(selectedRecord.data, function(recordFromDb){",
-                    "    var myData = recordFromDb[0];",
-                    "    var myEmploye = this.getEmployeModel().create(myData);",
-                    "    myForm.getForm().loadRecord(myEmploye);",
-                    "    myForm.down('#photo').setSrc(myEmploye.data.photo);",
-                    "}, this);",
-                    "",
-                    "editEmployeWindow.show();",
-                    ""
-                ],
-                "name": "itemdblclick",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#employesGrid"
-            },
-            "designerId": "ef94555e-30ee-4360-8509-b5442999a474"
-        },
-        {
             "type": "controllerref",
             "reference": {
                 "name": "items",
@@ -128,6 +91,151 @@
                 "designer|controlQuery": "#employesPanel"
             },
             "designerId": "7b0c2fd1-d713-48d4-b012-19efe85fd3a4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEditEmployeClick",
+                "implHandler": [
+                    "//On prend le record selectionne",
+                    "var selectedRecord = this.getEmployesGrid().selModel.getSelection()[0];",
+                    "if (!selectedRecord) {",
+                    "    Ext.Msg.alert('Attention','Vous devez selectionner un employe...').setWidth(200);",
+                    "    return;",
+                    "}",
+                    "",
+                    "//On affiche la fenetre d'edit",
+                    "var editEmployeWindow = Ext.widget('editEmployeWindow');",
+                    "",
+                    "//On load le soustraitant selecitonne dans le form",
+                    "var myForm = editEmployeWindow.down('form');",
+                    "",
+                    "//On retourne chercher le data dans la db, au cas ou un autre user ait modifie la fiche",
+                    "Employes.get(selectedRecord.data, function(recordFromDb){",
+                    "    var myData = recordFromDb[0];",
+                    "    var myEmploye = this.getEmployeModel().create(myData);",
+                    "    myForm.getForm().loadRecord(myEmploye);",
+                    "    myForm.down('#photo').setSrc(myEmploye.data.photo);",
+                    "}, this);",
+                    "",
+                    "editEmployeWindow.show();",
+                    ""
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#editEmploye"
+            },
+            "designerId": "52b02d62-2b56-4858-82d8-fbe4533f8aa1"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onSavePhotoClick",
+                "implHandler": [
+                    "var myEditForm = button.up('window').down('#editForm').getForm();",
+                    "var employeId = myEditForm.getValues().id;",
+                    "",
+                    "if (! employeId) {",
+                    "    Ext.Msg.alert('Attention','Vous devez d\\'abord créer l\\'employer avant de rajouter une photo');",
+                    "}",
+                    "else {",
+                    "",
+                    "    var form = button.up('#fileForm').getForm();",
+                    "    if(form.isValid()){",
+                    "        form.submit({",
+                    "            url: 'employe_photo_upload.php',",
+                    "            scope:this,",
+                    "            params: {",
+                    "                employeId: employeId",
+                    "            },",
+                    "            waitMsg: 'Sauvegarde de la photo...',",
+                    "            success: function(fp, o) {",
+                    "",
+                    "            }",
+                    "        });",
+                    "    }",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "editEmployeWindow #savePhoto"
+            },
+            "designerId": "fe17fc55-e404-4588-a3d3-7384a0a47b37"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAnnulerClick",
+                "implHandler": [
+                    "button.up('window').close();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "editEmployeWindow #annuler"
+            },
+            "designerId": "9fc57f93-e58f-48a9-9a22-0abcbe0f5ef0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEnregistrerClick",
+                "implHandler": [
+                    "//On va chercher les infos du form",
+                    "var myForm = Ext.getCmp('editEmployeWindow').down('form').getForm();",
+                    "if (! myForm.isValid()) {",
+                    "    return;",
+                    "}",
+                    "",
+                    "var employeData = myForm.getValues();",
+                    "if (employeData.id) {",
+                    "    //On update la DB et on ferme la window",
+                    "    Employes.update(employeData, function(){",
+                    "        //On peut maintenant fermer la window",
+                    "        button.up('window').close();",
+                    "        this.getEmployesGrid().store.load();",
+                    "    },this);",
+                    "}",
+                    "else {",
+                    "    //On cree le nouvel employe",
+                    "    //On update la DB et on ferme la window",
+                    "    Employes.create(employeData, function(newRecord){",
+                    "        //On peut maintenant fermer la window",
+                    "        button.up('window').close();",
+                    "        //On rajoute le nouvel employe dans le store",
+                    "        this.getEmployesGrid().store.load();",
+                    "    },this);",
+                    "",
+                    "}"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "editEmployeWindow #enregistrer"
+            },
+            "designerId": "8e5cf0df-2ccd-4182-bb26-4a5a07ee5f16"
         }
     ]
 }

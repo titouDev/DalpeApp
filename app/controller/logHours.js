@@ -82,20 +82,26 @@ Ext.define('dalpeApp.controller.logHours', {
         },this);
     },
 
-    onLogHoursGridItemDblClick: function(dataview, record, item, index, e, eOpts) {
-        if (this.isLogChecked(record.data)) {
-            return;
-        }
-
-        this.editRecord(record);
-    },
-
     onEmployeSelect: function(combo, records, eOpts) {
         //Lorsqu'on choisi un employe, le cout horaire est sette avec celui de l'employe
         var coutHoraire = records[0].data.coutHoraire;
         var myWindow = combo.up('window');
         coutHoraireField = myWindow.down('#coutHoraire');
         coutHoraireField.setValue(coutHoraire);
+    },
+
+    onEditHourClick: function(button, e, eOpts) {
+        //On va chercher le record selectionne
+        var myGrid = this.getLogHoursGrid();
+
+        var selectedRecords = myGrid.selModel.getSelection();
+        if (selectedRecords.length !== 1) {
+            Ext.Msg.alert('Attention','Aucune entrée n\'est selectionnée');
+            return;
+        }
+
+        var record = selectedRecords[0];
+        this.editRecord(record);
     },
 
     deleteRecord: function(record) {
@@ -163,11 +169,11 @@ Ext.define('dalpeApp.controller.logHours', {
             "#deleteHour": {
                 click: this.onDeleteHourClick
             },
-            "#logHoursGrid": {
-                itemdblclick: this.onLogHoursGridItemDblClick
-            },
             "#employe": {
                 select: this.onEmployeSelect
+            },
+            "#editHour": {
+                click: this.onEditHourClick
             }
         });
     }
