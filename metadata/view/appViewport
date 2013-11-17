@@ -459,13 +459,14 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": 2,
+                                        "layout|flex": null,
                                         "layout|region": "center",
                                         "layout|split": true,
                                         "stateId": "statesousTraitantsGrid",
                                         "stateful": true,
                                         "id": "sousTraitantsGrid",
-                                        "width": 561,
+                                        "minWidth": 700,
+                                        "width": null,
                                         "focusOnToFront": false,
                                         "title": null,
                                         "store": "sousTraitants"
@@ -691,13 +692,13 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": 2,
+                                        "layout|flex": 1,
                                         "layout|region": "east",
                                         "layout|split": true,
                                         "container|align": "stretch",
                                         "stateId": null,
                                         "stateful": null,
-                                        "width": 150,
+                                        "width": null,
                                         "layout": "vbox",
                                         "title": null
                                     },
