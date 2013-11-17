@@ -384,22 +384,6 @@
             ],
             "className": "sousTraitantsDestMail"
         },
-        "7871350a-2c6b-44fc-999c-9467978f08c5": {
-            "paths": [
-                "metadata/model/colonne",
-                "app/model/override/colonne.js",
-                "app/model/colonne.js"
-            ],
-            "className": "colonne"
-        },
-        "2ac47141-f17c-48e0-883b-8f12db2f9e18": {
-            "paths": [
-                "metadata/model/dataBase",
-                "app/model/override/dataBase.js",
-                "app/model/dataBase.js"
-            ],
-            "className": "dataBase"
-        },
         "990efb39-4987-4589-8cb2-7aab3f5dcb43": {
             "paths": [
                 "metadata/store/chantiers_documents",
@@ -485,8 +469,6 @@
             "5b99a48a-3f84-4fe8-a414-2e88c6d08eb2"
         ],
         "model": [
-            "7871350a-2c6b-44fc-999c-9467978f08c5",
-            "2ac47141-f17c-48e0-883b-8f12db2f9e18",
             "b46812cd-c52b-4a66-9d86-1e213479b598",
             "30e085bb-8e66-4146-b012-634d977214ef",
             "e4d3bafa-15b2-4e10-a635-0f60eb93a846",
