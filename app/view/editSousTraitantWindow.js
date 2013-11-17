@@ -275,7 +275,7 @@ Ext.define('dalpeApp.view.editSousTraitantWindow', {
                             ]
                         },
                         {
-                            xtype: 'numberfield',
+                            xtype: 'textfield',
                             flex: 1,
                             hidden: true,
                             fieldLabel: 'Label',

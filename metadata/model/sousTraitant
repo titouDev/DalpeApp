@@ -18,8 +18,10 @@
             },
             "codeClass": null,
             "userConfig": {
+                "mapping": "_id",
                 "name": "id",
-                "type": "int"
+                "persist": false,
+                "type": "string"
             },
             "designerId": "0f003746-f9d1-4cae-9f9c-ddcbbee3e256"
         },
@@ -205,6 +207,47 @@
                 "name": "siteWeb"
             },
             "designerId": "05a4970f-6266-4717-9409-b654e8011903"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "api": null,
+                "sortParam": "undefined",
+                "url": "api/sousTraitants"
+            },
+            "designerId": "fa4a8d24-b90b-4aa7-97de-64be2df1caa1",
+            "cn": [
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "writeRecordId": false
+                    },
+                    "designerId": "fe804170-c18b-43c6-8a06-3b04f2b695f9"
+                },
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": null,
+                        "record": null
+                    },
+                    "designerId": "c40c4fae-fd47-4681-99c9-464e30e0981b"
+                }
+            ]
         }
     ]
 }

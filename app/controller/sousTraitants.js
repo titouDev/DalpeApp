@@ -206,27 +206,22 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         if (! myForm.isValid()) {
             return;
         }
+        var sousTraitantModel = this.getSousTraitantModel();
 
+        var mySousTraitant = myForm.getRecord();
 
-        var mySousTraitant = myForm.getValues();
-        if (mySousTraitant.id) {
-            //On update la DB et on ferme la window
-            SousTraitants.update(mySousTraitant, function(){
-                //On peut maintenant fermer la window
-                button.up('window').close();
-                //On pense a refresher le store des soustraitants
-                this.getSousTraitantsStore().load();
-            },this);
+        if (!mySousTraitant) {
+            mySousTraitant = new sousTraitantModel();
         }
-        else {
-            //Nouveau SousTraitant
-            SousTraitants.create(mySousTraitant, function(){
-                //On peut maintenant fermer la window
+        mySousTraitant.set(myForm.getValues());
+        mySousTraitant.save({
+            scope:this,
+            callback:function(){
                 button.up('window').close();
-                //On pense a refresher le store des soustraitants
                 this.getSousTraitantsStore().load();
-            },this);
-        }
+            }
+        });
+
     },
 
     editMail: function(record) {
@@ -277,35 +272,37 @@ Ext.define('dalpeApp.controller.sousTraitants', {
             return;
         }
 
+
         //On retourne chercher le data dans la db, au cas ou un autre user ait modifie la fiche
-        SousTraitants.get(selectedRecord.data, function(recordFromDb){
-            var myData = recordFromDb[0];
-            var mySousTraitant = this.getSousTraitantModel().create(myData);
-            myForm.getForm().loadRecord(mySousTraitant);
-        }, this);
-
-
-        //On affiche la fenetre
-        var editSousTraitantWindow = Ext.widget('editSousTraitantWindow');
-
-        editSousTraitantWindow.show();
-
-        //On load le soustraitant selecitonne dans le form
-        var myForm = editSousTraitantWindow.down('form');
+        var sousTraitantModel = this.getSousTraitantModel();
+        sousTraitantModel.load(selectedRecord.get('id'),{
+            callback:function(sousTraitant){
+                myForm.getForm().loadRecord(sousTraitant);
+            }});
 
 
 
-        //On filtre le store des specialites
-        var specialiteLinkStore = editSousTraitantWindow.down('#specialitesGrid').store;
-        specialiteLinkStore.removeAll();
-        specialiteLinkStore.proxy.extraParams = {sousTraitantId:selectedRecord.data.id};
-        specialiteLinkStore.load();
+            //On affiche la fenetre
+            var editSousTraitantWindow = Ext.widget('editSousTraitantWindow');
 
-        //On filtre le store des documents
-        var documentsStore = Ext.getStore('documents');
-        documentsStore.removeAll();
-        documentsStore.proxy.extraParams = {sousTraitantId:selectedRecord.data.id};
-        documentsStore.load();
+            editSousTraitantWindow.show();
+
+            //On load le soustraitant selecitonne dans le form
+            var myForm = editSousTraitantWindow.down('form');
+
+
+
+            //On filtre le store des specialites
+            var specialiteLinkStore = editSousTraitantWindow.down('#specialitesGrid').store;
+            specialiteLinkStore.removeAll();
+            specialiteLinkStore.proxy.extraParams = {sousTraitantId:selectedRecord.data.id};
+            specialiteLinkStore.load();
+
+            //On filtre le store des documents
+            var documentsStore = Ext.getStore('documents');
+            documentsStore.removeAll();
+            documentsStore.proxy.extraParams = {sousTraitantId:selectedRecord.data.id};
+            documentsStore.load();
 
 
     },

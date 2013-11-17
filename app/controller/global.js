@@ -24,7 +24,7 @@ Ext.define('dalpeApp.controller.global', {
                 myAppToolbar.down('#userLogged').setText('Utilisateur connecté: ' + response[0].prenom + " " + response[0].nom);
             }
             else {
-                Ext.widget('loginWindow');
+                //Ext.widget('loginWindow');
             }
         }, this);
     },

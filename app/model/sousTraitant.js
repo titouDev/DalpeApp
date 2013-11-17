@@ -18,8 +18,10 @@ Ext.define('dalpeApp.model.sousTraitant', {
 
     fields: [
         {
+            mapping: '_id',
             name: 'id',
-            type: 'int'
+            persist: false,
+            type: 'string'
         },
         {
             name: 'name'
@@ -69,5 +71,18 @@ Ext.define('dalpeApp.model.sousTraitant', {
         {
             name: 'siteWeb'
         }
-    ]
+    ],
+
+    proxy: {
+        type: 'rest',
+        sortParam: 'undefined',
+        url: 'api/sousTraitants',
+        writer: {
+            type: 'json',
+            writeRecordId: false
+        },
+        reader: {
+            type: 'json'
+        }
+    }
 });

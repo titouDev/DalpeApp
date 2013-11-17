@@ -28,21 +28,6 @@ Ext.define('dalpeApp.store.sousTraitants', {
             autoSync: true,
             model: 'dalpeApp.model.sousTraitant',
             storeId: 'sousTraitants',
-            proxy: {
-                type: 'direct',
-                api: {
-create:SousTraitants.create,
-destroy:SousTraitants.delete,
-update:SousTraitants.update,
-read:SousTraitants.get
-},
-                sortParam: 'undefined',
-                directFn: SousTraitants.get,
-                reader: {
-                    type: 'json',
-                    root: 'result'
-                }
-            },
             sorters: {
                 property: 'name'
             }
