@@ -66,5 +66,17 @@ Ext.define('dalpeApp.model.employe', {
             name: 'coutHoraire',
             type: 'int'
         }
-    ]
+    ],
+
+    proxy: {
+        type: 'rest',
+        url: 'api/employes',
+        writer: {
+            type: 'json',
+            writeRecordId: false
+        },
+        reader: {
+            type: 'json'
+        }
+    }
 });

@@ -18,8 +18,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "mapping": "_id",
                 "name": "id",
-                "type": "int"
+                "type": "string"
             },
             "designerId": "fb0a1de7-b9f2-4328-b1f6-e9c07c9023d9"
         },
@@ -81,7 +82,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dateFormat": "Y-m-d",
+                "dateFormat": "c",
                 "name": "startDate",
                 "type": "date"
             },
@@ -95,7 +96,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dateFormat": "Y-m-d",
+                "dateFormat": "c",
                 "name": "endDate",
                 "type": "date"
             },
@@ -112,6 +113,44 @@
                 "name": "clientName"
             },
             "designerId": "3eb60780-9bb8-40d1-abfa-539a99e26ef8"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "api/chantiers"
+            },
+            "designerId": "e1eced06-4864-4584-a256-7aa12c5498a8",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": null
+                    },
+                    "designerId": "2a539be7-60d0-4eeb-bfb2-bed8898e5115"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "writeRecordId": false
+                    },
+                    "designerId": "d024ffbd-c087-4c2e-835b-ecb087c1ca40"
+                }
+            ]
         }
     ]
 }

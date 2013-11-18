@@ -26,16 +26,7 @@ Ext.define('dalpeApp.store.chantiers', {
         me.callParent([Ext.apply({
             autoLoad: true,
             model: 'dalpeApp.model.chantier',
-            storeId: 'chantiers',
-            proxy: {
-                type: 'direct',
-                batchActions: false,
-                directFn: Chantiers.get,
-                reader: {
-                    type: 'json',
-                    root: 'result'
-                }
-            }
+            storeId: 'chantiers'
         }, cfg)]);
     }
 });

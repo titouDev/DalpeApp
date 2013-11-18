@@ -206,11 +206,10 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         if (! myForm.isValid()) {
             return;
         }
-        var sousTraitantModel = this.getSousTraitantModel();
-
         var mySousTraitant = myForm.getRecord();
 
         if (!mySousTraitant) {
+            var sousTraitantModel = this.getSousTraitantModel();    
             mySousTraitant = new sousTraitantModel();
         }
         mySousTraitant.set(myForm.getValues());

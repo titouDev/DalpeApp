@@ -147,7 +147,7 @@ Ext.define('dalpeApp.view.editClientWindow', {
                             ]
                         },
                         {
-                            xtype: 'numberfield',
+                            xtype: 'textfield',
                             flex: 1,
                             hidden: true,
                             fieldLabel: 'Label',

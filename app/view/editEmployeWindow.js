@@ -217,7 +217,7 @@ Ext.define('dalpeApp.view.editEmployeWindow', {
                             ]
                         },
                         {
-                            xtype: 'numberfield',
+                            xtype: 'textfield',
                             flex: 1,
                             hidden: true,
                             fieldLabel: 'Label',

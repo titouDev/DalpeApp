@@ -25,15 +25,7 @@ Ext.define('dalpeApp.store.clients', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             model: 'dalpeApp.model.client',
-            storeId: 'clients',
-            proxy: {
-                type: 'direct',
-                directFn: Clients.get,
-                reader: {
-                    type: 'json',
-                    root: 'result'
-                }
-            }
+            storeId: 'clients'
         }, cfg)]);
     }
 });

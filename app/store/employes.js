@@ -26,15 +26,7 @@ Ext.define('dalpeApp.store.employes', {
         me.callParent([Ext.apply({
             autoLoad: true,
             model: 'dalpeApp.model.employe',
-            storeId: 'employes',
-            proxy: {
-                type: 'direct',
-                directFn: Employes.get,
-                reader: {
-                    type: 'json',
-                    root: 'result'
-                }
-            }
+            storeId: 'employes'
         }, cfg)]);
     }
 });

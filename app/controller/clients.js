@@ -44,26 +44,22 @@ Ext.define('dalpeApp.controller.clients', {
             return;
         }
 
-        var clientData = myForm.getValues();
-        if (clientData.id) {
-            //On update la DB et on ferme la window
-            Clients.update(clientData, function(){
-                //On peut maintenant fermer la window
-                button.up('window').close();
-                this.getClientsGrid().store.load();
-            },this);
-        }
-        else {
-            //On cree le nouvel employe
-            //On update la DB et on ferme la window
-            Clients.create(clientData, function(newRecord){
-                //On peut maintenant fermer la window
-                button.up('window').close();
-                //On rajoute le nouvel employe dans le store
-                this.getClientsGrid().store.load();
-            },this);
 
+        var record = myForm.getRecord();
+        if (!record) {
+            var clientModel = this.getClientModel();    
+            record = new clientModel();
         }
+        record.set(myForm.getValues());
+        record.save({
+            scope:this,
+            callback:function(){
+                button.up('window').close();
+                this.getClientsGrid().store.load();
+            }
+        });
+
+
     },
 
     onClientsGridActivate: function(component, eOpts) {
@@ -85,11 +81,13 @@ Ext.define('dalpeApp.controller.clients', {
         var myForm = editClientWindow.down('form');
 
         //On retourne chercher le data dans la db, au cas ou un autre user ait modifie la fiche
-        Clients.get(selectedRecord.data, function(recordFromDb){
-            var myData = recordFromDb[0];
-            var myClient = this.getClientModel().create(myData);
-            myForm.getForm().loadRecord(myClient);
-        }, this);
+        var clientModel = this.getClientModel();   
+        clientModel.load(selectedRecord.get('id'),{
+            scope:this,
+            callback:function(client){
+                myForm.getForm().loadRecord(client);
+            }
+        });
 
         editClientWindow.show();
 

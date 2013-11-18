@@ -315,20 +315,20 @@ app.get('/api/employes/:id', function (req, res){
 //PUT
 app.put('/api/employes/:id', function (req, res){
   return EmployeModel.findById(req.params.id, function (err, employe) {
-  employe.prenom      = req.body.prenom;
-  employe.nom         = req.body.nom;
-  employe.mail        = req.body.mail;
-  employe.password    = req.body.password;
-  employe.phone       = req.body.phone;
-  employe.cell        = req.body.cell;
-  employe.adresse     = req.body.adresse;
-  employe.codePostal  = req.body.codePostal;
-  employe.ville       = req.body.ville;
-  employe.province    = req.body.province;
-  employe.admin       = req.body.admin;
-  employe.login       = req.body.login;
-  employe.photo       = req.body.photo;
-  employe.coutHoraire = req.body.coutHoraire;
+    employe.prenom      = req.body.prenom;
+    employe.nom         = req.body.nom;
+    employe.mail        = req.body.mail;
+    employe.password    = req.body.password;
+    employe.phone       = req.body.phone;
+    employe.cell        = req.body.cell;
+    employe.adresse     = req.body.adresse;
+    employe.codePostal  = req.body.codePostal;
+    employe.ville       = req.body.ville;
+    employe.province    = req.body.province;
+    employe.admin       = req.body.admin;
+    employe.login       = req.body.login;
+    employe.photo       = req.body.photo;
+    employe.coutHoraire = req.body.coutHoraire;
     return employe.save(function (err) {
       if (!err) {
         console.log("updated");
@@ -345,6 +345,199 @@ app.put('/api/employes/:id', function (req, res){
 app.delete('/api/employes/:id', function (req, res){
   return EmployeModel.findById(req.params.id, function (err, employe) {
     return employe.remove(function (err) {
+      if (!err) {
+        console.log("removed");
+        return res.send('');
+      } else {
+        console.log(err);
+      }
+    });
+  });
+});
+
+//Clients
+var Client = new Schema({
+  prenom: { type: String, required: false },  
+  nom: { type: String, required: false },  
+  mail: { type: String, required: false },  
+  phone: { type: String, required: false },  
+  cell: { type: String, required: false },  
+  adresse: { type: String, required: false },  
+  codePostal: { type: String, required: false },  
+  ville: { type: String, required: false },  
+  province: { type: String, required: false },  
+  displayName: { type: String, required: false }
+})
+var ClientModel = mongoose.model('Client', Client);  
+//GET
+app.get('/api/clients', function (req, res){
+  return ClientModel.find(function (err, clients) {
+    if (!err) {
+      return res.send(clients);
+    } else {
+      return console.log(err);
+    }
+  });
+});
+
+//POST
+app.post('/api/clients', function (req, res){
+  var client;
+  console.log("POST: ");
+  console.log(req.body);
+  client = new ClientModel({
+  prenom:req.body.prenom,
+  nom:req.body.nom,
+  mail:req.body.mail,
+  phone:req.body.phone,
+  cell:req.body.cell,
+  adresse:req.body.adresse,
+  codePostal:req.body.codePostal,
+  ville:req.body.ville,
+  province:req.body.province,
+  displayName:req.body.displayName
+  });
+  client.save(function (err) {
+    if (!err) {
+      return console.log("created");
+    } else {
+      return console.log(err);
+    }
+  });
+  return res.send(client);
+});
+
+app.get('/api/clients/:id', function (req, res){
+  return ClientModel.findById(req.params.id, function (err, client) {
+    if (!err) {
+      return res.send(client);
+    } else {
+      return console.log(err);
+    }
+  });
+});
+
+//PUT
+app.put('/api/clients/:id', function (req, res){
+  return ClientModel.findById(req.params.id, function (err, client) {
+    client.prenom      = req.body.prenom;
+    client.nom         = req.body.nom;
+    client.mail        = req.body.mail;
+    client.phone       = req.body.phone;
+    client.cell        = req.body.cell;
+    client.adresse     = req.body.adresse;
+    client.codePostal  = req.body.codePostal;
+    client.ville       = req.body.ville;
+    client.province    = req.body.province;
+    client.displayName = req.body.displayName;
+    return client.save(function (err) {
+      if (!err) {
+        console.log("updated");
+      } else {
+        console.log(err);
+      }
+      return res.send(client);
+    });
+  });
+});
+
+
+//DELETE
+app.delete('/api/clients/:id', function (req, res){
+  return ClientModel.findById(req.params.id, function (err, client) {
+    return client.remove(function (err) {
+      if (!err) {
+        console.log("removed");
+        return res.send('');
+      } else {
+        console.log(err);
+      }
+    });
+  });
+});
+
+//Chantiers
+var Chantier = new Schema({
+  name: { type: String, required: false },  
+  note: { type: String, required: false },  
+  status: { type: String, required: false },  
+  clientId: { type: String, required: false },  
+  startDate: { type: Date, required: false },  
+  endDate: { type: Date, required: false },  
+  clientName: { type: String, required: false }
+})
+var ChantierModel = mongoose.model('Chantier', Chantier);  
+//GET
+app.get('/api/chantiers', function (req, res){
+  return ChantierModel.find(function (err, chantiers) {
+    if (!err) {
+      return res.send(chantiers);
+    } else {
+      return console.log(err);
+    }
+  });
+});
+
+//POST
+app.post('/api/chantiers', function (req, res){
+  var chantier;
+  console.log("POST: ");
+  console.log(req.body);
+  chantier = new ChantierModel({
+  name:req.body.name,
+  note:req.body.note,
+  status:req.body.status,
+  clientId:req.body.clientId,
+  startDate:req.body.startDate,
+  endDate:req.body.endDate,
+  clientName:req.body.clientName
+  });
+  chantier.save(function (err) {
+    if (!err) {
+      return console.log("created");
+    } else {
+      return console.log(err);
+    }
+  });
+  return res.send(chantier);
+});
+
+app.get('/api/chantiers/:id', function (req, res){
+  return ChantierModel.findById(req.params.id, function (err, chantier) {
+    if (!err) {
+      return res.send(chantier);
+    } else {
+      return console.log(err);
+    }
+  });
+});
+
+//PUT
+app.put('/api/chantiers/:id', function (req, res){
+  return ChantierModel.findById(req.params.id, function (err, chantier) {
+    chantier.name      = req.body.name;
+    chantier.note         = req.body.note;
+    chantier.status        = req.body.status;
+    chantier.clientId       = req.body.clientId;
+    chantier.startDate        = req.body.startDate;
+    chantier.endDate     = req.body.endDate;
+    chantier.clientName  = req.body.clientName;
+    return chantier.save(function (err) {
+      if (!err) {
+        console.log("updated");
+      } else {
+        console.log(err);
+      }
+      return res.send(chantier);
+    });
+  });
+});
+
+
+//DELETE
+app.delete('/api/chantiers/:id', function (req, res){
+  return ChantierModel.findById(req.params.id, function (err, chantier) {
+    return chantier.remove(function (err) {
       if (!err) {
         console.log("removed");
         return res.send('');

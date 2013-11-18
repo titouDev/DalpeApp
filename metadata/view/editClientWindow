@@ -246,7 +246,7 @@
                     ]
                 },
                 {
-                    "type": "Ext.form.field.Number",
+                    "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "items",
                         "type": "array"

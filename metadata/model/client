@@ -18,8 +18,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "mapping": "_id",
                 "name": "id",
-                "type": "int"
+                "type": "string"
             },
             "designerId": "9f0e46ed-01b4-4c10-a3d5-f98c6a4321b7"
         },
@@ -142,6 +143,44 @@
                 "name": "displayName"
             },
             "designerId": "717d4c0f-8f6a-4d8d-9ade-721d6f2d55c5"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "api/clients"
+            },
+            "designerId": "152a1732-d7fa-41de-bf03-e32d934c3cf3",
+            "cn": [
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "writeRecordId": false
+                    },
+                    "designerId": "974d5edd-075c-4709-8679-41492901e8a7"
+                },
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": null
+                    },
+                    "designerId": "2409f438-f074-49d5-84d4-e5ef614e0e06"
+                }
+            ]
         }
     ]
 }

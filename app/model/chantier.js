@@ -18,8 +18,9 @@ Ext.define('dalpeApp.model.chantier', {
 
     fields: [
         {
+            mapping: '_id',
             name: 'id',
-            type: 'int'
+            type: 'string'
         },
         {
             name: 'name'
@@ -36,17 +37,29 @@ Ext.define('dalpeApp.model.chantier', {
             type: 'int'
         },
         {
-            dateFormat: 'Y-m-d',
+            dateFormat: 'c',
             name: 'startDate',
             type: 'date'
         },
         {
-            dateFormat: 'Y-m-d',
+            dateFormat: 'c',
             name: 'endDate',
             type: 'date'
         },
         {
             name: 'clientName'
         }
-    ]
+    ],
+
+    proxy: {
+        type: 'rest',
+        url: 'api/chantiers',
+        reader: {
+            type: 'json'
+        },
+        writer: {
+            type: 'json',
+            writeRecordId: false
+        }
+    }
 });

@@ -23,7 +23,6 @@ Ext.application({
     models: [
         'specialite',
         'employeHour',
-        'chantierStatus',
         'document',
         'document_type',
         'chantier_link_documents'

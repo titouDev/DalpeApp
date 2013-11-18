@@ -52,25 +52,21 @@ Ext.define('dalpeApp.controller.chantiers', {
             return;
         }
 
-        var chantierData = myForm.getValues();
-        if (chantierData.id) {
-            //On update la DB et on ferme la window
-            Chantiers.update(chantierData, function(){
-                //On peut maintenant fermer la window
+
+        var record = myForm.getRecord();
+        if (!record) {
+            var chantierModel = this.getChantierModel();    
+            record = new chantierModel();
+        }
+        record.set(myForm.getValues());
+        record.save({
+            scope:this,
+            callback:function(){
                 button.up('window').close();
                 this.getChantiersGrid().store.load();
-            },this);
-        }
-        else {
-            //On cree le nouvel employe
-            //On update la DB et on ferme la window
-            Chantiers.create(chantierData, function(newRecord){
-                //On peut maintenant fermer la window
-                button.up('window').close();
-                //On rajoute le nouvel employe dans le store
-                this.getChantiersGrid().store.load();
-            },this);
-        }
+            }
+        });
+
     },
 
     onFileUpdalodChange: function(filefield, value, eOpts) {
@@ -124,11 +120,13 @@ Ext.define('dalpeApp.controller.chantiers', {
         var myForm = editChantierWindow.down('form');
 
         //On retourne chercher le data dans la db, au cas ou un autre user ait modifie la fiche
-        Chantiers.get(selectedRecord.data, function(recordFromDb){
-            var myData = recordFromDb[0];
-            var myChantier = this.getChantierModel().create(myData);
-            myForm.getForm().loadRecord(myChantier);
-        }, this);
+        var chantierModel = this.getChantierModel();   
+        chantierModel.load(selectedRecord.get('id'),{
+            scope:this,
+            callback:function(chantier){
+                myForm.getForm().loadRecord(chantier);
+            }
+        });
 
         editChantierWindow.show();
 

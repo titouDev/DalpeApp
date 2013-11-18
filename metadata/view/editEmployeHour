@@ -133,7 +133,7 @@
                     "designerId": "fe4f074d-11ba-4719-9780-d9e8a90ac243"
                 },
                 {
-                    "type": "Ext.form.field.Number",
+                    "type": "Ext.form.field.Text",
                     "reference": {
                         "name": "items",
                         "type": "array"

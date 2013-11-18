@@ -10,33 +10,5 @@
         "storeId": "clients",
         "designer|userClassName": "clients"
     },
-    "designerId": "cd6fbed6-fd8f-4928-9289-c6a6d316cffb",
-    "cn": [
-        {
-            "type": "Ext.data.proxy.Direct",
-            "reference": {
-                "name": "proxy",
-                "type": "object"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "directFn": "Clients.get"
-            },
-            "designerId": "c2b86dd7-fbc8-436d-80d9-0b61dcd8effc",
-            "cn": [
-                {
-                    "type": "Ext.data.reader.Json",
-                    "reference": {
-                        "name": "reader",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "root": "result"
-                    },
-                    "designerId": "2409f438-f074-49d5-84d4-e5ef614e0e06"
-                }
-            ]
-        }
-    ]
+    "designerId": "cd6fbed6-fd8f-4928-9289-c6a6d316cffb"
 }

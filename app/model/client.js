@@ -18,8 +18,9 @@ Ext.define('dalpeApp.model.client', {
 
     fields: [
         {
+            mapping: '_id',
             name: 'id',
-            type: 'int'
+            type: 'string'
         },
         {
             name: 'prenom'
@@ -51,5 +52,17 @@ Ext.define('dalpeApp.model.client', {
         {
             name: 'displayName'
         }
-    ]
+    ],
+
+    proxy: {
+        type: 'rest',
+        url: 'api/clients',
+        writer: {
+            type: 'json',
+            writeRecordId: false
+        },
+        reader: {
+            type: 'json'
+        }
+    }
 });
