@@ -18,10 +18,24 @@ Ext.define('dalpeApp.model.specialite', {
 
     fields: [
         {
-            name: 'id'
+            mapping: '_id',
+            name: 'id',
+            type: 'string'
         },
         {
             name: 'name'
         }
-    ]
+    ],
+
+    proxy: {
+        type: 'rest',
+        url: 'api/specialites',
+        reader: {
+            type: 'json'
+        },
+        writer: {
+            type: 'json',
+            writeRecordId: false
+        }
+    }
 });

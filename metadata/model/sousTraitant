@@ -248,6 +248,18 @@
                     "designerId": "c40c4fae-fd47-4681-99c9-464e30e0981b"
                 }
             ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "specialites"
+            },
+            "designerId": "e7640414-1f65-44b9-b935-912248716b10"
         }
     ]
 }

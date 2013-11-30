@@ -27,14 +27,6 @@ Ext.define('dalpeApp.store.specialites', {
             autoLoad: true,
             model: 'dalpeApp.model.specialite',
             storeId: 'specialiteStore',
-            proxy: {
-                type: 'direct',
-                directFn: SousTraitants.getSpecialites,
-                reader: {
-                    type: 'json',
-                    root: 'result'
-                }
-            },
             listeners: {
                 load: {
                     fn: me.onDirectstoreLoad,

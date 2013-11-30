@@ -345,7 +345,7 @@
                                 "width": 149,
                                 "title": null,
                                 "hideHeaders": true,
-                                "store": "specialiteLinkSousTraitant"
+                                "store": null
                             },
                             "designerId": "b4ce7b7b-79fd-499f-a108-8730d641ca4a",
                             "cn": [

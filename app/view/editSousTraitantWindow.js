@@ -193,7 +193,6 @@ Ext.define('dalpeApp.view.editSousTraitantWindow', {
                                     itemId: 'specialitesGrid',
                                     width: 149,
                                     hideHeaders: true,
-                                    store: 'specialiteLinkSousTraitant',
                                     columns: [
                                         {
                                             xtype: 'gridcolumn',

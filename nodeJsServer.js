@@ -92,7 +92,7 @@ var app = express();
 
 // Database
 
-mongoose.connect('mongodb://localhost/ecomm_database');
+mongoose.connect('mongodb://localhost/dalpe_construction');
 
 // Config
 
@@ -123,7 +123,33 @@ app.get('/', function (req, res) {
 });
 
 //SOUS TRAITANT
+//Specialite
 var Schema = mongoose.Schema;
+
+var Specialite = new Schema({
+  name: { type: String, required: true, unique : true }
+})
+//GET
+app.get('/api/specialites', function (req, res){
+  return SousTraitantModel.find().select('specialites').where('specialites').exec(function (err, sousTraitants) {
+    if (!err) {
+      var allSpecialites = {};
+      for (var i in sousTraitants) {
+        var specialites = sousTraitants[i].specialites;
+        if (specialites && specialites.length > 0) {
+          for (var s in specialites) {
+            allSpecialites[specialites[s].name] = '';  
+          }
+          
+
+        } 
+      }
+      return res.send(allSpecialites);
+    } else {
+      return console.log(err);
+    }
+  });
+});
 var SousTraitant = new Schema({
   name: { type: String, required: false },  
   contactName: { type: String, required: false },  
@@ -139,7 +165,8 @@ var SousTraitant = new Schema({
   note: { type: String, required: false },  
   licenseRbq: { type: String, required: false },  
   siteWeb: { type: String, required: false },
-  tps: { type: String, required: false }
+  tps: { type: String, required: false },
+  specialites : [Specialite]
 
 })
 var SousTraitantModel = mongoose.model('SousTraitant', SousTraitant);  
@@ -174,15 +201,14 @@ app.post('/api/sousTraitants', function (req, res){
   note:req.body.note,
   licenseRbq:req.body.licenseRbq,
   siteWeb:req.body.siteWeb,
-  tps:req.body.tps
+  tps:req.body.tps,
+  specialites:req.body.specialites,
   });
+  console.log(sousTraitant)
   sousTraitant.save(function (err) {
-    if (!err) {
-      return console.log("created");
-    } else {
-      return console.log(err);
-    }
+    
   });
+  console.log(sousTraitant)
   return res.send(sousTraitant);
 });
 
@@ -547,3 +573,6 @@ app.delete('/api/chantiers/:id', function (req, res){
     });
   });
 });
+
+
+

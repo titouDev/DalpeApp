@@ -138,9 +138,9 @@ Ext.define('dalpeApp.controller.sousTraitants', {
 
     onAddSousTraitantClick: function(button, e, eOpts) {
         //On s'assure que le store des links specialites/sous traitant est vide
-        var myStore = Ext.getStore('specialiteLinkSousTraitant');
-        myStore.proxy.extraParams = '';
-        myStore.removeAll();
+        //var myStore = Ext.getStore('specialiteLinkSousTraitant');
+        //myStore.proxy.extraParams = '';
+        //myStore.removeAll();
 
         Ext.widget('editSousTraitantWindow').show();
     },
@@ -213,6 +213,7 @@ Ext.define('dalpeApp.controller.sousTraitants', {
             mySousTraitant = new sousTraitantModel();
         }
         mySousTraitant.set(myForm.getValues());
+        mySousTraitant.set('specialites',[{name:'beton'}]);
         mySousTraitant.save({
             scope:this,
             callback:function(){

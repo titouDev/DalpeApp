@@ -178,14 +178,6 @@
             ],
             "className": "specialite"
         },
-        "77cd874a-4055-4882-aa62-739da0217360": {
-            "paths": [
-                "metadata/store/specialiteLinkSousTraitant",
-                "app/store/override/specialiteLinkSousTraitant.js",
-                "app/store/specialiteLinkSousTraitant.js"
-            ],
-            "className": "specialiteLinkSousTraitant"
-        },
         "2002c995-32ee-4cc1-948c-651888aaf1e0": {
             "paths": [
                 "metadata/view/editEmployeWindow",
@@ -447,7 +439,6 @@
             "82e4399f-b439-4306-b821-378e17afaa13",
             "a79bbea3-d4de-47b9-b24e-a9e513a27156",
             "7c30472b-a80e-4251-8568-3f963945a7a4",
-            "77cd874a-4055-4882-aa62-739da0217360",
             "e3c360d2-ebd1-461b-aeee-b159d5f12ef8"
         ],
         "controller": [
@@ -464,9 +455,9 @@
             "b46812cd-c52b-4a66-9d86-1e213479b598",
             "30e085bb-8e66-4146-b012-634d977214ef",
             "e4d3bafa-15b2-4e10-a635-0f60eb93a846",
-            "ab15740c-e916-430c-b9f1-319b39e1db1b",
-            "237b6ba4-2399-4586-aab1-258e76cdedb7",
             "a0d5601b-11bf-4930-97a3-f49e2073affe",
+            "237b6ba4-2399-4586-aab1-258e76cdedb7",
+            "ab15740c-e916-430c-b9f1-319b39e1db1b",
             "9aff4ed1-3fba-4dd2-92e1-69d109f286bb",
             "62f30b2a-c8b5-4d9d-ac99-268643d73069",
             "8cec37a7-50df-4c9e-a730-be67b873404b",

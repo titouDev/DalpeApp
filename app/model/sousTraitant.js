@@ -70,6 +70,9 @@ Ext.define('dalpeApp.model.sousTraitant', {
         },
         {
             name: 'siteWeb'
+        },
+        {
+            name: 'specialites'
         }
     ],
 

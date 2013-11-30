@@ -25,11 +25,11 @@ Ext.application({
         'employeHour',
         'document',
         'document_type',
-        'chantier_link_documents'
+        'chantier_link_documents',
+        'chantier'
     ],
     stores: [
         'specialites',
-        'specialiteLinkSousTraitant',
         'employes_hours',
         'chantiers_hours',
         'documents',
