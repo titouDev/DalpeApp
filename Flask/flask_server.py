@@ -1,7 +1,8 @@
 from flask import Flask
-
-import django
-print(django.get_version())
+#import sqlite3
+#conn = sqlite3.connect('dalpe_construction.db')
+from Models import baseAlchemy
+import json
 
 app = Flask(__name__)
 
@@ -9,6 +10,12 @@ app = Flask(__name__)
 def hello():
     return "Hello World!"
 
-#if __name__ == "__main__":
-#    app.run()
+@app.route("/api/sousTraitant")
+def getSousTraitants():
+    data = json.dumps({"records":baseAlchemy.get('soustraitants')})
+    return data 
+
+
+if __name__ == "__main__":
+    app.run()
 

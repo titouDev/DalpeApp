@@ -1,8 +1,15 @@
 import sqlalchemy
 import sqlsoup
 
+engine = 'sqlite:///dalpe_construction.db'
 
-db = sqlsoup.SQLSoup('mysql://titoudev_simon:Ucantd0it@localhost/titoudev_dalpe?charset=utf8&use_unicode=0')
-
-print db.soustraitants.all();
+def get(modelName):
+    db = sqlsoup.SQLSoup(engine)
+    table = db.entity(modelName)
+    tableFields = [i for i in table._sa_class_manager]
+    data = [] 
+    for i in table.all():
+        dataObject = dict([(f, str(getattr(i, f))) for f in tableFields])
+        data.append(dataObject) 
+    return data
 
