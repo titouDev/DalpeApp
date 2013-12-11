@@ -1,0 +1,160 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "mail"
+    },
+    "designerId": "ab15740c-e916-430c-b9f1-319b39e1db1b",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id",
+                "type": "int"
+            },
+            "designerId": "a6638085-163c-4b62-9b75-4e815f1e98aa"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "message",
+                "type": "string"
+            },
+            "designerId": "6bfacdb5-5c1a-45d1-9b2d-535c2c6a04e5"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "c",
+                "name": "creationDate",
+                "type": "date"
+            },
+            "designerId": "23ae46ac-8e52-4666-ae5c-e983fb3d409a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "subject"
+            },
+            "designerId": "0f114840-9581-4bb2-9317-38c919a16b05"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "chantier",
+                "type": "string",
+                "useNull": true
+            },
+            "designerId": "254f960b-97ae-45cf-82f1-c1a1f3af5909"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "chantierId",
+                "type": "int",
+                "useNull": true
+            },
+            "designerId": "7f687801-982f-4f32-964c-64aaa87ad0be"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "userCreate",
+                "type": "string"
+            },
+            "designerId": "663943f6-8364-41e4-9909-7a101a6a2642"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "userCreateLastName",
+                "type": "string"
+            },
+            "designerId": "f48a710a-d6cd-41e4-8ada-e7b4f1aa8e52"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "c",
+                "name": "sentDate",
+                "type": "date"
+            },
+            "designerId": "b578e625-ea76-4e27-8423-e13024cf39a7"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/api/model/mails"
+            },
+            "designerId": "c63c4197-2448-4462-966b-a0c879dc0728",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "records"
+                    },
+                    "designerId": "a2e0439d-c485-4a77-9be4-8ac32646f880"
+                }
+            ]
+        }
+    ]
+}

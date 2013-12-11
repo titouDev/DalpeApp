@@ -1,0 +1,14 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "document",
+        "storeId": "MyJsonStore11",
+        "designer|userClassName": "chantiers_documents"
+    },
+    "designerId": "990efb39-4987-4589-8cb2-7aab3f5dcb43"
+}

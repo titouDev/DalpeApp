@@ -1,0 +1,44 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "model": "mail",
+        "remoteFilter": true,
+        "storeId": "MyJsonStore",
+        "designer|userClassName": "mails_notsent"
+    },
+    "designerId": "f288154c-32cc-4f80-a4c9-73ce845fe3f2",
+    "cn": [
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "direction": "DESC",
+                "property": "creationDate"
+            },
+            "designerId": "e2c51836-e9a2-4746-a42e-37fa7da6da4b"
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "direction": "DESC",
+                "property": "sentDate"
+            },
+            "designerId": "e55af468-c0e3-42bb-9eb2-784663d5f3ac"
+        }
+    ]
+}

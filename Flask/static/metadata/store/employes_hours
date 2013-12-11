@@ -1,0 +1,14 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "employeHour",
+        "storeId": "employes_hours",
+        "designer|userClassName": "employes_hours"
+    },
+    "designerId": "ddee1a8c-46be-4052-955e-2953d9a66b74"
+}

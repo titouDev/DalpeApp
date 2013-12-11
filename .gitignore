@@ -5,4 +5,6 @@
 
 .gitignore
 
+.pyc
+
 documents_importes/

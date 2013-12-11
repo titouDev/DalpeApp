@@ -1,14 +1,15 @@
-from flask import Flask
-#import sqlite3
-#conn = sqlite3.connect('dalpe_construction.db')
+from flask import (Flask,
+                   render_template,
+                   url_for)
 from Models import baseAlchemy
 import json
 
 app = Flask(__name__)
 
+
 @app.route("/")
-def hello():
-    return "Hello World!"
+def index():
+    return ""
 
 @app.route("/api/model/<name>")
 def getModel(name):
@@ -17,5 +18,6 @@ def getModel(name):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+    app.run()
+    url_for('static', filename='app.html')
 

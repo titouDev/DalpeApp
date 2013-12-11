@@ -1,0 +1,78 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "specialite"
+    },
+    "designerId": "237b6ba4-2399-4586-aab1-258e76cdedb7",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "_id",
+                "name": "id",
+                "type": "string"
+            },
+            "designerId": "de2b5f94-d73f-4459-bc27-6d5655f67240"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "name"
+            },
+            "designerId": "26f6f1c2-f1d7-413a-b851-89edf5babaf1"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/api/model/specialites"
+            },
+            "designerId": "cce02904-47c8-4220-a001-f13202b0ce66",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "root": "records"
+                    },
+                    "designerId": "af50ecbc-3dd5-4309-b582-a83042d37bad"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "writeRecordId": false
+                    },
+                    "designerId": "8194d76d-d9b9-4671-b7af-b686c8b57d39"
+                }
+            ]
+        }
+    ]
+}
