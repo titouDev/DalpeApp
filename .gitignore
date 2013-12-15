@@ -8,3 +8,8 @@
 .pyc
 
 documents_importes/
+*.pyc
+
+*.pyc
+
+Flask/Models/baseAlchemy.pyc

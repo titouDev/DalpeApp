@@ -18,7 +18,6 @@ Ext.define('dalpeApp.model.client', {
 
     fields: [
         {
-            mapping: '_id',
             name: 'id',
             type: 'string'
         },

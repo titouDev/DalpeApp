@@ -1,6 +1,7 @@
 from flask import (Flask,
                    render_template,
-                   url_for)
+                   url_for,
+                   request)
 from Models import baseAlchemy
 import json
 
@@ -12,8 +13,8 @@ def index():
     return ""
 
 @app.route("/api/model/<name>")
-def getModel(name):
-    data = json.dumps({"records":baseAlchemy.get(name)})
+def getModel(name, ):
+    data = json.dumps({"records":baseAlchemy.get(name,**request.args)})
     return data 
 
 

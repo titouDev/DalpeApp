@@ -18,7 +18,6 @@ Ext.define('dalpeApp.model.sousTraitant', {
 
     fields: [
         {
-            mapping: '_id',
             name: 'id',
             persist: false,
             type: 'string'
