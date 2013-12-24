@@ -19,6 +19,6 @@ def getModel(name, ):
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
     url_for('static', filename='app.html')
 

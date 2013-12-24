@@ -98,7 +98,7 @@ Ext.define('dalpeApp.controller.sousTraitants', {
 
         var mailsStore = this.getMailsGrid().store;
         mailsStore.clearFilter(true);
-        mailsStore.filter('sousTraitantId',record.data.id);
+        mailsStore.filter('soustraitants_id',record.data.id);
 
         //On update egalement le tire du mail panel
         var newTitle = 'Courriels envoyés à ' + record.data.name;
