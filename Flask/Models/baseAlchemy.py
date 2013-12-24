@@ -1,138 +1,62 @@
+
+
 import sqlalchemy
 import sqlsoup
 import json
-from sqlalchemy.orm import scoped_session as ScopedSession
 import datetime
 import logging
 
+from sqlalchemy.orm import sessionmaker
+
 logging.basicConfig()
-logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
+#logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
+
+from sqlalchemy import (create_engine,
+                        MetaData,
+                        Table)
+dbSqLite = 'sqlite:///dalpe_construction.db'
+engine = create_engine(dbSqLite, echo=False)
+Session = sessionmaker(bind=engine)
+session = Session()
+
+sqliteTables = (
+                'chantiers',
+                'chantiers_link_documents',
+                'clients',
+                'document_type',
+                'documents',
+                'employes',
+                'employes_hours',
+                'mails',
+                'mails_link_documents',
+                'soustraitants',
+                'soustraitants_link_documents',
+                'soustraitants_link_mails',
+                'soustraitants_link_specialites',
+                'soustraitants_notes',
+                'specialites'
+                )
+metadata = MetaData()
+metadata.bind = engine
+
+for t in sqliteTables:
+    Table(t, metadata, autoload=True)
 
 
-from elixir import *
-
-engine = 'sqlite:///dalpe_construction.db'
-
-"""
-metadata.bind = 'sqlite:///dalpe_construction.db'
-metadata.bind.echo = True
-
-class Soustraitant(Entity):
-    using_options(tablename='soustraitants')
-    id = Field(Integer, primary_key=True)
-    name = Field(Unicode(30))
-    contactName = Field(Unicode(30))
-    phone = Field(Unicode(30))
-    cell = Field(Unicode(30))
-    fax = Field(Unicode(30))
-    adresse = Field(UnicodeText)
-    codePostal = Field(Unicode(30))
-    email = Field(Unicode(30))
-    siteWeb = Field(Unicode(30))
-    licenseRbq = Field(Unicode(30))
-    tps = Field(Unicode(30))
-    ville = Field(Unicode(30))
-    province = Field(Unicode(30))
-    actif = Field(Unicode(30))
-    note = Field(Unicode(30))
-    lastUpdate = Field(Unicode(30))
-    specialites = ManyToMany('Specialite', tablename="soustraitants_link_specialites")
-    mails = ManyToMany('Mail', tablename="soustraitants_link_mails")
-    #description = Field(UnicodeText)
-
-class Specialite(Entity):
-    using_options(tablename='specialites')
-    id = Field(Integer, primary_key=True)
-    name = Field(Unicode(30))
-    soustraitants = ManyToMany('Soustraitant', tablename="soustraitants_link_specialites")
-
-class Chantier(Entity):
-    using_options(tablename='chantiers')
-    id = Field(Integer, primary_key=True)
-    name = Field(Unicode(30))
-    note = Field(UnicodeText)
-    status = Field(Unicode(30))
-    creationDate = Field(DateTime)
-    startDate = Field(DateTime)
-    endDate = Field(DateTime)
-     
-    client = ManyToOne('Client')
-
-class Employe(Entity):
-    using_options(tablename='employes')
-    id = Field(Integer, primary_key=True)
-    prenom = Field(Unicode(30))
-    nom = Field(Unicode(30))
-    email = Field(Unicode(30))
-    password = Field(Unicode(30))
-    phone = Field(Unicode(30))
-    cell = Field(Unicode(30))
-    adresse = Field(Unicode(30))
-    codePostal = Field(Unicode(30))
-    ville = Field(Unicode(30))
-    province = Field(Unicode(30))
-    admin = Field(Integer)
-    login = Field(Unicode(30))
-    actif = Field(Unicode(30))
-    coutHoraire = Field(Unicode(30))
-    lastUpdate = Field(Unicode(30))
-    photo = Field(Binary, deferred=True)
+for t in metadata.sorted_tables:
+    modelName = t.name
+    modelFields = {}
     
-    hours = OneToMany('Employe_Hour')
-    mails = OneToMany('Mail')
-
-class Employe_Hour(Entity):
-    using_options(tablename='employes_hours')
-    id = Field(Integer, primary_key=True)
-    workDate = Field(DateTime)
-    hours = Field(Unicode(10))
-    checked = Field(Integer)
-    coutHoraire = Field(Float)
-    employe = ManyToOne('Employe')
-
-
-class Client(Entity):
-    using_options(tablename='clients')
-    id = Field(Integer, primary_key=True)
-    prenom = Field(Unicode(30))
-    nom = Field(Unicode(30))
-    phone = Field(Unicode(30))
-    cell = Field(Unicode(30))
-    fax = Field(Unicode(30))
-    email = Field(Unicode(30))
-    adresse = Field(Unicode(30))
-    codePostal = Field(Unicode(30))
-    ville = Field(Unicode(30))
-    province = Field(Unicode(30))
-    actif = Field(Unicode(30))
-    lastUpdate = Field(Unicode(30))
-
-class Mail(Entity):
-    using_options(tablename='mails')
-    id = Field(Integer, primary_key=True)
-    message = Field(UnicodeText)
-    subject = Field(Unicode(50))
-    employe = ManyToOne('Employe')
-    chantier = ManyToOne('Chantier')
-    sent = Field(Integer)
-    creationDate = Field(DateTime, default=datetime.datetime.now)
-    soustraitants = ManyToMany('Soustraitant', tablename="soustraitants_link_mails")
+    for column in t.columns:
+        if column.foreign_keys:
+            print "\t",column.name, column.foreign_keys,90
+            modelFields[column.name.replace("_id","")] = {"join":list(column.foreign_keys)[0].column.table.name}
+        else:
+            modelFields[column.name] = {}
     
-setup_all()
-create_all()
-"""
+    print modelName
+    print "\t", modelFields
 
-db = sqlsoup.SQLSoup(engine)
-db.chantiers.relate('client',db.clients)
-join1 = db.join(db.chantiers,db.with_labels(db.clients) )
-
-for i in join1.filter(db.clients.nom=="monsieur frefre").all():
-    print 12, i
-
-
-
-
-    
 
 def get(modelName,**kwargs):
     filter = kwargs.get('filter')
