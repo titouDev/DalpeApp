@@ -13,8 +13,13 @@ def index():
     return ""
 
 @app.route("/api/model/<name>")
-def getModel(name, ):
+def getModel(name):
     data = json.dumps({"records":baseAlchemy.get(name,**request.args)})
+    return data 
+
+@app.route("/api/model/<name>/<id>")
+def getModelById(name, id):
+    data = json.dumps({"records":baseAlchemy.get_default(name,id=id)})
     return data 
 
 

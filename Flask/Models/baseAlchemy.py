@@ -42,23 +42,20 @@ metadata.bind = engine
 for t in sqliteTables:
     Table(t, metadata, autoload=True)
 
-
+allModels = {}
 for t in metadata.sorted_tables:
     modelName = t.name
     modelFields = {}
     
     for column in t.columns:
         if column.foreign_keys:
-            print "\t",column.name, column.foreign_keys,90
             modelFields[column.name.replace("_id","")] = {"join":list(column.foreign_keys)[0].column.table.name}
         else:
             modelFields[column.name] = {}
-    
-    print modelName
-    print "\t", modelFields
+    allModels[modelName] = {"fields":modelFields}
 
 
-def get(modelName,**kwargs):
+def get(modelName, id=False, **kwargs):
     filter = kwargs.get('filter')
     if modelName == "sousTraitants":
         specialiteId = kwargs.get('specialiteId')
@@ -71,9 +68,13 @@ def get(modelName,**kwargs):
             dictFilter = dict([('%s_%s' % (joinTable, i['property']), i['value']) for i in json.loads(filter[0])])
             return get_default(modelName,join=joinTable, **dictFilter)
         
-    return get_default(modelName)
+    return get_default(modelName, id=id)
 
-def get_default(modelName,join=False, **filters):
+def get_default(modelName,id=False, join=False, **filters):
+    if id:
+        filters["id"]=id
+    print filters
+    
     db = sqlsoup.SQLSoup(engine)
     table = db.entity(modelName)
     tableFields = [i for i in table._sa_class_manager]

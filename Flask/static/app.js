@@ -52,7 +52,6 @@ Ext.application({
         'employes',
         'clients',
         'chantiers',
-        'mailWindowController',
         'loginWindow',
         'global',
         'logHours'

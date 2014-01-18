@@ -278,31 +278,30 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         sousTraitantModel.load(selectedRecord.get('id'),{
             callback:function(sousTraitant){
                 myForm.getForm().loadRecord(sousTraitant);
-            }});
+            }
+        });
 
 
 
-            //On affiche la fenetre
-            var editSousTraitantWindow = Ext.widget('editSousTraitantWindow');
+        //On affiche la fenetre
+        var editSousTraitantWindow = Ext.widget('editSousTraitantWindow');
 
-            editSousTraitantWindow.show();
+        editSousTraitantWindow.show();
 
-            //On load le soustraitant selecitonne dans le form
-            var myForm = editSousTraitantWindow.down('form');
+        //On load le soustraitant selecitonne dans le form
+        var myForm = editSousTraitantWindow.down('form');
 
 
 
-            //On filtre le store des specialites
-            var specialiteLinkStore = editSousTraitantWindow.down('#specialitesGrid').store;
-            specialiteLinkStore.removeAll();
-            specialiteLinkStore.proxy.extraParams = {sousTraitantId:selectedRecord.data.id};
-            specialiteLinkStore.load();
+        //On filtre le store des specialites
+        var specialiteLinkStore = editSousTraitantWindow.down('#specialitesGrid').store;
+        specialiteLinkStore.removeAll();
+        specialiteLinkStore.load({params:{sousTraitantId:selectedRecord.data.id}});
 
-            //On filtre le store des documents
-            var documentsStore = Ext.getStore('documents');
-            documentsStore.removeAll();
-            documentsStore.proxy.extraParams = {sousTraitantId:selectedRecord.data.id};
-            documentsStore.load();
+        //On filtre le store des documents
+        var documentsStore = Ext.getStore('documents');
+        documentsStore.removeAll();
+        documentsStore.load({params:{sousTraitantId:selectedRecord.data.id}});
 
 
     },
@@ -390,8 +389,7 @@ Ext.define('dalpeApp.controller.sousTraitants', {
 
         //On reload le store de liens
         var linkStore = this.getMailLinkSousTraitantStore();
-        linkStore.proxy.extraParams = {mailId:myMail.id};
-        linkStore.load();
+        linkStore.load({params:{mailId:myMail.id}});
 
         //On affiche la fenetre
         var mailWindow = Ext.widget('mailWindow');

@@ -150,8 +150,7 @@
                     "{",
                     "    Mails.removeLinkSousTraitant(myMail,selection[0].data,function(){",
                     "        var linkStore = this.getMailLinkSousTraitantStore();",
-                    "        linkStore.proxy.extraParams = {mailId:myMail.id};",
-                    "        linkStore.load();",
+                    "        linkStore.load({params:{mailId:myMail.id}});",
                     "    },this);",
                     "}"
                 ],

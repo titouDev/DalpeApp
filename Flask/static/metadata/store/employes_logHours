@@ -24,29 +24,6 @@
                 "property": "workDate"
             },
             "designerId": "543040de-3c89-4382-9d8c-dbb77a7b4382"
-        },
-        {
-            "type": "Ext.data.proxy.Rest",
-            "reference": {
-                "name": "proxy",
-                "type": "object"
-            },
-            "codeClass": null,
-            "designerId": "e91a1f38-cc1e-4a60-b822-917960253929",
-            "cn": [
-                {
-                    "type": "Ext.data.reader.Json",
-                    "reference": {
-                        "name": "reader",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "root": "records"
-                    },
-                    "designerId": "1f5ee102-1080-47bf-8111-ba62ef47ff37"
-                }
-            ]
         }
     ]
 }

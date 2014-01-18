@@ -29,13 +29,6 @@ Ext.define('dalpeApp.store.employes_logHours', {
             sorters: {
                 direction: 'DESC',
                 property: 'workDate'
-            },
-            proxy: {
-                type: 'rest',
-                reader: {
-                    type: 'json',
-                    root: 'records'
-                }
             }
         }, cfg)]);
     }

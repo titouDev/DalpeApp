@@ -120,11 +120,11 @@
         },
         "01997f0d-c80f-45ee-bd73-f292af411a55": {
             "paths": [
-                "metadata/controller/mailWindowController",
-                "app/controller/override/mailWindowController.js",
-                "app/controller/mailWindowController.js"
+                "metadata/controller/mailWindow",
+                "app/controller/override/mailWindow.js",
+                "app/controller/mailWindow.js"
             ],
-            "className": "mailWindowController"
+            "className": "mailWindow"
         },
         "a79bbea3-d4de-47b9-b24e-a9e513a27156": {
             "paths": [

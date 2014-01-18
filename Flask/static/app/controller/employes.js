@@ -39,8 +39,7 @@ Ext.define('dalpeApp.controller.employes', {
 
     onEmployesGridSelect: function(rowmodel, record, index, eOpts) {
         var hours_store = Ext.getStore('employes_hours');
-        hours_store.proxy.extraParams ={employeId:record.data.id};
-        hours_store.load();
+        hours_store.load({params:{employeId:record.data.id}});
     },
 
     onEmployesPanelActivate: function(component, eOpts) {
