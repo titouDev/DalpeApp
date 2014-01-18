@@ -16,6 +16,7 @@ from sqlalchemy import (create_engine,
                         Table)
 dbSqLite = 'sqlite:///dalpe_construction.db'
 engine = create_engine(dbSqLite, echo=False)
+db = sqlsoup.SQLSoup(engine)
 Session = sessionmaker(bind=engine)
 session = Session()
 
@@ -40,8 +41,9 @@ metadata = MetaData()
 metadata.bind = engine
 
 for t in sqliteTables:
-    Table(t, metadata, autoload=True)
-
+    u = Table(t, metadata, autoload=True)
+    print u.name
+    print str(u._cloned_set)
 allModels = {}
 for t in metadata.sorted_tables:
     modelName = t.name
