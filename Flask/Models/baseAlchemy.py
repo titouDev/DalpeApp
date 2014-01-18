@@ -73,8 +73,6 @@ def get(modelName, id=False, **kwargs):
 def get_default(modelName,id=False, join=False, **filters):
     if id:
         filters["id"]=id
-    print filters
-    
     db = sqlsoup.SQLSoup(engine)
     table = db.entity(modelName)
     tableFields = [i for i in table._sa_class_manager]
@@ -84,5 +82,21 @@ def get_default(modelName,id=False, join=False, **filters):
     data = [] 
     for i in table.filter_by(**filters).all():
         dataObject = dict([(f, str(getattr(i, f))) for f in tableFields])
-        data.append(dataObject) 
+        data.append(dataObject)
     return data
+
+def update(modelName, id, jsonData):
+    db = sqlsoup.SQLSoup(engine)
+    table = db.entity(modelName)
+    model = table.filter_by(id=id).update(jsonData)
+    db.commit()
+
+def create(modelName, jsonData):
+    db = sqlsoup.SQLSoup(engine)
+    table = db.entity(modelName)
+    tableFields = [i for i in table._sa_class_manager]
+    newRecord = table.insert(**jsonData)
+    db.commit()
+    dataObject = dict([(f, str(getattr(newRecord, f))) for f in tableFields])
+    print dataObject
+    return dataObject

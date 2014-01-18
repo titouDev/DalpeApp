@@ -79,13 +79,12 @@ Ext.define('dalpeApp.model.sousTraitant', {
         type: 'rest',
         sortParam: 'undefined',
         url: '/api/model/sousTraitants',
-        writer: {
-            type: 'json',
-            writeRecordId: false
-        },
         reader: {
             type: 'json',
             root: 'records'
+        },
+        writer: {
+            type: 'json'
         }
     }
 });

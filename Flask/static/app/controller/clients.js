@@ -51,6 +51,7 @@ Ext.define('dalpeApp.controller.clients', {
             record = new clientModel();
         }
         record.set(myForm.getValues());
+        record.getProxy().appendId=false; //bug fix pour eviter d'appender un slah a la fin de l'url
         record.save({
             scope:this,
             callback:function(){
@@ -58,7 +59,7 @@ Ext.define('dalpeApp.controller.clients', {
                 this.getClientsGrid().store.load();
             }
         });
-
+        record.getProxy().appendId=true;
 
     },
 

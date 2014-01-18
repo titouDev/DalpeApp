@@ -30,7 +30,6 @@ Ext.define('dalpeApp.store.sousTraitants_full', {
             storeId: 'MyDirectStore',
             proxy: {
                 type: 'rest',
-                api: '{\ncreate:SousTraitants.create,\ndestroy:SousTraitants.delete,\nupdate:SousTraitants.update,\nread:SousTraitants.get\n}',
                 sortParam: 'undefined',
                 url: '/api/model/sousTraitants',
                 reader: {

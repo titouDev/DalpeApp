@@ -22,14 +22,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "api": [
-                    "{",
-                    "create:SousTraitants.create,",
-                    "destroy:SousTraitants.delete,",
-                    "update:SousTraitants.update,",
-                    "read:SousTraitants.get",
-                    "}"
-                ],
+                "api": null,
                 "sortParam": "undefined",
                 "url": "/api/model/sousTraitants"
             },

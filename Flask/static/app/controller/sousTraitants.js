@@ -214,6 +214,7 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         }
         mySousTraitant.set(myForm.getValues());
         mySousTraitant.set('specialites',[{name:'beton'}]);
+        record.getProxy().appendId=false; //bug fix pour eviter d'appender un slah a la fin de l'url
         mySousTraitant.save({
             scope:this,
             callback:function(){
@@ -221,7 +222,7 @@ Ext.define('dalpeApp.controller.sousTraitants', {
                 this.getSousTraitantsStore().load();
             }
         });
-
+        record.getProxy().appendId=true;
     },
 
     editMail: function(record) {

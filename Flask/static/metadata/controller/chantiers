@@ -136,6 +136,7 @@
                     "    record = new chantierModel();",
                     "}",
                     "record.set(myForm.getValues());",
+                    "record.getProxy().appendId=false; //bug fix pour eviter d'appender un slah a la fin de l'url",
                     "record.save({",
                     "    scope:this,",
                     "    callback:function(){",
@@ -143,7 +144,7 @@
                     "        this.getChantiersGrid().store.load();",
                     "    }",
                     "});",
-                    ""
+                    "record.getProxy().appendId=true;"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -246,7 +247,7 @@
                     "chantierModel.load(selectedRecord.get('id'),{",
                     "    scope:this,",
                     "    callback:function(chantier){",
-                    "    myForm.getForm().loadRecord(chantier);",
+                    "        myForm.getForm().loadRecord(chantier);",
                     "    }",
                     "});",
                     "",
