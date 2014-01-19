@@ -19,6 +19,7 @@ Ext.define('dalpeApp.model.chantier', {
     fields: [
         {
             name: 'id',
+            persist: false,
             type: 'string'
         },
         {

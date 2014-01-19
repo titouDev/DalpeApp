@@ -6,6 +6,8 @@ import json
 import datetime
 import logging
 
+from classSqlAlchemy import *
+
 from sqlalchemy.orm import sessionmaker
 
 logging.basicConfig()
@@ -14,8 +16,10 @@ logging.basicConfig()
 from sqlalchemy import (create_engine,
                         MetaData,
                         Table)
-dbSqLite = 'sqlite:///dalpe_construction.db'
-engine = create_engine(dbSqLite, echo=False)
+dbSqLite = 'sqlite:///dalpe_construction_v1.db'
+engine = create_engine(dbSqLite, echo=True)
+Base.metadata.create_all(engine)
+
 db = sqlsoup.SQLSoup(engine)
 Session = sessionmaker(bind=engine)
 session = Session()

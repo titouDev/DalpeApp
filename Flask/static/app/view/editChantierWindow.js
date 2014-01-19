@@ -99,7 +99,7 @@ Ext.define('dalpeApp.view.editChantierWindow', {
                                             labelWidth: 150,
                                             name: 'clientId',
                                             allowBlank: false,
-                                            displayField: 'displayName',
+                                            displayField: 'nom',
                                             queryMode: 'local',
                                             store: 'clients',
                                             valueField: 'id'

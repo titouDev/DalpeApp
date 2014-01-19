@@ -49,25 +49,24 @@ Ext.define('dalpeApp.view.windowAddSpecialite', {
                                 var myCombo = button.up('window').down('#comboSpecialites');
 
                                 var mySpecialite = Ext.create(dalpeApp.model.specialite, {
-                                    id  : myCombo.value,
                                     name:myCombo.getValue()
                                 });
+                                if (!myCombo.value) {
 
-                                mySpecialite.save({
-                                    scope:this,
-                                    callback:function(){
-                                        //On reload le store des specialites
-                                        Ext.getStore('specialites').load();
-                                        button.up('window').close();
-                                    }
-                                });
+                                    mySpecialite.getProxy().appendId=false; //bug fix pour eviter d'appender un slah a la fin de l'url
+                                    mySpecialite.save({
+                                        scope:this,
+                                        callback:function(){
+                                            //On reload le store des specialites
+                                            Ext.getStore('specialites').load();
+                                            button.up('window').close();
+                                        }
+                                    });
+                                    mySpecialite.getProxy().appendId=true;
 
-                                //var mySousTraitant = Ext.getCmp('editSousTraitantWindow').down('form').getValues();
+                                }
 
 
-
-
-                                //Ext.getCmp('editSousTraitantWindow').down('#specialitesGrid').store.load();
 
                             },
                             text: 'Ajouter'

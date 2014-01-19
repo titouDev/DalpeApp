@@ -19,6 +19,7 @@ Ext.define('dalpeApp.model.employe', {
     fields: [
         {
             name: 'id',
+            persist: false,
             type: 'string'
         },
         {
@@ -63,7 +64,7 @@ Ext.define('dalpeApp.model.employe', {
         },
         {
             name: 'coutHoraire',
-            type: 'int'
+            type: 'float'
         }
     ],
 

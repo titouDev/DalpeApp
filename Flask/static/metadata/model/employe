@@ -20,6 +20,7 @@
             "userConfig": {
                 "mapping": null,
                 "name": "id",
+                "persist": false,
                 "type": "string"
             },
             "designerId": "06170d6b-d249-4fc7-bd81-e253515aa01b"
@@ -191,7 +192,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "coutHoraire",
-                "type": "int"
+                "type": "float"
             },
             "designerId": "7d63948e-dd84-4fac-a415-244b777c1fa4"
         },

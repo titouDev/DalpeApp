@@ -789,8 +789,11 @@
                     "    mySousTraitant = new sousTraitantModel();",
                     "}",
                     "mySousTraitant.set(myForm.getValues());",
-                    "mySousTraitant.set('specialites',[{name:'beton'}]);",
-                    "record.getProxy().appendId=false; //bug fix pour eviter d'appender un slah a la fin de l'url",
+                    "if (! mySousTraitant.get('id')) {",
+                    "\t//POST",
+                    "    mySousTraitant.getProxy().appendId=false; //bug fix pour eviter d'appender un slah a la fin de l'url",
+                    "}",
+                    "",
                     "mySousTraitant.save({",
                     "    scope:this,",
                     "    callback:function(){",
@@ -798,7 +801,7 @@
                     "        this.getSousTraitantsStore().load();",
                     "    }",
                     "});",
-                    "record.getProxy().appendId=true;"
+                    "mySousTraitant.getProxy().appendId=true;"
                 ],
                 "name": "click",
                 "scope": "me",

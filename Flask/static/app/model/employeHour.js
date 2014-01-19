@@ -18,7 +18,8 @@ Ext.define('dalpeApp.model.employeHour', {
 
     fields: [
         {
-            name: 'id'
+            name: 'id',
+            persist: false
         },
         {
             dateFormat: 'c',

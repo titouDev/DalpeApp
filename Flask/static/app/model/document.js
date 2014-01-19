@@ -18,7 +18,8 @@ Ext.define('dalpeApp.model.document', {
 
     fields: [
         {
-            name: 'id'
+            name: 'id',
+            persist: false
         },
         {
             name: 'name'

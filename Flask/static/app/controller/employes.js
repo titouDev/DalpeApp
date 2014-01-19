@@ -118,7 +118,10 @@ Ext.define('dalpeApp.controller.employes', {
             record = new employeModel();
         }
         record.set(myForm.getValues());
-        record.getProxy().appendId=false; //bug fix pour eviter d'appender un slah a la fin de l'url
+        if (!record.get('id')) {
+            //POST
+            record.getProxy().appendId=false; //bug fix pour eviter d'appender un slah a la fin de l'url
+        }
 
         record.save({
             scope:this,

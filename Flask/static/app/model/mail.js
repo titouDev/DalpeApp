@@ -19,6 +19,7 @@ Ext.define('dalpeApp.model.mail', {
     fields: [
         {
             name: 'id',
+            persist: false,
             type: 'int'
         },
         {
