@@ -17,12 +17,14 @@ Ext.define('dalpeApp.view.editEmployeWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.editEmployeWindow',
 
-    height: 515,
+    height: 290,
     id: 'editEmployeWindow',
-    minHeight: 515,
+    maxHeight: 290,
+    minHeight: 290,
     minWidth: 650,
     width: 757,
     constrain: true,
+    resizable: false,
     layout: {
         align: 'stretch',
         type: 'vbox'
@@ -45,24 +47,6 @@ Ext.define('dalpeApp.view.editEmployeWindow', {
                     },
                     bodyPadding: 10,
                     items: [
-                        {
-                            xtype: 'panel',
-                            flex: 1,
-                            maxWidth: 200,
-                            width: 75,
-                            layout: {
-                                type: 'fit'
-                            },
-                            title: 'Photos',
-                            items: [
-                                {
-                                    xtype: 'image',
-                                    height: 201,
-                                    itemId: 'photo',
-                                    width: 201
-                                }
-                            ]
-                        },
                         {
                             xtype: 'panel',
                             flex: 1,
@@ -182,37 +166,6 @@ Ext.define('dalpeApp.view.editEmployeWindow', {
                                             name: 'password'
                                         }
                                     ]
-                                }
-                            ]
-                        },
-                        {
-                            xtype: 'form',
-                            flex: 1,
-                            margins: '0 0 0 0',
-                            border: '0 0 0 0',
-                            itemId: 'fileForm',
-                            maxHeight: 30,
-                            shadow: false,
-                            layout: {
-                                align: 'stretch',
-                                type: 'hbox'
-                            },
-                            items: [
-                                {
-                                    xtype: 'filefield',
-                                    flex: 1,
-                                    margins: '5',
-                                    itemId: 'photoImport',
-                                    maxHeight: 30,
-                                    fieldLabel: 'Photo',
-                                    name: 'photoImport',
-                                    buttonText: 'Rechercher...'
-                                },
-                                {
-                                    xtype: 'button',
-                                    itemId: 'savePhoto',
-                                    maxHeight: 30,
-                                    text: 'Enregistrer'
                                 }
                             ]
                         },

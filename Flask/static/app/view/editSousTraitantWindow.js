@@ -286,6 +286,7 @@ Ext.define('dalpeApp.view.editSousTraitantWindow', {
                     xtype: 'panel',
                     flex: 1,
                     border: 0,
+                    hidden: true,
                     layout: {
                         align: 'stretch',
                         type: 'vbox'

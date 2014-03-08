@@ -46,8 +46,6 @@ metadata.bind = engine
 
 for t in sqliteTables:
     u = Table(t, metadata, autoload=True)
-    print u.name
-    print str(u._cloned_set)
 allModels = {}
 for t in metadata.sorted_tables:
     modelName = t.name

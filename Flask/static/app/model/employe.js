@@ -20,7 +20,7 @@ Ext.define('dalpeApp.model.employe', {
         {
             name: 'id',
             persist: false,
-            type: 'string'
+            type: 'int'
         },
         {
             name: 'prenom'

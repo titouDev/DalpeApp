@@ -6,6 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
+        "models": [
+            "employeHour"
+        ],
         "stores": [
             "chantiers",
             "employes"
@@ -54,12 +57,24 @@
                     "    return;",
                     "}",
                     "",
-                    "var record = myForm.getValues();",
-                    "this.saveRecord(record);",
+                    "var formValues = myForm.getValues();",
+                    "var logHourModel = this.getEmployeHourModel();    ",
+                    "record = new logHourModel();",
+                    "record.set(formValues);",
                     "",
-                    "//On peut maintenant fermer la window",
-                    "button.up('window').close();",
-                    ""
+                    "if (! record.get('id')) {",
+                    "    //POST",
+                    "    record.getProxy().appendId=false; //bug fix pour eviter d'appender un slah a la fin de l'url",
+                    "}",
+                    "",
+                    "record.save({",
+                    "    scope:this,",
+                    "    callback:function(){",
+                    "        button.up('window').close();",
+                    "        this.loadHoursStore();",
+                    "    }",
+                    "});",
+                    "record.getProxy().appendId=true;"
                 ],
                 "name": "click",
                 "scope": "me",
@@ -191,37 +206,6 @@
                 "designer|controlQuery": "#deleteHour"
             },
             "designerId": "a2f211a4-1791-4bda-bc94-65231b413a0c"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "saveRecord",
-                "designer|params": [
-                    "record"
-                ],
-                "implHandler": [
-                    "if (record.id) {",
-                    "    //On update la DB et on ferme la window",
-                    "    Employes.update_hour(record, function(){",
-                    "        this.loadHoursStore();",
-                    "    },this);",
-                    "}",
-                    "else {",
-                    "    //On cree le nouveau log hour ",
-                    "    Employes.log_hour(record, function(newRecord){",
-                    "        //On rajoute le nouvel employe dans le store",
-                    "        this.loadHoursStore();",
-                    "    },this);",
-                    "",
-                    "}"
-                ]
-            },
-            "designerId": "db56f8fc-047c-42b2-86d5-113ad359949c"
         },
         {
             "type": "basicfunction",

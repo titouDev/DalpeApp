@@ -16,6 +16,9 @@
 Ext.define('dalpeApp.controller.logHours', {
     extend: 'Ext.app.Controller',
 
+    models: [
+        'employeHour'
+    ],
     stores: [
         'chantiers',
         'employes'
@@ -44,12 +47,24 @@ Ext.define('dalpeApp.controller.logHours', {
             return;
         }
 
-        var record = myForm.getValues();
-        this.saveRecord(record);
+        var formValues = myForm.getValues();
+        var logHourModel = this.getEmployeHourModel();    
+        record = new logHourModel();
+        record.set(formValues);
 
-        //On peut maintenant fermer la window
-        button.up('window').close();
+        if (! record.get('id')) {
+            //POST
+            record.getProxy().appendId=false; //bug fix pour eviter d'appender un slah a la fin de l'url
+        }
 
+        record.save({
+            scope:this,
+            callback:function(){
+                button.up('window').close();
+                this.loadHoursStore();
+            }
+        });
+        record.getProxy().appendId=true;
     },
 
     onCancelClick: function(button, e, eOpts) {
@@ -113,23 +128,6 @@ Ext.define('dalpeApp.controller.logHours', {
     loadHoursStore: function() {
         var employes_logHours_store = Ext.getStore('employes_logHours');
         employes_logHours_store.load();
-    },
-
-    saveRecord: function(record) {
-        if (record.id) {
-            //On update la DB et on ferme la window
-            Employes.update_hour(record, function(){
-                this.loadHoursStore();
-            },this);
-        }
-        else {
-            //On cree le nouveau log hour 
-            Employes.log_hour(record, function(newRecord){
-                //On rajoute le nouvel employe dans le store
-                this.loadHoursStore();
-            },this);
-
-        }
     },
 
     editRecord: function(record) {

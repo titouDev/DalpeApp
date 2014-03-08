@@ -18,10 +18,12 @@ Ext.define('dalpeApp.model.chantier_link_documents', {
 
     fields: [
         {
-            name: 'chantierId'
+            name: 'chantierId',
+            type: 'int'
         },
         {
-            name: 'documentId'
+            name: 'documentId',
+            type: 'int'
         }
     ]
 });

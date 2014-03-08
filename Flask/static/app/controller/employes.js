@@ -67,7 +67,6 @@ Ext.define('dalpeApp.controller.employes', {
             scope:this,
             callback:function(employe){
                 myForm.getForm().loadRecord(employe);
-                myForm.down('#photo').setSrc(employe.get('photo'));
             }
         });
 

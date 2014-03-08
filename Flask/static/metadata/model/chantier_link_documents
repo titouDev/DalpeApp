@@ -18,7 +18,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "chantierId"
+                "name": "chantierId",
+                "type": "int"
             },
             "designerId": "f4c43c78-59e8-4721-8193-70dcd67a3604"
         },
@@ -30,7 +31,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "documentId"
+                "name": "documentId",
+                "type": "int"
             },
             "designerId": "5b01319d-6124-4e69-ada4-38877b332595"
         }

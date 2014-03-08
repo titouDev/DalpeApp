@@ -19,7 +19,8 @@ Ext.define('dalpeApp.model.employeHour', {
     fields: [
         {
             name: 'id',
-            persist: false
+            persist: false,
+            type: 'int'
         },
         {
             dateFormat: 'c',
@@ -44,16 +45,8 @@ Ext.define('dalpeApp.model.employeHour', {
             type: 'int'
         },
         {
-            name: 'chantier'
-        },
-        {
-            name: 'name'
-        },
-        {
-            name: 'lastName'
-        },
-        {
-            name: 'coutHoraire'
+            name: 'coutHoraire',
+            type: 'int'
         }
     ],
 
@@ -63,6 +56,10 @@ Ext.define('dalpeApp.model.employeHour', {
         reader: {
             type: 'json',
             root: 'records'
+        },
+        writer: {
+            type: 'json',
+            writeAllFields: false
         }
     }
 });

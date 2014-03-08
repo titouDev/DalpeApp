@@ -21,7 +21,7 @@
                 "mapping": null,
                 "name": "id",
                 "persist": false,
-                "type": "string"
+                "type": "int"
             },
             "designerId": "9f0e46ed-01b4-4c10-a3d5-f98c6a4321b7"
         },

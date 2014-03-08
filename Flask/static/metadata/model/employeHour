@@ -19,7 +19,8 @@
             "codeClass": null,
             "userConfig": {
                 "name": "id",
-                "persist": false
+                "persist": false,
+                "type": "int"
             },
             "designerId": "128ac4f3-0ca8-4801-b38f-896858725865"
         },
@@ -98,43 +99,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "chantier"
-            },
-            "designerId": "eaa6b298-e435-42fb-ab8b-05cea6045639"
-        },
-        {
-            "type": "Ext.data.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "name"
-            },
-            "designerId": "82e273ab-a150-485f-97f0-1942f5ce48bc"
-        },
-        {
-            "type": "Ext.data.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "lastName"
-            },
-            "designerId": "d8e1d920-9e76-4842-b2a1-1ecc7caa670e"
-        },
-        {
-            "type": "Ext.data.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "coutHoraire"
+                "name": "coutHoraire",
+                "type": "int"
             },
             "designerId": "c0505c0d-558b-4de8-bb63-005351391a5b"
         },
@@ -161,6 +127,18 @@
                         "root": "records"
                     },
                     "designerId": "9da55cf2-c5a4-4558-bd9f-26a0a787fceb"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "writeAllFields": false
+                    },
+                    "designerId": "bf3912c5-318c-44d9-95a7-2ad9044cfd57"
                 }
             ]
         }

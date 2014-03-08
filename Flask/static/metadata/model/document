@@ -19,7 +19,8 @@
             "codeClass": null,
             "userConfig": {
                 "name": "id",
-                "persist": false
+                "persist": false,
+                "type": "int"
             },
             "designerId": "f96e1af9-1755-47c4-bf67-f8ce345f7833"
         },

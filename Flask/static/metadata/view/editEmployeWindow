@@ -7,14 +7,18 @@
     "codeClass": null,
     "userConfig": {
         "container|align": "stretch",
-        "height": 515,
+        "height": 290,
         "id": "editEmployeWindow",
-        "minHeight": 515,
+        "maxHeight": 290,
+        "minHeight": 290,
         "minWidth": 650,
         "width": 757,
         "designer|userClassName": "editEmployeWindow",
         "designer|userAlias": "editEmployeWindow",
         "constrain": true,
+        "resizable": [
+            "false"
+        ],
         "layout": "vbox",
         "title": "Edit Employe",
         "modal": true
@@ -38,38 +42,6 @@
             },
             "designerId": "cf1f8207-3750-44dd-8460-b2ede63b64c3",
             "cn": [
-                {
-                    "type": "Ext.panel.Panel",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|flex": 1,
-                        "maxWidth": 200,
-                        "width": 75,
-                        "layout": "fit",
-                        "title": "Photos"
-                    },
-                    "designerId": "1dbdaa78-16b2-4c80-9e10-4b205d538af0",
-                    "cn": [
-                        {
-                            "type": "Ext.Img",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "height": 201,
-                                "itemId": "photo",
-                                "width": 201
-                            },
-                            "designerId": "3a9967f4-a737-4f5d-a3f1-1497b89d4fdd"
-                        }
-                    ]
-                },
                 {
                     "type": "Ext.panel.Panel",
                     "reference": {
@@ -319,59 +291,6 @@
                                     "designerId": "7fc5af17-2127-4224-aa87-dacc4e0a0e41"
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    "type": "Ext.form.Panel",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "layout|flex": 1,
-                        "layout|margins": "0 0 0 0",
-                        "container|align": "stretch",
-                        "border": "0 0 0 0",
-                        "itemId": "fileForm",
-                        "maxHeight": 30,
-                        "shadow": false,
-                        "layout": "hbox"
-                    },
-                    "designerId": "ed00360a-d9ae-44bb-8dbe-d0845563515b",
-                    "cn": [
-                        {
-                            "type": "Ext.form.field.File",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "layout|flex": 1,
-                                "layout|margins": "5",
-                                "itemId": "photoImport",
-                                "maxHeight": 30,
-                                "fieldLabel": "Photo",
-                                "name": "photoImport",
-                                "buttonText": "Rechercher..."
-                            },
-                            "designerId": "4752f42f-e77c-46e4-a7ea-9fb5e2d72767"
-                        },
-                        {
-                            "type": "Ext.button.Button",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "itemId": "savePhoto",
-                                "maxHeight": 30,
-                                "text": "Enregistrer"
-                            },
-                            "designerId": "d6a406c2-47ad-4906-ac10-6267bb4f2fcc"
                         }
                     ]
                 },

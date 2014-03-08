@@ -119,19 +119,6 @@ Ext.define('dalpeApp.view.appViewport', {
                                             columns: [
                                                 {
                                                     xtype: 'gridcolumn',
-                                                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                                        if (value)
-                                                        {
-                                                            return Ext.String.format('<img src="{0}" width="100">', value);
-                                                        }
-                                                        return '';
-                                                    },
-                                                    dataIndex: 'photo',
-                                                    text: 'Photo',
-                                                    flex: 1
-                                                },
-                                                {
-                                                    xtype: 'gridcolumn',
                                                     dataIndex: 'prenom',
                                                     text: 'Prenom',
                                                     flex: 1
@@ -145,19 +132,19 @@ Ext.define('dalpeApp.view.appViewport', {
                                                 {
                                                     xtype: 'gridcolumn',
                                                     dataIndex: 'mail',
-                                                    text: 'Mail',
+                                                    text: 'Courriel',
                                                     flex: 1.5
                                                 },
                                                 {
                                                     xtype: 'gridcolumn',
                                                     dataIndex: 'phone',
-                                                    text: 'Phone',
+                                                    text: 'Telephone',
                                                     flex: 1
                                                 },
                                                 {
                                                     xtype: 'gridcolumn',
                                                     dataIndex: 'cell',
-                                                    text: 'Cell',
+                                                    text: 'Cellulaire',
                                                     flex: 1
                                                 }
                                             ],
@@ -249,6 +236,7 @@ Ext.define('dalpeApp.view.appViewport', {
                                                         },
                                                         {
                                                             xtype: 'button',
+                                                            hidden: true,
                                                             itemId: 'sendMail',
                                                             iconCls: 'icon-send',
                                                             text: 'Envoyer un courriel'
@@ -298,6 +286,7 @@ Ext.define('dalpeApp.view.appViewport', {
                                             flex: 1,
                                             region: 'east',
                                             split: true,
+                                            hidden: true,
                                             layout: {
                                                 align: 'stretch',
                                                 type: 'vbox'
@@ -454,7 +443,7 @@ Ext.define('dalpeApp.view.appViewport', {
                                                 {
                                                     xtype: 'gridcolumn',
                                                     dataIndex: 'name',
-                                                    text: 'Name',
+                                                    text: 'Nom',
                                                     flex: 1
                                                 },
                                                 {
@@ -622,19 +611,19 @@ Ext.define('dalpeApp.view.appViewport', {
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'mail',
-                                            text: 'Mail',
+                                            text: 'Courriel',
                                             flex: 1
                                         },
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'phone',
-                                            text: 'Phone',
+                                            text: 'Telephone',
                                             flex: 1
                                         },
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'cell',
-                                            text: 'Cell',
+                                            text: 'Cellulaire',
                                             flex: 1
                                         }
                                     ],
@@ -705,27 +694,38 @@ Ext.define('dalpeApp.view.appViewport', {
                                                 {
                                                     xtype: 'datecolumn',
                                                     dataIndex: 'workDate',
-                                                    text: 'WorkDate',
+                                                    text: 'Date',
                                                     format: 'd-M-Y'
                                                 },
                                                 {
                                                     xtype: 'numbercolumn',
                                                     dataIndex: 'hours',
-                                                    text: 'Hours'
+                                                    text: 'Heures'
                                                 },
                                                 {
                                                     xtype: 'gridcolumn',
+                                                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                                        var store = Ext.getStore('chantiers');
+
+                                                        var chantier = store.getById(value);
+                                                        return chantier ? chantier.get('name') : "";
+
+                                                    },
                                                     width: 200,
-                                                    dataIndex: 'chantier',
+                                                    dataIndex: 'chantierId',
                                                     text: 'Chantier'
                                                 },
                                                 {
                                                     xtype: 'gridcolumn',
                                                     renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                                        return value + " " + record.data.lastName;
+                                                        var employeStore = Ext.getStore('employes');
+
+                                                        var employe = employeStore.getById(value);
+
+                                                        return employe.get('prenom') + " " + employe.get('nom');
                                                     },
                                                     width: 200,
-                                                    dataIndex: 'name',
+                                                    dataIndex: 'employeId',
                                                     text: 'Employe'
                                                 },
                                                 {

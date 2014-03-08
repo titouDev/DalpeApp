@@ -21,7 +21,6 @@ Ext.Loader.setConfig({
 Ext.application({
     models: [
         'specialite',
-        'employeHour',
         'document',
         'document_type',
         'chantier_link_documents',
