@@ -1,0 +1,15 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js1",
+        "url": "plugins/rsvp.js",
+        "defer": true,
+        "id": "js_RSVP"
+    },
+    "designerId": "170803cd-394e-4af4-b303-704932ccbb67"
+}

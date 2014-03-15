@@ -393,6 +393,12 @@
                 "app/store/sousTraitants_full.js"
             ],
             "className": "sousTraitants_full"
+        },
+        "170803cd-394e-4af4-b303-704932ccbb67": {
+            "paths": [
+                "metadata/resource/js1"
+            ],
+            "className": "js1"
         }
     },
     "viewOrderMap": {
@@ -451,7 +457,8 @@
         "resource": [
             "06ca827d-4e64-431a-bedd-3b4432a274f5",
             "2e155090-8c35-4c70-ba95-ef0c1d98bde2",
-            "d5c3bead-69f4-48d0-a6bc-1fdf63876706"
+            "d5c3bead-69f4-48d0-a6bc-1fdf63876706",
+            "170803cd-394e-4af4-b303-704932ccbb67"
         ],
         "app": [
             "application"
