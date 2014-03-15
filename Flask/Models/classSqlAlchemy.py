@@ -1,9 +1,12 @@
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import (Column,
+from sqlalchemy import (Table,
+						Column,
 						Integer,
 						String,
 						Float,
 						ForeignKey)
+
+from sqlalchemy.orm import relationship, backref
 
 Base = declarative_base()
 
@@ -96,6 +99,11 @@ class Mails_link_documents(Base):
 	__tablename__ = 'mails_link_documents'
 	mailId = 				Column(Integer, primary_key=True)
 	documentId = 			Column(Integer, primary_key=True)
+
+Soustraitants_link_specialites = Table('soustraitants_link_specialites', Base.metadata,
+    Column('soustraitants_id', Integer, ForeignKey('soustraitants.id')),
+    Column('specialites_id', Integer, ForeignKey('specialites.id'))
+)
 class Soustraitants(Base):	
 	__tablename__ = 'soustraitants'
 	id = 					Column(Integer, primary_key=True)
@@ -115,6 +123,9 @@ class Soustraitants(Base):
 	actif = 				Column(Integer)
 	note = 					Column(String)
 	lastUpdate = 			Column(String)
+	specialites = relationship("Specialites",
+                    secondary=Soustraitants_link_specialites,
+                    backref="Soustraitants")
 class Soustraitants_link_documents(Base):	
 	__tablename__ = 'soustraitants_link_documents'
 	id = 					Column(Integer, primary_key=True)
@@ -125,10 +136,6 @@ class Soustraitants_link_mails(Base):
 	soustraitants_id = 		Column(Integer, ForeignKey('soustraitants.id'), primary_key=True)
 	mails_id = 				Column(Integer, ForeignKey('mails.id'), primary_key=True)
 	sentDate = 				Column(String)
-class Soustraitants_link_specialites(Base):	
-	__tablename__ = 'soustraitants_link_specialites'
-	soustraitants_id = 		Column(Integer, ForeignKey('soustraitants.id'), primary_key=True)
-	specialites_id = 		Column(Integer, ForeignKey('specialites.id'), primary_key=True)
 class Soustraitants_notes(Base):	
 	__tablename__ = 'soustraitants_notes'
 	id = 					Column(Integer, primary_key=True)

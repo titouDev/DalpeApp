@@ -17,10 +17,11 @@ Ext.define('dalpeApp.view.editSousTraitantWindow', {
     extend: 'Ext.window.Window',
     alias: 'widget.editSousTraitantWindow',
 
-    height: 482,
+    height: 490,
     id: 'editSousTraitantWindow',
-    minWidth: 1300,
-    width: 1300,
+    minHeight: 490,
+    minWidth: 590,
+    width: 590,
     constrain: true,
     layout: {
         align: 'stretch',

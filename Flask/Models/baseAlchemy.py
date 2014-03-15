@@ -9,6 +9,8 @@ import logging
 from classSqlAlchemy import *
 
 from sqlalchemy.orm import sessionmaker
+get_class = lambda x: globals()[x]
+
 
 logging.basicConfig()
 #logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
@@ -23,40 +25,6 @@ Base.metadata.create_all(engine)
 db = sqlsoup.SQLSoup(engine)
 Session = sessionmaker(bind=engine)
 session = Session()
-
-sqliteTables = (
-                'chantiers',
-                'chantiers_link_documents',
-                'clients',
-                'document_type',
-                'documents',
-                'employes',
-                'employes_hours',
-                'mails',
-                'mails_link_documents',
-                'soustraitants',
-                'soustraitants_link_documents',
-                'soustraitants_link_mails',
-                'soustraitants_link_specialites',
-                'soustraitants_notes',
-                'specialites'
-                )
-metadata = MetaData()
-metadata.bind = engine
-
-for t in sqliteTables:
-    u = Table(t, metadata, autoload=True)
-allModels = {}
-for t in metadata.sorted_tables:
-    modelName = t.name
-    modelFields = {}
-    
-    for column in t.columns:
-        if column.foreign_keys:
-            modelFields[column.name.replace("_id","")] = {"join":list(column.foreign_keys)[0].column.table.name}
-        else:
-            modelFields[column.name] = {}
-    allModels[modelName] = {"fields":modelFields}
 
 
 def get(modelName, id=False, **kwargs):
@@ -104,3 +72,11 @@ def create(modelName, jsonData):
     dataObject = dict([(f, str(getattr(newRecord, f))) for f in tableFields])
     print dataObject
     return dataObject
+
+if __name__ == '__main__':
+    sp = Specialites(name='Beton')
+    session.add(sp)
+    st = Soustraitants(name='Rona', specialites=[sp])
+    session.add(st)
+    print session.query(Soustraitants).all()[0].specialites[0].name
+    print session.query(Specialites).all()[0].Soustraitants[0].name

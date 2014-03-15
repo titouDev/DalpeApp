@@ -29,8 +29,7 @@ def getModelById(name, id):
     data = json.dumps({"records":baseAlchemy.get_default(name,id=id)})
     return data
 
-
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run(debug=True)
     url_for('static', filename='app.html')
 
