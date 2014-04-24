@@ -8,7 +8,11 @@ import logging
 
 from classSqlAlchemy import *
 
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import (sessionmaker,
+                            class_mapper,
+                            lazyload,
+                            joinedload,
+                            subqueryload)
 get_class = lambda x: globals()[x]
 
 
@@ -57,6 +61,14 @@ def get_default(modelName,id=False, join=False, **filters):
         data.append(dataObject)
     return data
 
+def serialize(model):
+    """Transforms a model into a dictionary which can be dumped to JSON."""
+    # first we get the names of all the columns on your model
+    columns = [c.key for c in class_mapper(model.__class__).columns]
+    # then we return their values in a dict
+    return dict((c, getattr(model, c)) for c in columns)
+
+
 def update(modelName, id, jsonData):
     db = sqlsoup.SQLSoup(engine)
     table = db.entity(modelName)
@@ -70,13 +82,15 @@ def create(modelName, jsonData):
     newRecord = table.insert(**jsonData)
     db.commit()
     dataObject = dict([(f, str(getattr(newRecord, f))) for f in tableFields])
-    print dataObject
     return dataObject
+
+
 
 if __name__ == '__main__':
     sp = Specialites(name='Beton')
     session.add(sp)
     st = Soustraitants(name='Rona', specialites=[sp])
     session.add(st)
-    print session.query(Soustraitants).all()[0].specialites[0].name
-    print session.query(Specialites).all()[0].Soustraitants[0].name
+    stq = session.query(Soustraitants).all()[0]
+    print stq.specialites
+    print stq.specialites[0].id
