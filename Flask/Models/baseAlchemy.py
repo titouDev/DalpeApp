@@ -13,17 +13,19 @@ from sqlalchemy.orm import (sessionmaker,
                             lazyload,
                             joinedload,
                             subqueryload)
+
 get_class = lambda x: globals()[x]
 
 
-logging.basicConfig()
+#logging.basicConfig()
 #logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
 
 from sqlalchemy import (create_engine,
                         MetaData,
                         Table)
-dbSqLite = 'sqlite:///dalpe_construction_v1.db'
+dbSqLite = 'sqlite:///dalpe_construction_v22.db'
 engine = create_engine(dbSqLite, echo=True)
+
 Base.metadata.create_all(engine)
 
 db = sqlsoup.SQLSoup(engine)
@@ -68,6 +70,9 @@ def serialize(model):
     # then we return their values in a dict
     return dict((c, getattr(model, c)) for c in columns)
 
+def getModelFields(model):
+    fields = [c.key for c in class_mapper(model.__class__).columns]
+    return fields
 
 def update(modelName, id, jsonData):
     db = sqlsoup.SQLSoup(engine)
@@ -75,7 +80,7 @@ def update(modelName, id, jsonData):
     model = table.filter_by(id=id).update(jsonData)
     db.commit()
 
-def create(modelName, jsonData):
+def create_sqlSoup(modelName, jsonData):
     db = sqlsoup.SQLSoup(engine)
     table = db.entity(modelName)
     tableFields = [i for i in table._sa_class_manager]
@@ -84,13 +89,46 @@ def create(modelName, jsonData):
     dataObject = dict([(f, str(getattr(newRecord, f))) for f in tableFields])
     return dataObject
 
+def create(modelName, **kwargs):
+    model = get_class(modelName)
+    newRecord = model(**kwargs)
+    session.add(newRecord)
+    return newRecord
+    
+def createSpecialite(**kwargs):
+    specialite = create('Specialites', **kwargs)
+    try:
+        session.commit()
+    except:
+        #on assume que c'est un duplicate
+        session.rollback()
+        specialite = session.query(Specialites).filter_by(name=kwargs['name']).first()
+    return specialite
 
+def createSousTraitant(**kwargs):
+    specialites = kwargs.get('specialites', [])
+    specRecords = [createSpecialite(name=s) for s in specialites]
+    kwargs["specialites"] = specRecords
+    sousTraitant = create('Soustraitants', **kwargs)
+    try:
+        session.commit()
+    except:
+        session.rollback()
+        sousTraitant = session.query(Soustraitants).filter_by(name=kwargs['name']).first()
+    return sousTraitant
 
+def updateSousTraitant():
+    pass
+        
 if __name__ == '__main__':
-    sp = Specialites(name='Beton')
-    session.add(sp)
-    st = Soustraitants(name='Rona', specialites=[sp])
-    session.add(st)
-    stq = session.query(Soustraitants).all()[0]
-    print stq.specialites
-    print stq.specialites[0].id
+    print createSousTraitant(**{"name":"Codercre", "specialites":["beton","aluminium"]}).id
+    
+
+    # sp = Specialites(name='Beton')
+    # session.add(sp)
+    # sp = Specialites(name='Beton')
+    # session.add(sp)
+    # st = Soustraitants(name='Rona', specialites=[sp])
+    # session.add(st)
+    # stq = session.query(Specialites).all()
+    # print stq

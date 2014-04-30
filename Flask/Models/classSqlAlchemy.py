@@ -107,7 +107,7 @@ Soustraitants_link_specialites = Table('soustraitants_link_specialites', Base.me
 class Soustraitants(Base):  
     __tablename__ = 'soustraitants'
     id =                    Column(Integer, primary_key=True)
-    name =                  Column(String, nullable=False)
+    name =                  Column(String, nullable=False, unique=True)
     contactName =           Column(String)
     phone =                 Column(String)
     cell =                  Column(String)
@@ -148,6 +148,6 @@ class Soustraitants_notes(Base):
 class Specialites(Base):    
     __tablename__ = 'specialites'
     id =                    Column(Integer, primary_key=True)
-    name =                  Column(String, nullable=False)
+    name =                  Column(String, nullable=False, unique=True)
     def __repr__(self):
         return "<Specialites(name='%s')>" % (self.name)    
