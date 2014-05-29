@@ -16,17 +16,21 @@ def index():
 @app.route("/api/model/<name>", methods=['GET', 'POST'])
 def getModel(name):
     if request.method == 'POST':
-        recordCreated = baseAlchemy.create(name, json.loads(request.data ))
-        return json.dumps({"records":[recordCreated]})
-    data = json.dumps({"records":baseAlchemy.get(name,**request.args)})
-    return data 
+        kwargs = dict( (str(k), v) for k, v in json.loads(request.data).items() )
+        record = [baseAlchemy.create(name, **kwargs)]
+    elif request.method == 'GET':
+        record = baseAlchemy.get(name,**request.args)
+    return json.dumps({"records":record})
 
 @app.route("/api/model/<name>/<id>", methods=['GET', 'PUT', 'DELETE'])
 def getModelById(name, id):
     if request.method == 'PUT':
-        baseAlchemy.update(name, id, json.loads(request.data ))
-    
-    data = json.dumps({"records":baseAlchemy.get_default(name,id=id)})
+        kwargs = json.loads(request.data)
+        kwargs.pop('id',False)
+        record = baseAlchemy.update(name, id=id, **kwargs)
+    elif request.method == 'GET':
+        record = baseAlchemy.get(name,id=id)
+    data = json.dumps({"records":record})
     return data
 
 if __name__ == "__main__":

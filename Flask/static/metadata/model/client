@@ -134,18 +134,6 @@
             "designerId": "a7915350-20f5-4ab2-8d20-9ec6f021eee4"
         },
         {
-            "type": "Ext.data.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "displayName"
-            },
-            "designerId": "717d4c0f-8f6a-4d8d-9ade-721d6f2d55c5"
-        },
-        {
             "type": "Ext.data.proxy.Rest",
             "reference": {
                 "name": "proxy",

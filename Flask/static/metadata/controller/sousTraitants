@@ -790,7 +790,7 @@
                     "}",
                     "mySousTraitant.set(myForm.getValues());",
                     "if (! mySousTraitant.get('id')) {",
-                    "\t//POST",
+                    "    //POST",
                     "    mySousTraitant.getProxy().appendId=false; //bug fix pour eviter d'appender un slah a la fin de l'url",
                     "}",
                     "",

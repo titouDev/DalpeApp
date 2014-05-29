@@ -23,14 +23,29 @@ get_class = lambda x: globals()[x]
 from sqlalchemy import (create_engine,
                         MetaData,
                         Table)
-dbSqLite = 'sqlite:///dalpe_construction_v22.db'
-engine = create_engine(dbSqLite, echo=True)
+dbSqLite = 'sqlite:///dalpe_construction_v23.db'
+engine = create_engine(dbSqLite, echo=False, case_sensitive=False)
 
 Base.metadata.create_all(engine)
 
 db = sqlsoup.SQLSoup(engine)
 Session = sessionmaker(bind=engine)
-session = Session()
+#session = Session()
+
+from contextlib import contextmanager
+
+@contextmanager
+def session_scope():
+    """Provide a transactional scope around a series of operations."""
+    session = Session()
+    try:
+        yield session
+        session.commit()
+    except:
+        session.rollback()
+        raise
+    finally:
+        session.close()
 
 
 def get(modelName, id=False, **kwargs):
@@ -63,72 +78,75 @@ def get_default(modelName,id=False, join=False, **filters):
         data.append(dataObject)
     return data
 
-def serialize(model):
-    """Transforms a model into a dictionary which can be dumped to JSON."""
-    # first we get the names of all the columns on your model
-    columns = [c.key for c in class_mapper(model.__class__).columns]
-    # then we return their values in a dict
-    return dict((c, getattr(model, c)) for c in columns)
-
-def getModelFields(model):
-    fields = [c.key for c in class_mapper(model.__class__).columns]
-    return fields
-
-def update(modelName, id, jsonData):
-    db = sqlsoup.SQLSoup(engine)
-    table = db.entity(modelName)
-    model = table.filter_by(id=id).update(jsonData)
-    db.commit()
-
-def create_sqlSoup(modelName, jsonData):
-    db = sqlsoup.SQLSoup(engine)
-    table = db.entity(modelName)
-    tableFields = [i for i in table._sa_class_manager]
-    newRecord = table.insert(**jsonData)
-    db.commit()
-    dataObject = dict([(f, str(getattr(newRecord, f))) for f in tableFields])
-    return dataObject
 
 def create(modelName, **kwargs):
+    with session_scope() as session:
+        if modelName == 'sousTraitants':
+            record = createSoustraitant(session, **kwargs)
+        else:
+            record = createModel(session, modelName, **kwargs)
+        session.commit()
+        return record.toJson()
+
+def createSoustraitant(session, **kwargs):
+    specialites = kwargs.pop('specialites', False)
+    st = createModel(session, 'sousTraitants', uniqueKey='name', **kwargs)
+
+    if specialites:
+        appendSpecialitesToSoustraitants(session, st, specialites)
+    return st
+
+def updateSoustraitant(session, **kwargs):
+    specialites = kwargs.pop('specialites', False)
+    st = updateModel(session, 'sousTraitants', **kwargs)
+    if specialites:
+        appendSpecialitesToSoustraitants(session, st, specialites)
+    return st
+
+def appendSpecialitesToSoustraitants(session, st, specialites):
+    st.specialites = [createSpecialite(session, name=s) for s in specialites]
+
+def createSpecialite(session, **kwargs):
+    return createModel(session, 'specialites', uniqueKey='name',returnExisting=True, **kwargs)
+
+def update(modelName, **kwargs):
+    with session_scope() as session:
+        if modelName == 'sousTraitants':
+            record = updateSoustraitant(session, **kwargs)
+        else:
+            record = updateModel(session, modelName, **kwargs)
+        session.commit()
+        return record.toJson()
+
+def createModel(session, modelName, uniqueKey=None,returnExisting=False, onDuplicateUpdate=False, **kwargs):
+    model=get_class(modelName)
+    if uniqueKey is not None:
+        query = session.query(model).filter(getattr(model, uniqueKey)== kwargs[uniqueKey])
+        record = query.first()
+        if not record:
+            record = model(**kwargs)
+            session.add(record)
+        elif returnExisting:
+            pass
+        elif onDuplicateUpdate:
+            query.update(kwargs)
+        else:
+            raise ValueError('%s with %s %s already exist' % (modelName, uniqueKey, kwargs[uniqueKey]))
+        return record
+    else:
+        record = model(**kwargs)
+        session.add(record)
+        return record
+
+
+def updateModel(session, modelName, **kwargs):
     model = get_class(modelName)
-    newRecord = model(**kwargs)
-    session.add(newRecord)
-    return newRecord
-    
-def createSpecialite(**kwargs):
-    specialite = create('Specialites', **kwargs)
-    try:
-        session.commit()
-    except:
-        #on assume que c'est un duplicate
-        session.rollback()
-        specialite = session.query(Specialites).filter_by(name=kwargs['name']).first()
-    return specialite
+    query = session.query(model).filter(model.id==kwargs["id"])
+    query.update(kwargs)
+    return query.first()
 
-def createSousTraitant(**kwargs):
-    specialites = kwargs.get('specialites', [])
-    specRecords = [createSpecialite(name=s) for s in specialites]
-    kwargs["specialites"] = specRecords
-    sousTraitant = create('Soustraitants', **kwargs)
-    try:
-        session.commit()
-    except:
-        session.rollback()
-        sousTraitant = session.query(Soustraitants).filter_by(name=kwargs['name']).first()
-    return sousTraitant
 
-def updateSousTraitant():
-    pass
-        
+
 if __name__ == '__main__':
-    print createSousTraitant(**{"name":"Codercre", "specialites":["beton","aluminium"]}).id
-    
+    print create('sousTraitants', name='Bonjousr', specialites=['Boudadsfsdadlanger', 'Patissasasdddier'])
 
-    # sp = Specialites(name='Beton')
-    # session.add(sp)
-    # sp = Specialites(name='Beton')
-    # session.add(sp)
-    # st = Soustraitants(name='Rona', specialites=[sp])
-    # session.add(st)
-    # stq = session.query(Specialites).all()
-    # print stq

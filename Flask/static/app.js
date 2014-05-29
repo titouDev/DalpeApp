@@ -101,6 +101,25 @@ Ext.application({
 
 
 
+    },
+
+    createRecord: function(model, data) {
+        var me =this;
+        var promise = new RSVP.Promise(function(resolve, reject) {
+            Ext.Ajax.request({
+                url: ('/api/model/'+model),
+                method:'POST',
+                jsonData: data,
+                success: function(response){
+                    var jsonData = Ext.JSON.decode(response.responseText);
+                    var myModel = me.getModel(model);
+                    var record = new myModel(jsonData);
+                    console.log(record);
+                }
+            });
+        });
+
+        return promise;
     }
 
 });

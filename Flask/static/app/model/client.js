@@ -48,9 +48,6 @@ Ext.define('dalpeApp.model.client', {
         },
         {
             name: 'province'
-        },
-        {
-            name: 'displayName'
         }
     ],
 

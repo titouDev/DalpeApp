@@ -102,6 +102,40 @@
                 ]
             },
             "designerId": "5cbb8634-3149-4cdf-b1d1-05fc951f7373"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "createRecord",
+                "designer|params": [
+                    "model",
+                    "data"
+                ],
+                "implHandler": [
+                    "var me =this;",
+                    "var promise = new RSVP.Promise(function(resolve, reject) {",
+                    "    Ext.Ajax.request({",
+                    "        url: ('/api/model/'+model),",
+                    "        method:'POST',",
+                    "        jsonData: data,",
+                    "        success: function(response){",
+                    "            var jsonData = Ext.JSON.decode(response.responseText);",
+                    "            var myModel = me.getModel(model);",
+                    "            var record = new myModel(jsonData);",
+                    "            console.log(record);",
+                    "        }",
+                    "    });",
+                    "});",
+                    "",
+                    "return promise;"
+                ]
+            },
+            "designerId": "697ee51b-f84d-4a7e-a138-4c67d83dcb13"
         }
     ]
 }
