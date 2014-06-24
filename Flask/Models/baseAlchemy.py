@@ -121,7 +121,7 @@ def update(modelName, **kwargs):
 def createModel(session, modelName, uniqueKey=None,returnExisting=False, onDuplicateUpdate=False, **kwargs):
     model=get_class(modelName)
     if uniqueKey is not None:
-        query = session.query(model).filter(getattr(model, uniqueKey)== kwargs[uniqueKey])
+        query = session.query(model).filter(getattr(model, uniqueKey) == kwargs[uniqueKey])
         record = query.first()
         if not record:
             record = model(**kwargs)
@@ -148,5 +148,6 @@ def updateModel(session, modelName, **kwargs):
 
 
 if __name__ == '__main__':
-    print create('sousTraitants', name='Bonjousr', specialites=['Boudadsfsdadlanger', 'Patissasasdddier'])
+    model=get_class('chantiers')
+    print dir(model), 'name' in model.__dict__   
 

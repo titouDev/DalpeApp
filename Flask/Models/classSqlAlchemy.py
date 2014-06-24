@@ -93,7 +93,7 @@ class employes(Base, AddonsBase):
     photo =                 Column(String)
     photoSize =             Column(Float())
     photoExtension =        Column(String)
-class Employes_hours(Base, AddonsBase): 
+class employes_hours(Base, AddonsBase): 
     __tablename__ = 'employes_hours'    
     id =                    Column(Integer, primary_key=True)
     employeId =             Column(Integer, nullable=True)

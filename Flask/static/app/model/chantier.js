@@ -47,7 +47,8 @@ Ext.define('dalpeApp.model.chantier', {
             type: 'date'
         },
         {
-            name: 'clientName'
+            name: 'clientName',
+            persist: false
         }
     ],
 

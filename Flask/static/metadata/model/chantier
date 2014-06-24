@@ -111,7 +111,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "clientName"
+                "name": "clientName",
+                "persist": false
             },
             "designerId": "3eb60780-9bb8-40d1-abfa-539a99e26ef8"
         },
