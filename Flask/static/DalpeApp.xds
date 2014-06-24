@@ -1,7 +1,7 @@
 {
     "name": "DalpeApp",
     "settings": {
-        "urlPrefix": "http://localhost/DalpeApp",
+        "urlPrefix": "http://localhost:5000",
         "spacesToIndent": 4,
         "exportPath": "/Applications/MAMP/htdocs/DalpePublish",
         "sdkPath": "",
