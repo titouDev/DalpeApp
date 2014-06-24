@@ -20,7 +20,8 @@ Ext.define('dalpeApp.controller.employes', {
         'employe'
     ],
     stores: [
-        'employes'
+        'employes',
+        'clients'
     ],
     views: [
         'editEmployeWindow'
@@ -43,7 +44,7 @@ Ext.define('dalpeApp.controller.employes', {
     },
 
     onEmployesPanelActivate: function(component, eOpts) {
-        this.getEmployesStore().load();
+        this.getEmployesStore().load();    
 
     },
 

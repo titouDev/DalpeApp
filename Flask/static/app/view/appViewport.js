@@ -472,7 +472,12 @@ Ext.define('dalpeApp.view.appViewport', {
                                                 },
                                                 {
                                                     xtype: 'gridcolumn',
-                                                    dataIndex: 'clientName',
+                                                    renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
+                                                        var clientStore = Ext.getStore('clients');
+                                                        var client = clientStore.getById(record.get('clientId'));
+                                                        return client ? client.get('nom') : '';
+                                                    },
+                                                    dataIndex: 'clientId',
                                                     text: 'Client',
                                                     flex: 1
                                                 }
@@ -705,9 +710,9 @@ Ext.define('dalpeApp.view.appViewport', {
                                                 {
                                                     xtype: 'gridcolumn',
                                                     renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                                        var store = Ext.getStore('chantiers');
+                                                        var chantierStore = Ext.getStore('chantiers');
 
-                                                        var chantier = store.getById(value);
+                                                        var chantier = chantierStore.getById(value);
                                                         return chantier ? chantier.get('name') : "";
 
                                                     },

@@ -103,9 +103,13 @@ Ext.define('dalpeApp.controller.chantiers', {
     },
 
     onChantiersPanelActivate: function(component, eOpts) {
-        this.getChantiersStore().load();
-        this.getClientsStore().load();
-        this.refreshHoursGrid();
+        var me =this;
+        me.loadClients().then(function(){
+            me.getChantiersStore().load();
+            me.refreshHoursGrid();
+        });
+
+
 
     },
 
@@ -134,6 +138,18 @@ Ext.define('dalpeApp.controller.chantiers', {
 
         editChantierWindow.show();
 
+    },
+
+    loadClients: function() {
+        var store = this.getClientsStore();
+        var promise = new RSVP.Promise(function(resolve, reject) {
+            store.load({
+                callback:function(){
+                    resolve();
+                }
+            });
+        });
+        return promise;
     },
 
     refreshHoursGrid: function() {

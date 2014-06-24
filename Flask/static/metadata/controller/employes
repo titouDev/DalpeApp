@@ -10,7 +10,8 @@
             "employe"
         ],
         "stores": [
-            "employes"
+            "employes",
+            "clients"
         ],
         "views": [
             "editEmployeWindow"
@@ -81,7 +82,7 @@
             "userConfig": {
                 "fn": "onEmployesPanelActivate",
                 "implHandler": [
-                    "this.getEmployesStore().load();",
+                    "this.getEmployesStore().load();    ",
                     ""
                 ],
                 "name": "activate",

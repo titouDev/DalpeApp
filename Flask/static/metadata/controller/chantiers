@@ -26,6 +26,29 @@
             },
             "codeClass": null,
             "userConfig": {
+                "fn": "loadClients",
+                "implHandler": [
+                    "var store = this.getClientsStore();",
+                    "var promise = new RSVP.Promise(function(resolve, reject) {",
+                    "    store.load({",
+                    "        callback:function(){",
+                    "            resolve();",
+                    "        }",
+                    "    });",
+                    "});",
+                    "return promise;"
+                ]
+            },
+            "designerId": "23e0c222-2574-4192-a879-eec579d22e0e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "fn": "refreshHoursGrid",
                 "implHandler": [
                     "//On verifie qu'un record de chantier est selectionne",
@@ -210,9 +233,13 @@
             "userConfig": {
                 "fn": "onChantiersPanelActivate",
                 "implHandler": [
-                    "this.getChantiersStore().load();",
-                    "this.getClientsStore().load();",
-                    "this.refreshHoursGrid();",
+                    "var me =this;",
+                    "me.loadClients().then(function(){",
+                    "    me.getChantiersStore().load();",
+                    "    me.refreshHoursGrid();",
+                    "});",
+                    "",
+                    "",
                     ""
                 ],
                 "name": "activate",

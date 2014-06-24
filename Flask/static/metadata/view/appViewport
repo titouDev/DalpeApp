@@ -1098,11 +1098,39 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "dataIndex": "clientName",
+                                                "dataIndex": "clientId",
                                                 "text": "Client",
                                                 "flex": 1
                                             },
-                                            "designerId": "b3da5c6d-db24-4355-822a-5959561bf5d8"
+                                            "designerId": "b3da5c6d-db24-4355-822a-5959561bf5d8",
+                                            "cn": [
+                                                {
+                                                    "type": "fixedfunction",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "renderer",
+                                                        "designer|params": [
+                                                            "value",
+                                                            "metaData",
+                                                            "record",
+                                                            "rowIndex",
+                                                            "colIndex",
+                                                            "store",
+                                                            "view"
+                                                        ],
+                                                        "implHandler": [
+                                                            "var clientStore = Ext.getStore('clients');",
+                                                            "var client = clientStore.getById(record.get('clientId'));",
+                                                            "return client ? client.get('nom') : '';"
+                                                        ]
+                                                    },
+                                                    "designerId": "12ce5d73-6e09-459a-a039-f6ad4a44090d"
+                                                }
+                                            ]
                                         },
                                         {
                                             "type": "Ext.toolbar.Toolbar",
@@ -1694,9 +1722,9 @@
                                                             "view"
                                                         ],
                                                         "implHandler": [
-                                                            "var store = Ext.getStore('chantiers');",
+                                                            "var chantierStore = Ext.getStore('chantiers');",
                                                             "",
-                                                            "var chantier = store.getById(value);",
+                                                            "var chantier = chantierStore.getById(value);",
                                                             "return chantier ? chantier.get('name') : \"\";",
                                                             ""
                                                         ]
