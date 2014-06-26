@@ -57,12 +57,12 @@ class clients(Base, AddonsBase):
     note =                  Column(String, nullable=True)
     lastUpdate =            Column(String, nullable=True)
 
-class Document_type(Base, AddonsBase):  
+class document_type(Base, AddonsBase):  
     __tablename__ = 'document_type'
     id =                    Column(Integer, primary_key=True)
     name =                  Column(String, nullable=False)
 
-class Documents(Base, AddonsBase):  
+class documents(Base, AddonsBase):  
     __tablename__ = 'documents'
     id =                    Column(Integer, primary_key=True)
     name =                  Column(String, nullable=False)
@@ -72,6 +72,8 @@ class Documents(Base, AddonsBase):
     extension =             Column(String, nullable=True)
     note =                  Column(String, nullable=True)
     creationDate =          Column(String, nullable=True)
+    
+
 class employes(Base, AddonsBase):   
     __tablename__ = 'employes'  
     id =                    Column(Integer, primary_key=True)
@@ -118,8 +120,8 @@ class Mails_link_documents(Base, AddonsBase):
     documentId =            Column(Integer, primary_key=True)
 
 Soustraitants_link_specialites = Table('soustraitants_link_specialites', Base.metadata,
-    Column('soustraitants_id', Integer, ForeignKey('soustraitants.id')),
-    Column('specialites_id', Integer, ForeignKey('specialites.id'))
+    Column('soustraitants_id', Integer, ForeignKey('soustraitants.id'), primary_key=True),
+    Column('specialites_id', Integer, ForeignKey('specialites.id'), primary_key=True)
 )
 class sousTraitants(Base, AddonsBase):  
     __tablename__ = 'soustraitants'
@@ -141,9 +143,12 @@ class sousTraitants(Base, AddonsBase):
     note =                  Column(String)
     lastUpdate =            Column(String)
     specialites = relationship("specialites",
-                    secondary=Soustraitants_link_specialites,
+                    secondary=lambda: Soustraitants_link_specialites,
                     backref="sousTraitants"
                     )
+    documents = relationship("documents",
+                    secondary=lambda: Soustraitants_link_documents,
+                    backref="soustraitants")
     def toJson(self):
         
         specialites = [serialize(s) for s in self.specialites]
@@ -151,11 +156,6 @@ class sousTraitants(Base, AddonsBase):
         dictRecord["specialites"] = specialites
         return dictRecord
 
-class Soustraitants_link_documents(Base, AddonsBase):   
-    __tablename__ = 'soustraitants_link_documents'
-    id =                    Column(Integer, primary_key=True)
-    sousTraitantId =        Column(Integer, nullable=True)
-    documentId =            Column(Integer, nullable=True)
 class Soustraitants_link_mails(Base, AddonsBase):   
     __tablename__ = 'soustraitants_link_mails'  
     soustraitants_id =      Column(Integer, ForeignKey('soustraitants.id'), primary_key=True)
@@ -174,3 +174,8 @@ class specialites(Base, AddonsBase):
     
     def __repr__(self):
         return "<Specialites(name='%s')>" % (self.name)
+Soustraitants_link_documents = Table('soustraitants_link_documents', Base.metadata,   
+    Column('id',Integer, primary_key=True),
+    Column('sousTraitantId', Integer, ForeignKey('soustraitants.id'), nullable=False),
+    Column('documentId', Integer, ForeignKey('documents.id'), nullable=False)
+)

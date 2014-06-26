@@ -26,7 +26,8 @@ Ext.define('dalpeApp.model.sousTraitant', {
             name: 'name'
         },
         {
-            name: 'contactName'
+            name: 'contactName',
+            useNull: true
         },
         {
             name: 'mail',

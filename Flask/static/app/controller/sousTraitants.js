@@ -54,15 +54,8 @@ Ext.define('dalpeApp.controller.sousTraitants', {
     ],
 
     onTextfieldChange: function(field, newValue, oldValue, eOpts) {
-        //On filtre le store en local
-        var regFind = new RegExp(newValue,"i");
-        this.getSousTraitantsStore().clearFilter(true);
-        this.getSousTraitantsStore().filter([
-        {filterFn: function(item) {
-            return (regFind.test(item.get("name")) || regFind.test(item.get("contactName"))  );
-        }}
-        ]);
-        this.resetMailsGrid();
+        this.applyQuickSearch();
+
     },
 
     onDeleteMailNotSentButtonClick: function(button, e, eOpts) {
@@ -94,19 +87,6 @@ Ext.define('dalpeApp.controller.sousTraitants', {
 
     },
 
-    onRowselectionmodelSelect: function(rowmodel, record, index, eOpts) {
-
-        var mailsStore = this.getMailsGrid().store;
-        mailsStore.clearFilter(true);
-        mailsStore.filter('soustraitants_id',record.data.id);
-
-        //On update egalement le tire du mail panel
-        var newTitle = 'Courriels envoyés à ' + record.data.name;
-        this.getMailsGrid().setTitle(newTitle);
-
-
-    },
-
     onRefreshClick: function(tool, e, eOpts) {
         this.reloadSousTraitantsStore();
     },
@@ -119,13 +99,13 @@ Ext.define('dalpeApp.controller.sousTraitants', {
     },
 
     onComboSpecialitesSelect: function(combo, records, eOpts) {
-        this.reloadSousTraitantsStore();
-        this.resetMailsGrid();
+        this.refreshGrid();
+
     },
 
     onSousTraitantsPanelActivate: function(component, eOpts) {
-        this.getSousTraitantsStore().proxy.sortParam = undefined; //empeche d'envoye le param sort dans le proxy
-        this.getSousTraitantsStore().load();
+        this.refreshGrid();
+
     },
 
     onCreateMailButtonClick: function(button, e, eOpts) {
@@ -222,10 +202,23 @@ Ext.define('dalpeApp.controller.sousTraitants', {
             scope:this,
             callback:function(){
                 button.up('window').close();
-                this.getSousTraitantsStore().load();
+                this.refreshGrid();
             }
         });
         mySousTraitant.getProxy().appendId=true;
+    },
+
+    refreshGrid: function() {
+        var me = this;
+
+        //On prend la valeur du comboSpecialite
+        var specialiteId = me.getSousTraitantsGrid().down('#comboSpecialites').getValue();
+        me.reloadSousTraitantsStore()
+        .then(function(){
+            me.applyQuickSearch();
+
+        })
+
     },
 
     editMail: function(record) {
@@ -310,20 +303,21 @@ Ext.define('dalpeApp.controller.sousTraitants', {
 
     },
 
-    reloadSousTraitantsStore: function() {
-        //On vide les stores qui ont besoin d'etre vides
-        this.getMailsStore().removeAll();
+    reloadSousTraitantsStore: function(params) {
+        var me = this;
+        var promise = new RSVP.Promise(function(resolve, reject) {
+            var store = me.getSousTraitantsStore();
+            store.getProxy().extraParams = params;
+            store.load({
+                callback:function(){
+                    resolve();
+                }
+            });
 
-        //On prend la valeur du comboSpecialite
-        var specialiteId = this.getSousTraitantsGrid().down('#comboSpecialites').getValue();
+        });
 
-        this.getSousTraitantsGrid().selModel.deselectAll();
-        var myStore = this.getSousTraitantsStore();
-        myStore.proxy.extraParams = {
-            searchText:this.getSearchField().value,
-            specialiteId:specialiteId
-        };
-        myStore.load();
+        return promise;
+
     },
 
     filterSousTraitantsStoreWithText: function() {
@@ -386,6 +380,19 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         mailsGrid.setTitle('Courriels');
     },
 
+    applyQuickSearch: function() {
+        var newValue = this.getSearchField().getValue();
+        //On filtre le store en local
+        var regFind = new RegExp(newValue,"i");
+        var store = this.getSousTraitantsStore();
+        store.clearFilter(true);
+        store.filter([
+        {filterFn: function(item) {
+            return (regFind.test(item.get("name")) || regFind.test(item.get("contactName"))  );
+        }}
+        ]);
+    },
+
     showMailWindow: function(record) {
         var myMail = record.data;
 
@@ -428,9 +435,6 @@ Ext.define('dalpeApp.controller.sousTraitants', {
             },
             "#deleteMailNotSentButton": {
                 click: this.onDeleteMailNotSentButtonClick
-            },
-            "#sousTraitantsGrid": {
-                select: this.onRowselectionmodelSelect
             },
             "#sousTraitantsGrid #refresh": {
                 click: this.onRefreshClick

@@ -37,15 +37,8 @@
             "userConfig": {
                 "fn": "onTextfieldChange",
                 "implHandler": [
-                    "//On filtre le store en local",
-                    "var regFind = new RegExp(newValue,\"i\");",
-                    "this.getSousTraitantsStore().clearFilter(true);",
-                    "this.getSousTraitantsStore().filter([",
-                    "{filterFn: function(item) {",
-                    "    return (regFind.test(item.get(\"name\")) || regFind.test(item.get(\"contactName\"))  );",
-                    "}}",
-                    "]);",
-                    "this.resetMailsGrid();"
+                    "this.applyQuickSearch();",
+                    ""
                 ],
                 "name": "change",
                 "scope": "me",
@@ -110,6 +103,30 @@
                 "selector": "#mails_notsent_grid"
             },
             "designerId": "f1a40816-b8d5-4f31-9e78-6da628f31041"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "refreshGrid",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "//On prend la valeur du comboSpecialite",
+                    "var specialiteId = me.getSousTraitantsGrid().down('#comboSpecialites').getValue();",
+                    "me.reloadSousTraitantsStore()",
+                    ".then(function(){",
+                    "    me.applyQuickSearch();",
+                    "    ",
+                    "})",
+                    ""
+                ]
+            },
+            "designerId": "bfe5ee6f-eb49-435f-ac60-699159e8c8b3"
         },
         {
             "type": "basicfunction",
@@ -238,20 +255,24 @@
             "codeClass": null,
             "userConfig": {
                 "fn": "reloadSousTraitantsStore",
+                "designer|params": [
+                    "params"
+                ],
                 "implHandler": [
-                    "//On vide les stores qui ont besoin d'etre vides",
-                    "this.getMailsStore().removeAll();",
+                    "var me = this;",
+                    "var promise = new RSVP.Promise(function(resolve, reject) {",
+                    "    var store = me.getSousTraitantsStore();",
+                    "    store.getProxy().extraParams = params;",
+                    "    store.load({",
+                    "        callback:function(){",
+                    "            resolve();",
+                    "        }",
+                    "    });",
+                    "    ",
+                    "});",
                     "",
-                    "//On prend la valeur du comboSpecialite",
-                    "var specialiteId = this.getSousTraitantsGrid().down('#comboSpecialites').getValue();",
-                    "",
-                    "this.getSousTraitantsGrid().selModel.deselectAll();",
-                    "var myStore = this.getSousTraitantsStore();",
-                    "myStore.proxy.extraParams = {",
-                    "    searchText:this.getSearchField().value,",
-                    "    specialiteId:specialiteId",
-                    "};",
-                    "myStore.load();"
+                    "return promise;",
+                    ""
                 ]
             },
             "designerId": "f21b65be-3f0b-4381-a43a-a8e7d9d7cc9f"
@@ -340,34 +361,6 @@
                 ]
             },
             "designerId": "dc52b804-9e86-4a66-8bd7-8ae34522c9d5"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onRowselectionmodelSelect",
-                "implHandler": [
-                    "",
-                    "var mailsStore = this.getMailsGrid().store;",
-                    "mailsStore.clearFilter(true);",
-                    "mailsStore.filter('soustraitants_id',record.data.id);",
-                    "",
-                    "//On update egalement le tire du mail panel",
-                    "var newTitle = 'Courriels envoyés à ' + record.data.name;",
-                    "this.getMailsGrid().setTitle(newTitle);",
-                    "",
-                    ""
-                ],
-                "name": "select",
-                "scope": "me",
-                "designer|targetType": "Ext.selection.RowModel",
-                "designer|controlQuery": "#sousTraitantsGrid"
-            },
-            "designerId": "4b761dbc-42fa-4c5b-bbd2-b5a5695f16b7"
         },
         {
             "type": "basicfunction",
@@ -496,8 +489,8 @@
             "userConfig": {
                 "fn": "onComboSpecialitesSelect",
                 "implHandler": [
-                    "this.reloadSousTraitantsStore();",
-                    "this.resetMailsGrid();"
+                    "this.refreshGrid();",
+                    ""
                 ],
                 "name": "select",
                 "scope": "me",
@@ -516,8 +509,8 @@
             "userConfig": {
                 "fn": "onSousTraitantsPanelActivate",
                 "implHandler": [
-                    "this.getSousTraitantsStore().proxy.sortParam = undefined; //empeche d'envoye le param sort dans le proxy",
-                    "this.getSousTraitantsStore().load();"
+                    "this.refreshGrid();",
+                    ""
                 ],
                 "name": "activate",
                 "scope": "me",
@@ -563,6 +556,30 @@
                 "designer|controlQuery": "#refreshMailsNotSentGrid"
             },
             "designerId": "3d544a8d-f7cb-4944-8ff2-b7909260af74"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "applyQuickSearch",
+                "implHandler": [
+                    "var newValue = this.getSearchField().getValue();",
+                    "//On filtre le store en local",
+                    "var regFind = new RegExp(newValue,\"i\");",
+                    "var store = this.getSousTraitantsStore();",
+                    "store.clearFilter(true);",
+                    "store.filter([",
+                    "{filterFn: function(item) {",
+                    "    return (regFind.test(item.get(\"name\")) || regFind.test(item.get(\"contactName\"))  );",
+                    "}}",
+                    "]);"
+                ]
+            },
+            "designerId": "96185a27-c824-4708-a833-e79ccff4e1a1"
         },
         {
             "type": "basicfunction",
@@ -798,7 +815,7 @@
                     "    scope:this,",
                     "    callback:function(){",
                     "        button.up('window').close();",
-                    "        this.getSousTraitantsStore().load();",
+                    "        this.refreshGrid();",
                     "    }",
                     "});",
                     "mySousTraitant.getProxy().appendId=true;"

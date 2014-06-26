@@ -23,12 +23,12 @@ get_class = lambda x: globals()[x]
 from sqlalchemy import (create_engine,
                         MetaData,
                         Table)
-dbSqLite = 'sqlite:///dalpe_construction_v23.db'
+dbSqLite = 'sqlite:///dalpe_construction_v113.db'
 engine = create_engine(dbSqLite, echo=False, case_sensitive=False)
 
 Base.metadata.create_all(engine)
 
-db = sqlsoup.SQLSoup(engine)
+#db = sqlsoup.SQLSoup(engine)
 Session = sessionmaker(bind=engine)
 #session = Session()
 
@@ -48,7 +48,20 @@ def session_scope():
         session.close()
 
 
-def get(modelName, id=False, **kwargs):
+def get(modelName, **kwargs):
+    with session_scope() as session:
+        model = get_class(modelName)
+        query = session.query(model)
+        acceptedFilters = set(getColumns(model)) & kwargs.viewkeys()
+        if acceptedFilters:
+            query = query.filter_by(**dict((f, kwargs[f]) for f in acceptedFilters))
+        records = query.all()
+        return [r.toJson() for r in records]
+
+def getColumns(model):
+    return [c.name for c in model.__table__.columns]
+
+def get_old(modelName, id=False, **kwargs):
     filter = kwargs.get('filter')
     if modelName == "sousTraitants":
         specialiteId = kwargs.get('specialiteId')
@@ -147,7 +160,13 @@ def updateModel(session, modelName, **kwargs):
 
 
 
+
 if __name__ == '__main__':
-    model=get_class('chantiers')
-    print dir(model), 'name' in model.__dict__   
+    with session_scope() as session:
+        
+        s = session.query(sousTraitants).first()
+        s.documents.append(documents(name='tutu'))
+        session.commit()
+        #print session.query(sousTraitants).join(Soustraitants_link_documents, documents).filter(documents.name.in_(['tutu'])).all()
+        print session.query(sousTraitants).filter(sousTraitants.documents.any(name='tutu')).all()
 

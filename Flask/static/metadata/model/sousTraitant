@@ -45,7 +45,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "contactName"
+                "name": "contactName",
+                "useNull": true
             },
             "designerId": "8959d887-174e-4ed4-9a56-e770daa1b073"
         },
