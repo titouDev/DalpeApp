@@ -372,6 +372,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "itemId": "actionColumSpecialitesGrid",
                                         "flex": 1
                                     },
                                     "designerId": "52c90dd9-1b6a-4152-bc5d-0a12160c6afc",
@@ -407,14 +408,9 @@
                                                             "e"
                                                         ],
                                                         "implHandler": [
-                                                            "var mySpecialite = view.store.data.items[rowIndex].data;",
-                                                            "",
-                                                            "var mySousTraitant = Ext.getCmp('editSousTraitantWindow').down('form').getValues();",
-                                                            "",
-                                                            "SousTraitants.removeLinkWithSpecialite(mySpecialite, mySousTraitant);",
-                                                            "",
-                                                            "",
-                                                            "Ext.getCmp('editSousTraitantWindow').down('#specialitesGrid').store.load();"
+                                                            "var mySpecialite = view.store.data.items[rowIndex];",
+                                                            "dalpeApp.getApplication().getController('sousTraitants').addOrRemoveSpecialite(mySpecialite.get('name'), 'remove');",
+                                                            ""
                                                         ]
                                                     },
                                                     "designerId": "ccde5bea-d2ca-4b86-b580-2be3c705f5db"
@@ -464,18 +460,12 @@
                                                         "implHandler": [
                                                             "//On eut etre sur que le sous traitant est cree avant d'ajouter une specialite",
                                                             "var myForm = button.up('window').down('form');",
-                                                            "if (myForm.getValues().id)",
-                                                            "{",
-                                                            "    //Lorsqu'on click, on veut ouvrir une fenetre avec un combobox listant les specialites",
-                                                            "    var addSpecialiteWindow = Ext.widget('windowAddSpecialite').show();",
-                                                            "    var specialiteStore = addSpecialiteWindow.down('#comboAddSpecialites').store;",
-                                                            "    specialiteStore.clearFilter();",
-                                                            "    specialiteStore.load();",
-                                                            "}",
-                                                            "else",
-                                                            "{",
-                                                            "    Ext.MessageBox.alert('Attention','Vous devez d\\'abord cree le soustraitant');",
-                                                            "}",
+                                                            "",
+                                                            "//Lorsqu'on click, on veut ouvrir une fenetre avec un combobox listant les specialites",
+                                                            "var addSpecialiteWindow = Ext.widget('windowAddSpecialite').show();",
+                                                            "var specialiteStore = addSpecialiteWindow.down('#comboAddSpecialites').store;",
+                                                            "specialiteStore.clearFilter();",
+                                                            "specialiteStore.load();",
                                                             ""
                                                         ]
                                                     },

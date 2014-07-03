@@ -130,7 +130,8 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         //var myStore = Ext.getStore('specialiteLinkSousTraitant');
         //myStore.proxy.extraParams = '';
         //myStore.removeAll();
-
+        this.currentSpecialites = [];
+        this.loadSpecialiteLinkSoustraitantsStore(this.currentSpecialites);
         Ext.widget('editSousTraitantWindow').show();
     },
 
@@ -223,12 +224,25 @@ Ext.define('dalpeApp.controller.sousTraitants', {
     },
 
     onAddSpecialiteClick: function(button, e, eOpts) {
-        var selectedRecord = this.getSousTraitantsGrid().selModel.getSelection()[0];
         var specialite = this.getComboAddSpecialites().getValue();
-        selectedRecord.data.specialites.push({name:specialite});
-        console.log(selectedRecord)
-        this.loadSpecialiteLinkSoustraitantsStore(selectedRecord.get('specialites'));
+        this.addOrRemoveSpecialite(specialite, 'add');
         button.up('window').close();
+    },
+
+    addOrRemoveSpecialite: function(specialite, operation) {
+
+        if (operation === 'add') {
+            this.currentSpecialites.push({name:specialite});
+
+        }
+        else if (operation === 'remove') {
+
+            this.currentSpecialites = Ext.Array.filter(this.currentSpecialites, function(s){
+                return s.name != specialite;    
+            });
+        }
+        this.loadSpecialiteLinkSoustraitantsStore(this.currentSpecialites);
+
     },
 
     refreshGrid: function() {
@@ -262,6 +276,61 @@ Ext.define('dalpeApp.controller.sousTraitants', {
             }
         });
 
+    },
+
+    init: function() {
+        this.currentSpecialites = [];
+
+        this.control({
+            "#sousTraitantsGrid #searchText": {
+                change: this.onTextfieldChange
+            },
+            "#deleteMailNotSentButton": {
+                click: this.onDeleteMailNotSentButtonClick
+            },
+            "#sousTraitantsGrid #refresh": {
+                click: this.onRefreshClick
+            },
+            "#mailsGrid #refresh": {
+                click: this.onRefreshClickMailsGrid
+            },
+            "#sousTraitantsGrid #comboSpecialites": {
+                select: this.onComboSpecialitesSelect
+            },
+            "#sousTraitantsPanel": {
+                activate: this.onSousTraitantsPanelActivate
+            },
+            "#createMailButton": {
+                click: this.onCreateMailButtonClick
+            },
+            "#refreshMailsNotSentGrid": {
+                click: this.onRefreshMailsNotSentGridClick
+            },
+            "#addSousTraitant": {
+                click: this.onAddSousTraitantClick
+            },
+            "#editSousTraitant": {
+                click: this.onEditSousTraitantClick
+            },
+            "#sendMail": {
+                click: this.onSendMailClick
+            },
+            "#editMailButton": {
+                click: this.onEditMailButtonClick
+            },
+            "editSousTraitantWindow #annuler": {
+                click: this.onAnnulerClick
+            },
+            "#editSousTraitantWindow #saveDocument": {
+                click: this.onSaveDocumentClick
+            },
+            "editSousTraitantWindow #enregistrer": {
+                click: this.onEnregistrerClick
+            },
+            "#addSpecialite": {
+                click: this.onAddSpecialiteClick
+            }
+        });
     },
 
     prepareMail: function() {
@@ -324,13 +393,16 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         documentsStore.removeAll();
         documentsStore.load({params:{sousTraitantId:selectedRecord.data.id}});
 
-        this.loadSpecialiteLinkSoustraitantsStore(selectedRecord.get('specialites'));
+
+        this.currentSpecialites = Ext.clone(selectedRecord.get('specialites'));
+        this.loadSpecialiteLinkSoustraitantsStore(this.currentSpecialites);
     },
 
     reloadSousTraitantsStore: function(params) {
         var me = this;
         var promise = new RSVP.Promise(function(resolve, reject) {
             var store = me.getSousTraitantsStore();
+            store.removeAll();
             store.getProxy().extraParams = params;
             store.load({
                 callback:function(){
@@ -450,59 +522,6 @@ Ext.define('dalpeApp.controller.sousTraitants', {
 
         }
 
-    },
-
-    init: function(application) {
-        this.control({
-            "#sousTraitantsGrid #searchText": {
-                change: this.onTextfieldChange
-            },
-            "#deleteMailNotSentButton": {
-                click: this.onDeleteMailNotSentButtonClick
-            },
-            "#sousTraitantsGrid #refresh": {
-                click: this.onRefreshClick
-            },
-            "#mailsGrid #refresh": {
-                click: this.onRefreshClickMailsGrid
-            },
-            "#sousTraitantsGrid #comboSpecialites": {
-                select: this.onComboSpecialitesSelect
-            },
-            "#sousTraitantsPanel": {
-                activate: this.onSousTraitantsPanelActivate
-            },
-            "#createMailButton": {
-                click: this.onCreateMailButtonClick
-            },
-            "#refreshMailsNotSentGrid": {
-                click: this.onRefreshMailsNotSentGridClick
-            },
-            "#addSousTraitant": {
-                click: this.onAddSousTraitantClick
-            },
-            "#editSousTraitant": {
-                click: this.onEditSousTraitantClick
-            },
-            "#sendMail": {
-                click: this.onSendMailClick
-            },
-            "#editMailButton": {
-                click: this.onEditMailButtonClick
-            },
-            "editSousTraitantWindow #annuler": {
-                click: this.onAnnulerClick
-            },
-            "#editSousTraitantWindow #saveDocument": {
-                click: this.onSaveDocumentClick
-            },
-            "editSousTraitantWindow #enregistrer": {
-                click: this.onEnregistrerClick
-            },
-            "#addSpecialite": {
-                click: this.onAddSpecialiteClick
-            }
-        });
     }
 
 });

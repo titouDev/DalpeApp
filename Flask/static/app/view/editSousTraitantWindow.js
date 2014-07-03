@@ -204,18 +204,14 @@ Ext.define('dalpeApp.view.editSousTraitantWindow', {
                                         },
                                         {
                                             xtype: 'actioncolumn',
+                                            itemId: 'actionColumSpecialitesGrid',
                                             flex: 1,
                                             items: [
                                                 {
                                                     handler: function(view, rowIndex, colIndex, item, e) {
-                                                        var mySpecialite = view.store.data.items[rowIndex].data;
+                                                        var mySpecialite = view.store.data.items[rowIndex];
+                                                        dalpeApp.getApplication().getController('sousTraitants').addOrRemoveSpecialite(mySpecialite.get('name'), 'remove');
 
-                                                        var mySousTraitant = Ext.getCmp('editSousTraitantWindow').down('form').getValues();
-
-                                                        SousTraitants.removeLinkWithSpecialite(mySpecialite, mySousTraitant);
-
-
-                                                        Ext.getCmp('editSousTraitantWindow').down('#specialitesGrid').store.load();
                                                     },
                                                     icon: 'images/delete.png',
                                                     tooltip: 'Enlever la specialite'
@@ -233,18 +229,12 @@ Ext.define('dalpeApp.view.editSousTraitantWindow', {
                                                     handler: function(button, event) {
                                                         //On eut etre sur que le sous traitant est cree avant d'ajouter une specialite
                                                         var myForm = button.up('window').down('form');
-                                                        if (myForm.getValues().id)
-                                                        {
-                                                            //Lorsqu'on click, on veut ouvrir une fenetre avec un combobox listant les specialites
-                                                            var addSpecialiteWindow = Ext.widget('windowAddSpecialite').show();
-                                                            var specialiteStore = addSpecialiteWindow.down('#comboAddSpecialites').store;
-                                                            specialiteStore.clearFilter();
-                                                            specialiteStore.load();
-                                                        }
-                                                        else
-                                                        {
-                                                            Ext.MessageBox.alert('Attention','Vous devez d\'abord cree le soustraitant');
-                                                        }
+
+                                                        //Lorsqu'on click, on veut ouvrir une fenetre avec un combobox listant les specialites
+                                                        var addSpecialiteWindow = Ext.widget('windowAddSpecialite').show();
+                                                        var specialiteStore = addSpecialiteWindow.down('#comboAddSpecialites').store;
+                                                        specialiteStore.clearFilter();
+                                                        specialiteStore.load();
 
                                                     },
                                                     text: 'Ajouter une specialite'

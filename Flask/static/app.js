@@ -42,7 +42,8 @@ Ext.application({
         'sousTraitantsContextMenu',
         'editChantierWindow',
         'mailWindow',
-        'loginWindow'
+        'loginWindow',
+        'MyTriggerField'
     ],
     autoCreateViewport: true,
     controllers: [

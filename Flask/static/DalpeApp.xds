@@ -407,6 +407,14 @@
                 "app/store/specialitesLinkSoustraitants.js"
             ],
             "className": "specialitesLinkSoustraitants"
+        },
+        "1d9b35b9-e7ec-4179-859e-b0e5a787d95b": {
+            "paths": [
+                "metadata/view/MyTriggerField",
+                "app/view/override/MyTriggerField.js",
+                "app/view/MyTriggerField.js"
+            ],
+            "className": "MyTriggerField"
         }
     },
     "viewOrderMap": {
@@ -420,7 +428,8 @@
             "08df4031-2dee-45bd-b50d-13ea733e02e1",
             "2d33d2c4-28b5-4543-abe5-e62e5c54d882",
             "57339c22-18af-42b2-8491-66d707a83680",
-            "0883665a-4d9e-453c-a13f-bab460f4c2d8"
+            "0883665a-4d9e-453c-a13f-bab460f4c2d8",
+            "1d9b35b9-e7ec-4179-859e-b0e5a787d95b"
         ],
         "store": [
             "e5a999f6-34ab-4a5b-9507-4f02d03426d2",

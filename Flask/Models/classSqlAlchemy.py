@@ -76,9 +76,8 @@ class AddonsBase():
             return record
 
     def _appendSubModels(self, session, modelName, records):
-        print modelName, records
         model = get_class(modelName)
-        [getattr(self, modelName).append(model().createRecord(session, name=r)) for r in records]
+        setattr(self, modelName, [model().createRecord(session, name=r) for r in records])
             
 
 

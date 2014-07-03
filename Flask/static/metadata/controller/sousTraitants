@@ -113,6 +113,37 @@
             },
             "codeClass": null,
             "userConfig": {
+                "fn": "addOrRemoveSpecialite",
+                "designer|params": [
+                    "specialite",
+                    "operation"
+                ],
+                "implHandler": [
+                    "",
+                    "if (operation === 'add') {",
+                    "    this.currentSpecialites.push({name:specialite});",
+                    "",
+                    "}",
+                    "else if (operation === 'remove') {",
+                    "",
+                    "    this.currentSpecialites = Ext.Array.filter(this.currentSpecialites, function(s){",
+                    "        return s.name != specialite;    ",
+                    "    });",
+                    "}",
+                    "this.loadSpecialiteLinkSoustraitantsStore(this.currentSpecialites);",
+                    ""
+                ]
+            },
+            "designerId": "70087465-5850-43e1-9384-bd3f51d8aa53"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "fn": "refreshGrid",
                 "implHandler": [
                     "var me = this;",
@@ -176,6 +207,21 @@
                 ]
             },
             "designerId": "534d9ac6-bb4b-4b30-8fdc-d7f7e14aaafe"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init",
+                "implHandler": [
+                    "this.currentSpecialites = [];"
+                ]
+            },
+            "designerId": "f1ae16ca-2864-473e-99b5-1051d9898cf3"
         },
         {
             "type": "basicfunction",
@@ -257,7 +303,9 @@
                     "documentsStore.removeAll();",
                     "documentsStore.load({params:{sousTraitantId:selectedRecord.data.id}});",
                     "",
-                    "this.loadSpecialiteLinkSoustraitantsStore(selectedRecord.get('specialites'));"
+                    "",
+                    "this.currentSpecialites = Ext.clone(selectedRecord.get('specialites'));",
+                    "this.loadSpecialiteLinkSoustraitantsStore(this.currentSpecialites);"
                 ]
             },
             "designerId": "1734ae33-2334-400e-99fb-62f322a00b7d"
@@ -278,6 +326,7 @@
                     "var me = this;",
                     "var promise = new RSVP.Promise(function(resolve, reject) {",
                     "    var store = me.getSousTraitantsStore();",
+                    "    store.removeAll();",
                     "    store.getProxy().extraParams = params;",
                     "    store.load({",
                     "        callback:function(){",
@@ -686,7 +735,8 @@
                     "//var myStore = Ext.getStore('specialiteLinkSousTraitant');",
                     "//myStore.proxy.extraParams = '';",
                     "//myStore.removeAll();",
-                    "",
+                    "this.currentSpecialites = [];",
+                    "this.loadSpecialiteLinkSoustraitantsStore(this.currentSpecialites);",
                     "Ext.widget('editSousTraitantWindow').show();"
                 ],
                 "name": "click",
@@ -884,11 +934,8 @@
             "userConfig": {
                 "fn": "onAddSpecialiteClick",
                 "implHandler": [
-                    "var selectedRecord = this.getSousTraitantsGrid().selModel.getSelection()[0];",
                     "var specialite = this.getComboAddSpecialites().getValue();",
-                    "selectedRecord.data.specialites.push({name:specialite});",
-                    "console.log(selectedRecord)",
-                    "this.loadSpecialiteLinkSoustraitantsStore(selectedRecord.get('specialites'));",
+                    "this.addOrRemoveSpecialite(specialite, 'add');",
                     "button.up('window').close();"
                 ],
                 "name": "click",
