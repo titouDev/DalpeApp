@@ -13,3 +13,5 @@ documents_importes/
 *.pyc
 
 Flask/Models/baseAlchemy.pyc
+
+.idea/

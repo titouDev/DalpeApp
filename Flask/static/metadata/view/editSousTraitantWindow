@@ -346,7 +346,7 @@
                                 "width": 149,
                                 "title": null,
                                 "hideHeaders": true,
-                                "store": null
+                                "store": "specialitesLinkSoustraitants"
                             },
                             "designerId": "b4ce7b7b-79fd-499f-a108-8730d641ca4a",
                             "cn": [
@@ -466,11 +466,11 @@
                                                             "var myForm = button.up('window').down('form');",
                                                             "if (myForm.getValues().id)",
                                                             "{",
-                                                            "//Lorsqu'on click, on veut ouvrir une fenetre avec un combobox listant les specialites",
-                                                            "var addSpecialiteWindow = Ext.widget('windowAddSpecialite').show();",
-                                                            "var specialiteStore = addSpecialiteWindow.down('#comboSpecialites').store;",
-                                                            "specialiteStore.clearFilter();",
-                                                            "specialiteStore.load();",
+                                                            "    //Lorsqu'on click, on veut ouvrir une fenetre avec un combobox listant les specialites",
+                                                            "    var addSpecialiteWindow = Ext.widget('windowAddSpecialite').show();",
+                                                            "    var specialiteStore = addSpecialiteWindow.down('#comboAddSpecialites').store;",
+                                                            "    specialiteStore.clearFilter();",
+                                                            "    specialiteStore.load();",
                                                             "}",
                                                             "else",
                                                             "{",

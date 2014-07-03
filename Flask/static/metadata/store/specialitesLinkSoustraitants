@@ -1,0 +1,15 @@
+{
+    "type": "directstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "model": "specialite",
+        "storeId": "MyDirectStore",
+        "designer|userClassName": "specialitesLinkSoustraitants"
+    },
+    "designerId": "5ff61844-8743-463a-89bf-8b1e98f629cf"
+}

@@ -27,7 +27,8 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         'specialites',
         'mails_notsent',
         'chantiers',
-        'sousTraitants_full'
+        'sousTraitants_full',
+        'specialitesLinkSoustraitants'
     ],
     views: [
         'editSousTraitantWindow',
@@ -42,6 +43,14 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         {
             ref: 'searchField',
             selector: '#sousTraitantsGrid #searchText'
+        },
+        {
+            ref: 'comboSpecialites',
+            selector: '#comboSpecialites'
+        },
+        {
+            ref: 'comboAddSpecialites',
+            selector: '#comboAddSpecialites'
         },
         {
             ref: 'mailsGrid',
@@ -193,6 +202,11 @@ Ext.define('dalpeApp.controller.sousTraitants', {
             mySousTraitant = new sousTraitantModel();
         }
         mySousTraitant.set(myForm.getValues());
+
+        //Un peu broche a fouin...
+        var store = this.getSpecialitesLinkSoustraitantsStore();
+        mySousTraitant.set('specialites', store.collect('name'));
+
         if (! mySousTraitant.get('id')) {
             //POST
             mySousTraitant.getProxy().appendId=false; //bug fix pour eviter d'appender un slah a la fin de l'url
@@ -208,6 +222,15 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         mySousTraitant.getProxy().appendId=true;
     },
 
+    onAddSpecialiteClick: function(button, e, eOpts) {
+        var selectedRecord = this.getSousTraitantsGrid().selModel.getSelection()[0];
+        var specialite = this.getComboAddSpecialites().getValue();
+        selectedRecord.data.specialites.push({name:specialite});
+        console.log(selectedRecord)
+        this.loadSpecialiteLinkSoustraitantsStore(selectedRecord.get('specialites'));
+        button.up('window').close();
+    },
+
     refreshGrid: function() {
         var me = this;
 
@@ -217,7 +240,15 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         .then(function(){
             me.applyQuickSearch();
 
-        })
+        });
+
+    },
+
+    loadSpecialiteLinkSoustraitantsStore: function(specialites) {
+        var store = this.getSpecialitesLinkSoustraitantsStore();
+        store.removeAll();
+
+        store.loadData(specialites);
 
     },
 
@@ -288,19 +319,12 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         //On load le soustraitant selecitonne dans le form
         var myForm = editSousTraitantWindow.down('form');
 
-
-
-        //On filtre le store des specialites
-        var specialiteLinkStore = editSousTraitantWindow.down('#specialitesGrid').store;
-        specialiteLinkStore.removeAll();
-        specialiteLinkStore.load({params:{sousTraitantId:selectedRecord.data.id}});
-
         //On filtre le store des documents
         var documentsStore = Ext.getStore('documents');
         documentsStore.removeAll();
         documentsStore.load({params:{sousTraitantId:selectedRecord.data.id}});
 
-
+        this.loadSpecialiteLinkSoustraitantsStore(selectedRecord.get('specialites'));
     },
 
     reloadSousTraitantsStore: function(params) {
@@ -474,6 +498,9 @@ Ext.define('dalpeApp.controller.sousTraitants', {
             },
             "editSousTraitantWindow #enregistrer": {
                 click: this.onEnregistrerClick
+            },
+            "#addSpecialite": {
+                click: this.onAddSpecialiteClick
             }
         });
     }

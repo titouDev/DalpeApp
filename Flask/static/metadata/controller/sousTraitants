@@ -17,7 +17,8 @@
             "specialites",
             "mails_notsent",
             "chantiers",
-            "sousTraitants_full"
+            "sousTraitants_full",
+            "specialitesLinkSoustraitants"
         ],
         "views": [
             "editSousTraitantWindow",
@@ -121,12 +122,34 @@
                     "me.reloadSousTraitantsStore()",
                     ".then(function(){",
                     "    me.applyQuickSearch();",
-                    "    ",
-                    "})",
+                    "",
+                    "});",
                     ""
                 ]
             },
             "designerId": "bfe5ee6f-eb49-435f-ac60-699159e8c8b3"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "loadSpecialiteLinkSoustraitantsStore",
+                "designer|params": [
+                    "specialites"
+                ],
+                "implHandler": [
+                    "var store = this.getSpecialitesLinkSoustraitantsStore();",
+                    "store.removeAll();",
+                    "",
+                    "store.loadData(specialites);",
+                    ""
+                ]
+            },
+            "designerId": "6c2c6a2c-a15f-4090-996b-f16885bc5176"
         },
         {
             "type": "basicfunction",
@@ -229,19 +252,12 @@
                     "//On load le soustraitant selecitonne dans le form",
                     "var myForm = editSousTraitantWindow.down('form');",
                     "",
-                    "",
-                    "",
-                    "//On filtre le store des specialites",
-                    "var specialiteLinkStore = editSousTraitantWindow.down('#specialitesGrid').store;",
-                    "specialiteLinkStore.removeAll();",
-                    "specialiteLinkStore.load({params:{sousTraitantId:selectedRecord.data.id}});",
-                    "",
                     "//On filtre le store des documents",
                     "var documentsStore = Ext.getStore('documents');",
                     "documentsStore.removeAll();",
                     "documentsStore.load({params:{sousTraitantId:selectedRecord.data.id}});",
                     "",
-                    ""
+                    "this.loadSpecialiteLinkSoustraitantsStore(selectedRecord.get('specialites'));"
                 ]
             },
             "designerId": "1734ae33-2334-400e-99fb-62f322a00b7d"
@@ -268,7 +284,7 @@
                     "            resolve();",
                     "        }",
                     "    });",
-                    "    ",
+                    "",
                     "});",
                     "",
                     "return promise;",
@@ -411,6 +427,32 @@
                 "selector": "#sousTraitantsGrid #searchText"
             },
             "designerId": "1c978560-cbc4-4472-bd8a-908a7f912411"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "comboSpecialites",
+                "selector": "#comboSpecialites"
+            },
+            "designerId": "e9c66df6-cd8a-4f76-9b09-987acebada5a"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "comboAddSpecialites",
+                "selector": "#comboAddSpecialites"
+            },
+            "designerId": "3ee71282-905e-41a8-a99e-dfb736dd9cee"
         },
         {
             "type": "controllerref",
@@ -806,6 +848,11 @@
                     "    mySousTraitant = new sousTraitantModel();",
                     "}",
                     "mySousTraitant.set(myForm.getValues());",
+                    "",
+                    "//Un peu broche a fouin...",
+                    "var store = this.getSpecialitesLinkSoustraitantsStore();",
+                    "mySousTraitant.set('specialites', store.collect('name'));",
+                    "",
                     "if (! mySousTraitant.get('id')) {",
                     "    //POST",
                     "    mySousTraitant.getProxy().appendId=false; //bug fix pour eviter d'appender un slah a la fin de l'url",
@@ -826,6 +873,30 @@
                 "designer|controlQuery": "editSousTraitantWindow #enregistrer"
             },
             "designerId": "2750860c-74a8-403e-ac76-560c89e1e52e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onAddSpecialiteClick",
+                "implHandler": [
+                    "var selectedRecord = this.getSousTraitantsGrid().selModel.getSelection()[0];",
+                    "var specialite = this.getComboAddSpecialites().getValue();",
+                    "selectedRecord.data.specialites.push({name:specialite});",
+                    "console.log(selectedRecord)",
+                    "this.loadSpecialiteLinkSoustraitantsStore(selectedRecord.get('specialites'));",
+                    "button.up('window').close();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#addSpecialite"
+            },
+            "designerId": "9c046a8d-8e6f-41b2-837a-52d03c90483b"
         }
     ]
 }

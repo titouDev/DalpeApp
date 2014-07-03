@@ -399,6 +399,14 @@
                 "metadata/resource/js1"
             ],
             "className": "js1"
+        },
+        "5ff61844-8743-463a-89bf-8b1e98f629cf": {
+            "paths": [
+                "metadata/store/specialitesLinkSoustraitants",
+                "app/store/override/specialitesLinkSoustraitants.js",
+                "app/store/specialitesLinkSoustraitants.js"
+            ],
+            "className": "specialitesLinkSoustraitants"
         }
     },
     "viewOrderMap": {
@@ -430,7 +438,8 @@
             "e0f02898-522d-4dc3-a2e1-2ad3f4b2dd2b",
             "82e4399f-b439-4306-b821-378e17afaa13",
             "a79bbea3-d4de-47b9-b24e-a9e513a27156",
-            "7c30472b-a80e-4251-8568-3f963945a7a4"
+            "7c30472b-a80e-4251-8568-3f963945a7a4",
+            "5ff61844-8743-463a-89bf-8b1e98f629cf"
         ],
         "controller": [
             "d61f7263-e573-4a70-9e2e-e9dc378117e0",

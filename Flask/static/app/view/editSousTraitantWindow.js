@@ -194,6 +194,7 @@ Ext.define('dalpeApp.view.editSousTraitantWindow', {
                                     itemId: 'specialitesGrid',
                                     width: 149,
                                     hideHeaders: true,
+                                    store: 'specialitesLinkSoustraitants',
                                     columns: [
                                         {
                                             xtype: 'gridcolumn',
@@ -236,7 +237,7 @@ Ext.define('dalpeApp.view.editSousTraitantWindow', {
                                                         {
                                                             //Lorsqu'on click, on veut ouvrir une fenetre avec un combobox listant les specialites
                                                             var addSpecialiteWindow = Ext.widget('windowAddSpecialite').show();
-                                                            var specialiteStore = addSpecialiteWindow.down('#comboSpecialites').store;
+                                                            var specialiteStore = addSpecialiteWindow.down('#comboAddSpecialites').store;
                                                             specialiteStore.clearFilter();
                                                             specialiteStore.load();
                                                         }

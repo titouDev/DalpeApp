@@ -43,32 +43,7 @@ Ext.define('dalpeApp.view.windowAddSpecialite', {
                         },
                         {
                             xtype: 'button',
-                            handler: function(button, event) {
-                                //On va chercher la specialite selectionnee dans le comboBox.
-
-                                var myCombo = button.up('window').down('#comboSpecialites');
-
-                                var mySpecialite = Ext.create(dalpeApp.model.specialite, {
-                                    name:myCombo.getValue()
-                                });
-                                if (!myCombo.value) {
-
-                                    mySpecialite.getProxy().appendId=false; //bug fix pour eviter d'appender un slah a la fin de l'url
-                                    mySpecialite.save({
-                                        scope:this,
-                                        callback:function(){
-                                            //On reload le store des specialites
-                                            Ext.getStore('specialites').load();
-                                            button.up('window').close();
-                                        }
-                                    });
-                                    mySpecialite.getProxy().appendId=true;
-
-                                }
-
-
-
-                            },
+                            itemId: 'addSpecialite',
                             text: 'Ajouter'
                         },
                         {
@@ -91,7 +66,7 @@ Ext.define('dalpeApp.view.windowAddSpecialite', {
                     items: [
                         {
                             xtype: 'combobox',
-                            itemId: 'comboSpecialites',
+                            itemId: 'comboAddSpecialites',
                             margin: 2,
                             autoSelect: false,
                             displayField: 'name',
@@ -99,7 +74,7 @@ Ext.define('dalpeApp.view.windowAddSpecialite', {
                             store: 'specialites',
                             typeAhead: true,
                             typeAheadDelay: 0,
-                            valueField: 'id'
+                            valueField: 'name'
                         },
                         {
                             xtype: 'label',
