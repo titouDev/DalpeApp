@@ -63,7 +63,7 @@ Ext.define('dalpeApp.controller.sousTraitants', {
     ],
 
     onTextfieldChange: function(field, newValue, oldValue, eOpts) {
-        this.applyQuickSearch();
+        this.refreshGrid();
 
     },
 
@@ -218,6 +218,7 @@ Ext.define('dalpeApp.controller.sousTraitants', {
             callback:function(){
                 button.up('window').close();
                 this.refreshGrid();
+                this.getComboSpecialites().store.load();
             }
         });
         mySousTraitant.getProxy().appendId=true;
@@ -248,11 +249,12 @@ Ext.define('dalpeApp.controller.sousTraitants', {
     refreshGrid: function() {
         var me = this;
 
-        //On prend la valeur du comboSpecialite
-        var specialiteId = me.getSousTraitantsGrid().down('#comboSpecialites').getValue();
         me.reloadSousTraitantsStore()
         .then(function(){
+            var store = me.getSousTraitantsStore();
+            store.clearFilter(true);
             me.applyQuickSearch();
+            me.applySpecialiteFilter();
 
         });
 
@@ -470,10 +472,22 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         mailsStore.filter('sousTraitantId',sousTraitantId);
     },
 
-    resetMailsGrid: function() {
-        var mailsGrid = this.getMailsGrid();
-        mailsGrid.store.removeAll();
-        mailsGrid.setTitle('Courriels');
+    applySpecialiteFilter: function() {
+        //On prend la valeur du comboSpecialite
+        var specialiteId = this.getComboSpecialites().getValue();
+
+        if ( specialiteId && specialiteId > 0) {
+
+            var store = this.getSousTraitantsStore();
+            store.filter([
+            {filterFn: function(item) {
+                return Ext.Array.contains(
+                Ext.Array.pluck(item.get('specialites'), 'id'),
+                specialiteId
+                );
+            }}
+            ]);
+        }
     },
 
     applyQuickSearch: function() {
@@ -481,12 +495,17 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         //On filtre le store en local
         var regFind = new RegExp(newValue,"i");
         var store = this.getSousTraitantsStore();
-        store.clearFilter(true);
         store.filter([
         {filterFn: function(item) {
             return (regFind.test(item.get("name")) || regFind.test(item.get("contactName"))  );
         }}
         ]);
+    },
+
+    resetMailsGrid: function() {
+        var mailsGrid = this.getMailsGrid();
+        mailsGrid.store.removeAll();
+        mailsGrid.setTitle('Courriels');
     },
 
     showMailWindow: function(record) {

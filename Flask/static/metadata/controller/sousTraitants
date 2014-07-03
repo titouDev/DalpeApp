@@ -38,7 +38,7 @@
             "userConfig": {
                 "fn": "onTextfieldChange",
                 "implHandler": [
-                    "this.applyQuickSearch();",
+                    "this.refreshGrid();",
                     ""
                 ],
                 "name": "change",
@@ -148,11 +148,12 @@
                 "implHandler": [
                     "var me = this;",
                     "",
-                    "//On prend la valeur du comboSpecialite",
-                    "var specialiteId = me.getSousTraitantsGrid().down('#comboSpecialites').getValue();",
                     "me.reloadSousTraitantsStore()",
                     ".then(function(){",
+                    "    var store = me.getSousTraitantsStore();",
+                    "    store.clearFilter(true);",
                     "    me.applyQuickSearch();",
+                    "    me.applySpecialiteFilter();",
                     "",
                     "});",
                     ""
@@ -455,6 +456,58 @@
             },
             "codeClass": null,
             "userConfig": {
+                "fn": "applySpecialiteFilter",
+                "implHandler": [
+                    "//On prend la valeur du comboSpecialite",
+                    "var specialiteId = this.getComboSpecialites().getValue();",
+                    "",
+                    "if ( specialiteId && specialiteId > 0) {",
+                    "    ",
+                    "    var store = this.getSousTraitantsStore();",
+                    "    store.filter([",
+                    "        {filterFn: function(item) {",
+                    "            return Ext.Array.contains(",
+                    "                Ext.Array.pluck(item.get('specialites'), 'id'),",
+                    "                specialiteId",
+                    "            );",
+                    "        }}",
+                    "    ]);",
+                    "}"
+                ]
+            },
+            "designerId": "6f52465e-caed-456f-86a6-ef1d754a29a0"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "applyQuickSearch",
+                "implHandler": [
+                    "var newValue = this.getSearchField().getValue();",
+                    "//On filtre le store en local",
+                    "var regFind = new RegExp(newValue,\"i\");",
+                    "var store = this.getSousTraitantsStore();",
+                    "store.filter([",
+                    "{filterFn: function(item) {",
+                    "    return (regFind.test(item.get(\"name\")) || regFind.test(item.get(\"contactName\"))  );",
+                    "}}",
+                    "]);"
+                ]
+            },
+            "designerId": "96185a27-c824-4708-a833-e79ccff4e1a1"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "fn": "resetMailsGrid",
                 "implHandler": [
                     "var mailsGrid = this.getMailsGrid();",
@@ -647,30 +700,6 @@
                 "designer|controlQuery": "#refreshMailsNotSentGrid"
             },
             "designerId": "3d544a8d-f7cb-4944-8ff2-b7909260af74"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "applyQuickSearch",
-                "implHandler": [
-                    "var newValue = this.getSearchField().getValue();",
-                    "//On filtre le store en local",
-                    "var regFind = new RegExp(newValue,\"i\");",
-                    "var store = this.getSousTraitantsStore();",
-                    "store.clearFilter(true);",
-                    "store.filter([",
-                    "{filterFn: function(item) {",
-                    "    return (regFind.test(item.get(\"name\")) || regFind.test(item.get(\"contactName\"))  );",
-                    "}}",
-                    "]);"
-                ]
-            },
-            "designerId": "96185a27-c824-4708-a833-e79ccff4e1a1"
         },
         {
             "type": "basicfunction",
@@ -913,6 +942,7 @@
                     "    callback:function(){",
                     "        button.up('window').close();",
                     "        this.refreshGrid();",
+                    "        this.getComboSpecialites().store.load();",
                     "    }",
                     "});",
                     "mySousTraitant.getProxy().appendId=true;"
