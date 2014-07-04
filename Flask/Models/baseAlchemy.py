@@ -22,7 +22,7 @@ get_class = lambda x: globals()[x]
 from sqlalchemy import (create_engine,
                         MetaData,
                         Table)
-dbSqLite = 'sqlite:///dalpe_construction_v113.db'
+dbSqLite = 'sqlite:///dalpe_construction_v114.db'
 engine = create_engine(dbSqLite, echo=False, case_sensitive=False)
 
 Base.metadata.create_all(engine)
@@ -51,7 +51,14 @@ def get(modelName, **kwargs):
         query = session.query(model)
         acceptedFilters = set(getColumns(model)) & kwargs.viewkeys()
         if acceptedFilters:
-            query = query.filter_by(**dict((f, kwargs[f]) for f in acceptedFilters))
+            #query = query.filter_by(**dict((f, kwargs[f]) for f in acceptedFilters))
+            for f in acceptedFilters:
+                if type(kwargs[f]) is list:
+                    query = query.filter(getattr(model, f).in_(kwargs[f]))
+                else:
+                    query = query.filter(getattr(model, f) == kwargs[f])
+
+
         records = query.all()
         return [r.toJson() for r in records]
 
