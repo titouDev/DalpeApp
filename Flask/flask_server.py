@@ -4,6 +4,7 @@ from flask import (Flask,
                    request)
 
 from Models import baseAlchemy
+
 import json
 
 app = Flask(__name__)
@@ -13,7 +14,7 @@ def index():
     return ""
 
 @app.route("/api/model/<name>", methods=['GET', 'POST'])
-def getModel(name):
+def get_model(name):
     if request.method == 'POST':
         kwargs = dict( (str(k), v) for k, v in json.loads(request.data).items() )
         record = [baseAlchemy.create(name, **kwargs)]
@@ -22,7 +23,7 @@ def getModel(name):
     return json.dumps({"records":record})
 
 @app.route("/api/model/<name>/<id>", methods=['GET', 'PUT', 'DELETE'])
-def getModelById(name, id):
+def get_model_by_id(name, id):
     if request.method == 'PUT':
         kwargs = json.loads(request.data)
         kwargs.pop('id',False)

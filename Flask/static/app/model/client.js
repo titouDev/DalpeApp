@@ -53,7 +53,7 @@ Ext.define('dalpeApp.model.client', {
 
     proxy: {
         type: 'rest',
-        url: '/api/model/clients',
+        url: '/api/model/Clients',
         writer: {
             type: 'json',
             writeRecordId: false

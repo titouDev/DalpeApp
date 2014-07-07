@@ -31,7 +31,7 @@ Ext.define('dalpeApp.store.sousTraitants_full', {
             proxy: {
                 type: 'rest',
                 sortParam: 'undefined',
-                url: '/api/model/sousTraitants',
+                url: '/api/model/SousTraitants',
                 reader: {
                     type: 'json',
                     root: 'records'

@@ -116,7 +116,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "url": "/api/model/documents"
+                "url": "/api/model/Documents"
             },
             "designerId": "9264bf84-5959-402b-8d1e-4f3993dc9667",
             "cn": [

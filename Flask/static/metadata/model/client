@@ -141,7 +141,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "url": "/api/model/clients"
+                "url": "/api/model/Clients"
             },
             "designerId": "152a1732-d7fa-41de-bf03-e32d934c3cf3",
             "cn": [

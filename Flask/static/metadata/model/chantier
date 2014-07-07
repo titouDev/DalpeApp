@@ -124,7 +124,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "url": "/api/model/chantiers"
+                "url": "/api/model/Chantiers"
             },
             "designerId": "e1eced06-4864-4584-a256-7aa12c5498a8",
             "cn": [

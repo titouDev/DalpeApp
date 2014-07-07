@@ -44,7 +44,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "url": "/api/model/document_type"
+                "url": "/api/model/DocumentType"
             },
             "designerId": "63c1b5ee-7fc1-46e5-b8a1-b8f1370850b7",
             "cn": [

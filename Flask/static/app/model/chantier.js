@@ -54,7 +54,7 @@ Ext.define('dalpeApp.model.chantier', {
 
     proxy: {
         type: 'rest',
-        url: '/api/model/chantiers',
+        url: '/api/model/Chantiers',
         reader: {
             type: 'json',
             root: 'records'

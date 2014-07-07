@@ -22,7 +22,7 @@ get_class = lambda x: globals()[x]
 from sqlalchemy import (create_engine,
                         MetaData,
                         Table)
-dbSqLite = 'sqlite:///dalpe_construction_v114.db'
+dbSqLite = 'sqlite:///dalpe_construction_v115.db'
 engine = create_engine(dbSqLite, echo=False, case_sensitive=False)
 
 Base.metadata.create_all(engine)
@@ -49,7 +49,7 @@ def get(modelName, **kwargs):
     with session_scope() as session:
         model = get_class(modelName)
         query = session.query(model)
-        acceptedFilters = set(getColumns(model)) & kwargs.viewkeys()
+        acceptedFilters = set(get_column_names(model)) & kwargs.viewkeys()
         if acceptedFilters:
             #query = query.filter_by(**dict((f, kwargs[f]) for f in acceptedFilters))
             for f in acceptedFilters:
@@ -62,32 +62,32 @@ def get(modelName, **kwargs):
         records = query.all()
         return [r.toJson() for r in records]
 
-def getColumns(model):
+def get_column_names(model):
     return [c.name for c in model.__table__.columns]
 
 def create(modelName, **kwargs):
     with session_scope() as session:
-        record = createModel(session, modelName, **kwargs)
+        record = create_model(session, modelName, **kwargs)
         session.commit()
         return record.toJson()
 
 def update(modelName, **kwargs):
     with session_scope() as session:
-        record = updateModel(session, modelName, **kwargs)
+        record = update_model(session, modelName, **kwargs)
         session.commit()
         return record.toJson()
 
-def createModel(session, modelName, **kwargs):
+def create_model(session, modelName, **kwargs):
     model=get_class(modelName)
     return model().createRecord(session, **kwargs)
 
-def updateModel(session, modelName, **kwargs):
+def update_model(session, modelName, **kwargs):
     model = get_class(modelName)
     return model().updateRecord(session, **kwargs)
 
 if __name__ == '__main__':
     with session_scope() as session:
-        print createModel(session, 'sousTraitants', name="tutu", specialites=["Beton"], documents=["Pdf"]).toJson()
+        print create_model(session, 'sousTraitants', name="tutu", specialites=["Beton"], documents=["Pdf"]).toJson()
         session.commit()
 
 

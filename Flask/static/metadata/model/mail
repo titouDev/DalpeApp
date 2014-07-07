@@ -139,7 +139,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "url": "/api/model/mails"
+                "url": "/api/model/Mails"
             },
             "designerId": "c63c4197-2448-4462-966b-a0c879dc0728",
             "cn": [

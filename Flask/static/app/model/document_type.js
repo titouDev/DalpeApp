@@ -29,7 +29,7 @@ Ext.define('dalpeApp.model.document_type', {
 
     proxy: {
         type: 'rest',
-        url: '/api/model/document_type',
+        url: '/api/model/DocumentType',
         reader: {
             type: 'json',
             root: 'records'

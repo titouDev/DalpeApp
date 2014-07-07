@@ -70,7 +70,7 @@ Ext.define('dalpeApp.model.employe', {
 
     proxy: {
         type: 'rest',
-        url: '/api/model/employes',
+        url: '/api/model/Employes',
         writer: {
             type: 'json',
             writeRecordId: false

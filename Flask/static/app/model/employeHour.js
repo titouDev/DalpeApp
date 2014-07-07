@@ -52,7 +52,7 @@ Ext.define('dalpeApp.model.employeHour', {
 
     proxy: {
         type: 'rest',
-        url: '/api/model/employes_hours',
+        url: '/api/model/EmployeHours',
         reader: {
             type: 'json',
             root: 'records'

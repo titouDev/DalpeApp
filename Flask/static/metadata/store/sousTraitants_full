@@ -24,7 +24,7 @@
             "userConfig": {
                 "api": null,
                 "sortParam": "undefined",
-                "url": "/api/model/sousTraitants"
+                "url": "/api/model/SousTraitants"
             },
             "designerId": "3bb0651e-550a-4056-99dc-05492dd3841c",
             "cn": [

@@ -204,7 +204,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "url": "/api/model/employes"
+                "url": "/api/model/Employes"
             },
             "designerId": "f9dc19b3-f9a8-4924-ab5f-c52926d428d9",
             "cn": [

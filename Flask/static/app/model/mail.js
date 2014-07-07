@@ -61,7 +61,7 @@ Ext.define('dalpeApp.model.mail', {
 
     proxy: {
         type: 'rest',
-        url: '/api/model/mails',
+        url: '/api/model/Mails',
         reader: {
             type: 'json',
             root: 'records'

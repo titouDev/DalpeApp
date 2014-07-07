@@ -45,7 +45,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "url": "/api/model/specialites"
+                "url": "/api/model/Specialites"
             },
             "designerId": "cce02904-47c8-4220-a001-f13202b0ce66",
             "cn": [
