@@ -4,6 +4,7 @@ from sqlalchemy import (Table,
                         Integer,
                         String,
                         Float,
+                        Boolean,
                         ForeignKey)
 
 from sqlalchemy.orm import (relationship,
@@ -26,6 +27,12 @@ def get_column_names(model):
     return [c.name for c in model.__table__.columns]
 
 
+def analyse_fields(model, fields):
+    accepted_fields = dict((k, v) for k, v in fields.items() if hasattr(model, k))
+    sub_models_fields = dict((f, accepted_fields.pop(f)) for f in model.subModels if f in accepted_fields)
+    return accepted_fields, sub_models_fields
+
+
 class AddonsBase():
     def __init__(self):
         pass
@@ -44,26 +51,25 @@ class AddonsBase():
 
     def update_record(self, session, **kwargs):
         model = self.__class__
-        other_kwargs = kwargs.viewkeys() - set(get_column_names(model))
-        rejected_kwargs = dict((k, kwargs.pop(k)) for k in other_kwargs)
-        query = session.query(model).filter_by(id=kwargs["id"])
-        query.update(kwargs)
+        accepted_fields, sub_models_fields = analyse_fields(model, kwargs)
+        query = session.query(model).filter_by(id=accepted_fields["id"])
         record = query.first()
-        for k, v in rejected_kwargs.items():
+        [setattr(record, k, v) for k, v in accepted_fields.items()]
+        for k, v in sub_models_fields.items():
             record.append_sub_models(session, k, self.subModels[k], v)
         return record
 
     def create_record(self, session, **kwargs):
         model = self.__class__
 
-        other_kwargs = kwargs.viewkeys() - set(get_column_names(model))
-        rejected_kwargs = dict((k, kwargs.pop(k)) for k in other_kwargs)
+        accepted_fields, sub_models_fields = analyse_fields(model, kwargs)
+
         if self.uniqueKey is not None:
             query = session.query(model).filter(
-                getattr(model, self.uniqueKey) == kwargs[self.uniqueKey])
+                getattr(model, self.uniqueKey) == accepted_fields[self.uniqueKey])
             record = query.first()
             if not record:
-                record = model(**kwargs)
+                record = model(**accepted_fields)
                 session.add(record)
             elif self.returnIfExists:
                 pass
@@ -71,12 +77,12 @@ class AddonsBase():
                 query.update(kwargs)
             else:
                 raise ValueError('%s with %s %s already exist' % (
-                    model, self.uniqueKey, kwargs[self.uniqueKey]))
-            for k, v in rejected_kwargs.items():
+                    model, self.uniqueKey, accepted_fields[self.uniqueKey]))
+            for k, v in sub_models_fields.items():
                 record.append_sub_models(session, k, self.subModels[k], v)
             return record
         else:
-            record = model(**kwargs)
+            record = model(**accepted_fields)
             session.add(record)
             return record
 
@@ -88,11 +94,43 @@ class AddonsBase():
         )
 
 
-class Chantiers(Base, AddonsBase):
-    __tablename__ = 'Chantiers'
+
+class Person(Base, AddonsBase):
+    __tablename__ = 'Person'
+    id = Column(Integer, primary_key=True)
+    name = Column(String, nullable=True)
+    lastName = Column(String, nullable=True)
+    contactName = Column(String, nullable=True)
+    email = Column(String, nullable=True)
+    phone = Column(String, nullable=True)
+    cell = Column(String, nullable=True)
+    fax = Column(String, nullable=True)
+    address = Column(String, nullable=True)
+    postalCode = Column(String, nullable=True)
+    city = Column(String, nullable=True)
+    province = Column(String, nullable=True)
+    isActive = Column(Boolean, nullable=True)
+    note = Column(String, nullable=True)
+
+class Client(Person):
+    __tablename__ = 'Client'
+    id = Column(Integer, ForeignKey(Person.id), primary_key=True)
+
+
+class Employe(Person):
+    __tablename__ = 'Employe'
+    id = Column(Integer, ForeignKey(Person.id), primary_key=True)
+    password = Column(String, nullable=True)
+    isAdmin = Column(Integer, nullable=True)
+    login = Column(String, nullable=True)
+    hourRate = Column(Float(precision=2))
+
+
+class Chantier(Base, AddonsBase):
+    __tablename__ = 'Chantier'
     id = Column(Integer, primary_key=True)
     name = Column(String, nullable=False)
-    clientId = Column(Integer, ForeignKey('Clients.id'), nullable=True)
+    clientId = Column(Integer, ForeignKey(Client.id), nullable=True)
     note = Column(String, nullable=True)
     status = Column(String, nullable=True)
     creationDate = Column(String, nullable=True)
@@ -101,159 +139,35 @@ class Chantiers(Base, AddonsBase):
     lastUpdate = Column(String, nullable=True)
 
 
-class ChantiersLinkDocuments(Base, AddonsBase):
-    __tablename__ = 'ChantiersLinkDocuments'
-    chantierId = Column(Integer, primary_key=True)
-    documentId = Column(Integer, primary_key=True)
-
-
-class Clients(Base, AddonsBase):
-    __tablename__ = 'Clients'
+class EmployeHour(Base, AddonsBase):
+    __tablename__ = 'EmployeHour'
     id = Column(Integer, primary_key=True)
-    prenom = Column(String, nullable=True)
-    nom = Column(String, nullable=True)
-    phone = Column(String, nullable=True)
-    cell = Column(String, nullable=True)
-    fax = Column(String, nullable=True)
-    adresse = Column(String, nullable=True)
-    codePostal = Column(String, nullable=True)
-    mail = Column(String, nullable=True)
-    ville = Column(String, nullable=True)
-    province = Column(String, nullable=True)
-    actif = Column(Integer, nullable=True)
-    note = Column(String, nullable=True)
-    lastUpdate = Column(String, nullable=True)
-
-
-class DocumentType(Base, AddonsBase):
-    __tablename__ = 'DocumentType'
-    id = Column(Integer, primary_key=True)
-    name = Column(String, nullable=False)
-
-
-class Documents(Base, AddonsBase):
-    __tablename__ = 'Documents'
-    id = Column(Integer, primary_key=True)
-    name = Column(String, nullable=False)
-    path = Column(String, nullable=True)
-    type = Column(Integer, nullable=True)
-    size = Column(Integer, nullable=True)
-    extension = Column(String, nullable=True)
-    note = Column(String, nullable=True)
-    creationDate = Column(String, nullable=True)
-
-
-class Employes(Base, AddonsBase):
-    __tablename__ = 'Employes'
-    id = Column(Integer, primary_key=True)
-    prenom = Column(String, nullable=True)
-    nom = Column(String, nullable=True)
-    mail = Column(String, nullable=True)
-    password = Column(String, nullable=True)
-    phone = Column(String, nullable=True)
-    cell = Column(String, nullable=True)
-    adresse = Column(String, nullable=True)
-    codePostal = Column(String, nullable=True)
-    ville = Column(String, nullable=True)
-    province = Column(String, nullable=True)
-    admin = Column(Integer, nullable=True)
-    login = Column(String, nullable=True)
-    actif = Column(Integer, nullable=True)
-    coutHoraire = Column(Float(precision=2))
-    lastUpdate = Column(String, nullable=True)
-    photo = Column(String)
-    photoSize = Column(Float())
-    photoExtension = Column(String)
-
-
-class EmployeHours(Base, AddonsBase):
-    __tablename__ = 'EmployeHours'
-    id = Column(Integer, primary_key=True)
-    employeId = Column(Integer, ForeignKey('Employes.id'), nullable=False)
-
+    employeId = Column(Integer, ForeignKey(Employe.id), nullable=False)
     workDate = Column(String, nullable=True)
     hours = Column(Float(precision=11))
-    chantierId = Column(Integer)
+    chantierId = Column(Integer, ForeignKey(Chantier.id))
     checked = Column(Integer, nullable=True)
-    coutHoraire = Column(Integer, nullable=True)
+    hourRate = Column(Float(precision=2))
 
 
-class Mails(Base, AddonsBase):
-    __tablename__ = 'Mails'
-    id = Column(Integer, primary_key=True)
-    message = Column(String, nullable=True)
-    creationDate = Column(String, nullable=True)
-    subject = Column(String, nullable=True)
-    employe_id = Column(Integer)
-    chantier_id = Column(Integer)
-    sentDate = Column(String)
-    sent = Column(Integer, nullable=True)
-
-
-class MailsLinkDocuments(Base, AddonsBase):
-    __tablename__ = 'mailsLinkDocuments'
-    mailId = Column(Integer, primary_key=True)
-    documentId = Column(Integer, primary_key=True)
-
-SoustraitantsLinkSpecialites = Table('soustraitantsLinkSpecialites', Base.metadata,
-                                     Column('Soustraitants_id', Integer, ForeignKey(
-                                         'Soustraitants.id'), primary_key=True),
-                                     Column('specialites_id', Integer, ForeignKey(
-                                         'Specialites.id'), primary_key=True)
-                                     )
-
-
-class SousTraitants(Base, AddonsBase):
-    __tablename__ = 'Soustraitants'
-    id = Column(Integer, primary_key=True)
+class Soustraitant(Person):
+    __tablename__ = 'Soustraitant'
+    id = Column(Integer, ForeignKey(Person.id), primary_key=True)
     name = Column(String, nullable=False, unique=True)
-    contactName = Column(String)
-    phone = Column(String)
-    cell = Column(String)
-    fax = Column(String)
-    adresse = Column(String)
-    codePostal = Column(String)
-    mail = Column(String)
-    siteWeb = Column(String)
-    licenseRbq = Column(String)
-    tps = Column(String)
-    ville = Column(String)
-    province = Column(String)
-    actif = Column(Integer)
-    note = Column(String)
-    lastUpdate = Column(String)
-    specialites = relationship("Specialites",
+    webSite = Column(String, nullable=True)
+    rbqLicense = Column(String, nullable=True)
+    tpsNumber = Column(String, nullable=True)
+    specialites = relationship("Specialite",
                                secondary=lambda: SoustraitantsLinkSpecialites,
-                               backref="sousTraitants"
+                               backref="soustraitants"
                                )
-    documents = relationship("Documents",
-                             secondary=lambda: SoustraitantsLinkDocuments,
-                             backref="sousTraitants")
-    subModels = {'specialites': 'Specialites',
-                 'documents': 'Documents'
-                 }
+    subModels = {'specialites': 'Specialite'}
     uniqueKey = 'name'
     onDuplicateUpdate = True
 
 
-class SoustraitantsLinkMails(Base, AddonsBase):
-    __tablename__ = 'SoustraitantsLinkMails'
-    soustraitants_id = Column(
-        Integer, ForeignKey('Soustraitants.id'), primary_key=True)
-    mails_id = Column(Integer, ForeignKey('Mails.id'), primary_key=True)
-    sentDate = Column(String)
-
-
-class SoustraitantsNotes(Base, AddonsBase):
-    __tablename__ = 'SoustraitantsNotes'
-    id = Column(Integer, primary_key=True)
-    sousTraitantId = Column(Integer, nullable=True)
-    note = Column(String, nullable=True)
-    employeId = Column(Integer)
-
-
-class Specialites(Base, AddonsBase):
-    __tablename__ = 'Specialites'
+class Specialite(Base, AddonsBase):
+    __tablename__ = 'Specialite'
     id = Column(Integer, primary_key=True)
     name = Column(String, nullable=False, unique=True)
 
@@ -261,17 +175,13 @@ class Specialites(Base, AddonsBase):
     returnIfExists = True
 
     def __repr__(self):
-        return "<Specialites(name='%s')>" % (self.name)
-SoustraitantsLinkDocuments = Table('SoustraitantsLinkDocuments', Base.metadata,
-                                   Column('id', Integer, primary_key=True),
-                                   Column(
-                                       'sousTraitantId',
-                                       Integer,
-                                       ForeignKey('Soustraitants.id'),
-                                       nullable=False
-                                   ),
-                                   Column(
-                                       'documentId', Integer,
-                                       ForeignKey('Documents.id'),
-                                       nullable=False)
-                                   )
+        return "<Specialite(name='%s')>" % (self.name)
+
+SoustraitantsLinkSpecialites = Table('soustraitantsLinkSpecialites', Base.metadata,
+                                     Column('Soustraitants_id', Integer, ForeignKey(
+                                         Soustraitant.id), primary_key=True),
+                                     Column('specialites_id', Integer, ForeignKey(
+                                         'Specialite.id'), primary_key=True)
+                                     )
+
+

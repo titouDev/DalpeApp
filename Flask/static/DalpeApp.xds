@@ -64,22 +64,6 @@
             ],
             "className": "sousTraitants"
         },
-        "fa160326-b7fa-4747-896d-d70d65968f22": {
-            "paths": [
-                "metadata/store/mails",
-                "app/store/override/mails.js",
-                "app/store/mails.js"
-            ],
-            "className": "mails"
-        },
-        "ab15740c-e916-430c-b9f1-319b39e1db1b": {
-            "paths": [
-                "metadata/model/mail",
-                "app/model/override/mail.js",
-                "app/model/mail.js"
-            ],
-            "className": "mail"
-        },
         "8953454d-3ea4-4a30-ad4c-01f5587be068": {
             "paths": [
                 "metadata/controller/employes",
@@ -104,35 +88,11 @@
             ],
             "className": "sousTraitants"
         },
-        "fab2fb42-6655-4fb9-8006-128da143a679": {
-            "paths": [
-                "metadata/view/mailWindow",
-                "app/view/override/mailWindow.js",
-                "app/view/mailWindow.js"
-            ],
-            "className": "mailWindow"
-        },
         "2e155090-8c35-4c70-ba95-ef0c1d98bde2": {
             "paths": [
                 "metadata/resource/css"
             ],
             "className": "css"
-        },
-        "01997f0d-c80f-45ee-bd73-f292af411a55": {
-            "paths": [
-                "metadata/controller/mailWindow",
-                "app/controller/override/mailWindow.js",
-                "app/controller/mailWindow.js"
-            ],
-            "className": "mailWindow"
-        },
-        "a79bbea3-d4de-47b9-b24e-a9e513a27156": {
-            "paths": [
-                "metadata/store/mailLinkSousTraitant",
-                "app/store/override/mailLinkSousTraitant.js",
-                "app/store/mailLinkSousTraitant.js"
-            ],
-            "className": "mailLinkSousTraitant"
         },
         "06ca827d-4e64-431a-bedd-3b4432a274f5": {
             "paths": [
@@ -298,38 +258,6 @@
             ],
             "className": "chantiers_hours"
         },
-        "8df80686-4286-4022-97f6-7256a0c036ad": {
-            "paths": [
-                "metadata/store/documents",
-                "app/store/override/documents.js",
-                "app/store/documents.js"
-            ],
-            "className": "documents"
-        },
-        "ba030224-662d-4780-9dd2-cad1396913e8": {
-            "paths": [
-                "metadata/store/document_type",
-                "app/store/override/document_type.js",
-                "app/store/document_type.js"
-            ],
-            "className": "document_type"
-        },
-        "8cec37a7-50df-4c9e-a730-be67b873404b": {
-            "paths": [
-                "metadata/model/document",
-                "app/model/override/document.js",
-                "app/model/document.js"
-            ],
-            "className": "document"
-        },
-        "bd610d90-785c-4610-83a6-1e377d54eff6": {
-            "paths": [
-                "metadata/model/document_type",
-                "app/model/override/document_type.js",
-                "app/model/document_type.js"
-            ],
-            "className": "document_type"
-        },
         "0883665a-4d9e-453c-a13f-bab460f4c2d8": {
             "paths": [
                 "metadata/view/editEmployeHour",
@@ -354,38 +282,6 @@
             ],
             "className": "employes_logHours"
         },
-        "e5a999f6-34ab-4a5b-9507-4f02d03426d2": {
-            "paths": [
-                "metadata/store/sousTraitantsDestMail",
-                "app/store/override/sousTraitantsDestMail.js",
-                "app/store/sousTraitantsDestMail.js"
-            ],
-            "className": "sousTraitantsDestMail"
-        },
-        "990efb39-4987-4589-8cb2-7aab3f5dcb43": {
-            "paths": [
-                "metadata/store/chantiers_documents",
-                "app/store/override/chantiers_documents.js",
-                "app/store/chantiers_documents.js"
-            ],
-            "className": "chantiers_documents"
-        },
-        "9aff4ed1-3fba-4dd2-92e1-69d109f286bb": {
-            "paths": [
-                "metadata/model/chantier_link_documents",
-                "app/model/override/chantier_link_documents.js",
-                "app/model/chantier_link_documents.js"
-            ],
-            "className": "chantier_link_documents"
-        },
-        "f288154c-32cc-4f80-a4c9-73ce845fe3f2": {
-            "paths": [
-                "metadata/store/mails_notsent",
-                "app/store/override/mails_notsent.js",
-                "app/store/mails_notsent.js"
-            ],
-            "className": "mails_notsent"
-        },
         "82e4399f-b439-4306-b821-378e17afaa13": {
             "paths": [
                 "metadata/store/sousTraitants_full",
@@ -407,20 +303,11 @@
                 "app/store/specialitesLinkSoustraitants.js"
             ],
             "className": "specialitesLinkSoustraitants"
-        },
-        "1d9b35b9-e7ec-4179-859e-b0e5a787d95b": {
-            "paths": [
-                "metadata/view/MyTriggerField",
-                "app/view/override/MyTriggerField.js",
-                "app/view/MyTriggerField.js"
-            ],
-            "className": "MyTriggerField"
         }
     },
     "viewOrderMap": {
         "view": [
             "e4c96884-e2eb-49b7-a615-451f20b564e5",
-            "fab2fb42-6655-4fb9-8006-128da143a679",
             "36e5f604-1eda-473d-8a66-cbfc9a38d0ba",
             "a06c8ee8-1e25-4228-8640-255e15a32384",
             "2002c995-32ee-4cc1-948c-651888aaf1e0",
@@ -428,31 +315,22 @@
             "08df4031-2dee-45bd-b50d-13ea733e02e1",
             "2d33d2c4-28b5-4543-abe5-e62e5c54d882",
             "57339c22-18af-42b2-8491-66d707a83680",
-            "0883665a-4d9e-453c-a13f-bab460f4c2d8",
-            "1d9b35b9-e7ec-4179-859e-b0e5a787d95b"
+            "0883665a-4d9e-453c-a13f-bab460f4c2d8"
         ],
         "store": [
-            "e5a999f6-34ab-4a5b-9507-4f02d03426d2",
             "8dc5ddeb-520a-4981-ae6b-0d6ad639afee",
-            "8df80686-4286-4022-97f6-7256a0c036ad",
-            "ba030224-662d-4780-9dd2-cad1396913e8",
             "ddee1a8c-46be-4052-955e-2953d9a66b74",
             "01dacb25-49fe-4aad-95bf-fbc2b747c97f",
             "05102a25-9d0c-4e0e-a982-7d3866884cb7",
             "cd6fbed6-fd8f-4928-9289-c6a6d316cffb",
             "4bc615f2-00bd-457d-91f4-1c37c29ca69b",
-            "990efb39-4987-4589-8cb2-7aab3f5dcb43",
-            "fa160326-b7fa-4747-896d-d70d65968f22",
-            "f288154c-32cc-4f80-a4c9-73ce845fe3f2",
             "e0f02898-522d-4dc3-a2e1-2ad3f4b2dd2b",
             "82e4399f-b439-4306-b821-378e17afaa13",
-            "a79bbea3-d4de-47b9-b24e-a9e513a27156",
             "7c30472b-a80e-4251-8568-3f963945a7a4",
             "5ff61844-8743-463a-89bf-8b1e98f629cf"
         ],
         "controller": [
             "d61f7263-e573-4a70-9e2e-e9dc378117e0",
-            "01997f0d-c80f-45ee-bd73-f292af411a55",
             "12caf886-dbf7-471f-b353-82f5b2c7f27f",
             "8953454d-3ea4-4a30-ad4c-01f5587be068",
             "5358e90e-5181-4e9f-bc2d-6b13a5016669",
@@ -466,11 +344,7 @@
             "e4d3bafa-15b2-4e10-a635-0f60eb93a846",
             "a0d5601b-11bf-4930-97a3-f49e2073affe",
             "237b6ba4-2399-4586-aab1-258e76cdedb7",
-            "ab15740c-e916-430c-b9f1-319b39e1db1b",
-            "9aff4ed1-3fba-4dd2-92e1-69d109f286bb",
-            "62f30b2a-c8b5-4d9d-ac99-268643d73069",
-            "8cec37a7-50df-4c9e-a730-be67b873404b",
-            "bd610d90-785c-4610-83a6-1e377d54eff6"
+            "62f30b2a-c8b5-4d9d-ac99-268643d73069"
         ],
         "resource": [
             "06ca827d-4e64-431a-bedd-3b4432a274f5",

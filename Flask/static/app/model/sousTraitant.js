@@ -16,70 +16,10 @@
 Ext.define('dalpeApp.model.sousTraitant', {
     extend: 'Ext.data.Model',
 
-    fields: [
-        {
-            name: 'id',
-            persist: false,
-            type: 'int'
-        },
-        {
-            name: 'name'
-        },
-        {
-            name: 'contactName',
-            useNull: true
-        },
-        {
-            name: 'mail',
-            useNull: true
-        },
-        {
-            name: 'fax',
-            useNull: true
-        },
-        {
-            name: 'phone'
-        },
-        {
-            name: 'cell',
-            useNull: true
-        },
-        {
-            name: 'adresse'
-        },
-        {
-            name: 'codePostal'
-        },
-        {
-            name: 'ville'
-        },
-        {
-            name: 'province'
-        },
-        {
-            name: 'actif'
-        },
-        {
-            name: 'note'
-        },
-        {
-            name: 'licenseRbq'
-        },
-        {
-            name: 'tps'
-        },
-        {
-            name: 'siteWeb'
-        },
-        {
-            name: 'specialites'
-        }
-    ],
-
     proxy: {
         type: 'rest',
         sortParam: 'undefined',
-        url: '/api/model/SousTraitants',
+        url: '/api/model/Soustraitant',
         reader: {
             type: 'json',
             root: 'records'
@@ -87,5 +27,65 @@ Ext.define('dalpeApp.model.sousTraitant', {
         writer: {
             type: 'json'
         }
-    }
+    },
+
+    fields: [
+        {
+            name: 'id',
+            persist: false
+        },
+        {
+            name: 'name'
+        },
+        {
+            name: 'lastName'
+        },
+        {
+            name: 'contactName'
+        },
+        {
+            name: 'email'
+        },
+        {
+            name: 'phone'
+        },
+        {
+            name: 'cell'
+        },
+        {
+            name: 'fax'
+        },
+        {
+            name: 'address'
+        },
+        {
+            name: 'postalCode'
+        },
+        {
+            name: 'city'
+        },
+        {
+            name: 'province'
+        },
+        {
+            defaultValue: true,
+            name: 'isActive',
+            type: 'boolean'
+        },
+        {
+            name: 'note'
+        },
+        {
+            name: 'webSite'
+        },
+        {
+            name: 'rbqLicense'
+        },
+        {
+            name: 'tpsNumber'
+        },
+        {
+            name: 'specialites'
+        }
+    ]
 });

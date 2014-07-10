@@ -165,7 +165,7 @@
                                         "layout|flex": 1,
                                         "maxHeight": 25,
                                         "fieldLabel": "Couriel",
-                                        "name": "mail",
+                                        "name": "email",
                                         "inputType": "email",
                                         "vtype": "email",
                                         "vtypeText": null
@@ -201,7 +201,7 @@
                                     "userConfig": {
                                         "maxHeight": 25,
                                         "fieldLabel": "Adresse",
-                                        "name": "adresse"
+                                        "name": "address"
                                     },
                                     "designerId": "85cc9dc2-3cdd-4640-ba39-9d67dc1e947c"
                                 },
@@ -218,7 +218,7 @@
                                         "maxWidth": null,
                                         "width": null,
                                         "fieldLabel": "Code Postal",
-                                        "name": "codePostal"
+                                        "name": "postalCode"
                                     },
                                     "designerId": "b46a88ab-30c4-4d0c-9c03-d814b35841e5"
                                 },
@@ -238,7 +238,7 @@
                                         "width": null,
                                         "fieldLabel": "Ville",
                                         "labelPad": null,
-                                        "name": "ville"
+                                        "name": "city"
                                     },
                                     "designerId": "03be0138-431b-47ac-8134-54ced752723a"
                                 },
@@ -274,7 +274,7 @@
                                         "maxHeight": 25,
                                         "padding": null,
                                         "fieldLabel": "Site Internet",
-                                        "name": "siteWeb",
+                                        "name": "webSite",
                                         "vtype": null
                                     },
                                     "designerId": "5410aaba-b324-4c2e-a52a-318f58922415"
@@ -290,7 +290,7 @@
                                         "layout|flex": 1,
                                         "maxHeight": 25,
                                         "fieldLabel": "License RBQ",
-                                        "name": "licenseRbq"
+                                        "name": "rbqLicense"
                                     },
                                     "designerId": "ad2cbdc1-26ba-4bec-b59b-2935d69ee151"
                                 },
@@ -305,7 +305,7 @@
                                         "layout|flex": 1,
                                         "maxHeight": 25,
                                         "fieldLabel": "Tps",
-                                        "name": "tps"
+                                        "name": "tpsNumber"
                                     },
                                     "designerId": "3075551f-6ceb-4e41-9837-b7e454399964"
                                 }
@@ -613,9 +613,9 @@
                                 "name": "documentTypeId",
                                 "allowBlank": false,
                                 "emptyText": "type de document...",
-                                "displayField": "name",
-                                "store": "document_type",
-                                "valueField": "id"
+                                "displayField": null,
+                                "store": null,
+                                "valueField": null
                             },
                             "designerId": "adff164b-64ab-4d26-9bed-34a25de7cba6"
                         },
@@ -685,7 +685,7 @@
                         "height": 150,
                         "maxHeight": 150,
                         "title": "Documents Importes",
-                        "store": "documents"
+                        "store": null
                     },
                     "designerId": "eeb69bff-13bd-4f2c-b305-587d45304daa",
                     "cn": [

@@ -87,7 +87,7 @@
                         "fieldLabel": "Employe",
                         "name": "employeId",
                         "allowBlank": false,
-                        "displayField": "nom",
+                        "displayField": "lastName",
                         "store": "employes",
                         "valueField": "id"
                     },
@@ -106,7 +106,7 @@
                         "itemId": "coutHoraire",
                         "maxHeight": 30,
                         "fieldLabel": "Cout Horaire",
-                        "name": "coutHoraire",
+                        "name": "hourRate",
                         "minValue": 0
                     },
                     "designerId": "5252b4b3-21f3-4f48-b8ee-6a2de767d45c"

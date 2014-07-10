@@ -69,7 +69,7 @@ Ext.define('dalpeApp.view.editEmployeHour', {
                             fieldLabel: 'Employe',
                             name: 'employeId',
                             allowBlank: false,
-                            displayField: 'nom',
+                            displayField: 'lastName',
                             store: 'employes',
                             valueField: 'id'
                         },
@@ -80,7 +80,7 @@ Ext.define('dalpeApp.view.editEmployeHour', {
                             itemId: 'coutHoraire',
                             maxHeight: 30,
                             fieldLabel: 'Cout Horaire',
-                            name: 'coutHoraire',
+                            name: 'hourRate',
                             minValue: 0
                         },
                         {

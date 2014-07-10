@@ -84,7 +84,7 @@
                                         "height": null,
                                         "maxHeight": 25,
                                         "fieldLabel": "Nom",
-                                        "name": "nom",
+                                        "name": "lastName",
                                         "allowBlank": false,
                                         "blankText": "Ce champ est requis"
                                     },
@@ -101,7 +101,7 @@
                                         "layout|flex": 1,
                                         "maxHeight": 25,
                                         "fieldLabel": "Prenom",
-                                        "name": "prenom",
+                                        "name": "name",
                                         "allowBlank": false
                                     },
                                     "designerId": "4483e337-db91-4058-8f16-b71072388255"
@@ -147,7 +147,7 @@
                                         "layout|flex": 1,
                                         "maxHeight": 25,
                                         "fieldLabel": "Couriel",
-                                        "name": "mail"
+                                        "name": "email"
                                     },
                                     "designerId": "c5a1a5ce-4421-4cb7-a76e-0093f182cce0"
                                 }
@@ -180,7 +180,7 @@
                                     "userConfig": {
                                         "maxHeight": 25,
                                         "fieldLabel": "Adresse",
-                                        "name": "adresse"
+                                        "name": "address"
                                     },
                                     "designerId": "80422a01-1a3e-4b5a-bf10-d476aa30d645"
                                 },
@@ -197,7 +197,7 @@
                                         "maxWidth": null,
                                         "width": null,
                                         "fieldLabel": "Code Postal",
-                                        "name": "codePostal"
+                                        "name": "postalCode"
                                     },
                                     "designerId": "8e9e954e-ab73-4ac1-8f56-d8ead3dbc56d"
                                 },
@@ -217,7 +217,7 @@
                                         "width": null,
                                         "fieldLabel": "Ville",
                                         "labelPad": null,
-                                        "name": "ville"
+                                        "name": "city"
                                     },
                                     "designerId": "54d87f23-01d6-4ec7-9616-abfee9051c3a"
                                 },

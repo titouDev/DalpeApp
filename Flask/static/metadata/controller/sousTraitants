@@ -7,15 +7,11 @@
     "codeClass": null,
     "userConfig": {
         "models": [
-            "sousTraitant",
-            "mail"
+            "sousTraitant"
         ],
         "stores": [
-            "mails",
             "sousTraitants",
-            "mailLinkSousTraitant",
             "specialites",
-            "mails_notsent",
             "chantiers",
             "sousTraitants_full",
             "specialitesLinkSoustraitants"
@@ -47,63 +43,6 @@
                 "designer|controlQuery": "#sousTraitantsGrid #searchText"
             },
             "designerId": "fc4f5a1b-743f-40f3-afc7-70868fdb1952"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onDeleteMailNotSentButtonClick",
-                "implHandler": [
-                    "var selectedMail = this.getMailsNotSentGrid().selModel.getSelection()[0];",
-                    "",
-                    "if (!selectedMail) {",
-                    "    Ext.Msg.alert('Attention','Vous devez selectionner un courriel...');",
-                    "    return;",
-                    "}",
-                    "",
-                    "Ext.Msg.confirm('Attention',",
-                    "'Etes vous sur de vouloir effacer le courriel?',",
-                    "function(button) {",
-                    "    if (button === 'yes') {",
-                    "        Mails.delete(",
-                    "        selectedMail.data,",
-                    "        function(){",
-                    "            this.getMails_notsentStore().load();",
-                    "        },",
-                    "        this",
-                    "        );",
-                    "    }",
-                    "    else {",
-                    "        return;",
-                    "    }",
-                    "},",
-                    "this",
-                    ");",
-                    ""
-                ],
-                "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#deleteMailNotSentButton"
-            },
-            "designerId": "99671f4d-88b1-46e2-a0dc-74738c58c04c"
-        },
-        {
-            "type": "controllerref",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "ref": "mailsNotSentGrid",
-                "selector": "#mails_notsent_grid"
-            },
-            "designerId": "f1a40816-b8d5-4f31-9e78-6da628f31041"
         },
         {
             "type": "basicfunction",
@@ -191,76 +130,12 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "editMail",
-                "designer|params": [
-                    "record"
-                ],
-                "implHandler": [
-                    "//On reload le store des chantiers, puis on show la window",
-                    "",
-                    "this.getChantiersStore().load({",
-                    "    scope:this,",
-                    "    callback:function(){",
-                    "        this.showMailWindow(record);",
-                    "    }",
-                    "});",
-                    ""
-                ]
-            },
-            "designerId": "534d9ac6-bb4b-4b30-8fdc-d7f7e14aaafe"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "fn": "init",
                 "implHandler": [
                     "this.currentSpecialites = [];"
                 ]
             },
             "designerId": "f1ae16ca-2864-473e-99b5-1051d9898cf3"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "prepareMail",
-                "implHandler": [
-                    "",
-                    "//On ajoute les  sous traitants selectionnes dans le store (mais pas encore dans la DB)",
-                    "//Le user va peut etre annuler son mail.",
-                    "var selectedRecords = this.getSousTraitantsGrid().selModel.getSelection();",
-                    "if (selectedRecords.length >0) {",
-                    "    var count = 0;",
-                    "    var linkStore = this.getMailLinkSousTraitantStore();",
-                    "    linkStore.removeAll();",
-                    "    for (var i in selectedRecords)",
-                    "    {",
-                    "        record = selectedRecords[i];",
-                    "        if (record.data.mail)",
-                    "        {",
-                    "            //Le sous traitant a une adresse email, on peut l'ajouter au store",
-                    "            linkStore.add(record);",
-                    "            count++;",
-                    "        }",
-                    "    }",
-                    "}",
-                    "",
-                    "this.getSousTraitants_fullStore().load();",
-                    "//On affiche la fenetre",
-                    "var mailWindow = Ext.widget('mailWindow');",
-                    ""
-                ]
-            },
-            "designerId": "4f714dfd-071c-4e92-894b-d31d63f585f0"
         },
         {
             "type": "basicfunction",
@@ -436,41 +311,21 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "updateMailsGrid",
-                "designer|params": [
-                    "sousTraitantId"
-                ],
-                "implHandler": [
-                    "var mailsStore = this.getMailsGrid().store;",
-                    "mailsStore.clearFilter(true);",
-                    "mailsStore.filter('sousTraitantId',sousTraitantId);"
-                ]
-            },
-            "designerId": "a3350dbd-9079-459a-ab7b-cd0c08849d9f"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "fn": "applySpecialiteFilter",
                 "implHandler": [
                     "//On prend la valeur du comboSpecialite",
                     "var specialiteId = this.getComboSpecialites().getValue();",
                     "",
                     "if ( specialiteId && specialiteId > 0) {",
-                    "    ",
+                    "",
                     "    var store = this.getSousTraitantsStore();",
                     "    store.filter([",
-                    "        {filterFn: function(item) {",
-                    "            return Ext.Array.contains(",
-                    "                Ext.Array.pluck(item.get('specialites'), 'id'),",
-                    "                specialiteId",
-                    "            );",
-                    "        }}",
+                    "    {filterFn: function(item) {",
+                    "        return Ext.Array.contains(",
+                    "        Ext.Array.pluck(item.get('specialites'), 'id'),",
+                    "        specialiteId",
+                    "        );",
+                    "    }}",
                     "    ]);",
                     "}"
                 ]
@@ -499,23 +354,6 @@
                 ]
             },
             "designerId": "96185a27-c824-4708-a833-e79ccff4e1a1"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "resetMailsGrid",
-                "implHandler": [
-                    "var mailsGrid = this.getMailsGrid();",
-                    "mailsGrid.store.removeAll();",
-                    "mailsGrid.setTitle('Courriels');"
-                ]
-            },
-            "designerId": "2c00cb61-7694-4194-a826-7d679e61e9c8"
         },
         {
             "type": "controllerref",
@@ -564,19 +402,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "ref": "mailsGrid",
-                "selector": "#mailsGrid"
-            },
-            "designerId": "5fe9f523-c493-4486-96a2-b72da48de32f"
-        },
-        {
-            "type": "controllerref",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "ref": "sousTraitantsGrid",
                 "selector": "#sousTraitantsGrid"
             },
@@ -600,28 +425,6 @@
                 "designer|controlQuery": "#sousTraitantsGrid #refresh"
             },
             "designerId": "7c3ed28c-25ef-492c-bc37-fdc2a5c0b760"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onRefreshClickMailsGrid",
-                "implHandler": [
-                    "var selectedSousTraitant = this.getSousTraitantsGrid().selModel.getSelection()[0];",
-                    "if (selectedSousTraitant) this.updateMailsGrid(selectedSousTraitant.internalId);",
-                    "",
-                    ""
-                ],
-                "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.panel.Tool",
-                "designer|controlQuery": "#mailsGrid #refresh"
-            },
-            "designerId": "bd13bc89-fc9a-4378-9fe4-716c2731d228"
         },
         {
             "type": "controlleraction",
@@ -662,93 +465,6 @@
                 "designer|controlQuery": "#sousTraitantsPanel"
             },
             "designerId": "b6b68c57-f757-4f4a-a226-f8945e7d76d2"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onCreateMailButtonClick",
-                "implHandler": [
-                    "this.prepareMail();"
-                ],
-                "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#createMailButton"
-            },
-            "designerId": "2ed0693d-c752-441e-a959-2696d60d397a"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onRefreshMailsNotSentGridClick",
-                "implHandler": [
-                    "this.getMails_notsentStore().load();"
-                ],
-                "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.panel.Tool",
-                "designer|controlQuery": "#refreshMailsNotSentGrid"
-            },
-            "designerId": "3d544a8d-f7cb-4944-8ff2-b7909260af74"
-        },
-        {
-            "type": "basicfunction",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "showMailWindow",
-                "designer|params": [
-                    "record"
-                ],
-                "implHandler": [
-                    "var myMail = record.data;",
-                    "",
-                    "",
-                    "",
-                    "//On reload le store de liens",
-                    "var linkStore = this.getMailLinkSousTraitantStore();",
-                    "linkStore.load({params:{mailId:myMail.id}});",
-                    "",
-                    "//On affiche la fenetre",
-                    "var mailWindow = Ext.widget('mailWindow');",
-                    "//On update le form",
-                    "var myForm = mailWindow.down('form');",
-                    "myForm.getForm().setValues(myMail);",
-                    "",
-                    "",
-                    "if (myMail.sentDate)",
-                    "{",
-                    "    //Le form va etre read Only",
-                    "    //Ext.Msg.alert('Attention', 'Ce mail a deja ete envoye, vous ne pourrez donc pas le modifier.');",
-                    "    mailWindow.down('#comboChantiers').readOnly = true;",
-                    "    mailWindow.down('#subject').setReadOnly(true);",
-                    "    mailWindow.down('#message').setReadOnly(true);",
-                    "",
-                    "    //On hide les boutons send et save",
-                    "    mailWindow.down('#save').hide();",
-                    "    mailWindow.down('#send').hide();",
-                    "    //On hide  les boutons add et remove destinataire",
-                    "    mailWindow.down('#add').hide();",
-                    "    mailWindow.down('#remove').hide();",
-                    "",
-                    "}",
-                    ""
-                ]
-            },
-            "designerId": "c2796188-2fb2-4e1b-a569-53e87b46c802"
         },
         {
             "type": "controlleraction",
@@ -802,52 +518,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onSendMailClick",
-                "implHandler": [
-                    "this.prepareMail();"
-                ],
-                "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#sendMail"
-            },
-            "designerId": "e29e4943-b7f9-4fe6-892b-64b1ba3f951c"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onEditMailButtonClick",
-                "implHandler": [
-                    "var selectedMail = this.getMailsNotSentGrid().selModel.getSelection()[0];",
-                    "",
-                    "if (!selectedMail) {",
-                    "    Ext.Msg.alert('Attention','Vous devez selectionner un courriel...');",
-                    "    return;",
-                    "}",
-                    "",
-                    "this.editMail(selectedMail);",
-                    ""
-                ],
-                "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#editMailButton"
-            },
-            "designerId": "aa5ae8a7-9eca-4f5c-8c02-786f478c66a6"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "fn": "onAnnulerClick",
                 "implHandler": [
                     "button.up('window').close();"
@@ -858,52 +528,6 @@
                 "designer|controlQuery": "editSousTraitantWindow #annuler"
             },
             "designerId": "15d09e58-9a84-481a-9cff-dae54fe08350"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onSaveDocumentClick",
-                "implHandler": [
-                    "var myEditForm = button.up('window').down('#editForm').getForm();",
-                    "var sousTraitantId = myEditForm.getValues().id;",
-                    "",
-                    "if (! sousTraitantId) {",
-                    "    Ext.Msg.alert('Attention','Vous devez d\\'abord créer un Sous Traitant pour enregistrer un document');",
-                    "}",
-                    "else {",
-                    "",
-                    "    var form = button.up('#fileForm').getForm();",
-                    "    if(form.isValid()){",
-                    "        form.submit({",
-                    "            url: 'document-upload.php',",
-                    "            scope:this,",
-                    "            timeout:100,",
-                    "            params: {",
-                    "                sousTraitantId: sousTraitantId,",
-                    "                documentTypeId:form.getValues().documentTypeId,",
-                    "                documentNote:form.getValues().documentNote",
-                    "            },",
-                    "            waitMsg: 'Sauvegarde du document...',",
-                    "            success: function(fp, o) {",
-                    "                //On reload le sotre de documents",
-                    "                var documentsStore = Ext.getStore('documents');",
-                    "                documentsStore.load();",
-                    "            }",
-                    "        });",
-                    "    }",
-                    "}"
-                ],
-                "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#editSousTraitantWindow #saveDocument"
-            },
-            "designerId": "24a80c13-beb4-4b86-a116-70e267a19974"
         },
         {
             "type": "controlleraction",

@@ -119,19 +119,19 @@ Ext.define('dalpeApp.view.appViewport', {
                                             columns: [
                                                 {
                                                     xtype: 'gridcolumn',
-                                                    dataIndex: 'prenom',
+                                                    dataIndex: 'name',
                                                     text: 'Prenom',
                                                     flex: 1
                                                 },
                                                 {
                                                     xtype: 'gridcolumn',
-                                                    dataIndex: 'nom',
+                                                    dataIndex: 'lastName',
                                                     text: 'Nom',
                                                     flex: 1
                                                 },
                                                 {
                                                     xtype: 'gridcolumn',
-                                                    dataIndex: 'mail',
+                                                    dataIndex: 'email',
                                                     text: 'Courriel',
                                                     flex: 1.5
                                                 },
@@ -260,7 +260,7 @@ Ext.define('dalpeApp.view.appViewport', {
                                                 {
                                                     xtype: 'gridcolumn',
                                                     width: 250,
-                                                    dataIndex: 'mail',
+                                                    dataIndex: 'email',
                                                     text: 'Courriel',
                                                     flex: 1
                                                 },
@@ -280,144 +280,6 @@ Ext.define('dalpeApp.view.appViewport', {
                                             selModel: Ext.create('Ext.selection.RowModel', {
                                                 mode: 'MULTI'
                                             })
-                                        },
-                                        {
-                                            xtype: 'panel',
-                                            flex: 1,
-                                            region: 'east',
-                                            split: true,
-                                            hidden: true,
-                                            layout: {
-                                                align: 'stretch',
-                                                type: 'vbox'
-                                            },
-                                            items: [
-                                                {
-                                                    xtype: 'gridpanel',
-                                                    flex: 1,
-                                                    stateId: 'stateMailsGrid',
-                                                    stateful: true,
-                                                    id: 'mailsGrid',
-                                                    collapsed: false,
-                                                    title: 'Courriels envoyes...',
-                                                    store: 'mails',
-                                                    selModel: Ext.create('Ext.selection.RowModel', {
-
-                                                    }),
-                                                    columns: [
-                                                        {
-                                                            xtype: 'gridcolumn',
-                                                            dataIndex: 'subject',
-                                                            text: 'Sujet',
-                                                            flex: 1
-                                                        },
-                                                        {
-                                                            xtype: 'gridcolumn',
-                                                            dataIndex: 'chantier',
-                                                            text: 'Chantier',
-                                                            flex: 1
-                                                        },
-                                                        {
-                                                            xtype: 'datecolumn',
-                                                            dataIndex: 'creationDate',
-                                                            text: 'Cree le'
-                                                        },
-                                                        {
-                                                            xtype: 'gridcolumn',
-                                                            dataIndex: 'userCreate',
-                                                            text: 'Cree par'
-                                                        },
-                                                        {
-                                                            xtype: 'datecolumn',
-                                                            dataIndex: 'sentDate',
-                                                            text: 'Envoye le'
-                                                        }
-                                                    ],
-                                                    tools: [
-                                                        {
-                                                            xtype: 'tool',
-                                                            itemId: 'refresh',
-                                                            type: 'refresh'
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    xtype: 'gridpanel',
-                                                    flex: 1,
-                                                    stateId: 'stateMailsNotSentGrid',
-                                                    stateful: true,
-                                                    id: 'mails_notsent_grid',
-                                                    collapsed: false,
-                                                    title: 'Courriels en preparation',
-                                                    store: 'mails_notsent',
-                                                    dockedItems: [
-                                                        {
-                                                            xtype: 'toolbar',
-                                                            dock: 'top',
-                                                            items: [
-                                                                {
-                                                                    xtype: 'button',
-                                                                    cls: '',
-                                                                    itemId: 'createMailButton',
-                                                                    iconCls: 'icon-add',
-                                                                    text: 'Nouveau'
-                                                                },
-                                                                {
-                                                                    xtype: 'button',
-                                                                    cls: '',
-                                                                    itemId: 'editMailButton',
-                                                                    text: 'Editer'
-                                                                },
-                                                                {
-                                                                    xtype: 'button',
-                                                                    itemId: 'deleteMailNotSentButton',
-                                                                    iconCls: 'icon-delete',
-                                                                    text: 'Effacer'
-                                                                }
-                                                            ]
-                                                        }
-                                                    ],
-                                                    selModel: Ext.create('Ext.selection.RowModel', {
-
-                                                    }),
-                                                    columns: [
-                                                        {
-                                                            xtype: 'gridcolumn',
-                                                            dataIndex: 'subject',
-                                                            text: 'Sujet',
-                                                            flex: 1
-                                                        },
-                                                        {
-                                                            xtype: 'gridcolumn',
-                                                            dataIndex: 'chantier',
-                                                            text: 'Chantier',
-                                                            flex: 1
-                                                        },
-                                                        {
-                                                            xtype: 'datecolumn',
-                                                            dataIndex: 'creationDate',
-                                                            text: 'Cree le'
-                                                        },
-                                                        {
-                                                            xtype: 'gridcolumn',
-                                                            dataIndex: 'userCreate',
-                                                            text: 'Cree par'
-                                                        },
-                                                        {
-                                                            xtype: 'datecolumn',
-                                                            dataIndex: 'sentDate',
-                                                            text: 'Envoye le'
-                                                        }
-                                                    ],
-                                                    tools: [
-                                                        {
-                                                            xtype: 'tool',
-                                                            itemId: 'refreshMailsNotSentGrid',
-                                                            type: 'refresh'
-                                                        }
-                                                    ]
-                                                }
-                                            ]
                                         }
                                     ]
                                 },
@@ -542,52 +404,6 @@ Ext.define('dalpeApp.view.appViewport', {
                                                             text: 'Employe'
                                                         }
                                                     ]
-                                                },
-                                                {
-                                                    xtype: 'gridpanel',
-                                                    flex: 1,
-                                                    stateId: 'stateCHantiersDocumentsGrid',
-                                                    stateful: true,
-                                                    hidden: true,
-                                                    itemId: 'documentsGrid',
-                                                    title: 'Documents',
-                                                    store: 'chantiers_documents',
-                                                    dockedItems: [
-                                                        {
-                                                            xtype: 'toolbar',
-                                                            dock: 'top',
-                                                            items: [
-                                                                {
-                                                                    xtype: 'combobox',
-                                                                    itemId: 'documentType',
-                                                                    padding: 0,
-                                                                    queryMode: 'local',
-                                                                    store: 'document_type'
-                                                                },
-                                                                {
-                                                                    xtype: 'filefield',
-                                                                    itemId: 'fileUpdalod',
-                                                                    padding: 0,
-                                                                    width: 60,
-                                                                    name: 'documentImport',
-                                                                    buttonOnly: true,
-                                                                    buttonText: 'Ajouter...'
-                                                                }
-                                                            ]
-                                                        }
-                                                    ],
-                                                    columns: [
-                                                        {
-                                                            xtype: 'gridcolumn',
-                                                            dataIndex: 'name',
-                                                            text: 'Photo'
-                                                        },
-                                                        {
-                                                            xtype: 'gridcolumn',
-                                                            dataIndex: 'chantierId',
-                                                            text: 'ChantierId'
-                                                        }
-                                                    ]
                                                 }
                                             ]
                                         }
@@ -603,19 +419,19 @@ Ext.define('dalpeApp.view.appViewport', {
                                     columns: [
                                         {
                                             xtype: 'gridcolumn',
-                                            dataIndex: 'prenom',
+                                            dataIndex: 'name',
                                             text: 'Prenom',
                                             flex: 1
                                         },
                                         {
                                             xtype: 'gridcolumn',
-                                            dataIndex: 'nom',
+                                            dataIndex: 'lastName',
                                             text: 'Nom',
                                             flex: 1
                                         },
                                         {
                                             xtype: 'gridcolumn',
-                                            dataIndex: 'mail',
+                                            dataIndex: 'email',
                                             text: 'Courriel',
                                             flex: 1
                                         },
@@ -727,7 +543,7 @@ Ext.define('dalpeApp.view.appViewport', {
 
                                                         var employe = employeStore.getById(value);
 
-                                                        return employe.get('prenom') + " " + employe.get('nom');
+                                                        return employe.get('name') + " " + employe.get('lastName');
                                                     },
                                                     width: 200,
                                                     dataIndex: 'employeId',
@@ -735,7 +551,7 @@ Ext.define('dalpeApp.view.appViewport', {
                                                 },
                                                 {
                                                     xtype: 'numbercolumn',
-                                                    dataIndex: 'coutHoraire',
+                                                    dataIndex: 'hourRate',
                                                     text: 'Cout Horaire'
                                                 }
                                             ]

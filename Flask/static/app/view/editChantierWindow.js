@@ -95,11 +95,16 @@ Ext.define('dalpeApp.view.editChantierWindow', {
                                         {
                                             xtype: 'combobox',
                                             flex: 1,
+                                            listConfig: {
+                                                getInnerTpl: function() {
+                                                return '{name} {lastName}';
+                                                            }
+                                            },
                                             fieldLabel: 'Client',
                                             labelWidth: 150,
                                             name: 'clientId',
                                             allowBlank: false,
-                                            displayField: 'nom',
+                                            displayField: 'lastName',
                                             queryMode: 'local',
                                             store: 'clients',
                                             valueField: 'id'

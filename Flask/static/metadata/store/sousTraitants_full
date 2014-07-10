@@ -9,7 +9,7 @@
         "autoLoad": true,
         "autoSync": true,
         "model": "sousTraitant",
-        "storeId": "MyDirectStore",
+        "storeId": "sousTraitants_full",
         "designer|userClassName": "sousTraitants_full"
     },
     "designerId": "82e4399f-b439-4306-b821-378e17afaa13",
@@ -24,7 +24,7 @@
             "userConfig": {
                 "api": null,
                 "sortParam": "undefined",
-                "url": "/api/model/SousTraitants"
+                "url": "/api/model/Soustraitant"
             },
             "designerId": "3bb0651e-550a-4056-99dc-05492dd3841c",
             "cn": [

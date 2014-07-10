@@ -1,17 +1,18 @@
 import classSqlAlchemy
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
 
 get_class = lambda x: getattr(classSqlAlchemy, x)
-Base = declarative_base()
 
 from sqlalchemy import create_engine
 dbSqLite = 'sqlite:///dalpe_construction_v115.db'
-engine = create_engine(dbSqLite, echo=False, case_sensitive=False)
+engine = create_engine(dbSqLite, echo=True, case_sensitive=False)
 
-Base.metadata.create_all(engine)
+#classSqlAlchemy.Base.metadata.drop_all(engine)
+
+classSqlAlchemy.Base.metadata.create_all(engine)
 
 Session = sessionmaker(bind=engine)
+
 
 from contextlib import contextmanager
 

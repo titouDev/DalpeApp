@@ -72,7 +72,7 @@ Ext.define('dalpeApp.view.editEmployeWindow', {
                                             flex: 1,
                                             maxHeight: 25,
                                             fieldLabel: 'Nom',
-                                            name: 'nom',
+                                            name: 'lastName',
                                             allowBlank: false,
                                             blankText: 'Ce champ est requis'
                                         },
@@ -81,7 +81,7 @@ Ext.define('dalpeApp.view.editEmployeWindow', {
                                             flex: 1,
                                             maxHeight: 25,
                                             fieldLabel: 'Prenom',
-                                            name: 'prenom',
+                                            name: 'name',
                                             allowBlank: false
                                         },
                                         {
@@ -103,13 +103,13 @@ Ext.define('dalpeApp.view.editEmployeWindow', {
                                             flex: 1,
                                             maxHeight: 25,
                                             fieldLabel: 'Couriel',
-                                            name: 'mail'
+                                            name: 'email'
                                         },
                                         {
                                             xtype: 'numberfield',
                                             flex: 1,
                                             fieldLabel: 'Cout Horaire',
-                                            name: 'coutHoraire'
+                                            name: 'hourRate'
                                         }
                                     ]
                                 },
@@ -128,21 +128,21 @@ Ext.define('dalpeApp.view.editEmployeWindow', {
                                             xtype: 'textfield',
                                             maxHeight: 25,
                                             fieldLabel: 'Adresse',
-                                            name: 'adresse'
+                                            name: 'address'
                                         },
                                         {
                                             xtype: 'textfield',
                                             flex: 1,
                                             maxHeight: 25,
                                             fieldLabel: 'Code Postal',
-                                            name: 'codePostal'
+                                            name: 'postalCode'
                                         },
                                         {
                                             xtype: 'textfield',
                                             flex: 1,
                                             maxHeight: 25,
                                             fieldLabel: 'Ville',
-                                            name: 'ville'
+                                            name: 'city'
                                         },
                                         {
                                             xtype: 'textfield',

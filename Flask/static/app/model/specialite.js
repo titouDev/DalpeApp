@@ -29,7 +29,7 @@ Ext.define('dalpeApp.model.specialite', {
 
     proxy: {
         type: 'rest',
-        url: '/api/model/Specialites',
+        url: '/api/model/Specialite',
         reader: {
             type: 'json',
             root: 'records'

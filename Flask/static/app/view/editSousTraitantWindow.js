@@ -108,7 +108,7 @@ Ext.define('dalpeApp.view.editSousTraitantWindow', {
                                             flex: 1,
                                             maxHeight: 25,
                                             fieldLabel: 'Couriel',
-                                            name: 'mail',
+                                            name: 'email',
                                             inputType: 'email',
                                             vtype: 'email'
                                         }
@@ -128,21 +128,21 @@ Ext.define('dalpeApp.view.editSousTraitantWindow', {
                                             xtype: 'textfield',
                                             maxHeight: 25,
                                             fieldLabel: 'Adresse',
-                                            name: 'adresse'
+                                            name: 'address'
                                         },
                                         {
                                             xtype: 'textfield',
                                             flex: 1,
                                             maxHeight: 25,
                                             fieldLabel: 'Code Postal',
-                                            name: 'codePostal'
+                                            name: 'postalCode'
                                         },
                                         {
                                             xtype: 'textfield',
                                             flex: 1,
                                             maxHeight: 25,
                                             fieldLabel: 'Ville',
-                                            name: 'ville'
+                                            name: 'city'
                                         },
                                         {
                                             xtype: 'textfield',
@@ -156,21 +156,21 @@ Ext.define('dalpeApp.view.editSousTraitantWindow', {
                                             flex: 1,
                                             maxHeight: 25,
                                             fieldLabel: 'Site Internet',
-                                            name: 'siteWeb'
+                                            name: 'webSite'
                                         },
                                         {
                                             xtype: 'textfield',
                                             flex: 1,
                                             maxHeight: 25,
                                             fieldLabel: 'License RBQ',
-                                            name: 'licenseRbq'
+                                            name: 'rbqLicense'
                                         },
                                         {
                                             xtype: 'textfield',
                                             flex: 1,
                                             maxHeight: 25,
                                             fieldLabel: 'Tps',
-                                            name: 'tps'
+                                            name: 'tpsNumber'
                                         }
                                     ]
                                 }
@@ -322,10 +322,7 @@ Ext.define('dalpeApp.view.editSousTraitantWindow', {
                                     fieldLabel: 'Type',
                                     name: 'documentTypeId',
                                     allowBlank: false,
-                                    emptyText: 'type de document...',
-                                    displayField: 'name',
-                                    store: 'document_type',
-                                    valueField: 'id'
+                                    emptyText: 'type de document...'
                                 },
                                 {
                                     xtype: 'textareafield',
@@ -365,7 +362,6 @@ Ext.define('dalpeApp.view.editSousTraitantWindow', {
                             height: 150,
                             maxHeight: 150,
                             title: 'Documents Importes',
-                            store: 'documents',
                             columns: [
                                 {
                                     xtype: 'gridcolumn',

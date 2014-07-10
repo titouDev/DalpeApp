@@ -75,32 +75,6 @@ Ext.define('dalpeApp.controller.employes', {
 
     },
 
-    onSavePhotoClick: function(button, e, eOpts) {
-        var myEditForm = button.up('window').down('#editForm').getForm();
-        var employeId = myEditForm.getValues().id;
-
-        if (! employeId) {
-            Ext.Msg.alert('Attention','Vous devez d\'abord créer l\'employer avant de rajouter une photo');
-        }
-        else {
-
-            var form = button.up('#fileForm').getForm();
-            if(form.isValid()){
-                form.submit({
-                    url: 'employe_photo_upload.php',
-                    scope:this,
-                    params: {
-                        employeId: employeId
-                    },
-                    waitMsg: 'Sauvegarde de la photo...',
-                    success: function(fp, o) {
-
-                    }
-                });
-            }
-        }
-    },
-
     onAnnulerClick: function(button, e, eOpts) {
         button.up('window').close();
     },
@@ -149,9 +123,6 @@ Ext.define('dalpeApp.controller.employes', {
             },
             "#editEmploye": {
                 click: this.onEditEmployeClick
-            },
-            "editEmployeWindow #savePhoto": {
-                click: this.onSavePhotoClick
             },
             "editEmployeWindow #annuler": {
                 click: this.onAnnulerClick

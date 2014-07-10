@@ -142,47 +142,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onSavePhotoClick",
-                "implHandler": [
-                    "var myEditForm = button.up('window').down('#editForm').getForm();",
-                    "var employeId = myEditForm.getValues().id;",
-                    "",
-                    "if (! employeId) {",
-                    "    Ext.Msg.alert('Attention','Vous devez d\\'abord créer l\\'employer avant de rajouter une photo');",
-                    "}",
-                    "else {",
-                    "",
-                    "    var form = button.up('#fileForm').getForm();",
-                    "    if(form.isValid()){",
-                    "        form.submit({",
-                    "            url: 'employe_photo_upload.php',",
-                    "            scope:this,",
-                    "            params: {",
-                    "                employeId: employeId",
-                    "            },",
-                    "            waitMsg: 'Sauvegarde de la photo...',",
-                    "            success: function(fp, o) {",
-                    "",
-                    "            }",
-                    "        });",
-                    "    }",
-                    "}"
-                ],
-                "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "editEmployeWindow #savePhoto"
-            },
-            "designerId": "fe17fc55-e404-4588-a3d3-7384a0a47b37"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "fn": "onAnnulerClick",
                 "implHandler": [
                     "button.up('window').close();"

@@ -16,61 +16,9 @@
 Ext.define('dalpeApp.model.employe', {
     extend: 'Ext.data.Model',
 
-    fields: [
-        {
-            name: 'id',
-            persist: false,
-            type: 'int'
-        },
-        {
-            name: 'prenom'
-        },
-        {
-            name: 'nom'
-        },
-        {
-            name: 'mail'
-        },
-        {
-            name: 'password'
-        },
-        {
-            name: 'phone'
-        },
-        {
-            name: 'cell'
-        },
-        {
-            name: 'adresse'
-        },
-        {
-            name: 'codePostal'
-        },
-        {
-            name: 'ville'
-        },
-        {
-            name: 'province'
-        },
-        {
-            name: 'admin'
-        },
-        {
-            name: 'login'
-        },
-        {
-            name: 'photo',
-            type: 'string'
-        },
-        {
-            name: 'coutHoraire',
-            type: 'float'
-        }
-    ],
-
     proxy: {
         type: 'rest',
-        url: '/api/model/Employes',
+        url: '/api/model/Employe',
         writer: {
             type: 'json',
             writeRecordId: false
@@ -79,5 +27,68 @@ Ext.define('dalpeApp.model.employe', {
             type: 'json',
             root: 'records'
         }
-    }
+    },
+
+    fields: [
+        {
+            name: 'id',
+            persist: false
+        },
+        {
+            name: 'name'
+        },
+        {
+            name: 'lastName'
+        },
+        {
+            name: 'contactName'
+        },
+        {
+            name: 'email'
+        },
+        {
+            name: 'phone'
+        },
+        {
+            name: 'cell'
+        },
+        {
+            name: 'fax'
+        },
+        {
+            name: 'address'
+        },
+        {
+            name: 'postalCode'
+        },
+        {
+            name: 'city'
+        },
+        {
+            name: 'province'
+        },
+        {
+            defaultValue: true,
+            name: 'isActive',
+            type: 'boolean'
+        },
+        {
+            name: 'note'
+        },
+        {
+            defaultValue: true,
+            name: 'isAdmin',
+            type: 'boolean'
+        },
+        {
+            name: 'login'
+        },
+        {
+            name: 'hourRate',
+            type: 'float'
+        },
+        {
+            name: 'password'
+        }
+    ]
 });

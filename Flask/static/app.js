@@ -21,29 +21,20 @@ Ext.Loader.setConfig({
 Ext.application({
     models: [
         'specialite',
-        'document',
-        'document_type',
-        'chantier_link_documents',
         'chantier'
     ],
     stores: [
         'specialites',
         'employes_hours',
         'chantiers_hours',
-        'documents',
-        'document_type',
         'employes_logHours',
-        'chantiers_documents',
-        'mails_notsent',
         'sousTraitants_full'
     ],
     views: [
         'appViewport',
         'sousTraitantsContextMenu',
         'editChantierWindow',
-        'mailWindow',
-        'loginWindow',
-        'MyTriggerField'
+        'loginWindow'
     ],
     autoCreateViewport: true,
     controllers: [

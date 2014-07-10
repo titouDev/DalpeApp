@@ -45,14 +45,14 @@ Ext.define('dalpeApp.model.employeHour', {
             type: 'int'
         },
         {
-            name: 'coutHoraire',
-            type: 'int'
+            name: 'hourRate',
+            type: 'float'
         }
     ],
 
     proxy: {
         type: 'rest',
-        url: '/api/model/EmployeHours',
+        url: '/api/model/EmployeHour',
         reader: {
             type: 'json',
             root: 'records'

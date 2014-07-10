@@ -18,18 +18,13 @@ Ext.define('dalpeApp.model.client', {
 
     fields: [
         {
-            name: 'id',
-            persist: false,
-            type: 'int'
+            name: 'name'
         },
         {
-            name: 'prenom'
+            name: 'lastName'
         },
         {
-            name: 'nom'
-        },
-        {
-            name: 'mail'
+            name: 'email'
         },
         {
             name: 'phone'
@@ -38,22 +33,34 @@ Ext.define('dalpeApp.model.client', {
             name: 'cell'
         },
         {
-            name: 'adresse'
+            name: 'address'
         },
         {
-            name: 'codePostal'
+            name: 'postalCode'
         },
         {
-            name: 'ville'
+            name: 'city'
         },
         {
             name: 'province'
+        },
+        {
+            name: 'id',
+            persist: false
+        },
+        {
+            name: 'fax'
+        },
+        {
+            defaultValue: true,
+            name: 'isActive',
+            type: 'boolean'
         }
     ],
 
     proxy: {
         type: 'rest',
-        url: '/api/model/Clients',
+        url: '/api/model/Client',
         writer: {
             type: 'json',
             writeRecordId: false

@@ -27,11 +27,11 @@ Ext.define('dalpeApp.store.sousTraitants_full', {
             autoLoad: true,
             autoSync: true,
             model: 'dalpeApp.model.sousTraitant',
-            storeId: 'MyDirectStore',
+            storeId: 'sousTraitants_full',
             proxy: {
                 type: 'rest',
                 sortParam: 'undefined',
-                url: '/api/model/SousTraitants',
+                url: '/api/model/Soustraitant',
                 reader: {
                     type: 'json',
                     root: 'records'
