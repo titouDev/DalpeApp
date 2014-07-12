@@ -5,7 +5,8 @@ from sqlalchemy import (Table,
                         String,
                         Float,
                         Boolean,
-                        ForeignKey)
+                        ForeignKey,
+                        DateTime)
 
 from sqlalchemy.orm import (relationship,
                             class_mapper)
@@ -80,11 +81,11 @@ class AddonsBase():
                     model, self.uniqueKey, accepted_fields[self.uniqueKey]))
             for k, v in sub_models_fields.items():
                 record.append_sub_models(session, k, self.subModels[k], v)
-            return record
         else:
             record = model(**accepted_fields)
             session.add(record)
-            return record
+
+        return record
 
     def append_sub_models(self, session, field_name, class_name, records):
         model = get_class(class_name)
@@ -93,6 +94,29 @@ class AddonsBase():
             [model().create_record(session, name=r) for r in records]
         )
 
+
+class logs(Base):
+    __tablename__ = 'logs'
+
+    def __init__(self, context, ref_id, value, operation, date, field=None, previous_value=None, user=None):
+        self.user = user
+        self.field = field
+        self.previous_value = previous_value
+        self.date = date
+        self.operation = operation
+        self.value = value
+        self.ref_id = ref_id
+        self.context = context
+
+    id = Column(Integer, primary_key=True)
+    context = Column(String, nullable=False)
+    ref_id = Column(String, nullable=False)
+    field = Column(String, nullable=True)
+    value = Column(String, nullable=False)
+    previous_value = Column(String, nullable=True)
+    operation = Column(String, nullable=False)
+    date = Column(DateTime, nullable=False)
+    user = Column(String, nullable=True)
 
 
 class Person(Base, AddonsBase):
