@@ -13,7 +13,6 @@
             "sousTraitants",
             "specialites",
             "chantiers",
-            "sousTraitants_full",
             "specialitesLinkSoustraitants"
         ],
         "views": [
@@ -173,12 +172,6 @@
                     "",
                     "//On load le soustraitant selecitonne dans le form",
                     "var myForm = editSousTraitantWindow.down('form');",
-                    "",
-                    "//On filtre le store des documents",
-                    "var documentsStore = Ext.getStore('documents');",
-                    "documentsStore.removeAll();",
-                    "documentsStore.load({params:{sousTraitantId:selectedRecord.data.id}});",
-                    "",
                     "",
                     "this.currentSpecialites = Ext.clone(selectedRecord.get('specialites'));",
                     "this.loadSpecialiteLinkSoustraitantsStore(this.currentSpecialites);"

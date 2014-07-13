@@ -187,50 +187,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onFileUpdalodChange",
-                "implHandler": [
-                    "var selectedRecord = this.getChantiersGrid().selModel.getSelection();",
-                    "if (selectedRecord.length != 1) {",
-                    "    Ext.Msg.alert('Attention','Vous devez d\\'abord choisir un chantier');",
-                    "}",
-                    "var chantierId = selectedRecord[0].data.id;",
-                    "",
-                    "var form = button.up('#fileForm').getForm();",
-                    "if(form.isValid()){",
-                    "    form.submit({",
-                    "        url: 'document-upload.php',",
-                    "        scope:this,",
-                    "        params: {",
-                    "            sousTraitantId: sousTraitantId,",
-                    "            documentTypeId:form.getValues().documentTypeId,",
-                    "            documentNote:form.getValues().documentNote",
-                    "        },",
-                    "        waitMsg: 'Sauvegarde du document...',",
-                    "        success: function(fp, o) {",
-                    "            //On reload le sotre de documents",
-                    "            var documentsStore = Ext.getStore('documents');",
-                    "            documentsStore.load();",
-                    "            //Ext.Msg.alert('Succès', 'Le document \"' + o.result.file + '\" est enregistré.');",
-                    "        }",
-                    "    });",
-                    "}",
-                    ""
-                ],
-                "name": "change",
-                "scope": "me",
-                "designer|targetType": "Ext.form.field.File",
-                "designer|controlQuery": "#chantiersPanel #documentsGrid #fileUpdalod"
-            },
-            "designerId": "ad5e5df8-db28-4e73-9952-ca380c184430"
-        },
-        {
-            "type": "controlleraction",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
                 "fn": "onChantiersPanelActivate",
                 "implHandler": [
                     "var me =this;",

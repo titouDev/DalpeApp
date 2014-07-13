@@ -23,7 +23,6 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         'sousTraitants',
         'specialites',
         'chantiers',
-        'sousTraitants_full',
         'specialitesLinkSoustraitants'
     ],
     views: [
@@ -226,12 +225,6 @@ Ext.define('dalpeApp.controller.sousTraitants', {
 
         //On load le soustraitant selecitonne dans le form
         var myForm = editSousTraitantWindow.down('form');
-
-        //On filtre le store des documents
-        var documentsStore = Ext.getStore('documents');
-        documentsStore.removeAll();
-        documentsStore.load({params:{sousTraitantId:selectedRecord.data.id}});
-
 
         this.currentSpecialites = Ext.clone(selectedRecord.get('specialites'));
         this.loadSpecialiteLinkSoustraitantsStore(this.currentSpecialites);

@@ -27,8 +27,7 @@ Ext.application({
         'specialites',
         'employes_hours',
         'chantiers_hours',
-        'employes_logHours',
-        'sousTraitants_full'
+        'employes_logHours'
     ],
     views: [
         'appViewport',

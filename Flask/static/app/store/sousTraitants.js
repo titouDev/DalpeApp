@@ -24,7 +24,7 @@ Ext.define('dalpeApp.store.sousTraitants', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
-            autoLoad: true,
+            autoLoad: false,
             model: 'dalpeApp.model.sousTraitant',
             storeId: 'sousTraitants',
             sorters: {

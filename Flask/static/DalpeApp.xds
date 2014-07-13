@@ -282,14 +282,6 @@
             ],
             "className": "employes_logHours"
         },
-        "82e4399f-b439-4306-b821-378e17afaa13": {
-            "paths": [
-                "metadata/store/sousTraitants_full",
-                "app/store/override/sousTraitants_full.js",
-                "app/store/sousTraitants_full.js"
-            ],
-            "className": "sousTraitants_full"
-        },
         "170803cd-394e-4af4-b303-704932ccbb67": {
             "paths": [
                 "metadata/resource/js1"
@@ -325,7 +317,6 @@
             "cd6fbed6-fd8f-4928-9289-c6a6d316cffb",
             "4bc615f2-00bd-457d-91f4-1c37c29ca69b",
             "e0f02898-522d-4dc3-a2e1-2ad3f4b2dd2b",
-            "82e4399f-b439-4306-b821-378e17afaa13",
             "7c30472b-a80e-4251-8568-3f963945a7a4",
             "5ff61844-8743-463a-89bf-8b1e98f629cf"
         ],

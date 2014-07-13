@@ -24,7 +24,7 @@ Ext.define('dalpeApp.store.employes', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
-            autoLoad: true,
+            autoLoad: false,
             model: 'dalpeApp.model.employe',
             storeId: 'employes'
         }, cfg)]);

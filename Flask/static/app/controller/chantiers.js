@@ -73,35 +73,6 @@ Ext.define('dalpeApp.controller.chantiers', {
         record.getProxy().appendId=true;
     },
 
-    onFileUpdalodChange: function(filefield, value, eOpts) {
-        var selectedRecord = this.getChantiersGrid().selModel.getSelection();
-        if (selectedRecord.length != 1) {
-            Ext.Msg.alert('Attention','Vous devez d\'abord choisir un chantier');
-        }
-        var chantierId = selectedRecord[0].data.id;
-
-        var form = button.up('#fileForm').getForm();
-        if(form.isValid()){
-            form.submit({
-                url: 'document-upload.php',
-                scope:this,
-                params: {
-                    sousTraitantId: sousTraitantId,
-                    documentTypeId:form.getValues().documentTypeId,
-                    documentNote:form.getValues().documentNote
-                },
-                waitMsg: 'Sauvegarde du document...',
-                success: function(fp, o) {
-                    //On reload le sotre de documents
-                    var documentsStore = Ext.getStore('documents');
-                    documentsStore.load();
-                    //Ext.Msg.alert('Succès', 'Le document "' + o.result.file + '" est enregistré.');
-                }
-            });
-        }
-
-    },
-
     onChantiersPanelActivate: function(component, eOpts) {
         var me =this;
         me.loadClients().then(function(){
@@ -178,9 +149,6 @@ Ext.define('dalpeApp.controller.chantiers', {
             },
             "#editChantierWindow #enregistrer": {
                 click: this.onEnregistrerClick
-            },
-            "#chantiersPanel #documentsGrid #fileUpdalod": {
-                change: this.onFileUpdalodChange
             },
             "#chantiersPanel": {
                 activate: this.onChantiersPanelActivate
