@@ -9,7 +9,6 @@
         "id": "appViewport",
         "designer|userClassName": "appViewport",
         "designer|userAlias": "appViewport",
-        "designer|initialView": true,
         "layout": "fit"
     },
     "designerId": "e4c96884-e2eb-49b7-a615-451f20b564e5",

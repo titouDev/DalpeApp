@@ -61,7 +61,8 @@
                         "padding": null,
                         "width": null,
                         "bodyPadding": 10,
-                        "title": "Identification"
+                        "title": "Identification",
+                        "url": "/api/login"
                     },
                     "designerId": "eb3bc084-43ff-4b65-ab8e-403f68f63221",
                     "cn": [

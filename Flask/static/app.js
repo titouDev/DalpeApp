@@ -35,7 +35,8 @@ Ext.application({
         'editChantierWindow',
         'loginWindow'
     ],
-    autoCreateViewport: true,
+    appFolder: 'dalpeApp',
+    appProperty: 'dalpeApp',
     controllers: [
         'sousTraitants',
         'employes',
@@ -61,20 +62,6 @@ Ext.application({
         }
         window.onbeforeunload=confirm_exit;
 
-
-
-        setInterval(function(){
-            if(!Ext.getCmp("loginWindow")){
-                /*
-                Employes.checkLoginSession(function(response){
-                if (!response) {
-                Ext.widget("loginWindow");
-                }
-                })
-                */
-            }
-        }, 3700000);
-
         document.oncontextmenu = function(){return false;}; //permet de ne pas ouvrir le context menu de windows
 
         var allStores = Ext.StoreManager.items;
@@ -89,9 +76,16 @@ Ext.application({
         }
 
 
+        var loginController = dalpeApp.getApplication().getController('loginWindow');
 
-
-
+        if (loginController.isLogged()) {
+            //On affiche le viewport
+            dalpeApp.view.appViewport.create();
+        }
+        else {
+            //On affiche la login window
+            dalpeApp.view.loginWindow.create();
+        }
     },
 
     createRecord: function(model, data) {

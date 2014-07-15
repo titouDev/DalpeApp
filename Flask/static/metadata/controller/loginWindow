@@ -31,6 +31,27 @@
             "designerId": "e30a04bc-5d65-4e69-8680-6f1ac0a8d81b"
         },
         {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLogoutButtonClick",
+                "implHandler": [
+                    "this.logOut();",
+                    "window.onbeforeunload=undefined;",
+                    "window.location.reload();"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "#appViewport #logout"
+            },
+            "designerId": "b42887a5-0963-4a87-b99b-2c699b3b3ca4"
+        },
+        {
             "type": "basicfunction",
             "reference": {
                 "name": "items",
@@ -97,15 +118,92 @@
                     "if (!myForm.isValid()) {",
                     "    return;",
                     "}",
-                    "",
+                    "var me = this;",
                     "//On verifie l'identification dans la base de donnees...",
-                    "",
-                    "var formValues = myForm.getValues();",
-                    "myForm.reset();",
-                    "Employes.login(formValues, this.verifyInfos);"
+                    "myForm.submit({",
+                    "    success:function(form, action){",
+                    "        me.credentialsApproved(action.result.user.login);",
+                    "        window.onbeforeunload=undefined;",
+                    "\t\twindow.location.reload();",
+                    "    },",
+                    "    failure:function(){",
+                    "        ",
+                    "        Ext.Msg.show({",
+                    "            title:'Erreur',",
+                    "            msg: \"Nom d'utilisateur ou mot de passe incorrects.\",",
+                    "            buttons: Ext.Msg.YES,",
+                    "            buttonText:{yes:'OK'},",
+                    "            icon: Ext.Msg.ERROR",
+                    "        });",
+                    "    }",
+                    "});",
+                    ""
                 ]
             },
             "designerId": "c7e15f9c-b4e2-42ad-9a76-f670f34deabf"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getUserLogged",
+                "implHandler": [
+                    "return Ext.util.Cookies.get('dalpeApp.userLogged');"
+                ]
+            },
+            "designerId": "209b2e64-d2a0-45be-b3b4-1c4b5b98a10f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "isLogged",
+                "implHandler": [
+                    "return Ext.util.Cookies.get('dalpeApp.userLogged') ? true : false;"
+                ]
+            },
+            "designerId": "77ef0632-5c5a-4662-a063-b19d1ef45ebe"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "credentialsApproved",
+                "designer|params": [
+                    "userName"
+                ],
+                "implHandler": [
+                    "Ext.util.Cookies.set('dalpeApp.userLogged', userName);"
+                ]
+            },
+            "designerId": "e282767b-e7a0-447a-bb21-6d485b15ab85"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "logOut",
+                "implHandler": [
+                    "Ext.util.Cookies.clear('dalpeApp.userLogged')"
+                ]
+            },
+            "designerId": "5c98cd25-9aec-48b6-aa73-dc12edafa655"
         }
     ]
 }

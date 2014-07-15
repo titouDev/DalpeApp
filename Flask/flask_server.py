@@ -36,6 +36,17 @@ def get_model_by_id(name, id):
     return data
 
 
+@app.route("/api/login", methods=['POST'])
+def login():
+    password = request.form['passWord']
+    userName = request.form['userName']
+
+    record = baseAlchemy.get('Employe', login=userName, password=password)
+    if len(record):
+        return json.dumps({"user": record[0], "success": True})
+    else:
+        return json.dumps({"success": False})
+
 if __name__ == "__main__":
     app.run(debug=True)
     url_for('static', filename='app.html')
