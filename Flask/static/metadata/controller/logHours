@@ -112,11 +112,8 @@
             "userConfig": {
                 "fn": "onTabActivate",
                 "implHandler": [
-                    "//On reload le store pour afficher les heures loggues...",
-                    "",
-                    "this.loadHoursStore();",
-                    "this.getEmployesStore().load();",
-                    "this.getChantiersStore().load();"
+                    "this.refreshGrid();",
+                    ""
                 ],
                 "name": "activate",
                 "scope": "me",
@@ -124,6 +121,86 @@
                 "designer|controlQuery": "#logHours_tabConfig"
             },
             "designerId": "b1f39e34-5cb3-48d2-afff-16656217a2e1"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "refreshGrid",
+                "implHandler": [
+                    "//On reload le store pour afficher les heures loggues...",
+                    "var me = this;",
+                    "var promises = [",
+                    "    this.loadEmployes(),",
+                    "    this.loadChantiers()",
+                    "];",
+                    "RSVP.all(promises)",
+                    ".then(function(){",
+                    "    me.loadHoursStore();",
+                    "});",
+                    ""
+                ]
+            },
+            "designerId": "30a2cc60-fb1b-4491-bd80-15054fa4b5a0"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "loadEmployes",
+                "implHandler": [
+                    "",
+                    "var me = this;",
+                    "",
+                    "var promise = new RSVP.Promise(function(resolve, reject) {",
+                    "    me.getEmployesStore().load({",
+                    "        callback:function(){",
+                    "            resolve();",
+                    "        }",
+                    "    });",
+                    "});",
+                    "",
+                    "return promise;",
+                    "",
+                    ""
+                ]
+            },
+            "designerId": "01b7658d-4efb-4806-af12-e1c579aeff86"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "loadChantiers",
+                "implHandler": [
+                    "",
+                    "var me = this;",
+                    "",
+                    "var promise = new RSVP.Promise(function(resolve, reject) {",
+                    "    me.getChantiersStore().load({",
+                    "        callback:function(){",
+                    "            resolve();",
+                    "        }",
+                    "    });",
+                    "});",
+                    "",
+                    "return promise;",
+                    ""
+                ]
+            },
+            "designerId": "9f7af415-7a74-474f-8c16-4f13d17c39ed"
         },
         {
             "type": "controllerref",
@@ -151,9 +228,20 @@
                     "record"
                 ],
                 "implHandler": [
-                    "if (!this.isLogChecked(record)) {",
-                    "    Employes.delete_hour(record, this.loadHoursStore,this);",
-                    "}"
+                    "var me = this;",
+                    "",
+                    "var promise = new RSVP.Promise(function(resolve, reject) {",
+                    "    Ext.Ajax.request({",
+                    "        url: ('/api/model/EmployeHour/'+record.id),",
+                    "        method:'DELETE',",
+                    "        success: function(response){",
+                    "            resolve();",
+                    "        }",
+                    "    });",
+                    "});",
+                    "",
+                    "return promise;",
+                    ""
                 ]
             },
             "designerId": "3b0e530d-240d-4de6-bc51-24c2d7d75a92"
@@ -185,6 +273,8 @@
                 "fn": "onDeleteHourClick",
                 "implHandler": [
                     "//On va chercher le record selectionne",
+                    "",
+                    "var me = this;",
                     "var myGrid = this.getLogHoursGrid();",
                     "",
                     "var selectedRecords = myGrid.selModel.getSelection();",
@@ -196,7 +286,10 @@
                     "Ext.Msg.confirm('Attention','Voulez vous vraiment effacer l\\'entré selectionné ? ', function(button) {",
                     "    if (button === 'yes') {",
                     "        var record = selectedRecords[0].data;",
-                    "        this.deleteRecord(record);",
+                    "        this.deleteRecord(record)",
+                    "        .then(function(){",
+                    "            me.refreshGrid();",
+                    "        });",
                     "    }",
                     "},this).setWidth(320);"
                 ],

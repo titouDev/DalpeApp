@@ -72,15 +72,14 @@ Ext.define('dalpeApp.controller.logHours', {
     },
 
     onTabActivate: function(tab, eOpts) {
-        //On reload le store pour afficher les heures loggues...
+        this.refreshGrid();
 
-        this.loadHoursStore();
-        this.getEmployesStore().load();
-        this.getChantiersStore().load();
     },
 
     onDeleteHourClick: function(button, e, eOpts) {
         //On va chercher le record selectionne
+
+        var me = this;
         var myGrid = this.getLogHoursGrid();
 
         var selectedRecords = myGrid.selModel.getSelection();
@@ -92,7 +91,10 @@ Ext.define('dalpeApp.controller.logHours', {
         Ext.Msg.confirm('Attention','Voulez vous vraiment effacer l\'entré selectionné ? ', function(button) {
             if (button === 'yes') {
                 var record = selectedRecords[0].data;
-                this.deleteRecord(record);
+                this.deleteRecord(record)
+                .then(function(){
+                    me.refreshGrid();
+                });
             }
         },this).setWidth(320);
     },
@@ -119,10 +121,68 @@ Ext.define('dalpeApp.controller.logHours', {
         this.editRecord(record);
     },
 
+    refreshGrid: function() {
+        //On reload le store pour afficher les heures loggues...
+        var me = this;
+        var promises = [
+        this.loadEmployes(),
+        this.loadChantiers()
+        ];
+        RSVP.all(promises)
+        .then(function(){
+            me.loadHoursStore();
+        });
+
+    },
+
+    loadEmployes: function() {
+
+        var me = this;
+
+        var promise = new RSVP.Promise(function(resolve, reject) {
+            me.getEmployesStore().load({
+                callback:function(){
+                    resolve();
+                }
+            });
+        });
+
+        return promise;
+
+
+    },
+
+    loadChantiers: function() {
+
+        var me = this;
+
+        var promise = new RSVP.Promise(function(resolve, reject) {
+            me.getChantiersStore().load({
+                callback:function(){
+                    resolve();
+                }
+            });
+        });
+
+        return promise;
+
+    },
+
     deleteRecord: function(record) {
-        if (!this.isLogChecked(record)) {
-            Employes.delete_hour(record, this.loadHoursStore,this);
-        }
+        var me = this;
+
+        var promise = new RSVP.Promise(function(resolve, reject) {
+            Ext.Ajax.request({
+                url: ('/api/model/EmployeHour/'+record.id),
+                method:'DELETE',
+                success: function(response){
+                    resolve();
+                }
+            });
+        });
+
+        return promise;
+
     },
 
     loadHoursStore: function() {

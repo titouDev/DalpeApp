@@ -48,6 +48,16 @@ def get(model_name, **kwargs):
         return [r.to_dict() for r in records]
 
 
+def delete(model_name, id):
+    with session_scope() as session:
+        model = get_class(model_name)
+        query = session.query(model).filter(id == id)
+        record = query.first()
+        logCreateOrDeleteOperation(session, record, 'delete')
+        query.delete()
+        session.commit()
+
+
 def get_column_names(model):
     return [c.name for c in model.__table__.columns]
 
@@ -60,7 +70,7 @@ def create(model_name, **kwargs):
             session.commit()
         else:
             session.commit()
-            logCreateOperation(session, record)
+            logCreateOrDeleteOperation(session, record, 'create')
         return record.to_dict()
 
 
@@ -82,13 +92,13 @@ def update_model(session, model_name, **kwargs):
     return model().update_record(session, **kwargs)
 
 
-def logCreateOperation(session, record):
+def logCreateOrDeleteOperation(session, record, operation):
     value = json.dumps(record.to_dict())
     session.add(classSqlAlchemy.logs(
         record.__tablename__,
         record.id,
         value,
-        'create',
+        operation,
         datetime.datetime.now()
     )
     )

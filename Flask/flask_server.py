@@ -25,13 +25,15 @@ def get_model(name):
 
 
 @app.route("/api/model/<name>/<id>", methods=['GET', 'PUT', 'DELETE'])
-def get_model_by_id(name, id):
+def get_put_delete_model_by_id(name, id):
     if request.method == 'PUT':
         kwargs = json.loads(request.data)
         kwargs.pop('id', False)
         record = baseAlchemy.update(name, id=id, **kwargs)
     elif request.method == 'GET':
         record = baseAlchemy.get(name, id=id)
+    elif request.method == 'DELETE':
+        record = baseAlchemy.delete(name, id)
     data = json.dumps({"records": record})
     return data
 
