@@ -146,7 +146,7 @@ class Employe(Person):
     id = Column(Integer, ForeignKey(Person.id), primary_key=True)
     password = Column(String, nullable=True)
     isAdmin = Column(Integer, nullable=True)
-    login = Column(String, nullable=True)
+    login = Column(String, nullable=True, unique=True)
     hourRate = Column(Float(precision=2))
 
 
