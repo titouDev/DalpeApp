@@ -46,6 +46,10 @@ def login():
     record = baseAlchemy.get('Employe', login=userName, password=password)
     if len(record):
         return json.dumps({"user": record[0], "success": True})
+    elif not baseAlchemy.get('Employe'):
+        #Il n'existe aucun user
+        return json.dumps({"success": True,"message":"Bravo, vous etes le premier utilisateur,\
+            allez dans l'onglet Employes pour creer votre fiche et celle de vos employes."})
     else:
         return json.dumps({"success": False})
 

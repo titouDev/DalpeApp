@@ -141,8 +141,8 @@ Ext.define('dalpeApp.controller.logHours', {
 
         var promise = new RSVP.Promise(function(resolve, reject) {
             me.getEmployesStore().load({
-                callback:function(){
-                    resolve();
+                callback:function(employes){
+                    resolve(employes);
                 }
             });
         });

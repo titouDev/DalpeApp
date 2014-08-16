@@ -271,7 +271,8 @@
                                         "layout|flex": 1,
                                         "maxHeight": 25,
                                         "fieldLabel": "nom d'utilisateur",
-                                        "name": "login"
+                                        "name": "login",
+                                        "allowBlank": false
                                     },
                                     "designerId": "a0e140f5-c014-4564-9fd2-7726a9b32247"
                                 },
@@ -286,7 +287,8 @@
                                         "layout|flex": 1,
                                         "maxHeight": 25,
                                         "fieldLabel": "mot de passe",
-                                        "name": "password"
+                                        "name": "password",
+                                        "inputType": "password"
                                     },
                                     "designerId": "7fc5af17-2127-4224-aa87-dacc4e0a0e41"
                                 }

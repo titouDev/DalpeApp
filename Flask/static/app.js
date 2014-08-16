@@ -79,13 +79,25 @@ Ext.application({
         var loginController = dalpeApp.getApplication().getController('loginWindow');
 
         if (loginController.isLogged()) {
-            //On affiche le viewport
             dalpeApp.view.appViewport.create();
+            return;
         }
-        else {
-            //On affiche la login window
-            dalpeApp.view.loginWindow.create();
-        }
+
+        loginController.isFirstUser()
+        .then(function(response){
+            if (response === true) {
+                if (response === true) {
+                    dalpeApp.view.appViewport.create();
+                    alert('Vous etes le premier utilisateur a vous connecter,'+
+                    'allez dans l\'onglet employes pour creer votre fiche et celle des autres employes');
+                }
+            }
+            else {
+                //On affiche la login window
+                dalpeApp.view.loginWindow.create();
+            }
+        });
+
     },
 
     createRecord: function(model, data) {

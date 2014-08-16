@@ -83,6 +83,13 @@ Ext.define('dalpeApp.controller.loginWindow', {
         return Ext.util.Cookies.get('dalpeApp.userLogged') ? true : false;
     },
 
+    isFirstUser: function() {
+        return this.getController('logHours').loadEmployes()
+        .then(function(employes){
+            return RSVP.resolve(employes.length === 0 ? true : false);
+        });
+    },
+
     credentialsApproved: function(userName) {
         Ext.util.Cookies.set('dalpeApp.userLogged', userName);
     },

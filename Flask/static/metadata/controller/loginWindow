@@ -180,6 +180,24 @@
             },
             "codeClass": null,
             "userConfig": {
+                "fn": "isFirstUser",
+                "implHandler": [
+                    "return this.getController('logHours').loadEmployes()",
+                    ".then(function(employes){",
+                    "    return RSVP.resolve(employes.length === 0 ? true : false);",
+                    "});"
+                ]
+            },
+            "designerId": "86ad5017-080c-4d95-b496-1cfe53012b4d"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "fn": "credentialsApproved",
                 "designer|params": [
                     "userName"
