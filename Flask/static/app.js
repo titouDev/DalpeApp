@@ -80,6 +80,8 @@ Ext.application({
 
         if (loginController.isLogged()) {
             dalpeApp.view.appViewport.create();
+            var user = loginController.getUserLogged();
+            Ext.ComponentQuery.query('#userLogged')[0].setText('Utilisateur Connecté: ' + user);
             return;
         }
 
