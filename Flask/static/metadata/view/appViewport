@@ -422,7 +422,7 @@
                                         "id": "sousTraitantsGrid",
                                         "minWidth": 700,
                                         "width": null,
-                                        "focusOnToFront": false,
+                                        "focusOnToFront": null,
                                         "title": null,
                                         "store": "sousTraitants"
                                     },
@@ -491,7 +491,7 @@
                                                         "layout|flex": null,
                                                         "itemId": "searchText",
                                                         "fieldLabel": "Recherche Rapide",
-                                                        "checkChangeBuffer": 5
+                                                        "checkChangeBuffer": 100
                                                     },
                                                     "designerId": "0637588b-a5ad-4814-b602-405e1836f379"
                                                 },

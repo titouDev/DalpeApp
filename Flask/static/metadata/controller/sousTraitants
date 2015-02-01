@@ -33,7 +33,10 @@
             "userConfig": {
                 "fn": "onTextfieldChange",
                 "implHandler": [
-                    "this.refreshGrid();",
+                    "this.refreshGrid()",
+                    ".then(function(){",
+                    "    field.focus();",
+                    "});",
                     ""
                 ],
                 "name": "change",
@@ -86,13 +89,13 @@
                 "implHandler": [
                     "var me = this;",
                     "",
-                    "me.reloadSousTraitantsStore()",
+                    "return me.reloadSousTraitantsStore()",
                     ".then(function(){",
                     "    var store = me.getSousTraitantsStore();",
                     "    store.clearFilter(true);",
                     "    me.applyQuickSearch();",
                     "    me.applySpecialiteFilter();",
-                    "",
+                    "\treturn RSVP.resolve();",
                     "});",
                     ""
                 ]

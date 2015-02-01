@@ -189,7 +189,6 @@ Ext.define('dalpeApp.view.appViewport', {
                                             stateful: true,
                                             id: 'sousTraitantsGrid',
                                             minWidth: 700,
-                                            focusOnToFront: false,
                                             store: 'sousTraitants',
                                             dockedItems: [
                                                 {
@@ -220,7 +219,7 @@ Ext.define('dalpeApp.view.appViewport', {
                                                             xtype: 'textfield',
                                                             itemId: 'searchText',
                                                             fieldLabel: 'Recherche Rapide',
-                                                            checkChangeBuffer: 5
+                                                            checkChangeBuffer: 100
                                                         },
                                                         {
                                                             xtype: 'button',

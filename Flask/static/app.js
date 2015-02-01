@@ -113,7 +113,6 @@ Ext.application({
                     var jsonData = Ext.JSON.decode(response.responseText);
                     var myModel = me.getModel(model);
                     var record = new myModel(jsonData);
-                    console.log(record);
                 }
             });
         });

@@ -50,7 +50,10 @@ Ext.define('dalpeApp.controller.sousTraitants', {
     ],
 
     onTextfieldChange: function(field, newValue, oldValue, eOpts) {
-        this.refreshGrid();
+        this.refreshGrid()
+        .then(function(){
+            field.focus();
+        });
 
     },
 
@@ -145,13 +148,13 @@ Ext.define('dalpeApp.controller.sousTraitants', {
     refreshGrid: function() {
         var me = this;
 
-        me.reloadSousTraitantsStore()
+        return me.reloadSousTraitantsStore()
         .then(function(){
             var store = me.getSousTraitantsStore();
             store.clearFilter(true);
             me.applyQuickSearch();
             me.applySpecialiteFilter();
-
+            return RSVP.resolve();
         });
 
     },
