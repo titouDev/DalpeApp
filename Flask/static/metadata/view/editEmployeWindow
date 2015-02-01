@@ -288,7 +288,8 @@
                                         "maxHeight": 25,
                                         "fieldLabel": "mot de passe",
                                         "name": "password",
-                                        "inputType": "password"
+                                        "inputType": "password",
+                                        "allowOnlyWhitespace": false
                                     },
                                     "designerId": "7fc5af17-2127-4224-aa87-dacc4e0a0e41"
                                 }

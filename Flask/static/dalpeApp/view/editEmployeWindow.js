@@ -165,7 +165,8 @@ Ext.define('dalpeApp.view.editEmployeWindow', {
                                             maxHeight: 25,
                                             fieldLabel: 'mot de passe',
                                             name: 'password',
-                                            inputType: 'password'
+                                            inputType: 'password',
+                                            allowOnlyWhitespace: false
                                         }
                                     ]
                                 }

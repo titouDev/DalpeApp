@@ -37,7 +37,6 @@ def get_put_delete_model_by_id(name, id):
     data = json.dumps({"records": record})
     return data
 
-
 @app.route("/api/login", methods=['POST'])
 def login():
     password = request.form['passWord']

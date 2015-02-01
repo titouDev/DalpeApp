@@ -8,7 +8,7 @@ from sqlalchemy import create_engine
 dbSqLite = 'sqlite:///dalpe_construction_v115.db'
 engine = create_engine(dbSqLite, echo=True, case_sensitive=False)
 
-classSqlAlchemy.Base.metadata.drop_all(engine)
+#classSqlAlchemy.Base.metadata.drop_all(engine)
 
 classSqlAlchemy.Base.metadata.create_all(engine)
 
@@ -66,7 +66,9 @@ def create(model_name, **kwargs):
     with session_scope() as session:
         record = create_model(session, model_name, **kwargs)
         if record.id:
-            logUpdateOperation(session, record, get(model_name, **kwargs)[0])
+            previous_record = get(model_name, **kwargs)
+            if previous_record:
+                logUpdateOperation(session, record, previous_record[0])
             session.commit()
         else:
             session.commit()
@@ -110,10 +112,10 @@ def logUpdateOperation(session, record, previous_record):
             session.add(classSqlAlchemy.logs(
                 record.__tablename__,
                 record.id,
-                v,
+                str(v),
                 'update',
                 datetime.datetime.now(),
-                previous_value=previous_record[k],
+                previous_value=str(previous_record[k]),
                 field=k
-            )
+                )
             )

@@ -77,7 +77,7 @@
                     "var loginController = dalpeApp.getApplication().getController('loginWindow');",
                     "",
                     "if (loginController.isLogged()) {",
-                    "\tdalpeApp.view.appViewport.create();",
+                    "    dalpeApp.view.appViewport.create();",
                     "    var user = loginController.getUserLogged();",
                     "    Ext.ComponentQuery.query('#userLogged')[0].setText('Utilisateur Connecté: ' + user);",
                     "    return;",
