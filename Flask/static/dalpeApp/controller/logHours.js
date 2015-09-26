@@ -88,7 +88,7 @@ Ext.define('dalpeApp.controller.logHours', {
             return;
         }
 
-        Ext.Msg.confirm('Attention','Voulez vous vraiment effacer l\'entré selectionné ? ', function(button) {
+        Ext.Msg.confirm('Attention','Voulez vous vraiment effacer l\'entrée selectionnée ? ', function(button) {
             if (button === 'yes') {
                 var record = selectedRecords[0].data;
                 this.deleteRecord(record)

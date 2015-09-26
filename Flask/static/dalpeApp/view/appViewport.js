@@ -396,8 +396,8 @@ Ext.define('dalpeApp.view.appViewport', {
                                                         {
                                                             xtype: 'gridcolumn',
                                                             renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                                                var employe =  Ext.getStore('employes').getById(record.data.employeId)
-                                                                return (employe.data.prenom + employe.data.nom);
+                                                                var employe =  Ext.getStore('employes').getById(record.get("employeId"));
+                                                                return Ext.String.format('{0} {1}', employe.get("name"), employe.get("lastName"));
                                                             },
                                                             dataIndex: 'employeId',
                                                             text: 'Employe'

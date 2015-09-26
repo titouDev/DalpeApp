@@ -46,7 +46,8 @@ Ext.define('dalpeApp.model.client', {
         },
         {
             name: 'id',
-            persist: false
+            persist: false,
+            type: 'int'
         },
         {
             name: 'fax'

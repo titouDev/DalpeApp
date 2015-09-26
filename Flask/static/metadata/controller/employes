@@ -65,7 +65,7 @@
                     "var hours_store = Ext.getStore('employes_hours');",
                     "hours_store.load({params:{employeId:record.data.id}});"
                 ],
-                "name": "select",
+                "name": "itemclick",
                 "scope": "me",
                 "designer|targetType": "Ext.grid.Panel",
                 "designer|controlQuery": "#employesGrid"

@@ -957,8 +957,8 @@
                                                                     "view"
                                                                 ],
                                                                 "implHandler": [
-                                                                    "var employe =  Ext.getStore('employes').getById(record.data.employeId)",
-                                                                    "return (employe.data.prenom + employe.data.nom);"
+                                                                    "var employe =  Ext.getStore('employes').getById(record.get(\"employeId\"));",
+                                                                    "return Ext.String.format('{0} {1}', employe.get(\"name\"), employe.get(\"lastName\"));"
                                                                 ]
                                                             },
                                                             "designerId": "52751617-e5df-48db-8d1d-add498a37531"

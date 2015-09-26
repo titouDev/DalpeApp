@@ -38,7 +38,7 @@ Ext.define('dalpeApp.controller.employes', {
         Ext.widget('editEmployeWindow').show();
     },
 
-    onEmployesGridSelect: function(rowmodel, record, index, eOpts) {
+    onEmployesGridSelect: function(dataview, record, item, index, e, eOpts) {
         var hours_store = Ext.getStore('employes_hours');
         hours_store.load({params:{employeId:record.data.id}});
     },
@@ -116,7 +116,7 @@ Ext.define('dalpeApp.controller.employes', {
                 click: this.onAddEmployeClick
             },
             "#employesGrid": {
-                select: this.onEmployesGridSelect
+                itemclick: this.onEmployesGridSelect
             },
             "#employesPanel": {
                 activate: this.onEmployesPanelActivate

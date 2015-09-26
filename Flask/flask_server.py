@@ -37,20 +37,29 @@ def get_put_delete_model_by_id(name, id):
     data = json.dumps({"records": record})
     return data
 
+
 @app.route("/api/login", methods=['POST'])
 def login():
     password = request.form['passWord']
-    userName = request.form['userName']
+    username = request.form['userName']
 
-    record = baseAlchemy.get('Employe', login=userName, password=password)
+    record = baseAlchemy.get('Employe', login=username, password=password)
     if len(record):
         return json.dumps({"user": record[0], "success": True})
     elif not baseAlchemy.get('Employe'):
-        #Il n'existe aucun user
-        return json.dumps({"success": True,"message":"Bravo, vous etes le premier utilisateur,\
-            allez dans l'onglet Employes pour creer votre fiche et celle de vos employes."})
+        # Il n'existe aucun user
+        message = """
+            Bravo, vous etes le premier utilisateur,
+            allez dans l'onglet Employes pour creer votre fiche et celle de vos employes.
+        """
+        return json.dumps({
+            "success": True,
+            "message": message
+        })
     else:
-        return json.dumps({"success": False})
+        return json.dumps({
+            "success": False
+        })
 
 if __name__ == "__main__":
     app.run(debug=True)
