@@ -31,6 +31,18 @@
                 "scope": "me"
             },
             "designerId": "af14803e-7be6-4e62-8d2a-11d768ea3baa"
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "name"
+            },
+            "designerId": "26e875be-e664-4728-8c9c-d15b160605bf"
         }
     ]
 }

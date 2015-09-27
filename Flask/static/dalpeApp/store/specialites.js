@@ -32,6 +32,9 @@ Ext.define('dalpeApp.store.specialites', {
                     fn: me.onDirectstoreLoad,
                     scope: me
                 }
+            },
+            sorters: {
+                property: 'name'
             }
         }, cfg)]);
     },

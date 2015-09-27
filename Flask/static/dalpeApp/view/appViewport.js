@@ -208,6 +208,7 @@ Ext.define('dalpeApp.view.appViewport', {
                                                             width: 251,
                                                             fieldLabel: 'Specialite',
                                                             labelWidth: 70,
+                                                            anyMatch: true,
                                                             displayField: 'name',
                                                             minChars: 0,
                                                             store: 'specialites',

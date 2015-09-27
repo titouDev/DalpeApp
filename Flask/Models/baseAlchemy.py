@@ -6,7 +6,7 @@ get_class = lambda x: getattr(classSqlAlchemy, x)
 from sqlalchemy import create_engine
 
 dbSqLite = 'sqlite:///dalpe_construction_v115.db'
-engine = create_engine(dbSqLite, echo=True, case_sensitive=False)
+engine = create_engine(dbSqLite, echo=False, case_sensitive=False)
 
 #classSqlAlchemy.Base.metadata.drop_all(engine)
 
