@@ -4,9 +4,9 @@ from sqlalchemy.orm import sessionmaker
 get_class = lambda x: getattr(classSqlAlchemy, x)
 
 from sqlalchemy import create_engine
-
+import time
 dbSqLite = 'sqlite:///dalpe_construction_v115.db'
-engine = create_engine(dbSqLite, echo=False, case_sensitive=False)
+engine = create_engine(dbSqLite, echo=True, case_sensitive=False)
 
 #classSqlAlchemy.Base.metadata.drop_all(engine)
 
@@ -16,7 +16,6 @@ Session = sessionmaker(bind=engine)
 import datetime
 import json
 from contextlib import contextmanager
-
 
 @contextmanager
 def session_scope():
@@ -35,18 +34,8 @@ def session_scope():
 def get(model_name, **kwargs):
     with session_scope() as session:
         model = get_class(model_name)
-        query = session.query(model)
-        accepted_filters = set(get_column_names(model)) & kwargs.viewkeys()
-        if accepted_filters:
-            for f in accepted_filters:
-                if type(kwargs[f]) is list:
-                    query = query.filter(getattr(model, f).in_(kwargs[f]))
-                else:
-                    query = query.filter(getattr(model, f) == kwargs[f])
-
-        records = query.all()
-        return [r.to_dict() for r in records]
-
+        records = [r.to_dict() for r in  model().get_records(session, **kwargs)]
+        return records
 
 def delete(model_name, id):
     with session_scope() as session:
@@ -56,11 +45,6 @@ def delete(model_name, id):
         logCreateOrDeleteOperation(session, record, 'delete')
         query.delete()
         session.commit()
-
-
-def get_column_names(model):
-    return [c.name for c in model.__table__.columns]
-
 
 def create(model_name, **kwargs):
     with session_scope() as session:

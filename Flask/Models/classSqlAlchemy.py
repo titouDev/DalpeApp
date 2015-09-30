@@ -9,6 +9,7 @@ from sqlalchemy import (Table,
                         DateTime)
 
 from sqlalchemy.orm import (relationship,
+                            joinedload,
                             class_mapper)
 
 Base = declarative_base()
@@ -50,6 +51,22 @@ class AddonsBase():
             json_record[m] = records
         return json_record
 
+    def get_records(self, session, **kwargs):
+        model = self.__class__
+        query = session.query(model)
+        for sm in self.subModels.keys():
+            query = query.options(joinedload(sm))
+
+        accepted_filters = set(get_column_names(model)) & kwargs.viewkeys()
+        if accepted_filters:
+            for f in accepted_filters:
+                if type(kwargs[f]) is list:
+                    query = query.filter(getattr(model, f).in_(kwargs[f]))
+                else:
+                    query = query.filter(getattr(model, f) == kwargs[f])
+
+        return query.all()
+
     def update_record(self, session, **kwargs):
         model = self.__class__
         accepted_fields, sub_models_fields = analyse_fields(model, kwargs)
@@ -88,10 +105,10 @@ class AddonsBase():
         return record
 
     def append_sub_models(self, session, field_name, class_name, records):
-        model = get_class(class_name)
+        subModel = get_class(class_name)
         setattr(
             self, field_name,
-            [model().create_record(session, name=r) for r in records]
+            [subModel().create_record(session, name=r) for r in records]
         )
 
 
@@ -187,7 +204,7 @@ class Soustraitant(Person):
                                )
     subModels = {'specialites': 'Specialite'}
     uniqueKey = 'name'
-    onDuplicateUpdate = True
+    onDuplicateUpdate = False
 
 
 class Specialite(Base, AddonsBase):

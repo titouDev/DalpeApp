@@ -30,10 +30,10 @@ with open('../Documents_Dalpe/liste.csv', 'r') as f:
                 st[att] = unicode(splitLine[i], "utf8")
         sousTraitants.append(st)
 #  import pprint
-
+print sousTraitants
+exit()
 for s in sousTraitants:
     try:
         baseAlchemy.create("Soustraitant", **s)
     except:
-        print s
         pass
