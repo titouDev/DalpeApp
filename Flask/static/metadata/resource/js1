@@ -6,10 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "js1",
-        "url": "plugins/rsvp.js",
         "defer": true,
-        "id": "js_RSVP"
+        "designer|userClassName": "js1",
+        "id": "js_RSVP",
+        "url": "plugins/rsvp.js",
+        "x-compile": true
     },
     "designerId": "170803cd-394e-4af4-b303-704932ccbb67"
 }

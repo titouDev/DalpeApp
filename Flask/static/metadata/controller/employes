@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "employes",
         "models": [
             "employe"
         ],
@@ -15,8 +16,7 @@
         ],
         "views": [
             "editEmployeWindow"
-        ],
-        "designer|userClassName": "employes"
+        ]
     },
     "designerId": "8953454d-3ea4-4a30-ad4c-01f5587be068",
     "cn": [
@@ -28,15 +28,16 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#employesGrid #addEmploye",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onAddEmployeClick",
                 "implHandler": [
                     "Ext.widget('editEmployeWindow').show();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#employesGrid #addEmploye"
+                "scope": "me"
             },
+            "name": "onAddEmployeClick",
             "designerId": "bc194fc4-24d8-43e9-b54c-75bb5208f964"
         },
         {
@@ -50,6 +51,7 @@
                 "ref": "employesGrid",
                 "selector": "#employesGrid"
             },
+            "name": "employesGrid",
             "designerId": "09832666-8827-4a98-bea8-c0804df0a59e"
         },
         {
@@ -60,16 +62,17 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#employesGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "onEmployesGridSelect",
                 "implHandler": [
                     "var hours_store = Ext.getStore('employes_hours');",
                     "hours_store.load({params:{employeId:record.data.id}});"
                 ],
                 "name": "itemclick",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#employesGrid"
+                "scope": "me"
             },
+            "name": "onEmployesGridSelect",
             "designerId": "12f27b2a-1e5e-4e39-b817-a700b1341f58"
         },
         {
@@ -80,16 +83,17 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#employesPanel",
+                "designer|targetType": "Ext.panel.Panel",
                 "fn": "onEmployesPanelActivate",
                 "implHandler": [
                     "this.getEmployesStore().load();    ",
                     ""
                 ],
                 "name": "activate",
-                "scope": "me",
-                "designer|targetType": "Ext.panel.Panel",
-                "designer|controlQuery": "#employesPanel"
+                "scope": "me"
             },
+            "name": "onEmployesPanelActivate",
             "designerId": "7b0c2fd1-d713-48d4-b012-19efe85fd3a4"
         },
         {
@@ -100,6 +104,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#editEmploye",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onEditEmployeClick",
                 "implHandler": [
                     "//On prend le record selectionne",
@@ -128,10 +134,9 @@
                     ""
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#editEmploye"
+                "scope": "me"
             },
+            "name": "onEditEmployeClick",
             "designerId": "52b02d62-2b56-4858-82d8-fbe4533f8aa1"
         },
         {
@@ -142,15 +147,16 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "editEmployeWindow #annuler",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onAnnulerClick",
                 "implHandler": [
                     "button.up('window').close();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "editEmployeWindow #annuler"
+                "scope": "me"
             },
+            "name": "onAnnulerClick",
             "designerId": "9fc57f93-e58f-48a9-9a22-0abcbe0f5ef0"
         },
         {
@@ -161,6 +167,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "editEmployeWindow #enregistrer",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onEnregistrerClick",
                 "implHandler": [
                     "//On va chercher les infos du form",
@@ -193,10 +201,9 @@
                     ""
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "editEmployeWindow #enregistrer"
+                "scope": "me"
             },
+            "name": "onEnregistrerClick",
             "designerId": "8e5cf0df-2ccd-4182-bb26-4a5a07ee5f16"
         }
     ]

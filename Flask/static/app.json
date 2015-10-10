@@ -1,0 +1,9 @@
+{
+   "name": "dalpeApp",
+   "requires": [],
+   "id": "f5b2fdf8-6969-4886-8e51-94b258e11475",
+   "theme": "ext-theme-gray",
+   "resources": [
+      "css/mailWindow.css"
+   ]
+}

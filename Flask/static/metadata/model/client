@@ -20,6 +20,7 @@
             "userConfig": {
                 "name": "name"
             },
+            "name": "MyField",
             "designerId": "89267d7c-63ad-44ac-8b57-8bb28e5df806"
         },
         {
@@ -32,6 +33,7 @@
             "userConfig": {
                 "name": "lastName"
             },
+            "name": "MyField1",
             "designerId": "7a4873d5-c93d-45de-93df-23576c6ccc81"
         },
         {
@@ -44,6 +46,7 @@
             "userConfig": {
                 "name": "email"
             },
+            "name": "MyField2",
             "designerId": "27dd2ceb-aa2f-4b2d-949b-c276d4406421"
         },
         {
@@ -56,6 +59,7 @@
             "userConfig": {
                 "name": "phone"
             },
+            "name": "MyField3",
             "designerId": "4b54d87b-3616-4cfe-8383-778e9f0ca4a2"
         },
         {
@@ -68,6 +72,7 @@
             "userConfig": {
                 "name": "cell"
             },
+            "name": "MyField4",
             "designerId": "d87ae35a-1e54-46e1-8539-19348572d656"
         },
         {
@@ -80,6 +85,7 @@
             "userConfig": {
                 "name": "address"
             },
+            "name": "MyField5",
             "designerId": "bf97ed5a-c39d-4df4-a98f-9c0818cf8456"
         },
         {
@@ -92,6 +98,7 @@
             "userConfig": {
                 "name": "postalCode"
             },
+            "name": "MyField6",
             "designerId": "263640a6-ca12-401f-ac2f-9cb4e49e1cb4"
         },
         {
@@ -104,6 +111,7 @@
             "userConfig": {
                 "name": "city"
             },
+            "name": "MyField7",
             "designerId": "58392f5c-2ae3-4ecf-a2a5-fd41bd7f8137"
         },
         {
@@ -116,6 +124,7 @@
             "userConfig": {
                 "name": "province"
             },
+            "name": "MyField8",
             "designerId": "a7915350-20f5-4ab2-8d20-9ec6f021eee4"
         },
         {
@@ -128,6 +137,7 @@
             "userConfig": {
                 "url": "/api/model/Client"
             },
+            "name": "MyRestProxy",
             "designerId": "152a1732-d7fa-41de-bf03-e32d934c3cf3",
             "cn": [
                 {
@@ -140,6 +150,7 @@
                     "userConfig": {
                         "writeRecordId": false
                     },
+                    "name": "MyJsonWriter",
                     "designerId": "974d5edd-075c-4709-8679-41492901e8a7"
                 },
                 {
@@ -152,6 +163,7 @@
                     "userConfig": {
                         "root": "records"
                     },
+                    "name": "MyJsonReader",
                     "designerId": "2409f438-f074-49d5-84d4-e5ef614e0e06"
                 }
             ]
@@ -168,6 +180,7 @@
                 "persist": false,
                 "type": "int"
             },
+            "name": "MyField9",
             "designerId": "9ba05c1d-bb21-4867-b6e4-5d76ad345495"
         },
         {
@@ -180,6 +193,7 @@
             "userConfig": {
                 "name": "fax"
             },
+            "name": "MyField10",
             "designerId": "03e2d120-9305-46b8-bfaa-3ba19bc87860"
         },
         {
@@ -196,6 +210,7 @@
                 "name": "isActive",
                 "type": "boolean"
             },
+            "name": "MyField11",
             "designerId": "6a2268fc-9b9f-4630-bf66-03e7bc2f076b"
         }
     ]

@@ -7,19 +7,19 @@
     "codeClass": null,
     "userConfig": {
         "autoShow": true,
+        "bodyBorder": false,
+        "closable": false,
+        "designer|userAlias": "loginWindow",
+        "designer|userClassName": "loginWindow",
         "draggable": false,
         "height": 280,
         "id": "loginWindow",
-        "width": 302,
-        "designer|userClassName": "loginWindow",
-        "designer|userAlias": "loginWindow",
+        "layout": "fit",
+        "modal": true,
         "resizable": [
             "false"
         ],
-        "layout": "fit",
-        "bodyBorder": false,
-        "closable": false,
-        "modal": true
+        "width": 302
     },
     "designerId": "57339c22-18af-42b2-8491-66d707a83680",
     "cn": [
@@ -32,14 +32,15 @@
             "codeClass": null,
             "userConfig": {
                 "container|align": "stretch",
+                "layout": "vbox",
                 "maxHeight": null,
                 "maxWidth": null,
                 "minHeight": null,
                 "minWidth": null,
-                "width": null,
-                "layout": "vbox",
-                "title": "Construction Julien Dalpé"
+                "title": "Construction Julien Dalpé",
+                "width": null
             },
+            "name": "MyPanel21",
             "designerId": "592b830f-f1b8-4acc-b893-4d993ccf1dd9",
             "cn": [
                 {
@@ -50,6 +51,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "bodyPadding": 10,
                         "border": null,
                         "height": null,
                         "itemId": "loginForm",
@@ -59,11 +61,11 @@
                         "minHeight": null,
                         "minWidth": null,
                         "padding": null,
-                        "width": null,
-                        "bodyPadding": 10,
                         "title": "Identification",
-                        "url": "/api/login"
+                        "url": "/api/login",
+                        "width": null
                     },
+                    "name": "MyForm4",
                     "designerId": "eb3bc084-43ff-4b65-ab8e-403f68f63221",
                     "cn": [
                         {
@@ -74,12 +76,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "maxHeight": 25,
-                                "fieldLabel": "Nom d'utilisateur",
-                                "name": "userName",
                                 "allowBlank": false,
-                                "blankText": "Ce champ est requis"
+                                "blankText": "Ce champ est requis",
+                                "fieldLabel": "Nom d'utilisateur",
+                                "maxHeight": 25,
+                                "name": "userName"
                             },
+                            "name": "MyTextField39",
                             "designerId": "ace889a3-4cac-4fed-b8f1-f0165f119eae"
                         },
                         {
@@ -90,14 +93,15 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "allowBlank": false,
+                                "blankText": "Ce champ est requis",
+                                "fieldLabel": "Mot de passe",
+                                "inputType": "password",
                                 "itemId": "password",
                                 "maxHeight": 25,
-                                "fieldLabel": "Mot de passe",
-                                "name": "passWord",
-                                "inputType": "password",
-                                "allowBlank": false,
-                                "blankText": "Ce champ est requis"
+                                "name": "passWord"
                             },
+                            "name": "MyTextField40",
                             "designerId": "64f96346-a1e7-4a69-bd41-45759b14f909"
                         },
                         {
@@ -113,6 +117,7 @@
                                 "minWidth": null,
                                 "width": null
                             },
+                            "name": "MyToolbar12",
                             "designerId": "29d89bc4-f2d4-44b7-af67-0f49a045218d",
                             "cn": [
                                 {
@@ -125,6 +130,7 @@
                                     "userConfig": {
                                         "layout|flex": null
                                     },
+                                    "name": "MyFill5",
                                     "designerId": "84ddd4da-7940-4a9c-ac76-a250752a05e4"
                                 },
                                 {
@@ -135,10 +141,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": null,
                                         "itemId": "login",
+                                        "layout|flex": null,
                                         "text": "Se connecter..."
                                     },
+                                    "name": "MyButton24",
                                     "designerId": "4f6c24b7-5a67-4b35-97c6-4d607aac42fa"
                                 }
                             ]
@@ -157,9 +164,10 @@
                         "margin": null,
                         "maxWidth": 280,
                         "minWidth": 280,
-                        "width": 280,
-                        "src": "images/dalpe.jpg"
+                        "src": "images/dalpe.jpg",
+                        "width": 280
                     },
+                    "name": "MyImg",
                     "designerId": "38349bbe-789a-45d8-b088-e1204eb9cc79"
                 }
             ]

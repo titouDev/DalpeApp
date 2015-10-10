@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "chantiers",
         "models": [
             "chantier"
         ],
@@ -13,8 +14,7 @@
             "chantiers",
             "clients",
             "chantiers_hours"
-        ],
-        "designer|userClassName": "chantiers"
+        ]
     },
     "designerId": "5358e90e-5181-4e9f-bc2d-6b13a5016669",
     "cn": [
@@ -39,6 +39,7 @@
                     "return promise;"
                 ]
             },
+            "name": "loadClients",
             "designerId": "23e0c222-2574-4192-a879-eec579d22e0e"
         },
         {
@@ -63,6 +64,7 @@
                     ""
                 ]
             },
+            "name": "refreshHoursGrid",
             "designerId": "868c3018-dd2f-4118-a51a-32e34406a34e"
         },
         {
@@ -76,6 +78,7 @@
                 "ref": "chantiersGrid",
                 "selector": "#chantiersGrid"
             },
+            "name": "chantiersGrid",
             "designerId": "83598cc4-c7b0-40f6-80cf-247af2dbed33"
         },
         {
@@ -86,15 +89,16 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#chantiersGrid #addChantier",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onAddClick",
                 "implHandler": [
                     "Ext.widget('editChantierWindow').show();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#chantiersGrid #addChantier"
+                "scope": "me"
             },
+            "name": "onAddClick",
             "designerId": "6658bd78-b47e-4897-9312-f544968c7ccb"
         },
         {
@@ -105,15 +109,16 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#editChantierWindow #annuler",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onAnnulerClick",
                 "implHandler": [
                     "button.up('window').close();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#editChantierWindow #annuler"
+                "scope": "me"
             },
+            "name": "onAnnulerClick",
             "designerId": "3383f85d-7079-473b-9446-f506eb491924"
         },
         {
@@ -124,16 +129,17 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#chantiersGrid",
+                "designer|targetType": "Ext.grid.Panel",
                 "fn": "onChantiersGridSelect",
                 "implHandler": [
                     "this.refreshHoursGrid();",
                     ""
                 ],
                 "name": "select",
-                "scope": "me",
-                "designer|targetType": "Ext.grid.Panel",
-                "designer|controlQuery": "#chantiersGrid"
+                "scope": "me"
             },
+            "name": "onChantiersGridSelect",
             "designerId": "69ac67de-821c-41f0-85ef-25f51d37aad8"
         },
         {
@@ -144,6 +150,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#editChantierWindow #enregistrer",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onEnregistrerClick",
                 "implHandler": [
                     "//On va chercher les infos du form",
@@ -173,10 +181,9 @@
                     "record.getProxy().appendId=true;"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#editChantierWindow #enregistrer"
+                "scope": "me"
             },
+            "name": "onEnregistrerClick",
             "designerId": "cb8bca32-8a03-40f6-b9cb-3e4a349ba73f"
         },
         {
@@ -187,6 +194,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#chantiersPanel",
+                "designer|targetType": "Ext.panel.Panel",
                 "fn": "onChantiersPanelActivate",
                 "implHandler": [
                     "var me =this;",
@@ -199,10 +208,9 @@
                     ""
                 ],
                 "name": "activate",
-                "scope": "me",
-                "designer|targetType": "Ext.panel.Panel",
-                "designer|controlQuery": "#chantiersPanel"
+                "scope": "me"
             },
+            "name": "onChantiersPanelActivate",
             "designerId": "bda2d797-fba0-4b5a-ab6d-f500595d7582"
         },
         {
@@ -213,6 +221,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#editChantier",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onEditChantierClick",
                 "implHandler": [
                     "//On prend le record selectionne",
@@ -241,10 +251,9 @@
                     ""
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#editChantier"
+                "scope": "me"
             },
+            "name": "onEditChantierClick",
             "designerId": "280ed5d0-cfc7-4ac4-a42b-b5d85f6b85e4"
         }
     ]

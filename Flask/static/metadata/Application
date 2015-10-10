@@ -6,9 +6,24 @@
     },
     "codeClass": null,
     "userConfig": {
+        "appProperty": "dalpeApp",
+        "controllers": [
+            "sousTraitants",
+            "employes",
+            "clients",
+            "chantiers",
+            "loginWindow",
+            "global",
+            "logHours"
+        ],
         "models": [
             "specialite",
             "chantier"
+        ],
+        "name": "dalpeApp",
+        "requires": [
+            "Ext.util.Cookies",
+            "Ext.layout.container.Border"
         ],
         "stores": [
             "specialites",
@@ -21,20 +36,9 @@
             "sousTraitantsContextMenu",
             "editChantierWindow",
             "loginWindow"
-        ],
-        "appFolder": "dalpeApp",
-        "appProperty": "dalpeApp",
-        "controllers": [
-            "sousTraitants",
-            "employes",
-            "clients",
-            "chantiers",
-            "loginWindow",
-            "global",
-            "logHours"
-        ],
-        "name": "dalpeApp"
+        ]
     },
+    "name": "Application",
     "designerId": "application",
     "cn": [
         {
@@ -100,6 +104,7 @@
                     ""
                 ]
             },
+            "name": "launch",
             "designerId": "5cbb8634-3149-4cdf-b1d1-05fc951f7373"
         },
         {
@@ -110,11 +115,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "createRecord",
                 "designer|params": [
                     "model",
                     "data"
                 ],
+                "fn": "createRecord",
                 "implHandler": [
                     "var me =this;",
                     "var promise = new RSVP.Promise(function(resolve, reject) {",
@@ -133,6 +138,7 @@
                     "return promise;"
                 ]
             },
+            "name": "createRecord",
             "designerId": "697ee51b-f84d-4a7e-a138-4c67d83dcb13"
         }
     ]

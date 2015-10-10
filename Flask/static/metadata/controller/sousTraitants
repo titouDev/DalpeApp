@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "sousTraitants",
         "models": [
             "sousTraitant"
         ],
@@ -18,8 +19,7 @@
         "views": [
             "editSousTraitantWindow",
             "windowAddSpecialite"
-        ],
-        "designer|userClassName": "sousTraitants"
+        ]
     },
     "designerId": "d61f7263-e573-4a70-9e2e-e9dc378117e0",
     "cn": [
@@ -31,6 +31,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#sousTraitantsGrid #searchText",
+                "designer|targetType": "Ext.form.field.Text",
                 "fn": "onTextfieldChange",
                 "implHandler": [
                     "this.refreshGrid()",
@@ -40,10 +42,9 @@
                     ""
                 ],
                 "name": "change",
-                "scope": "me",
-                "designer|targetType": "Ext.form.field.Text",
-                "designer|controlQuery": "#sousTraitantsGrid #searchText"
+                "scope": "me"
             },
+            "name": "onTextfieldChange",
             "designerId": "fc4f5a1b-743f-40f3-afc7-70868fdb1952"
         },
         {
@@ -54,11 +55,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "addOrRemoveSpecialite",
                 "designer|params": [
                     "specialite",
                     "operation"
                 ],
+                "fn": "addOrRemoveSpecialite",
                 "implHandler": [
                     "",
                     "if (operation === 'add') {",
@@ -75,6 +76,7 @@
                     ""
                 ]
             },
+            "name": "addOrRemoveSpecialite",
             "designerId": "70087465-5850-43e1-9384-bd3f51d8aa53"
         },
         {
@@ -100,6 +102,7 @@
                     ""
                 ]
             },
+            "name": "refreshGrid",
             "designerId": "bfe5ee6f-eb49-435f-ac60-699159e8c8b3"
         },
         {
@@ -110,10 +113,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "loadSpecialiteLinkSoustraitantsStore",
                 "designer|params": [
                     "specialites"
                 ],
+                "fn": "loadSpecialiteLinkSoustraitantsStore",
                 "implHandler": [
                     "var store = this.getSpecialitesLinkSoustraitantsStore();",
                     "store.removeAll();",
@@ -122,6 +125,7 @@
                     ""
                 ]
             },
+            "name": "loadSpecialiteLinkSoustraitantsStore",
             "designerId": "6c2c6a2c-a15f-4090-996b-f16885bc5176"
         },
         {
@@ -137,6 +141,7 @@
                     "this.currentSpecialites = [];"
                 ]
             },
+            "name": "init",
             "designerId": "f1ae16ca-2864-473e-99b5-1051d9898cf3"
         },
         {
@@ -180,6 +185,7 @@
                     "this.loadSpecialiteLinkSoustraitantsStore(this.currentSpecialites);"
                 ]
             },
+            "name": "editSousTraitant",
             "designerId": "1734ae33-2334-400e-99fb-62f322a00b7d"
         },
         {
@@ -190,10 +196,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "reloadSousTraitantsStore",
                 "designer|params": [
                     "params"
                 ],
+                "fn": "reloadSousTraitantsStore",
                 "implHandler": [
                     "var me = this;",
                     "var promise = new RSVP.Promise(function(resolve, reject) {",
@@ -212,6 +218,7 @@
                     ""
                 ]
             },
+            "name": "reloadSousTraitantsStore",
             "designerId": "f21b65be-3f0b-4381-a43a-a8e7d9d7cc9f"
         },
         {
@@ -244,6 +251,7 @@
                     ""
                 ]
             },
+            "name": "filterSousTraitantsStoreWithText",
             "designerId": "c35991d6-6d30-4083-b208-e188492a3448"
         },
         {
@@ -254,11 +262,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "confirmAddSousTraitant",
                 "designer|params": [
                     "btn",
                     "text"
                 ],
+                "fn": "confirmAddSousTraitant",
                 "implHandler": [
                     "if (btn == 'ok')",
                     "{",
@@ -275,6 +283,7 @@
                     "}"
                 ]
             },
+            "name": "confirmAddSousTraitant",
             "designerId": "eae68ef9-19f6-49dc-a1d2-c2eb7188b737"
         },
         {
@@ -297,6 +306,7 @@
                     ""
                 ]
             },
+            "name": "getSelectedSousTraitant",
             "designerId": "dc52b804-9e86-4a66-8bd7-8ae34522c9d5"
         },
         {
@@ -326,6 +336,7 @@
                     "}"
                 ]
             },
+            "name": "applySpecialiteFilter",
             "designerId": "6f52465e-caed-456f-86a6-ef1d754a29a0"
         },
         {
@@ -349,6 +360,7 @@
                     "]);"
                 ]
             },
+            "name": "applyQuickSearch",
             "designerId": "96185a27-c824-4708-a833-e79ccff4e1a1"
         },
         {
@@ -362,6 +374,7 @@
                 "ref": "searchField",
                 "selector": "#sousTraitantsGrid #searchText"
             },
+            "name": "searchField",
             "designerId": "1c978560-cbc4-4472-bd8a-908a7f912411"
         },
         {
@@ -375,6 +388,7 @@
                 "ref": "comboSpecialites",
                 "selector": "#comboSpecialites"
             },
+            "name": "comboSpecialites",
             "designerId": "e9c66df6-cd8a-4f76-9b09-987acebada5a"
         },
         {
@@ -388,6 +402,7 @@
                 "ref": "comboAddSpecialites",
                 "selector": "#comboAddSpecialites"
             },
+            "name": "comboAddSpecialites",
             "designerId": "3ee71282-905e-41a8-a99e-dfb736dd9cee"
         },
         {
@@ -401,6 +416,7 @@
                 "ref": "sousTraitantsGrid",
                 "selector": "#sousTraitantsGrid"
             },
+            "name": "sousTraitantsGrid",
             "designerId": "a9426fb5-af18-471d-8e9e-d59c79fe1788"
         },
         {
@@ -411,15 +427,16 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#sousTraitantsGrid #refresh",
+                "designer|targetType": "Ext.panel.Tool",
                 "fn": "onRefreshClick",
                 "implHandler": [
                     "this.reloadSousTraitantsStore();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.panel.Tool",
-                "designer|controlQuery": "#sousTraitantsGrid #refresh"
+                "scope": "me"
             },
+            "name": "onRefreshClick",
             "designerId": "7c3ed28c-25ef-492c-bc37-fdc2a5c0b760"
         },
         {
@@ -430,16 +447,17 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#sousTraitantsGrid #comboSpecialites",
+                "designer|targetType": "Ext.form.field.ComboBox",
                 "fn": "onComboSpecialitesSelect",
                 "implHandler": [
                     "this.refreshGrid();",
                     ""
                 ],
                 "name": "select",
-                "scope": "me",
-                "designer|targetType": "Ext.form.field.ComboBox",
-                "designer|controlQuery": "#sousTraitantsGrid #comboSpecialites"
+                "scope": "me"
             },
+            "name": "onComboSpecialitesSelect",
             "designerId": "319b3b43-e05a-44bf-809a-bc03d7dafa38"
         },
         {
@@ -450,16 +468,17 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#sousTraitantsPanel",
+                "designer|targetType": "Ext.panel.Panel",
                 "fn": "onSousTraitantsPanelActivate",
                 "implHandler": [
                     "this.refreshGrid();",
                     ""
                 ],
                 "name": "activate",
-                "scope": "me",
-                "designer|targetType": "Ext.panel.Panel",
-                "designer|controlQuery": "#sousTraitantsPanel"
+                "scope": "me"
             },
+            "name": "onSousTraitantsPanelActivate",
             "designerId": "b6b68c57-f757-4f4a-a226-f8945e7d76d2"
         },
         {
@@ -470,6 +489,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#addSousTraitant",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onAddSousTraitantClick",
                 "implHandler": [
                     "//On s'assure que le store des links specialites/sous traitant est vide",
@@ -481,10 +502,9 @@
                     "Ext.widget('editSousTraitantWindow').show();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#addSousTraitant"
+                "scope": "me"
             },
+            "name": "onAddSousTraitantClick",
             "designerId": "a5f182ca-a227-4b6a-8089-70e529444525"
         },
         {
@@ -495,15 +515,16 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#editSousTraitant",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onEditSousTraitantClick",
                 "implHandler": [
                     "this.editSousTraitant();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#editSousTraitant"
+                "scope": "me"
             },
+            "name": "onEditSousTraitantClick",
             "designerId": "74c47f80-6a2f-489c-8ba6-e3a47f8b967a"
         },
         {
@@ -514,15 +535,16 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "editSousTraitantWindow #annuler",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onAnnulerClick",
                 "implHandler": [
                     "button.up('window').close();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "editSousTraitantWindow #annuler"
+                "scope": "me"
             },
+            "name": "onAnnulerClick",
             "designerId": "15d09e58-9a84-481a-9cff-dae54fe08350"
         },
         {
@@ -533,6 +555,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "editSousTraitantWindow #enregistrer",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onEnregistrerClick",
                 "implHandler": [
                     "//On va chercher les infos du form",
@@ -568,10 +592,9 @@
                     "mySousTraitant.getProxy().appendId=true;"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "editSousTraitantWindow #enregistrer"
+                "scope": "me"
             },
+            "name": "onEnregistrerClick",
             "designerId": "2750860c-74a8-403e-ac76-560c89e1e52e"
         },
         {
@@ -582,6 +605,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#addSpecialite",
+                "designer|targetType": "Ext.button.Button",
                 "fn": "onAddSpecialiteClick",
                 "implHandler": [
                     "var specialite = this.getComboAddSpecialites().getValue();",
@@ -589,10 +614,9 @@
                     "button.up('window').close();"
                 ],
                 "name": "click",
-                "scope": "me",
-                "designer|targetType": "Ext.button.Button",
-                "designer|controlQuery": "#addSpecialite"
+                "scope": "me"
             },
+            "name": "onAddSpecialiteClick",
             "designerId": "9c046a8d-8e6f-41b2-837a-52d03c90483b"
         }
     ]

@@ -7,9 +7,9 @@
     "codeClass": null,
     "userConfig": {
         "autoLoad": true,
+        "designer|userClassName": "employes",
         "model": "employe",
-        "storeId": "employes",
-        "designer|userClassName": "employes"
+        "storeId": "employes"
     },
     "designerId": "8dc5ddeb-520a-4981-ae6b-0d6ad639afee"
 }

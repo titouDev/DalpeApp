@@ -7,9 +7,9 @@
     "codeClass": null,
     "userConfig": {
         "autoLoad": false,
+        "designer|userClassName": "chantiers",
         "model": "chantier",
-        "storeId": "chantiers",
-        "designer|userClassName": "chantiers"
+        "storeId": "chantiers"
     },
     "designerId": "4bc615f2-00bd-457d-91f4-1c37c29ca69b"
 }

@@ -22,6 +22,7 @@
                 "persist": false,
                 "type": "int"
             },
+            "name": "MyField12",
             "designerId": "128ac4f3-0ca8-4801-b38f-896858725865"
         },
         {
@@ -36,6 +37,7 @@
                 "name": "workDate",
                 "type": "date"
             },
+            "name": "MyField13",
             "designerId": "5e6afd9b-4aed-4af2-b271-0ff2efcb72ac"
         },
         {
@@ -49,6 +51,7 @@
                 "name": "hours",
                 "type": "float"
             },
+            "name": "MyField14",
             "designerId": "e552ed92-3e43-43b0-a64a-808bce372a83"
         },
         {
@@ -63,6 +66,7 @@
                 "type": "int",
                 "useNull": true
             },
+            "name": "MyField15",
             "designerId": "21a568cf-eb28-40ff-8480-ab4db62a19e3"
         },
         {
@@ -76,6 +80,7 @@
                 "name": "employeId",
                 "type": "int"
             },
+            "name": "MyField16",
             "designerId": "d922e310-3f4a-421e-adbd-2b4a6c08b264"
         },
         {
@@ -89,6 +94,7 @@
                 "name": "checked",
                 "type": "int"
             },
+            "name": "MyField17",
             "designerId": "926034ba-01b0-4f64-b052-bd1a64983518"
         },
         {
@@ -102,6 +108,7 @@
                 "name": "hourRate",
                 "type": "float"
             },
+            "name": "MyField18",
             "designerId": "c0505c0d-558b-4de8-bb63-005351391a5b"
         },
         {
@@ -114,6 +121,7 @@
             "userConfig": {
                 "url": "/api/model/EmployeHour"
             },
+            "name": "MyRestProxy1",
             "designerId": "8857df73-b7ed-4f5f-b79f-b5e53aab2374",
             "cn": [
                 {
@@ -126,6 +134,7 @@
                     "userConfig": {
                         "root": "records"
                     },
+                    "name": "MyJsonReader1",
                     "designerId": "9da55cf2-c5a4-4558-bd9f-26a0a787fceb"
                 },
                 {
@@ -138,6 +147,7 @@
                     "userConfig": {
                         "writeAllFields": false
                     },
+                    "name": "MyJsonWriter1",
                     "designerId": "bf3912c5-318c-44d9-95a7-2ad9044cfd57"
                 }
             ]

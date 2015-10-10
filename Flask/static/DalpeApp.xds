@@ -1,6 +1,11 @@
 {
     "name": "DalpeApp",
     "settings": {
+        "cmd": {
+            "license": "gpl",
+            "cmdVersion": "6.0.1.76",
+            "frameworkVersion": "4.2.1.883"
+        },
         "urlPrefix": "http://localhost:5000",
         "spacesToIndent": 4,
         "exportPath": "/Applications/MAMP/htdocs/DalpePublish",
@@ -15,287 +20,27 @@
         "saveOnDeploy": false,
         "appName": "MyApp",
         "cssPath": "",
-        "buildShouldOverwriteIndex": true
+        "buildShouldOverwriteIndex": true,
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "generateArchitectVersion": true,
+        "projectHasEnabledWebServer": false,
+        "lockUrlPrefix": false,
+        "installStatus": "Not Installed",
+        "displayfield-ExtBox1-1156-inputEl": "a new version of the framework is available",
+        "displayfield-ExtBox1-1126-inputEl": "a new version of the framework is available"
     },
-    "xdsVersion": "2.2.3",
-    "xdsBuild": 1044,
+    "xdsVersion": "3.2.0",
+    "xdsBuild": 339,
     "schemaVersion": 1,
-    "upgradeVersion": 210000000503,
+    "upgradeVersion": 310000000001,
     "framework": "ext42",
-    "topInstanceFileMap": {
-        "e4c96884-e2eb-49b7-a615-451f20b564e5": {
-            "paths": [
-                "metadata/view/appViewport",
-                "dalpeApp/view/override/appViewport.js",
-                "dalpeApp/view/appViewport.js"
-            ],
-            "className": "appViewport"
-        },
-        "8dc5ddeb-520a-4981-ae6b-0d6ad639afee": {
-            "paths": [
-                "metadata/store/employes",
-                "dalpeApp/store/override/employes.js",
-                "dalpeApp/store/employes.js"
-            ],
-            "className": "employes"
-        },
-        "b46812cd-c52b-4a66-9d86-1e213479b598": {
-            "paths": [
-                "metadata/model/employe",
-                "dalpeApp/model/override/employe.js",
-                "dalpeApp/model/employe.js"
-            ],
-            "className": "employe"
-        },
-        "e4d3bafa-15b2-4e10-a635-0f60eb93a846": {
-            "paths": [
-                "metadata/model/sousTraitant",
-                "dalpeApp/model/override/sousTraitant.js",
-                "dalpeApp/model/sousTraitant.js"
-            ],
-            "className": "sousTraitant"
-        },
-        "d61f7263-e573-4a70-9e2e-e9dc378117e0": {
-            "paths": [
-                "metadata/controller/sousTraitants",
-                "dalpeApp/controller/override/sousTraitants.js",
-                "dalpeApp/controller/sousTraitants.js"
-            ],
-            "className": "sousTraitants"
-        },
-        "8953454d-3ea4-4a30-ad4c-01f5587be068": {
-            "paths": [
-                "metadata/controller/employes",
-                "dalpeApp/controller/override/employes.js",
-                "dalpeApp/controller/employes.js"
-            ],
-            "className": "employes"
-        },
-        "36e5f604-1eda-473d-8a66-cbfc9a38d0ba": {
-            "paths": [
-                "metadata/view/sousTraitantsContextMenu",
-                "dalpeApp/view/override/sousTraitantsContextMenu.js",
-                "dalpeApp/view/sousTraitantsContextMenu.js"
-            ],
-            "className": "sousTraitantsContextMenu"
-        },
-        "e0f02898-522d-4dc3-a2e1-2ad3f4b2dd2b": {
-            "paths": [
-                "metadata/store/sousTraitants",
-                "dalpeApp/store/override/sousTraitants.js",
-                "dalpeApp/store/sousTraitants.js"
-            ],
-            "className": "sousTraitants"
-        },
-        "2e155090-8c35-4c70-ba95-ef0c1d98bde2": {
-            "paths": [
-                "metadata/resource/css"
-            ],
-            "className": "css"
-        },
-        "06ca827d-4e64-431a-bedd-3b4432a274f5": {
-            "paths": [
-                "metadata/resource/Library"
-            ],
-            "className": "Library"
-        },
-        "a06c8ee8-1e25-4228-8640-255e15a32384": {
-            "paths": [
-                "metadata/view/editSousTraitantWindow",
-                "dalpeApp/view/override/editSousTraitantWindow.js",
-                "dalpeApp/view/editSousTraitantWindow.js"
-            ],
-            "className": "editSousTraitantWindow"
-        },
-        "2d33d2c4-28b5-4543-abe5-e62e5c54d882": {
-            "paths": [
-                "metadata/view/windowAddSpecialite",
-                "dalpeApp/view/override/windowAddSpecialite.js",
-                "dalpeApp/view/windowAddSpecialite.js"
-            ],
-            "className": "windowAddSpecialite"
-        },
-        "7c30472b-a80e-4251-8568-3f963945a7a4": {
-            "paths": [
-                "metadata/store/specialites",
-                "dalpeApp/store/override/specialites.js",
-                "dalpeApp/store/specialites.js"
-            ],
-            "className": "specialites"
-        },
-        "237b6ba4-2399-4586-aab1-258e76cdedb7": {
-            "paths": [
-                "metadata/model/specialite",
-                "dalpeApp/model/override/specialite.js",
-                "dalpeApp/model/specialite.js"
-            ],
-            "className": "specialite"
-        },
-        "2002c995-32ee-4cc1-948c-651888aaf1e0": {
-            "paths": [
-                "metadata/view/editEmployeWindow",
-                "dalpeApp/view/override/editEmployeWindow.js",
-                "dalpeApp/view/editEmployeWindow.js"
-            ],
-            "className": "editEmployeWindow"
-        },
-        "30e085bb-8e66-4146-b012-634d977214ef": {
-            "paths": [
-                "metadata/model/client",
-                "dalpeApp/model/override/client.js",
-                "dalpeApp/model/client.js"
-            ],
-            "className": "client"
-        },
-        "a0d5601b-11bf-4930-97a3-f49e2073affe": {
-            "paths": [
-                "metadata/model/chantier",
-                "dalpeApp/model/override/chantier.js",
-                "dalpeApp/model/chantier.js"
-            ],
-            "className": "chantier"
-        },
-        "62f30b2a-c8b5-4d9d-ac99-268643d73069": {
-            "paths": [
-                "metadata/model/employeHour",
-                "dalpeApp/model/override/employeHour.js",
-                "dalpeApp/model/employeHour.js"
-            ],
-            "className": "employeHour"
-        },
-        "cd6fbed6-fd8f-4928-9289-c6a6d316cffb": {
-            "paths": [
-                "metadata/store/clients",
-                "dalpeApp/store/override/clients.js",
-                "dalpeApp/store/clients.js"
-            ],
-            "className": "clients"
-        },
-        "2265f12e-0040-4598-a37f-e276c46a78d5": {
-            "paths": [
-                "metadata/view/editClientWindow",
-                "dalpeApp/view/override/editClientWindow.js",
-                "dalpeApp/view/editClientWindow.js"
-            ],
-            "className": "editClientWindow"
-        },
-        "12caf886-dbf7-471f-b353-82f5b2c7f27f": {
-            "paths": [
-                "metadata/controller/clients",
-                "dalpeApp/controller/override/clients.js",
-                "dalpeApp/controller/clients.js"
-            ],
-            "className": "clients"
-        },
-        "4bc615f2-00bd-457d-91f4-1c37c29ca69b": {
-            "paths": [
-                "metadata/store/chantiers",
-                "dalpeApp/store/override/chantiers.js",
-                "dalpeApp/store/chantiers.js"
-            ],
-            "className": "chantiers"
-        },
-        "5358e90e-5181-4e9f-bc2d-6b13a5016669": {
-            "paths": [
-                "metadata/controller/chantiers",
-                "dalpeApp/controller/override/chantiers.js",
-                "dalpeApp/controller/chantiers.js"
-            ],
-            "className": "chantiers"
-        },
-        "08df4031-2dee-45bd-b50d-13ea733e02e1": {
-            "paths": [
-                "metadata/view/editChantierWindow",
-                "dalpeApp/view/override/editChantierWindow.js",
-                "dalpeApp/view/editChantierWindow.js"
-            ],
-            "className": "editChantierWindow"
-        },
-        "d5c3bead-69f4-48d0-a6bc-1fdf63876706": {
-            "paths": [
-                "metadata/resource/js"
-            ],
-            "className": "js"
-        },
-        "57339c22-18af-42b2-8491-66d707a83680": {
-            "paths": [
-                "metadata/view/loginWindow",
-                "dalpeApp/view/override/loginWindow.js",
-                "dalpeApp/view/loginWindow.js"
-            ],
-            "className": "loginWindow"
-        },
-        "c53357d6-6534-42c5-8bea-8fd0205ff613": {
-            "paths": [
-                "metadata/controller/loginWindow",
-                "dalpeApp/controller/override/loginWindow.js",
-                "dalpeApp/controller/loginWindow.js"
-            ],
-            "className": "loginWindow"
-        },
-        "7f2562eb-19a6-48f4-a495-abd4d8fc1bef": {
-            "paths": [
-                "metadata/controller/global",
-                "dalpeApp/controller/override/global.js",
-                "dalpeApp/controller/global.js"
-            ],
-            "className": "global"
-        },
-        "ddee1a8c-46be-4052-955e-2953d9a66b74": {
-            "paths": [
-                "metadata/store/employes_hours",
-                "dalpeApp/store/override/employes_hours.js",
-                "dalpeApp/store/employes_hours.js"
-            ],
-            "className": "employes_hours"
-        },
-        "05102a25-9d0c-4e0e-a982-7d3866884cb7": {
-            "paths": [
-                "metadata/store/chantiers_hours",
-                "dalpeApp/store/override/chantiers_hours.js",
-                "dalpeApp/store/chantiers_hours.js"
-            ],
-            "className": "chantiers_hours"
-        },
-        "0883665a-4d9e-453c-a13f-bab460f4c2d8": {
-            "paths": [
-                "metadata/view/editEmployeHour",
-                "dalpeApp/view/override/editEmployeHour.js",
-                "dalpeApp/view/editEmployeHour.js"
-            ],
-            "className": "editEmployeHour"
-        },
-        "5b99a48a-3f84-4fe8-a414-2e88c6d08eb2": {
-            "paths": [
-                "metadata/controller/logHours",
-                "dalpeApp/controller/override/logHours.js",
-                "dalpeApp/controller/logHours.js"
-            ],
-            "className": "logHours"
-        },
-        "01dacb25-49fe-4aad-95bf-fbc2b747c97f": {
-            "paths": [
-                "metadata/store/employes_logHours",
-                "dalpeApp/store/override/employes_logHours.js",
-                "dalpeApp/store/employes_logHours.js"
-            ],
-            "className": "employes_logHours"
-        },
-        "170803cd-394e-4af4-b303-704932ccbb67": {
-            "paths": [
-                "metadata/resource/js1"
-            ],
-            "className": "js1"
-        },
-        "5ff61844-8743-463a-89bf-8b1e98f629cf": {
-            "paths": [
-                "metadata/store/specialitesLinkSoustraitants",
-                "dalpeApp/store/override/specialitesLinkSoustraitants.js",
-                "dalpeApp/store/specialitesLinkSoustraitants.js"
-            ],
-            "className": "specialitesLinkSoustraitants"
-        }
-    },
     "viewOrderMap": {
         "view": [
             "e4c96884-e2eb-49b7-a615-451f20b564e5",

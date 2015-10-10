@@ -18,6 +18,8 @@
             },
             "codeClass": null,
             "userConfig": {
+                "designer|controlQuery": "#appViewport",
+                "designer|targetType": "Ext.container.Viewport",
                 "fn": "onViewportAfterRender",
                 "implHandler": [
                     "/*",
@@ -35,10 +37,9 @@
                     ""
                 ],
                 "name": "afterrender",
-                "scope": "me",
-                "designer|targetType": "Ext.container.Viewport",
-                "designer|controlQuery": "#appViewport"
+                "scope": "me"
             },
+            "name": "onViewportAfterRender",
             "designerId": "a53f2926-2d34-4fa3-82eb-58506431a2b2"
         }
     ]
