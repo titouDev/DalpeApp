@@ -6,15 +6,15 @@
     },
     "codeClass": null,
     "userConfig": {
+        "constrain": true,
+        "designer|userAlias": "windowAddSpecialite",
+        "designer|userClassName": "windowAddSpecialite",
         "height": 145,
         "id": "windowAddSpecialite",
-        "width": 247,
-        "designer|userClassName": "windowAddSpecialite",
-        "designer|userAlias": "windowAddSpecialite",
-        "constrain": true,
         "layout": "fit",
+        "modal": true,
         "title": "Choisissez une specialite",
-        "modal": true
+        "width": 247
     },
     "designerId": "2d33d2c4-28b5-4543-abe5-e62e5c54d882",
     "cn": [
@@ -28,6 +28,7 @@
             "userConfig": {
                 "dock": "bottom"
             },
+            "name": "MyToolbar11",
             "designerId": "1f602a64-e840-4116-9ed5-6e8ffddfabf3",
             "cn": [
                 {
@@ -38,10 +39,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "height": 13,
+                        "layout|flex": null,
                         "width": 37
                     },
+                    "name": "MySpacer",
                     "designerId": "8686d71b-6c8b-4225-a478-8d2b20849986"
                 },
                 {
@@ -52,10 +54,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "itemId": "addSpecialite",
+                        "layout|flex": null,
                         "text": "Ajouter"
                     },
+                    "name": "MyButton22",
                     "designerId": "382f7264-207d-4e55-add6-aaab474a4ff1"
                 },
                 {
@@ -69,6 +72,7 @@
                         "layout|flex": null,
                         "text": "Annuler"
                     },
+                    "name": "MyButton23",
                     "designerId": "54722650-5f1f-4f9c-8863-eacad92ff20c",
                     "cn": [
                         {
@@ -79,15 +83,16 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "fn": "handler",
                                 "designer|params": [
                                     "button",
                                     "event"
                                 ],
+                                "fn": "handler",
                                 "implHandler": [
                                     "button.up('window').close();"
                                 ]
                             },
+                            "name": "handler",
                             "designerId": "1f6bcf99-8fb9-4cd8-9fe0-2b345ca0dac8"
                         }
                     ]
@@ -106,6 +111,7 @@
                 "layout": "vbox",
                 "title": null
             },
+            "name": "MyPanel20",
             "designerId": "2af955fd-28d6-4224-bca2-c02075162b92",
             "cn": [
                 {
@@ -116,17 +122,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "comboAddSpecialites",
-                        "margin": 2,
-                        "fieldLabel": null,
                         "autoSelect": false,
                         "displayField": "name",
+                        "fieldLabel": null,
+                        "itemId": "comboAddSpecialites",
+                        "margin": 2,
                         "queryMode": "local",
                         "store": "specialites",
                         "typeAhead": true,
                         "typeAheadDelay": 0,
                         "valueField": "name"
                     },
+                    "name": "MyComboBox3",
                     "designerId": "44993502-397c-4f02-a0b0-5f73ddeb294b"
                 },
                 {
@@ -137,11 +144,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "disabled": true,
                         "layout|flex": 1,
                         "layout|margins": "10",
-                        "disabled": true,
                         "text": "(ecrire dans la boite pour creer une nouvelle specialite)"
                     },
+                    "name": "MyLabel",
                     "designerId": "ece905e2-3d6d-4b5e-ac1c-7178d0e59876"
                 }
             ]

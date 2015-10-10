@@ -6,22 +6,6 @@
     },
     "codeClass": null,
     "userConfig": {
-        "models": [
-            "specialite",
-            "chantier"
-        ],
-        "stores": [
-            "specialites",
-            "employes_hours",
-            "chantiers_hours",
-            "employes_logHours"
-        ],
-        "views": [
-            "appViewport",
-            "sousTraitantsContextMenu",
-            "editChantierWindow",
-            "loginWindow"
-        ],
         "appFolder": "dalpeApp",
         "appProperty": "dalpeApp",
         "controllers": [
@@ -33,8 +17,25 @@
             "global",
             "logHours"
         ],
-        "name": "dalpeApp"
+        "models": [
+            "specialite",
+            "chantier"
+        ],
+        "name": "dalpeApp",
+        "stores": [
+            "specialites",
+            "employes_hours",
+            "chantiers_hours",
+            "employes_logHours"
+        ],
+        "views": [
+            "appViewport",
+            "sousTraitantsContextMenu",
+            "editChantierWindow",
+            "loginWindow"
+        ]
     },
+    "name": "Application",
     "designerId": "application",
     "cn": [
         {
@@ -100,6 +101,7 @@
                     ""
                 ]
             },
+            "name": "launch",
             "designerId": "5cbb8634-3149-4cdf-b1d1-05fc951f7373"
         },
         {
@@ -110,11 +112,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "createRecord",
                 "designer|params": [
                     "model",
                     "data"
                 ],
+                "fn": "createRecord",
                 "implHandler": [
                     "var me =this;",
                     "var promise = new RSVP.Promise(function(resolve, reject) {",
@@ -133,6 +135,7 @@
                     "return promise;"
                 ]
             },
+            "name": "createRecord",
             "designerId": "697ee51b-f84d-4a7e-a138-4c67d83dcb13"
         }
     ]

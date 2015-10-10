@@ -6,18 +6,18 @@
     },
     "codeClass": null,
     "userConfig": {
+        "constrain": true,
         "container|align": "stretch",
+        "designer|userAlias": "editChantierWindow",
+        "designer|userClassName": "editChantierWindow",
         "height": 302,
         "id": "editChantierWindow",
+        "layout": "vbox",
         "minHeight": 290,
         "minWidth": 650,
-        "width": 839,
-        "designer|userClassName": "editChantierWindow",
-        "designer|userAlias": "editChantierWindow",
-        "constrain": true,
-        "layout": "vbox",
+        "modal": true,
         "title": "Edit Chantier",
-        "modal": true
+        "width": 839
     },
     "designerId": "08df4031-2dee-45bd-b50d-13ea733e02e1",
     "cn": [
@@ -29,13 +29,14 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
+                "bodyPadding": 10,
                 "container|align": "stretch",
                 "itemId": "editForm",
                 "layout": "vbox",
-                "bodyPadding": 10,
+                "layout|flex": 1,
                 "title": null
             },
+            "name": "MyForm3",
             "designerId": "96e6c664-e301-4a7b-9e88-f24145a10dc9",
             "cn": [
                 {
@@ -46,13 +47,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 1,
-                        "container|align": "stretch",
                         "border": 0,
-                        "margin": 5,
+                        "container|align": "stretch",
                         "layout": "hbox",
+                        "layout|flex": 1,
+                        "margin": 5,
                         "title": null
                     },
+                    "name": "MyPanel17",
                     "designerId": "5b92ac5d-9c08-4002-b42f-bff6696404c7",
                     "cn": [
                         {
@@ -63,13 +65,14 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "border": 0,
+                                "container|align": "stretch",
+                                "layout": "vbox",
                                 "layout|flex": 1,
                                 "layout|margins": "10",
-                                "container|align": "stretch",
-                                "border": 0,
-                                "layout": "vbox",
                                 "title": null
                             },
+                            "name": "MyPanel18",
                             "designerId": "f523c492-0c52-411f-a72f-ef5974e6c64c",
                             "cn": [
                                 {
@@ -80,14 +83,15 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": 1,
-                                        "height": null,
-                                        "maxHeight": 25,
-                                        "fieldLabel": "Nom",
-                                        "name": "name",
                                         "allowBlank": false,
-                                        "blankText": "Ce champ est requis"
+                                        "blankText": "Ce champ est requis",
+                                        "fieldLabel": "Nom",
+                                        "height": null,
+                                        "layout|flex": 1,
+                                        "maxHeight": 25,
+                                        "name": "name"
                                     },
+                                    "name": "MyTextField37",
                                     "designerId": "60a8579c-cfae-4569-8b67-9cc252ffdb7e"
                                 },
                                 {
@@ -98,10 +102,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": 1,
                                         "fieldLabel": "Notes",
+                                        "layout|flex": 1,
                                         "name": "note"
                                     },
+                                    "name": "MyTextArea1",
                                     "designerId": "910a00a5-6393-41d2-bd56-0476ab80e253"
                                 }
                             ]
@@ -114,13 +119,14 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "border": 0,
+                                "container|align": "stretch",
+                                "layout": "vbox",
                                 "layout|flex": 1,
                                 "layout|margins": "10",
-                                "container|align": "stretch",
-                                "border": 0,
-                                "layout": "vbox",
                                 "title": null
                             },
+                            "name": "MyPanel19",
                             "designerId": "1ef61fb5-6e7d-486e-823a-0e6a960781c2",
                             "cn": [
                                 {
@@ -131,35 +137,22 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "listConfig": [
-                                            "{",
-                                            "    getInnerTpl: function() {",
-                                            "    return '{name} {lastName}';",
-                                            "                }",
-                                            "}"
-                                        ],
-                                        "layout|flex": 1,
-                                        "fieldLabel": "Client",
-                                        "labelWidth": 150,
-                                        "name": "clientId",
                                         "allowBlank": false,
                                         "displayField": "lastName",
+                                        "fieldLabel": "Client",
+                                        "labelWidth": 150,
+                                        "layout|flex": 1,
+                                        "name": "clientId",
                                         "queryMode": "local",
                                         "store": "clients",
                                         "valueField": "id",
                                         "valueNotFoundText": null
                                     },
+                                    "name": "MyComboBox1",
                                     "configAlternates": {
                                         "listConfig": "object"
                                     },
-                                    "designerId": "73d89685-60c9-426c-bc43-9fd715ed294c",
-                                    "customConfigs": [
-                                        {
-                                            "group": "(Custom Properties)",
-                                            "name": "listConfig",
-                                            "type": "string"
-                                        }
-                                    ]
+                                    "designerId": "73d89685-60c9-426c-bc43-9fd715ed294c"
                                 },
                                 {
                                     "type": "Ext.form.field.ComboBox",
@@ -169,15 +162,16 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": 1,
+                                        "allowBlank": false,
                                         "fieldLabel": "Status",
                                         "labelWidth": 150,
+                                        "layout|flex": 1,
                                         "name": "status",
-                                        "allowBlank": false,
                                         "store": [
                                             "['Devis','Encours','Termine']"
                                         ]
                                     },
+                                    "name": "MyComboBox2",
                                     "configAlternates": {
                                         "store": "array"
                                     },
@@ -191,12 +185,13 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": 1,
                                         "fieldLabel": "Debut des Travaux",
                                         "labelWidth": 150,
+                                        "layout|flex": 1,
                                         "name": "startDate",
                                         "submitFormat": "Y-m-d"
                                     },
+                                    "name": "MyDateField",
                                     "designerId": "40a48de4-587d-469d-8de5-c3aa266ed293"
                                 },
                                 {
@@ -207,12 +202,13 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": 1,
                                         "fieldLabel": "Fin des Travaux",
                                         "labelWidth": 150,
+                                        "layout|flex": 1,
                                         "name": "endDate",
                                         "submitFormat": "Y-m-d"
                                     },
+                                    "name": "MyDateField1",
                                     "designerId": "87a3655b-9b2e-44e1-8629-2b7f3e52260d"
                                 }
                             ]
@@ -227,11 +223,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 1,
-                        "hidden": true,
                         "fieldLabel": "Label",
+                        "hidden": true,
+                        "layout|flex": 1,
                         "name": "id"
                     },
+                    "name": "MyTextField38",
                     "designerId": "536bac18-eb20-4346-8910-31d77e0f957b"
                 }
             ]
@@ -244,10 +241,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "bottom",
-                "itemId": "toolBar"
+                "itemId": "toolBar",
+                "layout|flex": 1
             },
+            "name": "MyToolbar10",
             "designerId": "47102e29-79fb-4366-b32f-c019d7482f88",
             "cn": [
                 {
@@ -260,6 +258,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill4",
                     "designerId": "b1d01ca2-02e5-46e9-ba98-7aba841fab1e"
                 },
                 {
@@ -270,10 +269,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "itemId": "enregistrer",
+                        "layout|flex": null,
                         "text": "Enregistrer"
                     },
+                    "name": "MyButton20",
                     "designerId": "8f7b3af5-38d9-42ac-9fff-6d36990b1c5b"
                 },
                 {
@@ -284,10 +284,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "itemId": "annuler",
+                        "layout|flex": null,
                         "text": "Annuler"
                     },
+                    "name": "MyButton21",
                     "designerId": "41681ede-6250-4351-87bd-10b9270eb828"
                 }
             ]

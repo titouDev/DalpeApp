@@ -23,6 +23,7 @@
                 "persist": false,
                 "type": "int"
             },
+            "name": "MyField55",
             "designerId": "fb0a1de7-b9f2-4328-b1f6-e9c07c9023d9"
         },
         {
@@ -35,6 +36,7 @@
             "userConfig": {
                 "name": "name"
             },
+            "name": "MyField56",
             "designerId": "83e0970b-3180-46b1-a5d8-552971ef9acf"
         },
         {
@@ -47,6 +49,7 @@
             "userConfig": {
                 "name": "note"
             },
+            "name": "MyField57",
             "designerId": "bbf9ab99-b9b5-4c0c-b4a7-6468cffd38a6"
         },
         {
@@ -60,6 +63,7 @@
                 "name": "status",
                 "type": "string"
             },
+            "name": "MyField58",
             "designerId": "824d97b1-e66d-404c-95e2-577d6a2caa35"
         },
         {
@@ -73,6 +77,7 @@
                 "name": "clientId",
                 "type": "int"
             },
+            "name": "MyField59",
             "designerId": "43a93fd9-1e1f-4f98-8548-1bac016f61ba"
         },
         {
@@ -87,6 +92,7 @@
                 "name": "startDate",
                 "type": "date"
             },
+            "name": "MyField60",
             "designerId": "f62cceb7-be43-410a-8565-df0d46295c20"
         },
         {
@@ -101,6 +107,7 @@
                 "name": "endDate",
                 "type": "date"
             },
+            "name": "MyField61",
             "designerId": "a015b997-c3f2-4247-bf56-44bf8d8b0c2e"
         },
         {
@@ -114,6 +121,7 @@
                 "name": "clientName",
                 "persist": false
             },
+            "name": "MyField62",
             "designerId": "3eb60780-9bb8-40d1-abfa-539a99e26ef8"
         },
         {
@@ -126,6 +134,7 @@
             "userConfig": {
                 "url": "/api/model/Chantier"
             },
+            "name": "MyRestProxy4",
             "designerId": "e1eced06-4864-4584-a256-7aa12c5498a8",
             "cn": [
                 {
@@ -138,6 +147,7 @@
                     "userConfig": {
                         "root": "records"
                     },
+                    "name": "MyJsonReader4",
                     "designerId": "2a539be7-60d0-4eeb-bfb2-bed8898e5115"
                 },
                 {
@@ -150,6 +160,7 @@
                     "userConfig": {
                         "writeRecordId": false
                     },
+                    "name": "MyJsonWriter4",
                     "designerId": "d024ffbd-c087-4c2e-835b-ecb087c1ca40"
                 }
             ]

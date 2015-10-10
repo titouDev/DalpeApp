@@ -7,9 +7,9 @@
     "codeClass": null,
     "userConfig": {
         "autoLoad": false,
+        "designer|userClassName": "specialites",
         "model": "specialite",
-        "storeId": "specialiteStore",
-        "designer|userClassName": "specialites"
+        "storeId": "specialiteStore"
     },
     "designerId": "7c30472b-a80e-4251-8568-3f963945a7a4",
     "cn": [
@@ -21,15 +21,16 @@
             },
             "codeClass": null,
             "userConfig": {
+                "delay": null,
                 "fn": "onDirectstoreLoad",
                 "implHandler": [
                     "//On veut pouvoir filtrer par toutes les specialites.",
                     "store.insert(0,{id:0,name:'...'});"
                 ],
-                "delay": null,
                 "name": "load",
                 "scope": "me"
             },
+            "name": "onDirectstoreLoad",
             "designerId": "af14803e-7be6-4e62-8d2a-11d768ea3baa"
         },
         {
@@ -42,6 +43,7 @@
             "userConfig": {
                 "property": "name"
             },
+            "name": "MySorter2",
             "designerId": "26e875be-e664-4728-8c9c-d15b160605bf"
         }
     ]

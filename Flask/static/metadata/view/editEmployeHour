@@ -7,17 +7,17 @@
     "codeClass": null,
     "userConfig": {
         "autoShow": true,
+        "designer|userAlias": "editEmployeHour",
+        "designer|userClassName": "editEmployeHour",
         "height": 254,
         "id": "editEmployeHour",
-        "width": 386,
-        "designer|userClassName": "editEmployeHour",
-        "designer|userAlias": "editEmployeHour",
+        "layout": "fit",
+        "modal": true,
         "resizable": [
             "false"
         ],
-        "layout": "fit",
         "title": "Entrée d'heures",
-        "modal": true
+        "width": 386
     },
     "designerId": "0883665a-4d9e-453c-a13f-bab460f4c2d8",
     "cn": [
@@ -29,13 +29,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "bodyPadding": 10,
                 "container|align": "stretch",
                 "height": 208,
-                "width": 598,
                 "layout": "vbox",
-                "bodyPadding": 10,
-                "title": null
+                "title": null,
+                "width": 598
             },
+            "name": "MyForm5",
             "designerId": "770201f9-480a-4dd7-900d-62ddfc391e79",
             "cn": [
                 {
@@ -46,13 +47,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fieldLabel": "Date de travail",
-                        "name": "workDate",
                         "allowBlank": false,
                         "altFormats": null,
+                        "fieldLabel": "Date de travail",
                         "format": "d-M-Y",
+                        "name": "workDate",
                         "submitFormat": "c"
                     },
+                    "name": "MyDateField2",
                     "designerId": "5b43e2e8-f94e-4742-89fd-ff3cb0ab8dfe"
                 },
                 {
@@ -63,13 +65,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fieldLabel": "Heures travaillées",
-                        "name": "hours",
                         "allowBlank": false,
                         "autoStripChars": true,
+                        "fieldLabel": "Heures travaillées",
                         "maxValue": 24,
-                        "minValue": 0
+                        "minValue": 0,
+                        "name": "hours"
                     },
+                    "name": "MyNumberField1",
                     "designerId": "0160ae03-830a-483f-bf20-8b78da54aa7f"
                 },
                 {
@@ -80,17 +83,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 1,
-                        "height": 30,
-                        "itemId": "employe",
-                        "maxHeight": 30,
-                        "fieldLabel": "Employe",
-                        "name": "employeId",
                         "allowBlank": false,
                         "displayField": "lastName",
+                        "fieldLabel": "Employe",
+                        "height": 30,
+                        "itemId": "employe",
+                        "layout|flex": 1,
+                        "maxHeight": 30,
+                        "name": "employeId",
                         "store": "employes",
                         "valueField": "id"
                     },
+                    "name": "MyComboBox4",
                     "designerId": "909c9884-53a6-45e2-a310-7c95e2d7f5ba"
                 },
                 {
@@ -101,14 +105,15 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 1,
+                        "fieldLabel": "Cout Horaire",
                         "height": 30,
                         "itemId": "coutHoraire",
+                        "layout|flex": 1,
                         "maxHeight": 30,
-                        "fieldLabel": "Cout Horaire",
-                        "name": "hourRate",
-                        "minValue": 0
+                        "minValue": 0,
+                        "name": "hourRate"
                     },
+                    "name": "MyNumberField2",
                     "designerId": "5252b4b3-21f3-4f48-b8ee-6a2de767d45c"
                 },
                 {
@@ -119,17 +124,18 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 1,
+                        "displayField": "name",
+                        "fieldLabel": "Chantier",
                         "height": 30,
                         "itemId": "chantier",
+                        "layout|flex": 1,
                         "maxHeight": 30,
                         "minHeight": null,
-                        "fieldLabel": "Chantier",
                         "name": "chantierId",
-                        "displayField": "name",
                         "store": "chantiers",
                         "valueField": "id"
                     },
+                    "name": "MyComboBox5",
                     "designerId": "fe4f074d-11ba-4719-9780-d9e8a90ac243"
                 },
                 {
@@ -140,11 +146,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 1,
-                        "hidden": true,
                         "fieldLabel": "Label",
+                        "hidden": true,
+                        "layout|flex": 1,
                         "name": "id"
                     },
+                    "name": "MyTextField41",
                     "designerId": "db75b840-1d2a-43af-8a5c-3ea6a91722bf"
                 }
             ]
@@ -159,6 +166,7 @@
             "userConfig": {
                 "dock": "bottom"
             },
+            "name": "MyToolbar13",
             "designerId": "50e779d4-d7aa-4854-a91a-dc77a1d5597e",
             "cn": [
                 {
@@ -171,6 +179,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill6",
                     "designerId": "5e32832d-2fcd-452a-82b0-5d01c8bf4448"
                 },
                 {
@@ -181,10 +190,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "itemId": "save",
+                        "layout|flex": null,
                         "text": "Sauvegarder"
                     },
+                    "name": "MyButton25",
                     "designerId": "4db34ee9-4405-4fe1-b831-bbc82448b18d"
                 },
                 {
@@ -195,10 +205,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "itemId": "cancel",
+                        "layout|flex": null,
                         "text": "Annuler"
                     },
+                    "name": "MyButton26",
                     "designerId": "702e6aae-c9e4-4fc8-a73b-788795594041"
                 }
             ]

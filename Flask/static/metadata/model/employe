@@ -20,6 +20,7 @@
             "userConfig": {
                 "url": "/api/model/Employe"
             },
+            "name": "MyRestProxy2",
             "designerId": "f9dc19b3-f9a8-4924-ab5f-c52926d428d9",
             "cn": [
                 {
@@ -32,6 +33,7 @@
                     "userConfig": {
                         "writeRecordId": false
                     },
+                    "name": "MyJsonWriter2",
                     "designerId": "6bdb9705-6321-4ae2-aae5-f88016fb3c46"
                 },
                 {
@@ -44,6 +46,7 @@
                     "userConfig": {
                         "root": "records"
                     },
+                    "name": "MyJsonReader2",
                     "designerId": "21d20f6c-fc0a-4d18-aae7-c8c499add35e"
                 }
             ]
@@ -60,6 +63,7 @@
                 "persist": false,
                 "type": "int"
             },
+            "name": "MyField19",
             "designerId": "241f58d1-5346-42b3-8a89-ae74500d5889"
         },
         {
@@ -72,6 +76,7 @@
             "userConfig": {
                 "name": "name"
             },
+            "name": "MyField20",
             "designerId": "63345ad6-da3c-4316-be95-16a61ff60788"
         },
         {
@@ -84,6 +89,7 @@
             "userConfig": {
                 "name": "lastName"
             },
+            "name": "MyField21",
             "designerId": "f6d6d6ee-b50f-4d71-a195-894f19ce1918"
         },
         {
@@ -96,6 +102,7 @@
             "userConfig": {
                 "name": "contactName"
             },
+            "name": "MyField22",
             "designerId": "7fc4336d-b0c8-4d6b-baf9-5bef4184f1a7"
         },
         {
@@ -108,6 +115,7 @@
             "userConfig": {
                 "name": "email"
             },
+            "name": "MyField23",
             "designerId": "436c9865-cec6-4056-894c-d16f532c16d7"
         },
         {
@@ -120,6 +128,7 @@
             "userConfig": {
                 "name": "phone"
             },
+            "name": "MyField24",
             "designerId": "17f4c670-7f25-467f-984c-6bcc96d43815"
         },
         {
@@ -132,6 +141,7 @@
             "userConfig": {
                 "name": "cell"
             },
+            "name": "MyField25",
             "designerId": "00023c7b-f31a-42a0-9f60-85ed9ba2ff9f"
         },
         {
@@ -144,6 +154,7 @@
             "userConfig": {
                 "name": "fax"
             },
+            "name": "MyField26",
             "designerId": "c5bd05b1-3fa0-445e-b34f-606f3fffc6b4"
         },
         {
@@ -156,6 +167,7 @@
             "userConfig": {
                 "name": "address"
             },
+            "name": "MyField27",
             "designerId": "3be06fa8-c153-4536-9272-f3750491a73e"
         },
         {
@@ -168,6 +180,7 @@
             "userConfig": {
                 "name": "postalCode"
             },
+            "name": "MyField28",
             "designerId": "cf8142cd-74e0-4d93-ac4a-8d00b428d39a"
         },
         {
@@ -180,6 +193,7 @@
             "userConfig": {
                 "name": "city"
             },
+            "name": "MyField29",
             "designerId": "4ed648b5-6987-4eb6-ab80-97ae9107c3cd"
         },
         {
@@ -192,6 +206,7 @@
             "userConfig": {
                 "name": "province"
             },
+            "name": "MyField30",
             "designerId": "5eeadd97-60ef-4d68-9f48-e3e67e2528c2"
         },
         {
@@ -208,6 +223,7 @@
                 "name": "isActive",
                 "type": "boolean"
             },
+            "name": "MyField31",
             "designerId": "145563bf-0550-4f8b-b34b-71145505afe8"
         },
         {
@@ -220,6 +236,7 @@
             "userConfig": {
                 "name": "note"
             },
+            "name": "MyField32",
             "designerId": "316f05fc-8029-4697-bca4-c536b0af9c0b"
         },
         {
@@ -236,6 +253,7 @@
                 "name": "isAdmin",
                 "type": "boolean"
             },
+            "name": "MyField33",
             "designerId": "f4cc6383-3848-4fcd-953a-300a764fc895"
         },
         {
@@ -248,6 +266,7 @@
             "userConfig": {
                 "name": "login"
             },
+            "name": "MyField34",
             "designerId": "c1033773-158f-42f9-8fb0-a74d94029ffa"
         },
         {
@@ -261,6 +280,7 @@
                 "name": "hourRate",
                 "type": "float"
             },
+            "name": "MyField35",
             "designerId": "85c64507-c1f3-4752-8a20-95f2b570ed9c"
         },
         {
@@ -273,6 +293,7 @@
             "userConfig": {
                 "name": "password"
             },
+            "name": "MyField36",
             "designerId": "34e7ec8d-c300-46c1-98d8-bf803b9eb80e"
         }
     ]

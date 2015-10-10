@@ -6,9 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "employes_hours",
         "model": "employeHour",
-        "storeId": "employes_hours",
-        "designer|userClassName": "employes_hours"
+        "storeId": "employes_hours"
     },
     "designerId": "ddee1a8c-46be-4052-955e-2953d9a66b74"
 }

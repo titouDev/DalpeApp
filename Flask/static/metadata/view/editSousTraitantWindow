@@ -6,20 +6,19 @@
     },
     "codeClass": null,
     "userConfig": {
+        "constrain": true,
         "container|align": "stretch",
-        "autoRender": null,
+        "designer|userAlias": "editSousTraitantWindow",
+        "designer|userClassName": "editSousTraitantWindow",
         "height": 490,
         "id": "editSousTraitantWindow",
+        "layout": "hbox",
         "maxWidth": null,
         "minHeight": 490,
         "minWidth": 590,
-        "width": 590,
-        "designer|userClassName": "editSousTraitantWindow",
-        "designer|userAlias": "editSousTraitantWindow",
-        "constrain": true,
-        "layout": "hbox",
+        "modal": true,
         "title": "Edit Sous Traitant",
-        "modal": true
+        "width": 590
     },
     "designerId": "a06c8ee8-1e25-4228-8640-255e15a32384",
     "cn": [
@@ -31,14 +30,15 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
-                "container|align": "stretch",
+                "bodyPadding": 10,
                 "border": 0,
+                "container|align": "stretch",
                 "itemId": "editForm",
                 "layout": "vbox",
-                "bodyPadding": 10,
+                "layout|flex": 1,
                 "title": null
             },
+            "name": "MyForm",
             "designerId": "344e7abe-a4e6-4069-b674-53bba45fe504",
             "cn": [
                 {
@@ -49,13 +49,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 1,
-                        "container|align": "stretch",
                         "border": 0,
-                        "margin": 5,
+                        "container|align": "stretch",
                         "layout": "hbox",
+                        "layout|flex": 1,
+                        "margin": 5,
                         "title": null
                     },
+                    "name": "MyPanel6",
                     "designerId": "fff2caf8-b0d4-45fe-92b9-16d92ac4b3ec",
                     "cn": [
                         {
@@ -66,13 +67,14 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "border": 0,
+                                "container|align": "stretch",
+                                "layout": "vbox",
                                 "layout|flex": 1,
                                 "layout|margins": "10",
-                                "container|align": "stretch",
-                                "border": 0,
-                                "layout": "vbox",
                                 "title": null
                             },
+                            "name": "MyPanel7",
                             "designerId": "b598783c-e541-4ca5-b450-4a209c613638",
                             "cn": [
                                 {
@@ -83,14 +85,15 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "layout|flex": 1,
-                                        "height": null,
-                                        "maxHeight": 25,
-                                        "fieldLabel": "Compagnie",
-                                        "name": "name",
                                         "allowBlank": false,
-                                        "blankText": "Ce champ est requis"
+                                        "blankText": "Ce champ est requis",
+                                        "fieldLabel": "Compagnie",
+                                        "height": null,
+                                        "layout|flex": 1,
+                                        "maxHeight": 25,
+                                        "name": "name"
                                     },
+                                    "name": "MyTextField1",
                                     "designerId": "6298854c-1c6f-42be-9510-1903bafcae0e"
                                 },
                                 {
@@ -101,11 +104,12 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "fieldLabel": "Contact",
                                         "layout|flex": 1,
                                         "maxHeight": 25,
-                                        "fieldLabel": "Contact",
                                         "name": "contactName"
                                     },
+                                    "name": "MyTextField2",
                                     "designerId": "46ed27b2-8a72-47e6-b36e-259e5f6f2e93"
                                 },
                                 {
@@ -116,11 +120,12 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "fieldLabel": "Telephone",
                                         "layout|flex": 1,
                                         "maxHeight": 25,
-                                        "fieldLabel": "Telephone",
                                         "name": "phone"
                                     },
+                                    "name": "MyTextField3",
                                     "designerId": "6bec4b8f-4cd7-4223-82f9-75e3c2adddb7"
                                 },
                                 {
@@ -131,11 +136,12 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "fieldLabel": "Cellulaire",
                                         "layout|flex": 1,
                                         "maxHeight": 25,
-                                        "fieldLabel": "Cellulaire",
                                         "name": "cell"
                                     },
+                                    "name": "MyTextField4",
                                     "designerId": "514f1f00-fd62-4908-a6f5-9f2f25f78463"
                                 },
                                 {
@@ -146,12 +152,13 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "fieldLabel": "Fax",
+                                        "inputType": null,
                                         "layout|flex": 1,
                                         "maxHeight": 25,
-                                        "fieldLabel": "Fax",
-                                        "name": "fax",
-                                        "inputType": null
+                                        "name": "fax"
                                     },
+                                    "name": "MyTextField5",
                                     "designerId": "ea94cbc7-e82a-4e02-9d15-9f87f5213746"
                                 },
                                 {
@@ -162,14 +169,15 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "fieldLabel": "Couriel",
+                                        "inputType": "email",
                                         "layout|flex": 1,
                                         "maxHeight": 25,
-                                        "fieldLabel": "Couriel",
                                         "name": "email",
-                                        "inputType": "email",
                                         "vtype": "email",
                                         "vtypeText": null
                                     },
+                                    "name": "MyTextField6",
                                     "designerId": "c69ef515-8254-476e-a692-e756af869279"
                                 }
                             ]
@@ -182,13 +190,14 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "border": 0,
+                                "container|align": "stretch",
+                                "layout": "vbox",
                                 "layout|flex": 1,
                                 "layout|margins": "10",
-                                "container|align": "stretch",
-                                "border": 0,
-                                "layout": "vbox",
                                 "title": null
                             },
+                            "name": "MyPanel8",
                             "designerId": "06a17c4b-f148-4140-88d4-6979391a7580",
                             "cn": [
                                 {
@@ -199,10 +208,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "maxHeight": 25,
                                         "fieldLabel": "Adresse",
+                                        "maxHeight": 25,
                                         "name": "address"
                                     },
+                                    "name": "MyTextField7",
                                     "designerId": "85cc9dc2-3cdd-4640-ba39-9d67dc1e947c"
                                 },
                                 {
@@ -213,13 +223,14 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "fieldLabel": "Code Postal",
                                         "layout|flex": 1,
                                         "maxHeight": 25,
                                         "maxWidth": null,
-                                        "width": null,
-                                        "fieldLabel": "Code Postal",
-                                        "name": "postalCode"
+                                        "name": "postalCode",
+                                        "width": null
                                     },
+                                    "name": "MyTextField8",
                                     "designerId": "b46a88ab-30c4-4d0c-9c03-d814b35841e5"
                                 },
                                 {
@@ -230,16 +241,17 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "fieldLabel": "Ville",
+                                        "labelPad": null,
                                         "layout|flex": 1,
                                         "layout|margins": null,
                                         "maxHeight": 25,
                                         "maxWidth": null,
+                                        "name": "city",
                                         "padding": null,
-                                        "width": null,
-                                        "fieldLabel": "Ville",
-                                        "labelPad": null,
-                                        "name": "city"
+                                        "width": null
                                     },
+                                    "name": "MyTextField9",
                                     "designerId": "03be0138-431b-47ac-8134-54ced752723a"
                                 },
                                 {
@@ -250,16 +262,17 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "fieldLabel": "Province",
+                                        "labelPad": null,
                                         "layout|flex": 1,
                                         "layout|margins": null,
                                         "maxHeight": 25,
                                         "maxWidth": null,
+                                        "name": "province",
                                         "padding": null,
-                                        "width": null,
-                                        "fieldLabel": "Province",
-                                        "labelPad": null,
-                                        "name": "province"
+                                        "width": null
                                     },
+                                    "name": "MyTextField10",
                                     "designerId": "aa2cd446-f8a8-40c8-a9a1-54789202ca1f"
                                 },
                                 {
@@ -270,13 +283,14 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "fieldLabel": "Site Internet",
                                         "layout|flex": 1,
                                         "maxHeight": 25,
-                                        "padding": null,
-                                        "fieldLabel": "Site Internet",
                                         "name": "webSite",
+                                        "padding": null,
                                         "vtype": null
                                     },
+                                    "name": "MyTextField11",
                                     "designerId": "5410aaba-b324-4c2e-a52a-318f58922415"
                                 },
                                 {
@@ -287,11 +301,12 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "fieldLabel": "License RBQ",
                                         "layout|flex": 1,
                                         "maxHeight": 25,
-                                        "fieldLabel": "License RBQ",
                                         "name": "rbqLicense"
                                     },
+                                    "name": "MyTextField12",
                                     "designerId": "ad2cbdc1-26ba-4bec-b59b-2935d69ee151"
                                 },
                                 {
@@ -302,11 +317,12 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "fieldLabel": "Tps",
                                         "layout|flex": 1,
                                         "maxHeight": 25,
-                                        "fieldLabel": "Tps",
                                         "name": "tpsNumber"
                                     },
+                                    "name": "MyTextField13",
                                     "designerId": "3075551f-6ceb-4e41-9837-b7e454399964"
                                 }
                             ]
@@ -321,16 +337,17 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "border": 0,
+                        "container|align": "stretch",
+                        "height": 150,
+                        "layout": "hbox",
                         "layout|flex": 1,
                         "layout|margins": null,
-                        "container|align": "stretch",
-                        "border": 0,
-                        "height": 150,
                         "margin": 5,
                         "maxHeight": 150,
-                        "layout": "hbox",
                         "title": null
                     },
+                    "name": "MyPanel9",
                     "designerId": "8dc619e2-ebd7-4e44-9047-ea51f7250460",
                     "cn": [
                         {
@@ -341,13 +358,14 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 1.5,
-                                "itemId": "specialitesGrid",
-                                "width": 149,
-                                "title": null,
                                 "hideHeaders": true,
-                                "store": "specialitesLinkSoustraitants"
+                                "itemId": "specialitesGrid",
+                                "layout|flex": 1.5,
+                                "store": "specialitesLinkSoustraitants",
+                                "title": null,
+                                "width": 149
                             },
+                            "name": "MyGridPanel7",
                             "designerId": "b4ce7b7b-79fd-499f-a108-8730d641ca4a",
                             "cn": [
                                 {
@@ -359,9 +377,10 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "dataIndex": "name",
-                                        "text": "String",
-                                        "flex": 7
+                                        "flex": 7,
+                                        "text": "String"
                                     },
+                                    "name": "MyColumn20",
                                     "designerId": "692cc06c-c070-459a-b1d4-a5bba5da0dd6"
                                 },
                                 {
@@ -372,9 +391,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "itemId": "actionColumSpecialitesGrid",
-                                        "flex": 1
+                                        "flex": 1,
+                                        "itemId": "actionColumSpecialitesGrid"
                                     },
+                                    "name": "MyActionColumn",
                                     "designerId": "52c90dd9-1b6a-4152-bc5d-0a12160c6afc",
                                     "cn": [
                                         {
@@ -389,6 +409,7 @@
                                                 "icon": "images/delete.png",
                                                 "tooltip": "Enlever la specialite"
                                             },
+                                            "name": "MyActionColumnItem",
                                             "designerId": "23e3e40c-16d9-43be-81fd-1010d23a7b5e",
                                             "cn": [
                                                 {
@@ -399,7 +420,6 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "fn": "handler",
                                                         "designer|params": [
                                                             "view",
                                                             "rowIndex",
@@ -407,12 +427,14 @@
                                                             "item",
                                                             "e"
                                                         ],
+                                                        "fn": "handler",
                                                         "implHandler": [
                                                             "var mySpecialite = view.store.data.items[rowIndex];",
                                                             "dalpeApp.getApplication().getController('sousTraitants').addOrRemoveSpecialite(mySpecialite.get('name'), 'remove');",
                                                             ""
                                                         ]
                                                     },
+                                                    "name": "handler",
                                                     "designerId": "ccde5bea-d2ca-4b86-b580-2be3c705f5db"
                                                 }
                                             ]
@@ -429,6 +451,7 @@
                                     "userConfig": {
                                         "dock": "top"
                                     },
+                                    "name": "MyToolbar6",
                                     "designerId": "4b36e672-56b0-4940-a65e-00806862b539",
                                     "cn": [
                                         {
@@ -442,6 +465,7 @@
                                                 "layout|flex": null,
                                                 "text": "Ajouter une specialite"
                                             },
+                                            "name": "MyButton13",
                                             "designerId": "111ca38c-aa9b-4888-91e4-5ee8f562c37f",
                                             "cn": [
                                                 {
@@ -452,11 +476,11 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "fn": "handler",
                                                         "designer|params": [
                                                             "button",
                                                             "event"
                                                         ],
+                                                        "fn": "handler",
                                                         "implHandler": [
                                                             "//On eut etre sur que le sous traitant est cree avant d'ajouter une specialite",
                                                             "var myForm = button.up('window').down('form');",
@@ -469,6 +493,7 @@
                                                             ""
                                                         ]
                                                     },
+                                                    "name": "handler",
                                                     "designerId": "09ebe162-feb5-4874-b846-0c70266314b1"
                                                 }
                                             ]
@@ -485,16 +510,17 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": 3,
-                                "dock": null,
                                 "border": 0,
+                                "dock": null,
                                 "height": null,
+                                "layout": "fit",
+                                "layout|flex": 3,
                                 "maxHeight": null,
                                 "padding": "0 0 0 30",
-                                "width": 100,
-                                "layout": "fit",
-                                "title": null
+                                "title": null,
+                                "width": 100
                             },
+                            "name": "MyPanel10",
                             "designerId": "143a6b8b-4b16-4326-8c44-b3711690ae04",
                             "cn": [
                                 {
@@ -506,14 +532,15 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "border": 0,
+                                        "fieldLabel": "Note",
                                         "height": null,
+                                        "labelWidth": 40,
                                         "margin": null,
                                         "maxHeight": null,
-                                        "width": 341,
-                                        "fieldLabel": "Note",
-                                        "labelWidth": 40,
-                                        "name": "note"
+                                        "name": "note",
+                                        "width": 341
                                     },
+                                    "name": "MyTextArea",
                                     "designerId": "33c5e329-7d2a-4d09-8394-da3542734a0c"
                                 }
                             ]
@@ -528,11 +555,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": 1,
-                        "hidden": true,
                         "fieldLabel": "Label",
+                        "hidden": true,
+                        "layout|flex": 1,
                         "name": "id"
                     },
+                    "name": "MyTextField14",
                     "designerId": "2035a384-c799-4630-bcae-3841de262f9c"
                 }
             ]
@@ -545,10 +573,11 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": 1,
                 "dock": "bottom",
-                "itemId": "toolBar"
+                "itemId": "toolBar",
+                "layout|flex": 1
             },
+            "name": "MyToolbar7",
             "designerId": "9b5eb22a-8ee7-40bb-a0ee-0abdbbc41a85",
             "cn": [
                 {
@@ -561,6 +590,7 @@
                     "userConfig": {
                         "layout|flex": null
                     },
+                    "name": "MyFill1",
                     "designerId": "fa6ca28f-acd8-4b64-84b5-80854ec2c034"
                 },
                 {
@@ -571,10 +601,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "itemId": "enregistrer",
+                        "layout|flex": null,
                         "text": "Enregistrer"
                     },
+                    "name": "MyButton14",
                     "designerId": "75348155-b4ad-4624-858f-6e0a148c262d"
                 },
                 {
@@ -585,10 +616,11 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "layout|flex": null,
                         "itemId": "annuler",
+                        "layout|flex": null,
                         "text": "Fermer"
                     },
+                    "name": "MyButton15",
                     "designerId": "1a6e2c43-cc71-44b4-95ac-2118d8c5ab0d"
                 }
             ]

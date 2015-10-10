@@ -7,9 +7,9 @@
     "codeClass": null,
     "userConfig": {
         "autoLoad": false,
+        "designer|userClassName": "specialitesLinkSoustraitants",
         "model": "specialite",
-        "storeId": "MyDirectStore",
-        "designer|userClassName": "specialitesLinkSoustraitants"
+        "storeId": "MyDirectStore"
     },
     "designerId": "5ff61844-8743-463a-89bf-8b1e98f629cf"
 }

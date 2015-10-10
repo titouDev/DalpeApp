@@ -23,6 +23,7 @@
                 "persist": false,
                 "type": "int"
             },
+            "name": "MyField63",
             "designerId": "de2b5f94-d73f-4459-bc27-6d5655f67240"
         },
         {
@@ -35,6 +36,7 @@
             "userConfig": {
                 "name": "name"
             },
+            "name": "MyField64",
             "designerId": "26f6f1c2-f1d7-413a-b851-89edf5babaf1"
         },
         {
@@ -47,6 +49,7 @@
             "userConfig": {
                 "url": "/api/model/Specialite"
             },
+            "name": "MyRestProxy5",
             "designerId": "cce02904-47c8-4220-a001-f13202b0ce66",
             "cn": [
                 {
@@ -59,6 +62,7 @@
                     "userConfig": {
                         "root": "records"
                     },
+                    "name": "MyJsonReader5",
                     "designerId": "af50ecbc-3dd5-4309-b582-a83042d37bad"
                 },
                 {
@@ -71,6 +75,7 @@
                     "userConfig": {
                         "writeRecordId": false
                     },
+                    "name": "MyJsonWriter5",
                     "designerId": "8194d76d-d9b9-4671-b7af-b686c8b57d39"
                 }
             ]

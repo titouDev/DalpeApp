@@ -6,9 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
-        "id": "appViewport",
-        "designer|userClassName": "appViewport",
         "designer|userAlias": "appViewport",
+        "designer|userClassName": "appViewport",
+        "id": "appViewport",
         "layout": "fit"
     },
     "designerId": "e4c96884-e2eb-49b7-a615-451f20b564e5",
@@ -21,11 +21,12 @@
             },
             "codeClass": null,
             "userConfig": {
+                "layout": "fit",
                 "stateId": null,
                 "stateful": null,
-                "layout": "fit",
                 "title": "Construction Julien Dalpé Inc."
             },
+            "name": "MyPanel",
             "designerId": "07b43f6b-c114-4427-8ade-9b474ca4e314",
             "cn": [
                 {
@@ -37,10 +38,11 @@
                     "codeClass": null,
                     "userConfig": {
                         "dock": "top",
-                        "stateId": null,
                         "id": "appToolbar",
-                        "itemId": ""
+                        "itemId": "",
+                        "stateId": null
                     },
+                    "name": "MyToolbar",
                     "designerId": "ae2efddd-0c2f-41fa-8314-d967368d1232",
                     "cn": [
                         {
@@ -51,10 +53,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "itemId": "userLogged",
+                                "layout|flex": null,
                                 "text": "Utilisateur connecté"
                             },
+                            "name": "MyTextItem",
                             "designerId": "a3bc20d9-0dc0-42dd-a81d-697135f8bccd"
                         },
                         {
@@ -67,6 +70,7 @@
                             "userConfig": {
                                 "layout|flex": null
                             },
+                            "name": "MyFill",
                             "designerId": "2913914b-998e-4788-a857-49d66632c9e6"
                         },
                         {
@@ -77,10 +81,11 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "layout|flex": null,
                                 "itemId": "logout",
+                                "layout|flex": null,
                                 "text": "se déconnecter..."
                             },
+                            "name": "MyButton",
                             "designerId": "e86cb4ca-521f-495c-b7c8-c5c248aada8f"
                         }
                     ]
@@ -93,11 +98,12 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "activeTab": 1,
                         "stateId": "stateTabPanel",
                         "stateful": true,
-                        "title": "",
-                        "activeTab": 1
+                        "title": ""
                     },
+                    "name": "MyTabPanel",
                     "designerId": "c3ff5c17-4483-4df7-b62f-2d16ee517f70",
                     "cn": [
                         {
@@ -108,12 +114,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "stateId": null,
-                                "stateful": null,
                                 "id": "employesPanel",
                                 "layout": "border",
+                                "stateId": null,
+                                "stateful": null,
                                 "title": "Employés"
                             },
+                            "name": "MyPanel1",
                             "designerId": "3f49b7e3-ea88-416b-b3c2-035b88550df8",
                             "cn": [
                                 {
@@ -129,10 +136,11 @@
                                         "layout|split": true,
                                         "stateId": "stateEmployeHoursGrid",
                                         "stateful": true,
-                                        "width": null,
+                                        "store": "employes_hours",
                                         "title": "Heures",
-                                        "store": "employes_hours"
+                                        "width": null
                                     },
+                                    "name": "MyGridPanel",
                                     "designerId": "4cb76a37-8e26-4f21-884e-060d546cc365",
                                     "cn": [
                                         {
@@ -142,6 +150,7 @@
                                                 "type": "object"
                                             },
                                             "codeClass": null,
+                                            "name": "MyGridView",
                                             "designerId": "71b2aeff-d768-4c29-8f7d-e3e0eb048cfe"
                                         },
                                         {
@@ -153,9 +162,10 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "dataIndex": "workDate",
-                                                "text": "Date",
-                                                "format": "d-M-Y"
+                                                "format": "d-M-Y",
+                                                "text": "Date"
                                             },
+                                            "name": "MyDateColumn",
                                             "designerId": "b40bfe55-96a8-4cc7-8ed8-f7c3b0649c37"
                                         },
                                         {
@@ -169,6 +179,7 @@
                                                 "dataIndex": "hours",
                                                 "text": "Heure"
                                             },
+                                            "name": "MyColumn",
                                             "designerId": "2cf79da7-c1d0-4303-b5c3-6d413e132abe"
                                         },
                                         {
@@ -182,6 +193,7 @@
                                                 "dataIndex": "chantierId",
                                                 "text": "Chantier"
                                             },
+                                            "name": "MyColumn1",
                                             "designerId": "5f9b9e12-1cb4-477c-ad9d-d74bfa7d8469",
                                             "cn": [
                                                 {
@@ -192,7 +204,6 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "fn": "renderer",
                                                         "designer|params": [
                                                             "value",
                                                             "metaData",
@@ -202,6 +213,7 @@
                                                             "store",
                                                             "view"
                                                         ],
+                                                        "fn": "renderer",
                                                         "implHandler": [
                                                             "if (record.data.chantierId)",
                                                             "{",
@@ -210,6 +222,7 @@
                                                             "return '';"
                                                         ]
                                                     },
+                                                    "name": "renderer",
                                                     "designerId": "bce082c9-647d-4e7c-b923-f680c589dd34"
                                                 }
                                             ]
@@ -224,15 +237,16 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "id": "employesGrid",
                                         "layout|flex": 1,
                                         "layout|region": "center",
                                         "layout|split": true,
                                         "stateId": "stateEmployesGrid",
                                         "stateful": true,
-                                        "id": "employesGrid",
-                                        "title": null,
-                                        "store": "employes"
+                                        "store": "employes",
+                                        "title": null
                                     },
+                                    "name": "MyGridPanel1",
                                     "designerId": "e4a05f0a-e555-4786-bc57-a30bedf9f4a4",
                                     "cn": [
                                         {
@@ -242,6 +256,7 @@
                                                 "type": "object"
                                             },
                                             "codeClass": null,
+                                            "name": "MyGridView1",
                                             "configAlternates": {
                                                 "loadMask": "boolean"
                                             },
@@ -256,9 +271,10 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "dataIndex": "name",
-                                                "text": "Prenom",
-                                                "flex": 1
+                                                "flex": 1,
+                                                "text": "Prenom"
                                             },
+                                            "name": "MyColumn2",
                                             "designerId": "6b7db549-6285-4b72-9353-5b3342aaa2d4"
                                         },
                                         {
@@ -270,9 +286,10 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "dataIndex": "lastName",
-                                                "text": "Nom",
-                                                "flex": 1
+                                                "flex": 1,
+                                                "text": "Nom"
                                             },
+                                            "name": "MyColumn3",
                                             "designerId": "00b39851-f36f-41b7-a22f-07b82311485a"
                                         },
                                         {
@@ -284,9 +301,10 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "dataIndex": "email",
-                                                "text": "Courriel",
-                                                "flex": 1.5
+                                                "flex": 1.5,
+                                                "text": "Courriel"
                                             },
+                                            "name": "MyColumn4",
                                             "designerId": "87ea9943-4e4e-416a-94a3-b08c087a093e"
                                         },
                                         {
@@ -298,9 +316,10 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "dataIndex": "phone",
-                                                "text": "Telephone",
-                                                "flex": 1
+                                                "flex": 1,
+                                                "text": "Telephone"
                                             },
+                                            "name": "MyColumn5",
                                             "designerId": "18a70b18-b19b-47e0-a5aa-186087df1ed3"
                                         },
                                         {
@@ -312,9 +331,10 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "dataIndex": "cell",
-                                                "text": "Cellulaire",
-                                                "flex": 1
+                                                "flex": 1,
+                                                "text": "Cellulaire"
                                             },
+                                            "name": "MyColumn6",
                                             "designerId": "d0c453b4-6acd-44bf-a656-3e00e4f7905f"
                                         },
                                         {
@@ -327,6 +347,7 @@
                                             "userConfig": {
                                                 "dock": "top"
                                             },
+                                            "name": "MyToolbar1",
                                             "designerId": "227c8093-b1bc-4bd1-830e-1f03045805e7",
                                             "cn": [
                                                 {
@@ -337,11 +358,12 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "layout|flex": null,
-                                                        "itemId": "addEmploye",
                                                         "iconCls": "icon-user-add",
+                                                        "itemId": "addEmploye",
+                                                        "layout|flex": null,
                                                         "text": "Ajouter"
                                                     },
+                                                    "name": "MyButton1",
                                                     "designerId": "e3a77ad4-687d-4404-95fb-713f265a50f5"
                                                 },
                                                 {
@@ -352,11 +374,12 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "layout|flex": null,
-                                                        "itemId": "editEmploye",
                                                         "iconCls": "icon-user-add",
+                                                        "itemId": "editEmploye",
+                                                        "layout|flex": null,
                                                         "text": "Editer"
                                                     },
+                                                    "name": "MyButton2",
                                                     "designerId": "214576d9-26d5-4fc6-a110-6101055df448"
                                                 }
                                             ]
@@ -373,6 +396,7 @@
                                     "userConfig": {
                                         "iconCls": null
                                     },
+                                    "name": "TabConfig",
                                     "designerId": "afb230e3-61ac-44ad-9d98-575a25e119c3"
                                 }
                             ]
@@ -385,12 +409,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "stateId": "stateSousTraitantsPanel",
-                                "stateful": true,
                                 "id": "sousTraitantsPanel",
                                 "layout": "border",
+                                "stateId": "stateSousTraitantsPanel",
+                                "stateful": true,
                                 "title": "Sous Traitants"
                             },
+                            "name": "MyPanel2",
                             "designerId": "ea9a9e23-29ad-4664-a6bf-fe8610847215",
                             "cn": [
                                 {
@@ -404,6 +429,7 @@
                                         "stateId": null,
                                         "stateful": null
                                     },
+                                    "name": "TabConfig1",
                                     "designerId": "3df5e9d3-1837-413d-acfb-26bedb30ea1a"
                                 },
                                 {
@@ -414,18 +440,19 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "focusOnToFront": null,
+                                        "id": "sousTraitantsGrid",
                                         "layout|flex": null,
                                         "layout|region": "center",
                                         "layout|split": true,
+                                        "minWidth": 700,
                                         "stateId": "statesousTraitantsGrid",
                                         "stateful": true,
-                                        "id": "sousTraitantsGrid",
-                                        "minWidth": 700,
-                                        "width": null,
-                                        "focusOnToFront": null,
+                                        "store": "sousTraitants",
                                         "title": null,
-                                        "store": "sousTraitants"
+                                        "width": null
                                     },
+                                    "name": "MyGridPanel2",
                                     "designerId": "0d41a576-ce37-4cbe-a1da-42be371d5eac",
                                     "cn": [
                                         {
@@ -438,6 +465,7 @@
                                             "userConfig": {
                                                 "dock": "top"
                                             },
+                                            "name": "MyToolbar2",
                                             "designerId": "f4e752bc-a631-4803-8d66-109e3526083e",
                                             "cn": [
                                                 {
@@ -448,38 +476,24 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "listConfig": [
-                                                            "{    loadingText: 'Searching...',",
-                                                            "                emptyText: 'No matching posts found.',",
-                                                            "                getInnerTpl: function() {",
-                                                            "                    return '{name}';",
-                                                            "                }",
-                                                            "}"
-                                                        ],
-                                                        "layout|flex": null,
-                                                        "itemId": "comboSpecialites",
-                                                        "width": 251,
-                                                        "fieldLabel": "Specialite",
-                                                        "labelWidth": 70,
                                                         "anyMatch": true,
                                                         "displayField": "name",
+                                                        "fieldLabel": "Specialite",
+                                                        "itemId": "comboSpecialites",
+                                                        "labelWidth": 70,
+                                                        "layout|flex": null,
                                                         "minChars": 0,
                                                         "store": "specialites",
                                                         "typeAhead": true,
                                                         "typeAheadDelay": 0,
-                                                        "valueField": "id"
+                                                        "valueField": "id",
+                                                        "width": 251
                                                     },
+                                                    "name": "MyComboBox",
                                                     "configAlternates": {
                                                         "listConfig": "object"
                                                     },
-                                                    "designerId": "db3dd9ab-2367-465e-a362-5522d3ad7489",
-                                                    "customConfigs": [
-                                                        {
-                                                            "group": "(Custom Properties)",
-                                                            "name": "listConfig",
-                                                            "type": "string"
-                                                        }
-                                                    ]
+                                                    "designerId": "db3dd9ab-2367-465e-a362-5522d3ad7489"
                                                 },
                                                 {
                                                     "type": "Ext.form.field.Text",
@@ -489,11 +503,12 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "layout|flex": null,
-                                                        "itemId": "searchText",
+                                                        "checkChangeBuffer": 100,
                                                         "fieldLabel": "Recherche Rapide",
-                                                        "checkChangeBuffer": 100
+                                                        "itemId": "searchText",
+                                                        "layout|flex": null
                                                     },
+                                                    "name": "MyTextField",
                                                     "designerId": "0637588b-a5ad-4814-b602-405e1836f379"
                                                 },
                                                 {
@@ -504,11 +519,12 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "layout|flex": null,
-                                                        "itemId": "addSousTraitant",
                                                         "iconCls": "icon-user-add",
+                                                        "itemId": "addSousTraitant",
+                                                        "layout|flex": null,
                                                         "text": "Ajouter"
                                                     },
+                                                    "name": "MyButton3",
                                                     "designerId": "4df7da45-ae11-45cf-8f66-cee3377df62a"
                                                 },
                                                 {
@@ -519,11 +535,12 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "layout|flex": null,
-                                                        "itemId": "editSousTraitant",
                                                         "iconCls": "icon-user-add",
+                                                        "itemId": "editSousTraitant",
+                                                        "layout|flex": null,
                                                         "text": "Editer"
                                                     },
+                                                    "name": "MyButton4",
                                                     "designerId": "bebb1859-f3b9-4ede-a37a-f68270c5de9b"
                                                 },
                                                 {
@@ -534,12 +551,13 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "layout|flex": null,
                                                         "hidden": true,
-                                                        "itemId": "sendMail",
                                                         "iconCls": "icon-send",
+                                                        "itemId": "sendMail",
+                                                        "layout|flex": null,
                                                         "text": "Envoyer un courriel"
                                                     },
+                                                    "name": "MyButton5",
                                                     "designerId": "9d1cecd4-15bc-4555-bdbb-236bfcf18af0"
                                                 }
                                             ]
@@ -552,11 +570,12 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "width": 200,
                                                 "dataIndex": "name",
+                                                "flex": 3,
                                                 "text": "Societé",
-                                                "flex": 3
+                                                "width": 200
                                             },
+                                            "name": "MyTemplateColumn",
                                             "designerId": "54778fab-857d-4788-983c-1570467f41e5",
                                             "cn": [
                                                 {
@@ -567,13 +586,14 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "designer|displayName": "tpl",
                                                         "implHandler": [
                                                             "<font style=\"font-weight: bold; font-size: 13px;\">{name}</font><br>",
                                                             "Contact:&nbsp;&nbsp;&nbsp;&nbsp;{contactName}<br>",
                                                             "Note:&nbsp;&nbsp;&nbsp;&nbsp;{note}"
-                                                        ],
-                                                        "designer|displayName": "tpl"
+                                                        ]
                                                     },
+                                                    "name": "tpl",
                                                     "designerId": "b612acb0-0a58-49f0-b7a7-5aab9836dd76"
                                                 }
                                             ]
@@ -586,11 +606,12 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "width": 250,
                                                 "dataIndex": "email",
+                                                "flex": 1,
                                                 "text": "Courriel",
-                                                "flex": 1
+                                                "width": 250
                                             },
+                                            "name": "MyColumn7",
                                             "designerId": "0decee31-bde5-4c23-87db-5d1f63397693"
                                         },
                                         {
@@ -601,11 +622,12 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "width": 200,
                                                 "dataIndex": "phone",
+                                                "flex": 1,
                                                 "text": "Telephones",
-                                                "flex": 1
+                                                "width": 200
                                             },
+                                            "name": "MyTemplateColumn1",
                                             "designerId": "45a7f387-04f1-4eba-9453-2e0aa51b1ced",
                                             "cn": [
                                                 {
@@ -616,13 +638,14 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "designer|displayName": "tpl",
                                                         "implHandler": [
                                                             "Telephone:&nbsp;&nbsp;{phone}<br>",
                                                             "Cellulaire:&nbsp;&nbsp;{cell}<br>",
                                                             "Fax:&nbsp;&nbsp;{fax}<br>"
-                                                        ],
-                                                        "designer|displayName": "tpl"
+                                                        ]
                                                     },
+                                                    "name": "tpl1",
                                                     "designerId": "7ff7ed97-6514-4e7c-a15e-3a1fd46d00db"
                                                 }
                                             ]
@@ -637,6 +660,7 @@
                                             "userConfig": {
                                                 "mode": "MULTI"
                                             },
+                                            "name": "MyRowSelectionModel",
                                             "designerId": "484a641a-0a0f-4927-a7d5-acdc0dbae0dd"
                                         }
                                     ]
@@ -651,12 +675,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "stateId": null,
-                                "stateful": null,
                                 "id": "chantiersPanel",
                                 "layout": "border",
+                                "stateId": null,
+                                "stateful": null,
                                 "title": "Chantiers"
                             },
+                            "name": "MyPanel3",
                             "designerId": "d715195d-33e5-45da-a38e-32c10500459d",
                             "cn": [
                                 {
@@ -666,6 +691,7 @@
                                         "type": "object"
                                     },
                                     "codeClass": null,
+                                    "name": "TabConfig2",
                                     "designerId": "25c833ef-1e43-411f-ab09-940ab09a6709"
                                 },
                                 {
@@ -676,17 +702,18 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "height": 250,
+                                        "id": "chantiersGrid",
                                         "layout|flex": 1,
                                         "layout|region": "center",
                                         "layout|split": true,
                                         "stateId": "stateChantiersGrid",
                                         "stateful": true,
-                                        "height": 250,
-                                        "id": "chantiersGrid",
-                                        "width": null,
+                                        "store": "chantiers",
                                         "title": null,
-                                        "store": "chantiers"
+                                        "width": null
                                     },
+                                    "name": "MyGridPanel3",
                                     "designerId": "cbbed316-a11f-4489-9bed-80b8066c31ab",
                                     "cn": [
                                         {
@@ -696,6 +723,7 @@
                                                 "type": "object"
                                             },
                                             "codeClass": null,
+                                            "name": "MyGridView2",
                                             "designerId": "0fa3e714-2361-4604-b0e7-f3c91c22b1a7"
                                         },
                                         {
@@ -707,9 +735,10 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "dataIndex": "name",
-                                                "text": "Nom",
-                                                "flex": 1
+                                                "flex": 1,
+                                                "text": "Nom"
                                             },
+                                            "name": "MyColumn8",
                                             "designerId": "32afe177-2ac4-423e-9e06-c51eb51bd53b"
                                         },
                                         {
@@ -721,9 +750,10 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "dataIndex": "note",
-                                                "text": "Note",
-                                                "flex": 1
+                                                "flex": 1,
+                                                "text": "Note"
                                             },
+                                            "name": "MyColumn9",
                                             "designerId": "cf1fadea-4c12-445b-a734-05852264dc3f"
                                         },
                                         {
@@ -735,9 +765,10 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "dataIndex": "status",
-                                                "text": "Status",
-                                                "flex": 1
+                                                "flex": 1,
+                                                "text": "Status"
                                             },
+                                            "name": "MyColumn10",
                                             "designerId": "ebb551cc-8a56-462d-8ce8-4163864eec57"
                                         },
                                         {
@@ -749,9 +780,10 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "dataIndex": "startDate",
-                                                "text": "Debut",
-                                                "format": "d-M-Y"
+                                                "format": "d-M-Y",
+                                                "text": "Debut"
                                             },
+                                            "name": "MyDateColumn1",
                                             "designerId": "123b2a36-dee3-4e07-aef8-7598d68bd700"
                                         },
                                         {
@@ -763,9 +795,10 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "dataIndex": "endDate",
-                                                "text": "Fin",
-                                                "format": "d-M-Y"
+                                                "format": "d-M-Y",
+                                                "text": "Fin"
                                             },
+                                            "name": "MyDateColumn2",
                                             "designerId": "db1f650f-88e3-48c9-aaa5-94395fd0423c"
                                         },
                                         {
@@ -777,9 +810,10 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "dataIndex": "clientId",
-                                                "text": "Client",
-                                                "flex": 1
+                                                "flex": 1,
+                                                "text": "Client"
                                             },
+                                            "name": "MyColumn11",
                                             "designerId": "b3da5c6d-db24-4355-822a-5959561bf5d8",
                                             "cn": [
                                                 {
@@ -790,7 +824,6 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "fn": "renderer",
                                                         "designer|params": [
                                                             "value",
                                                             "metaData",
@@ -800,12 +833,14 @@
                                                             "store",
                                                             "view"
                                                         ],
+                                                        "fn": "renderer",
                                                         "implHandler": [
                                                             "var clientStore = Ext.getStore('clients');",
                                                             "var client = clientStore.getById(record.get('clientId'));",
                                                             "return client ? client.get('nom') : '';"
                                                         ]
                                                     },
+                                                    "name": "renderer",
                                                     "designerId": "12ce5d73-6e09-459a-a039-f6ad4a44090d"
                                                 }
                                             ]
@@ -820,6 +855,7 @@
                                             "userConfig": {
                                                 "dock": "top"
                                             },
+                                            "name": "MyToolbar3",
                                             "designerId": "bb880ccc-cc2d-4072-9238-f69a15078502",
                                             "cn": [
                                                 {
@@ -830,11 +866,12 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "layout|flex": null,
-                                                        "itemId": "addChantier",
                                                         "iconCls": "icon-add",
+                                                        "itemId": "addChantier",
+                                                        "layout|flex": null,
                                                         "text": "Nouveau Chantier"
                                                     },
+                                                    "name": "MyButton6",
                                                     "designerId": "ed4000cd-33b6-48bb-a185-22536bb20c45"
                                                 },
                                                 {
@@ -845,11 +882,12 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "layout|flex": null,
-                                                        "itemId": "editChantier",
                                                         "iconCls": "",
+                                                        "itemId": "editChantier",
+                                                        "layout|flex": null,
                                                         "text": "Editer"
                                                     },
+                                                    "name": "MyButton7",
                                                     "designerId": "a3392d9c-6d6e-4be0-9c8a-d0a88620239b"
                                                 }
                                             ]
@@ -864,14 +902,15 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "container|align": "stretch",
+                                        "layout": "vbox",
                                         "layout|flex": 1,
                                         "layout|region": "east",
                                         "layout|split": true,
-                                        "container|align": "stretch",
-                                        "width": 150,
-                                        "layout": "vbox",
-                                        "title": null
+                                        "title": null,
+                                        "width": 150
                                     },
+                                    "name": "MyPanel4",
                                     "designerId": "874bb793-e214-46ae-9a84-8de54331aed7",
                                     "cn": [
                                         {
@@ -885,10 +924,11 @@
                                                 "layout|flex": 1,
                                                 "stateId": "stateChantiersHoursGrid",
                                                 "stateful": true,
-                                                "width": null,
+                                                "store": "chantiers_hours",
                                                 "title": "Hours",
-                                                "store": "chantiers_hours"
+                                                "width": null
                                             },
+                                            "name": "MyGridPanel4",
                                             "designerId": "a3fb1729-08ff-4f70-ab5d-9d43e5877d7f",
                                             "cn": [
                                                 {
@@ -898,6 +938,7 @@
                                                         "type": "object"
                                                     },
                                                     "codeClass": null,
+                                                    "name": "MyGridView3",
                                                     "designerId": "3d69af2c-6192-4071-82a1-5f33ce016363"
                                                 },
                                                 {
@@ -911,6 +952,7 @@
                                                         "dataIndex": "workDate",
                                                         "text": "Date"
                                                     },
+                                                    "name": "MyDateColumn3",
                                                     "designerId": "501556dc-2008-4081-8a12-175f0edcceb3"
                                                 },
                                                 {
@@ -924,6 +966,7 @@
                                                         "dataIndex": "hours",
                                                         "text": "Heures"
                                                     },
+                                                    "name": "MyNumberColumn",
                                                     "designerId": "a8855e66-12d5-49a0-ada5-220d09d6d0b5"
                                                 },
                                                 {
@@ -937,6 +980,7 @@
                                                         "dataIndex": "employeId",
                                                         "text": "Employe"
                                                     },
+                                                    "name": "MyColumn12",
                                                     "designerId": "5c31820c-3921-4011-9e64-61ee0aba1c30",
                                                     "cn": [
                                                         {
@@ -947,7 +991,6 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
-                                                                "fn": "renderer",
                                                                 "designer|params": [
                                                                     "value",
                                                                     "metaData",
@@ -957,11 +1000,13 @@
                                                                     "store",
                                                                     "view"
                                                                 ],
+                                                                "fn": "renderer",
                                                                 "implHandler": [
                                                                     "var employe =  Ext.getStore('employes').getById(record.get(\"employeId\"));",
                                                                     "return Ext.String.format('{0} {1}', employe.get(\"name\"), employe.get(\"lastName\"));"
                                                                 ]
                                                             },
+                                                            "name": "renderer",
                                                             "designerId": "52751617-e5df-48db-8d1d-add498a37531"
                                                         }
                                                     ]
@@ -980,12 +1025,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "id": "clientsGrid",
                                 "stateId": "stateClientsGrid",
                                 "stateful": true,
-                                "id": "clientsGrid",
-                                "title": "Clients",
-                                "store": "clients"
+                                "store": "clients",
+                                "title": "Clients"
                             },
+                            "name": "MyGridPanel5",
                             "designerId": "a97ca9cb-27f5-4d5d-9539-df7b9c7104a5",
                             "cn": [
                                 {
@@ -995,6 +1041,7 @@
                                         "type": "object"
                                     },
                                     "codeClass": null,
+                                    "name": "MyGridView4",
                                     "designerId": "59617277-3821-46e8-8fdb-e56496b532ee"
                                 },
                                 {
@@ -1006,9 +1053,10 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "dataIndex": "name",
-                                        "text": "Prenom",
-                                        "flex": 1
+                                        "flex": 1,
+                                        "text": "Prenom"
                                     },
+                                    "name": "MyColumn13",
                                     "designerId": "c7e0778a-69ea-4db9-8b34-2ba4f1cd0a9e"
                                 },
                                 {
@@ -1020,9 +1068,10 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "dataIndex": "lastName",
-                                        "text": "Nom",
-                                        "flex": 1
+                                        "flex": 1,
+                                        "text": "Nom"
                                     },
+                                    "name": "MyColumn14",
                                     "designerId": "f07e586c-9a76-4b96-a395-ce20e0ef4ee9"
                                 },
                                 {
@@ -1034,9 +1083,10 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "dataIndex": "email",
-                                        "text": "Courriel",
-                                        "flex": 1
+                                        "flex": 1,
+                                        "text": "Courriel"
                                     },
+                                    "name": "MyColumn15",
                                     "designerId": "e016850f-4b60-4461-8397-606e904d4401"
                                 },
                                 {
@@ -1048,9 +1098,10 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "dataIndex": "phone",
-                                        "text": "Telephone",
-                                        "flex": 1
+                                        "flex": 1,
+                                        "text": "Telephone"
                                     },
+                                    "name": "MyColumn16",
                                     "designerId": "da6162e5-0c5a-4a68-9fb0-766df5ebf777"
                                 },
                                 {
@@ -1062,9 +1113,10 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "dataIndex": "cell",
-                                        "text": "Cellulaire",
-                                        "flex": 1
+                                        "flex": 1,
+                                        "text": "Cellulaire"
                                     },
+                                    "name": "MyColumn17",
                                     "designerId": "e7b1924b-81b4-4471-9bf5-0fa1c0958963"
                                 },
                                 {
@@ -1077,6 +1129,7 @@
                                     "userConfig": {
                                         "dock": "top"
                                     },
+                                    "name": "MyToolbar4",
                                     "designerId": "ebfde909-55bc-465a-b934-2ef525e0998d",
                                     "cn": [
                                         {
@@ -1087,11 +1140,12 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "layout|flex": null,
-                                                "itemId": "addClient",
                                                 "iconCls": "icon-user-add",
+                                                "itemId": "addClient",
+                                                "layout|flex": null,
                                                 "text": "Ajouter"
                                             },
+                                            "name": "MyButton8",
                                             "designerId": "5ea37bbd-cc20-4581-b76a-35d03fc7a25f"
                                         },
                                         {
@@ -1102,11 +1156,12 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "layout|flex": null,
-                                                "itemId": "editClient",
                                                 "iconCls": "icon-user-add",
+                                                "itemId": "editClient",
+                                                "layout|flex": null,
                                                 "text": "Editer"
                                             },
+                                            "name": "MyButton9",
                                             "designerId": "b0d6b719-7430-4184-9f3c-dc04e4e1aa9d"
                                         }
                                     ]
@@ -1118,6 +1173,7 @@
                                         "type": "object"
                                     },
                                     "codeClass": null,
+                                    "name": "TabConfig3",
                                     "designerId": "b614a47f-ce97-4b09-9495-68d0ee95b573"
                                 }
                             ]
@@ -1130,11 +1186,12 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "id": "logHours",
                                 "stateId": null,
                                 "stateful": null,
-                                "id": "logHours",
                                 "title": "Entrée des Heures"
                             },
+                            "name": "MyPanel5",
                             "designerId": "d6c50ff1-7b54-444e-bb47-28d0a650f5c4",
                             "cn": [
                                 {
@@ -1148,6 +1205,7 @@
                                         "id": "logHours_tabConfig",
                                         "itemId": ""
                                     },
+                                    "name": "TabConfig4",
                                     "designerId": "e9e4020b-7ed4-4478-8e45-dbf4d3bed604"
                                 },
                                 {
@@ -1160,6 +1218,7 @@
                                     "userConfig": {
                                         "dock": "top"
                                     },
+                                    "name": "MyToolbar5",
                                     "designerId": "f5a73693-a2c7-4eb1-b32a-7dc5b2af55db",
                                     "cn": [
                                         {
@@ -1170,11 +1229,12 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "layout|flex": null,
-                                                "itemId": "addHour",
                                                 "iconCls": "icon-add",
+                                                "itemId": "addHour",
+                                                "layout|flex": null,
                                                 "text": "Ajouter une entrée"
                                             },
+                                            "name": "MyButton10",
                                             "designerId": "8844b11d-adeb-40f4-9927-3b3fe0be402c"
                                         },
                                         {
@@ -1185,11 +1245,12 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "layout|flex": null,
-                                                "itemId": "editHour",
                                                 "iconCls": "",
+                                                "itemId": "editHour",
+                                                "layout|flex": null,
                                                 "text": "Editer"
                                             },
+                                            "name": "MyButton11",
                                             "designerId": "21b7b68f-e504-4e8d-9d98-81aa455fc261"
                                         },
                                         {
@@ -1200,11 +1261,12 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "layout|flex": null,
-                                                "itemId": "deleteHour",
                                                 "iconCls": "icon-delete",
+                                                "itemId": "deleteHour",
+                                                "layout|flex": null,
                                                 "text": "Effacer"
                                             },
+                                            "name": "MyButton12",
                                             "designerId": "89ce8afb-0dc2-4a78-bed4-30d1048669f9"
                                         }
                                     ]
@@ -1217,13 +1279,14 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "designer|displayName": "logHoursGrid",
+                                        "id": "logHoursGrid",
                                         "stateId": "stateLogHoursGrid",
                                         "stateful": true,
-                                        "id": "logHoursGrid",
-                                        "designer|displayName": "logHoursGrid",
-                                        "title": null,
-                                        "store": "employes_logHours"
+                                        "store": "employes_logHours",
+                                        "title": null
                                     },
+                                    "name": "MyGridPanel6",
                                     "designerId": "ef807a84-d1d7-4164-9df6-2767d9439ad8",
                                     "cn": [
                                         {
@@ -1233,6 +1296,7 @@
                                                 "type": "object"
                                             },
                                             "codeClass": null,
+                                            "name": "MyGridView5",
                                             "designerId": "d872ee1e-55c3-41bf-b785-6242bea940bb"
                                         },
                                         {
@@ -1244,9 +1308,10 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "dataIndex": "workDate",
-                                                "text": "Date",
-                                                "format": "d-M-Y"
+                                                "format": "d-M-Y",
+                                                "text": "Date"
                                             },
+                                            "name": "MyDateColumn4",
                                             "designerId": "de70ac61-4a2f-488b-b1d6-3ef10bba061a"
                                         },
                                         {
@@ -1260,6 +1325,7 @@
                                                 "dataIndex": "hours",
                                                 "text": "Heures"
                                             },
+                                            "name": "MyNumberColumn1",
                                             "designerId": "76dd8635-576b-40cd-a980-e10fc13fce8c"
                                         },
                                         {
@@ -1270,10 +1336,11 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "width": 200,
                                                 "dataIndex": "chantierId",
-                                                "text": "Chantier"
+                                                "text": "Chantier",
+                                                "width": 200
                                             },
+                                            "name": "MyColumn18",
                                             "designerId": "855f2b48-7a89-4fed-8ce9-74b03d90c714",
                                             "cn": [
                                                 {
@@ -1284,7 +1351,6 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "fn": "renderer",
                                                         "designer|params": [
                                                             "value",
                                                             "metaData",
@@ -1294,6 +1360,7 @@
                                                             "store",
                                                             "view"
                                                         ],
+                                                        "fn": "renderer",
                                                         "implHandler": [
                                                             "var chantierStore = Ext.getStore('chantiers');",
                                                             "",
@@ -1302,6 +1369,7 @@
                                                             ""
                                                         ]
                                                     },
+                                                    "name": "renderer",
                                                     "designerId": "fa21ade2-bd37-4665-b5bd-e31538870b35"
                                                 }
                                             ]
@@ -1314,10 +1382,11 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "width": 200,
                                                 "dataIndex": "employeId",
-                                                "text": "Employe"
+                                                "text": "Employe",
+                                                "width": 200
                                             },
+                                            "name": "MyColumn19",
                                             "designerId": "afbc8976-f0f1-453e-83d1-6bd09a30c4a5",
                                             "cn": [
                                                 {
@@ -1328,7 +1397,6 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "fn": "renderer",
                                                         "designer|params": [
                                                             "value",
                                                             "metaData",
@@ -1338,6 +1406,7 @@
                                                             "store",
                                                             "view"
                                                         ],
+                                                        "fn": "renderer",
                                                         "implHandler": [
                                                             "var employeStore = Ext.getStore('employes');",
                                                             "",
@@ -1346,6 +1415,7 @@
                                                             "return employe.get('name') + \" \" + employe.get('lastName');"
                                                         ]
                                                     },
+                                                    "name": "renderer",
                                                     "designerId": "b75272ed-07d7-439b-a5eb-ec1bca7ab107"
                                                 }
                                             ]
@@ -1361,6 +1431,7 @@
                                                 "dataIndex": "hourRate",
                                                 "text": "Cout Horaire"
                                             },
+                                            "name": "MyNumberColumn2",
                                             "designerId": "3fe77f0e-290d-471a-bb4b-2ddf69bea180"
                                         }
                                     ]
@@ -1377,12 +1448,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "preferences",
                         "designer|displayName": null,
+                        "itemId": "preferences",
                         "tooltip": "Preferences",
                         "tooltipType": "title",
                         "type": "gear"
                     },
+                    "name": "MyTool",
                     "designerId": "0b2b05f6-2d0a-4c1c-9bc1-7b2a1b60a6e3"
                 }
             ]

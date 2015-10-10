@@ -7,9 +7,9 @@
     "codeClass": null,
     "userConfig": {
         "autoLoad": false,
+        "designer|userClassName": "sousTraitants",
         "model": "sousTraitant",
-        "storeId": "sousTraitants",
-        "designer|userClassName": "sousTraitants"
+        "storeId": "sousTraitants"
     },
     "designerId": "e0f02898-522d-4dc3-a2e1-2ad3f4b2dd2b",
     "cn": [
@@ -23,6 +23,7 @@
             "userConfig": {
                 "property": "name"
             },
+            "name": "MySorter",
             "designerId": "d567af3f-8143-44df-91aa-d739c62bd2f6"
         }
     ]

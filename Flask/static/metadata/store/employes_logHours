@@ -6,9 +6,9 @@
     },
     "codeClass": null,
     "userConfig": {
+        "designer|userClassName": "employes_logHours",
         "model": "employeHour",
-        "storeId": "employes_logHours",
-        "designer|userClassName": "employes_logHours"
+        "storeId": "employes_logHours"
     },
     "designerId": "01dacb25-49fe-4aad-95bf-fbc2b747c97f",
     "cn": [
@@ -23,6 +23,7 @@
                 "direction": "DESC",
                 "property": "workDate"
             },
+            "name": "MySorter1",
             "designerId": "543040de-3c89-4382-9d8c-dbb77a7b4382"
         }
     ]
