@@ -44,7 +44,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "root": "records"
+                        "rootProperty": "records"
                     },
                     "name": "MyJsonReader2",
                     "designerId": "21d20f6c-fc0a-4d18-aae7-c8c499add35e"
@@ -52,7 +52,7 @@
             ]
         },
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -60,14 +60,13 @@
             "codeClass": null,
             "userConfig": {
                 "name": "id",
-                "persist": false,
-                "type": "int"
+                "persist": false
             },
-            "name": "MyField19",
+            "name": "MyInteger5",
             "designerId": "241f58d1-5346-42b3-8a89-ae74500d5889"
         },
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -80,7 +79,7 @@
             "designerId": "63345ad6-da3c-4316-be95-16a61ff60788"
         },
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -93,7 +92,7 @@
             "designerId": "f6d6d6ee-b50f-4d71-a195-894f19ce1918"
         },
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -106,7 +105,7 @@
             "designerId": "7fc4336d-b0c8-4d6b-baf9-5bef4184f1a7"
         },
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -119,7 +118,7 @@
             "designerId": "436c9865-cec6-4056-894c-d16f532c16d7"
         },
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -132,7 +131,7 @@
             "designerId": "17f4c670-7f25-467f-984c-6bcc96d43815"
         },
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -145,7 +144,7 @@
             "designerId": "00023c7b-f31a-42a0-9f60-85ed9ba2ff9f"
         },
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -158,7 +157,7 @@
             "designerId": "c5bd05b1-3fa0-445e-b34f-606f3fffc6b4"
         },
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -171,7 +170,7 @@
             "designerId": "3be06fa8-c153-4536-9272-f3750491a73e"
         },
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -184,7 +183,7 @@
             "designerId": "cf8142cd-74e0-4d93-ac4a-8d00b428d39a"
         },
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -197,7 +196,7 @@
             "designerId": "4ed648b5-6987-4eb6-ab80-97ae9107c3cd"
         },
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -210,7 +209,7 @@
             "designerId": "5eeadd97-60ef-4d68-9f48-e3e67e2528c2"
         },
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Boolean",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -220,14 +219,13 @@
                 "defaultValue": [
                     "true"
                 ],
-                "name": "isActive",
-                "type": "boolean"
+                "name": "isActive"
             },
-            "name": "MyField31",
+            "name": "MyBoolean1",
             "designerId": "145563bf-0550-4f8b-b34b-71145505afe8"
         },
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -240,7 +238,7 @@
             "designerId": "316f05fc-8029-4697-bca4-c536b0af9c0b"
         },
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Boolean",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -250,14 +248,13 @@
                 "defaultValue": [
                     "true"
                 ],
-                "name": "isAdmin",
-                "type": "boolean"
+                "name": "isAdmin"
             },
-            "name": "MyField33",
+            "name": "MyBoolean2",
             "designerId": "f4cc6383-3848-4fcd-953a-300a764fc895"
         },
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -270,21 +267,20 @@
             "designerId": "c1033773-158f-42f9-8fb0-a74d94029ffa"
         },
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Number",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "hourRate",
-                "type": "float"
+                "name": "hourRate"
             },
-            "name": "MyField35",
+            "name": "MyNumber2",
             "designerId": "85c64507-c1f3-4752-8a20-95f2b570ed9c"
         },
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"

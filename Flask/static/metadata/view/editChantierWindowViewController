@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "editChantierWindow",
+        "designer|userClassName": "editChantierWindowViewController"
+    },
+    "designerId": "dd8f8db8-d175-4044-a340-92d4a80aa0c8"
+}

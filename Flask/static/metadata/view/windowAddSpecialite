@@ -16,7 +16,12 @@
         "title": "Choisissez une specialite",
         "width": 247
     },
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
     "designerId": "2d33d2c4-28b5-4543-abe5-e62e5c54d882",
+    "viewControllerInstanceId": "20cfd09e-b10f-4367-b2b0-b37aac928ba5",
+    "viewModelInstanceId": "95a9f7d3-a3ab-4214-8540-5d84273ad3b2",
     "cn": [
         {
             "type": "Ext.toolbar.Toolbar",
@@ -29,6 +34,9 @@
                 "dock": "bottom"
             },
             "name": "MyToolbar11",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
             "designerId": "1f602a64-e840-4116-9ed5-6e8ffddfabf3",
             "cn": [
                 {
@@ -44,6 +52,9 @@
                         "width": 37
                     },
                     "name": "MySpacer",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
                     "designerId": "8686d71b-6c8b-4225-a478-8d2b20849986"
                 },
                 {
@@ -59,6 +70,9 @@
                         "text": "Ajouter"
                     },
                     "name": "MyButton22",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
                     "designerId": "382f7264-207d-4e55-add6-aaab474a4ff1"
                 },
                 {
@@ -73,6 +87,9 @@
                         "text": "Annuler"
                     },
                     "name": "MyButton23",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
                     "designerId": "54722650-5f1f-4f9c-8863-eacad92ff20c",
                     "cn": [
                         {
@@ -112,6 +129,9 @@
                 "title": null
             },
             "name": "MyPanel20",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
             "designerId": "2af955fd-28d6-4224-bca2-c02075162b92",
             "cn": [
                 {
@@ -134,6 +154,9 @@
                         "valueField": "name"
                     },
                     "name": "MyComboBox3",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
                     "designerId": "44993502-397c-4f02-a0b0-5f73ddeb294b"
                 },
                 {
@@ -150,6 +173,9 @@
                         "text": "(ecrire dans la boite pour creer une nouvelle specialite)"
                     },
                     "name": "MyLabel",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
                     "designerId": "ece905e2-3d6d-4b5e-ac1c-7178d0e59876"
                 }
             ]

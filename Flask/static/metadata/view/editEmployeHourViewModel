@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "editEmployeHour",
+        "designer|userClassName": "editEmployeHourViewModel"
+    },
+    "designerId": "20a623bf-5bfc-4d93-9103-9b8df65362f5"
+}

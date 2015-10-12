@@ -9,8 +9,8 @@
         "defer": true,
         "designer|userClassName": "js1",
         "id": "js_RSVP",
-        "url": "plugins/rsvp.js",
-        "x-compile": true
+        "includeInBundle": true,
+        "url": "plugins/rsvp.js"
     },
     "designerId": "170803cd-394e-4af4-b303-704932ccbb67"
 }

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "windowAddSpecialite",
+        "designer|userClassName": "windowAddSpecialiteViewController"
+    },
+    "designerId": "20cfd09e-b10f-4367-b2b0-b37aac928ba5"
+}

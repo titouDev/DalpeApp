@@ -19,7 +19,12 @@
         "title": "Entrée d'heures",
         "width": 386
     },
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
     "designerId": "0883665a-4d9e-453c-a13f-bab460f4c2d8",
+    "viewControllerInstanceId": "2202e40f-7015-4269-8d11-0f3466bb9b2c",
+    "viewModelInstanceId": "20a623bf-5bfc-4d93-9103-9b8df65362f5",
     "cn": [
         {
             "type": "Ext.form.Panel",
@@ -37,6 +42,9 @@
                 "width": 598
             },
             "name": "MyForm5",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
             "designerId": "770201f9-480a-4dd7-900d-62ddfc391e79",
             "cn": [
                 {
@@ -55,6 +63,9 @@
                         "submitFormat": "c"
                     },
                     "name": "MyDateField2",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
                     "designerId": "5b43e2e8-f94e-4742-89fd-ff3cb0ab8dfe"
                 },
                 {
@@ -73,6 +84,9 @@
                         "name": "hours"
                     },
                     "name": "MyNumberField1",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
                     "designerId": "0160ae03-830a-483f-bf20-8b78da54aa7f"
                 },
                 {
@@ -95,6 +109,9 @@
                         "valueField": "id"
                     },
                     "name": "MyComboBox4",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
                     "designerId": "909c9884-53a6-45e2-a310-7c95e2d7f5ba"
                 },
                 {
@@ -114,6 +131,9 @@
                         "name": "hourRate"
                     },
                     "name": "MyNumberField2",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
                     "designerId": "5252b4b3-21f3-4f48-b8ee-6a2de767d45c"
                 },
                 {
@@ -136,6 +156,9 @@
                         "valueField": "id"
                     },
                     "name": "MyComboBox5",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
                     "designerId": "fe4f074d-11ba-4719-9780-d9e8a90ac243"
                 },
                 {
@@ -152,6 +175,9 @@
                         "name": "id"
                     },
                     "name": "MyTextField41",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
                     "designerId": "db75b840-1d2a-43af-8a5c-3ea6a91722bf"
                 }
             ]
@@ -167,6 +193,9 @@
                 "dock": "bottom"
             },
             "name": "MyToolbar13",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
             "designerId": "50e779d4-d7aa-4854-a91a-dc77a1d5597e",
             "cn": [
                 {
@@ -180,6 +209,9 @@
                         "layout|flex": null
                     },
                     "name": "MyFill6",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
                     "designerId": "5e32832d-2fcd-452a-82b0-5d01c8bf4448"
                 },
                 {
@@ -195,6 +227,9 @@
                         "text": "Sauvegarder"
                     },
                     "name": "MyButton25",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
                     "designerId": "4db34ee9-4405-4fe1-b831-bbc82448b18d"
                 },
                 {
@@ -210,6 +245,9 @@
                         "text": "Annuler"
                     },
                     "name": "MyButton26",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
                     "designerId": "702e6aae-c9e4-4fc8-a73b-788795594041"
                 }
             ]

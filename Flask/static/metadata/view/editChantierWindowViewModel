@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "editChantierWindow",
+        "designer|userClassName": "editChantierWindowViewModel"
+    },
+    "designerId": "ff768f2b-0c42-49ab-b0ff-f3eff2c1cfed"
+}

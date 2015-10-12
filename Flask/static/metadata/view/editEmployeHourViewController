@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "editEmployeHour",
+        "designer|userClassName": "editEmployeHourViewController"
+    },
+    "designerId": "2202e40f-7015-4269-8d11-0f3466bb9b2c"
+}

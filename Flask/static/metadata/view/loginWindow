@@ -21,7 +21,12 @@
         ],
         "width": 302
     },
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
     "designerId": "57339c22-18af-42b2-8491-66d707a83680",
+    "viewControllerInstanceId": "52108700-378b-49f7-8a88-8dc038ceb741",
+    "viewModelInstanceId": "74e30176-282c-485d-a5c7-3cc7734144e8",
     "cn": [
         {
             "type": "Ext.panel.Panel",
@@ -41,6 +46,9 @@
                 "width": null
             },
             "name": "MyPanel21",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
             "designerId": "592b830f-f1b8-4acc-b893-4d993ccf1dd9",
             "cn": [
                 {
@@ -66,6 +74,9 @@
                         "width": null
                     },
                     "name": "MyForm4",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
                     "designerId": "eb3bc084-43ff-4b65-ab8e-403f68f63221",
                     "cn": [
                         {
@@ -83,6 +94,9 @@
                                 "name": "userName"
                             },
                             "name": "MyTextField39",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
                             "designerId": "ace889a3-4cac-4fed-b8f1-f0165f119eae"
                         },
                         {
@@ -102,6 +116,9 @@
                                 "name": "passWord"
                             },
                             "name": "MyTextField40",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
                             "designerId": "64f96346-a1e7-4a69-bd41-45759b14f909"
                         },
                         {
@@ -118,6 +135,9 @@
                                 "width": null
                             },
                             "name": "MyToolbar12",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
                             "designerId": "29d89bc4-f2d4-44b7-af67-0f49a045218d",
                             "cn": [
                                 {
@@ -131,6 +151,9 @@
                                         "layout|flex": null
                                     },
                                     "name": "MyFill5",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
                                     "designerId": "84ddd4da-7940-4a9c-ac76-a250752a05e4"
                                 },
                                 {
@@ -146,6 +169,9 @@
                                         "text": "Se connecter..."
                                     },
                                     "name": "MyButton24",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
                                     "designerId": "4f6c24b7-5a67-4b35-97c6-4d607aac42fa"
                                 }
                             ]
@@ -168,6 +194,9 @@
                         "width": 280
                     },
                     "name": "MyImg",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
                     "designerId": "38349bbe-789a-45d8-b088-e1204eb9cc79"
                 }
             ]

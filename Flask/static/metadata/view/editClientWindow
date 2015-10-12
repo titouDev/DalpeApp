@@ -19,7 +19,12 @@
         "title": "Edit Client",
         "width": 757
     },
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
     "designerId": "2265f12e-0040-4598-a37f-e276c46a78d5",
+    "viewControllerInstanceId": "9157e425-91d0-46c0-91bb-6a909b99e7f0",
+    "viewModelInstanceId": "2b22ed77-1394-4843-8425-d37fd8a27bbb",
     "cn": [
         {
             "type": "Ext.form.Panel",
@@ -37,6 +42,9 @@
                 "title": null
             },
             "name": "MyForm2",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
             "designerId": "319f2980-9a67-4dd4-b268-23d15a5abf9b",
             "cn": [
                 {
@@ -47,7 +55,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "border": 0,
+                        "border": false,
                         "container|align": "stretch",
                         "layout": "hbox",
                         "layout|flex": 1,
@@ -55,6 +63,9 @@
                         "title": null
                     },
                     "name": "MyPanel14",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
                     "designerId": "6a28c0e4-1d65-494f-833a-f97d9704c996",
                     "cn": [
                         {
@@ -65,7 +76,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "border": 0,
+                                "border": false,
                                 "container|align": "stretch",
                                 "layout": "vbox",
                                 "layout|flex": 1,
@@ -73,6 +84,9 @@
                                 "title": null
                             },
                             "name": "MyPanel15",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
                             "designerId": "a7cc77ae-36ed-4ec9-8c97-9a5b4d77e3be",
                             "cn": [
                                 {
@@ -92,6 +106,9 @@
                                         "name": "lastName"
                                     },
                                     "name": "MyTextField27",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
                                     "designerId": "5db4791d-6998-47b1-a649-447e0b799606"
                                 },
                                 {
@@ -109,6 +126,9 @@
                                         "name": "name"
                                     },
                                     "name": "MyTextField28",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
                                     "designerId": "4483e337-db91-4058-8f16-b71072388255"
                                 },
                                 {
@@ -125,6 +145,9 @@
                                         "name": "phone"
                                     },
                                     "name": "MyTextField29",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
                                     "designerId": "8838d0df-209d-4a15-a2eb-061bc33623c9"
                                 },
                                 {
@@ -141,6 +164,9 @@
                                         "name": "cell"
                                     },
                                     "name": "MyTextField30",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
                                     "designerId": "d28cfa95-21e4-4867-ae42-c0efdb6a0fd0"
                                 },
                                 {
@@ -157,6 +183,9 @@
                                         "name": "email"
                                     },
                                     "name": "MyTextField31",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
                                     "designerId": "c5a1a5ce-4421-4cb7-a76e-0093f182cce0"
                                 }
                             ]
@@ -169,7 +198,7 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "border": 0,
+                                "border": false,
                                 "container|align": "stretch",
                                 "layout": "vbox",
                                 "layout|flex": 1,
@@ -177,6 +206,9 @@
                                 "title": null
                             },
                             "name": "MyPanel16",
+                            "configAlternates": {
+                                "scrollable": "boolean"
+                            },
                             "designerId": "d9b4aff0-faad-4e5b-bd72-6157f1c6066d",
                             "cn": [
                                 {
@@ -192,6 +224,9 @@
                                         "name": "address"
                                     },
                                     "name": "MyTextField32",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
                                     "designerId": "80422a01-1a3e-4b5a-bf10-d476aa30d645"
                                 },
                                 {
@@ -210,6 +245,9 @@
                                         "width": null
                                     },
                                     "name": "MyTextField33",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
                                     "designerId": "8e9e954e-ab73-4ac1-8f56-d8ead3dbc56d"
                                 },
                                 {
@@ -231,6 +269,9 @@
                                         "width": null
                                     },
                                     "name": "MyTextField34",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
                                     "designerId": "54d87f23-01d6-4ec7-9616-abfee9051c3a"
                                 },
                                 {
@@ -252,6 +293,9 @@
                                         "width": null
                                     },
                                     "name": "MyTextField35",
+                                    "configAlternates": {
+                                        "scrollable": "boolean"
+                                    },
                                     "designerId": "8981f338-eb62-41a6-b8ae-8849fffbfe2c"
                                 }
                             ]
@@ -272,6 +316,9 @@
                         "name": "id"
                     },
                     "name": "MyTextField36",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
                     "designerId": "edd4c816-02fb-4c19-bad9-ad3606c53c75"
                 }
             ]
@@ -289,6 +336,9 @@
                 "layout|flex": 1
             },
             "name": "MyToolbar9",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
             "designerId": "392239a6-c2f6-4168-a409-ed9ae75be457",
             "cn": [
                 {
@@ -302,6 +352,9 @@
                         "layout|flex": null
                     },
                     "name": "MyFill3",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
                     "designerId": "64235912-818f-4842-9f02-47d7d9d4448d"
                 },
                 {
@@ -317,6 +370,9 @@
                         "text": "Enregistrer"
                     },
                     "name": "MyButton18",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
                     "designerId": "93bfd349-001c-4b5d-9fde-de21dc825af3"
                 },
                 {
@@ -332,6 +388,9 @@
                         "text": "Annuler"
                     },
                     "name": "MyButton19",
+                    "configAlternates": {
+                        "scrollable": "boolean"
+                    },
                     "designerId": "0499f369-df82-4c94-8d65-5524575a1fc9",
                     "cn": [
                         {

@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "editSousTraitantWindow",
+        "designer|userClassName": "editSousTraitantWindowViewModel"
+    },
+    "designerId": "baa933a4-c62e-4720-8d75-20de5bc76ce8"
+}

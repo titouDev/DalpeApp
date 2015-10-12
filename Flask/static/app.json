@@ -2,8 +2,32 @@
    "name": "dalpeApp",
    "requires": [],
    "id": "f5b2fdf8-6969-4886-8e51-94b258e11475",
-   "theme": "ext-theme-gray",
+   "theme": "ext-theme-neptune",
    "resources": [
       "css/mailWindow.css"
-   ]
+   ],
+   "js": [
+      {
+         "path": "js/login_infos.js",
+         "includeInBundle": true
+      },
+      {
+         "path": "plugins/rsvp.js",
+         "includeInBundle": true
+      },
+      {
+         "path": "app.js",
+         "bundle": true
+      }
+   ],
+   "css": [
+      {
+         "path": "bootstrap.css",
+         "bootstrap": true
+      },
+      {
+         "path": "css/mailWindow.css"
+      }
+   ],
+   "classpath": "${app.dir}/app,${app.dir}/js/,${app.dir}/plugins/"
 }

@@ -11,7 +11,7 @@
     "designerId": "237b6ba4-2399-4586-aab1-258e76cdedb7",
     "cn": [
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -20,14 +20,13 @@
             "userConfig": {
                 "mapping": null,
                 "name": "id",
-                "persist": false,
-                "type": "int"
+                "persist": false
             },
-            "name": "MyField63",
+            "name": "MyInteger9",
             "designerId": "de2b5f94-d73f-4459-bc27-6d5655f67240"
         },
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Field",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -60,7 +59,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "root": "records"
+                        "rootProperty": "records"
                     },
                     "name": "MyJsonReader5",
                     "designerId": "af50ecbc-3dd5-4309-b582-a83042d37bad"

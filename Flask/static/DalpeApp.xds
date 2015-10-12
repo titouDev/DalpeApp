@@ -4,7 +4,7 @@
         "cmd": {
             "license": "gpl",
             "cmdVersion": "6.0.1.76",
-            "frameworkVersion": "4.2.1.883"
+            "frameworkVersion": "5.1.1.451"
         },
         "urlPrefix": "http://localhost:5000",
         "spacesToIndent": 4,
@@ -40,18 +40,36 @@
     "xdsBuild": 339,
     "schemaVersion": 1,
     "upgradeVersion": 310000000001,
-    "framework": "ext42",
+    "framework": "ext51",
     "viewOrderMap": {
         "view": [
             "e4c96884-e2eb-49b7-a615-451f20b564e5",
+            "64ce29d6-b2f1-4e14-94a4-5273582bf077",
+            "be870347-08aa-465d-9582-be524b3bc043",
             "36e5f604-1eda-473d-8a66-cbfc9a38d0ba",
+            "38cd9568-5a68-45cd-a1d4-a1f7aace4329",
+            "115834f8-4bbe-443d-bd44-1201ef41ca6d",
             "a06c8ee8-1e25-4228-8640-255e15a32384",
+            "baa933a4-c62e-4720-8d75-20de5bc76ce8",
+            "649ce8c8-88ca-45e7-9977-404715a8d08b",
             "2002c995-32ee-4cc1-948c-651888aaf1e0",
+            "46e002a6-6344-4391-abb3-ab275701ffb2",
+            "1a909161-13f0-493b-b054-8fd3043a1c34",
             "2265f12e-0040-4598-a37f-e276c46a78d5",
+            "2b22ed77-1394-4843-8425-d37fd8a27bbb",
+            "9157e425-91d0-46c0-91bb-6a909b99e7f0",
             "08df4031-2dee-45bd-b50d-13ea733e02e1",
+            "ff768f2b-0c42-49ab-b0ff-f3eff2c1cfed",
+            "dd8f8db8-d175-4044-a340-92d4a80aa0c8",
             "2d33d2c4-28b5-4543-abe5-e62e5c54d882",
+            "95a9f7d3-a3ab-4214-8540-5d84273ad3b2",
+            "20cfd09e-b10f-4367-b2b0-b37aac928ba5",
             "57339c22-18af-42b2-8491-66d707a83680",
-            "0883665a-4d9e-453c-a13f-bab460f4c2d8"
+            "74e30176-282c-485d-a5c7-3cc7734144e8",
+            "52108700-378b-49f7-8a88-8dc038ceb741",
+            "0883665a-4d9e-453c-a13f-bab460f4c2d8",
+            "20a623bf-5bfc-4d93-9103-9b8df65362f5",
+            "2202e40f-7015-4269-8d11-0f3466bb9b2c"
         ],
         "store": [
             "8dc5ddeb-520a-4981-ae6b-0d6ad639afee",

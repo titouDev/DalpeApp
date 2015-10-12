@@ -10,7 +10,12 @@
         "designer|userClassName": "sousTraitantsContextMenu",
         "width": 175
     },
+    "configAlternates": {
+        "scrollable": "boolean"
+    },
     "designerId": "36e5f604-1eda-473d-8a66-cbfc9a38d0ba",
+    "viewControllerInstanceId": "115834f8-4bbe-443d-bd44-1201ef41ca6d",
+    "viewModelInstanceId": "38cd9568-5a68-45cd-a1d4-a1f7aace4329",
     "cn": [
         {
             "type": "Ext.menu.Item",
@@ -20,10 +25,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "focusable": true,
                 "itemId": "sendMail",
                 "text": "Envoyer un courriel"
             },
             "name": "MyMenuItem",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
             "designerId": "56a22428-5970-4e0b-a6ab-67dfce14bb51"
         },
         {
@@ -34,10 +43,14 @@
             },
             "codeClass": null,
             "userConfig": {
+                "focusable": true,
                 "itemId": "edit",
                 "text": "Editer le Sous Traitant"
             },
             "name": "MyMenuItem1",
+            "configAlternates": {
+                "scrollable": "boolean"
+            },
             "designerId": "a4feccfb-144c-4e01-a47d-7dc74eacb253"
         }
     ]

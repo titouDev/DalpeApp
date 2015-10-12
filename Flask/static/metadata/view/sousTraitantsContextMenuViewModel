@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "sousTraitantsContextMenu",
+        "designer|userClassName": "sousTraitantsContextMenuViewModel"
+    },
+    "designerId": "38cd9568-5a68-45cd-a1d4-a1f7aace4329"
+}

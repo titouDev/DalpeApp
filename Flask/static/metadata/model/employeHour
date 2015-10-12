@@ -11,7 +11,7 @@
     "designerId": "62f30b2a-c8b5-4d9d-ac99-268643d73069",
     "cn": [
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
                 "type": "array"
@@ -19,96 +19,87 @@
             "codeClass": null,
             "userConfig": {
                 "name": "id",
-                "persist": false,
-                "type": "int"
+                "persist": false
             },
-            "name": "MyField12",
+            "name": "MyInteger1",
             "designerId": "128ac4f3-0ca8-4801-b38f-896858725865"
         },
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Date",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "dateFormat": "c",
-                "name": "workDate",
-                "type": "date"
+                "name": "workDate"
             },
-            "name": "MyField13",
+            "name": "MyDate",
             "designerId": "5e6afd9b-4aed-4af2-b271-0ff2efcb72ac"
         },
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Number",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "hours",
-                "type": "float"
+                "name": "hours"
             },
-            "name": "MyField14",
+            "name": "MyNumber",
             "designerId": "e552ed92-3e43-43b0-a64a-808bce372a83"
         },
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "chantierId",
-                "type": "int",
-                "useNull": true
+                "name": "chantierId"
             },
-            "name": "MyField15",
+            "name": "MyInteger2",
             "designerId": "21a568cf-eb28-40ff-8480-ab4db62a19e3"
         },
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "employeId",
-                "type": "int"
+                "name": "employeId"
             },
-            "name": "MyField16",
+            "name": "MyInteger3",
             "designerId": "d922e310-3f4a-421e-adbd-2b4a6c08b264"
         },
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "checked",
-                "type": "int"
+                "name": "checked"
             },
-            "name": "MyField17",
+            "name": "MyInteger4",
             "designerId": "926034ba-01b0-4f64-b052-bd1a64983518"
         },
         {
-            "type": "Ext.data.Field",
+            "type": "Ext.data.field.Number",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "hourRate",
-                "type": "float"
+                "name": "hourRate"
             },
-            "name": "MyField18",
+            "name": "MyNumber1",
             "designerId": "c0505c0d-558b-4de8-bb63-005351391a5b"
         },
         {
@@ -132,7 +123,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "root": "records"
+                        "rootProperty": "records"
                     },
                     "name": "MyJsonReader1",
                     "designerId": "9da55cf2-c5a4-4558-bd9f-26a0a787fceb"
@@ -144,9 +135,6 @@
                         "type": "object"
                     },
                     "codeClass": null,
-                    "userConfig": {
-                        "writeAllFields": false
-                    },
                     "name": "MyJsonWriter1",
                     "designerId": "bf3912c5-318c-44d9-95a7-2ad9044cfd57"
                 }
