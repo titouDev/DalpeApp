@@ -39,8 +39,7 @@ Ext.application({
         'appViewport',
         'sousTraitantsContextMenu',
         'editChantierWindow',
-        'loginWindow',
-        'editWindow_base'
+        'loginWindow'
     ],
     appProperty: 'dalpeApp',
     controllers: [
