@@ -8,7 +8,7 @@ import time
 dbSqLite = 'sqlite:///dalpe_construction_v115.db'
 engine = create_engine(dbSqLite, echo=True, case_sensitive=False)
 
-#classSqlAlchemy.Base.metadata.drop_all(engine)
+classSqlAlchemy.Base.metadata.drop_all(engine)
 
 classSqlAlchemy.Base.metadata.create_all(engine)
 
@@ -40,7 +40,7 @@ def get(model_name, **kwargs):
 def delete(model_name, id):
     with session_scope() as session:
         model = get_class(model_name)
-        query = session.query(model).filter(id == id)
+        query = session.query(model).filter(model.id == id)
         record = query.first()
         logCreateOrDeleteOperation(session, record, 'delete')
         query.delete()

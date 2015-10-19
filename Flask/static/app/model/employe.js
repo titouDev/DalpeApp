@@ -53,7 +53,12 @@ Ext.define('dalpeApp.model.employe', {
             name: 'contactName'
         },
         {
-            name: 'email'
+            name: 'email',
+            validators: [
+                {
+                    type: 'email'
+                }
+            ]
         },
         {
             name: 'phone'

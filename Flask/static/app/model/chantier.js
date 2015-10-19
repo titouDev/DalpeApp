@@ -47,11 +47,13 @@ Ext.define('dalpeApp.model.chantier', {
         },
         {
             type: 'date',
-            name: 'startDate'
+            name: 'startDate',
+            dateFormat: 'c'
         },
         {
             type: 'date',
-            name: 'endDate'
+            name: 'endDate',
+            dateFormat: 'c'
         },
         {
             name: 'clientName',

@@ -32,6 +32,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dateFormat": "c",
                 "name": "workDate"
             },
             "name": "MyDate",

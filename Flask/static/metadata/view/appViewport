@@ -256,9 +256,9 @@
                                                         ],
                                                         "fn": "renderer",
                                                         "implHandler": [
-                                                            "if (record.data.chantierId)",
+                                                            "if (record.get('chantierId'))",
                                                             "{",
-                                                            "    return Ext.getStore('chantiers').getById(record.data.chantierId).data.name;",
+                                                            "    return Ext.getStore('chantiers').getById(record.get('chantierId')).get('name');",
                                                             "}",
                                                             "return '';"
                                                         ]

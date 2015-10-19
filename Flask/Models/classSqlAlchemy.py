@@ -184,9 +184,9 @@ class EmployeHour(Base, AddonsBase):
     __tablename__ = 'EmployeHour'
     id = Column(Integer, primary_key=True)
     employeId = Column(Integer, ForeignKey(Employe.id), nullable=False)
-    workDate = Column(String, nullable=True)
-    hours = Column(Float(precision=11))
-    chantierId = Column(Integer, ForeignKey(Chantier.id))
+    workDate = Column(String, nullable=False)
+    hours = Column(Float(precision=11), nullable=False)
+    chantierId = Column(Integer, ForeignKey(Chantier.id), nullable=True)
     checked = Column(Integer, nullable=True)
     hourRate = Column(Float(precision=2))
 

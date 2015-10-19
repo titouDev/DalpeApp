@@ -109,9 +109,9 @@ Ext.define('dalpeApp.view.appViewport', {
                                                     {
                                                         xtype: 'gridcolumn',
                                                         renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                                            if (record.data.chantierId)
+                                                            if (record.get('chantierId'))
                                                             {
-                                                                return Ext.getStore('chantiers').getById(record.data.chantierId).data.name;
+                                                                return Ext.getStore('chantiers').getById(record.get('chantierId')).get('name');
                                                             }
                                                             return '';
                                                         },

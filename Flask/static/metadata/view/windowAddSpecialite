@@ -65,6 +65,7 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "designer|createAlias": null,
                         "itemId": "addSpecialite",
                         "layout|flex": null,
                         "text": "Ajouter"

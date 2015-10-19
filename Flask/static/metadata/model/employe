@@ -115,7 +115,19 @@
                 "name": "email"
             },
             "name": "MyField23",
-            "designerId": "436c9865-cec6-4056-894c-d16f532c16d7"
+            "designerId": "436c9865-cec6-4056-894c-d16f532c16d7",
+            "cn": [
+                {
+                    "type": "emailvalidation",
+                    "reference": {
+                        "name": "validators",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MyEmailValidation",
+                    "designerId": "8abedc6b-7ecd-4f97-898d-9ce9ae04cc76"
+                }
+            ]
         },
         {
             "type": "Ext.data.field.Field",

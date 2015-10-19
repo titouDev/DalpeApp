@@ -85,6 +85,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dateFormat": "c",
                 "name": "startDate"
             },
             "name": "MyDate1",
@@ -98,6 +99,7 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dateFormat": "c",
                 "name": "endDate"
             },
             "name": "MyDate2",

@@ -35,7 +35,8 @@
             "appViewport",
             "sousTraitantsContextMenu",
             "editChantierWindow",
-            "loginWindow"
+            "loginWindow",
+            "editWindow_base"
         ]
     },
     "name": "Application",

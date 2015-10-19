@@ -68,11 +68,12 @@ Ext.define('dalpeApp.controller.logHours', {
             return;
         }
 
-        var formValues = myForm.getValues();
-        var logHourModel = this.getEmployeHourModel();
-        record = new logHourModel();
-        record.set(formValues);
+        var formValues = myForm.getValues(),
 
+            logHourModel = this.getEmployeHourModel(),
+            record = myForm.getRecord() || new logHourModel();
+
+        record.set(formValues);
         if (! record.get('id')) {
             //POST
             record.getProxy().appendId=false; //bug fix pour eviter d'appender un slah a la fin de l'url
@@ -122,8 +123,8 @@ Ext.define('dalpeApp.controller.logHours', {
 
     onEmployeSelect: function(combo, record, eOpts) {
         //Lorsqu'on choisi un employe, le cout horaire est sette avec celui de l'employe
-        var coutHoraire = records[0].data.coutHoraire;
-        var myWindow = combo.up('window');
+        var coutHoraire = record.get('hourRate'),
+            myWindow = combo.up('window');
         coutHoraireField = myWindow.down('#coutHoraire');
         coutHoraireField.setValue(coutHoraire);
     },
@@ -214,7 +215,7 @@ Ext.define('dalpeApp.controller.logHours', {
     editRecord: function(record) {
         var myWindow = Ext.widget('editEmployeHour');
         //On disable le combo employe
-        myWindow.down('#employe').setDisabled(true);
+        myWindow.down('#employe').setReadOnly(true);
 
         var myForm = myWindow.down('form').getForm();
 

@@ -32,7 +32,8 @@ Ext.define('dalpeApp.model.employeHour', {
         },
         {
             type: 'date',
-            name: 'workDate'
+            name: 'workDate',
+            dateFormat: 'c'
         },
         {
             type: 'float',

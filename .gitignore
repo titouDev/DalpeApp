@@ -16,3 +16,5 @@ Flask/Models/baseAlchemy.pyc
 
 .idea/
 *.db
+
+Flask/static/build/
