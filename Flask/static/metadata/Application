@@ -13,7 +13,6 @@
             "clients",
             "chantiers",
             "loginWindow",
-            "global",
             "logHours"
         ],
         "models": [

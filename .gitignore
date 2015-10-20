@@ -1,4 +1,3 @@
-
 .DS_Store
 
 .architect
@@ -8,13 +7,11 @@
 .pyc
 
 documents_importes/
-*.pyc
 
 *.pyc
-
-Flask/Models/baseAlchemy.pyc
 
 .idea/
+
 *.db
 
 Flask/static/build/

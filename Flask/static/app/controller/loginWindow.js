@@ -49,7 +49,7 @@ Ext.define('dalpeApp.controller.loginWindow', {
 
     verifyInfos: function(response) {
         if (response.length) {
-            user_logged = response[0].id;
+            var user_logged = response[0].id;
             //L'authentification a fonctionne, on peut rentrer dans l'application
             dalpeApp.app.applyStateProviderInfos(user_logged);
             Ext.getCmp('loginWindow').close();

@@ -48,7 +48,6 @@ Ext.application({
         'clients',
         'chantiers',
         'loginWindow',
-        'global',
         'logHours'
     ],
     name: 'dalpeApp',

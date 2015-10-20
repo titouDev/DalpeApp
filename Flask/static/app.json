@@ -8,10 +8,6 @@
    ],
    "js": [
       {
-         "path": "js/login_infos.js",
-         "includeInBundle": true
-      },
-      {
          "path": "plugins/rsvp.js",
          "includeInBundle": true
       },
@@ -29,5 +25,5 @@
          "path": "css/mailWindow.css"
       }
    ],
-   "classpath": "${app.dir}/app,${app.dir}/js/,${app.dir}/plugins/"
+   "classpath": "${app.dir}/app,${app.dir}/plugins/"
 }
