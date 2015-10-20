@@ -329,7 +329,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "allowBlank": false,
                                         "fieldLabel": "nom d'utilisateur",
                                         "layout|flex": 1,
                                         "maxHeight": 25,
@@ -349,7 +348,6 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "allowOnlyWhitespace": false,
                                         "fieldLabel": "mot de passe",
                                         "inputType": "password",
                                         "layout|flex": 1,

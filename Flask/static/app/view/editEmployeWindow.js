@@ -164,8 +164,7 @@ Ext.define('dalpeApp.view.editEmployeWindow', {
                                     flex: 1,
                                     maxHeight: 25,
                                     fieldLabel: 'nom d\'utilisateur',
-                                    name: 'login',
-                                    allowBlank: false
+                                    name: 'login'
                                 },
                                 {
                                     xtype: 'textfield',
@@ -173,8 +172,7 @@ Ext.define('dalpeApp.view.editEmployeWindow', {
                                     maxHeight: 25,
                                     fieldLabel: 'mot de passe',
                                     name: 'password',
-                                    inputType: 'password',
-                                    allowOnlyWhitespace: false
+                                    inputType: 'password'
                                 }
                             ]
                         }
