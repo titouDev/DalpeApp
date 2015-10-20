@@ -171,6 +171,7 @@
                     "userConfig": {
                         "fieldLabel": "Label",
                         "hidden": true,
+                        "itemId": "editHoursWindow",
                         "layout|flex": 1,
                         "name": "id"
                     },

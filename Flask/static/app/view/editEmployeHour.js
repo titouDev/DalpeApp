@@ -107,6 +107,7 @@ Ext.define('dalpeApp.view.editEmployeHour', {
                     xtype: 'numberfield',
                     flex: 1,
                     hidden: true,
+                    itemId: 'editHoursWindow',
                     fieldLabel: 'Label',
                     name: 'id'
                 }

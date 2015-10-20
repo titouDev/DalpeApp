@@ -32,9 +32,10 @@
                 "designer|targetType": "Ext.button.Button",
                 "fn": "onAddHourClick",
                 "implHandler": [
-                    "Ext.widget('editEmployeHour');",
+                    "var window = Ext.widget('editEmployeHour');",
                     "",
-                    ""
+                    "window.down('component[name=workDate]').setValue(new Date());",
+                    "window.down('component[name=hours]').setValue(8);"
                 ],
                 "name": "click",
                 "scope": "me"

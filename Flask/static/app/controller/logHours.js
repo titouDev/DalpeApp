@@ -56,9 +56,10 @@ Ext.define('dalpeApp.controller.logHours', {
     },
 
     onAddHourClick: function(button, e, eOpts) {
-        Ext.widget('editEmployeHour');
+        var window = Ext.widget('editEmployeHour');
 
-
+        window.down('component[name=workDate]').setValue(new Date());
+        window.down('component[name=hours]').setValue(8);
     },
 
     onSaveClick: function(button, e, eOpts) {
