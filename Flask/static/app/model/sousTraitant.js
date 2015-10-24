@@ -44,16 +44,20 @@ Ext.define('dalpeApp.model.sousTraitant', {
             persist: false
         },
         {
-            name: 'name'
+            name: 'name',
+            sortType: 'asUCString'
         },
         {
-            name: 'lastName'
+            name: 'lastName',
+            sortType: 'asUCString'
         },
         {
-            name: 'contactName'
+            name: 'contactName',
+            sortType: 'asUCString'
         },
         {
-            name: 'email'
+            name: 'email',
+            sortType: 'asUCString'
         },
         {
             name: 'phone'

@@ -33,7 +33,9 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "name"
+                "designer|createAlias": null,
+                "name": "name",
+                "sortType": "asUCString"
             },
             "name": "MyField56",
             "designerId": "83e0970b-3180-46b1-a5d8-552971ef9acf"

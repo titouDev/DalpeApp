@@ -26,13 +26,16 @@ Ext.define('dalpeApp.model.client', {
 
     fields: [
         {
-            name: 'name'
+            name: 'name',
+            sortType: 'asUCString'
         },
         {
-            name: 'lastName'
+            name: 'lastName',
+            sortType: 'asUCString'
         },
         {
-            name: 'email'
+            name: 'email',
+            sortType: 'asUCString'
         },
         {
             name: 'phone'

@@ -44,13 +44,16 @@ Ext.define('dalpeApp.model.employe', {
             persist: false
         },
         {
-            name: 'name'
+            name: 'name',
+            sortType: 'asUCString'
         },
         {
-            name: 'lastName'
+            name: 'lastName',
+            sortType: 'asUCString'
         },
         {
-            name: 'contactName'
+            name: 'contactName',
+            sortType: 'asUCString'
         },
         {
             name: 'email',

@@ -33,7 +33,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "name"
+                "name": "name",
+                "sortType": "asUCString"
             },
             "name": "MyField64",
             "designerId": "26f6f1c2-f1d7-413a-b851-89edf5babaf1"

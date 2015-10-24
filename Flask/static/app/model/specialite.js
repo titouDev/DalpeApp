@@ -30,7 +30,8 @@ Ext.define('dalpeApp.model.specialite', {
             persist: false
         },
         {
-            name: 'name'
+            name: 'name',
+            sortType: 'asUCString'
         }
     ],
 

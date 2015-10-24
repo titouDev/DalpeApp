@@ -73,7 +73,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "name"
+                "name": "name",
+                "sortType": "asUCString"
             },
             "name": "MyField38",
             "designerId": "0fb7204f-b5bd-4883-a0db-1e7bf52da950"
@@ -86,7 +87,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "lastName"
+                "name": "lastName",
+                "sortType": "asUCString"
             },
             "name": "MyField39",
             "designerId": "2ebe9a1e-f849-46e3-b246-a450edff4d43"
@@ -99,7 +101,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "contactName"
+                "name": "contactName",
+                "sortType": "asUCString"
             },
             "name": "MyField40",
             "designerId": "b46e07ab-5514-4796-967a-bd05eb35522a"
@@ -112,7 +115,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "email"
+                "name": "email",
+                "sortType": "asUCString"
             },
             "name": "MyField41",
             "designerId": "ea02b169-0e2f-4f3c-8e8a-a94b769e4bef"

@@ -32,7 +32,8 @@ Ext.define('dalpeApp.model.chantier', {
             persist: false
         },
         {
-            name: 'name'
+            name: 'name',
+            sortType: 'asUCString'
         },
         {
             name: 'note'

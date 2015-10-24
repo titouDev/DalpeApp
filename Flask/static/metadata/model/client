@@ -18,7 +18,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "name"
+                "name": "name",
+                "sortType": "asUCString"
             },
             "name": "MyField",
             "designerId": "89267d7c-63ad-44ac-8b57-8bb28e5df806"
@@ -31,7 +32,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "lastName"
+                "name": "lastName",
+                "sortType": "asUCString"
             },
             "name": "MyField1",
             "designerId": "7a4873d5-c93d-45de-93df-23576c6ccc81"
@@ -44,7 +46,8 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "email"
+                "name": "email",
+                "sortType": "asUCString"
             },
             "name": "MyField2",
             "designerId": "27dd2ceb-aa2f-4b2d-949b-c276d4406421"
