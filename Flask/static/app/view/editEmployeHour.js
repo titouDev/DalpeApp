@@ -77,9 +77,7 @@ Ext.define('dalpeApp.view.editEmployeHour', {
                     fieldLabel: 'Employe',
                     name: 'employeId',
                     allowBlank: false,
-                    displayField: 'lastName',
-                    store: 'employes',
-                    valueField: 'id'
+                    store: 'employes'
                 },
                 {
                     xtype: 'numberfield',

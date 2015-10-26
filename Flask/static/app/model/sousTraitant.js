@@ -16,89 +16,44 @@
 Ext.define('dalpeApp.model.sousTraitant', {
     extend: 'Ext.data.Model',
 
+    mixins: [
+        'dalpeApp.model.person'
+    ],
     requires: [
         'Ext.data.proxy.Rest',
         'Ext.data.reader.Json',
         'Ext.data.writer.Json',
-        'Ext.data.field.Integer',
-        'Ext.data.field.Boolean'
+        'Ext.data.field.String'
     ],
 
     proxy: {
         type: 'rest',
-        sortParam: 'undefined',
         url: '/api/model/Soustraitant',
         reader: {
             type: 'json',
             rootProperty: 'records'
         },
         writer: {
-            type: 'json'
+            type: 'json',
+            writeRecordId: false
         }
     },
 
     fields: [
         {
-            type: 'int',
-            name: 'id',
-            persist: false
+            name: 'specialites'
         },
         {
-            name: 'name',
-            sortType: 'asUCString'
-        },
-        {
-            name: 'lastName',
-            sortType: 'asUCString'
-        },
-        {
-            name: 'contactName',
-            sortType: 'asUCString'
-        },
-        {
-            name: 'email',
-            sortType: 'asUCString'
-        },
-        {
-            name: 'phone'
-        },
-        {
-            name: 'cell'
-        },
-        {
-            name: 'fax'
-        },
-        {
-            name: 'address'
-        },
-        {
-            name: 'postalCode'
-        },
-        {
-            name: 'city'
-        },
-        {
-            name: 'province'
-        },
-        {
-            type: 'boolean',
-            defaultValue: true,
-            name: 'isActive'
-        },
-        {
-            name: 'note'
-        },
-        {
-            name: 'webSite'
-        },
-        {
-            name: 'rbqLicense'
-        },
-        {
+            type: 'string',
             name: 'tpsNumber'
         },
         {
-            name: 'specialites'
+            type: 'string',
+            name: 'webSite'
+        },
+        {
+            type: 'string',
+            name: 'rbqLicense'
         }
     ]
 });

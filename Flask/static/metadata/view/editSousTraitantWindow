@@ -71,7 +71,7 @@
                     "designerId": "fff2caf8-b0d4-45fe-92b9-16d92ac4b3ec",
                     "cn": [
                         {
-                            "type": "Ext.panel.Panel",
+                            "type": "Ext.container.Container",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -82,10 +82,9 @@
                                 "container|align": "stretch",
                                 "layout": "vbox",
                                 "layout|flex": 1,
-                                "layout|margins": "10",
-                                "title": null
+                                "layout|margins": "10"
                             },
-                            "name": "MyPanel7",
+                            "name": "MyContainer",
                             "configAlternates": {
                                 "scrollable": "boolean"
                             },
@@ -215,7 +214,7 @@
                             ]
                         },
                         {
-                            "type": "Ext.panel.Panel",
+                            "type": "Ext.container.Container",
                             "reference": {
                                 "name": "items",
                                 "type": "array"
@@ -226,10 +225,9 @@
                                 "container|align": "stretch",
                                 "layout": "vbox",
                                 "layout|flex": 1,
-                                "layout|margins": "10",
-                                "title": null
+                                "layout|margins": "10"
                             },
-                            "name": "MyPanel8",
+                            "name": "MyContainer1",
                             "configAlternates": {
                                 "scrollable": "boolean"
                             },

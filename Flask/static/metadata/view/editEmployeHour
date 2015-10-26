@@ -98,7 +98,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "allowBlank": false,
-                        "displayField": "lastName",
+                        "displayField": null,
                         "fieldLabel": "Employe",
                         "height": 30,
                         "itemId": "employe",
@@ -106,7 +106,7 @@
                         "maxHeight": 30,
                         "name": "employeId",
                         "store": "employes",
-                        "valueField": "id"
+                        "valueField": null
                     },
                     "name": "MyComboBox4",
                     "configAlternates": {

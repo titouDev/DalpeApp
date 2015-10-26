@@ -113,32 +113,33 @@ Ext.define('dalpeApp.controller.sousTraitants', {
         if (! myForm.isValid()) {
             return;
         }
-        var mySousTraitant = myForm.getRecord();
+        var record = myForm.getRecord();
 
-        if (!mySousTraitant) {
+        if (!record) {
             var sousTraitantModel = this.getSousTraitantModel();
-            mySousTraitant = new sousTraitantModel();
+            record = new sousTraitantModel();
         }
-        mySousTraitant.set(myForm.getValues());
+        record.set(myForm.getValues());
 
         //Un peu broche a fouin...
         var store = this.getSpecialitesLinkSoustraitantsStore();
-        mySousTraitant.set('specialites', store.collect('name'));
+        record.set('specialites', store.collect('name'));
 
-        if (! mySousTraitant.get('id')) {
+        if (! record.get('id')) {
             //POST
-            mySousTraitant.getProxy().appendId=false; //bug fix pour eviter d'appender un slah a la fin de l'url
+            record.getProxy().appendId=false; //bug fix pour eviter d'appender un slah a la fin de l'url
         }
 
-        mySousTraitant.save({
+        record.save({
             scope:this,
             callback:function(){
                 button.up('window').close();
                 this.refreshGrid();
-                this.getComboSpecialites().store.load();
+                this.getComboSpecialites().store.load(); //refresh du combo des categories
             }
         });
-        mySousTraitant.getProxy().appendId=true;
+
+        record.getProxy().appendId=true;
     },
 
     onAddSpecialiteClick: function(button, e, eOpts) {

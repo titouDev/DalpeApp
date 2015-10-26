@@ -67,7 +67,7 @@ Ext.define('dalpeApp.view.editSousTraitantWindow', {
                     },
                     items: [
                         {
-                            xtype: 'panel',
+                            xtype: 'container',
                             flex: 1,
                             margins: '10',
                             border: false,
@@ -125,7 +125,7 @@ Ext.define('dalpeApp.view.editSousTraitantWindow', {
                             ]
                         },
                         {
-                            xtype: 'panel',
+                            xtype: 'container',
                             flex: 1,
                             margins: '10',
                             border: false,

@@ -27,7 +27,8 @@ Ext.application({
     ],
     models: [
         'specialite',
-        'chantier'
+        'chantier',
+        'person'
     ],
     stores: [
         'specialites',

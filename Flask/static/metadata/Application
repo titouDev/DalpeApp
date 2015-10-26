@@ -17,7 +17,8 @@
         ],
         "models": [
             "specialite",
-            "chantier"
+            "chantier",
+            "person"
         ],
         "name": "dalpeApp",
         "requires": [

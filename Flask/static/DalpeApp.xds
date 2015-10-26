@@ -34,7 +34,11 @@
         "lockUrlPrefix": false,
         "installStatus": "Not Installed",
         "displayfield-ExtBox1-1156-inputEl": "a new version of the framework is available",
-        "displayfield-ExtBox1-1126-inputEl": "a new version of the framework is available"
+        "displayfield-ExtBox1-1126-inputEl": "a new version of the framework is available",
+        "lastBuildSelection": {
+            "value": "webBuild",
+            "display": "Build web app"
+        }
     },
     "xdsVersion": "3.2.0",
     "xdsBuild": 339,
@@ -92,6 +96,7 @@
         ],
         "model": [
             "b46812cd-c52b-4a66-9d86-1e213479b598",
+            "bbd58431-d69b-4bae-b358-74084bed9073",
             "30e085bb-8e66-4146-b012-634d977214ef",
             "e4d3bafa-15b2-4e10-a635-0f60eb93a846",
             "a0d5601b-11bf-4930-97a3-f49e2073affe",

@@ -6,130 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "client"
+        "designer|userClassName": "client",
+        "mixins": [
+            "['dalpeApp.model.person']"
+        ]
     },
     "designerId": "30e085bb-8e66-4146-b012-634d977214ef",
     "cn": [
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "name",
-                "sortType": "asUCString"
-            },
-            "name": "MyField",
-            "designerId": "89267d7c-63ad-44ac-8b57-8bb28e5df806"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "lastName",
-                "sortType": "asUCString"
-            },
-            "name": "MyField1",
-            "designerId": "7a4873d5-c93d-45de-93df-23576c6ccc81"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "email",
-                "sortType": "asUCString"
-            },
-            "name": "MyField2",
-            "designerId": "27dd2ceb-aa2f-4b2d-949b-c276d4406421"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "phone"
-            },
-            "name": "MyField3",
-            "designerId": "4b54d87b-3616-4cfe-8383-778e9f0ca4a2"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "cell"
-            },
-            "name": "MyField4",
-            "designerId": "d87ae35a-1e54-46e1-8539-19348572d656"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "address"
-            },
-            "name": "MyField5",
-            "designerId": "bf97ed5a-c39d-4df4-a98f-9c0818cf8456"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "postalCode"
-            },
-            "name": "MyField6",
-            "designerId": "263640a6-ca12-401f-ac2f-9cb4e49e1cb4"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "city"
-            },
-            "name": "MyField7",
-            "designerId": "58392f5c-2ae3-4ecf-a2a5-fd41bd7f8137"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "province"
-            },
-            "name": "MyField8",
-            "designerId": "a7915350-20f5-4ab2-8d20-9ec6f021eee4"
-        },
         {
             "type": "Ext.data.proxy.Rest",
             "reference": {
@@ -170,33 +53,6 @@
                     "designerId": "2409f438-f074-49d5-84d4-e5ef614e0e06"
                 }
             ]
-        },
-        {
-            "type": "Ext.data.field.Integer",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "id",
-                "persist": false
-            },
-            "name": "MyInteger",
-            "designerId": "9ba05c1d-bb21-4867-b6e4-5d76ad345495"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "fax"
-            },
-            "name": "MyField10",
-            "designerId": "03e2d120-9305-46b8-bfaa-3ba19bc87860"
         },
         {
             "type": "Ext.data.field.Boolean",

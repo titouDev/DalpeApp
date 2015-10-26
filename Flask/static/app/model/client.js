@@ -16,58 +16,14 @@
 Ext.define('dalpeApp.model.client', {
     extend: 'Ext.data.Model',
 
+    mixins: [
+        'dalpeApp.model.person'
+    ],
     requires: [
         'Ext.data.proxy.Rest',
         'Ext.data.writer.Json',
         'Ext.data.reader.Json',
-        'Ext.data.field.Integer',
         'Ext.data.field.Boolean'
-    ],
-
-    fields: [
-        {
-            name: 'name',
-            sortType: 'asUCString'
-        },
-        {
-            name: 'lastName',
-            sortType: 'asUCString'
-        },
-        {
-            name: 'email',
-            sortType: 'asUCString'
-        },
-        {
-            name: 'phone'
-        },
-        {
-            name: 'cell'
-        },
-        {
-            name: 'address'
-        },
-        {
-            name: 'postalCode'
-        },
-        {
-            name: 'city'
-        },
-        {
-            name: 'province'
-        },
-        {
-            type: 'int',
-            name: 'id',
-            persist: false
-        },
-        {
-            name: 'fax'
-        },
-        {
-            type: 'boolean',
-            defaultValue: true,
-            name: 'isActive'
-        }
     ],
 
     proxy: {
@@ -81,5 +37,13 @@ Ext.define('dalpeApp.model.client', {
             type: 'json',
             rootProperty: 'records'
         }
-    }
+    },
+
+    fields: [
+        {
+            type: 'boolean',
+            defaultValue: true,
+            name: 'isActive'
+        }
+    ]
 });

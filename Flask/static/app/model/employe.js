@@ -16,11 +16,15 @@
 Ext.define('dalpeApp.model.employe', {
     extend: 'Ext.data.Model',
 
+    mixins: [
+        'dalpeApp.model.person'
+    ],
     requires: [
         'Ext.data.proxy.Rest',
         'Ext.data.writer.Json',
         'Ext.data.reader.Json',
         'Ext.data.field.Boolean',
+        'Ext.data.field.String',
         'Ext.data.field.Number'
     ],
 
@@ -39,65 +43,13 @@ Ext.define('dalpeApp.model.employe', {
 
     fields: [
         {
-            type: 'int',
-            name: 'id',
-            persist: false
-        },
-        {
-            name: 'name',
-            sortType: 'asUCString'
-        },
-        {
-            name: 'lastName',
-            sortType: 'asUCString'
-        },
-        {
-            name: 'contactName',
-            sortType: 'asUCString'
-        },
-        {
-            name: 'email',
-            validators: [
-                {
-                    type: 'email'
-                }
-            ]
-        },
-        {
-            name: 'phone'
-        },
-        {
-            name: 'cell'
-        },
-        {
-            name: 'fax'
-        },
-        {
-            name: 'address'
-        },
-        {
-            name: 'postalCode'
-        },
-        {
-            name: 'city'
-        },
-        {
-            name: 'province'
-        },
-        {
-            type: 'boolean',
-            defaultValue: true,
-            name: 'isActive'
-        },
-        {
-            name: 'note'
-        },
-        {
             type: 'boolean',
             defaultValue: true,
             name: 'isAdmin'
         },
         {
+            type: 'string',
+            allowNull: true,
             name: 'login'
         },
         {
@@ -105,6 +57,8 @@ Ext.define('dalpeApp.model.employe', {
             name: 'hourRate'
         },
         {
+            type: 'string',
+            allowNull: true,
             name: 'password'
         }
     ]

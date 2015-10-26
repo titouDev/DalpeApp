@@ -6,7 +6,10 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "employe"
+        "designer|userClassName": "employe",
+        "mixins": [
+            "['dalpeApp.model.person']"
+        ]
     },
     "designerId": "b46812cd-c52b-4a66-9d86-1e213479b598",
     "cn": [
@@ -52,207 +55,6 @@
             ]
         },
         {
-            "type": "Ext.data.field.Integer",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "id",
-                "persist": false
-            },
-            "name": "MyInteger5",
-            "designerId": "241f58d1-5346-42b3-8a89-ae74500d5889"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "name",
-                "sortType": "asUCString"
-            },
-            "name": "MyField20",
-            "designerId": "63345ad6-da3c-4316-be95-16a61ff60788"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "lastName",
-                "sortType": "asUCString"
-            },
-            "name": "MyField21",
-            "designerId": "f6d6d6ee-b50f-4d71-a195-894f19ce1918"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "contactName",
-                "sortType": "asUCString"
-            },
-            "name": "MyField22",
-            "designerId": "7fc4336d-b0c8-4d6b-baf9-5bef4184f1a7"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "email"
-            },
-            "name": "MyField23",
-            "designerId": "436c9865-cec6-4056-894c-d16f532c16d7",
-            "cn": [
-                {
-                    "type": "emailvalidation",
-                    "reference": {
-                        "name": "validators",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "name": "MyEmailValidation",
-                    "designerId": "8abedc6b-7ecd-4f97-898d-9ce9ae04cc76"
-                }
-            ]
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "phone"
-            },
-            "name": "MyField24",
-            "designerId": "17f4c670-7f25-467f-984c-6bcc96d43815"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "cell"
-            },
-            "name": "MyField25",
-            "designerId": "00023c7b-f31a-42a0-9f60-85ed9ba2ff9f"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "fax"
-            },
-            "name": "MyField26",
-            "designerId": "c5bd05b1-3fa0-445e-b34f-606f3fffc6b4"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "address"
-            },
-            "name": "MyField27",
-            "designerId": "3be06fa8-c153-4536-9272-f3750491a73e"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "postalCode"
-            },
-            "name": "MyField28",
-            "designerId": "cf8142cd-74e0-4d93-ac4a-8d00b428d39a"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "city"
-            },
-            "name": "MyField29",
-            "designerId": "4ed648b5-6987-4eb6-ab80-97ae9107c3cd"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "province"
-            },
-            "name": "MyField30",
-            "designerId": "5eeadd97-60ef-4d68-9f48-e3e67e2528c2"
-        },
-        {
-            "type": "Ext.data.field.Boolean",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "defaultValue": [
-                    "true"
-                ],
-                "name": "isActive"
-            },
-            "name": "MyBoolean1",
-            "designerId": "145563bf-0550-4f8b-b34b-71145505afe8"
-        },
-        {
-            "type": "Ext.data.field.Field",
-            "reference": {
-                "name": "fields",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "name": "note"
-            },
-            "name": "MyField32",
-            "designerId": "316f05fc-8029-4697-bca4-c536b0af9c0b"
-        },
-        {
             "type": "Ext.data.field.Boolean",
             "reference": {
                 "name": "fields",
@@ -269,16 +71,17 @@
             "designerId": "f4cc6383-3848-4fcd-953a-300a764fc895"
         },
         {
-            "type": "Ext.data.field.Field",
+            "type": "Ext.data.field.String",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
+                "allowNull": true,
                 "name": "login"
             },
-            "name": "MyField34",
+            "name": "MyString2",
             "designerId": "c1033773-158f-42f9-8fb0-a74d94029ffa"
         },
         {
@@ -295,16 +98,17 @@
             "designerId": "85c64507-c1f3-4752-8a20-95f2b570ed9c"
         },
         {
-            "type": "Ext.data.field.Field",
+            "type": "Ext.data.field.String",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
+                "allowNull": true,
                 "name": "password"
             },
-            "name": "MyField36",
+            "name": "MyString1",
             "designerId": "34e7ec8d-c300-46c1-98d8-bf803b9eb80e"
         }
     ]

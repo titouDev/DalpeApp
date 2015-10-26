@@ -15,26 +15,30 @@ import unittest
 import uuid
 from example_data import sousTraitantsListe
 
+FULLTEST = False
+
 class allTests(unittest.TestCase):
     uniqueId = uuid.uuid1()
-    databaseName = "dalpeDB_" + str(uniqueId)
+    baseName = "dalpeDB_tests"
+    databaseName = "%s_%s" % (baseName, uniqueId) if FULLTEST else baseName
     dbSqLite = 'sqlite:///%s.db' % databaseName
     Session = None
 
     @classmethod
     def setUpClass(cls):
         #on veut creer la database
-        print "creating database"
+        print "creating database", cls.databaseName
         cls.engine = create_engine(cls.dbSqLite, echo=False, case_sensitive=False)
         classSqlAlchemy.Base.metadata.create_all(cls.engine)
         cls.Session = sessionmaker(bind=cls.engine)
 
     @classmethod
     def tearDownClass(cls):
-        print "dropping database"
-        classSqlAlchemy.Base.metadata.drop_all(cls.engine)
-        print "removing sqlite file"
-        os.remove("%s.db" % cls.databaseName)
+        if FULLTEST is True:
+            print "dropping database"
+            classSqlAlchemy.Base.metadata.drop_all(cls.engine)
+            print "removing sqlite file"
+            os.remove("%s.db" % cls.databaseName)
 
     def setUp(self):
         pass
