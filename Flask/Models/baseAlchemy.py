@@ -4,9 +4,9 @@ from sqlalchemy.orm import sessionmaker
 get_class = lambda x: getattr(classSqlAlchemy, x)
 
 from sqlalchemy import create_engine
-import time
-dbSqLite = 'sqlite:///dalpe_construction_v115.db'
-engine = create_engine(dbSqLite, echo=True, case_sensitive=False)
+
+dbSql = 'mysql+mysqldb://root:@localhost/dalpe'
+engine = create_engine(dbSql, echo=True, case_sensitive=False)
 
 classSqlAlchemy.Base.metadata.drop_all(engine)
 

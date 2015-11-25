@@ -3,6 +3,7 @@ from sqlalchemy import (Table,
                         Column,
                         Integer,
                         String,
+                        Text,
                         Float,
                         Boolean,
                         ForeignKey,
@@ -126,32 +127,32 @@ class logs(Base):
         self.context = context
 
     id = Column(Integer, primary_key=True)
-    context = Column(String, nullable=False)
-    ref_id = Column(String, nullable=False)
-    field = Column(String, nullable=True)
-    value = Column(String, nullable=False)
-    previous_value = Column(String, nullable=True)
-    operation = Column(String, nullable=False)
+    context = Column(String(50), nullable=False)
+    ref_id = Column(String(50), nullable=False)
+    field = Column(String(50), nullable=True)
+    value = Column(Text, nullable=False)
+    previous_value = Column(Text, nullable=True)
+    operation = Column(String(20), nullable=False)
     date = Column(DateTime, nullable=False)
-    user = Column(String, nullable=True)
+    user = Column(String(50), nullable=True)
 
 
 class Person(Base, AddonsBase):
     __tablename__ = 'Person'
     id = Column(Integer, primary_key=True)
-    name = Column(String, nullable=True)
-    lastName = Column(String, nullable=True)
-    contactName = Column(String, nullable=True)
-    email = Column(String, nullable=True)
-    phone = Column(String, nullable=True)
-    cell = Column(String, nullable=True)
-    fax = Column(String, nullable=True)
-    address = Column(String, nullable=True)
-    postalCode = Column(String, nullable=True)
-    city = Column(String, nullable=True)
-    province = Column(String, nullable=True)
+    name = Column(String(255), nullable=True)
+    lastName = Column(String(255), nullable=True)
+    contactName = Column(String(255), nullable=True)
+    email = Column(String(255), nullable=True)
+    phone = Column(String(255), nullable=True)
+    cell = Column(String(255), nullable=True)
+    fax = Column(String(255), nullable=True)
+    address = Column(String(255), nullable=True)
+    postalCode = Column(String(255), nullable=True)
+    city = Column(String(255), nullable=True)
+    province = Column(String(255), nullable=True)
     isActive = Column(Boolean, nullable=True)
-    note = Column(String, nullable=True)
+    note = Column(String(255), nullable=True)
 
 class Client(Person):
     __tablename__ = 'Client'
@@ -161,30 +162,30 @@ class Client(Person):
 class Employe(Person):
     __tablename__ = 'Employe'
     id = Column(Integer, ForeignKey(Person.id), primary_key=True)
-    password = Column(String, nullable=True)
+    password = Column(String(255), nullable=True)
     isAdmin = Column(Integer, nullable=True)
-    login = Column(String, nullable=True, unique=True)
+    login = Column(String(255), nullable=True, unique=True)
     hourRate = Column(Float(precision=2))
 
 
 class Chantier(Base, AddonsBase):
     __tablename__ = 'Chantier'
     id = Column(Integer, primary_key=True)
-    name = Column(String, nullable=False)
+    name = Column(String(255), nullable=False)
     clientId = Column(Integer, ForeignKey(Client.id), nullable=True)
-    note = Column(String, nullable=True)
-    status = Column(String, nullable=True)
-    creationDate = Column(String, nullable=True)
-    startDate = Column(String, nullable=True)
-    endDate = Column(String, nullable=True)
-    lastUpdate = Column(String, nullable=True)
+    note = Column(String(255), nullable=True)
+    status = Column(String(255), nullable=True)
+    creationDate = Column(String(255), nullable=True)
+    startDate = Column(String(255), nullable=True)
+    endDate = Column(String(255), nullable=True)
+    lastUpdate = Column(String(255), nullable=True)
 
 
 class EmployeHour(Base, AddonsBase):
     __tablename__ = 'EmployeHour'
     id = Column(Integer, primary_key=True)
     employeId = Column(Integer, ForeignKey(Employe.id), nullable=False)
-    workDate = Column(String, nullable=False)
+    workDate = Column(String(255), nullable=False)
     hours = Column(Float(precision=11), nullable=False)
     chantierId = Column(Integer, ForeignKey(Chantier.id), nullable=True)
     checked = Column(Integer, nullable=True)
@@ -194,10 +195,10 @@ class EmployeHour(Base, AddonsBase):
 class Soustraitant(Person):
     __tablename__ = 'Soustraitant'
     id = Column(Integer, ForeignKey(Person.id), primary_key=True)
-    name = Column(String, nullable=False, unique=True)
-    webSite = Column(String, nullable=True)
-    rbqLicense = Column(String, nullable=True)
-    tpsNumber = Column(String, nullable=True)
+    name = Column(String(255), nullable=False, unique=True)
+    webSite = Column(String(255), nullable=True)
+    rbqLicense = Column(String(255), nullable=True)
+    tpsNumber = Column(String(255), nullable=True)
     specialites = relationship("Specialite",
                                secondary=lambda: SoustraitantsLinkSpecialites,
                                backref="soustraitants"
@@ -210,7 +211,7 @@ class Soustraitant(Person):
 class Specialite(Base, AddonsBase):
     __tablename__ = 'Specialite'
     id = Column(Integer, primary_key=True)
-    name = Column(String, nullable=False, unique=True)
+    name = Column(String(255), nullable=False, unique=True)
 
     uniqueKey = 'name'
     returnIfExists = True
