@@ -1,5 +1,5 @@
 $app-name:   'dalpeApp' !default;
-$image-search-path: '/Users/titou/Documents/GIT/DalpeApp/Flask/static/build/development/dalpeApp/resources';
+$image-search-path: 'C:/Users/Cedric/Documents/DalpeApp/Flask/static/build/development/dalpeApp/resources';
 $theme-name:   'ext-theme-neptune' !default;
 $include-ext-abstractcomponent: true;
 $include-ext-abstractcontainer: true;
@@ -849,6 +849,7 @@ $include-extthemeneptune-toolbar-toolbar: true;
 $include-dalpeapp-controller-chantiers: true;
 $include-dalpeapp-controller-clients: true;
 $include-dalpeapp-controller-employes: true;
+$include-dalpeapp-controller-global: true;
 $include-dalpeapp-controller-loghours: true;
 $include-dalpeapp-controller-loginwindow: true;
 $include-dalpeapp-controller-soustraitants: true;

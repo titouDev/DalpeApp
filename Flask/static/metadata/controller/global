@@ -1,0 +1,46 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "global"
+    },
+    "designerId": "7f2562eb-19a6-48f4-a495-abd4d8fc1bef",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "#appViewport",
+                "designer|targetType": "Ext.container.Viewport",
+                "fn": "onViewportAfterRender",
+                "implHandler": [
+                    "/*",
+                    "Employes.checkLoginSession(function(response){",
+                    "    if (response) {",
+                    "        user_logged = response[0].id;",
+                    "        var myAppToolbar = Ext.getCmp('appToolbar');",
+                    "        myAppToolbar.down('#userLogged').setText('Utilisateur connecté: ' + response[0].prenom + \" \" + response[0].nom);",
+                    "    }",
+                    "    else {",
+                    "        //Ext.widget('loginWindow');",
+                    "    }",
+                    "}, this);",
+                    "*/",
+                    ""
+                ],
+                "name": "afterrender",
+                "scope": "me"
+            },
+            "name": "onViewportAfterRender",
+            "designerId": "a53f2926-2d34-4fa3-82eb-58506431a2b2"
+        }
+    ]
+}

@@ -78,6 +78,17 @@ Ext.define('dalpeApp.view.appViewport', {
                                 stateful: true,
                                 title: '',
                                 activeTab: 1,
+                                titleRotation: 1,
+                                tabRotation: 0,
+                                tabPosition:'left',
+
+                                tabBar: {
+                                    flex: 1,
+                                    layout: {
+                                        align: 'stretch',
+                                        overflowHandler: 'none'
+                                    }
+                                },
                                 items: [
                                     {
                                         xtype: 'panel',
