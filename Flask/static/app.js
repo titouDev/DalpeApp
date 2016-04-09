@@ -65,7 +65,7 @@ Ext.application({
                 e.preventDefault();
             }
         }
-        window.onbeforeunload=confirm_exit;
+        //window.onbeforeunload=confirm_exit;
 
         document.oncontextmenu = function(){return false;}; //permet de ne pas ouvrir le context menu de windows
 
@@ -82,8 +82,11 @@ Ext.application({
 
 
         var loginController = dalpeApp.getApplication().getController('loginWindow');
-
-        if (loginController.isLogged()) {
+        
+        var isUserLogged = loginController.isLogged();
+        
+        isUserLogged = true;
+        if (isUserLogged) {
             dalpeApp.view.appViewport.create();
             var user = loginController.getUserLogged();
             Ext.ComponentQuery.query('#userLogged')[0].setText('Utilisateur Connecté: ' + user);
@@ -95,7 +98,7 @@ Ext.application({
             if (response === true) {
                 if (response === true) {
                     dalpeApp.view.appViewport.create();
-                    alert('Vous etes le premier utilisateur a vous connecter,'+
+                    console.warn('Vous etes le premier utilisateur a vous connecter,'+
                     'allez dans l\'onglet employes pour creer votre fiche et celle des autres employes');
                 }
             }

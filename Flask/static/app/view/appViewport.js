@@ -132,66 +132,7 @@ Ext.define('dalpeApp.view.appViewport', {
                                                 ]
                                             },
                                             {
-                                                xtype: 'gridpanel',
-                                                flex: 1,
-                                                region: 'center',
-                                                split: true,
-                                                stateId: 'stateEmployesGrid',
-                                                stateful: true,
-                                                id: 'employesGrid',
-                                                store: 'employes',
-                                                columns: [
-                                                    {
-                                                        xtype: 'gridcolumn',
-                                                        dataIndex: 'name',
-                                                        text: 'Prenom',
-                                                        flex: 1
-                                                    },
-                                                    {
-                                                        xtype: 'gridcolumn',
-                                                        dataIndex: 'lastName',
-                                                        text: 'Nom',
-                                                        flex: 1
-                                                    },
-                                                    {
-                                                        xtype: 'gridcolumn',
-                                                        dataIndex: 'email',
-                                                        text: 'Courriel',
-                                                        flex: 1.5
-                                                    },
-                                                    {
-                                                        xtype: 'gridcolumn',
-                                                        dataIndex: 'phone',
-                                                        text: 'Telephone',
-                                                        flex: 1
-                                                    },
-                                                    {
-                                                        xtype: 'gridcolumn',
-                                                        dataIndex: 'cell',
-                                                        text: 'Cellulaire',
-                                                        flex: 1
-                                                    }
-                                                ],
-                                                dockedItems: [
-                                                    {
-                                                        xtype: 'toolbar',
-                                                        dock: 'top',
-                                                        items: [
-                                                            {
-                                                                xtype: 'button',
-                                                                itemId: 'addEmploye',
-                                                                iconCls: 'icon-user-add',
-                                                                text: 'Ajouter'
-                                                            },
-                                                            {
-                                                                xtype: 'button',
-                                                                itemId: 'editEmploye',
-                                                                iconCls: 'icon-user-add',
-                                                                text: 'Editer'
-                                                            }
-                                                        ]
-                                                    }
-                                                ]
+                                                xtype: 'employe-grid'
                                             }
                                         ]
                                     },
@@ -204,98 +145,7 @@ Ext.define('dalpeApp.view.appViewport', {
                                         title: 'Sous Traitants',
                                         items: [
                                             {
-                                                xtype: 'gridpanel',
-                                                region: 'center',
-                                                split: true,
-                                                stateId: 'statesousTraitantsGrid',
-                                                stateful: true,
-                                                id: 'sousTraitantsGrid',
-                                                minWidth: 700,
-                                                store: 'sousTraitants',
-                                                dockedItems: [
-                                                    {
-                                                        xtype: 'toolbar',
-                                                        dock: 'top',
-                                                        items: [
-                                                            {
-                                                                xtype: 'combobox',
-                                                                itemId: 'comboSpecialites',
-                                                                width: 251,
-                                                                fieldLabel: 'Specialite',
-                                                                labelWidth: 70,
-                                                                anyMatch: true,
-                                                                displayField: 'name',
-                                                                minChars: 0,
-                                                                store: 'specialites',
-                                                                typeAhead: true,
-                                                                typeAheadDelay: 0,
-                                                                valueField: 'id'
-                                                            },
-                                                            {
-                                                                xtype: 'textfield',
-                                                                itemId: 'searchText',
-                                                                fieldLabel: 'Recherche Rapide',
-                                                                checkChangeBuffer: 100
-                                                            },
-                                                            {
-                                                                xtype: 'button',
-                                                                itemId: 'addSousTraitant',
-                                                                iconCls: 'icon-user-add',
-                                                                text: 'Ajouter'
-                                                            },
-                                                            {
-                                                                xtype: 'button',
-                                                                itemId: 'editSousTraitant',
-                                                                iconCls: 'icon-user-add',
-                                                                text: 'Editer'
-                                                            },
-                                                            {
-                                                                xtype: 'button',
-                                                                hidden: true,
-                                                                itemId: 'sendMail',
-                                                                iconCls: 'icon-send',
-                                                                text: 'Envoyer un courriel'
-                                                            }
-                                                        ]
-                                                    }
-                                                ],
-                                                columns: [
-                                                    {
-                                                        xtype: 'templatecolumn',
-                                                        tpl: [
-                                                            '<font style="font-weight: bold; font-size: 13px;">{name}</font><br>',
-                                                            'Contact:&nbsp;&nbsp;&nbsp;&nbsp;{contactName}<br>',
-                                                            'Note:&nbsp;&nbsp;&nbsp;&nbsp;{note}'
-                                                        ],
-                                                        width: 200,
-                                                        dataIndex: 'name',
-                                                        text: 'Societé',
-                                                        flex: 3
-                                                    },
-                                                    {
-                                                        xtype: 'gridcolumn',
-                                                        width: 250,
-                                                        dataIndex: 'email',
-                                                        text: 'Courriel',
-                                                        flex: 1
-                                                    },
-                                                    {
-                                                        xtype: 'templatecolumn',
-                                                        tpl: [
-                                                            'Telephone:&nbsp;&nbsp;{phone}<br>',
-                                                            'Cellulaire:&nbsp;&nbsp;{cell}<br>',
-                                                            'Fax:&nbsp;&nbsp;{fax}<br>'
-                                                        ],
-                                                        width: 200,
-                                                        dataIndex: 'phone',
-                                                        text: 'Telephones',
-                                                        flex: 1
-                                                    }
-                                                ],
-                                                selModel: Ext.create('Ext.selection.RowModel', {
-                                                    selType: 'rowmodel',
-                                                    mode: 'MULTI'
-                                                })
+                                                xtype: 'soustraitant-grid'
                                             }
                                         ]
                                     },
@@ -306,78 +156,7 @@ Ext.define('dalpeApp.view.appViewport', {
                                         title: 'Chantiers',
                                         items: [
                                             {
-                                                xtype: 'gridpanel',
-                                                flex: 1,
-                                                region: 'center',
-                                                split: true,
-                                                stateId: 'stateChantiersGrid',
-                                                stateful: true,
-                                                height: 250,
-                                                id: 'chantiersGrid',
-                                                store: 'chantiers',
-                                                columns: [
-                                                    {
-                                                        xtype: 'gridcolumn',
-                                                        dataIndex: 'name',
-                                                        text: 'Nom',
-                                                        flex: 1
-                                                    },
-                                                    {
-                                                        xtype: 'gridcolumn',
-                                                        dataIndex: 'note',
-                                                        text: 'Note',
-                                                        flex: 1
-                                                    },
-                                                    {
-                                                        xtype: 'gridcolumn',
-                                                        dataIndex: 'status',
-                                                        text: 'Status',
-                                                        flex: 1
-                                                    },
-                                                    {
-                                                        xtype: 'datecolumn',
-                                                        dataIndex: 'startDate',
-                                                        text: 'Debut',
-                                                        format: 'd-M-Y'
-                                                    },
-                                                    {
-                                                        xtype: 'datecolumn',
-                                                        dataIndex: 'endDate',
-                                                        text: 'Fin',
-                                                        format: 'd-M-Y'
-                                                    },
-                                                    {
-                                                        xtype: 'gridcolumn',
-                                                        renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                                            var clientStore = Ext.getStore('clients');
-                                                            var client = clientStore.getById(record.get('clientId'));
-                                                            return client ? client.get('nom') : '';
-                                                        },
-                                                        dataIndex: 'clientId',
-                                                        text: 'Client',
-                                                        flex: 1
-                                                    }
-                                                ],
-                                                dockedItems: [
-                                                    {
-                                                        xtype: 'toolbar',
-                                                        dock: 'top',
-                                                        items: [
-                                                            {
-                                                                xtype: 'button',
-                                                                itemId: 'addChantier',
-                                                                iconCls: 'icon-add',
-                                                                text: 'Nouveau Chantier'
-                                                            },
-                                                            {
-                                                                xtype: 'button',
-                                                                itemId: 'editChantier',
-                                                                iconCls: '',
-                                                                text: 'Editer'
-                                                            }
-                                                        ]
-                                                    }
-                                                ]
+                                                xtype: 'chantier-grid'
                                             },
                                             {
                                                 xtype: 'panel',
@@ -391,97 +170,19 @@ Ext.define('dalpeApp.view.appViewport', {
                                                 },
                                                 items: [
                                                     {
-                                                        xtype: 'gridpanel',
+                                                        xtype: 'heure-grid',
                                                         flex: 1,
                                                         stateId: 'stateChantiersHoursGrid',
                                                         stateful: true,
                                                         title: 'Hours',
-                                                        store: 'chantiers_hours',
-                                                        columns: [
-                                                            {
-                                                                xtype: 'datecolumn',
-                                                                dataIndex: 'workDate',
-                                                                text: 'Date'
-                                                            },
-                                                            {
-                                                                xtype: 'numbercolumn',
-                                                                dataIndex: 'hours',
-                                                                text: 'Heures'
-                                                            },
-                                                            {
-                                                                xtype: 'gridcolumn',
-                                                                renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                                                    var employe =  Ext.getStore('employes').getById(record.get("employeId"));
-                                                                    return Ext.String.format('{0} {1}', employe.get("name"), employe.get("lastName"));
-                                                                },
-                                                                dataIndex: 'employeId',
-                                                                text: 'Employe'
-                                                            }
-                                                        ]
+                                                        store: 'chantiers_hours'
                                                     }
                                                 ]
                                             }
                                         ]
                                     },
                                     {
-                                        xtype: 'gridpanel',
-                                        stateId: 'stateClientsGrid',
-                                        stateful: true,
-                                        id: 'clientsGrid',
-                                        title: 'Clients',
-                                        store: 'clients',
-                                        columns: [
-                                            {
-                                                xtype: 'gridcolumn',
-                                                dataIndex: 'name',
-                                                text: 'Prenom',
-                                                flex: 1
-                                            },
-                                            {
-                                                xtype: 'gridcolumn',
-                                                dataIndex: 'lastName',
-                                                text: 'Nom',
-                                                flex: 1
-                                            },
-                                            {
-                                                xtype: 'gridcolumn',
-                                                dataIndex: 'email',
-                                                text: 'Courriel',
-                                                flex: 1
-                                            },
-                                            {
-                                                xtype: 'gridcolumn',
-                                                dataIndex: 'phone',
-                                                text: 'Telephone',
-                                                flex: 1
-                                            },
-                                            {
-                                                xtype: 'gridcolumn',
-                                                dataIndex: 'cell',
-                                                text: 'Cellulaire',
-                                                flex: 1
-                                            }
-                                        ],
-                                        dockedItems: [
-                                            {
-                                                xtype: 'toolbar',
-                                                dock: 'top',
-                                                items: [
-                                                    {
-                                                        xtype: 'button',
-                                                        itemId: 'addClient',
-                                                        iconCls: 'icon-user-add',
-                                                        text: 'Ajouter'
-                                                    },
-                                                    {
-                                                        xtype: 'button',
-                                                        itemId: 'editClient',
-                                                        iconCls: 'icon-user-add',
-                                                        text: 'Editer'
-                                                    }
-                                                ]
-                                            }
-                                        ]
+                                        xtype: 'client-grid'
                                     },
                                     {
                                         xtype: 'panel',
@@ -519,55 +220,7 @@ Ext.define('dalpeApp.view.appViewport', {
                                         ],
                                         items: [
                                             {
-                                                xtype: 'gridpanel',
-                                                stateId: 'stateLogHoursGrid',
-                                                stateful: true,
-                                                id: 'logHoursGrid',
-                                                store: 'employes_logHours',
-                                                columns: [
-                                                    {
-                                                        xtype: 'datecolumn',
-                                                        dataIndex: 'workDate',
-                                                        text: 'Date',
-                                                        format: 'd-M-Y'
-                                                    },
-                                                    {
-                                                        xtype: 'numbercolumn',
-                                                        dataIndex: 'hours',
-                                                        text: 'Heures'
-                                                    },
-                                                    {
-                                                        xtype: 'gridcolumn',
-                                                        renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                                            var chantierStore = Ext.getStore('chantiers');
-
-                                                            var chantier = chantierStore.getById(value);
-                                                            return chantier ? chantier.get('name') : "";
-
-                                                        },
-                                                        width: 200,
-                                                        dataIndex: 'chantierId',
-                                                        text: 'Chantier'
-                                                    },
-                                                    {
-                                                        xtype: 'gridcolumn',
-                                                        renderer: function(value, metaData, record, rowIndex, colIndex, store, view) {
-                                                            var employeStore = Ext.getStore('employes');
-
-                                                            var employe = employeStore.getById(value);
-
-                                                            return employe.get('name') + " " + employe.get('lastName');
-                                                        },
-                                                        width: 200,
-                                                        dataIndex: 'employeId',
-                                                        text: 'Employe'
-                                                    },
-                                                    {
-                                                        xtype: 'numbercolumn',
-                                                        dataIndex: 'hourRate',
-                                                        text: 'Cout Horaire'
-                                                    }
-                                                ]
+                                                xtype: 'heure-grid'
                                             }
                                         ]
                                     }

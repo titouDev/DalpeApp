@@ -23,38 +23,12 @@ Ext.define('dalpeApp.controller.employes', {
         'employes',
         'clients'
     ],
-    views: [
-        'editEmployeWindow'
-    ],
-
+    
     refs: {
         employesGrid: '#employesGrid'
     },
 
-    control: {
-        "#employesGrid #addEmploye": {
-            click: 'onAddEmployeClick'
-        },
-        "#employesGrid": {
-            itemclick: 'onEmployesGridSelect'
-        },
-        "#employesPanel": {
-            activate: 'onEmployesPanelActivate'
-        },
-        "#editEmploye": {
-            click: 'onEditEmployeClick'
-        },
-        "editEmployeWindow #annuler": {
-            click: 'onAnnulerClick'
-        },
-        "editEmployeWindow #enregistrer": {
-            click: 'onEnregistrerClick'
-        }
-    },
-
-    onAddEmployeClick: function(button, e, eOpts) {
-        Ext.widget('editEmployeWindow').show();
-    },
+    
 
     onEmployesGridSelect: function(dataview, record, item, index, e, eOpts) {
         var hours_store = Ext.getStore('employes_hours');
@@ -65,33 +39,7 @@ Ext.define('dalpeApp.controller.employes', {
         this.getEmployesStore().load();
 
     },
-
-    onEditEmployeClick: function(button, e, eOpts) {
-        //On prend le record selectionne
-        var selectedRecord = this.getEmployesGrid().selModel.getSelection()[0];
-        if (!selectedRecord) {
-            Ext.Msg.alert('Attention','Vous devez selectionner un employe...').setWidth(200);
-            return;
-        }
-
-        //On affiche la fenetre d'edit
-        var editEmployeWindow = Ext.widget('editEmployeWindow');
-
-        //On load le soustraitant selecitonne dans le form
-        var myForm = editEmployeWindow.down('form');
-
-        //On retourne chercher le data dans la db, au cas ou un autre user ait modifie la fiche
-        var employeModel = this.getEmployeModel();
-        employeModel.load(selectedRecord.get('id'),{
-            scope:this,
-            callback:function(employe){
-                myForm.getForm().loadRecord(employe);
-            }
-        });
-
-        editEmployeWindow.show();
-
-    },
+    
 
     onAnnulerClick: function(button, e, eOpts) {
         button.up('window').close();
@@ -99,7 +47,7 @@ Ext.define('dalpeApp.controller.employes', {
 
     onEnregistrerClick: function(button, e, eOpts) {
         //On va chercher les infos du form
-        var myForm = Ext.getCmp('editEmployeWindow').down('form').getForm();
+        var myForm = Ext.getCmp('editemployewindow').down('form').getForm();
         if (! myForm.isValid()) {
             return;
         }
